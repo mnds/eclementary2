@@ -629,8 +629,8 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1989799792}
   placementFinal: {fileID: 960203778}
-  tempsInitialVersFinal: .5
-  tempsFinalVersInitial: .100000001
+  tempsInitialVersFinal: .0500000007
+  tempsFinalVersInitial: .0500000007
 --- !u!23 &593158234
 Renderer:
   m_ObjectHideFlags: 0
@@ -1005,6 +1005,14 @@ Prefab:
     - target: {fileID: 400008, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsInitialVersFinal
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsFinalVersInitial
+      value: .0500000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}

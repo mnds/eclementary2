@@ -4,9 +4,9 @@ using System.Collections;
 //Note : lorsqu'on attaque, il est possible de jeter l'objet pendant l'animation de l'attaque.
 public class Attaquer : MonoBehaviour {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
-
+	
 	public float degatsParCoup = 10.0f; //Degats initiaux, changés pour chaque obje
-
+	
 	public bool enTrainDAttaquer = false; //false pendant un coup
 	public Transform placementInitial; //GameObject placé à l'endroit où commence l'objet
 	Vector3 positionInitiale;
@@ -14,14 +14,14 @@ public class Attaquer : MonoBehaviour {
 	public Transform placementFinal;
 	Vector3 positionFinale;
 	Quaternion rotationFinale;
-
-	public float tempsInitialVersFinal = 0.5f; //Temps initial->final
-	public float tempsFinalVersInitial = 0.1f; //Temps final->initial
+	
+	public float tempsInitialVersFinal = 1f; //Temps initial->final
+	public float tempsFinalVersInitial = 1f; //Temps final->initial
 	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
-
+	
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
-
+	
 	void Start() {
 		//Initialisation de lancer
 		GameObject objet = gameObject; //On va parcourir les parents de gameObject pour trouver les scripts
@@ -35,7 +35,7 @@ public class Attaquer : MonoBehaviour {
 		if(lancerGameObject==null)
 			lancerGameObject=objet.GetComponentInChildren<Lancer>();
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
@@ -52,19 +52,19 @@ public class Attaquer : MonoBehaviour {
 			rotationInitiale = placementInitial.rotation;
 			positionFinale = placementFinal.position;
 			rotationFinale = placementFinal.rotation;
-
+			
 			if (avancementAnim < 1f) {
 				if(!enCoursDeRetour) //On fait l'attaque
 				{
 					transform.position = Vector3.Lerp(positionInitiale, positionFinale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationInitiale,rotationFinale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime/tempsInitialVersFinal;
+					avancementAnim = avancementAnim + Time.deltaTime*tempsInitialVersFinal;
 				}
 				else //On revient au début
 				{
 					transform.position = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime/tempsFinalVersInitial;
+					avancementAnim = avancementAnim + Time.deltaTime*tempsFinalVersInitial;
 				}
 			}
 			else //On a fini
@@ -82,28 +82,32 @@ public class Attaquer : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	void OnTriggerEnter (Collider objet) {
 		if(enCoursDeRetour) return;
 		if(bypass) return;
+		
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
-
-		//On cherche si l'objet ou un de ses parents a de la vie
-		Health health = objetAvecVie.GetComponent<Health>(); //Si le truc touché a des points de vie, on doit le blesser
-		while(health == null && objetAvecVie.parent){
-			objetAvecVie=objetAvecVie.parent;
-			health = objetAvecVie.GetComponent<Health>();
-		}
-		if(health != null){
-			health.SubirDegats(degatsParCoup);
+		
+		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
+		if (enTrainDAttaquer && !enCoursDeRetour) {
+			//On cherche si l'objet ou un de ses parents a de la vie
+			Health health = objetAvecVie.GetComponent<Health> (); //Si le truc touché a des points de vie, on doit le blesser
+			while (health == null && objetAvecVie.parent) {
+				objetAvecVie = objetAvecVie.parent;
+				health = objetAvecVie.GetComponent<Health> ();
+			}
+			if (health != null) {
+				health.SubirDegats (degatsParCoup);
+			}
 		}
 	}
-
+	
 	public bool GetEnTrainDAttaquer () {
 		return enTrainDAttaquer;
 	}
-
+	
 	public void SetBypass(bool bypass_) {
 		bypass=bypass_;
 	}
