@@ -15,10 +15,10 @@ using System.Collections;
 public class Pickable : MonoBehaviour {
 	//Remarque : ne pas mettre de bypassInitial, sinon, l'instruction bypass=bypassInitial se fera après les Instantiate de Lancer par exemple
 	public bool bypass; //Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
-
 	public bool isPickableDebut = false; //Si false, on ne peut pas le prendre, true sinon
-	bool isPickable ;
 	public float pickableDistanceDebut = 3.0f;
+	public Texture2D vignette; // utilisée pour la représentation de l'objet sur l'écran d'inventaire
+	bool isPickable ;
 	float pickableDistance;
 
 	public GUITexture texture;

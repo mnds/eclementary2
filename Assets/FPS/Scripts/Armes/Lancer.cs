@@ -121,6 +121,10 @@ public class Lancer : MonoBehaviour {
 	}
 
 	public void SetMunitions (int munitions_) {
+		if (!inventaire) {
+			Debug.Log("Inventaire nul");
+			return;
+		}
 		munitions = Mathf.Max (0,munitions_);
 		inventaire.ChangerMunitions (gameObject, munitions);
 	}
