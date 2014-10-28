@@ -78,14 +78,14 @@ public class Inventaire : MonoBehaviour {
 		if (Input.GetButtonDown ("ScrollItemsDown") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
 			positionScroll--;
 
-			if(positionScroll<0) //Si position non valide, on va dans la case "null" : non équipé 
+			if(positionScroll<0||positionScroll>listeObjetsUtilisables.Count-1) //Si position non valide, on va dans la case "null" : non équipé 
 				positionScroll=listeObjetsUtilisables.Count-1; //On remonte la boucle
 			ChangerObjetActuel(listeObjetsUtilisables[positionScroll]);
 			return;
 		}
 		if (Input.GetButtonDown ("ScrollItemsUp") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
 			positionScroll++;
-			if(positionScroll>listeObjetsUtilisables.Count-1) //Si position non valide, on va dans la case "null" : non équipé 
+			if(positionScroll<0||positionScroll>listeObjetsUtilisables.Count-1) //Si position non valide, on va dans la case "null" : non équipé 
 				positionScroll=0; //On redescend la boucle
 			ChangerObjetActuel(listeObjetsUtilisables[positionScroll]);
 			return;
