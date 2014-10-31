@@ -43,6 +43,11 @@ public class Inventaire : MonoBehaviour {
 	void Update () {
 		VerifierTouches ();
 	}
+	
+	void OnGUI() {
+		// The current weapon is always displayed
+		GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
+	}
 
 	void ChangerObjetActuel(GameObject objet_) {
 		//On désactive l'objet actuel s'il existe
@@ -116,14 +121,15 @@ public class Inventaire : MonoBehaviour {
 			}
 		}
 
-		// handling key combination (alt+leftArrow or rightArrow) to change "weapon"
-		bool isAltDown = Input.GetKey (KeyCode.LeftAlt) || Input.GetKey (KeyCode.RightAlt);
+		// Current weapon is also changed when tab or Shift+Tab pressed
 		int direction = 0;
-		if (Input.GetKeyUp ("left"))
+		// Combo Shift+Tab
+		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab))
 			direction = -1;
-		if (Input.GetKeyUp ("right"))
-			direction = 1;
-		if (isAltDown && (direction == -1 || direction == 1)) {
+		// When only Tab is pressed
+		else if( Input.GetKeyUp (KeyCode.Tab) )
+			direction = +1;
+		if (direction == -1 || direction == 1) {
 			positionScroll = NewPositionScroll (direction);
 			ChangerObjetActuel (listeObjetsUtilisables [positionScroll]);
 		}
