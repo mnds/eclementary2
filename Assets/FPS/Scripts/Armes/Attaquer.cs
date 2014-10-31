@@ -14,7 +14,9 @@ public class Attaquer : MonoBehaviour {
 	public Transform placementFinal;
 	Vector3 positionFinale;
 	Quaternion rotationFinale;
-	
+
+	public Texture2D vignette; // utilisée pour la représentation de l'objet sur l'écran d'inventaire
+
 	public float tempsInitialVersFinal = 1f; //Temps initial->final
 	public float tempsFinalVersInitial = 1f; //Temps final->initial
 	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
