@@ -43,6 +43,11 @@ public class Inventaire : MonoBehaviour {
 	void Update () {
 		VerifierTouches ();
 	}
+	
+	void OnGUI() {
+		// The current weapon is always displayed
+		GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
+	}
 
 	void ChangerObjetActuel(GameObject objet_) {
 		//On désactive l'objet actuel s'il existe
@@ -63,6 +68,24 @@ public class Inventaire : MonoBehaviour {
 			lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
 	}
 
+	/*
+	 * Finds the new value of PositionScroll, according to listeObjetsUtilisables
+	 * direction: relative to positionScroll: -1 to move in negatively, +1 to move positively (0 => no change)
+	 * return: positionScroll-1 or positionScroll+1 if possible,
+	 * or extremum position (0 or the size of listeObjetsUtilisables minus 1) after looping
+	 */
+	int NewPositionScroll( int direction ) {
+		int newPosition = positionScroll + direction ; //temporary position
+
+		// loop if no reachable position
+		if (newPosition < 0 )
+			newPosition = listeObjetsUtilisables.Count - 1;
+		else if (newPosition > listeObjetsUtilisables.Count - 1)
+			newPosition = 0;
+
+		return newPosition;
+	}
+
 	void VerifierTouches()
 	{
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
@@ -76,33 +99,39 @@ public class Inventaire : MonoBehaviour {
 		
 		//On ne peut pas changer d'arme si l'objet est en train d'attaquer ou d'etre lance
 		if (Input.GetButtonDown ("ScrollItemsDown") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
-			positionScroll--;
-
-			if(positionScroll<0||positionScroll>listeObjetsUtilisables.Count-1) //Si position non valide, on va dans la case "null" : non équipé 
-				positionScroll=listeObjetsUtilisables.Count-1; //On remonte la boucle
+			positionScroll = NewPositionScroll(-1); // searching new position in the negative sense
 			ChangerObjetActuel(listeObjetsUtilisables[positionScroll]);
 			return;
 		}
 		if (Input.GetButtonDown ("ScrollItemsUp") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
-			positionScroll++;
-			if(positionScroll<0||positionScroll>listeObjetsUtilisables.Count-1) //Si position non valide, on va dans la case "null" : non équipé 
-				positionScroll=0; //On redescend la boucle
+			positionScroll = NewPositionScroll(+1); // // searching new position in the positive sense
 			ChangerObjetActuel(listeObjetsUtilisables[positionScroll]);
 			return;
 		}
+
+		// Cette méthode ne marche pas sur tous les claviers, les azerty sur mac notamment
 		KeyCode nombre = KeyCode.Alpha1;
 		for(int i=0;i<9;i++) {
-			if(Input.GetKey(nombre )) {
+			if(Input.GetKey(nombre+i)) {
 				positionScroll=i;
 				if (positionScroll >= 0 && positionScroll < listeObjetsUtilisables.Count) {
 					ChangerObjetActuel (listeObjetsUtilisables [positionScroll]);
 					return;
 				}
 			}
-			else
-			{
-				nombre+=1;
-			}
+		}
+
+		// Current weapon is also changed when tab or Shift+Tab pressed
+		int direction = 0;
+		// Combo Shift+Tab
+		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab))
+			direction = -1;
+		// When only Tab is pressed
+		else if( Input.GetKeyUp (KeyCode.Tab) )
+			direction = +1;
+		if (direction == -1 || direction == 1) {
+			positionScroll = NewPositionScroll (direction);
+			ChangerObjetActuel (listeObjetsUtilisables [positionScroll]);
 		}
 
 		//Tester si un objet est dans le champ de vision

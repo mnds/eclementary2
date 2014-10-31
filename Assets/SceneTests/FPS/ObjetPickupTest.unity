@@ -629,8 +629,9 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1989799792}
   placementFinal: {fileID: 960203778}
-  tempsInitialVersFinal: .0500000007
-  tempsFinalVersInitial: .0500000007
+  vignette: {fileID: 2800000, guid: bb08770347f9448888f946ce23974537, type: 3}
+  tempsInitialVersFinal: 7
+  tempsFinalVersInitial: 7
 --- !u!23 &593158234
 Renderer:
   m_ObjectHideFlags: 0
@@ -925,8 +926,9 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1837462400}
   placementFinal: {fileID: 1838258387}
-  tempsInitialVersFinal: .400000006
-  tempsFinalVersInitial: .5
+  vignette: {fileID: 2800000, guid: aff16163b325d490ebaa1f6fbe1b0284, type: 3}
+  tempsInitialVersFinal: 7
+  tempsFinalVersInitial: 7
 --- !u!65 &1003770969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1008,11 +1010,63 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
       propertyPath: tempsInitialVersFinal
-      value: .0500000007
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
       propertyPath: tempsFinalVersInitial
-      value: .0500000007
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: vignette
+      value: 
+      objectReference: {fileID: 2800000, guid: bb08770347f9448888f946ce23974537, type: 3}
+    - target: {fileID: 11400010, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: vignette
+      value: 
+      objectReference: {fileID: 2800000, guid: 7a5d27738f7a0479e849f3bfcabb17df, type: 3}
+    - target: {fileID: 11400004, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: vignette
+      value: 
+      objectReference: {fileID: 2800000, guid: 00366be0842654653bad7242306ebb4c, type: 3}
+    - target: {fileID: 11400022, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: vignette
+      value: 
+      objectReference: {fileID: 2800000, guid: bb08770347f9448888f946ce23974537, type: 3}
+    - target: {fileID: 11400030, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: vignette
+      value: 
+      objectReference: {fileID: 2800000, guid: aff16163b325d490ebaa1f6fbe1b0284, type: 3}
+    - target: {fileID: 11400010, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsInitialVersFinal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsFinalVersInitial
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsInitialVersFinal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsFinalVersInitial
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsInitialVersFinal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsFinalVersInitial
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400030, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsInitialVersFinal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400030, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
+      propertyPath: tempsFinalVersInitial
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 895d7270a15fd504eabddefc77c72f9a, type: 2}
@@ -1067,8 +1121,9 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 641722495}
   placementFinal: {fileID: 493182024}
-  tempsInitialVersFinal: .100000001
-  tempsFinalVersInitial: .100000001
+  vignette: {fileID: 2800000, guid: 00366be0842654653bad7242306ebb4c, type: 3}
+  tempsInitialVersFinal: 7
+  tempsFinalVersInitial: 7
 --- !u!23 &1296266723
 Renderer:
   m_ObjectHideFlags: 0
@@ -1414,8 +1469,9 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1112654684}
   placementFinal: {fileID: 232627947}
-  tempsInitialVersFinal: .100000001
-  tempsFinalVersInitial: .100000001
+  vignette: {fileID: 2800000, guid: 7a5d27738f7a0479e849f3bfcabb17df, type: 3}
+  tempsInitialVersFinal: 7
+  tempsFinalVersInitial: 7
 --- !u!54 &1713625103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1844,8 +1900,9 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   placementInitial: {fileID: 356258628}
   placementFinal: {fileID: 1535444880}
-  tempsInitialVersFinal: .5
-  tempsFinalVersInitial: 1
+  vignette: {fileID: 2800000, guid: bb08770347f9448888f946ce23974537, type: 3}
+  tempsInitialVersFinal: 7
+  tempsFinalVersInitial: 7
 --- !u!23 &2029587620
 Renderer:
   m_ObjectHideFlags: 0
