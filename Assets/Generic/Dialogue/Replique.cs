@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file      Replique.cs
  * \author    
  * \version   1.0
@@ -34,7 +34,7 @@ public class Replique : MonoBehaviour {
 
 	//Actions speciales
 	public Replique repliqueSuivante; //Si une réplique doit etre declenchee juste apres, c'est ici qu'elle est stockée
-
+	public List<Replique> repliquesPrecedentes; //Les répliques possibles du joueur. Attention, ne pas mettre à la fois une réplique dans repSuivante et repPrecedentes ! Lorsqu'on clique sur un objet, les répliques à choisir sont celles-ci. Agir en conséquence !
 	
 	void Awake () {
 		accessible = accessibleDebut; //Si accessible, Dialogue::start se charge de le mettre dans le dialogue associé
@@ -42,6 +42,7 @@ public class Replique : MonoBehaviour {
 
 	void Start () {
 		sourceDeLaReplique = gameObject.GetComponent<AudioSource> ();
+		ConfigurerRepliquesPrecedentes ();
 	}
 
 	void Update () {
@@ -55,9 +56,17 @@ public class Replique : MonoBehaviour {
 		}
 	}
 
+	// Chaque replique précédente doit avoir cette replique comme replique suivante.
+	public void ConfigurerRepliquesPrecedentes () {
+		foreach (Replique replique in repliquesPrecedentes)
+			replique.SetRepliqueSuivante (this);
+	}
+
 	public void Lire () {
 		if (!accessible) return; //Si ce n'est pas accessible, on laisse tomber
 
+		DialogueManager.repliqueActuelle = this;
+			//On lit la replique
 		enCours = true; //Son en cours
 		dialogue.SetRepliqueActuelle (this); //On dit au dialogue qu'on est la réplique actuelle
 		tempsDepuisLecture = 0; //Remise à 0
@@ -70,6 +79,8 @@ public class Replique : MonoBehaviour {
 	//Arrete la lecture de l'objet ; le son associé est coupé, et on effectue les actions nécessaires à continuer le dialogue.
 	public void ArreterLecture () {
 		if (!accessible) return; //Si ce n'est pas accessible, on laisse tomber
+
+		DialogueManager.repliqueActuelle = null;
 
 		if(sourceDeLaReplique) //Le son est arreté
 			sourceDeLaReplique.Stop ();
@@ -94,6 +105,14 @@ public class Replique : MonoBehaviour {
 
 	public void RemoveRepliqueAccessible (Replique replique) {
 		repliquesRenduesAccessibles.Remove (replique);
+	}
+
+	public void AddRepliquePrecedente (Replique replique) {
+		repliquesPrecedentes.Add (replique);
+	}
+	
+	public void RemoveRepliquePrecedente (Replique replique) {
+		repliquesPrecedentes.Remove (replique);
 	}
 
 	public void AddRepliqueInaccessible (Replique replique) {
@@ -185,4 +204,13 @@ public class Replique : MonoBehaviour {
 	public Replique GetRepliqueSuivante () {
 		return repliqueSuivante;
 	}
+
+	public void SetRepliquesPrecedentes (List<Replique> repliquesPrecedentes_) {
+		repliquesPrecedentes = repliquesPrecedentes_;
+	}
+	
+	public List<Replique> GetRepliquesPrecedentes () {
+		return repliquesPrecedentes;
+	}
+
 }

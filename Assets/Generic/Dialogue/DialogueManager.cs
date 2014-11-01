@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
+//Ne sert à rien pour l'instant. Il pourrait servir à savoir quelle est la réplique actuelle, si jamais on voulait
+//ne permettre d'avoir qu'une seule réplique.
+//On désactiverait alors fpcscript pour que le joueur soit incapable de bouger pendant un dialogue.
 public class DialogueManager : MonoBehaviour {
+
+	static public Replique repliqueActuelle; //La réplique en train d'etre jouée sur toute la 
+	public FPCClassic fpcscript; //Le script du joueur. Si une réplique est en train d'etre jouée, il est bloqué.
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +19,5 @@ public class DialogueManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
 }
