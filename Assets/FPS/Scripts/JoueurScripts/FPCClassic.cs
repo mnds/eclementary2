@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FirstPersonController : MonoBehaviour {
+public class FPCClassic : MonoBehaviour {
 	CharacterController cc;
 	//Sprint
 	public float vitesseMarche = 6.0f; //Vitesse maximale de marche

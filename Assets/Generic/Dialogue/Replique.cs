@@ -15,10 +15,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class Replique : MonoBehaviour {
-	bool enCours; //Si la replique est en train d'etre utilisee
+	public bool enCours; //Si la replique est en train d'etre utilisee
 	public string texteReplique; //Le texte associé à la réplique
-	public AudioSource sourceDeLaReplique; //D'où le son produit par la réplique va venir
+	AudioSource sourceDeLaReplique; //D'où le son produit par la réplique va venir
 	public List<AudioClip> sonReplique; //Le son associé à la réplique. C'est une liste au cas où on voudrait mettre par exemple plusieurs intonations.
 	AudioClip sonRepliqueActuel;
 
@@ -31,18 +32,16 @@ public class Replique : MonoBehaviour {
 	public List<Replique> repliquesRenduesInaccessibles; //Après activation de la replique, des repliques sont rendues inaccessibles
 	Dialogue dialogue; //Le dialogue auquel est associé la réplique. Est obligatoire.
 
+	//Actions speciales
 	public Replique repliqueSuivante; //Si une réplique doit etre declenchee juste apres, c'est ici qu'elle est stockée
 
-	void Start () {
-		/*	Test pour vérifier que les repliques s'enchainent. Prendre une replique activable au début, desactivation auto, qui rend accessible une nouvelle replique, qui est aussi la replique suivante.
-		 *  Mettre ces deux répliques dans un dialogue. Tester avec les deux lignes qui suivent. */
-		if (accessibleDebut)
-			Lire ();
-		/* fin test */
+	
+	void Awake () {
+		accessible = accessibleDebut; //Si accessible, Dialogue::start se charge de le mettre dans le dialogue associé
 	}
 
-	void Awake () {
-		accessible = accessibleDebut;
+	void Start () {
+		sourceDeLaReplique = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update () {
@@ -84,6 +83,7 @@ public class Replique : MonoBehaviour {
 		//Changer les flags des répliques associées
 		RendreRepliquesAccessibles ();
 		RendreRepliquesInaccessibles ();
+		//Si une replique doit etre lue juste apres celle-ci, on la lance
 		if (repliqueSuivante)
 			repliqueSuivante.Lire ();
 	}

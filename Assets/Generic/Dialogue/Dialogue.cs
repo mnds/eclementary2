@@ -14,6 +14,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Dialogue : MonoBehaviour {
+	bool interactionPossible; //True si on peut interagir avec l'objet
+	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet
+
 	public List<Replique> repliquesObjet; //Liste de toutes les repliques de l'objet
 	List<Replique> repliquesAccessibles;
 	Replique repliqueActuelle; //Replique en train d'etre lue par l'objet
@@ -25,13 +28,15 @@ public class Dialogue : MonoBehaviour {
 			if(replique.GetAccessible()) //Si la replique est accessible
 				AddRepliqueAccessible(replique);
 		}
+		//On regarde si des repliques sont accessibles. Selon la reponse, interactionPossible change
+		interactionPossible = repliquesAccessibles.Count > 0;
 	}
 
 	//Ajout de repliques à l'objet par code
 	public void AddReplique (Replique replique) {
 		repliquesObjet.Add (replique);
 		if (replique.GetDialogue () != null) //Si la réplique avait un dialogue avant
-						replique.GetDialogue ().RemoveReplique (replique); //On lui enlève
+			replique.GetDialogue ().RemoveReplique (replique); //On lui enlève
 		replique.SetDialogue (this); //Et on change le dialogue
 	}
 
@@ -42,20 +47,19 @@ public class Dialogue : MonoBehaviour {
 
 	//Ajout de repliques accessibles
 	public void AddRepliqueAccessible (Replique replique) {
-		replique.SetAccessible (true);
 		repliquesAccessibles.Add (replique);
+		interactionPossible = repliquesAccessibles.Count > 0; //Si au moins une phrase est accessible, on peut interagir
 	}
 	
 	public void RemoveRepliqueAccessible (Replique replique) {
-		replique.SetAccessible (false);
 		repliquesAccessibles.Remove (replique);
+		interactionPossible = repliquesAccessibles.Count > 0; //Si aucune phrase n'est accessible, impossible d'interagir
 	}
 
 
 	public void ArreterRepliqueActuelle () {
 		if(!repliqueActuelle) return; //S'il n'y a pas de replique actuelle, on n'a rien à faire
 		repliqueActuelle.ArreterLecture (); //On arrete la lecture
-		repliqueActuelle = null; //Plus de réplique actuelle
 	}
 
 	public void LancerReplique(Replique replique) {
@@ -89,6 +93,22 @@ public class Dialogue : MonoBehaviour {
 	
 	public Replique GetRepliqueActuelle () {
 		return repliqueActuelle;
+	}
+
+	public void SetInteractionPossible (bool interactionPossible_) {
+		interactionPossible = interactionPossible_;
+	}
+	
+	public bool GetInteractionPossible () {
+		return interactionPossible;
+	}
+
+	public void SetDistanceMinimaleInteraction (float distanceMinimaleInteraction_) {
+		distanceMinimaleInteraction = distanceMinimaleInteraction_;
+	}
+	
+	public float GetDistanceMinimaleInteraction () {
+		return distanceMinimaleInteraction;
 	}
 }
  
