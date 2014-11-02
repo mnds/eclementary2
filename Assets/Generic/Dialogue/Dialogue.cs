@@ -13,6 +13,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class Dialogue : MonoBehaviour {
 	bool interactionPossible; //True si on peut interagir avec l'objet
 	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet

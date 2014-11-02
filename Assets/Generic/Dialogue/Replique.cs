@@ -15,7 +15,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(AudioSource))]
 public class Replique : MonoBehaviour {
 	public bool enCours; //Si la replique est en train d'etre utilisee
 	public string texteReplique; //Le texte associé à la réplique
@@ -41,7 +40,6 @@ public class Replique : MonoBehaviour {
 	}
 
 	void Start () {
-		sourceDeLaReplique = gameObject.GetComponent<AudioSource> ();
 		ConfigurerRepliquesPrecedentes ();
 	}
 
@@ -64,6 +62,9 @@ public class Replique : MonoBehaviour {
 
 	public void Lire () {
 		if (!accessible) return; //Si ce n'est pas accessible, on laisse tomber
+
+		//On cherche la source du son à émettre
+		sourceDeLaReplique = dialogue.gameObject.GetComponent<AudioSource> ();
 
 		DialogueManager.repliqueActuelle = this;
 			//On lit la replique
