@@ -46,7 +46,9 @@ public class Inventaire : MonoBehaviour {
 	
 	void OnGUI() {
 		// The current weapon is always displayed
-		GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
+		if(attaquerObjetActuel)
+			if(attaquerObjetActuel.vignette)
+				GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
 	}
 
 	void ChangerObjetActuel(GameObject objet_) {

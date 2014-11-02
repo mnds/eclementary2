@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour {
 
 	static public Replique repliqueActuelle; //La réplique en train d'etre jouée sur toute la 
 	public FPCClassic fpcscript; //Le script du joueur. Si une réplique est en train d'etre jouée, il est bloqué.
-
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -20,4 +20,25 @@ public class DialogueManager : MonoBehaviour {
 	
 	}
 
+	void OnGUI () {
+		if (DebugManager.mode == ModesJeu.Normal)
+			OnGUINormal ();
+		else
+			OnGUIDebug ();
+	
+	}
+
+	void OnGUINormal () {
+		string texteReplique = "";
+		if (repliqueActuelle)
+			texteReplique = repliqueActuelle.GetTexteReplique ();
+		GUI.Label (new Rect (25, 25, 800, 35), texteReplique);
+	}
+
+	void OnGUIDebug () {
+		string texteReplique = "";
+		if (repliqueActuelle)
+			texteReplique = repliqueActuelle.GetTexteReplique ();
+		GUI.Label (new Rect (25, 25, 800, 35), texteReplique);
+	}
 }
