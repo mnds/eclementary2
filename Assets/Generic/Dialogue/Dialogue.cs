@@ -22,10 +22,13 @@ public class Dialogue : MonoBehaviour {
 	List<Replique> repliquesAccessibles;
 	Replique repliqueActuelle; //Replique en train d'etre lue par l'objet
 	List<Replique> repliquesPrecedentes; //Les répliques possibles du joueur. Attention, ne pas mettre à la fois une réplique dans repSuivante et repPrecedentes ! Lorsqu'on clique sur un objet, les répliques à choisir sont celles-ci. Agir en conséquence !
-	
+
+	DialogueManager dm;
+
 	void Start () {
 		RemplirRepliquesAccessibles ();
 		RemplirRepliquesPrecedentes ();
+		dm = GameObject.Find ("DialogueManager").GetComponent<DialogueManager>();
 	}
 
 	/**
@@ -44,6 +47,7 @@ public class Dialogue : MonoBehaviour {
 		{
 			//Afficher les trucs
 			//Pour l'instant, on prend une replique precedente au hasard et on la jette
+			dm.DemandeSelectionPhrase(repliquesPrecedentes);
 			Replique repliqueLancee; //Contient la replique à lancer
 			int random = Random.Range (0,repliquesPrecedentes.Count);
 			repliquesPrecedentes[random].Lire ();
@@ -164,5 +168,8 @@ public class Dialogue : MonoBehaviour {
 		return repliquesPrecedentes;
 	}
 
+	public DialogueManager GetDialogueManager() {
+		return dm;
+	}
 }
  

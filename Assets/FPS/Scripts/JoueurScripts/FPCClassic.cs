@@ -9,7 +9,6 @@ public class FPCClassic : MonoBehaviour {
 	public float vitesseCourse = 12.0f; //Vitesse de course
 	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
 
 	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	//Sensibilités pour la vitesse
@@ -26,6 +25,11 @@ public class FPCClassic : MonoBehaviour {
 	public float characterControllerHeightDebout = 2.0f;
 	public float characterControllerHeightAccroupi = 1.2f;
 
+	//Bypass
+	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
+	bool rendreImmobile = false; //Si true, les touches directionnelles sont bloquées
+	bool bloquerTete = false; //La camera ne bouge plus
+	bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +39,16 @@ public class FPCClassic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!freeze) { //Si on peut bouger
+			Sprint (); //On regarde la vitesse à donner au joueur
+			BougerTete(); //On change la caméra
+			Crouch (); //Hauteur des yeux
+			MouvementCorps(); //Motion du joueur
+		}
+	}
 
+	//Change la vitesse du mouvement
+	void Sprint () {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible)
 		{
@@ -53,20 +66,44 @@ public class FPCClassic : MonoBehaviour {
 			if(jauge<10.0f) jauge+=Time.deltaTime/3;
 		}
 		//Debug.Log (jauge);
+	}
+
+	void BougerTete () {
+		if(bloquerTete) return; //Si on ne peut pas bouger la camera
 
 		//Rotation latérale
 		float rotationLaterale = Input.GetAxis ("Mouse X") * vitesseRotation;
 		transform.Rotate (0, rotationLaterale, 0);
-
+		
 		//Rotation verticale
 		rotationVerticale += Input.GetAxis ("Mouse Y") * vitesseRotation;
 		rotationVerticale = Mathf.Clamp (rotationVerticale, -angleVerticalMax, angleVerticalMax);
 		Camera.main.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
+	}
+
+	void Crouch () {
+		//S'accroupir
+		if (Input.GetButtonDown("Crouch"))
+		{
+			if(cc.height==characterControllerHeightDebout) {
+				cc.height=characterControllerHeightAccroupi;
+			}
+			else { //On remet le joueur debout en faisant garde à ce qu'il ne passe pas à travers le terrain
+				float nouveauY = cc.transform.position.y + (characterControllerHeightDebout-characterControllerHeightAccroupi)/2; //Pour ne pas tomber à travers le décor
+				cc.transform.position = new Vector3 (cc.transform.position.x, nouveauY, cc.transform.position.z);
+				cc.height=characterControllerHeightDebout;
+			}
+		}
+
+	}
+
+	void MouvementCorps () {
+		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 
 		//Mouvement
 		float vitesseVerticale = Input.GetAxis ("Vertical") * vitesseMouvement;
 		float vitesseHorizontale = Input.GetAxis ("Horizontal") * vitesseMouvement;
-
+		
 		//Saut
 		if(!cc.isGrounded) //Si on est en l'air, on augmente la vitesse de chute
 		{
@@ -84,24 +121,39 @@ public class FPCClassic : MonoBehaviour {
 			nombreSautsFaits++; //On augmente le nombre de sauts déjà faits
 			velociteVerticale = vitesseSaut; //On se met en vitesse de saut
 		}
-
-		//S'accroupir
-		if (Input.GetButtonDown("Crouch"))
-		{
-			if(cc.height==characterControllerHeightDebout) {
-				cc.height=characterControllerHeightAccroupi;
-			}
-			else { //On remet le joueur debout en faisant garde à ce qu'il ne passe pas à travers le terrain
-				float nouveauY = cc.transform.position.y + (characterControllerHeightDebout-characterControllerHeightAccroupi)/2; //Pour ne pas tomber à travers le décor
-				cc.transform.position = new Vector3 (cc.transform.position.x, nouveauY, cc.transform.position.z);
-				cc.height=characterControllerHeightDebout;
-			}
-		}
-
+		
+		
 		Vector3 vitesse = new Vector3 (vitesseHorizontale, velociteVerticale ,vitesseVerticale);
 		//Coupler la rotation avec le mouvement
 		vitesse = transform.rotation * vitesse;
-
+		
 		cc.Move (vitesse*Time.deltaTime); //On multiplie la vitesse par la temps écoulé depuis le dernier appel à Update
 	}
+
+
+	//Set/Get
+	public void SetRendreImmobile (bool rendreImmobile_) {
+		rendreImmobile = rendreImmobile_;
+	}
+	
+	public bool GetRendreImmobile () {
+		return rendreImmobile;
+	}
+	
+	public void SetBloquerTete (bool bloquerTete_) {
+		bloquerTete = bloquerTete_;
+	}
+	
+	public bool GetBloquerTete () {
+		return bloquerTete;
+	}
+
+	public void SetFreeze (bool freeze_) {
+		freeze = freeze_;
+	}
+	
+	public bool GetFreeze () {
+		return freeze;
+	}
+
 }

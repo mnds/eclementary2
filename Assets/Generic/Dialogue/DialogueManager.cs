@@ -7,17 +7,24 @@ using System.Collections.Generic;
 //On désactiverait alors fpcscript pour que le joueur soit incapable de bouger pendant un dialogue.
 public class DialogueManager : MonoBehaviour {
 
-	static public Replique repliqueActuelle; //La réplique en train d'etre jouée sur toute la 
+	Replique repliqueActuelle; //La réplique en train d'etre jouée sur toute la 
 	public FPCClassic fpcscript; //Le script du joueur. Si une réplique est en train d'etre jouée, il est bloqué.
-	
-	// Use this for initialization
-	void Start () {
-	
+
+	//Affichage des repliques selectionnables
+	bool enCoursDeSelection = false ; //Si on est en train d'afficher les répliques à l'écran, true
+	List<Replique> repliquesASelectionner; //Les répliques sélectionnables par le joueur
+
+	public void DemandeSelectionPhrase (List<Replique> repliques)
+	{
+		if (repliques == null || repliques.Count <= 0 || enCoursDeSelection)
+			return;
+		repliquesASelectionner = repliques;
+		enCoursDeSelection = true;
+		fpcscript.SetFreeze (true);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+
 	}
 
 	void OnGUI () {
@@ -40,5 +47,15 @@ public class DialogueManager : MonoBehaviour {
 		if (repliqueActuelle)
 			texteReplique = repliqueActuelle.GetTexteReplique ();
 		GUI.Label (new Rect (25, 25, 800, 35), texteReplique);
+	}
+
+	void LancerReplique(Replique replique) {
+		repliquesASelectionner = null;
+		enCoursDeSelection = false;
+		fpcscript.SetFreeze (false);
+	}
+
+	public void SetRepliqueActuelle (Replique ra) {
+		repliqueActuelle = ra;
 	}
 }

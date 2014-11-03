@@ -66,7 +66,7 @@ public class Replique : MonoBehaviour {
 		//On cherche la source du son à émettre
 		sourceDeLaReplique = dialogue.gameObject.GetComponent<AudioSource> ();
 
-		DialogueManager.repliqueActuelle = this;
+		dialogue.GetDialogueManager().SetRepliqueActuelle(this);
 			//On lit la replique
 		enCours = true; //Son en cours
 		dialogue.SetRepliqueActuelle (this); //On dit au dialogue qu'on est la réplique actuelle
@@ -81,7 +81,7 @@ public class Replique : MonoBehaviour {
 	public void ArreterLecture () {
 		if (!accessible) return; //Si ce n'est pas accessible, on laisse tomber
 
-		DialogueManager.repliqueActuelle = null;
+		dialogue.GetDialogueManager ().SetRepliqueActuelle (null);
 
 		if(sourceDeLaReplique) //Le son est arreté
 			sourceDeLaReplique.Stop ();

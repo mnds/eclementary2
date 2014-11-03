@@ -22,7 +22,7 @@ public class DebugManager : MonoBehaviour {
 					commandeActuelle = commandeActuelle.Substring(0, commandeActuelle.Length - 1);
 				return;
 			}
-			if (c == "\n"[0] || c == "\r"[0]) {
+			if (c == "\n"[0] || c == "\r"[0]) { //Si on fait entrée ou return
 				Debug.Log("Commande entrée : " + commandeActuelle);
 				VerifierCombinaison();
 				commandeActuelle=""; //On remet à 0 la commande
@@ -55,7 +55,7 @@ public class DebugManager : MonoBehaviour {
 
 	void OnGUI () {
 		if(mode==ModesJeu.Debug) {
-			GUI.Label (new Rect (0, 0, 100, 35), "DebugMode");
+			GUI.Label (new Rect (0, 0, 100, 35), "DebugMode"); //On écrit qu'on est en mode debug
 		}
 	}
 
