@@ -8,6 +8,9 @@ public class MazeEnemy : MonoBehaviour {
 	MazeManager mazeManager;
 	bool labyrintheEnCoursDeRegeneration = false; //Lorsque le labyrinthe change ses murs, il ne faut pas lancer la coroutine
 
+	public float tempsChuteInduit = 0.3f;
+	public float tempsReveilInduit = 1.5f;
+
 	// Use this for initialization
 	void Start () {
 		cible = GameObject.Find ("First Person Controller");
@@ -29,8 +32,9 @@ public class MazeEnemy : MonoBehaviour {
 			//Debug.DrawLine(transform.position, hit.point);
 			if(hit.collider==cible.collider && cameraScreamer.camera.enabled==false)
 			{
-				if(!labyrintheEnCoursDeRegeneration)
-					StartCoroutine(ActiverCamera());
+				if(!labyrintheEnCoursDeRegeneration && !cible.GetComponent<AnimationChute>().enChute)
+					//StartCoroutine(ActiverCamera());
+					StartCoroutine(Chute());
 			}
 		}
 	}
@@ -52,4 +56,10 @@ public class MazeEnemy : MonoBehaviour {
 		mazeManager.PlacerPersonnages();
 	}
 
+	public IEnumerator Chute () {
+		AnimationChute ac = cible.GetComponent<AnimationChute>();
+		ac.Chuter (tempsChuteInduit, tempsReveilInduit);
+		yield return new WaitForSeconds((tempsChuteInduit+tempsReveilInduit)/2);
+		mazeManager.PlacerPersonnages ();
+	}
 }
