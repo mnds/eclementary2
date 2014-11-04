@@ -19,12 +19,16 @@ public class Attaquer : MonoBehaviour {
 
 	public float tempsInitialVersFinal = 1f; //Temps initial->final
 	public float tempsFinalVersInitial = 1f; //Temps final->initial
+	float tFVISiCollision; //Si retour anticipé
+
 	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
-	
+	bool infligerDegats = false; //true si on peut infliger des degats
+
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
 	
 	void Start() {
+		tFVISiCollision = tempsFinalVersInitial;
 		//Initialisation de lancer
 		GameObject objet = gameObject; //On va parcourir les parents de gameObject pour trouver les scripts
 		lancerGameObject = objet.GetComponent<Lancer>();
@@ -46,6 +50,7 @@ public class Attaquer : MonoBehaviour {
 		{
 			gameObject.GetComponent<Collider>().isTrigger=true;
 			enTrainDAttaquer=true;
+			infligerDegats = true;
 		}
 		if(enTrainDAttaquer)
 		{
@@ -66,7 +71,7 @@ public class Attaquer : MonoBehaviour {
 				{
 					transform.position = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime/tempsFinalVersInitial;
+					avancementAnim = avancementAnim + Time.deltaTime/tFVISiCollision;
 				}
 			}
 			else //On a fini
@@ -88,10 +93,11 @@ public class Attaquer : MonoBehaviour {
 	void OnTriggerEnter (Collider objet) {
 		if(enCoursDeRetour) return;
 		if(bypass) return;
-		
+
+		infligerDegats = false;
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
-		
+
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
 		if (enTrainDAttaquer && !enCoursDeRetour) {
 			//On cherche si l'objet ou un de ses parents a de la vie

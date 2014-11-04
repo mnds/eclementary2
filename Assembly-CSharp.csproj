@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
+     <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
+     <Compile Include="Assets\Campus\Scripts\LumiereSoleil.cs" />
+     <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
@@ -70,6 +73,7 @@
      <Compile Include="Assets\Generic\Scripts\Autodestruction.cs" />
      <Compile Include="Assets\Generic\Scripts\BlobShadowFollow.cs" />
      <Compile Include="Assets\Generic\Scripts\Health.cs" />
+     <Compile Include="Assets\Generic\Scripts\SceneTransitor.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeCameraScreamer.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeDeathZone.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeEnemy.cs" />
@@ -85,6 +89,7 @@
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Generic\Dialogue\Readme.txt" />
  <Reference Include="Destruction">
