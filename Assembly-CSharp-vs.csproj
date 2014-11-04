@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
+     <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
+     <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Balle.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\DetonateOnHit.cs" />
@@ -75,7 +78,10 @@
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTravel.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTriggerManager.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeWallManager.cs" />
+     <Compile Include="Assets\_IMPORTED\Gem Shader\Example\GemSpawner.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\_IMPORTED\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\_IMPORTED\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

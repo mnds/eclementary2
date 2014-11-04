@@ -60,13 +60,13 @@ public class Attaquer : MonoBehaviour {
 				{
 					transform.position = Vector3.Lerp(positionInitiale, positionFinale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationInitiale,rotationFinale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime*tempsInitialVersFinal;
+					avancementAnim = avancementAnim + Time.deltaTime/tempsInitialVersFinal;
 				}
 				else //On revient au début
 				{
 					transform.position = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime*tempsFinalVersInitial;
+					avancementAnim = avancementAnim + Time.deltaTime/tempsFinalVersInitial;
 				}
 			}
 			else //On a fini
