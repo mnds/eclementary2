@@ -11,6 +11,7 @@ public class FPCClassic : MonoBehaviour {
 	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
 
 	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
+	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse
 	public float vitesseRotation = 3.0f; //Liée à la sensibilité de la souris
 	public float vitesseSaut = 7.0f;
@@ -126,7 +127,8 @@ public class FPCClassic : MonoBehaviour {
 		Vector3 vitesse = new Vector3 (vitesseHorizontale, velociteVerticale ,vitesseVerticale);
 		//Coupler la rotation avec le mouvement
 		vitesse = transform.rotation * vitesse;
-		
+		vitesseNonVerticaleActuelle = Mathf.Sqrt(vitesseHorizontale*vitesseHorizontale + vitesseVerticale*vitesseVerticale);
+
 		cc.Move (vitesse*Time.deltaTime); //On multiplie la vitesse par la temps écoulé depuis le dernier appel à Update
 	}
 
@@ -156,4 +158,11 @@ public class FPCClassic : MonoBehaviour {
 		return freeze;
 	}
 
+	public float GetVitesseNonVerticaleActuelle () {
+		return vitesseNonVerticaleActuelle;
+	}
+
+	public float GetVitesseMouvement () {
+		return vitesseMouvement;
+	}
 }
