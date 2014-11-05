@@ -1,0 +1,34 @@
+{
+	"repliques": [
+		{
+			"id":"0",
+			"texte":"",
+			"repSuivantes" : ["1"]
+		},
+		{
+			"id":"1",
+			"texte":"Bonjour !",
+			"repSuivantes": ["2", "-1"]
+		}
+		{
+			"id":"2",
+			"texte":"Bonjour ! Comment allez-vous ?",
+			"repSuivantes": ["3", "4"]
+		}
+		{
+			"id":"3",
+			"texte":"Bien et vous ?",
+			"repSuivantes": ["-1"]
+		}
+		{
+			"id":"4",
+			"texte":"Très mal !",
+			"repSuivantes": ["-1"]
+		}
+		{
+			"id":"-1",
+			"texte":"Au revoir !",
+			"repSuivantes":""
+		}
+	]
+}
