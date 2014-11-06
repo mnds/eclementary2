@@ -38,11 +38,6 @@ public class PorteSimple : MonoBehaviour {
 
 	void Update () {
 		MoveDoor ();
-		if (Input.GetButtonDown ("InteractionButton")) {
-			Debug.Log(interactive);
-			Interact ();
-
-				}
 	}
 
 	void MoveDoor () {
@@ -70,7 +65,7 @@ public class PorteSimple : MonoBehaviour {
 		}
 	}
 
-	void Interact () {
+	public void Interact () {
 		if (!interactive) return; //Cannot interact
 
 		if (opening) { //Si on était en train d'ouvrir, on ferme
