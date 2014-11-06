@@ -2,31 +2,49 @@
 	"repliques": [
 		{
 			"id":"0",
+			"goAssocie":"",
 			"texte":"",
 			"repSuivantes" : ["1"]
 		},
 		{
 			"id":"1",
+			"goAssocie":"JoueurDialogue",
 			"texte":"Bonjour !",
-			"repSuivantes": ["2", "-1"]
-		}
+			"repSuivantes": ["2"]
+		},
 		{
 			"id":"2",
+			"goAssocie":"pnjDialogue",
 			"texte":"Bonjour ! Comment allez-vous ?",
-			"repSuivantes": ["3", "4"]
-		}
+			"repSuivantes": ["21", "22"]
+		},
 		{
-			"id":"3",
+			"id":"21",
+			"goAssocie":"JoueurDialogue",
 			"texte":"Bien et vous ?",
-			"repSuivantes": ["-1"]
-		}
+			"repSuivantes": ["212"]
+		},
 		{
-			"id":"4",
-			"texte":"Très mal !",
+			"id":"22",
+			"goAssocie":"JoueurDialogue",
+			"texte":"Pas très en forme ! Et vous ?",
+			"repSuivantes": ["222"]
+		},
+		{
+			"id":"212",
+			"goAssocie":"pnjDialogue",
+			"texte":"Moi aussi je vais bien !",
 			"repSuivantes": ["-1"]
-		}
+		},
+		{
+			"id":"222",
+			"goAssocie":"pnjDialogue",
+			"texte":"Comment, vous aussi ?!",
+			"repSuivantes": ["-1"]
+		},
 		{
 			"id":"-1",
+			"goAssocie":"JoueurDialogue",
 			"texte":"Au revoir !",
 			"repSuivantes":""
 		}

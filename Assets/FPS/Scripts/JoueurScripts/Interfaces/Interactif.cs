@@ -2,5 +2,8 @@
 using System.Collections;
 
 public interface Interactif{
-	void Interagir();	
+	void DemarrerInteraction();
+	void ArreterInteraction();
+	void SetDistanceMinimaleInteraction (float distanceMinimaleInteraction_);
+	float GetDistanceMinimaleInteraction ();
 }

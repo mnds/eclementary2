@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 63132186}
-  - 114: {fileID: 63132187}
   m_Layer: 0
   m_Name: RCube:1
   m_TagString: Untagged
@@ -150,30 +149,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586744437}
   m_RootOrder: 0
---- !u!114 &63132187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 63132185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca2641d246c4c441ac94c468beb6e16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enCours: 0
-  texteReplique: RCube:1
-  sonReplique:
-  - {fileID: 8300000, guid: d175514d0b171df47bed5bd991b505d5, type: 3}
-  desactivationAutomatique: 1
-  accessibleDebut: 1
-  repliquesRenduesAccessibles:
-  - {fileID: 723316639}
-  repliquesRenduesInaccessibles:
-  - {fileID: 63132187}
-  repliqueSuivante: {fileID: 0}
-  repliquesPrecedentes:
-  - {fileID: 1887374961}
 --- !u!1 &262216662
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +159,6 @@ GameObject:
   - 4: {fileID: 262216666}
   - 143: {fileID: 262216665}
   - 114: {fileID: 262216664}
-  - 114: {fileID: 262216663}
   m_Layer: 0
   m_Name: JoueurDialogue
   m_TagString: Untagged
@@ -192,20 +166,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &262216663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: d778c6601d60c4f408d25d9c781ef5f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1148155062}
-  m_GameObject: {fileID: 262216662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 890958af4f7fef64ca138e3de6c447c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 994850344}
-  dialogueJoueur: {fileID: 1123336356}
 --- !u!114 &262216664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +286,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 586744437}
-  - 114: {fileID: 586744436}
   - 82: {fileID: 586744433}
   m_Layer: 0
   m_Name: DialogueHolder
@@ -393,21 +352,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &586744436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 586744432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a803fb7a64d2f4742823ae34afb00281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  repliquesObjet:
-  - {fileID: 63132187}
-  - {fileID: 723316639}
 --- !u!4 &586744437
 Transform:
   m_ObjectHideFlags: 0
@@ -430,7 +374,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 723316638}
-  - 114: {fileID: 723316639}
   m_Layer: 0
   m_Name: RCube:2
   m_TagString: Untagged
@@ -450,29 +393,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586744437}
   m_RootOrder: 1
---- !u!114 &723316639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 723316637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca2641d246c4c441ac94c468beb6e16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enCours: 0
-  texteReplique: RCube:2
-  sonReplique:
-  - {fileID: 8300000, guid: d175514d0b171df47bed5bd991b505d5, type: 3}
-  desactivationAutomatique: 1
-  accessibleDebut: 0
-  repliquesRenduesAccessibles: []
-  repliquesRenduesInaccessibles:
-  - {fileID: 723316639}
-  repliqueSuivante: {fileID: 0}
-  repliquesPrecedentes:
-  - {fileID: 1370067862}
 --- !u!1001 &773199997
 Prefab:
   m_ObjectHideFlags: 0
@@ -635,54 +555,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1001 &993055214
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.99212301
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 12.0035076
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1.53720903
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-      propertyPath: fpcscript
-      value: 
-      objectReference: {fileID: 262216664}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-  m_RootGameObject: {fileID: 1010929963}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &994850339
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,11 +647,10 @@ Camera:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-  m_PrefabInternal: {fileID: 993055214}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1010929965}
-  - 114: {fileID: 1010929964}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -787,24 +658,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1010929964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: bb314682cd6eba04fa45b4e23f8e39de,
-    type: 2}
-  m_PrefabInternal: {fileID: 993055214}
-  m_GameObject: {fileID: 1010929963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c02829ac46d64241bbc15cd8a2530c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpcscript: {fileID: 262216664}
 --- !u!4 &1010929965
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: bb314682cd6eba04fa45b4e23f8e39de, type: 2}
-  m_PrefabInternal: {fileID: 993055214}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010929963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.99212301, y: 12.0035076, z: -1.53720903}
@@ -820,7 +678,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1123336353}
-  - 114: {fileID: 1123336356}
   - 82: {fileID: 1123336354}
   m_Layer: 0
   m_Name: DialogueHolder
@@ -902,22 +759,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1123336356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: d778c6601d60c4f408d25d9c781ef5f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1148155062}
-  m_GameObject: {fileID: 1123336352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a803fb7a64d2f4742823ae34afb00281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  repliquesObjet:
-  - {fileID: 1887374961}
-  - {fileID: 1370067862}
 --- !u!1001 &1148155062
 Prefab:
   m_ObjectHideFlags: 0
@@ -960,16 +801,20 @@ Prefab:
     - target: {fileID: 11400006, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
       propertyPath: repliquesRenduesAccessibles.Array.data[0]
       value: 
-      objectReference: {fileID: 63132187}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
       propertyPath: repliquesRenduesAccessibles.Array.data[0]
       value: 
-      objectReference: {fileID: 63132187}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
       propertyPath: repliqueSuivante
       value: 
-      objectReference: {fileID: 63132187}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
+    - {fileID: 11400008, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
+    - {fileID: 11400006, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
+    - {fileID: 11400004, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d778c6601d60c4f408d25d9c781ef5f3, type: 2}
   m_RootGameObject: {fileID: 262216662}
   m_IsPrefabParent: 0
@@ -1022,7 +867,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1370067863}
-  - 114: {fileID: 1370067862}
   m_Layer: 0
   m_Name: RJoueurDialogue:2
   m_TagString: Untagged
@@ -1030,30 +874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1370067862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: d778c6601d60c4f408d25d9c781ef5f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1148155062}
-  m_GameObject: {fileID: 1370067861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca2641d246c4c441ac94c468beb6e16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enCours: 0
-  texteReplique: RJoueurDialogue:2
-  sonReplique:
-  - {fileID: 8300000, guid: 03b077f45b2d0cd44a8f44498576a49e, type: 3}
-  desactivationAutomatique: 0
-  accessibleDebut: 1
-  repliquesRenduesAccessibles:
-  - {fileID: 63132187}
-  repliquesRenduesInaccessibles:
-  - {fileID: 1370067862}
-  repliqueSuivante: {fileID: 0}
-  repliquesPrecedentes: []
 --- !u!4 &1370067863
 Transform:
   m_ObjectHideFlags: 0
@@ -1077,6 +897,7 @@ GameObject:
   - 33: {fileID: 1446629067}
   - 65: {fileID: 1446629066}
   - 23: {fileID: 1446629065}
+  - 114: {fileID: 1446629068}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1136,6 +957,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446629063}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1446629068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446629063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e8cea669d38497eb5983452d302603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomFichierRepliques: Generic/RepliquesDialogues/test.json
 --- !u!1 &1887374959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +977,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1887374960}
-  - 114: {fileID: 1887374961}
   m_Layer: 0
   m_Name: RJoueurDialogue:1
   m_TagString: Untagged
@@ -1164,27 +996,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1123336353}
   m_RootOrder: 0
---- !u!114 &1887374961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: d778c6601d60c4f408d25d9c781ef5f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1148155062}
-  m_GameObject: {fileID: 1887374959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca2641d246c4c441ac94c468beb6e16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enCours: 0
-  texteReplique: RJoueurDialogue:1
-  sonReplique:
-  - {fileID: 8300000, guid: aa44e36e9267a8b408d5b288e20f5926, type: 3}
-  desactivationAutomatique: 0
-  accessibleDebut: 1
-  repliquesRenduesAccessibles:
-  - {fileID: 63132187}
-  repliquesRenduesInaccessibles:
-  - {fileID: 1887374961}
-  repliqueSuivante: {fileID: 63132187}
-  repliquesPrecedentes: []
