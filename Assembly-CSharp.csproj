@@ -49,6 +49,8 @@
      <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereSoleil.cs" />
+     <Compile Include="Assets\Campus\Scripts\Porte.cs" />
+     <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
@@ -62,6 +64,7 @@
      <Compile Include="Assets\FPS\Scripts\Armes\RocketEngine.cs" />
      <Compile Include="Assets\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
+     <Compile Include="Assets\FPS\Scripts\JoueurScripts\InteractionEnvironnement.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\InteractionManager.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\Interfaces\Interactif.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\Inventaire.cs" />
@@ -93,6 +96,7 @@
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
+     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
      <None Include="Assets\Generic\Dialogue\Readme.txt" />
  <Reference Include="Destruction">
  <HintPath>/Users/mnds/eclementary2/Assets/_IMPORTED/Fracture - Box Destruction - Standard/Scripts/Destruction.dll</HintPath>
