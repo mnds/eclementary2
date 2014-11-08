@@ -8,6 +8,7 @@ public class Couleurs {
 	public Color ambreJaune () {return returnColor (240,195,0);}
 	public Color banane () {return returnColor (209, 182, 6);}
 	public Color bleuMinuit () {return returnColor (0,51,102);}
+	public Color blanc () {return returnColor (255,255,255);}
 	public Color bleuRoi () {return returnColor (49,140,231);}
 	public Color bronze () {return returnColor (97,60,17);}
 	public Color citron () {return returnColor (247,255,60);}
