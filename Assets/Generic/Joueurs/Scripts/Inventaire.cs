@@ -173,7 +173,8 @@ public class Inventaire : MonoBehaviour {
 					string nomObjet=objet.name;//nom de l'objet
 					for(int i=0;i<listeObjetsRecoltables.Count;i++)
 					{
-						if(nomObjet==listeObjetsRecoltables[i].name+"(Clone)") {
+						if(nomObjet==listeObjetsRecoltables[i].name+"(Clone)" //Pour l'instantiation
+						   ||nomObjet==listeObjetsRecoltables[i].name) {
 							ChangerMunitions(listeObjetsRecoltables[i],quantiteObjets[i]+1);
 							//recuperation de lancer
 							GameObject lancerGameObject = listeObjetsRecoltables[i]; //On va parcourir les parents de gameObject pour trouver les scripts
