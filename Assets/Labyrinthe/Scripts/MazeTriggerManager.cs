@@ -8,7 +8,6 @@ public class MazeTriggerManager : MonoBehaviour {
 	private MazeManager mazeManager; //Pour lui donner toutes les informations sur la position du fpc
 	private GameObject fpc; //Cherche le fpc de MazeManager, initialisé dans MazeManager
 	//Evenements
-	public Transform particulesExplosion; // Pour l'explosion
 	public AudioClip sonParticulesExplosion;
 	private GameObject labyrintheLampe; //La lampe
 	public AudioClip sonAllumageLampe;
@@ -40,12 +39,6 @@ public class MazeTriggerManager : MonoBehaviour {
 
 	//Explosion
 	private void DeclencherExplosion () {
-		//Créer l'explosion si le prefab est assigné
-		if(particulesExplosion)
-		{
-			GameObject temp = Instantiate (particulesExplosion.gameObject, transform.position, Quaternion.identity) as GameObject;
-			Destroy (temp, 2.0f);
-		}
 		//Lancer un son s'il est assigné
 		if(sonParticulesExplosion)
 		{

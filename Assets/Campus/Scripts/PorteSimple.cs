@@ -14,9 +14,8 @@ public class PorteSimple : MonoBehaviour {
 	bool closing = false;
 
 	public float doorAngle = 100.0f;
-	public float speed = 1f;
-	Vector3 closedPosition; //fermée
-	Vector3 openedPosition; //ouverte
+	public float speed = 40f;
+	float angleActuel = 0f;
 
 	public string toucheOuverture = "InteractionButton";
 	public string toucheFermeture = "InteractionButton";
@@ -26,18 +25,13 @@ public class PorteSimple : MonoBehaviour {
 		interactive = interactiveStart;
 		opened = openedStart;
 		closed = !opened;
-		if (opened) { //if opened
-			openedPosition = transform.eulerAngles;
-			closedPosition = (openedPosition - new Vector3(0,doorAngle,0));
-		}
-		else { //if closed
-			closedPosition = transform.eulerAngles;
-			openedPosition = (closedPosition + new Vector3(0,doorAngle,0));
-		}
+		if (opened)
+						angleActuel = doorAngle;
 	}
 
 	void Update () {
 		MoveDoor ();
+		Debug.Log (angleActuel);
 	}
 
 	void MoveDoor () {
@@ -49,8 +43,9 @@ public class PorteSimple : MonoBehaviour {
 		//Close the door
 		if (!closed && closing) { //Door not already closing or closed
 			opened = false;
-			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, closedPosition, Time.deltaTime*speed);
-			if(Vector3.Distance(transform.eulerAngles, closedPosition)<1.0f)
+			gameObject.transform.Rotate (0,Time.deltaTime*speed,0);
+			angleActuel-=Time.deltaTime*speed;
+			if(Mathf.Abs(angleActuel)<2*Time.deltaTime*speed)
 				closed = true; //If closed position, is closed
 		}
 	}
@@ -59,8 +54,9 @@ public class PorteSimple : MonoBehaviour {
 		//Open the door
 		if (!opened && opening) {
 			closed = false;
-			transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, openedPosition, Time.deltaTime * speed);
-			if (Vector3.Distance(transform.eulerAngles, openedPosition)<1.0f)
+			gameObject.transform.Rotate (0,-Time.deltaTime*speed,0);
+			angleActuel+=Time.deltaTime*speed;
+			if(Mathf.Abs(angleActuel-doorAngle)<2*Time.deltaTime*speed)
 				opened = true;
 		}
 	}
