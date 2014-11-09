@@ -49,7 +49,6 @@
      <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereSoleil.cs" />
-     <Compile Include="Assets\Campus\Scripts\Porte.cs" />
      <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
@@ -99,9 +98,6 @@
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
      <None Include="Assets\Generic\Dialogue\Readme.txt" />
- <Reference Include="Destruction">
- <HintPath>D:/Centrale Lyon/Année 2/PA - Jeu vidéo/eclementary2/Assets/_IMPORTED/Fracture - Box Destruction - Standard/Scripts/Destruction.dll</HintPath>
- </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
