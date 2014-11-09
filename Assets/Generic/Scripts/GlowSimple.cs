@@ -36,8 +36,9 @@ public class GlowSimple : MonoBehaviour {
 		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 
 			Shader shad = material.shader;
+			material.shader=Shader.Find ("VertexLit");
 			material.shader=Shader.Find ("Self-Illumin/"+ReturnTypeShad(shad));
-			material.color=couleursScript.ocreJaune();
+			//material.color=couleursScript.ocreJaune();
 			i++;
 		}
 	}

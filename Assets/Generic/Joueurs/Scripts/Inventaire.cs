@@ -163,7 +163,11 @@ public class Inventaire : MonoBehaviour {
 
 			GlowSimple gs;
 			gs = objet.GetComponent<GlowSimple>();
-			if(gs) gsAncien=gs; //On le stocke
+			if(gs) { //Si le composent a un GlowSimple
+				if(gsAncien && gs!=gsAncien) //Si on a changé de GlowSimple, il faut désactiver l'ancien
+					gsAncien.DesactivateGlow();
+				gsAncien=gs; //On stocke le nouveau gs
+			}
 
 			//On vérifie qu'on a trouvé un pickable, que l'objet est prenable, et qu'on est assez près
 			if(pickableGameObject!=null && pickableGameObject.GetPickable() 
