@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      SpawnJoueur.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Point de départ du joueur dans la scène.
+ *
+ * \details   Instantie le joueur donné en attribut au point de départ choisi.
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class SpawnJoueur : MonoBehaviour {

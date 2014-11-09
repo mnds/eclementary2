@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      InteractionEnvironnement.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Gère les interactions avec l'environnement.
+ *
+ * \details   Vérifie si une porte est devant la caméra quand on appuie sur la touche d'interaction.
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

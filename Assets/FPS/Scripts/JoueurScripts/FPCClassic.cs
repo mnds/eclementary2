@@ -1,4 +1,19 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      FPCClassic.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Controle le joueur.
+ *
+ * \details   Utilise un CharacterController pour bouger le gameObject associé. Similaire au FPSInputController.
+ * 			  Le joueur peut courir pendant un certain temps, se baisser, sauter un nombre de fois défini, regarder autour de lui avec la souris.
+ */
+
+/*
+ * Utilisé dans TerrainSoundManager
+ */
+
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
@@ -48,7 +63,12 @@ public class FPCClassic : MonoBehaviour {
 		}
 	}
 
-	//Change la vitesse du mouvement
+	/**
+	 * @brief Change la vitesse du mouvement.
+	 * @details Appelé toutes les frames dans Update. Si le bouton de sprint est appuyé, on change la vitesse de mouvement du charactercontroller.
+	 * 	        La jauge d'endurance descend. Si elle est trop basse, sprintPossible passe à false et la course est impossible pendant un temps court.
+	 * 			Quand le bouton Sprint n'est pas appuyé, cette jauge augmente jusqu'à retrouver son maximum.
+	 */
 	void Sprint () {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible)
@@ -69,6 +89,10 @@ public class FPCClassic : MonoBehaviour {
 		//Debug.Log (jauge);
 	}
 
+	/**
+	 * @brief Gère la caméra.
+	 * @details Vérifie la position de la souris pour tourner la caméra dans un champ réduit.
+	 */
 	void BougerTete () {
 		if(bloquerTete) return; //Si on ne peut pas bouger la camera
 
@@ -82,6 +106,10 @@ public class FPCClassic : MonoBehaviour {
 		Camera.main.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
 	}
 
+	/**
+	 * @brief Permet de se baisser.
+	 * @details Quand la touche Crouch est appuyé, on s'accroupit. Rappuyé redonne la hauteur de caméra initiale.
+	 */
 	void Crouch () {
 		//S'accroupir
 		if (Input.GetButtonDown("Crouch"))
@@ -98,6 +126,10 @@ public class FPCClassic : MonoBehaviour {
 
 	}
 
+	/**
+	 * @brief Gère le mouvement du character controller.
+	 * @details S'il est possible de bouger, on repère l'appui des touches de mouvements, ainsi que les demandes de saut.
+	 */
 	void MouvementCorps () {
 		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 

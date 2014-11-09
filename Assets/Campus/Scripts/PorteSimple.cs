@@ -9,6 +9,10 @@
  * 			  si la porte tourne dans le sens horaire ou anti-horaire. doorAngle et speed modifie le mouvement de la porte.
  */
 
+/*
+ * Utilisé dans InteractionEnvironnement
+ */
+
 using UnityEngine;
 using System.Collections;
 

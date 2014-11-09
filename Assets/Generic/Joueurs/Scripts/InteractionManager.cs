@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      InteractionManager.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Script général d'interaction avec les objets contenant Interactif.cs.
+ *
+ * \details   Vérifie si un objet est en face du joueur quand il appuie sur la touche d'interaction.
+ * 			  Si cet objet a un script Interactif, on appelle sa méthode DemarrerInteraction.
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

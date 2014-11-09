@@ -1,4 +1,17 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      GlowSimple.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Controle la surbrillance d'un objet.
+ *
+ * \details   Modifie les shaders du renderer de l'objet pour les rendre plus lumineux, à l'aide des méthodes ActivateGlow et DesactivateGlow.
+ */
+
+/*
+ * Utilisé dans Inventaire
+ */
+using UnityEngine;
 using System.Collections.Generic;
 
 public class GlowSimple : MonoBehaviour {
@@ -28,6 +41,10 @@ public class GlowSimple : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Met l'objet en surbrillance.
+	 * @details Les matériaux utilisés dans le renderer de l'objet sont mis en Self-Illumin. On peut changer aussi de couleur l'objet si nécessaire.
+	 */
 	public void ActivateGlow () {
 		if (activated) return;
 		activated = true;
@@ -36,13 +53,15 @@ public class GlowSimple : MonoBehaviour {
 		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 
 			Shader shad = material.shader;
-			material.shader=Shader.Find ("VertexLit");
 			material.shader=Shader.Find ("Self-Illumin/"+ReturnTypeShad(shad));
 			//material.color=couleursScript.ocreJaune();
 			i++;
 		}
 	}
 
+	/**
+	 * @brief Remet les Materials initiaux du renderer de l'objet.
+	 */
 	public void DesactivateGlow () {
 		if (!activated) return;
 		activated = false;
@@ -54,6 +73,11 @@ public class GlowSimple : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Renvoie le nom du shader donné en argument.
+	 * @param shader Le shader à étudier
+	 * @return Le nom du shader en argument
+	 */
 	public string ReturnTypeShad (Shader shader) {
 		if(shader==Shader.Find ("Bumped Diffuse")) 
 			return "Bumped Diffuse";

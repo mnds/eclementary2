@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      Health.cs
+ * \author    BC
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Contient les points de vie de l'objet. A sa mort, on appelle DeclencherMort.
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class Health : MonoBehaviour {
@@ -17,7 +25,7 @@ public class Health : MonoBehaviour {
 		}
 	}
 
-	void DeclencherMort () {
-		Destroy (gameObject);
+	virtual public void DeclencherMort () {
+
 	}
 }

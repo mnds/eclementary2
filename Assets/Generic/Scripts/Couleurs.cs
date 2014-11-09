@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      Couleurs.cs
+ * \author    BC
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Contient les valeurs RGB de plusieurs couleurs.
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class Couleurs {
