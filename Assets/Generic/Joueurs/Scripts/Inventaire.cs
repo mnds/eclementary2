@@ -20,6 +20,9 @@ public class Inventaire : MonoBehaviour {
 	int positionScroll = 0; //Endroit où se trouve l'objet sélectionné. Si égal à lOU.Count, c'est qu'on n'est pas équipé
 	public Camera camera;
 
+	//Handles glow
+	GlowSimple gsAncien;
+
 	// Use this for initialization
 	void Start () {
 		for(int k=0;k<listeObjetsRecoltables.Count;k++) //On récupère les objets de quantité non nulle
@@ -140,29 +143,34 @@ public class Inventaire : MonoBehaviour {
 		RaycastHit hitInfo;
 		Pickable pickableGameObject;
 		GameObject objet;
-		
-		if (Input.GetButtonDown ("InteractionButton")) {
-			if(Physics.Raycast(camera.transform.position, camera.transform.forward,out hitInfo, 300f))				
+
+		if(Physics.Raycast(camera.transform.position, camera.transform.forward,out hitInfo, 300f))				
+		{
+			objet = hitInfo.collider.gameObject;
+			GameObject copieObjet = objet;
+			pickableGameObject = copieObjet.GetComponent<Pickable>();
+			
+			while(pickableGameObject == null && objet.transform.parent)
 			{
-				objet = hitInfo.collider.gameObject;
-				GameObject copieObjet = objet;
+				copieObjet=copieObjet.transform.parent.gameObject;
 				pickableGameObject = copieObjet.GetComponent<Pickable>();
-				
-				while(pickableGameObject == null && objet.transform.parent)
-				{
-					copieObjet=copieObjet.transform.parent.gameObject;
-					pickableGameObject = copieObjet.GetComponent<Pickable>();
-				}
-				
-				//Sinon, on est à la racine, donc on cherche dans les enfants.
-				
-				if(pickableGameObject==null)
-					pickableGameObject=copieObjet.GetComponentInChildren<Pickable>();
-				
-				//On vérifie qu'on a trouvé un pickable, que l'objet est prenable, et qu'on est assez près
-				if(pickableGameObject!=null && pickableGameObject.GetPickable() 
-				   && pickableGameObject.GetPickableDistance()>Vector3.Distance(hitInfo.point,camera.transform.position))
-				{
+			}
+			
+			//Sinon, on est à la racine, donc on cherche dans les enfants.
+			
+			if(pickableGameObject==null)
+				pickableGameObject=copieObjet.GetComponentInChildren<Pickable>();
+
+			GlowSimple gs;
+			gs = objet.GetComponent<GlowSimple>();
+			if(gs) gsAncien=gs; //On le stocke
+
+			//On vérifie qu'on a trouvé un pickable, que l'objet est prenable, et qu'on est assez près
+			if(pickableGameObject!=null && pickableGameObject.GetPickable() 
+			   && pickableGameObject.GetPickableDistance()>Vector3.Distance(hitInfo.point,camera.transform.position))
+			{
+				if(gs) gs.ActivateGlow();
+				if (Input.GetButtonDown ("InteractionButton")) {
 					//detruire le parent
 					while(objet.transform.parent)
 					{
@@ -190,13 +198,19 @@ public class Inventaire : MonoBehaviour {
 							//On rajoute ce qu'il faut à Lancer
 							lancerDeObjet.SetMunitionsSimple(quantiteObjets[i]);
 							break;
-						}
-						
+						}	
 					}
 				}
 				
 			}
+			else
+				if(gs) gs.DesactivateGlow();
 		}
+		else
+			if(gsAncien) { //Plus rien en vue. On regarde s'il faut désactiver une surbrillance. Si oui, on le fait, et on détruit l'objet pour ne pas avoir à refaire ça à chaque fois.
+			gsAncien.DesactivateGlow();
+			gsAncien=null;
+			}
 	}
 
 	public void ChangerMunitions(GameObject objet, int munitions) {

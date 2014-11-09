@@ -6,10 +6,11 @@ public class GlowSimple : MonoBehaviour {
 	private List<Shader> shaders = new List<Shader>(){};
 	private List<Color> couleurs = new List<Color>(){};
 	private Material mat;
+	private bool activated = false ;
 
 	// Use this for initialization
 	void Start () {
-		foreach (Material material in renderer.sharedMaterials) { //On cherche tous les materiaux de l'objet
+		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 			shaders.Add (material.shader);
 			couleurs.Add (material.color);
 
@@ -28,20 +29,24 @@ public class GlowSimple : MonoBehaviour {
 	}
 
 	public void ActivateGlow () {
+		if (activated) return;
+		activated = true;
 		int i = 0;
 		Couleurs couleursScript = new Couleurs();
-		foreach (Material material in renderer.sharedMaterials) { //On cherche tous les materiaux de l'objet
+		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 
 			Shader shad = material.shader;
 			material.shader=Shader.Find ("Self-Illumin/"+ReturnTypeShad(shad));
-			material.color=couleursScript.bleuRoi();
+			material.color=couleursScript.ocreJaune();
 			i++;
 		}
 	}
 
 	public void DesactivateGlow () {
+		if (!activated) return;
+		activated = false;
 		int i = 0;
-		foreach (Material material in renderer.sharedMaterials) { //On cherche tous les materiaux de l'objet
+		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 			material.shader=shaders[i];
 			material.color=couleurs[i];
 			i++;

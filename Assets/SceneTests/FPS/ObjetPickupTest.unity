@@ -87,6 +87,7 @@ GameObject:
   - 95: {fileID: 45469376}
   - 114: {fileID: 45469375}
   - 65: {fileID: 45469374}
+  - 114: {fileID: 45469379}
   m_Layer: 0
   m_Name: Graphique
   m_TagString: Untagged
@@ -185,6 +186,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1461911820}
   m_GameObject: {fileID: 45469372}
   m_Mesh: {fileID: 4300000, guid: 2186b8522b6fd4f3a91076b0b83cfe14, type: 3}
+--- !u!114 &45469379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45469372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &72710110
 GameObject:
   m_ObjectHideFlags: 0
