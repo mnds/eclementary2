@@ -1,4 +1,17 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      Attaquer.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Gère tout ce qui a attrait à la gestion des objets et leur récupération.
+ *
+ * \details   Contient une liste de tous les objets récoltables dans le jeu, ainsi qu'une liste correspondant notant la quantité de chacun de ces objets dans l'inventaire.
+ * 	          A en mémoire l'objet actuellement équipé par le joueur, ainsi que ses scripts Attaquer (pour frapper) et Lancer (pour le jeter) s'ils existent
+ * 			  Utilise constamment un Raycast pour analyser l'objet directement au centre de l'écran. S'il possède un script de surbrillance et qu'on est assez proche,
+ * 			  on l'active. Si l'objet au centre a un script Pickable, on récupère cet objet par la touche d'interaction.
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -54,6 +67,12 @@ public class Inventaire : MonoBehaviour {
 				GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
 	}
 
+	/**
+	 * @brief Change l'objet actuellement équipé.
+	 * @param objet L'objet à rendre actuel.
+	 *
+	 * @details On cherche si l'objet (ou un de ses enfants) a un des points de vie. Si oui, on en retire, selon le champ damage de l'objet auquel ce script est attaché.
+	 */
 	void ChangerObjetActuel(GameObject objet_) {
 		//On désactive l'objet actuel s'il existe
 		if(objetActuel!=null)
@@ -73,11 +92,12 @@ public class Inventaire : MonoBehaviour {
 			lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
 	}
 
-	/*
-	 * Finds the new value of PositionScroll, according to listeObjetsUtilisables
-	 * direction: relative to positionScroll: -1 to move in negatively, +1 to move positively (0 => no change)
-	 * return: positionScroll-1 or positionScroll+1 if possible,
-	 * or extremum position (0 or the size of listeObjetsUtilisables minus 1) after looping
+
+	/**
+	 * @brief Finds the new value of PositionScroll, according to listeObjetsUtilisables.
+	 * @param direction Relative to positionScroll: -1 to move in negatively, +1 to move positively (0 => no change)
+	 * @return positionScroll-1 or positionScroll+1 if possible, or extremum position (0 or the size of listeObjetsUtilisables minus 1) after looping
+	 *
 	 */
 	int NewPositionScroll( int direction ) {
 		int newPosition = positionScroll + direction ; //temporary position
@@ -91,6 +111,14 @@ public class Inventaire : MonoBehaviour {
 		return newPosition;
 	}
 
+	/**
+	 * @brief Vérifie toutes les touches appuyées et agit en conséquence.
+	 *
+	 * @details Vérifie si l'objet est en train d'attaquer, ou en train d'etre lancé, et relève deux booléens en conséquence. Pour cela, on utilise les scripts Attaquer/Lancer s'ils existent
+	 * 			Si l'une de ces conditions et vérifiée, il est impossible de changer d'objet.
+	 * 			On peut changer d'objet avec les combinaisons tab/shift+tab, les touches alphanumériques, et les deux touches ScrollItems.
+	 * 			On teste ensuite si un objet est dans le champ de vision. Si la touche d'interaction est utilisée et que l'objet est récupérable, on l'ajoute à l'inventaire.
+	 */
 	void VerifierTouches()
 	{
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
@@ -119,7 +147,8 @@ public class Inventaire : MonoBehaviour {
 		for(int i=0;i<9;i++) {
 			if(Input.GetKey(nombre+i)) {
 				positionScroll=i;
-				if (positionScroll >= 0 && positionScroll < listeObjetsUtilisables.Count) {
+				if (positionScroll >= 0 && positionScroll < listeObjetsUtilisables.Count 
+				    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
 					ChangerObjetActuel (listeObjetsUtilisables [positionScroll]);
 					return;
 				}
@@ -128,11 +157,12 @@ public class Inventaire : MonoBehaviour {
 
 		// Current weapon is also changed when tab or Shift+Tab pressed
 		int direction = 0;
-		// Combo Shift+Tab
-		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab))
+		// Combo Shift+Tab si on n'attaque ni ne lance
+		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab)
+		    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
 			direction = -1;
 		// When only Tab is pressed
-		else if( Input.GetKeyUp (KeyCode.Tab) )
+		else if( Input.GetKeyUp (KeyCode.Tab) && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer )
 			direction = +1;
 		if (direction == -1 || direction == 1) {
 			positionScroll = NewPositionScroll (direction);
@@ -173,7 +203,7 @@ public class Inventaire : MonoBehaviour {
 			if(pickableGameObject!=null && pickableGameObject.GetPickable() 
 			   && pickableGameObject.GetPickableDistance()>Vector3.Distance(hitInfo.point,camera.transform.position))
 			{
-				if(gs) gs.ActivateGlow();
+				if(gs) gs.ActivateGlow(); //La surbrillance ne s'active que si l'objet est pickable
 				if (Input.GetButtonDown ("InteractionButton")) {
 					//detruire le parent
 					while(objet.transform.parent)
@@ -217,6 +247,14 @@ public class Inventaire : MonoBehaviour {
 			}
 	}
 
+
+	/**
+	 * @brief Setter de munitions sur un objet.
+	 *
+	 * @details Utilisé quand on ramasse un objet, en utilisant en parallèle la liste quantiteObjets.
+	 * 			Si munitions est strictement positif et que l'objet n'est pas encore dans la liste des objets utilisables, on l'y ajoute.
+	 * 			Si munitions est nul et que l'objet est dans cette meme liste, on l'en enlève. On change également l'objet actuel si tel est le cas pour ne pas avoir de problèmes d'indexation.
+	 */
 	public void ChangerMunitions(GameObject objet, int munitions) {
 		//On cherche objet dans lOR, et on lui met les munitions associées. Sinon, l'objet n'existe pas, on renvoie un message dans la console
 		for (int k=0; k<listeObjetsRecoltables.Count; k++) {

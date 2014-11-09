@@ -12,7 +12,6 @@
 using UnityEngine;
 using System.Collections;
 
-//Note : pendant qu'on lance, il est possible d'attaquer.
 public class Lancer : MonoBehaviour {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 
