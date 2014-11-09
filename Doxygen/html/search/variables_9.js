@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['i',['i',['../class_maze_travel.html#a08b28298b0f79bf8d0a769ad2fd15f16',1,'MazeTravel.i()'],['../class_maze_trigger_manager.html#a5371eac3755c2ae946503cbc42b43db7',1,'MazeTriggerManager.i()'],['../class_maze_wall_manager.html#a668cc8d7ab05efe09adb75ae5c563df3',1,'MazeWallManager.i()']]],
+  ['id',['id',['../class_replique.html#a4f69ef6f8d0973d88b6ec3391f266d6c',1,'Replique']]],
+  ['idugouffre',['iDuGouffre',['../class_maze_manager.html#a0e4929c7f5a41e09cc4090490d0be2ba',1,'MazeManager']]],
+  ['ifpc',['iFpc',['../class_maze_manager.html#a3adbbedc2d8df12cf6f4e01e931352c5',1,'MazeManager.iFpc()'],['../class_maze_travel.html#af1530af4afdbf6984cf0799d23299a98',1,'MazeTravel.iFpc()']]],
+  ['inaircontrolacceleration',['inAirControlAcceleration',['../_third_person_controller_8js.html#a9bccfc75448cdb2de081053af1774f7a',1,'ThirdPersonController.js']]],
+  ['inairmultiplier',['inAirMultiplier',['../_camera_relative_control_8js.html#aab08583fe6d898121bf59a89b6618209',1,'inAirMultiplier():&#160;CameraRelativeControl.js'],['../_first_person_control_8js.html#aab08583fe6d898121bf59a89b6618209',1,'inAirMultiplier():&#160;FirstPersonControl.js'],['../_player_relative_control_8js.html#aab08583fe6d898121bf59a89b6618209',1,'inAirMultiplier():&#160;PlayerRelativeControl.js'],['../_sidescroll_control_8js.html#aab08583fe6d898121bf59a89b6618209',1,'inAirMultiplier():&#160;SidescrollControl.js'],['../tapcontrol_8js.html#aab08583fe6d898121bf59a89b6618209',1,'inAirMultiplier():&#160;tapcontrol.js']]],
+  ['inairvelocity',['inAirVelocity',['../_third_person_controller_8js.html#a9168133778da14103aaa130c9c7da6ac',1,'ThirdPersonController.js']]],
+  ['indexsectionnames',['indexSectionNames',['../search_8js.html#a77149ceed055c6c6ce40973b5bdc19ad',1,'search.js']]],
+  ['indexsectionswithcontent',['indexSectionsWithContent',['../search_8js.html#a6250af3c9b54dee6efc5f55f40c78126',1,'search.js']]],
+  ['infligerdegats',['infligerDegats',['../class_attaquer.html#acb8380d99d34bc8d62012048927794a4',1,'Attaquer']]],
+  ['inputjump',['inputJump',['../_character_motor_8js.html#a94942dc10a2d4cfd86776378dbc1b868',1,'CharacterMotor.js']]],
+  ['inputmovedirection',['inputMoveDirection',['../_character_motor_8js.html#ac23e13ee3a32b978e9a55516dca08f2b',1,'CharacterMotor.js']]],
+  ['interactiondeclenchee',['interactionDeclenchee',['../class_dialogue.html#adda4df106e5fa1530b31f645344325b5',1,'Dialogue']]],
+  ['interactive',['interactive',['../class_porte_simple.html#a9d23916959967e0bf7eaa275d247d0d4',1,'PorteSimple']]],
+  ['interactivestart',['interactiveStart',['../class_porte_simple.html#a6d336b09303b0e678e8fe30bfe154fe3',1,'PorteSimple']]],
+  ['inventaire',['inventaire',['../class_lancer.html#a3c9e2d3cb4ea29cc3d73b6acd4e74077',1,'Lancer']]],
+  ['iscontrollable',['isControllable',['../_third_person_controller_8js.html#a291d7bcfe47a52859637a0a2e127e8ae',1,'ThirdPersonController.js']]],
+  ['ismoving',['isMoving',['../class_maze_travel.html#a10e7c065c7c28a59af426226c222cfb3',1,'MazeTravel.isMoving()'],['../_third_person_controller_8js.html#afa7117a2d1c06477ae8c3f843d131b2b',1,'isMoving():&#160;ThirdPersonController.js']]],
+  ['ispickable',['isPickable',['../class_pickable.html#ae4a37067465b30b37afa65d936ed79b5',1,'Pickable']]],
+  ['ispickabledebut',['isPickableDebut',['../class_pickable.html#a76a93e4c58e22b80af756ead354fa9c6',1,'Pickable']]]
+];
