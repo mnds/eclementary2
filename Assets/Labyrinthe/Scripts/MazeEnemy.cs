@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeEnemy.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     S'occupe des ennemis présents dans le labyrinthe.
+ *
+ * \details   Si l'ennemi est assez proche de la cible, on déclenche la mort de celle-ci, soit par un screamer, soit par une chute.
+ * 			  Ne fait pas bouger les ennemis.
+ */
+
+/*
+ * Utilisé dans MazeManager
+ */
+using UnityEngine;
 using System.Collections;
 
 public class MazeEnemy : MonoBehaviour {

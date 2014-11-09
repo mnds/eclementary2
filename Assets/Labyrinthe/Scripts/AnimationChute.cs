@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      AnimationChute.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Effectue une chute de l'objet sur le coté, accompagné d'un son.
+ *
+ * \details   Fait passer l'objet d'une rotation initiale à une rotation finale à l'aide de Quaternions. Il revient à sa rotation initiale après un certain temps.
+ */
+
+/*
+ * Utilisé dans MazeEnemy
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class AnimationChute : MonoBehaviour {
@@ -15,20 +29,6 @@ public class AnimationChute : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rotationInitiale = cible.transform.rotation;
-	}
-	
-	public void Chuter (float tempsChute_,float tempsAvantReveil_) {
-		enChute = true;
-		tempsChute = tempsChute_;
-		tempsAvantReveil = tempsAvantReveil_;
-		avancementChute = 0;
-		audioSource.Play ();
-		cible.GetComponent<FPCClassic> ().SetFreeze (true);
-	}
-
-	void Retablir () {
-		cible.transform.rotation = rotationInitiale;
-		enChute = false;
 	}
 
 	void Update () {
@@ -48,6 +48,32 @@ public class AnimationChute : MonoBehaviour {
 				avancementReveil = 1;
 			}
 		}
+		
+	}
 
+	/**
+	 * @brief Entraine l'animation de chute.
+	 * @param tempsChute_ Le temps pendant lequel la rotation s'effectue
+	 * @param tempsAvantReveil_ Le temps avant de redresser l'objet
+	 *
+	 * @details Bloque le script de l'objet, joue le son associé et lance l'animation en mettant à 0 son avancement.
+	 */
+	public void Chuter (float tempsChute_,float tempsAvantReveil_) {
+		enChute = true;
+		tempsChute = tempsChute_;
+		tempsAvantReveil = tempsAvantReveil_;
+		avancementChute = 0;
+		audioSource.Play ();
+		cible.GetComponent<FPCClassic> ().SetFreeze (true);
+	}
+
+	/**
+	 * @brief Remet l'objet à sa position initiale.
+	 * 
+	 * @details Remet la cible à sa position initiale. Appelé dans Update à la fin du temps de reveil.
+	 */
+	void Retablir () {
+		cible.transform.rotation = rotationInitiale;
+		enChute = false;
 	}
 }

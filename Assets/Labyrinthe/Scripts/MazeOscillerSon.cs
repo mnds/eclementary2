@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeOscillerSon.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Crée un son qui oscille derrière le joueur.
+ *
+ * \details   Placé sur un objet qui va constamment osciller derrière la tete du joueur.
+ * 			  On obtient l'effet désiré en attachant ce script à un gameObject contenant une AudioSource et un son approprié.
+ */
+
+using UnityEngine;
 using System.Collections.Generic;
 
 public class MazeOscillerSon : MonoBehaviour {

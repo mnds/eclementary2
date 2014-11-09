@@ -1,6 +1,6 @@
 ﻿/**
  * \file      MazeTravel.cs
- * \author    B.Collette
+ * \author    
  * \version   1.0
  * \date      18 septembre 2014
  * \brief     Permet aux PNJ de se déplacer dans un labyrinthe.
@@ -8,6 +8,14 @@
  * \details   Ce script est lié à tous les PNJ qui vont devoir suivre le joueur dans le labyrinthe.
  * 		      Le script ne s'intéresse qu'à faire naviguer les PNJ, et pas les interactions avec le joueur.
  */
+
+/*
+ * Utilisé dans MazeManager
+ */
+/*
+ * Lié à MazeManager qui l'initialise
+ */
+
 
 using UnityEngine;
 using System.Collections.Generic;
@@ -108,7 +116,12 @@ public class MazeTravel : MonoBehaviour {
 		}
 	}
 
-	//Appelée lorsqu'on replace les PNJ après une mort
+	//
+	/**
+	 * @brief Remet à zéro l'algorithme et les vecteurs associés.
+	 *
+	 * @details Appelée lorsqu'on replace les PNJ après une mort
+	 */
 	public void Restart () {
 		isMoving = false;
 		algoEnCours = false;
@@ -116,7 +129,12 @@ public class MazeTravel : MonoBehaviour {
 		ReinitialiserCasesParcourues ();
 	}
 
-	//Remet en place une matrice remplie de "false" pour l'algorithme AES
+	/**
+	 * @brief Remet à zéro casesParcourues.
+	 *
+	 * @details Remet en place une matrice remplie de "false" pour l'AES.
+	 * 			Appelée dans Restart.
+	 */
 	public void ReinitialiserCasesParcourues () {
 		List<List<bool>> casesParcourues_ = new List<List<bool>> ();
 		for(int k=0;k<nombreMursParCote-1;k++)
@@ -164,6 +182,7 @@ public class MazeTravel : MonoBehaviour {
 	 *
 	 * @return bool True si l'algorithme a abouti, false sinon. Si true, la liste est bien remplie, sinon elle est vide.
 	 * @details La méthode remplit la liste mouvementsAFaire à l'aide d'un algorithme à essais successifs.
+	 * 			Appelé dans MazeManager::SetFPC
 	 */
 	public bool MoveTo (int iFpc_, int jFpc_) {
 		if (vitesse == 0) //Si la vitesse est nulle, le PNJ ne peut pas bouger. On ne fait donc rien. On renvoie true car son déplacement, vide, est possible

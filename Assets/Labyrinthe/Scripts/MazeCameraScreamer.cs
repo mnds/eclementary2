@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeCameraScreamer.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Gère les screamers du labyrinthe.
+ *
+ * \details   Contient une liste de sons et images pour les screamers. En active un au hasard lorsque Activer est appelée. Désactive tout à l'appel de Desactiver.
+ */
+
+/*
+ * Utilisé dans MazeEnemy
+ */
+
+using UnityEngine;
 using System.Collections.Generic;
 
 public class MazeCameraScreamer : MonoBehaviour {
@@ -13,7 +27,10 @@ public class MazeCameraScreamer : MonoBehaviour {
 			mazeScreamers[i].GetComponent<SpriteRenderer>().enabled=false;
 		}
 	}
-	
+
+	/**
+	 * @brief Active un screamer au hasard parmi la liste mise en attribut.
+	 */
 	public void Activer () {
 		if(rangScreamerActuel==-1) { //On prend garde à ne pas activer deux screamers à la fois. Si c'est -1, pas de screamer. Sinon, on ne fait rien
 			//Récupération d'un screamer et d'un son. Chaque screamer a un son.
@@ -27,6 +44,9 @@ public class MazeCameraScreamer : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Désactive le screamer.
+	 */
 	public void Desactiver () {
 		//On retrouve le screamer, et on l'enlève
 		GameObject screamer = mazeScreamers [rangScreamerActuel];
