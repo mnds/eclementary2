@@ -174,7 +174,7 @@ public class Inventaire : MonoBehaviour {
 		Pickable pickableGameObject;
 		GameObject objet;
 
-		if(Physics.Raycast(camera.transform.position, camera.transform.forward,out hitInfo, 300f))				
+		if(Physics.Raycast(camera.transform.position, camera.transform.forward,out hitInfo, 10f))				
 		{
 			objet = hitInfo.collider.gameObject;
 			GameObject copieObjet = objet;
@@ -198,6 +198,9 @@ public class Inventaire : MonoBehaviour {
 					gsAncien.DesactivateGlow();
 				gsAncien=gs; //On stocke le nouveau gs
 			}
+			else
+			if(gsAncien)
+					gsAncien.DesactivateGlow();
 
 			//On vérifie qu'on a trouvé un pickable, que l'objet est prenable, et qu'on est assez près
 			if(pickableGameObject!=null && pickableGameObject.GetPickable() 
@@ -237,8 +240,11 @@ public class Inventaire : MonoBehaviour {
 				}
 				
 			}
-			else
+			else {
 				if(gs) gs.DesactivateGlow();
+				if(gsAncien) gsAncien.DesactivateGlow ();
+			}
+				
 		}
 		else
 			if(gsAncien) { //Plus rien en vue. On regarde s'il faut désactiver une surbrillance. Si oui, on le fait, et on détruit l'objet pour ne pas avoir à refaire ça à chaque fois.
@@ -271,5 +277,9 @@ public class Inventaire : MonoBehaviour {
 				return;
 			}
 		}
+	}
+
+	public Camera GetCamera () {
+		return camera;
 	}
 }

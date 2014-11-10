@@ -57,7 +57,7 @@ public class Lancer : MonoBehaviour {
 
 			//POSER
 			if(Input.GetButton ("SecondaryButton")) {//On demande à le poser
-				objet = (GameObject)Instantiate(objetReel,gameObject.transform.position,gameObject.transform.rotation); //On oriente selon la position initiale
+				objet = (GameObject)Instantiate(objetReel,inventaire.GetCamera().transform.position+inventaire.GetCamera().transform.forward,Quaternion.identity); //On oriente selon la position initiale
 				objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
 				objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
 			}

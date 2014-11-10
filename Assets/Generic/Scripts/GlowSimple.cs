@@ -31,14 +31,14 @@ public class GlowSimple : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.A)) {
+		/*if (Input.GetKeyDown (KeyCode.A)) {
 			Debug.Log ("Glow");
 			ActivateGlow();
 		}
 		if (Input.GetKeyDown (KeyCode.Z)) {
 			Debug.Log ("UnGlow");
 			DesactivateGlow();
-		}
+		}*/
 	}
 
 	/**
