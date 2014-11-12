@@ -10,7 +10,7 @@
  */
 
 /*
- * Utilisé dans TerrainSoundManager , AnimationChute
+ * Utilisé dans TerrainSoundManager , AnimationChute , MoveCamera
  */
 
 using UnityEngine;
