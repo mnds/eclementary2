@@ -45,7 +45,7 @@ public class Lancer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (bypass) return;
-
+		if (ControlCenter.getCinematiqueEnCours()) return; //Rien pendant une cinématique
 		//On teste si l'objet a encore des munitions
 		if(munitions<=0) { //S'il n'y a plus de munitions, on désactive l'objet. Pas de problème pour eETDL, car quand on réactivera l'objet, la dernière ligne de Update sera lue et le mettra comme il faut
 			gameObject.SetActive(false); //On désactive l'objet pour l'instant

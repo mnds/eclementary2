@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{B3DA0211-32F7-7C9D-E103-EFE089095AE6}") = "eclementary2", "Assembly-CSharp.csproj", "{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}"
 EndProject
+Project("{B3DA0211-32F7-7C9D-E103-EFE089095AE6}") = "eclementary2", "Assembly-CSharp-Editor.csproj", "{8A546CB3-EA89-D238-BB92-25D95BAF47FB}"
+EndProject
 Project("{B3DA0211-32F7-7C9D-E103-EFE089095AE6}") = "eclementary2", "Assembly-UnityScript.unityproj", "{683A35AE-D232-B1D3-C572-B5C037E31D1E}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A546CB3-EA89-D238-BB92-25D95BAF47FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A546CB3-EA89-D238-BB92-25D95BAF47FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A546CB3-EA89-D238-BB92-25D95BAF47FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A546CB3-EA89-D238-BB92-25D95BAF47FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{683A35AE-D232-B1D3-C572-B5C037E31D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{683A35AE-D232-B1D3-C572-B5C037E31D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{683A35AE-D232-B1D3-C572-B5C037E31D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

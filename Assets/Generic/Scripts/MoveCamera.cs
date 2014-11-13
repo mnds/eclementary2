@@ -17,18 +17,57 @@ using System.Collections.Generic;
 public class MoveCamera : MonoBehaviour {
 	public Camera camera;
 	public FPCClassic scriptFPC;
-	public List<Transform> positionsSuccessivesCamera;
+	public List<Vector3> positionsSuccessivesCamera;
+	public List<Quaternion> rotationsSuccessivesCamera;
 	public List<float> tempsPourArriverEnPosition;
 	public float pas = 0.01f; //Rafraichissement du déplacement de la caméra
 	private bool trajetEnCours = false; //Pour ne pas faire plusieurs fois le trajet
 
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.L))
+						EffectuerCoroutineTrajet ();
+	}
+
+	/**
+	 * @brief Ajoute à la liste pSC la position actuelle.
+	 * @param depuisCamera Si true, on relève la position de la caméra, si false, du GameObject qui contient ce script.
+	 * @details Utilisée dans MoveCameraEditor
+	 */
+	public void AjouterTransform (bool depuisCamera) {
+		//On crée des objets vides qui vont contenir la position à ajouter
+		Vector3 nouvellePosition;
+		Quaternion nouvelleRotation;
+
+		if (depuisCamera && camera) { //On prend la caméra
+			nouvellePosition = camera.transform.position;
+			nouvelleRotation = camera.transform.rotation;
+		}
+		else { //On prend le parent
+			nouvellePosition = gameObject.transform.position;
+			nouvelleRotation = gameObject.transform.rotation;
+		}
+
+		positionsSuccessivesCamera.Add (nouvellePosition);
+		rotationsSuccessivesCamera.Add (nouvelleRotation);
+		tempsPourArriverEnPosition.Add (1f); //On ajoute le défaut : 1seconde
+	}
+
+	/**
+	 * @brief Se charge d'appeler le coroutine correspondante
+	 */
+	public void EffectuerCoroutineTrajet () {
+		if (!camera || trajetEnCours)
+						return;
+		StartCoroutine (EffectuerTrajet ());
+	}
+
 	/**
 	 * @brief Coroutine effectuant le trajet entre tous les points renseignés.
 	 */
-	public IEnumerator EffectuerTrajet () {
-		if (!camera || trajetEnCours) //S'il n'y a pas de caméra pour que celle-ci est en train de bouger
-						yield return new WaitForEndOfFrame ();
+	IEnumerator EffectuerTrajet () {
+		Debug.Log ("Début trajet");
 		trajetEnCours = true;
+		ControlCenter.setCinematiqueEnCours (true);
 		//On conserve les positions locales de la caméra par rapport au joueur pour que la caméra y reste attachée
 		Vector3 positionCameraAvantTrajet = camera.transform.localPosition;
 		Quaternion rotationCameraAvantTrajet = camera.transform.localRotation;
@@ -42,8 +81,8 @@ public class MoveCamera : MonoBehaviour {
 			//On déplace la caméra avec ses positions globales cette fois
 			Vector3 positionInitiale = camera.transform.position;
 			Quaternion rotationInitiale = camera.transform.rotation;
-			Vector3 positionFinale = positionsSuccessivesCamera[i].position;
-			Quaternion rotationFinale = positionsSuccessivesCamera[i].rotation;
+			Vector3 positionFinale = positionsSuccessivesCamera[i];
+			Quaternion rotationFinale = rotationsSuccessivesCamera[i];
 
 			float avancementTrajetActuel = 0f; //1 lorsque trajet fini
 			while(avancementTrajetActuel<1f)
@@ -61,5 +100,6 @@ public class MoveCamera : MonoBehaviour {
 		if (scriptFPC)
 			scriptFPC.SetFreeze (false); //Remet les mouvements du joueur
 		trajetEnCours = false;
+		ControlCenter.setCinematiqueEnCours (false);
 	}
 }

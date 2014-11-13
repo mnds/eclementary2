@@ -39,6 +39,7 @@ public class ObjetLance : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (bypass) return;
+
 		if(aUneDureeDeVie) { //Si l'objet ne reste qu'un certain temps, on vérifie s'il doit etre détruit
 			dureeDeVie -= Time.deltaTime;
 			if(dureeDeVie <= 0) {

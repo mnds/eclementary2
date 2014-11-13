@@ -1,5 +1,5 @@
 ﻿/**
- * \file      Attaquer.cs
+ * \file      Inventaire.cs
  * \author    
  * \version   1.0
  * \date      9 novembre 2014
@@ -121,6 +121,8 @@ public class Inventaire : MonoBehaviour {
 	 */
 	void VerifierTouches()
 	{
+		if(ControlCenter.getCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
+
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
 		if(attaquerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque

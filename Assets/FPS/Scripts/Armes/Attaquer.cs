@@ -38,7 +38,7 @@ public class Attaquer : MonoBehaviour {
 
 	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
-	bool infligerDegats = false; //true si on peut infliger des degats
+	bool infligerDegats; //true si on peut infliger des degats
 
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
 	
@@ -60,6 +60,8 @@ public class Attaquer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
+		if (ControlCenter.getCinematiqueEnCours()) return; //Rien pendant une cinématique
+
 		//Si on demande d'attaquer, qu'on n'est pas déjà en train d'attaquer, et qu'on n'est pas en train de lancer
 		if(Input.GetButton("Fire1") && !enTrainDAttaquer && (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
 		{
@@ -110,12 +112,12 @@ public class Attaquer : MonoBehaviour {
 		if(enCoursDeRetour) return;
 		if(bypass) return;
 
-		infligerDegats = false;
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
 
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
-		if (enTrainDAttaquer && !enCoursDeRetour) {
+		if (enTrainDAttaquer && !enCoursDeRetour && infligerDegats) {
+			infligerDegats = false; //Plus de dégats
 			//On cherche si l'objet ou un de ses parents a de la vie
 			Health health = objetAvecVie.GetComponent<Health> (); //Si le truc touché a des points de vie, on doit le blesser
 			while (health == null && objetAvecVie.parent) {
