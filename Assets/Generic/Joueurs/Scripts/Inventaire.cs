@@ -69,7 +69,7 @@ public class Inventaire : MonoBehaviour {
 
 	/**
 	 * @brief Change l'objet actuellement équipé.
-	 * @param objet L'objet à rendre actuel.
+	 * @param objet_ L'objet à rendre actuel.
 	 *
 	 * @details On cherche si l'objet (ou un de ses enfants) a un des points de vie. Si oui, on en retire, selon le champ damage de l'objet auquel ce script est attaché.
 	 */

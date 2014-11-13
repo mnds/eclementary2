@@ -177,8 +177,8 @@ public class MazeTravel : MonoBehaviour {
 
 	/**
 	 * @brief Permet le mouvement du PNJ jusqu'à la case donnée en argument.
-	 * @param iFpc Abscisse de la position souhaitée du PNJ, souvent celle du FPC
-	 * @param jFpc Ordonnée de la position souhaitée du PNJ
+	 * @param iFpc_ Abscisse de la position souhaitée du PNJ, souvent celle du FPC
+	 * @param jFpc_ Ordonnée de la position souhaitée du PNJ
 	 *
 	 * @return bool True si l'algorithme a abouti, false sinon. Si true, la liste est bien remplie, sinon elle est vide.
 	 * @details La méthode remplit la liste mouvementsAFaire à l'aide d'un algorithme à essais successifs.
