@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -53,12 +53,6 @@
      <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
      <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Pickable.cs" />
-     <Compile Include="Assets\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
-     <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
      <Compile Include="Assets\Generic\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Generic\Dialogue\Replique.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionEnvironnement.cs" />
@@ -76,6 +70,12 @@
      <Compile Include="Assets\Generic\Scripts\LoadSceneScript.cs" />
      <Compile Include="Assets\Generic\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Generic\Scripts\TerrainSoundManager.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\Armes\Attaquer.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\Armes\Lancer.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\Armes\ObjetLance.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\Armes\Pickable.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
+     <Compile Include="Assets\Labyrinthe\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\AnimationChute.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeCameraScreamer.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeDeathZone.cs" />
@@ -85,6 +85,7 @@
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTravel.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTriggerManager.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeWallManager.cs" />
+     <Compile Include="Assets\SceneTests\FPS\Roadfinding_Enemy.cs" />
      <Compile Include="Assets\_IMPORTED\Gem Shader\Example\GemSpawner.cs" />
      <Compile Include="Assets\_IMPORTED\Plugins\SimpleJSON.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
