@@ -54,7 +54,7 @@ public class GlowSimple : MonoBehaviour {
 
 			Shader shad = material.shader;
 			material.shader=Shader.Find ("Self-Illumin/"+ReturnTypeShad(shad));
-			//material.color=couleursScript.ocreJaune();
+			//material.color=Couleurs.rouge();
 			i++;
 		}
 	}

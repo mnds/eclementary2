@@ -22,6 +22,7 @@ public class FPCClassic : MonoBehaviour {
 	//Sprint
 	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
 	public float vitesseCourse = 12.0f; //Vitesse de course
+	public float jaugeMax = 10.0f;
 	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
 	
@@ -51,6 +52,7 @@ public class FPCClassic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
+		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
 	
@@ -72,10 +74,10 @@ public class FPCClassic : MonoBehaviour {
 	 */
 	void Sprint () {
 		//Sprint
-		if (Input.GetButton("Sprint") && sprintPossible)
+		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
 			vitesseMouvement=vitesseCourse;
-			jauge-=Time.deltaTime;
+			jauge = Mathf.Max (0,jauge-Time.deltaTime);
 			if(jauge<=0) {
 				jauge=0; //On remet à 0
 				sprintPossible=false; //On ne peut plus faire le sprint pendant un certain temps
@@ -85,7 +87,7 @@ public class FPCClassic : MonoBehaviour {
 		{
 			vitesseMouvement=vitesseMarche;
 			if(jauge>limiteBasseJauge) sprintPossible=true;
-			if(jauge<10.0f) jauge+=Time.deltaTime/3;
+			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
 		}
 		//Debug.Log (jauge);
 	}
@@ -181,6 +183,11 @@ public class FPCClassic : MonoBehaviour {
 		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
 //		Debug.Log ("Bounce : " + bounce);
+	}
+
+	void OnGUI () {
+		//Affichage de la barre d'endurance
+		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
 	}
 
 	//Set/Get
