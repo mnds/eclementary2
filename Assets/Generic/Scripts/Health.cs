@@ -1,6 +1,6 @@
 ﻿/**
  * \file      Health.cs
- * \author    BC
+ * \author    
  * \version   1.0
  * \date      9 novembre 2014
  * \brief     Contient les points de vie de l'objet. A sa mort, on appelle DeclencherMort.
@@ -17,6 +17,10 @@ public class Health : MonoBehaviour {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax);
 	}
 
+	public void Soigner(float soin) {
+		pointsDeVieActuels = Mathf.Max (pointsDeVieActuels + soin, pointsDeVieMax);
+	}
+
 	public void SubirDegats(float degats) {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
 		pointsDeVieActuels -= degats;
@@ -27,5 +31,18 @@ public class Health : MonoBehaviour {
 
 	virtual public void DeclencherMort () {
 
+	}
+
+	public void SetPointsDeVieMax (float pdvm_) {
+		pointsDeVieMax = pdvm_;
+		pointsDeVieActuels = Mathf.Max (pointsDeVieMax, pointsDeVieActuels);
+	}
+	
+	public float GetPointsDeVieMax () {
+		return pointsDeVieMax;
+	}
+
+	public float GetPointsDeVieActuels () {
+		return pointsDeVieActuels;
 	}
 }

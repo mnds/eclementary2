@@ -121,7 +121,7 @@ public class Inventaire : MonoBehaviour {
 	 */
 	void VerifierTouches()
 	{
-		if(ControlCenter.getCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
+		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;

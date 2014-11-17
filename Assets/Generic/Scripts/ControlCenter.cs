@@ -18,13 +18,18 @@ using System.Collections;
 
 static public class ControlCenter {
 	static bool cinematiqueEnCours = false; //Les interactions doivent s'arreter si on est en cinématique
+	static HealthPlayer healthPlayer;
 
-	static public bool getCinematiqueEnCours () {
+	static public bool GetCinematiqueEnCours () {
 		return cinematiqueEnCours;
 	}
 
-	static public void setCinematiqueEnCours (bool cec) {
+	static public void SetCinematiqueEnCours (bool cec) {
 		Debug.Log ("CC : sCEC "+cec);
 		cinematiqueEnCours = cec;
+	}
+
+	static public void SetHealthPlayer (HealthPlayer hp) {
+		healthPlayer = hp;
 	}
 }

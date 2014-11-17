@@ -21,7 +21,8 @@ public class Attaquer : MonoBehaviour {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 	
 	public float degatsParCoup = 10.0f; //Degats initiaux, changés pour chaque obje
-	
+	public bool infligeDesDegatsAPlusieursEnnemis = true; //Si l'arme "traverse" les ennemis
+
 	public bool enTrainDAttaquer = false; //false pendant un coup
 	public Transform placementInitial; //GameObject placé à l'endroit où commence l'objet
 	Vector3 positionInitiale;
@@ -60,7 +61,7 @@ public class Attaquer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
-		if (ControlCenter.getCinematiqueEnCours()) return; //Rien pendant une cinématique
+		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
 
 		//Si on demande d'attaquer, qu'on n'est pas déjà en train d'attaquer, et qu'on n'est pas en train de lancer
 		if(Input.GetButton("Fire1") && !enTrainDAttaquer && (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
@@ -117,14 +118,25 @@ public class Attaquer : MonoBehaviour {
 
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
 		if (enTrainDAttaquer && !enCoursDeRetour && infligerDegats) {
-			infligerDegats = false; //Plus de dégats
+			if(!infligeDesDegatsAPlusieursEnnemis)
+				infligerDegats = false; //Plus de dégats
 			//On cherche si l'objet ou un de ses parents a de la vie
 			Health health = objetAvecVie.GetComponent<Health> (); //Si le truc touché a des points de vie, on doit le blesser
 			while (health == null && objetAvecVie.parent) {
 				objetAvecVie = objetAvecVie.parent;
 				health = objetAvecVie.GetComponent<Health> ();
 			}
+			//On regarde si c'est le joueur lui-meme. Si oui, on ignore
+			Attaquer[] attaquers = objetAvecVie.GetComponentsInChildren<Attaquer>();
+			foreach(Attaquer a in attaquers)
+			{
+				if(a==this) {//Si on se tape soi-meme, on laisse tomber
+					Debug.Log ("Cible ignorée");
+					return;
+				}
+			}
 			if (health != null) {
+				Debug.Log ("Touché");
 				health.SubirDegats (degatsParCoup);
 			}
 		}

@@ -180,7 +180,7 @@ public class FPCClassic : MonoBehaviour {
 
 		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
-		Debug.Log ("Bounce : " + bounce);
+//		Debug.Log ("Bounce : " + bounce);
 	}
 
 	//Set/Get

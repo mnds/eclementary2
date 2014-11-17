@@ -67,7 +67,7 @@ public class MoveCamera : MonoBehaviour {
 	IEnumerator EffectuerTrajet () {
 		Debug.Log ("Début trajet");
 		trajetEnCours = true;
-		ControlCenter.setCinematiqueEnCours (true);
+		ControlCenter.SetCinematiqueEnCours (true);
 		//On conserve les positions locales de la caméra par rapport au joueur pour que la caméra y reste attachée
 		Vector3 positionCameraAvantTrajet = camera.transform.localPosition;
 		Quaternion rotationCameraAvantTrajet = camera.transform.localRotation;
@@ -100,6 +100,6 @@ public class MoveCamera : MonoBehaviour {
 		if (scriptFPC)
 			scriptFPC.SetFreeze (false); //Remet les mouvements du joueur
 		trajetEnCours = false;
-		ControlCenter.setCinematiqueEnCours (false);
+		ControlCenter.SetCinematiqueEnCours (false);
 	}
 }
