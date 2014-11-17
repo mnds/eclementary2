@@ -64,7 +64,8 @@ public class Attaquer : MonoBehaviour {
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
 
 		//Si on demande d'attaquer, qu'on n'est pas déjà en train d'attaquer, et qu'on n'est pas en train de lancer
-		if(Input.GetButton("Fire1") && !enTrainDAttaquer && (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
+		if(Input.GetButtonDown("Fire1") && !enTrainDAttaquer &&
+		   (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
 		{
 			gameObject.GetComponent<Collider>().isTrigger=true;
 			enTrainDAttaquer=true;

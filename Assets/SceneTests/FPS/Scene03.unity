@@ -694,7 +694,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215163193}
   m_LocalRotation: {x: .00699903769, y: -.128453329, z: -.991687953, w: .00241361419}
-  m_LocalPosition: {x: -.00347167253, y: 1.38944817, z: .0499566793}
+  m_LocalPosition: {x: -.683170795, y: 1.49801826, z: .362828314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737126311}
@@ -2172,6 +2172,7 @@ GameObject:
   - 114: {fileID: 1592293382}
   - 114: {fileID: 1592293381}
   - 54: {fileID: 1592293380}
+  - 114: {fileID: 1592293384}
   m_Layer: 0
   m_Name: Molotov
   m_TagString: Untagged
@@ -2264,6 +2265,21 @@ MonoBehaviour:
   objetReel: {fileID: 1592293378}
   departObjetReel: {fileID: 114300563}
   vitesseDeLance: 10
+--- !u!114 &1592293384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592293378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e4d4994ad1f5b4183aa65d5a255b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bypass: 0
+  delaiEntreDeuxSoins: .100000001
+  munitions: 0
+  pointsDeVieSoignes: 5
 --- !u!1 &1640895424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +2900,7 @@ MonoBehaviour:
   - {fileID: 1943774842}
   - {fileID: 2125216662}
   - {fileID: 1737126310}
-  quantiteObjets: 000000000000000000000000000000000000000001000000
+  quantiteObjets: 010000000a0000000000000000000000000000000f000000
   camera: {fileID: 1375925674}
 --- !u!114 &2103534760
 MonoBehaviour:
@@ -2933,7 +2949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79e6622cccb232458859b3e77cc3501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsDeVieMax: 5
+  pointsDeVieMax: 50
   pointsDeVieActuels: 5
 --- !u!1 &2123176628
 GameObject:

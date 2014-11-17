@@ -10,12 +10,16 @@
  *			  A noter : si l'objet est à la fois ramassable et lancable, le *meme* prefab doit contenir ObjetLance.cs et Pickable.cs.
  */
 
+// ATTENTION
+// Il faut manuellement vérifier que l'objet ne traverse pas le joueur lors du lancer. Sinon il se prend des dégats !
+
 using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ObjetLance : MonoBehaviour {
 	public bool bypass; //Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
+	GameObject lanceurDeLObjet; //Pour pouvoir ignorer les collisions avec lui
 
 	public bool aUneDureeDeVie = true; //Si l'objet disparait après un certain temps
 	public float dureeDeVie = 30.0f; //Temps avant la destruction
@@ -107,6 +111,10 @@ public class ObjetLance : MonoBehaviour {
 	 * @details On cherche si l'objet (ou un de ses enfants) a un des points de vie. Si oui, on en retire, selon le champ damage de l'objet auquel ce script est attaché.
 	 */
 	void InfligerDegats(GameObject objet) {
+		//Intéret d'avoir le gameObject, et en enfant Graphique dans la structure des objets
+		if (objet == lanceurDeLObjet) return; //On ignore les collisions avec le lanceur
+		if (objet.transform.parent == lanceurDeLObjet) return; //On ignore les collisions avec le lanceur
+
 		//enlever de la vie
 		Transform objetAvecVie = objet.transform;
 		Health health = objetAvecVie.GetComponent<Health>(); //Si le truc touché a des points de vie, on doit le blesser
@@ -114,6 +122,7 @@ public class ObjetLance : MonoBehaviour {
 			objetAvecVie=objetAvecVie.parent;
 			health = objetAvecVie.GetComponent<Health>();
 		}
+
 		if(health != null){
 			health.SubirDegats(damage);
 		}
@@ -163,6 +172,10 @@ public class ObjetLance : MonoBehaviour {
 				health.SubirDegats(damage*damageRatio);
 			}
 		}
+	}
+
+	public void SetLanceurObjet (GameObject l) {
+		lanceurDeLObjet = l;
 	}
 
 	public void SetBypass(bool bypass_) {

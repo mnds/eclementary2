@@ -78,20 +78,25 @@ public class Lancer : MonoBehaviour {
 			}
 
 			//Traitements d'inventaire
-			SetMunitions(munitions-1); //On enlève une munition de l'arme
+			if(inventaire!=null)
+				inventaire.ChangerMunitions (gameObject, munitions-1); //On enlève une munition de l'arme
+			else
+				Debug.Log ("Pas d'inventaire !");
+
 			//On teste si l'objet a encore des munitions
 			if(munitions<=0) { //S'il n'y a plus de munitions, on désactive l'objet. Pas de problème pour eETDL, car quand on réactivera l'objet, la dernière ligne de Update sera lue et le mettra comme il faut
 				gameObject.SetActive(false); //On désactive l'objet pour l'instant
 			}
 
-			//On récupère sur cet objet les scripts Lancer, ObjetLance et Pickable, et on désactive tout sauf ObjetLancer.
+			//On récupère sur cet objet les scripts Lancer, Soigner, ObjetLance et Pickable, et on désactive tout sauf ObjetLancer.
 			//Attention, objet est transformé dans le processus.
 			Lancer lancer = objet.GetComponent<Lancer>();
 			ObjetLance ol = objet.GetComponent<ObjetLance>();
 			Pickable pickable = objet.GetComponent<Pickable>();
 			Attaquer attaquer = objet.GetComponent<Attaquer>();
+			Soigner soigner = objet.GetComponent<Soigner>();
 			//Tant que l'un de ces objets est null, on vérifie si ce n'est pas le parent qui a le script
-			while((lancer == null||ol==null||pickable==null) && objet.transform.parent){
+			while((lancer == null||ol==null||pickable==null||soigner==null) && objet.transform.parent){
 				objet=objet.transform.parent.gameObject;
 				if(lancer==null)
 					lancer = objet.GetComponent<Lancer>();
@@ -101,6 +106,8 @@ public class Lancer : MonoBehaviour {
 					pickable=objet.GetComponent<Pickable>();
 				if(attaquer==null)
 					attaquer = objet.GetComponent<Attaquer>();
+				if(soigner==null)
+					soigner = objet.GetComponent<Soigner>();
 			}
 			//Sinon, on est à la racine, donc on cherche dans les enfants.
 			if(lancer == null)
@@ -111,15 +118,21 @@ public class Lancer : MonoBehaviour {
 				pickable=objet.GetComponentInChildren<Pickable>();
 			if(attaquer==null)
 				attaquer=objet.GetComponentInChildren<Attaquer>();
+			if(soigner==null)
+				soigner=objet.GetComponentInChildren<Soigner>();
 			
 			if(lancer!=null)
 				lancer.SetBypass(true); //Lancer désactivé
-			if(ol!=null)
+			if(ol!=null) {
 				ol.SetBypass(false);//ObjetLance actif
+				ol.SetLanceurObjet(gameObject); //Pour ne pas frapper le lanceur
+			}
 			if(pickable!=null)
 				pickable.SetBypass(true);//Pickable désactivé
 			if(attaquer!=null)
 				attaquer.SetBypass(true);//Attaquer désactivé
+			if(soigner!=null)
+				soigner.SetBypass(true); //Soigner désactivé
 
 		}
 		estEnTrainDeLancer = Time.time < tempsAvantProchainTir; //Savoir si on est en train de lancer
@@ -135,12 +148,7 @@ public class Lancer : MonoBehaviour {
 	}
 
 	public void SetMunitions (int munitions_) {
-		if (!inventaire) {
-			Debug.Log("Inventaire nul");
-			return;
-		}
 		munitions = Mathf.Max (0,munitions_);
-		inventaire.ChangerMunitions (gameObject, munitions);
 	}
 
 	public void SetMunitionsSimple (int munitions_) {

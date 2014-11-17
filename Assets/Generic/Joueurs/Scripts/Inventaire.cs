@@ -48,6 +48,12 @@ public class Inventaire : MonoBehaviour {
 				lancer.SetInventaire(this);
 				lancer.SetMunitions(quantiteObjets[k]);
 			}
+			//Ensuite, tous les objets qui ont Soigner doivent etre liés à l'inventaire
+			Soigner soigner = listeObjetsRecoltables[k].GetComponent<Soigner>();
+			if(soigner!=null) {
+				soigner.SetInventaire(this);
+				soigner.SetMunitions(quantiteObjets[k]);
+			}
 		}
 		objetActuel = listeObjetsUtilisables[0]; //pour ne pas qu'il soit null
 		//Choix de l'objet actuel parmi ceux qui effectivement sont dans l'inventaire
@@ -276,6 +282,17 @@ public class Inventaire : MonoBehaviour {
 						ChangerObjetActuel(listeObjetsUtilisables[0]);
 				}
 				quantiteObjets[k]=munitions; //On change les munitions
+
+				//On s'occupe ensuite de Lancer et Soigner s'ils existent
+				Lancer lancer = listeObjetsRecoltables[k].GetComponent<Lancer>();
+				if(lancer!=null) {
+					lancer.SetMunitions(quantiteObjets[k]);
+				}
+				Soigner soigner = listeObjetsRecoltables[k].GetComponent<Soigner>();
+				if(soigner!=null) {
+					soigner.SetMunitions(quantiteObjets[k]);
+				}
+
 				return;
 			}
 		}

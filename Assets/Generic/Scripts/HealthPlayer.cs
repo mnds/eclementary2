@@ -21,7 +21,7 @@ public class HealthPlayer : Health {
 	void OnGUI () {
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
-		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Screen.width / 6, Screen.height / 10), "Points de vie : "+pointsDeVieActuels);
+		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Screen.width / 6, Screen.height / 10), "Points de vie : "+Mathf.Floor(pointsDeVieActuels));
 	}
 
 	public override void DeclencherMort () {

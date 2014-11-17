@@ -17,8 +17,16 @@ public class Health : MonoBehaviour {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax);
 	}
 
-	public void Soigner(float soin) {
-		pointsDeVieActuels = Mathf.Max (pointsDeVieActuels + soin, pointsDeVieMax);
+	/**
+	 * @brief Permet de rajouter des points de vie à l'objet.
+	 * @param soin De combien augmenter les points de vie.
+	 *
+	 * @return Renvoie true si un soin a été effectué.
+	 */
+	public bool Soigner(float soin) {
+		float pdvaAvantSoin = pointsDeVieActuels;
+		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels + soin, pointsDeVieMax);
+		return (pdvaAvantSoin != pointsDeVieActuels);
 	}
 
 	public void SubirDegats(float degats) {
