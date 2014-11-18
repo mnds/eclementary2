@@ -10,7 +10,7 @@
  */
 
 /*
- * Utilisé dans TerrainSoundManager , AnimationChute
+ * Utilisé dans TerrainSoundManager , AnimationChute , MoveCamera
  */
 
 using UnityEngine;
@@ -22,9 +22,10 @@ public class FPCClassic : MonoBehaviour {
 	//Sprint
 	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
 	public float vitesseCourse = 12.0f; //Vitesse de course
+	public float jaugeMax = 10.0f;
 	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-
+	
 	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse
@@ -37,19 +38,21 @@ public class FPCClassic : MonoBehaviour {
 	float velociteVerticale = 0; //Tient en compte de la gravité
 	int nombreSautsFaits = 0; //Pour un double saut, il faut prendre en compte le nombre d'appuis sur la touche saut
 	public int nombreSautsMax = 2; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
+	float bounce = 0f; //Pour le rebond sur des objets
 	//S'accroupir
 	public float characterControllerHeightDebout = 2.0f;
 	public float characterControllerHeightAccroupi = 1.2f;
-
+	
 	//Bypass
 	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
 	bool rendreImmobile = false; //Si true, les touches directionnelles sont bloquées
 	bool bloquerTete = false; //La camera ne bouge plus
 	bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
-
+	
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
+		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
 	
@@ -62,7 +65,7 @@ public class FPCClassic : MonoBehaviour {
 			MouvementCorps(); //Motion du joueur
 		}
 	}
-
+	
 	/**
 	 * @brief Change la vitesse du mouvement.
 	 * @details Appelé toutes les frames dans Update. Si le bouton de sprint est appuyé, on change la vitesse de mouvement du charactercontroller.
@@ -71,10 +74,10 @@ public class FPCClassic : MonoBehaviour {
 	 */
 	void Sprint () {
 		//Sprint
-		if (Input.GetButton("Sprint") && sprintPossible)
+		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
 			vitesseMouvement=vitesseCourse;
-			jauge-=Time.deltaTime;
+			jauge = Mathf.Max (0,jauge-Time.deltaTime);
 			if(jauge<=0) {
 				jauge=0; //On remet à 0
 				sprintPossible=false; //On ne peut plus faire le sprint pendant un certain temps
@@ -84,18 +87,18 @@ public class FPCClassic : MonoBehaviour {
 		{
 			vitesseMouvement=vitesseMarche;
 			if(jauge>limiteBasseJauge) sprintPossible=true;
-			if(jauge<10.0f) jauge+=Time.deltaTime/3;
+			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
 		}
 		//Debug.Log (jauge);
 	}
-
+	
 	/**
 	 * @brief Gère la caméra.
 	 * @details Vérifie la position de la souris pour tourner la caméra dans un champ réduit.
 	 */
 	void BougerTete () {
 		if(bloquerTete) return; //Si on ne peut pas bouger la camera
-
+		
 		//Rotation latérale
 		float rotationLaterale = Input.GetAxis ("Mouse X") * vitesseRotation;
 		transform.Rotate (0, rotationLaterale, 0);
@@ -105,7 +108,7 @@ public class FPCClassic : MonoBehaviour {
 		rotationVerticale = Mathf.Clamp (rotationVerticale, -angleVerticalMax, angleVerticalMax);
 		Camera.main.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
 	}
-
+	
 	/**
 	 * @brief Permet de se baisser.
 	 * @details Quand la touche Crouch est appuyé, on s'accroupit. Rappuyé redonne la hauteur de caméra initiale.
@@ -123,16 +126,16 @@ public class FPCClassic : MonoBehaviour {
 				cc.height=characterControllerHeightDebout;
 			}
 		}
-
+		
 	}
-
+	
 	/**
 	 * @brief Gère le mouvement du character controller.
 	 * @details S'il est possible de bouger, on repère l'appui des touches de mouvements, ainsi que les demandes de saut.
 	 */
 	void MouvementCorps () {
 		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
-
+		
 		//Mouvement
 		float vitesseVerticale = Input.GetAxis ("Vertical") * vitesseMouvement;
 		float vitesseHorizontale = Input.GetAxis ("Horizontal") * vitesseMouvement;
@@ -145,8 +148,16 @@ public class FPCClassic : MonoBehaviour {
 		}
 		else 
 		{
-			nombreSautsFaits = 0; //Si le cc est sur le sol, alors il peut faire autant de sauts qu'il veut
-			velociteVerticale = -1; //Sinon la remet à un nombre négatif fixe pour éviter qu'elle se cumule. Négatif pour que isGrounded marche
+			//Rebond ?
+			if(bounce<=0) {//Pas de rebond
+				nombreSautsFaits = 0; //Si le cc est sur le sol, alors il peut faire autant de sauts qu'il veut
+				velociteVerticale = -1; //Sinon la remet à un nombre négatif fixe pour éviter qu'elle se cumule. Négatif pour que isGrounded marche
+			}
+			else //On rebondit
+			{
+				velociteVerticale=bounce;
+				bounce=0; //On remet à 0
+			}
 		}
 		if (Input.GetButtonDown("Jump") && nombreSautsFaits<nombreSautsMax //On veut sauter, on n'a pas trop sauté
 		    && !(nombreSautsMax==0 && !cc.isGrounded)) //si on n'a pas encore sauté et qu'on est en l'air, pas le droit de sauter
@@ -160,10 +171,24 @@ public class FPCClassic : MonoBehaviour {
 		//Coupler la rotation avec le mouvement
 		vitesse = transform.rotation * vitesse;
 		vitesseNonVerticaleActuelle = Mathf.Sqrt(vitesseHorizontale*vitesseHorizontale + vitesseVerticale*vitesseVerticale);
-
+		
 		cc.Move (vitesse*Time.deltaTime); //On multiplie la vitesse par la temps écoulé depuis le dernier appel à Update
 	}
+	
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		
+		PhysicMaterial pm = hit.collider.material;
+		if(pm==null) return; //S'il n'y a pas de physic material, on ne fait rien
 
+		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
+		bounce = Mathf.Abs ( velociteVerticale * bounciness );
+//		Debug.Log ("Bounce : " + bounce);
+	}
+
+	void OnGUI () {
+		//Affichage de la barre d'endurance
+		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
+	}
 
 	//Set/Get
 	public void SetRendreImmobile (bool rendreImmobile_) {
@@ -181,7 +206,7 @@ public class FPCClassic : MonoBehaviour {
 	public bool GetBloquerTete () {
 		return bloquerTete;
 	}
-
+	
 	public void SetFreeze (bool freeze_) {
 		freeze = freeze_;
 	}
@@ -189,11 +214,11 @@ public class FPCClassic : MonoBehaviour {
 	public bool GetFreeze () {
 		return freeze;
 	}
-
+	
 	public float GetVitesseNonVerticaleActuelle () {
 		return vitesseNonVerticaleActuelle;
 	}
-
+	
 	public float GetVitesseMouvement () {
 		return vitesseMouvement;
 	}

@@ -80,6 +80,7 @@ GameObject:
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400014}
+  - 114: {fileID: 11400034}
   m_Layer: 0
   m_Name: "JoueurArm\xE9"
   m_TagString: Player
@@ -295,6 +296,7 @@ GameObject:
   - 114: {fileID: 11400018}
   - 114: {fileID: 11400016}
   - 54: {fileID: 5400006}
+  - 114: {fileID: 11400032}
   m_Layer: 0
   m_Name: Molotov
   m_TagString: Untagged
@@ -515,7 +517,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .462207794, y: -.114844799, z: 1.11268139}
+  m_LocalPosition: {x: -.00567817688, y: .472510576, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -744,7 +746,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
   m_LocalRotation: {x: .00699903769, y: -.128453329, z: -.991687953, w: .00241361419}
-  m_LocalPosition: {x: -.00347167253, y: 1.38944817, z: .0499566793}
+  m_LocalPosition: {x: -.683170795, y: 1.49801826, z: .362828314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400050}
@@ -1079,8 +1081,8 @@ Rigidbody:
   m_GameObject: {fileID: 100050}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_Drag: 10
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1141,7 +1143,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .448312521, y: .535194337, z: .929857552}
@@ -1188,6 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 400006}
   placementFinal: {fileID: 400010}
@@ -1207,6 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesseMarche: 5
   vitesseCourse: 9
+  jaugeMax: 10
   vitesseRotation: 10
   vitesseSaut: 7
   angleVerticalMax: 60
@@ -1226,6 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 400024}
   placementFinal: {fileID: 400022}
@@ -1280,6 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 400016}
   placementFinal: {fileID: 400012}
@@ -1321,7 +1327,7 @@ MonoBehaviour:
   - {fileID: 100014}
   - {fileID: 100040}
   - {fileID: 100050}
-  quantiteObjets: 010000000100000004000000020000000100000001000000
+  quantiteObjets: 010000000a0000000000000000000000000000000f000000
   camera: {fileID: 2000000}
 --- !u!114 &11400016
 MonoBehaviour:
@@ -1388,6 +1394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 45
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 400036}
   placementFinal: {fileID: 400038}
@@ -1420,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c66aaf53bffcc419f88e08626374b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bypass: 0
+  bypass: 1
   aUneDureeDeVie: 0
   dureeDeVie: 30
   damage: 5
@@ -1459,12 +1466,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 20
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 400048}
   placementFinal: {fileID: 400046}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .400000006
   tempsFinalVersInitial: .5
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e4d4994ad1f5b4183aa65d5a255b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bypass: 0
+  delaiEntreDeuxSoins: .100000001
+  munitions: 0
+  pointsDeVieSoignes: 5
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e6622cccb232458859b3e77cc3501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsDeVieMax: 50
+  pointsDeVieActuels: 5
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

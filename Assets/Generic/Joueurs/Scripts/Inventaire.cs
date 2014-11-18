@@ -1,5 +1,5 @@
 ﻿/**
- * \file      Attaquer.cs
+ * \file      Inventaire.cs
  * \author    
  * \version   1.0
  * \date      9 novembre 2014
@@ -48,6 +48,12 @@ public class Inventaire : MonoBehaviour {
 				lancer.SetInventaire(this);
 				lancer.SetMunitions(quantiteObjets[k]);
 			}
+			//Ensuite, tous les objets qui ont Soigner doivent etre liés à l'inventaire
+			Soigner soigner = listeObjetsRecoltables[k].GetComponent<Soigner>();
+			if(soigner!=null) {
+				soigner.SetInventaire(this);
+				soigner.SetMunitions(quantiteObjets[k]);
+			}
 		}
 		objetActuel = listeObjetsUtilisables[0]; //pour ne pas qu'il soit null
 		//Choix de l'objet actuel parmi ceux qui effectivement sont dans l'inventaire
@@ -69,7 +75,7 @@ public class Inventaire : MonoBehaviour {
 
 	/**
 	 * @brief Change l'objet actuellement équipé.
-	 * @param objet L'objet à rendre actuel.
+	 * @param objet_ L'objet à rendre actuel.
 	 *
 	 * @details On cherche si l'objet (ou un de ses enfants) a un des points de vie. Si oui, on en retire, selon le champ damage de l'objet auquel ce script est attaché.
 	 */
@@ -121,6 +127,8 @@ public class Inventaire : MonoBehaviour {
 	 */
 	void VerifierTouches()
 	{
+		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
+
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
 		if(attaquerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
@@ -274,6 +282,17 @@ public class Inventaire : MonoBehaviour {
 						ChangerObjetActuel(listeObjetsUtilisables[0]);
 				}
 				quantiteObjets[k]=munitions; //On change les munitions
+
+				//On s'occupe ensuite de Lancer et Soigner s'ils existent
+				Lancer lancer = listeObjetsRecoltables[k].GetComponent<Lancer>();
+				if(lancer!=null) {
+					lancer.SetMunitions(quantiteObjets[k]);
+				}
+				Soigner soigner = listeObjetsRecoltables[k].GetComponent<Soigner>();
+				if(soigner!=null) {
+					soigner.SetMunitions(quantiteObjets[k]);
+				}
+
 				return;
 			}
 		}

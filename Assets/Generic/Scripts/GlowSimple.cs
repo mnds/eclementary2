@@ -49,12 +49,12 @@ public class GlowSimple : MonoBehaviour {
 		if (activated) return;
 		activated = true;
 		int i = 0;
-		Couleurs couleursScript = new Couleurs();
+//		Couleurs couleursScript = new Couleurs();
 		foreach (Material material in renderer.materials) { //On cherche tous les materiaux de l'objet
 
 			Shader shad = material.shader;
 			material.shader=Shader.Find ("Self-Illumin/"+ReturnTypeShad(shad));
-			//material.color=couleursScript.ocreJaune();
+			//material.color=Couleurs.rouge();
 			i++;
 		}
 	}

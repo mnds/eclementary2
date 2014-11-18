@@ -95,9 +95,8 @@ public class MazeTriggerManager : MonoBehaviour {
 	 */
 	private IEnumerator ChangerCouleurLampe () {
 		//Choix de la couleur finale
-		Couleurs couleurs = new Couleurs(); //Contient une liste de couleurs
-		List<Color> listeCouleursPossibles = new List<Color> (){Color.yellow,Color.red,couleurs.abricot(),
-			couleurs.citron(), couleurs.rouille(), couleurs.rougeSang(), Color.grey};
+		List<Color> listeCouleursPossibles = new List<Color> (){Color.yellow,Color.red,Couleurs.abricot(),
+			Couleurs.citron(), Couleurs.rouille(), Couleurs.rougeSang(), Color.grey};
 		Color startColor = labyrintheLampe.light.color;
 		Color endColor = listeCouleursPossibles[Random.Range(0,listeCouleursPossibles.Count)];
 
