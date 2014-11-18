@@ -27,7 +27,6 @@ public class MazeEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cible = GameObject.Find ("First Person Controller");
 		cameraScreamer = GameObject.Find ("Camera Screamer");
 	}
 	
@@ -55,6 +54,10 @@ public class MazeEnemy : MonoBehaviour {
 
 	public void SetMazeManager (MazeManager mw_) {
 		mazeManager = mw_;
+	}
+
+	public void SetCible (GameObject cible_) {
+		cible = cible_;
 	}
 
 	public void SetLabyrintheEnCoursDeRegeneration (bool labyrintheEnCoursDeRegeneration_) {

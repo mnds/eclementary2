@@ -22,6 +22,7 @@ static public class ControlCenter {
 	static bool afficherBarreEnduranceJoueur = true;
 	static private bool abdvjAncien; //Pour les changements
 	static private bool abejAncien;
+	static private bool utiliserOculus = false;
 
 	static HealthPlayer healthPlayer;
 
@@ -68,5 +69,9 @@ static public class ControlCenter {
 
 	static public void SetHealthPlayer (HealthPlayer hp) {
 		healthPlayer = hp;
+	}
+
+	static public bool GetUtiliserOculus () {
+		return utiliserOculus;
 	}
 }

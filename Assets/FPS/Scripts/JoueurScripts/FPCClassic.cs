@@ -19,6 +19,8 @@ using System.Collections;
 [RequireComponent (typeof(CharacterController))]
 public class FPCClassic : MonoBehaviour {
 	CharacterController cc;
+	public Camera cameraOculus;
+	private Camera camera;
 	//Sprint
 	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
 	public float vitesseCourse = 12.0f; //Vitesse de course
@@ -52,6 +54,8 @@ public class FPCClassic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
+		if (camera == null || !ControlCenter.GetUtiliserOculus())
+			camera = Camera.main;
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
@@ -106,7 +110,7 @@ public class FPCClassic : MonoBehaviour {
 		//Rotation verticale
 		rotationVerticale += Input.GetAxis ("Mouse Y") * vitesseRotation;
 		rotationVerticale = Mathf.Clamp (rotationVerticale, -angleVerticalMax, angleVerticalMax);
-		Camera.main.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
+		camera.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
 	}
 	
 	/**
@@ -179,17 +183,17 @@ public class FPCClassic : MonoBehaviour {
 		
 		PhysicMaterial pm = hit.collider.material;
 		if(pm==null) return; //S'il n'y a pas de physic material, on ne fait rien
-
+		
 		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
-//		Debug.Log ("Bounce : " + bounce);
+		//		Debug.Log ("Bounce : " + bounce);
 	}
-
+	
 	void OnGUI () {
 		//Affichage de la barre d'endurance
 		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
 	}
-
+	
 	//Set/Get
 	public void SetRendreImmobile (bool rendreImmobile_) {
 		rendreImmobile = rendreImmobile_;

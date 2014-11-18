@@ -15,7 +15,7 @@ public class SpawnJoueur : MonoBehaviour {
 	public GameObject pointDeDepartJoueur;
 	public GameObject joueur;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		Instantiate (joueur, pointDeDepartJoueur.transform.position, pointDeDepartJoueur.transform.rotation);
 	}
 	
