@@ -41,7 +41,7 @@ public class MazeTriggerManager : MonoBehaviour {
 			if((mazeManager.GetJEntree()!=j || i!=0) && 
 			   (mazeManager.GetJSortie()!=j||i!=mazeManager.GetNombreMursParCote()-1))
 			{
-				int determineLesEvenements = Random.Range(0,100);
+				int determineLesEvenements = 100; //Random.Range(0,100);
 				if(determineLesEvenements<5) {DeclencherExplosion();}
 				else if(determineLesEvenements<10) {StartCoroutine(ClignoterLampe());}
 				else if(determineLesEvenements<20) {StartCoroutine(ChangerCouleurLampe());}
