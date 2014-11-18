@@ -1,4 +1,17 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      AllumageLampe.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Modifie l'intensité de la lumière émise en fonction de l'heure.
+ *
+ */
+
+/*
+ * Utilise ScriptHorloge
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class AllumageLampe : MonoBehaviour {

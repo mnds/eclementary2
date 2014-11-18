@@ -1,4 +1,16 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeDeathZone.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Empeche le joueur de sortir des frontières du labyrinthe en le tuant au besoin avec un bruitage spécial.
+ */
+
+/*
+ * Utilisé dans MazeManager
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class MazeDeathZone : MonoBehaviour {

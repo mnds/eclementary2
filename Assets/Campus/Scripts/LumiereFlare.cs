@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      LumiereFlare.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Modifie la couleur de la lentille modélisant le soleil en fonction de l'heure.
+ *
+ * \details   Les propriétés de la lentille sont modifiées selon l'heure donnée par l'instance de ScriptHorloge de la scène.
+ */
+
+/*
+ * Utilise ScriptHorloge
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class LumiereFlare : MonoBehaviour {

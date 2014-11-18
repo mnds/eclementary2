@@ -1,4 +1,19 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      TerrainSoundManager.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Met un son d'ambiance lié à la texture du sol sur laquelle est l'objet.
+ * 
+ * \details   On récupère à chaque frame la texture sous le joueur, et on vérifie quel est le son associé. S'il y en a un, on verifie que le joueur se déplace.
+ * 			  Si tel est le cas, on joue le son associé dans l'audioSource mise en attribut.
+ */
+
+/*
+ * Code trouvé à http://answers.unity3d.com/questions/14998/how-can-i-perform-some-action-based-on-the-terrain.html
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -44,6 +59,12 @@ public class TerrainSoundManager : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Renvoie la texture sous la position donnée en argument.
+	 * @param position Point de l'espace sous lequel on cherche la texture.
+	 *
+	 * @return La texture en question.
+	 */
 	public Texture getTerrainTextureAt( Vector3 position )
 	{
 		// Set up:

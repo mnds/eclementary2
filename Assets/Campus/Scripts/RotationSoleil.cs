@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      RotationSoleil.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Change la couleur du soleil en fonction de l'heure.
+ *
+ * \details   L'heure est obtenue à partir d'un GameObject nommé Horloge, qui contient le ScriptHorloge de la scène.
+ */
+
+/*
+ * Utilise ScriptHorloge
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class RotationSoleil : MonoBehaviour {

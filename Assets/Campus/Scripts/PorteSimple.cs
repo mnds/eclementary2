@@ -1,9 +1,21 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      PorteSimple.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Permet de faire tourner une porte.
+ *
+ * \details   Permet la rotation selon l'axe y d'une porte déjà placée dans la scène. Le paramètre openedStart permet de choisir
+ * 			  si la porte tourne dans le sens horaire ou anti-horaire. doorAngle et speed modifie le mouvement de la porte.
+ */
+
+/*
+ * Utilisé dans InteractionEnvironnement
+ */
+
+using UnityEngine;
 using System.Collections;
 
-//Opens/closes doors. To be put on an object tagged with Door
-//Warning : the door must rotate around its y axis, with an y rotation fixed initially so that its eulerAngles stay between 0 and 360.
-//For example, if the door is not supposed to open more than 180 degrees, fix initially rotation.y to 180
 public class PorteSimple : MonoBehaviour {
 	public bool openedStart = false;
 	public bool interactiveStart = true;
@@ -14,9 +26,8 @@ public class PorteSimple : MonoBehaviour {
 	bool closing = false;
 
 	public float doorAngle = 100.0f;
-	public float speed = 1f;
-	Vector3 closedPosition; //fermée
-	Vector3 openedPosition; //ouverte
+	public float speed = 40f;
+	float angleActuel = 0f;
 
 	public string toucheOuverture = "InteractionButton";
 	public string toucheFermeture = "InteractionButton";
@@ -26,45 +37,63 @@ public class PorteSimple : MonoBehaviour {
 		interactive = interactiveStart;
 		opened = openedStart;
 		closed = !opened;
-		if (opened) { //if opened
-			openedPosition = transform.eulerAngles;
-			closedPosition = (openedPosition - new Vector3(0,doorAngle,0));
-		}
-		else { //if closed
-			closedPosition = transform.eulerAngles;
-			openedPosition = (closedPosition + new Vector3(0,doorAngle,0));
-		}
+		if (opened)
+			angleActuel = doorAngle;
 	}
 
 	void Update () {
 		MoveDoor ();
+		Debug.Log (angleActuel);
 	}
 
+	/**
+	 * @brief Permet le mouvement de la porte selon sa position et l'action du joueur.
+	 *
+	 * @details Appelle deux autres méthodes pour fermer/ouvrir la porte. La fermeture est prioritaire.
+	 */
 	void MoveDoor () {
 		Close ();
 		Open ();
 	}
 
+	/**
+	 * @brief Ferme la porte.
+	 *
+	 * @details La porte se ferme si elle n'est pas déjà fermée ou en train de se fermer. On utilise pour cela Roa
+	 */
 	void Close () {
 		//Close the door
 		if (!closed && closing) { //Door not already closing or closed
 			opened = false;
-			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, closedPosition, Time.deltaTime*speed);
-			if(Vector3.Distance(transform.eulerAngles, closedPosition)<1.0f)
+			gameObject.transform.Rotate (0,Time.deltaTime*speed,0);
+			angleActuel-=Time.deltaTime*speed;
+			if(Mathf.Abs(angleActuel)<2*Time.deltaTime*speed)
 				closed = true; //If closed position, is closed
 		}
 	}
 
+	/**
+	 * @brief Ouvre la porte.
+	 *
+	 * @details La porte s'ouvre si elle n'est pas déjà ouverte ou en train de s'ouvrir. On utilise pour cela Rotate.
+	 */
 	void Open () {
 		//Open the door
 		if (!opened && opening) {
 			closed = false;
-			transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, openedPosition, Time.deltaTime * speed);
-			if (Vector3.Distance(transform.eulerAngles, openedPosition)<1.0f)
+			gameObject.transform.Rotate (0,-Time.deltaTime*speed,0);
+			angleActuel+=Time.deltaTime*speed;
+			if(Mathf.Abs(angleActuel-doorAngle)<2*Time.deltaTime*speed)
 				opened = true;
 		}
 	}
 
+	/**
+	 * @brief Permet l'interaction avec la porte depuis un autre script.
+	 *
+	 * @details Quand la porte est sollicitée et qu'elle peut interagir, l'appel à ce script la fait se fermer ou s'ouvrir.
+	 * 	        Si la porte est fermée ou en train de se fermer, on l'ouvre et vice-versa.
+	 */
 	public void Interact () {
 		if (!interactive) return; //Cannot interact
 

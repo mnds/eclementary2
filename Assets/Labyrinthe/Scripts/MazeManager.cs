@@ -1,4 +1,19 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeManager.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Génère le labyrinthe, en étudie le placement des murs, place les objets et les personnages.
+ *
+ * \details   Génère aléatoirement le labyrinthe à l'aide des MazeWallManager, place les personnages loin de l'entrée, place des objets.
+ * 		      Peut également remettre le labyrinthe à zéro et replacer les personnages.
+ */
+
+/*
+ * Utilisé dans MazeDeathZone , MazeEnemy , MazeTrigger
+ */
+
+using UnityEngine;
 using System.Collections.Generic;
 
 //crée un labyrinthe au niveau d'un GameObject situé au centre du mur placé
@@ -25,6 +40,7 @@ public class MazeManager : MonoBehaviour {
 	private int iDuGouffre = 12;
 	private int jDuGouffre = 10;
 
+	//Crée un labyrinthe, place les personnages, les objets, configure les PNJ et les zones de controle (pour ne pas sortir du labyrinthe)
 	void Start () {
 		fpc = GameObject.Find ("First Person Controller");
 		matriceDeplacementsPossibles = new List<List<List<int>>> ();
@@ -51,6 +67,11 @@ public class MazeManager : MonoBehaviour {
 						RestartLevel ();
 	}
 
+	/**
+	 * @brief Relance le niveau.
+	 *
+	 * @details Génère un nouveau labyrinthe, replace les personnages (pas les objets), et reconfigure les PNJ
+	 */
 	//Relance le niveau. Pour l'instant, ne garde rien en mémoire
 	private void RestartLevel () {
 		matriceDeplacementsPossibles = new List<List<List<int>>> ();
@@ -66,6 +87,12 @@ public class MazeManager : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Génère le labyrinthe.
+	 *
+	 * @details Détruit tout le labyrinthe s'il avait déjà été généré, choisit des positions initiales/finales pour le labyrinthe.
+	 * 			Ensuite, crée les murs, et les fait tourner au hasard pour générer le labyrinthe. Génère les MazeTriggers du labyrinthe.
+	 */
 	public void GenererLabyrinthe () {
 		//Détruire tout le labyrinthe
 		while(lesMurs.Count!=0)
@@ -148,7 +175,9 @@ public class MazeManager : MonoBehaviour {
 		//Debug.Log ("Labyrinthe généré");
 	}
 
-	//Retire tous les murs qui existent déjà pour éviter les bugs de texture
+	/**
+	 * @brief Retire tous les murs qui existent déjà pour éviter les bugs de texture.
+	 */
 	public void PurgerLesMurs () {
 		List<GameObject> nouveauLesMurs = new List<GameObject>();
 		while(lesMurs.Count!=0)
@@ -175,6 +204,13 @@ public class MazeManager : MonoBehaviour {
 		lesMurs = nouveauLesMurs;
 	}
 
+	/**
+	 * @brief Remplit l'attribut matriceDeplacementsPossibles et le donne à tous les objets qui en ont besoin.
+	 *
+	 * @details Utilise des Raycast à chaque intersection du labyrinthe pour voir où sont les murs. De cette façon, depuis chaque case, on sait quelles directions sont empruntables.
+	 * 		    Pour que les Raycast ne touchent que les murs, on utilise le layer2 : IgnoreRaycast pour tous les objets autres que les murs.
+	 * 			Un Raycast est utilisé pour chaque direction (haut/bas/gauche/droite). Le tout est stocké dans l'attribut matriceDeplacementsPossibles.
+	 */
 	public void RemplirMatriceDeplacementsPossibles () {
 		//Changer de layer
 		int fpcLayer = fpc.layer;
@@ -246,6 +282,9 @@ public class MazeManager : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Place aléatoirement le personnage principal et les PNJ dans le labyrinthe.
+	 */
 	public void PlacerPersonnages () {
 		//Placement des PNJ
 		for(int i=0;i<lesPNJ.Count;i++)
@@ -265,7 +304,9 @@ public class MazeManager : MonoBehaviour {
 	}
 
 
-	//Placement d'objets aléatoires sans aucune influence sur le jeu
+	/**
+	 * @brief Placements aléatoires d'objets décoratifs sans aucune influence sur le jeu.
+	 */
 	public void PlacerObjets () {
 		for (int k=0;k<lesObjets.Count;k++)
 		{
@@ -276,7 +317,9 @@ public class MazeManager : MonoBehaviour {
 		}
 	}
 
-	//Demande aux PNJ d'aller trouver le FPC en plus
+	/**
+	 * @brief Place le FPC et demande aux ennemis de l'atteindre.
+	 */
 	public void SetCoordFPC (int i_, int j_) {
 		iFpc = i_;
 		jFpc = j_;

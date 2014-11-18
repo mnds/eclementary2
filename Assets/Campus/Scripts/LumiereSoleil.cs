@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      LumiereSoleil.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Modifie la couleur de la lumière du soleil en fonction de l'heure.
+ *
+ * \details   Les propriétés de la lumière sont modifiées selon l'heure donnée par l'instance de ScriptHorloge de la scène.
+ */
+
+/*
+ * Utilise ScriptHorloge
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class LumiereSoleil : MonoBehaviour {

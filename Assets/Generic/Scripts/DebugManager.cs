@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      DebugManager.cs
+ * \author    BC
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Permet l'accès à différentes fonctionnalités de Debug.
+ * 
+ * \details	  Permet de passer en mode debug en tapant une ligne de commande dans une scène qui contient un DebugManager.
+ * 			  /load <niveau> permet de lancer la scène ayant pour nom "<niveau>".
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public enum ModesJeu 

@@ -12,7 +12,6 @@
 using UnityEngine;
 using System.Collections;
 
-//Note : pendant qu'on lance, il est possible d'attaquer.
 public class Lancer : MonoBehaviour {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 
@@ -52,18 +51,33 @@ public class Lancer : MonoBehaviour {
 			gameObject.SetActive(false); //On désactive l'objet pour l'instant
 		}
 		//Si on demande à tirer, que le cooldown est fini, et qu'on n'est pas en train d'attaquer
-		if (Input.GetButton("Fire2") && Time.time>=tempsAvantProchainTir && (attaquerGameObject==null || !attaquerGameObject.GetEnTrainDAttaquer())) { //Bouton de tir
+		if (Input.GetButtonDown("Fire2") && Time.time>=tempsAvantProchainTir && (attaquerGameObject==null || !attaquerGameObject.GetEnTrainDAttaquer())) { //Bouton de tir
 			tempsAvantProchainTir = Time.time+delaiEntreDeuxTirs;
-			GameObject objet = (GameObject)Instantiate(objetReel,departObjetReel.position,departObjetReel.rotation); //On oriente selon la position initiale
+			GameObject objet;
 
-			//Actions à faire pour bien faire fonctionner le nouvel objet
-			objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
-			objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
+			//POSER
+			if(Input.GetButton ("SecondaryButton")) {//On demande à le poser
+				objet = (GameObject)Instantiate(objetReel,inventaire.GetCamera().transform.position+inventaire.GetCamera().transform.forward,Quaternion.identity); //On oriente selon la position initiale
+				objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
+				objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
+			}
+			else
+			{ //On veut le tirer
+				//TIRER
+				objet = (GameObject)Instantiate(objetReel,departObjetReel.position,departObjetReel.rotation); //On oriente selon la position initiale
 
-			Vector3 forceAppliquee = new Vector3 (vitesseDeLance*objet.transform.forward.x,
-			                                      vitesseDeLance*objet.transform.forward.y,
-			                                      vitesseDeLance*objet.transform.forward.z);
-			objet.rigidbody.AddForce(forceAppliquee,ForceMode.Impulse); //On lui donne une force
+				//Actions à faire pour bien faire fonctionner le nouvel objet
+				objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
+				objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
+
+				//Le tirer
+				Vector3 forceAppliquee = new Vector3 (vitesseDeLance*objet.transform.forward.x,
+				                                      vitesseDeLance*objet.transform.forward.y,
+				                                      vitesseDeLance*objet.transform.forward.z);
+				objet.rigidbody.AddForce(forceAppliquee,ForceMode.Impulse); //On lui donne une force
+			}
+
+			//Traitements d'inventaire
 			SetMunitions(munitions-1); //On enlève une munition de l'arme
 			//On teste si l'objet a encore des munitions
 			if(munitions<=0) { //S'il n'y a plus de munitions, on désactive l'objet. Pas de problème pour eETDL, car quand on réactivera l'objet, la dernière ligne de Update sera lue et le mettra comme il faut

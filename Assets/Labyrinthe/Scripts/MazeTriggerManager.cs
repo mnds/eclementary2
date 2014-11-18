@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      MazeTrigger.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Gère les effets du labyrinthe et envoie l'information de la position du joueur.
+ *
+ * \details   Placé sur chaque "case" du labyrinthe dans un cube qui repère les objets qui le traversent.
+ */
+
+/*
+ * Utilisé dans MazeManager
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,7 +22,6 @@ public class MazeTriggerManager : MonoBehaviour {
 	private MazeManager mazeManager; //Pour lui donner toutes les informations sur la position du fpc
 	private GameObject fpc; //Cherche le fpc de MazeManager, initialisé dans MazeManager
 	//Evenements
-	public Transform particulesExplosion; // Pour l'explosion
 	public AudioClip sonParticulesExplosion;
 	private GameObject labyrintheLampe; //La lampe
 	public AudioClip sonAllumageLampe;
@@ -17,6 +30,9 @@ public class MazeTriggerManager : MonoBehaviour {
 		labyrintheLampe = GameObject.Find ("LabyrintheLampe");
 	}
 
+	/**
+	 * @brief Déclenche des événements aléatoires quand le joueur entre. Dit à MazeManager où est le FPC
+	 */
 	void OnTriggerEnter (Collider collider) {
 		if(collider.gameObject==fpc) //Si le fpc rentre dans le collider, il est à la position i,j
 		{
@@ -38,14 +54,10 @@ public class MazeTriggerManager : MonoBehaviour {
 
 //Evénements possibles
 
-	//Explosion
+	/**
+	 * @brief Déclenche une explosion (effet de particules et son)
+	 */
 	private void DeclencherExplosion () {
-		//Créer l'explosion si le prefab est assigné
-		if(particulesExplosion)
-		{
-			GameObject temp = Instantiate (particulesExplosion.gameObject, transform.position, Quaternion.identity) as GameObject;
-			Destroy (temp, 2.0f);
-		}
 		//Lancer un son s'il est assigné
 		if(sonParticulesExplosion)
 		{
@@ -55,7 +67,9 @@ public class MazeTriggerManager : MonoBehaviour {
 		Debug.Log ("Explosion");
 	}
 
-	//Clignoter la lampe
+	/**
+	 * @brief Fait clignoter la lampe
+	 */
 	private IEnumerator ClignoterLampe () {
 		Debug.Log ("Clignotement");
 		//On liste les durées entre l'activation et la désactivation de la lampe
@@ -76,7 +90,9 @@ public class MazeTriggerManager : MonoBehaviour {
 		}
 	}
 
-	//La lampe change de couleur
+	/**
+	 * @brief La lampe change de couleur.
+	 */
 	private IEnumerator ChangerCouleurLampe () {
 		//Choix de la couleur finale
 		Couleurs couleurs = new Couleurs(); //Contient une liste de couleurs
@@ -100,8 +116,10 @@ public class MazeTriggerManager : MonoBehaviour {
 
 		Debug.Log (endColor);
 	}
-
-	//Reduire le rayon de la lampe pendant 60 secondes
+	
+	/**
+	 * @brief Reduire le rayon de la lampe pendant 60 secondes
+	 */
 	private IEnumerator ReduireRayonLampe () {
 		int reductionDuRayon = Random.Range (1, 4);
 		if(labyrintheLampe.light.spotAngle-reductionDuRayon>30)
@@ -112,8 +130,10 @@ public class MazeTriggerManager : MonoBehaviour {
 			labyrintheLampe.light.range += reductionDuRayon;
 		Debug.Log ("Augmentation de " + reductionDuRayon.ToString () + "du rayon");
 	}
-
-	//Reduire le range de la lampe pendant 45 à 75 secondes
+	
+	/**
+	 * @brief Reduire le range de la lampe pendant 45 à 75 secondes
+	 */
 	private IEnumerator ReduireRangeLampe () {
 		int reductionDuRange = Random.Range (1, 4);
 		if(labyrintheLampe.light.range-reductionDuRange>4)

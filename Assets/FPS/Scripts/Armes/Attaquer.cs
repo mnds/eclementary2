@@ -1,4 +1,19 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      Attaquer.cs
+ * \author    
+ * \version   1.0
+ * \date      9 novembre 2014
+ * \brief     Indique qu'un objet peut être utilisé pour attaquer.
+ *
+ * \details   Ce script, placé sur un objet, indique que le bouton Fire1 lui permet d'etre utilisé pour attaquer. Il faut manuellement définir une position initiale et finale pour le coup.
+ * 			  Le trajet initial->final est le seul à infliger des dégats. Il est nécessaire de manuelle repérer ces deux positions. Ce script doit etre placé sur le graphique de l'objet, qui contient un collider.
+ */
+
+/*
+ * Utilisé dans Inventaire
+ */
+
+using UnityEngine;
 using System.Collections;
 
 //Note : lorsqu'on attaque, il est possible de jeter l'objet pendant l'animation de l'attaque.
@@ -52,6 +67,7 @@ public class Attaquer : MonoBehaviour {
 			enTrainDAttaquer=true;
 			infligerDegats = true;
 		}
+		//Si on est en train d'attaquer, on continue
 		if(enTrainDAttaquer)
 		{
 			//A réactualiser à chaque fois
