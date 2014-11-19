@@ -188,7 +188,7 @@ public class Inventaire : MonoBehaviour {
 			GameObject copieObjet = objet;
 			pickableGameObject = copieObjet.GetComponent<Pickable>();
 			
-			while(pickableGameObject == null && objet.transform.parent)
+			while(pickableGameObject == null && copieObjet.transform.parent)
 			{
 				copieObjet=copieObjet.transform.parent.gameObject;
 				pickableGameObject = copieObjet.GetComponent<Pickable>();

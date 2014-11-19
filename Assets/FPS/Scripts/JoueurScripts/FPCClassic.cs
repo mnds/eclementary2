@@ -20,6 +20,7 @@ using System.Collections;
 public class FPCClassic : MonoBehaviour {
 	CharacterController cc;
 	public Camera cameraOculus;
+	public Camera cameraNonOculus;
 	private Camera camera;
 	//Sprint
 	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
@@ -54,8 +55,41 @@ public class FPCClassic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
-		if (camera == null || !ControlCenter.GetUtiliserOculus())
-			camera = Camera.main;
+		//Initialiser la camera
+		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
+			cameraNonOculus=Camera.main;
+
+		Debug.Log (ControlCenter.GetUtiliserOculus ());
+		Debug.Log (cameraNonOculus);
+		Debug.Log (cameraOculus);
+
+		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
+			if(cameraOculus==null) { //Mais on ne peut pas
+				camera=cameraNonOculus;
+				Debug.Log ("Pas de camera pour l'Oculus détectée.");
+			}
+			else {
+				if(cameraNonOculus!=null) {
+					Debug.Log ("Désactivation camera principale");
+					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
+					cameraNonOculus.gameObject.SetActive(false); //On désactive le parent de la camera non oculus si elle existe
+				}
+				camera=cameraOculus;
+			}
+		}
+		else //On ne veut pas utiliser l'oculus
+		{
+			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
+				cameraOculus.gameObject.SetActive(false);
+			if(cameraNonOculus==null) {
+				Debug.Log("Pas de main camera dans la scène");
+			}
+			else
+			{
+				camera=cameraNonOculus;
+			}
+		}
+
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
@@ -180,10 +214,9 @@ public class FPCClassic : MonoBehaviour {
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
-		
+		if(hit.collider.material==null) return; //S'il n'y a pas de physic material, on ne fait rien
 		PhysicMaterial pm = hit.collider.material;
-		if(pm==null) return; //S'il n'y a pas de physic material, on ne fait rien
-		
+
 		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
 		//		Debug.Log ("Bounce : " + bounce);
