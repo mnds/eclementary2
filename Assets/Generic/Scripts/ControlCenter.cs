@@ -23,6 +23,7 @@ static public class ControlCenter {
 	static private bool abdvjAncien; //Pour les changements
 	static private bool abejAncien;
 	static private bool utiliserOculus = false;
+	static private bool pause = false;
 
 	static HealthPlayer healthPlayer;
 
@@ -73,5 +74,17 @@ static public class ControlCenter {
 
 	static public bool GetUtiliserOculus () {
 		return utiliserOculus;
+	}
+
+	static public void SetPause (bool pause_) {
+		pause=pause_;
+		if(pause) //Le control center se charge d'arreter le temps
+			Time.timeScale=0;
+		else
+			Time.timeScale=1f;
+	}
+
+	static public bool GetPause () {
+		return pause;
 	}
 }

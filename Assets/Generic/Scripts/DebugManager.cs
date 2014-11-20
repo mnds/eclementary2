@@ -1,6 +1,6 @@
 ﻿/**
  * \file      DebugManager.cs
- * \author    BC
+ * \author    
  * \version   1.0
  * \date      9 novembre 2014
  * \brief     Permet l'accès à différentes fonctionnalités de Debug.
