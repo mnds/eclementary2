@@ -8409,6 +8409,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1348249255}
   - 95: {fileID: 1348249256}
+  - 111: {fileID: 1348249257}
   m_Layer: 0
   m_Name: DefaultAvatar
   m_TagString: Untagged
@@ -8446,6 +8447,21 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &1348249257
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348249254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: bb5715c9604094b48949fb4aaa87b4df, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1352185819
 GameObject:
   m_ObjectHideFlags: 0
