@@ -67,6 +67,8 @@ public class TerrainSoundManager : MonoBehaviour {
 	 */
 	public Texture getTerrainTextureAt( Vector3 position )
 	{
+		if (Terrain.activeTerrain == null)
+						return null;
 		// Set up:
 		Texture retval = new Texture();
 		Vector3 TS; // terrain size

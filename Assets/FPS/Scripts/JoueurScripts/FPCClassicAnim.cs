@@ -1,12 +1,11 @@
 ﻿/**
- * \file      FPCClassic.cs
+ * \file      FPCClassicAnim.cs
  * \author    
  * \version   1.0
- * \date      9 novembre 2014
+ * \date      20 novembre 2014
  * \brief     Controle le joueur.
  *
- * \details   Utilise un CharacterController pour bouger le gameObject associé. Similaire au FPSInputController.
- * 			  Le joueur peut courir pendant un certain temps, se baisser, sauter un nombre de fois défini, regarder autour de lui avec la souris.
+ * \details   Meme principe que FPCClassic mais avec des animations.
  */
 
 /*
@@ -17,15 +16,16 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassic : MonoBehaviour {
+public class FPCClassicAnim : MonoBehaviour {
 	CharacterController cc;
+	Animator anim; //Pour les animations
 
 	public Camera cameraOculus;
 	public Camera cameraNonOculus;
 	private Camera camera;
 	//Sprint
-	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
-	public float vitesseCourse = 12.0f; //Vitesse de course
+	public float vitesseMarche = 5.0f; //Vitesse maximale de marche
+	public float vitesseCourse = 9.0f; //Vitesse de course
 	public float jaugeMax = 10.0f;
 	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
@@ -33,15 +33,15 @@ public class FPCClassic : MonoBehaviour {
 	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse
-	public float vitesseRotation = 3.0f; //Liée à la sensibilité de la souris
-	public float vitesseSaut = 7.0f;
+	public float vitesseRotation = 10.0f; //Liée à la sensibilité de la souris
+	public float vitesseSaut = 3.0f;
 	//Angle de rotation de la camera en vertical
 	float rotationVerticale = 0; //Relève la position de la caméra. Initialisé à 0.
 	public float angleVerticalMax = 60.0f; //Pour limiter l'angle avec lequel on peut regarder vers le haut et le bas
 	//Saut
 	float velociteVerticale = 0; //Tient en compte de la gravité
 	int nombreSautsFaits = 0; //Pour un double saut, il faut prendre en compte le nombre d'appuis sur la touche saut
-	public int nombreSautsMax = 2; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
+	public int nombreSautsMax = 1; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
 	float bounce = 0f; //Pour le rebond sur des objets
 	//S'accroupir
 	public float characterControllerHeightDebout = 2.0f;
@@ -55,6 +55,7 @@ public class FPCClassic : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		anim = GetComponent<Animator> ();
 		//Screen.lockCursor = true;
 		//Initialiser la camera
 		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
@@ -115,16 +116,20 @@ public class FPCClassic : MonoBehaviour {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
-			vitesseMouvement=vitesseCourse;
+			anim.SetBool("walk",true); //On fait marcher pour faire courir
+			anim.SetBool("run",true); //On fait courir
+			//vitesseMouvement=vitesseCourse;
 			jauge = Mathf.Max (0,jauge-Time.deltaTime);
 			if(jauge<=0) {
 				jauge=0; //On remet à 0
+				anim.SetBool ("run",false); //On arrete de courir
 				sprintPossible=false; //On ne peut plus faire le sprint pendant un certain temps
 			}
 		}
 		else
 		{
-			vitesseMouvement=vitesseMarche;
+			anim.SetBool ("run",false); //On ne sait pas si walk est à true
+			//vitesseMouvement=vitesseMarche;
 			if(jauge>limiteBasseJauge) sprintPossible=true;
 			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
 		}
@@ -176,7 +181,7 @@ public class FPCClassic : MonoBehaviour {
 		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 		
 		//Mouvement
-		float vitesseVerticale = Input.GetAxis ("Vertical") * vitesseMouvement;
+		float vitesseVerticale = Input.GetAxis ("Vertical"); //On le garde pour pouvoir tester si on bouge selon un axe autre que y (pour les sauts)
 		float vitesseHorizontale = Input.GetAxis ("Horizontal") * vitesseMouvement;
 		
 		//Saut
@@ -198,15 +203,21 @@ public class FPCClassic : MonoBehaviour {
 				bounce=0; //On remet à 0
 			}
 		}
+		Debug.Log ("cc" + cc.isGrounded);
 		if (Input.GetButtonDown("Jump") && nombreSautsFaits<nombreSautsMax //On veut sauter, on n'a pas trop sauté
 		    && !(nombreSautsMax==0 && !cc.isGrounded)) //si on n'a pas encore sauté et qu'on est en l'air, pas le droit de sauter
 		{
 			nombreSautsFaits++; //On augmente le nombre de sauts déjà faits
 			velociteVerticale = vitesseSaut; //On se met en vitesse de saut
 		}
-		
-		
-		Vector3 vitesse = new Vector3 (vitesseHorizontale, velociteVerticale ,vitesseVerticale);
+
+		if (vitesseVerticale > 0)
+						anim.SetBool ("walk", true);
+				else
+						anim.SetBool ("walk", false);
+		//anim.animation ["Walk"].speed = 1;
+
+		Vector3 vitesse = new Vector3 (0, velociteVerticale ,0);
 		//Coupler la rotation avec le mouvement
 		vitesse = transform.rotation * vitesse;
 		vitesseNonVerticaleActuelle = Mathf.Sqrt(vitesseHorizontale*vitesseHorizontale + vitesseVerticale*vitesseVerticale);

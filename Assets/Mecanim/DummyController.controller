@@ -121,11 +121,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Idle_Neutral_1
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: ba04f60db9cbab840b7a4523e824ca1f, type: 3}
+  - {fileID: 7400004, guid: ba04f60db9cbab840b7a4523e824ca1f, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 12, y: -36, z: 0}
   m_IKOnFeet: 1
@@ -136,14 +136,14 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RunForward
+  m_Name: Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 5a6e0062d523cd64595aa3a410e4a335, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 240, y: 72, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
 --- !u!1102 &110258593
@@ -151,14 +151,14 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WalkFWD
+  m_Name: Walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 6b53ddcb8b863c2479de5e529fd60302, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 228, y: -72, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
 --- !u!1107 &110700000
@@ -177,18 +177,18 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110205791}
+      first: {fileID: 110200000}
       second:
-      - {fileID: 110187168}
+      - {fileID: 110100000}
     data:
       first: {fileID: 110258593}
       second:
       - {fileID: 110152799}
       - {fileID: 110126053}
     data:
-      first: {fileID: 110200000}
+      first: {fileID: 110205791}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110187168}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
