@@ -116,8 +116,7 @@ public class FPCClassicAnim : MonoBehaviour {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
-			anim.SetBool("walk",true); //On fait marcher pour faire courir
-			anim.SetBool("run",true); //On fait courir
+			anim.SetBool("run",true); //On fait courir vers l'avant
 			//vitesseMouvement=vitesseCourse;
 			jauge = Mathf.Max (0,jauge-Time.deltaTime);
 			if(jauge<=0) {
@@ -128,7 +127,7 @@ public class FPCClassicAnim : MonoBehaviour {
 		}
 		else
 		{
-			anim.SetBool ("run",false); //On ne sait pas si walk est à true
+			anim.SetBool ("run",false); //On ne court pas
 			//vitesseMouvement=vitesseMarche;
 			if(jauge>limiteBasseJauge) sprintPossible=true;
 			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
@@ -161,14 +160,15 @@ public class FPCClassicAnim : MonoBehaviour {
 		//S'accroupir
 		if (Input.GetButtonDown("Crouch"))
 		{
-			if(cc.height==characterControllerHeightDebout) {
+			anim.SetBool("crouch",!anim.GetBool("crouch")); //On change de position.
+			/*if(cc.height==characterControllerHeightDebout) {
 				cc.height=characterControllerHeightAccroupi;
 			}
 			else { //On remet le joueur debout en faisant garde à ce qu'il ne passe pas à travers le terrain
 				float nouveauY = cc.transform.position.y + (characterControllerHeightDebout-characterControllerHeightAccroupi)/2; //Pour ne pas tomber à travers le décor
 				cc.transform.position = new Vector3 (cc.transform.position.x, nouveauY, cc.transform.position.z);
 				cc.height=characterControllerHeightDebout;
-			}
+			}*/
 		}
 		
 	}
@@ -182,7 +182,7 @@ public class FPCClassicAnim : MonoBehaviour {
 		
 		//Mouvement
 		float vitesseVerticale = Input.GetAxis ("Vertical"); //On le garde pour pouvoir tester si on bouge selon un axe autre que y (pour les sauts)
-		float vitesseHorizontale = Input.GetAxis ("Horizontal") * vitesseMouvement;
+		float vitesseHorizontale = Input.GetAxis ("Horizontal"); //On le garde pour pouvoir tester si on bouge selon un axe autre que y (pour les sauts)
 		
 		//Saut
 		if(!cc.isGrounded) //Si on est en l'air, on augmente la vitesse de chute
@@ -203,7 +203,7 @@ public class FPCClassicAnim : MonoBehaviour {
 				bounce=0; //On remet à 0
 			}
 		}
-		Debug.Log ("cc" + cc.isGrounded);
+
 		if (Input.GetButtonDown("Jump") && nombreSautsFaits<nombreSautsMax //On veut sauter, on n'a pas trop sauté
 		    && !(nombreSautsMax==0 && !cc.isGrounded)) //si on n'a pas encore sauté et qu'on est en l'air, pas le droit de sauter
 		{
@@ -211,11 +211,10 @@ public class FPCClassicAnim : MonoBehaviour {
 			velociteVerticale = vitesseSaut; //On se met en vitesse de saut
 		}
 
-		if (vitesseVerticale > 0)
-						anim.SetBool ("walk", true);
-				else
-						anim.SetBool ("walk", false);
-		//anim.animation ["Walk"].speed = 1;
+		anim.SetBool ("walkForw", vitesseVerticale > 0); //Si positif, on va tout droit
+		anim.SetBool("walkBack",vitesseVerticale<0);
+		anim.SetBool ("strafeLeft", vitesseHorizontale < 0);
+		anim.SetBool ("strafeRight", vitesseHorizontale > 0);
 
 		Vector3 vitesse = new Vector3 (0, velociteVerticale ,0);
 		//Coupler la rotation avec le mouvement
