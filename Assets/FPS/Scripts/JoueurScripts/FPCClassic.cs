@@ -17,42 +17,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassic : MonoBehaviour {
-	CharacterController cc;
-
-	public Camera cameraOculus;
-	public Camera cameraNonOculus;
-	private Camera camera;
-	//Sprint
-	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
-	public float vitesseCourse = 12.0f; //Vitesse de course
-	public float jaugeMax = 10.0f;
-	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
-	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	
-	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
-	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
-	//Sensibilités pour la vitesse
-	public float vitesseRotation = 3.0f; //Liée à la sensibilité de la souris
-	public float vitesseSaut = 7.0f;
-	//Angle de rotation de la camera en vertical
-	float rotationVerticale = 0; //Relève la position de la caméra. Initialisé à 0.
-	public float angleVerticalMax = 60.0f; //Pour limiter l'angle avec lequel on peut regarder vers le haut et le bas
-	//Saut
-	float velociteVerticale = 0; //Tient en compte de la gravité
-	int nombreSautsFaits = 0; //Pour un double saut, il faut prendre en compte le nombre d'appuis sur la touche saut
-	public int nombreSautsMax = 2; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
-	float bounce = 0f; //Pour le rebond sur des objets
-	//S'accroupir
-	public float characterControllerHeightDebout = 2.0f;
-	public float characterControllerHeightAccroupi = 1.2f;
-	
-	//Bypass
-	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
-	bool rendreImmobile = false; //Si true, les touches directionnelles sont bloquées
-	bool bloquerTete = false; //La camera ne bouge plus
-	bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
-	
+public class FPCClassic : ControllerJoueur {
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;

@@ -16,45 +16,21 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassicAnim : MonoBehaviour {
-	CharacterController cc;
+public class FPCClassicAnim : ControllerJoueur {
 	Animator anim; //Pour les animations
 
-	public Camera cameraOculus;
-	public Camera cameraNonOculus;
-	private Camera camera;
-	//Sprint
-	public float vitesseMarche = 5.0f; //Vitesse maximale de marche
-	public float vitesseCourse = 9.0f; //Vitesse de course
-	public float jaugeMax = 10.0f;
-	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
-	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	
-	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
-	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
-	//Sensibilités pour la vitesse
-	public float vitesseRotation = 10.0f; //Liée à la sensibilité de la souris
-	public float vitesseSaut = 3.0f;
-	//Angle de rotation de la camera en vertical
-	float rotationVerticale = 0; //Relève la position de la caméra. Initialisé à 0.
-	public float angleVerticalMax = 60.0f; //Pour limiter l'angle avec lequel on peut regarder vers le haut et le bas
-	//Saut
-	float velociteVerticale = 0; //Tient en compte de la gravité
-	int nombreSautsFaits = 0; //Pour un double saut, il faut prendre en compte le nombre d'appuis sur la touche saut
-	public int nombreSautsMax = 1; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
-	float bounce = 0f; //Pour le rebond sur des objets
-	//S'accroupir
-	public float characterControllerHeightDebout = 2.0f;
-	public float characterControllerHeightAccroupi = 1.2f;
-	
-	//Bypass
-	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
-	bool rendreImmobile = false; //Si true, les touches directionnelles sont bloquées
-	bool bloquerTete = false; //La camera ne bouge plus
-	bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
-	
 	// Use this for initialization
 	void Start () {
+		//Desactiver les cameras si bypass
+		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
+		if (bypass) {
+			//désactivation des cameras
+			if(cameraNonOculus!=null)
+				cameraNonOculus.gameObject.SetActive(false);
+			if(cameraOculus!=null)
+				cameraOculus.gameObject.SetActive(false);
+			return;
+		}
 		anim = GetComponent<Animator> ();
 		//Screen.lockCursor = true;
 		//Initialiser la camera
@@ -98,6 +74,7 @@ public class FPCClassicAnim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(bypass) return;
 		if (!freeze) { //Si on peut bouger
 			Sprint (); //On regarde la vitesse à donner au joueur
 			BougerTete(); //On change la caméra
@@ -161,14 +138,16 @@ public class FPCClassicAnim : MonoBehaviour {
 		if (Input.GetButtonDown("Crouch"))
 		{
 			anim.SetBool("crouch",!anim.GetBool("crouch")); //On change de position.
-			/*if(cc.height==characterControllerHeightDebout) {
+			if(cc.height==characterControllerHeightDebout) {
+				cc.center=new Vector3(0,characterControllerYCenterAccroupi,0);
 				cc.height=characterControllerHeightAccroupi;
 			}
 			else { //On remet le joueur debout en faisant garde à ce qu'il ne passe pas à travers le terrain
 				float nouveauY = cc.transform.position.y + (characterControllerHeightDebout-characterControllerHeightAccroupi)/2; //Pour ne pas tomber à travers le décor
 				cc.transform.position = new Vector3 (cc.transform.position.x, nouveauY, cc.transform.position.z);
+				cc.center=new Vector3(0,characterControllerYCenterDebout,0);
 				cc.height=characterControllerHeightDebout;
-			}*/
+			}
 		}
 		
 	}
@@ -225,6 +204,7 @@ public class FPCClassicAnim : MonoBehaviour {
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
+		if(bypass) return;
 		if(hit.collider.material==null) return; //S'il n'y a pas de physic material, on ne fait rien
 		PhysicMaterial pm = hit.collider.material;
 
@@ -234,40 +214,10 @@ public class FPCClassicAnim : MonoBehaviour {
 	}
 	
 	void OnGUI () {
+		if(bypass) return;
 		//Affichage de la barre d'endurance
 		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
 	}
 	
-	//Set/Get
-	public void SetRendreImmobile (bool rendreImmobile_) {
-		rendreImmobile = rendreImmobile_;
-	}
-	
-	public bool GetRendreImmobile () {
-		return rendreImmobile;
-	}
-	
-	public void SetBloquerTete (bool bloquerTete_) {
-		bloquerTete = bloquerTete_;
-	}
-	
-	public bool GetBloquerTete () {
-		return bloquerTete;
-	}
-	
-	public void SetFreeze (bool freeze_) {
-		freeze = freeze_;
-	}
-	
-	public bool GetFreeze () {
-		return freeze;
-	}
-	
-	public float GetVitesseNonVerticaleActuelle () {
-		return vitesseNonVerticaleActuelle;
-	}
-	
-	public float GetVitesseMouvement () {
-		return vitesseMouvement;
-	}
+
 }

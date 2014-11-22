@@ -11,11 +11,11 @@ using UnityEngine;
 using System.Collections;
 
 public class HealthPlayer : Health {
-	private bool joueurPrincipal = true; //pour le multijoueur, pour savoir qui afficher
+	public bool joueurPrincipal; //pour le multijoueur, pour savoir qui afficher
 
-	void Awake () {
-		if(joueurPrincipal)
-			ControlCenter.SetHealthPlayer (this);
+	void Start () {
+		if(gameObject==ControlCenter.GetJoueurPrincipal())
+			joueurPrincipal=true;
 	}
 
 	void OnGUI () {

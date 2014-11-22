@@ -20,7 +20,7 @@ using System.Collections.Generic;
 public class TerrainSoundManager : MonoBehaviour {
 	public GameObject joueur; //Joueur
 	Transform joueurTransform; //Pour la position
-	FPCClassic joueurScript; //Pour relever la vitesse
+	ControllerJoueur joueurScript; //Pour relever la vitesse
 	CharacterController joueurcc; //Pour savoir s'il est sur le sol
 
 	Vector3 positionJoueur; //Position du joueur
@@ -34,7 +34,7 @@ public class TerrainSoundManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		joueurTransform = joueur.GetComponent<Transform> ();
-		joueurScript = joueur.GetComponent<FPCClassic> ();
+		joueurScript = joueur.GetComponent<ControllerJoueur> ();
 		joueurcc = joueur.GetComponent<CharacterController> ();
 	}
 	

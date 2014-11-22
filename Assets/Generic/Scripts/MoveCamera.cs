@@ -6,7 +6,7 @@
  * \brief     Déplace une caméra en la faisant passer par différents points.
  *
  * \details   Considère une liste de plusieurs points de l'espace et fait s'y déplacer la caméra en un temps donné par une liste donnée en attribut.
- * 			  Si un FPCClassic est renseigné, on bloque les mouvements du joueur.
+ * 			  Si un ControllerJoueur est renseigné, on bloque les mouvements du joueur.
  */
 
 
@@ -16,7 +16,7 @@ using System.Collections.Generic;
 
 public class MoveCamera : MonoBehaviour {
 	public Camera camera;
-	public FPCClassic scriptFPC;
+	public ControllerJoueur scriptFPC;
 	public List<Vector3> positionsSuccessivesCamera;
 	public List<Quaternion> rotationsSuccessivesCamera;
 	public List<float> tempsPourArriverEnPosition;

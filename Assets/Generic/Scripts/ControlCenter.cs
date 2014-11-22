@@ -9,7 +9,7 @@
  */
 
 /*
- * Utilisé dans Inventaire, MoveCamera , Attaquer, Lancer
+ * Utilisé dans Inventaire, MoveCamera , Attaquer, Lancer , SetJoueurPrincipal
  */
 
 using UnityEngine;
@@ -25,7 +25,7 @@ static public class ControlCenter {
 	static private bool utiliserOculus = false;
 	static private bool pause = false;
 
-	static HealthPlayer healthPlayer;
+	static GameObject joueurPrincipal;
 
 	static public bool GetAfficherBarreDeVieJoueur () {
 		return afficherBarreDeVieJoueur;
@@ -68,8 +68,12 @@ static public class ControlCenter {
 		afficherBarreEnduranceJoueur = abdej;
 	}
 
-	static public void SetHealthPlayer (HealthPlayer hp) {
-		healthPlayer = hp;
+	static public void SetJoueurPrincipal (GameObject go) {
+		joueurPrincipal = go;
+	}
+
+	static public GameObject GetJoueurPrincipal () {
+		return joueurPrincipal;
 	}
 
 	static public bool GetUtiliserOculus () {

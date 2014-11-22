@@ -40,11 +40,12 @@ public class MazeEnemy : MonoBehaviour {
 		transform.Rotate (0, transform.rotation.y-90, 0, Space.World); //Le -90 est du bricolage ici. Prendre garde à ce que les objets soient bien orientés avec la tete face à z.
 		//see if the player is close enough
 		RaycastHit hit; //Information sur ce qui a été touché
-		Vector3 direction = cible.transform.position - transform.position;
+		Vector3 direction = positionCible - transform.position;
 		if (Physics.Raycast(transform.position,direction,out hit,3.0f)) { // check for a hit within 30 meters
-			//Debug.DrawLine(transform.position, hit.point);
-			if(hit.collider==cible.collider && cameraScreamer.camera.enabled==false)
+			Debug.DrawLine(transform.position, hit.point);
+			if(hit.collider==cible.collider)
 			{
+				Debug.Log ("Attrapé !");
 				if(!labyrintheEnCoursDeRegeneration && !cible.GetComponent<AnimationChute>().enChute)
 					//StartCoroutine(ActiverCamera());
 					StartCoroutine(Chute());
