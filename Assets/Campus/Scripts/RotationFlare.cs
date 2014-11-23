@@ -1,17 +1,4 @@
-﻿/**
- * \file      RotationFlare.cs
- * \author    
- * \version   1.0
- * \date      9 novembre 2014
- * \brief     Entraine le mouvement circulaire de la lentille représentant le soleil en fonction de l'heure.
- *
- * \details   La position de la lentille est modifiée selon l'heure donnée par l'instance de ScriptHorloge de la scène.
-
-/*
- * Utilise ScriptHorloge
- */
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class RotationFlare : MonoBehaviour {
