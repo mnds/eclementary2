@@ -39,20 +39,20 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
+     <Compile Include="Assets\Campus\Scripts\IntensiteSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
-     <Compile Include="Assets\Campus\Scripts\LumiereSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
-     <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
-     <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
+     <Compile Include="Assets\Campus\Scripts\RotationSoleilLune.cs" />
      <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
+     <Compile Include="Assets\Campus\Scripts\TransistionSkyboxes.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
@@ -121,6 +121,7 @@
      <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\ScrollUVs.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\_IMPORTED\Plugins\PluginsOculus\donotdelete.txt" />
+     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\TransparentTerrain.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 3.shader" />
@@ -137,7 +138,6 @@
      <None Include="Assets\_IMPORTED\Tuscany\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\DoubleSided ButterFly.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\AlphaTest-DiffuseDoublesided.shader" />
-     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
      <None Include="Assets\_IMPORTED\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 4.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\AddSmooth_Layer.shader" />

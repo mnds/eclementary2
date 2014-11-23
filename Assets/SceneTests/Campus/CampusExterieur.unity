@@ -142,8 +142,8 @@ Transform:
   m_PrefabInternal: {fileID: 1333524586}
   m_GameObject: {fileID: 6009508}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 595494756}
   m_RootOrder: 0
@@ -1701,6 +1701,7 @@ GameObject:
   - 33: {fileID: 149701036}
   - 23: {fileID: 149701035}
   - 95: {fileID: 149701034}
+  - 65: {fileID: 149701033}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -1716,11 +1717,24 @@ Transform:
   m_GameObject: {fileID: 149701031}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 2.19958496, y: -1.84986877, z: 89.536377}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1311375043}
   m_Father: {fileID: 238950369}
   m_RootOrder: 14
+--- !u!65 &149701033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1621308935}
+  m_GameObject: {fileID: 149701031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &149701034
 Animator:
   serializedVersion: 3
@@ -1730,11 +1744,11 @@ Animator:
   m_PrefabInternal: {fileID: 1621308935}
   m_GameObject: {fileID: 149701031}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &149701035
@@ -1765,7 +1779,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1621308935}
   m_GameObject: {fileID: 149701031}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &166323572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2008,7 @@ GameObject:
   - 33: {fileID: 177371330}
   - 23: {fileID: 177371329}
   - 95: {fileID: 177371328}
+  - 65: {fileID: 177371327}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -2009,11 +2024,24 @@ Transform:
   m_GameObject: {fileID: 177371325}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 11.2558594, y: -1.84986877, z: 89.536377}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 485959059}
   m_Father: {fileID: 238950369}
   m_RootOrder: 13
+--- !u!65 &177371327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 89451999}
+  m_GameObject: {fileID: 177371325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &177371328
 Animator:
   serializedVersion: 3
@@ -2023,11 +2051,11 @@ Animator:
   m_PrefabInternal: {fileID: 89451999}
   m_GameObject: {fileID: 177371325}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &177371329
@@ -2058,7 +2086,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 89451999}
   m_GameObject: {fileID: 177371325}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1001 &181893429
 Prefab:
   m_ObjectHideFlags: 0
@@ -2178,6 +2206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 45
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 28310189}
   placementFinal: {fileID: 524790946}
@@ -2385,6 +2414,7 @@ GameObject:
   - 33: {fileID: 197937352}
   - 23: {fileID: 197937351}
   - 95: {fileID: 197937350}
+  - 65: {fileID: 197937349}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -2400,11 +2430,24 @@ Transform:
   m_GameObject: {fileID: 197937347}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -15.6990967, y: -1.84986877, z: 91.3919678}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 764559006}
   m_Father: {fileID: 238950369}
   m_RootOrder: 16
+--- !u!65 &197937349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1120398531}
+  m_GameObject: {fileID: 197937347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &197937350
 Animator:
   serializedVersion: 3
@@ -2414,11 +2457,11 @@ Animator:
   m_PrefabInternal: {fileID: 1120398531}
   m_GameObject: {fileID: 197937347}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &197937351
@@ -2449,7 +2492,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1120398531}
   m_GameObject: {fileID: 197937347}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &210931021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,8 +3252,8 @@ Transform:
   m_PrefabInternal: {fileID: 1501269851}
   m_GameObject: {fileID: 304818472}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1259234276}
   m_RootOrder: 0
@@ -3540,6 +3583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 642522730}
   placementFinal: {fileID: 1779330448}
@@ -4089,8 +4133,8 @@ Transform:
   m_PrefabInternal: {fileID: 1343719060}
   m_GameObject: {fileID: 380484057}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1535543754}
   m_RootOrder: 0
@@ -5172,8 +5216,8 @@ Transform:
   m_PrefabInternal: {fileID: 89451999}
   m_GameObject: {fileID: 485959058}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 177371326}
   m_RootOrder: 0
@@ -5366,8 +5410,8 @@ Transform:
   m_PrefabInternal: {fileID: 293510553}
   m_GameObject: {fileID: 501664601}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1155556662}
   m_RootOrder: 0
@@ -5854,8 +5898,8 @@ Transform:
   m_PrefabInternal: {fileID: 1191512172}
   m_GameObject: {fileID: 562091254}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1914915748}
   m_RootOrder: 0
@@ -6366,6 +6410,7 @@ GameObject:
   - 33: {fileID: 595494760}
   - 23: {fileID: 595494759}
   - 95: {fileID: 595494758}
+  - 65: {fileID: 595494757}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -6381,11 +6426,24 @@ Transform:
   m_GameObject: {fileID: 595494755}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -142.302612, y: 3.20129395, z: -48.0536499}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 6009509}
   m_Father: {fileID: 238950369}
   m_RootOrder: 6
+--- !u!65 &595494757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333524586}
+  m_GameObject: {fileID: 595494755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &595494758
 Animator:
   serializedVersion: 3
@@ -6395,11 +6453,11 @@ Animator:
   m_PrefabInternal: {fileID: 1333524586}
   m_GameObject: {fileID: 595494755}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &595494759
@@ -6430,7 +6488,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1333524586}
   m_GameObject: {fileID: 595494755}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &598703260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7723,8 +7781,8 @@ Transform:
   m_PrefabInternal: {fileID: 1878462566}
   m_GameObject: {fileID: 663334151}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1491505573}
   m_RootOrder: 0
@@ -8357,6 +8415,7 @@ GameObject:
   - 33: {fileID: 704795130}
   - 23: {fileID: 704795129}
   - 95: {fileID: 704795128}
+  - 65: {fileID: 704795127}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -8372,11 +8431,24 @@ Transform:
   m_GameObject: {fileID: 704795125}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -142.302612, y: 3.27429199, z: -68.8417969}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1398744469}
   m_Father: {fileID: 238950369}
   m_RootOrder: 8
+--- !u!65 &704795127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1635106648}
+  m_GameObject: {fileID: 704795125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &704795128
 Animator:
   serializedVersion: 3
@@ -8386,11 +8458,11 @@ Animator:
   m_PrefabInternal: {fileID: 1635106648}
   m_GameObject: {fileID: 704795125}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &704795129
@@ -8421,7 +8493,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1635106648}
   m_GameObject: {fileID: 704795125}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &708186155
 GameObject:
   m_ObjectHideFlags: 0
@@ -8954,8 +9026,8 @@ Transform:
   m_PrefabInternal: {fileID: 1120398531}
   m_GameObject: {fileID: 764559005}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 197937348}
   m_RootOrder: 0
@@ -9018,6 +9090,7 @@ GameObject:
   - 33: {fileID: 766538645}
   - 23: {fileID: 766538644}
   - 95: {fileID: 766538643}
+  - 65: {fileID: 766538642}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -9033,11 +9106,24 @@ Transform:
   m_GameObject: {fileID: 766538640}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 20.2126465, y: -1.84986877, z: 89.536377}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1154720154}
   m_Father: {fileID: 238950369}
   m_RootOrder: 12
+--- !u!65 &766538642
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2013833282}
+  m_GameObject: {fileID: 766538640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &766538643
 Animator:
   serializedVersion: 3
@@ -9047,11 +9133,11 @@ Animator:
   m_PrefabInternal: {fileID: 2013833282}
   m_GameObject: {fileID: 766538640}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &766538644
@@ -9082,7 +9168,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2013833282}
   m_GameObject: {fileID: 766538640}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1001 &769597017
 Prefab:
   m_ObjectHideFlags: 0
@@ -9613,8 +9699,8 @@ Transform:
   m_PrefabInternal: {fileID: 1496718053}
   m_GameObject: {fileID: 826122656}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 2038267106}
   m_RootOrder: 0
@@ -10154,6 +10240,7 @@ GameObject:
   - 33: {fileID: 870586251}
   - 23: {fileID: 870586250}
   - 95: {fileID: 870586249}
+  - 65: {fileID: 870586248}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -10169,11 +10256,24 @@ Transform:
   m_GameObject: {fileID: 870586246}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -6.85668945, y: -1.84986877, z: 89.536377}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1640481125}
   m_Father: {fileID: 238950369}
   m_RootOrder: 15
+--- !u!65 &870586248
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1675332914}
+  m_GameObject: {fileID: 870586246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &870586249
 Animator:
   serializedVersion: 3
@@ -10183,11 +10283,11 @@ Animator:
   m_PrefabInternal: {fileID: 1675332914}
   m_GameObject: {fileID: 870586246}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &870586250
@@ -10218,7 +10318,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1675332914}
   m_GameObject: {fileID: 870586246}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &873402150
 GameObject:
   m_ObjectHideFlags: 0
@@ -10432,8 +10532,8 @@ Transform:
   m_PrefabInternal: {fileID: 599061559}
   m_GameObject: {fileID: 877602093}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1573384308}
   m_RootOrder: 0
@@ -10927,6 +11027,7 @@ GameObject:
   - 33: {fileID: 920837084}
   - 23: {fileID: 920837083}
   - 95: {fileID: 920837082}
+  - 65: {fileID: 920837081}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -10947,6 +11048,19 @@ Transform:
   - {fileID: 1707989229}
   m_Father: {fileID: 238950369}
   m_RootOrder: 2
+--- !u!65 &920837081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 223264533}
+  m_GameObject: {fileID: 920837079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &920837082
 Animator:
   serializedVersion: 3
@@ -10956,11 +11070,11 @@ Animator:
   m_PrefabInternal: {fileID: 223264533}
   m_GameObject: {fileID: 920837079}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &920837083
@@ -10991,7 +11105,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 223264533}
   m_GameObject: {fileID: 920837079}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &934575712
 GameObject:
   m_ObjectHideFlags: 0
@@ -13199,7 +13313,7 @@ Transform:
   m_PrefabInternal: {fileID: 378890302}
   m_GameObject: {fileID: 1065389870}
   m_LocalRotation: {x: 0, y: -.20584543, z: 0, w: -.978584588}
-  m_LocalPosition: {x: 1206.40027, y: 193.253906, z: 1066.96326}
+  m_LocalPosition: {x: 1190.83154, y: 197.779434, z: 1080.21204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 996016771}
@@ -13238,13 +13352,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceec15aaff170ad4487d95637ba895b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOculus: {fileID: 0}
+  cameraNonOculus: {fileID: 0}
   vitesseMarche: 5
   vitesseCourse: 9
+  jaugeMax: 10
   vitesseRotation: 10
   vitesseSaut: 7
   angleVerticalMax: 60
   nombreSautsMax: 1
+  characterControllerYCenterDebout: .839999974
   characterControllerHeightDebout: 2
+  characterControllerYCenterAccroupi: .660000026
   characterControllerHeightAccroupi: 1.20000005
 --- !u!143 &1065389874
 CharacterController:
@@ -14123,8 +14242,8 @@ Transform:
   m_PrefabInternal: {fileID: 2013833282}
   m_GameObject: {fileID: 1154720153}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 766538641}
   m_RootOrder: 0
@@ -14187,6 +14306,7 @@ GameObject:
   - 33: {fileID: 1155556666}
   - 23: {fileID: 1155556665}
   - 95: {fileID: 1155556664}
+  - 65: {fileID: 1155556663}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -14202,11 +14322,24 @@ Transform:
   m_GameObject: {fileID: 1155556661}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -24.6514893, y: -1.84986877, z: 91.3919678}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 501664602}
   m_Father: {fileID: 238950369}
   m_RootOrder: 17
+--- !u!65 &1155556663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 293510553}
+  m_GameObject: {fileID: 1155556661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1155556664
 Animator:
   serializedVersion: 3
@@ -14216,11 +14349,11 @@ Animator:
   m_PrefabInternal: {fileID: 293510553}
   m_GameObject: {fileID: 1155556661}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1155556665
@@ -14251,7 +14384,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 293510553}
   m_GameObject: {fileID: 1155556661}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1157183938
 GameObject:
   m_ObjectHideFlags: 0
@@ -15327,6 +15460,7 @@ GameObject:
   - 33: {fileID: 1259234280}
   - 23: {fileID: 1259234279}
   - 95: {fileID: 1259234278}
+  - 65: {fileID: 1259234277}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -15342,11 +15476,24 @@ Transform:
   m_GameObject: {fileID: 1259234275}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -142.302612, y: 3.24996948, z: -58.5512695}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 304818473}
   m_Father: {fileID: 238950369}
   m_RootOrder: 7
+--- !u!65 &1259234277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1501269851}
+  m_GameObject: {fileID: 1259234275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1259234278
 Animator:
   serializedVersion: 3
@@ -15356,11 +15503,11 @@ Animator:
   m_PrefabInternal: {fileID: 1501269851}
   m_GameObject: {fileID: 1259234275}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1259234279
@@ -15391,7 +15538,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1501269851}
   m_GameObject: {fileID: 1259234275}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1001 &1259941654
 Prefab:
   m_ObjectHideFlags: 0
@@ -15628,6 +15775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1767877698}
   placementFinal: {fileID: 791042134}
@@ -15818,6 +15966,7 @@ GameObject:
   - 33: {fileID: 1280940005}
   - 23: {fileID: 1280940004}
   - 95: {fileID: 1280940003}
+  - 65: {fileID: 1280940002}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -15833,11 +15982,24 @@ Transform:
   m_GameObject: {fileID: 1280940000}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
   m_LocalPosition: {x: -141.245422, y: -1.71894836, z: 15.5046387}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1880848889}
   m_Father: {fileID: 238950369}
   m_RootOrder: 0
+--- !u!65 &1280940002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 694770615}
+  m_GameObject: {fileID: 1280940000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1280940003
 Animator:
   serializedVersion: 3
@@ -15847,11 +16009,11 @@ Animator:
   m_PrefabInternal: {fileID: 694770615}
   m_GameObject: {fileID: 1280940000}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1280940004
@@ -15882,7 +16044,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 694770615}
   m_GameObject: {fileID: 1280940000}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1001 &1293716799
 Prefab:
   m_ObjectHideFlags: 0
@@ -15995,8 +16157,8 @@ Transform:
   m_PrefabInternal: {fileID: 1621308935}
   m_GameObject: {fileID: 1311375042}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 149701032}
   m_RootOrder: 0
@@ -16217,8 +16379,8 @@ Transform:
   m_PrefabInternal: {fileID: 2127171624}
   m_GameObject: {fileID: 1330574466}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1895630481}
   m_RootOrder: 0
@@ -17041,8 +17203,8 @@ Transform:
   m_PrefabInternal: {fileID: 1635106648}
   m_GameObject: {fileID: 1398744468}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 704795126}
   m_RootOrder: 0
@@ -17813,6 +17975,7 @@ GameObject:
   - 33: {fileID: 1469610127}
   - 23: {fileID: 1469610126}
   - 95: {fileID: 1469610125}
+  - 65: {fileID: 1469610124}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -17828,11 +17991,24 @@ Transform:
   m_GameObject: {fileID: 1469610122}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -145.968018, y: .202835083, z: -16.0319824}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1955301144}
   m_Father: {fileID: 238950369}
   m_RootOrder: 3
+--- !u!65 &1469610124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1794329492}
+  m_GameObject: {fileID: 1469610122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1469610125
 Animator:
   serializedVersion: 3
@@ -17842,11 +18018,11 @@ Animator:
   m_PrefabInternal: {fileID: 1794329492}
   m_GameObject: {fileID: 1469610122}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1469610126
@@ -17877,7 +18053,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1794329492}
   m_GameObject: {fileID: 1469610122}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1491505572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17889,6 +18065,7 @@ GameObject:
   - 33: {fileID: 1491505577}
   - 23: {fileID: 1491505576}
   - 95: {fileID: 1491505575}
+  - 65: {fileID: 1491505574}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -17904,11 +18081,24 @@ Transform:
   m_GameObject: {fileID: 1491505572}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -146.807007, y: 1.6650238, z: -26.4822998}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 663334152}
   m_Father: {fileID: 238950369}
   m_RootOrder: 4
+--- !u!65 &1491505574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878462566}
+  m_GameObject: {fileID: 1491505572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1491505575
 Animator:
   serializedVersion: 3
@@ -17918,11 +18108,11 @@ Animator:
   m_PrefabInternal: {fileID: 1878462566}
   m_GameObject: {fileID: 1491505572}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1491505576
@@ -17953,7 +18143,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1878462566}
   m_GameObject: {fileID: 1491505572}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1494347363
 GameObject:
   m_ObjectHideFlags: 0
@@ -18491,6 +18681,7 @@ GameObject:
   - 33: {fileID: 1535543758}
   - 23: {fileID: 1535543757}
   - 95: {fileID: 1535543756}
+  - 65: {fileID: 1535543755}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -18506,11 +18697,24 @@ Transform:
   m_GameObject: {fileID: 1535543753}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -142.302612, y: 3.28646851, z: -79.4084473}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 380484058}
   m_Father: {fileID: 238950369}
   m_RootOrder: 9
+--- !u!65 &1535543755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343719060}
+  m_GameObject: {fileID: 1535543753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1535543756
 Animator:
   serializedVersion: 3
@@ -18520,11 +18724,11 @@ Animator:
   m_PrefabInternal: {fileID: 1343719060}
   m_GameObject: {fileID: 1535543753}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1535543757
@@ -18555,7 +18759,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1343719060}
   m_GameObject: {fileID: 1535543753}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1536195479
 GameObject:
   m_ObjectHideFlags: 0
@@ -19089,6 +19293,7 @@ GameObject:
   - 33: {fileID: 1573384312}
   - 23: {fileID: 1573384311}
   - 95: {fileID: 1573384310}
+  - 65: {fileID: 1573384309}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -19104,11 +19309,24 @@ Transform:
   m_GameObject: {fileID: 1573384307}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -145.64856, y: 3.21208191, z: -37.0639648}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 877602094}
   m_Father: {fileID: 238950369}
   m_RootOrder: 5
+--- !u!65 &1573384309
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 599061559}
+  m_GameObject: {fileID: 1573384307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1573384310
 Animator:
   serializedVersion: 3
@@ -19118,11 +19336,11 @@ Animator:
   m_PrefabInternal: {fileID: 599061559}
   m_GameObject: {fileID: 1573384307}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1573384311
@@ -19153,7 +19371,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 599061559}
   m_GameObject: {fileID: 1573384307}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1578307634
 GameObject:
   m_ObjectHideFlags: 0
@@ -19846,8 +20064,8 @@ Transform:
   m_PrefabInternal: {fileID: 1675332914}
   m_GameObject: {fileID: 1640481124}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 870586247}
   m_RootOrder: 0
@@ -20330,8 +20548,8 @@ Transform:
   m_PrefabInternal: {fileID: 223264533}
   m_GameObject: {fileID: 1707989228}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 920837080}
   m_RootOrder: 0
@@ -20827,6 +21045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 10
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1947623281}
   placementFinal: {fileID: 1191493860}
@@ -21888,8 +22107,8 @@ Transform:
   m_PrefabInternal: {fileID: 694770615}
   m_GameObject: {fileID: 1880848888}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1280940001}
   m_RootOrder: 0
@@ -22331,6 +22550,7 @@ GameObject:
   - 33: {fileID: 1895630485}
   - 23: {fileID: 1895630484}
   - 95: {fileID: 1895630483}
+  - 65: {fileID: 1895630482}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -22346,11 +22566,24 @@ Transform:
   m_GameObject: {fileID: 1895630480}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
   m_LocalPosition: {x: -144.551697, y: -.810668945, z: 4.76342773}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 1330574467}
   m_Father: {fileID: 238950369}
   m_RootOrder: 1
+--- !u!65 &1895630482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 2127171624}
+  m_GameObject: {fileID: 1895630480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1895630483
 Animator:
   serializedVersion: 3
@@ -22360,11 +22593,11 @@ Animator:
   m_PrefabInternal: {fileID: 2127171624}
   m_GameObject: {fileID: 1895630480}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1895630484
@@ -22395,7 +22628,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2127171624}
   m_GameObject: {fileID: 1895630480}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1896376847
 GameObject:
   m_ObjectHideFlags: 0
@@ -22744,6 +22977,7 @@ GameObject:
   - 33: {fileID: 1914915752}
   - 23: {fileID: 1914915751}
   - 95: {fileID: 1914915750}
+  - 65: {fileID: 1914915749}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -22759,11 +22993,24 @@ Transform:
   m_GameObject: {fileID: 1914915747}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 29.4056396, y: -1.84986877, z: 89.536377}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 562091255}
   m_Father: {fileID: 238950369}
   m_RootOrder: 11
+--- !u!65 &1914915749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1191512172}
+  m_GameObject: {fileID: 1914915747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &1914915750
 Animator:
   serializedVersion: 3
@@ -22773,11 +23020,11 @@ Animator:
   m_PrefabInternal: {fileID: 1191512172}
   m_GameObject: {fileID: 1914915747}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &1914915751
@@ -22808,7 +23055,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1191512172}
   m_GameObject: {fileID: 1914915747}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!1 &1915312886
 GameObject:
   m_ObjectHideFlags: 0
@@ -23318,8 +23565,8 @@ Transform:
   m_PrefabInternal: {fileID: 1794329492}
   m_GameObject: {fileID: 1955301143}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -8.42936956e-08}
-  m_LocalPosition: {x: -.00529550854, y: .124287598, z: .871919811}
-  m_LocalScale: {x: 5.10362434, y: 5.10362434, z: 1.28079891}
+  m_LocalPosition: {x: 0, y: .000486987847, z: 1.00465584}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1469610123}
   m_RootOrder: 0
@@ -23916,6 +24163,7 @@ GameObject:
   - 33: {fileID: 2038267105}
   - 23: {fileID: 2038267104}
   - 95: {fileID: 2038267103}
+  - 65: {fileID: 2038267102}
   m_Layer: 0
   m_Name: lampeTabouret
   m_TagString: Untagged
@@ -23923,6 +24171,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2038267102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 46be7786474526a4ea7969cc80ec7ae2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1496718053}
+  m_GameObject: {fileID: 2038267101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.20407677, y: 4.2040801, z: 2.26557112}
+  m_Center: {x: 5.96046448e-07, y: 0, z: .132785082}
 --- !u!95 &2038267103
 Animator:
   serializedVersion: 3
@@ -23932,11 +24193,11 @@ Animator:
   m_PrefabInternal: {fileID: 1496718053}
   m_GameObject: {fileID: 2038267101}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &2038267104
@@ -23967,7 +24228,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1496718053}
   m_GameObject: {fileID: 2038267101}
-  m_Mesh: {fileID: 4300000, guid: 6f65ebc1d9f45d841942de3536f49b0b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
 --- !u!4 &2038267106
 Transform:
   m_ObjectHideFlags: 0
@@ -23976,7 +24237,7 @@ Transform:
   m_GameObject: {fileID: 2038267101}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -142.302612, y: 3.28305054, z: -89.9644775}
-  m_LocalScale: {x: .195939183, y: .195939183, z: .702686429}
+  m_LocalScale: {x: .25, y: .25, z: .899999976}
   m_Children:
   - {fileID: 826122657}
   m_Father: {fileID: 238950369}
@@ -24756,6 +25017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   degatsParCoup: 20
+  infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   placementInitial: {fileID: 1954666799}
   placementFinal: {fileID: 2081372617}

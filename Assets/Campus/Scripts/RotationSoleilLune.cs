@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class RotationSoleilLune : MonoBehaviour {
+
+
+	private float dureeJour;//Duree du jour en secondes
+	private float heure;//heure actuelle
+	private ScriptHorloge script;//horloge
+	
+	// Use this for initialization
+	void Start () 
+	{
+		GameObject clock = GameObject.Find ("Horloge");
+		script = clock.GetComponent<ScriptHorloge> ();//on récupère l'horloge
+	}
+
+	// Update is called once per frame
+	void Update () 
+	{
+		dureeJour = script.dureeDuJour;
+		heure = script.heure;
+
+		if(heure/dureeJour*24f>=7f && heure/dureeJour*24f<=20f)//Pendant la journée
+		{
+			transform.Rotate (-180/(dureeJour*(13f/24f))*Time.deltaTime, 0,0,Space.World);
+		}
+		else
+		{
+			transform.Rotate (-180/(dureeJour*(11f/24f))*Time.deltaTime, 0,0,Space.World);
+		}
+
+	}
+}
