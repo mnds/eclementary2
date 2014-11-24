@@ -9,7 +9,7 @@ public class ScriptHorloge : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		heure = dureeDuJour/2;//on commence à midi
+		heure = dureeDuJour/24f*13.5f;//on commence à 13h30
 	}
 	
 	// Update is called once per frame
