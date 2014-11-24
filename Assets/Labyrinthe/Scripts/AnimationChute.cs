@@ -43,7 +43,7 @@ public class AnimationChute : MonoBehaviour {
 		if (avancementReveil < 1) {
 			avancementReveil+=Time.deltaTime/tempsAvantReveil;
 			if (avancementReveil >= 1) {
-				cible.GetComponent<FPCClassic> ().SetFreeze (false);
+				cible.GetComponent<ControllerJoueur> ().SetFreeze (false);
 				Retablir();
 				avancementReveil = 1;
 			}
@@ -64,7 +64,7 @@ public class AnimationChute : MonoBehaviour {
 		tempsAvantReveil = tempsAvantReveil_;
 		avancementChute = 0;
 		audioSource.Play ();
-		cible.GetComponent<FPCClassic> ().SetFreeze (true);
+		cible.GetComponent<ControllerJoueur> ().SetFreeze (true);
 	}
 
 	/**

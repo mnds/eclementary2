@@ -15,6 +15,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //Note : lorsqu'on attaque, il est possible de jeter l'objet pendant l'animation de l'attaque.
 public class Attaquer : MonoBehaviour {
@@ -40,10 +41,12 @@ public class Attaquer : MonoBehaviour {
 	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
 	bool infligerDegats; //true si on peut infliger des degats
+	List<Health> objetsTouchesLorsDeCetteAttaque; //Pour éviter de taper plusieurs fois les memes objets
 
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
 	
 	void Start() {
+		objetsTouchesLorsDeCetteAttaque = new List<Health> (){}; //Initialisation
 		tFVISiCollision = tempsFinalVersInitial;
 		//Initialisation de lancer
 		GameObject objet = gameObject; //On va parcourir les parents de gameObject pour trouver les scripts
@@ -105,6 +108,7 @@ public class Attaquer : MonoBehaviour {
 				{
 					enCoursDeRetour = false;
 					enTrainDAttaquer=false;
+					objetsTouchesLorsDeCetteAttaque=new List<Health>(){}; //On remet à 0 les objets touchés.
 				}
 			}
 		}
@@ -132,13 +136,24 @@ public class Attaquer : MonoBehaviour {
 			foreach(Attaquer a in attaquers)
 			{
 				if(a==this) {//Si on se tape soi-meme, on laisse tomber
-					Debug.Log ("Cible ignorée");
+					Debug.Log ("Cible ignorée car c'est l'attaquant");
 					return;
 				}
 			}
 			if (health != null) {
-				Debug.Log ("Touché");
-				health.SubirDegats (degatsParCoup);
+				//On vérifie qu'on ne l'a pas déjà touche
+				foreach(Health h in objetsTouchesLorsDeCetteAttaque) {
+					if(h==health) {
+						Debug.Log("Objet déjà touché");
+						break;
+					}
+					else
+					{
+						Debug.Log ("Touché");
+						health.SubirDegats (degatsParCoup);
+						objetsTouchesLorsDeCetteAttaque.Add(health);
+					}
+				}
 			}
 		}
 	}

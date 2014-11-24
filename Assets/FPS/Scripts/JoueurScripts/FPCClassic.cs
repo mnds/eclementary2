@@ -17,41 +17,45 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassic : MonoBehaviour {
-	CharacterController cc;
-	//Sprint
-	public float vitesseMarche = 6.0f; //Vitesse maximale de marche
-	public float vitesseCourse = 12.0f; //Vitesse de course
-	public float jaugeMax = 10.0f;
-	float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
-	float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	
-	float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
-	float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
-	//Sensibilités pour la vitesse
-	public float vitesseRotation = 3.0f; //Liée à la sensibilité de la souris
-	public float vitesseSaut = 7.0f;
-	//Angle de rotation de la camera en vertical
-	float rotationVerticale = 0; //Relève la position de la caméra. Initialisé à 0.
-	public float angleVerticalMax = 60.0f; //Pour limiter l'angle avec lequel on peut regarder vers le haut et le bas
-	//Saut
-	float velociteVerticale = 0; //Tient en compte de la gravité
-	int nombreSautsFaits = 0; //Pour un double saut, il faut prendre en compte le nombre d'appuis sur la touche saut
-	public int nombreSautsMax = 2; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
-	float bounce = 0f; //Pour le rebond sur des objets
-	//S'accroupir
-	public float characterControllerHeightDebout = 2.0f;
-	public float characterControllerHeightAccroupi = 1.2f;
-	
-	//Bypass
-	bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
-	bool rendreImmobile = false; //Si true, les touches directionnelles sont bloquées
-	bool bloquerTete = false; //La camera ne bouge plus
-	bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
-	
+public class FPCClassic : ControllerJoueur {
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
+		//Initialiser la camera
+		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
+			cameraNonOculus=Camera.main;
+
+		Debug.Log (ControlCenter.GetUtiliserOculus ());
+		Debug.Log (cameraNonOculus);
+		Debug.Log (cameraOculus);
+
+		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
+			if(cameraOculus==null) { //Mais on ne peut pas
+				camera=cameraNonOculus;
+				Debug.Log ("Pas de camera pour l'Oculus détectée.");
+			}
+			else {
+				if(cameraNonOculus!=null) {
+					Debug.Log ("Désactivation camera principale");
+					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
+					cameraNonOculus.gameObject.SetActive(false); //On désactive le parent de la camera non oculus si elle existe
+				}
+				camera=cameraOculus;
+			}
+		}
+		else //On ne veut pas utiliser l'oculus
+		{
+			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
+				cameraOculus.gameObject.SetActive(false);
+			if(cameraNonOculus==null) {
+				Debug.Log("Pas de main camera dans la scène");
+			}
+			else
+			{
+				camera=cameraNonOculus;
+			}
+		}
+
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
@@ -106,7 +110,7 @@ public class FPCClassic : MonoBehaviour {
 		//Rotation verticale
 		rotationVerticale += Input.GetAxis ("Mouse Y") * vitesseRotation;
 		rotationVerticale = Mathf.Clamp (rotationVerticale, -angleVerticalMax, angleVerticalMax);
-		Camera.main.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
+		camera.transform.localRotation = Quaternion.Euler (-rotationVerticale, 0, 0);
 	}
 	
 	/**
@@ -176,20 +180,19 @@ public class FPCClassic : MonoBehaviour {
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
-		
+		if(hit.collider.material==null) return; //S'il n'y a pas de physic material, on ne fait rien
 		PhysicMaterial pm = hit.collider.material;
-		if(pm==null) return; //S'il n'y a pas de physic material, on ne fait rien
 
 		float bounciness = pm.bounciness; //Pour savoir de combien on remonte
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
-//		Debug.Log ("Bounce : " + bounce);
+		//		Debug.Log ("Bounce : " + bounce);
 	}
-
+	
 	void OnGUI () {
 		//Affichage de la barre d'endurance
 		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
 	}
-
+	
 	//Set/Get
 	public void SetRendreImmobile (bool rendreImmobile_) {
 		rendreImmobile = rendreImmobile_;

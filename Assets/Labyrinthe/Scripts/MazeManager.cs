@@ -42,7 +42,7 @@ public class MazeManager : MonoBehaviour {
 
 	//Crée un labyrinthe, place les personnages, les objets, configure les PNJ et les zones de controle (pour ne pas sortir du labyrinthe)
 	void Start () {
-		fpc = GameObject.Find ("First Person Controller");
+		fpc = GameObject.Find ("Joueur");
 		matriceDeplacementsPossibles = new List<List<List<int>>> ();
 		GenererLabyrinthe (); //Crée et positionne les murs du labyrinthe
 		PlacerPersonnages (); //place les personnages aléatoirement dans le labyrinthe
@@ -53,6 +53,8 @@ public class MazeManager : MonoBehaviour {
 				.SetLongueurNombrePosition(longueurMurs,nombreMursParCote,transform.position);
 			lesPNJ[i].GetComponent<MazeEnemy>()
 				.SetMazeManager(this);
+			lesPNJ[i].GetComponent<MazeEnemy>()
+				.SetCible(fpc);
 		}
 		//MazeDeathZone
 		mdz.gameObject.GetComponent<MazeDeathZone>().SetFPC (fpc);

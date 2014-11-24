@@ -1,17 +1,4 @@
-﻿/**
- * \file      AllumageLampe.cs
- * \author    
- * \version   1.0
- * \date      9 novembre 2014
- * \brief     Modifie l'intensité de la lumière émise en fonction de l'heure.
- *
- */
-
-/*
- * Utilise ScriptHorloge
- */
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class AllumageLampe : MonoBehaviour {
@@ -32,8 +19,8 @@ public class AllumageLampe : MonoBehaviour {
 	{
 		dureeJour = script.dureeDuJour;
 		heure = script.heure;
-		//Debug.Log ("1 " + 3 * dureeJour / 10 + " 2 " + 7 * dureeJour / 10 + " 3 " + heure);
-		if(heure >= 3.5f*dureeJour/10 && heure <= 6.5f*dureeJour/10)
+		Debug.Log ("1 " + 3 * dureeJour / 10 + " 2 " + 7 * dureeJour / 10 + " 3 " + heure);
+		if(heure >= 8f*dureeJour/24 && heure <= 19f*dureeJour/24)
 		{
 			light.intensity=0f;
 		}

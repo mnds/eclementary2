@@ -1,18 +1,4 @@
-﻿/**
- * \file      ScriptHorloge.cs
- * \author    
- * \version   1.0
- * \date      9 novembre 2014
- * \brief     Conserve l'heure qu'il est.
- *
- * \details   Il est possible de définir la durée d'un cycle jour/nuit et de récupérer l'heure avec ScriptHorloge.heure.
- */
-
-/*
- * Script utilisé dans RotationSoleil , LumiereFlare , RotationFlare , LumiereSoleil , AllumageLampe
- */
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class ScriptHorloge : MonoBehaviour {
@@ -35,5 +21,4 @@ public class ScriptHorloge : MonoBehaviour {
 			heure -= dureeDuJour;
 		}
 	}
-
 }

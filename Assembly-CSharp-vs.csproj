@@ -39,27 +39,29 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
+     <Compile Include="Assets\Campus\Scripts\IntensiteSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
-     <Compile Include="Assets\Campus\Scripts\LumiereSoleil.cs" />
      <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
-     <Compile Include="Assets\Campus\Scripts\RotationFlare.cs" />
-     <Compile Include="Assets\Campus\Scripts\RotationSoleil.cs" />
+     <Compile Include="Assets\Campus\Scripts\RotationSoleilLune.cs" />
      <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
+     <Compile Include="Assets\Campus\Scripts\TransistionSkyboxes.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Pickable.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Soigner.cs" />
      <Compile Include="Assets\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
+     <Compile Include="Assets\FPS\Scripts\JoueurScripts\ControllerJoueur.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
+     <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassicAnim.cs" />
      <Compile Include="Assets\Generic\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Generic\Dialogue\Replique.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionEnvironnement.cs" />
@@ -70,6 +72,7 @@
      <Compile Include="Assets\Generic\Scripts\Autodestruction.cs" />
      <Compile Include="Assets\Generic\Scripts\BlobShadowFollow.cs" />
      <Compile Include="Assets\Generic\Scripts\ControlCenter.cs" />
+     <Compile Include="Assets\Generic\Scripts\ControlCenterManager.cs" />
      <Compile Include="Assets\Generic\Scripts\Couleurs.cs" />
      <Compile Include="Assets\Generic\Scripts\DebugManager.cs" />
      <Compile Include="Assets\Generic\Scripts\GlowSimple.cs" />
@@ -78,6 +81,7 @@
      <Compile Include="Assets\Generic\Scripts\HealthPlayer.cs" />
      <Compile Include="Assets\Generic\Scripts\LoadSceneScript.cs" />
      <Compile Include="Assets\Generic\Scripts\MoveCamera.cs" />
+     <Compile Include="Assets\Generic\Scripts\SetJoueurPrincipal.cs" />
      <Compile Include="Assets\Generic\Scripts\TerrainSoundManager.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\AnimationChute.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeCameraScreamer.cs" />
@@ -88,20 +92,63 @@
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTravel.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeTriggerManager.cs" />
      <Compile Include="Assets\Labyrinthe\Scripts\MazeWallManager.cs" />
-     <Compile Include="Assets\NewBehaviourScript.cs" />
+     <Compile Include="Assets\RPG\Scripts\Caracteristiques.cs" />
      <Compile Include="Assets\_IMPORTED\Gem Shader\Example\GemSpawner.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRCameraRig.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRCommon.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRDisplay.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRManager.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRPluginEvent.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OVRTracker.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\OvrCapi.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRCrosshair.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRGUI.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRGamepadController.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRGridCube.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRMainMenu.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRPlayerController.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRUGUI.cs" />
+     <Compile Include="Assets\_IMPORTED\OVR\Scripts\Util\OVRVisionGuide.cs" />
      <Compile Include="Assets\_IMPORTED\Plugins\SimpleJSON.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
-     <Compile Include="Assets\delegate.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\BirdsBehavior.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\BoatBehavior.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\Butterfly.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\RandomAnimationStart.cs" />
+     <Compile Include="Assets\_IMPORTED\Tuscany\Scripts\ScrollUVs.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
+     <None Include="Assets\_IMPORTED\Plugins\PluginsOculus\donotdelete.txt" />
+     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\TransparentTerrain.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 3.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 1.shader" />
+     <None Include="Assets\_IMPORTED\Plugins\PluginsOculus\x86_64\donotdelete.txt" />
+     <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\Particle Alpha Blend_IgnoreFog.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 5.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 6.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\DoubleSided.shader" />
+     <None Include="Assets\_IMPORTED\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
-     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\DoubleSided ButterFly.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\AlphaTest-DiffuseDoublesided.shader" />
+     <None Include="Assets\_IMPORTED\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 4.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\AddSmooth_Layer.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 8.shader" />
      <None Include="Assets\Generic\Dialogue\Readme.txt" />
+     <None Include="Assets\_IMPORTED\OVR\Shaders\OVRGUIShader.shader" />
+     <None Include="Assets\_IMPORTED\Plugins\PluginsOculus\x86\donotdelete.txt" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 2.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 7.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\Add_Layer.shader" />
+     <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\AlphaTest-DiffuseBack.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

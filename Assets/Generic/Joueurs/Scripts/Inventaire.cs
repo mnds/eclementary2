@@ -67,6 +67,7 @@ public class Inventaire : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		// The current weapon is always displayed
 		if(attaquerObjetActuel)
 			if(attaquerObjetActuel.vignette)
@@ -127,6 +128,7 @@ public class Inventaire : MonoBehaviour {
 	 */
 	void VerifierTouches()
 	{
+		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
@@ -188,7 +190,7 @@ public class Inventaire : MonoBehaviour {
 			GameObject copieObjet = objet;
 			pickableGameObject = copieObjet.GetComponent<Pickable>();
 			
-			while(pickableGameObject == null && objet.transform.parent)
+			while(pickableGameObject == null && copieObjet.transform.parent)
 			{
 				copieObjet=copieObjet.transform.parent.gameObject;
 				pickableGameObject = copieObjet.GetComponent<Pickable>();
