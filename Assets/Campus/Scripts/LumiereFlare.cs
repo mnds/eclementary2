@@ -1,18 +1,4 @@
-﻿/**
- * \file      LumiereFlare.cs
- * \author    
- * \version   1.0
- * \date      9 novembre 2014
- * \brief     Modifie la couleur de la lentille modélisant le soleil en fonction de l'heure.
- *
- * \details   Les propriétés de la lentille sont modifiées selon l'heure donnée par l'instance de ScriptHorloge de la scène.
- */
-
-/*
- * Utilise ScriptHorloge
- */
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class LumiereFlare : MonoBehaviour {
@@ -37,15 +23,27 @@ public class LumiereFlare : MonoBehaviour {
 		heure = script.heure;
 		
 		//on joue sur la luminosité
-		if (heure <= dureeJour / 4 || heure>=3*dureeJour/4) 
+		if (heure <= dureeJour*7f /24f || heure>=20f*dureeJour/24f) //entre 20h et 7h
 		{
 			lens.brightness=0;
 		}
-		else
+		else if (heure >= dureeJour*7f /24f && heure<=9f*dureeJour/24f)//entre 7h et 9h
 		{
-			lens.brightness = (-1.0f*Mathf.Abs(heure/dureeJour-0.5f)+1.0f);
-			Color rose = new Color(1f,-4.0f*Mathf.Abs(heure/dureeJour-0.5f)+1f,-4.0f*Mathf.Abs(heure/dureeJour-0.5f)+1f);
-			lens.color = rose;
+			lens.brightness=0.8f;
+			Color orange = new Color(1f,(40f*heure/dureeJour*24f-105)/255f,(127.5f*heure/dureeJour*24f-892.5f)/255f);//255/175/0 à 7h, 255/255/255 à 9h et linéaire entre les deux
+			lens.color = orange;
+		}
+		else if (heure>=9f*dureeJour/24f && heure<=18f*dureeJour/24f)//entre 9h et 18h
+		{
+			lens.brightness=0.8f;
+			Color blanc = new Color(1f,1f,1f);//255/255/255
+			lens.color = blanc;
+		}
+		else //entre 18h et 20h
+		{
+			lens.brightness=0.8f;
+			Color orange = new Color(1f,(-40f*heure/dureeJour*24f+975f)/255f,(-127.5f*heure/dureeJour*24f+2550)/255f);//255/255/255 à 18h, 255/175/0 à 20h et linéaire entre les deux
+			lens.color = orange;
 		}
 	}
 }
