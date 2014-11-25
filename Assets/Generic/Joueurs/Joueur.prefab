@@ -450,6 +450,7 @@ GameObject:
   - 114: {fileID: 11400036}
   - 114: {fileID: 11400038}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400048}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Player
@@ -1437,7 +1438,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1860,6 +1861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsDeVieMax: 50
   pointsDeVieActuels: 5
+  joueurPrincipal: 0
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1900,7 +1902,9 @@ MonoBehaviour:
   vitesseSaut: 7
   angleVerticalMax: 60
   nombreSautsMax: 1
+  characterControllerYCenterDebout: .839999974
   characterControllerHeightDebout: 2
+  characterControllerYCenterAccroupi: .660000026
   characterControllerHeightAccroupi: 1.20000005
 --- !u!114 &11400036
 MonoBehaviour:
@@ -1989,9 +1993,20 @@ MonoBehaviour:
   joueur: {fileID: 100052}
   sourceDuSon: {fileID: 8200002}
   textures:
-  - {fileID: 2800000, guid: bc040c97d2cdc36458e7d3d0c26d36dc, type: 3}
+  - {fileID: 0}
   audioClips:
   - {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
+--- !u!114 &11400048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb0953a21d8544459315c7411c6dc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

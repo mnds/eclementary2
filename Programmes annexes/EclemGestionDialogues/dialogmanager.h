@@ -16,7 +16,7 @@
 #include <QDebug>
 
 // Constante WORKING_DIRECTORY définie car les commandes sur QT permettant de trouver le dossier courant renvoient le dossier constitué par le .app
-#define WORKING_DIRECTORY "/Users/mnds/QtProjects/build-EclemGestionDialogues-Desktop_Qt_5_3_clang_64bit-Debug/"
+#define WORKING_DIRECTORY "D:\Centrale Lyon\Année 2\PA - Jeu vidéo\Programmes annexes\EclemGestionDialogues"
 
 class DialogManager
 {
