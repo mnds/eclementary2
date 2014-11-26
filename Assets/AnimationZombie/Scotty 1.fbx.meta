@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 10569ac541f532b44a80e16661262eaf
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Avant_Bras_D
+    100004: Avant_Bras_G
+    100006: Bras_D
+    100008: Bras_G
+    100010: Buste
+    100012: Camera
+    100014: Cube
+    100016: Cuisse_D
+    100018: Cuisse_G
+    100020: Icosphere.005
+    100022: Icosphere.005_MeshPart0
+    100024: Icosphere.005_MeshPart1
+    100026: Icosphere.005_MeshPart2
+    100028: Icosphere.005_MeshPart3
+    100030: Main_D
+    100032: Main_G
+    100034: Mollet_D
+    100036: Mollet_G
+    100038: Pied_D
+    100040: Pied_G
+    100042: //RootNode
+    100044: Sun
+    100046: Tete
+    100048: Ventre
+    400000: Armature
+    400002: Avant_Bras_D
+    400004: Avant_Bras_G
+    400006: Bras_D
+    400008: Bras_G
+    400010: Buste
+    400012: Camera
+    400014: Cube
+    400016: Cuisse_D
+    400018: Cuisse_G
+    400020: Icosphere.005
+    400022: Icosphere.005_MeshPart0
+    400024: Icosphere.005_MeshPart1
+    400026: Icosphere.005_MeshPart2
+    400028: Icosphere.005_MeshPart3
+    400030: Main_D
+    400032: Main_G
+    400034: Mollet_D
+    400036: Mollet_G
+    400038: Pied_D
+    400040: Pied_G
+    400042: //RootNode
+    400044: Sun
+    400046: Tete
+    400048: Ventre
+    4300000: Icosphere.005_MeshPart0
+    4300002: Icosphere.005_MeshPart1
+    4300004: Icosphere.005_MeshPart2
+    4300006: Icosphere.005_MeshPart3
+    4300008: Cube
+    7400000: Armature|ArmatureAction
+    7400002: Armature|ArmatureAction0
+    7400004: Armature|ArmatureAction1
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Icosphere.005_MeshPart0
+    13700004: Icosphere.005_MeshPart1
+    13700006: Icosphere.005_MeshPart2
+    13700008: Icosphere.005_MeshPart3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 122
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ventre
+        weight: 1
+      - path: Armature/Ventre/Buste
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D/Main_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G/Main_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Tete
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D/Pied_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G/Pied_G
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Icosphere.005
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart0
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart1
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart2
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart3
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ArmatureAction0
+      takeName: Armature|ArmatureAction
+      firstFrame: 73
+      lastFrame: 122
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ventre
+        weight: 1
+      - path: Armature/Ventre/Buste
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D/Main_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G/Main_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Tete
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D/Pied_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G/Pied_G
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Icosphere.005
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart0
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart1
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart2
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart3
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ArmatureAction1
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ventre
+        weight: 1
+      - path: Armature/Ventre/Buste
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_D/Avant_Bras_D/Main_D
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Bras_G/Avant_Bras_G/Main_G
+        weight: 1
+      - path: Armature/Ventre/Buste/Tete
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_D/Mollet_D/Pied_D
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G
+        weight: 1
+      - path: Armature/Ventre/Cuisse_G/Mollet_G/Pied_G
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Icosphere.005
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart0
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart1
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart2
+        weight: 1
+      - path: Icosphere.005/Icosphere.005_MeshPart3
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
