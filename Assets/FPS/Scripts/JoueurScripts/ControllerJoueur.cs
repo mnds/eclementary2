@@ -21,7 +21,11 @@ public class ControllerJoueur : MonoBehaviour {
 	public float jaugeMax = 10.0f;
 	protected float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	protected float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	
+
+	// Progress bar
+	public Texture2D enduranceBarTexture;
+	protected int barLength = Screen.width / 6, barHeight = Screen.height / 10;
+
 	protected float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	protected float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse

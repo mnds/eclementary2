@@ -2067,6 +2067,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: 18a1bca707da0de4395c13b827326000, type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
+    - target: {fileID: 11400024, guid: 18a1bca707da0de4395c13b827326000, type: 2}
+      propertyPath: healthBarTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
+    - target: {fileID: 11400028, guid: 18a1bca707da0de4395c13b827326000, type: 2}
+      propertyPath: healthBarTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
+    - target: {fileID: 11400028, guid: 18a1bca707da0de4395c13b827326000, type: 2}
+      propertyPath: enduranceBarTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18a1bca707da0de4395c13b827326000, type: 2}
   m_RootGameObject: {fileID: 1489908321}
@@ -3668,6 +3684,7 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseCourse: 9
   jaugeMax: 10
+  enduranceBarTexture: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
   vitesseRotation: 10
   vitesseSaut: 5
   angleVerticalMax: 60
@@ -3795,6 +3812,7 @@ MonoBehaviour:
   pointsDeVieMax: 50
   pointsDeVieActuels: 5
   joueurPrincipal: 0
+  healthBarTexture: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
 --- !u!114 &1489908331
 MonoBehaviour:
   m_ObjectHideFlags: 0
