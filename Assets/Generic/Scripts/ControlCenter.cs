@@ -22,7 +22,7 @@ static public class ControlCenter {
 	static bool afficherBarreEnduranceJoueur = true;
 	static private bool abdvjAncien; //Pour les changements
 	static private bool abejAncien;
-	static private bool utiliserOculus = false;
+	static private bool utiliserOculus = false; //Dans FPCClassic
 	static private bool pause = false;
 
 	static GameObject joueurPrincipal;

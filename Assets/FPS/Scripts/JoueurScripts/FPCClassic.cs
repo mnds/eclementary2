@@ -20,15 +20,25 @@ using System.Collections;
 public class FPCClassic : ControllerJoueur {
 	// Use this for initialization
 	void Start () {
+		//Desactiver les cameras si bypass
+		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
+		if (bypass) {
+			//désactivation des cameras
+			if(cameraNonOculus!=null)
+				cameraNonOculus.gameObject.SetActive(false);
+			if(cameraOculus!=null)
+				cameraOculus.gameObject.SetActive(false);
+			return;
+		}
 		//Screen.lockCursor = true;
 		//Initialiser la camera
 		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
 			cameraNonOculus=Camera.main;
-
+		
 		Debug.Log (ControlCenter.GetUtiliserOculus ());
 		Debug.Log (cameraNonOculus);
 		Debug.Log (cameraOculus);
-
+		
 		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
 			if(cameraOculus==null) { //Mais on ne peut pas
 				camera=cameraNonOculus;
@@ -38,7 +48,7 @@ public class FPCClassic : ControllerJoueur {
 				if(cameraNonOculus!=null) {
 					Debug.Log ("Désactivation camera principale");
 					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
-					cameraNonOculus.gameObject.SetActive(false); //On désactive le parent de la camera non oculus si elle existe
+					cameraNonOculus.gameObject.GetComponent<Camera>().enabled=false; //On désactive le parent de la camera non oculus si elle existe
 				}
 				camera=cameraOculus;
 			}
@@ -46,7 +56,7 @@ public class FPCClassic : ControllerJoueur {
 		else //On ne veut pas utiliser l'oculus
 		{
 			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.SetActive(false);
+				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
 			if(cameraNonOculus==null) {
 				Debug.Log("Pas de main camera dans la scène");
 			}
@@ -55,7 +65,7 @@ public class FPCClassic : ControllerJoueur {
 				camera=cameraNonOculus;
 			}
 		}
-
+		
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
@@ -76,7 +86,7 @@ public class FPCClassic : ControllerJoueur {
 	 * 	        La jauge d'endurance descend. Si elle est trop basse, sprintPossible passe à false et la course est impossible pendant un temps court.
 	 * 			Quand le bouton Sprint n'est pas appuyé, cette jauge augmente jusqu'à retrouver son maximum.
 	 */
-	void Sprint () {
+	protected override void Sprint () {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
@@ -100,7 +110,7 @@ public class FPCClassic : ControllerJoueur {
 	 * @brief Gère la caméra.
 	 * @details Vérifie la position de la souris pour tourner la caméra dans un champ réduit.
 	 */
-	void BougerTete () {
+	protected override void BougerTete () {
 		if(bloquerTete) return; //Si on ne peut pas bouger la camera
 		
 		//Rotation latérale
@@ -117,7 +127,7 @@ public class FPCClassic : ControllerJoueur {
 	 * @brief Permet de se baisser.
 	 * @details Quand la touche Crouch est appuyé, on s'accroupit. Rappuyé redonne la hauteur de caméra initiale.
 	 */
-	void Crouch () {
+	protected override void Crouch () {
 		//S'accroupir
 		if (Input.GetButtonDown("Crouch"))
 		{
@@ -137,7 +147,7 @@ public class FPCClassic : ControllerJoueur {
 	 * @brief Gère le mouvement du character controller.
 	 * @details S'il est possible de bouger, on repère l'appui des touches de mouvements, ainsi que les demandes de saut.
 	 */
-	void MouvementCorps () {
+	protected override void MouvementCorps () {
 		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 		
 		//Mouvement
@@ -190,7 +200,8 @@ public class FPCClassic : ControllerJoueur {
 	
 	void OnGUI () {
 		//Affichage de la barre d'endurance
-		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Mathf.Ceil (jauge/jaugeMax * barLength), barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
 	
 	//Set/Get

@@ -19,8 +19,12 @@ public class MazeDeathZone : MonoBehaviour {
 	public AudioClip sonChute;
 
 	void OnTriggerEnter (Collider collider) {
+		Debug.Log ("rip");
+		Debug.Log (collider.gameObject);
+		Debug.Log (fpc);
 		if(collider.gameObject==fpc) //Si le fpc rentre dans le collider, il est à la position i,j
 		{
+			Debug.Log ("ok");
 			StartCoroutine(Chute ());
 		}
 	}

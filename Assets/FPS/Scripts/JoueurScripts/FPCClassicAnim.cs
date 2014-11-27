@@ -50,7 +50,7 @@ public class FPCClassicAnim : ControllerJoueur {
 				if(cameraNonOculus!=null) {
 					Debug.Log ("Désactivation camera principale");
 					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
-					cameraNonOculus.gameObject.SetActive(false); //On désactive le parent de la camera non oculus si elle existe
+					cameraNonOculus.gameObject.GetComponent<Camera>().enabled=false; //On désactive le parent de la camera non oculus si elle existe
 				}
 				camera=cameraOculus;
 			}
@@ -58,7 +58,7 @@ public class FPCClassicAnim : ControllerJoueur {
 		else //On ne veut pas utiliser l'oculus
 		{
 			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.SetActive(false);
+				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
 			if(cameraNonOculus==null) {
 				Debug.Log("Pas de main camera dans la scène");
 			}
@@ -216,7 +216,8 @@ public class FPCClassicAnim : ControllerJoueur {
 	void OnGUI () {
 		if(bypass) return;
 		//Affichage de la barre d'endurance
-		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Screen.width / 6, Screen.height / 10), "Endurance : "+Mathf.Ceil(jauge));
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Mathf.Ceil (jauge/jaugeMax * barLength), barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
 	
 

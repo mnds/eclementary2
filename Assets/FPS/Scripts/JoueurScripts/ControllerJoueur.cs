@@ -21,7 +21,11 @@ public class ControllerJoueur : MonoBehaviour {
 	public float jaugeMax = 10.0f;
 	protected float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	protected float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-	
+
+	// Progress bar
+	public Texture2D enduranceBarTexture;
+	protected int barLength = Screen.width / 6, barHeight = Screen.height / 10;
+
 	protected float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	protected float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse
@@ -47,7 +51,85 @@ public class ControllerJoueur : MonoBehaviour {
 	protected bool bloquerTete = false; //La camera ne bouge plus
 	protected bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
 	protected bool bypass = false; //Tout bloquer. Est à true si le joueur n'est pas celui controllé par l'utilisation.
+
+	// Use this for initialization
+	void Start () {
+		//Desactiver les cameras si bypass
+		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
+		if (bypass) {
+			//désactivation des cameras
+			if(cameraNonOculus!=null)
+				cameraNonOculus.gameObject.SetActive(false);
+			if(cameraOculus!=null)
+				cameraOculus.gameObject.SetActive(false);
+			return;
+		}
+		//Screen.lockCursor = true;
+		//Initialiser la camera
+		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
+			cameraNonOculus=Camera.main;
+		
+		Debug.Log (ControlCenter.GetUtiliserOculus ());
+		Debug.Log (cameraNonOculus);
+		Debug.Log (cameraOculus);
+		
+		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
+			if(cameraOculus==null) { //Mais on ne peut pas
+				camera=cameraNonOculus;
+				Debug.Log ("Pas de camera pour l'Oculus détectée.");
+			}
+			else {
+				if(cameraNonOculus!=null) {
+					Debug.Log ("Désactivation camera principale");
+					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
+					cameraNonOculus.gameObject.GetComponent<Camera>().enabled=false; //On désactive le parent de la camera non oculus si elle existe
+				}
+				camera=cameraOculus;
+			}
+		}
+		else //On ne veut pas utiliser l'oculus
+		{
+			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
+				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
+			if(cameraNonOculus==null) {
+				Debug.Log("Pas de main camera dans la scène");
+			}
+			else
+			{
+				camera=cameraNonOculus;
+			}
+		}
+		
+		jauge = jaugeMax;
+		cc = GetComponent<CharacterController> ();
+	}
 	
+	// Update is called once per frame
+	void Update () {
+		if(bypass) return;
+		if (!freeze) { //Si on peut bouger
+			Sprint (); //On regarde la vitesse à donner au joueur
+			BougerTete(); //On change la caméra
+			Crouch (); //Hauteur des yeux
+			MouvementCorps(); //Motion du joueur
+		}
+	}
+
+	protected virtual void Sprint() {
+
+	}
+	protected virtual void BougerTete() {
+		
+	}
+	protected virtual void Crouch() {
+		
+	}
+	protected virtual void MouvementCorps() {
+		
+	}
+
+
+
 	//Set/Get
 	public void SetRendreImmobile (bool rendreImmobile_) {
 		rendreImmobile = rendreImmobile_;

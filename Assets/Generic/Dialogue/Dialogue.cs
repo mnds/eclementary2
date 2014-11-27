@@ -24,7 +24,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	List<Replique> repliquesSuivantes; // Réplique suivant repliqueChosie
 	bool interactionDeclenchee = false; // Informe de l'etat du dialogue
 
-	FPCClassic mouvementJoueur ; // Référence vers le script de déplacement du joueur
+	ControllerJoueur mouvementJoueur ; // Référence vers le script de déplacement du joueur
 
 	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet
 
@@ -36,9 +36,9 @@ public class Dialogue : MonoBehaviour, Interactif {
 		RemplirRepliques( json );
 		LierRepliques( json );
 
-		GameObject joueur = GameObject.Find ("JoueurDialogue");
+		GameObject joueur = ControlCenter.GetJoueurPrincipal(); // Récupération du joueur principal
 		if (joueur != null)
-			mouvementJoueur = joueur.GetComponent<FPCClassic> ();
+			mouvementJoueur = joueur.GetComponent<ControllerJoueur> ();
 	}
 
 	void OnGUI() {
@@ -140,8 +140,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	// _______________________________REALISATION DE L'INTERFACE________________________
 	public void DemarrerInteraction() {
 		if (mouvementJoueur != null) { // Blocage des mouvements du joueur pendant le déroulement de l'interaction
-			mouvementJoueur.SetBloquerTete( true );
-			mouvementJoueur.SetRendreImmobile (true);
+			mouvementJoueur.SetFreeze( true );
 		} 
 		else
 			Debug.Log ("Mouvements du joueur non accessibles");
@@ -158,8 +157,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 		interactionDeclenchee = false;
 
 		if (mouvementJoueur != null) {// Déblocage des mouvements du joueur
-			mouvementJoueur.SetBloquerTete(false);
-			mouvementJoueur.SetRendreImmobile (false);
+			mouvementJoueur.SetFreeze( false ); // Déblocage des mouvements du joueur
 		}
 	}
 
