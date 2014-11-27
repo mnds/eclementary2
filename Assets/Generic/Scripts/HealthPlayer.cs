@@ -12,6 +12,8 @@ using System.Collections;
 
 public class HealthPlayer : Health {
 	public bool joueurPrincipal; //pour le multijoueur, pour savoir qui afficher
+	public Texture2D healthBarTexture;
+	int barLength = Screen.width / 6, barHeight = Screen.height / 10;
 
 	void Start () {
 		if(gameObject==ControlCenter.GetJoueurPrincipal())
@@ -21,7 +23,8 @@ public class HealthPlayer : Health {
 	void OnGUI () {
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
-		GUI.Label (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Screen.width / 6, Screen.height / 10), "Points de vie : "+Mathf.Floor(pointsDeVieActuels));
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
 	}
 
 	public override void DeclencherMort () {
