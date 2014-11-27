@@ -21,55 +21,8 @@ public class FPCClassicAnim : ControllerJoueur {
 
 	// Use this for initialization
 	void Start () {
-		//Desactiver les cameras si bypass
-		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
-		if (bypass) {
-			//désactivation des cameras
-			if(cameraNonOculus!=null)
-				cameraNonOculus.gameObject.SetActive(false);
-			if(cameraOculus!=null)
-				cameraOculus.gameObject.SetActive(false);
-			return;
-		}
+		Initialiser ();
 		anim = GetComponent<Animator> ();
-		//Screen.lockCursor = true;
-		//Initialiser la camera
-		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
-			cameraNonOculus=Camera.main;
-
-		Debug.Log (ControlCenter.GetUtiliserOculus ());
-		Debug.Log (cameraNonOculus);
-		Debug.Log (cameraOculus);
-
-		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
-			if(cameraOculus==null) { //Mais on ne peut pas
-				camera=cameraNonOculus;
-				Debug.Log ("Pas de camera pour l'Oculus détectée.");
-			}
-			else {
-				if(cameraNonOculus!=null) {
-					Debug.Log ("Désactivation camera principale");
-					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
-					cameraNonOculus.gameObject.GetComponent<Camera>().enabled=false; //On désactive le parent de la camera non oculus si elle existe
-				}
-				camera=cameraOculus;
-			}
-		}
-		else //On ne veut pas utiliser l'oculus
-		{
-			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
-			if(cameraNonOculus==null) {
-				Debug.Log("Pas de main camera dans la scène");
-			}
-			else
-			{
-				camera=cameraNonOculus;
-			}
-		}
-
-		jauge = jaugeMax;
-		cc = GetComponent<CharacterController> ();
 	}
 	
 	// Update is called once per frame
@@ -94,7 +47,7 @@ public class FPCClassicAnim : ControllerJoueur {
 		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
 			anim.SetBool("run",true); //On fait courir vers l'avant
-			//vitesseMouvement=vitesseCourse;
+			vitesseMouvement=vitesseCourse;
 			jauge = Mathf.Max (0,jauge-Time.deltaTime);
 			if(jauge<=0) {
 				jauge=0; //On remet à 0
@@ -105,7 +58,7 @@ public class FPCClassicAnim : ControllerJoueur {
 		else
 		{
 			anim.SetBool ("run",false); //On ne court pas
-			//vitesseMouvement=vitesseMarche;
+			vitesseMouvement=vitesseMarche;
 			if(jauge>limiteBasseJauge) sprintPossible=true;
 			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
 		}
@@ -195,7 +148,7 @@ public class FPCClassicAnim : ControllerJoueur {
 		anim.SetBool ("strafeLeft", vitesseHorizontale < 0);
 		anim.SetBool ("strafeRight", vitesseHorizontale > 0);
 
-		Vector3 vitesse = new Vector3 (0, velociteVerticale ,0);
+		Vector3 vitesse = new Vector3 (vitesseHorizontale, velociteVerticale ,vitesseVerticale);
 		//Coupler la rotation avec le mouvement
 		vitesse = transform.rotation * vitesse;
 		vitesseNonVerticaleActuelle = Mathf.Sqrt(vitesseHorizontale*vitesseHorizontale + vitesseVerticale*vitesseVerticale);

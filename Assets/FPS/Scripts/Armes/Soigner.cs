@@ -50,9 +50,9 @@ public class Soigner : MonoBehaviour {
 		{
 			//On récupère le script Health
 			Health health; //Script qui contient les points de vie à rajouter
-			health=GetComponentInParent<Health>();
+			health=this.GetComponentInParent<Health>();
 			if(health==null)
-				health=GetComponentInChildren<Health>();
+				health=this.GetComponentInChildren<Health>();
 
 			//On regarde si le script existe, et si le soin a fonctionné
 			if(health) {

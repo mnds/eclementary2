@@ -52,8 +52,14 @@ public class ControllerJoueur : MonoBehaviour {
 	protected bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
 	protected bool bypass = false; //Tout bloquer. Est à true si le joueur n'est pas celui controllé par l'utilisation.
 
-	// Use this for initialization
 	void Start () {
+		Initialiser ();
+	}
+
+	/**
+	 * @brief Initialise les variables. Appelé dans Start.
+	 */
+	protected void Initialiser () {
 		//Desactiver les cameras si bypass
 		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
 		if (bypass) {
@@ -103,7 +109,7 @@ public class ControllerJoueur : MonoBehaviour {
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;

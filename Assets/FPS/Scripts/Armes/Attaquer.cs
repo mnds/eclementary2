@@ -38,8 +38,8 @@ public class Attaquer : MonoBehaviour {
 	public float tempsFinalVersInitial = 1f; //Temps final->initial
 	float tFVISiCollision; //Si retour anticipé
 
-	float avancementAnim = 0; //variable pour savoir où on en est dans une animation
-	bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
+	public float avancementAnim = 0; //variable pour savoir où on en est dans une animation
+	public bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
 	bool infligerDegats; //true si on peut infliger des degats
 	List<Health> objetsTouchesLorsDeCetteAttaque; //Pour éviter de taper plusieurs fois les memes objets
 
@@ -88,13 +88,13 @@ public class Attaquer : MonoBehaviour {
 				{
 					transform.position = Vector3.Lerp(positionInitiale, positionFinale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationInitiale,rotationFinale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime/tempsInitialVersFinal;
+					avancementAnim = Mathf.Min (1f,avancementAnim + Time.deltaTime/tempsInitialVersFinal);
 				}
 				else //On revient au début
 				{
 					transform.position = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
 					transform.rotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
-					avancementAnim = avancementAnim + Time.deltaTime/tFVISiCollision;
+					avancementAnim = Mathf.Min (1f,avancementAnim + Time.deltaTime/tFVISiCollision);
 				}
 			}
 			else //On a fini
@@ -102,10 +102,15 @@ public class Attaquer : MonoBehaviour {
 				avancementAnim=0; //On remet l'avancement à 0
 				if(!enCoursDeRetour) //On a fini l'animation de coup, on signifie qu'on veut retourner au début
 				{
+					//On remet bien au bout de l'animation
+					transform.position=positionFinale;
+					transform.rotation=rotationFinale;
 					enCoursDeRetour = true;
 				}
 				else //On est revenu au départ, on dit qu'on n'attaque plus.
 				{
+					transform.position=positionInitiale;
+					transform.rotation=rotationInitiale;
 					enCoursDeRetour = false;
 					enTrainDAttaquer=false;
 					objetsTouchesLorsDeCetteAttaque=new List<Health>(){}; //On remet à 0 les objets touchés.
@@ -115,14 +120,17 @@ public class Attaquer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider objet) {
+		//Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
+		//Debug.Log ("Pas de bypass");
 
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
 
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
 		if (enTrainDAttaquer && !enCoursDeRetour && infligerDegats) {
+			Debug.Log ("Recevoir des degats");
 			if(!infligeDesDegatsAPlusieursEnnemis)
 				infligerDegats = false; //Plus de dégats
 			//On cherche si l'objet ou un de ses parents a de la vie
@@ -140,24 +148,23 @@ public class Attaquer : MonoBehaviour {
 					return;
 				}
 			}
+			Debug.Log ("A");
 			if (health != null) {
+				Debug.Log ("Health non nul");
 				//On vérifie qu'on ne l'a pas déjà touche
 				foreach(Health h in objetsTouchesLorsDeCetteAttaque) {
 					if(h==health) {
 						Debug.Log("Objet déjà touché");
-						break;
-					}
-					else
-					{
-						Debug.Log ("Touché");
-						health.SubirDegats (degatsParCoup);
-						objetsTouchesLorsDeCetteAttaque.Add(health);
+						return;
 					}
 				}
+				Debug.Log ("Touché");
+				health.SubirDegats (degatsParCoup);
+				objetsTouchesLorsDeCetteAttaque.Add(health);
 			}
 		}
 	}
-	
+
 	public bool GetEnTrainDAttaquer () {
 		return enTrainDAttaquer;
 	}

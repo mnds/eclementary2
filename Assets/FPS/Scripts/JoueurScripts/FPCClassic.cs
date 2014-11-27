@@ -20,58 +20,12 @@ using System.Collections;
 public class FPCClassic : ControllerJoueur {
 	// Use this for initialization
 	void Start () {
-		//Desactiver les cameras si bypass
-		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
-		if (bypass) {
-			//désactivation des cameras
-			if(cameraNonOculus!=null)
-				cameraNonOculus.gameObject.SetActive(false);
-			if(cameraOculus!=null)
-				cameraOculus.gameObject.SetActive(false);
-			return;
-		}
-		//Screen.lockCursor = true;
-		//Initialiser la camera
-		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
-			cameraNonOculus=Camera.main;
-		
-		Debug.Log (ControlCenter.GetUtiliserOculus ());
-		Debug.Log (cameraNonOculus);
-		Debug.Log (cameraOculus);
-		
-		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
-			if(cameraOculus==null) { //Mais on ne peut pas
-				camera=cameraNonOculus;
-				Debug.Log ("Pas de camera pour l'Oculus détectée.");
-			}
-			else {
-				if(cameraNonOculus!=null) {
-					Debug.Log ("Désactivation camera principale");
-					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
-					cameraNonOculus.gameObject.GetComponent<Camera>().enabled=false; //On désactive le parent de la camera non oculus si elle existe
-				}
-				camera=cameraOculus;
-			}
-		}
-		else //On ne veut pas utiliser l'oculus
-		{
-			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
-			if(cameraNonOculus==null) {
-				Debug.Log("Pas de main camera dans la scène");
-			}
-			else
-			{
-				camera=cameraNonOculus;
-			}
-		}
-		
-		jauge = jaugeMax;
-		cc = GetComponent<CharacterController> ();
+		Initialiser ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(bypass) return;
 		if (!freeze) { //Si on peut bouger
 			Sprint (); //On regarde la vitesse à donner au joueur
 			BougerTete(); //On change la caméra
