@@ -19,14 +19,15 @@ public class AllumageLampe : MonoBehaviour {
 	{
 		dureeJour = script.dureeDuJour;
 		heure = script.heure;
-		Debug.Log ("1 " + 3 * dureeJour / 10 + " 2 " + 7 * dureeJour / 10 + " 3 " + heure);
-		if(heure >= 8f*dureeJour/24 && heure <= 19f*dureeJour/24)
+		//Debug.Log ("1 " + 3 * dureeJour / 10 + " 2 " + 7 * dureeJour / 10 + " 3 " + heure);
+		if(heure >= 8f*dureeJour/24 && heure <= 19f*dureeJour/24 && light.intensity>0f)
 		{
 			light.intensity=0f;
 		}
 		else
 		{
-			light.intensity=1f;
+			if(light.intensity<1f)
+				light.intensity=1f;
 		}
 	}
 }
