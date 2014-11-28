@@ -5,9 +5,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    // Initialisation
     ui->setupUi(this);
+    setWindowTitle( "Eclementary2, Gestion des dialogues");
     changesSaved = true;
-    dialogWidget = new QWidget;
+    dialogManager = NULL;
+    dialogLayout = NULL;
+    startLayout = new QVBoxLayout();
+    dialogWidget = new QWidget();
     dialogWidget->setSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     displayMenuBar();
@@ -24,10 +29,13 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::displayMenuBar() {
     QMenu* fileMenu = menuBar()->addMenu("&Fichier");
     QMenu* newMenu = fileMenu->addMenu("&Nouveau");
+    QMenu* openMenu = fileMenu->addMenu("&Ouvrir");
 
     // Actions du menu "Nouveau"
+    QAction* quitAction = new QAction("Quitter", this);
     newReplicaAction = new QAction("Réplique", this);
     newDialogAction = new QAction("Dialogue", this);
+    openDialogAction = new QAction("Dialogue existant", this);
     QString newReplicaIconPath = "icones/add.png";
     newReplicaAction->setIcon( QIcon(WORKING_DIRECTORY+ newReplicaIconPath) );
     newReplicaAction->setEnabled( false ); // Désactivé au lancement du programme
@@ -39,13 +47,22 @@ void MainWindow::displayMenuBar() {
     saveAction->setIcon( QIcon( WORKING_DIRECTORY + iconName ) );
     saveAction->setEnabled( false );
 
+    newDialogAction->setShortcut(QKeySequence("Ctrl+N"));
+    openDialogAction->setShortcut(QKeySequence("Ctrl+O"));
+    quitAction->setShortcut(QKeySequence("Ctrl+Q"));
+
     fileMenu->addAction( saveAction );
     newMenu->addAction( newDialogAction );
     newMenu->addAction( newReplicaAction );
+    openMenu->addAction( openDialogAction );
+    fileMenu->addAction( quitAction );
 
     connect( saveAction, SIGNAL(triggered()), this, SLOT(saveDialogFile()) );
     connect( newReplicaAction, SIGNAL(triggered()), this, SLOT(newEmptyReplica())); // Permet un ajout en queue
     connect( newReplicaAction, SIGNAL(triggered()), this, SLOT(enableSaveAction()));
+    connect( newDialogAction, SIGNAL(triggered()), this, SLOT(displayFileBrowserToCreateDialog()) );
+    connect( openDialogAction, SIGNAL(triggered()), this, SLOT(displayFileBrowserToOpenDialog()) );
+    connect( quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 }
 
 void MainWindow::displayToolbar() {
@@ -64,7 +81,6 @@ void MainWindow::displayStartLayout() {
     connect( editDialogButton, SIGNAL(clicked()), this, SLOT(displayFileBrowserToOpenDialog()) );
     connect( newDialogButton, SIGNAL(clicked()), this, SLOT(displayFileBrowserToCreateDialog()) );
 
-    startLayout = new QVBoxLayout;
     startLayout->addWidget( newDialogButton );
     startLayout->addWidget( editDialogButton );
 
@@ -72,33 +88,63 @@ void MainWindow::displayStartLayout() {
 }
 
 void MainWindow::displayFileBrowserToOpenDialog() {
+    askForSavingChanges();
     QString filter = QString("Dialogues (*.json)");
     QString filename = QFileDialog::getOpenFileName(this, "Ouvrir un dialogue", QString(), filter);
     if( !filename.isEmpty() ) {
-        dialogManager = new DialogManager( filename );
+        setWindowTitle(QString("Eclementary2, Gestion des dialogues: " + filename));
+        initializeDialog( filename );
         displayDialogLayout();
     }
 }
 
 void MainWindow::displayFileBrowserToCreateDialog() {
+    askForSavingChanges();
     QString filter = QString("Dialogues (*.json)");
     QString filename = QFileDialog::getSaveFileName(this, "Enregistrer un fichier", QString(), filter);
-    if( !filename.isEmpty()) {
-        dialogManager = new DialogManager( filename );
+    if( !filename.isEmpty() ) {
+        initializeDialog( filename );
         displayDialogLayout();
+    }
+}
+
+void MainWindow::askForSavingChanges() {
+    if( !changesSaved ) { // La demande est faite si les modifications n'ont pas été enregistrées
+        int answer = QMessageBox::question(this, "Enregistrement des modifications", "Voulez-vous enregistrer vos dernières modifications avant d'ouvrir un nouveau dialogue ?");
+        if( answer == QMessageBox::Yes ) { // Enregistrement si réponse affirmative de l'utilisateur
+            saveDialogFile();
+            changesSaved = true;
+        }
+    }
+}
+
+void MainWindow::initializeDialog( QString dialogFilename ) {
+    if( !dialogFilename.isEmpty()) {
+        if( dialogManager != NULL ) {
+            delete dialogManager;
+            dialogManager = NULL;
+        }
+        if( startLayout != NULL ) {
+            deleteLayout( startLayout);
+            startLayout = NULL;
+        }
+        if( dialogLayout != NULL ) {
+            deleteLayout( dialogLayout);
+            dialogLayout = NULL;
+        }
+        dialogManager = new DialogManager( dialogFilename );
+        dialogLayout = new QVBoxLayout();
     }
 }
 
 void MainWindow::displayDialogLayout() {
     // Écran d'édition des dialogues
-    dialogLayout = new QVBoxLayout();
-
     QJsonArray replicas = dialogManager->getReplicas();
     if( dialogManager->isValidDialog() ) {
         int pos = 0; // Ligne correspondant à la réplique dans la présentation
         if( !dialogManager->getReplicas().isEmpty()) {
             foreach( const QJsonValue & value, replicas ) {
-                QVBoxLayout* replicaLayout = newReplicaLayout( value );
+                QLayout* replicaLayout = newReplicaLayout( value );
                 if( replicaLayout != NULL ) {
                     dialogLayout->addLayout( replicaLayout );
                     pos++;
@@ -107,20 +153,17 @@ void MainWindow::displayDialogLayout() {
         }
         else
             newEmptyReplica(); // Création d'une réplique vide si le fichier du dialogue est vide
-
-        // Changement de layout
-        deleteLayout( startLayout );
-        dialogWidget->setLayout( dialogLayout );
-        centralArea->setWidget(dialogWidget);
         // Activation de la possibilité d'ajouter une réplique (dans la barre d'outils et le menu)
         newReplicaAction->setEnabled( true );
+        // Changement de layout
+        updateCentralArea();
     }
     else
         QMessageBox::information( NULL, "Notification", "Aucune réplique n'a été trouvée dans le fichier?");
 
 }
 
-QVBoxLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
+QLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
     QJsonObject replicaObj;
     QString id, goName, text;
     QVBoxLayout* replicaLayout = NULL ;
@@ -139,7 +182,7 @@ QVBoxLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
 
 
     QLayout* replicaIdLayout = newReplicaIdLayout( id, editState );
-    QHBoxLayout* goLayout = newGoLayout( goName, editState );
+    QLayout* goLayout = newGoLayout( goName, editState );
     QTextEdit* textArea = new QTextEdit();
     QGridLayout* nextReplicasLayout = newNextReplicasLayout( nextReplicasIdArray, editState );
 
@@ -252,7 +295,7 @@ void MainWindow::addReplicaId( int row, QStringListModel* model, QComboBox* cb )
     }
 }
 
-QHBoxLayout* MainWindow::newGoLayout(QString goName, bool editState) {
+QLayout* MainWindow::newGoLayout(QString goName, bool editState) {
     QHBoxLayout* layout = new QHBoxLayout();
     QLabel* label = new QLabel();
     QLineEdit* lineEdit = new QLineEdit();
@@ -415,7 +458,7 @@ void MainWindow::saveDialogFile() {
     // Transaction: Soit toutes les répliques sont mises à jour sur le fichier, soit aucune ne l'est
     while( ok && (i < dialogManager->getReplicas().count()) ){
         QLayout* replicaLayout = dialogLayout->itemAt( i )->layout();
-        if( !saveReplica( replicaLayout ) )
+        if( !saveReplica( replicaLayout ) ) // Enregistrement de la réplique et test de la valeur de retour
             ok = false;
         i++;
     }
@@ -455,18 +498,24 @@ void MainWindow::setReplicaEditState( QLayout* replicaLayout, bool editState, Ac
     editButton->setEditState( !editState );
 }
 
-void MainWindow::deleteLayout(QLayout *layout) {
+void MainWindow::deleteLayout(QLayout *layout, QString tab) {
     QLayoutItem* item;
-
-    while( (item = layout->takeAt(0)) != 0 ) {
-        if( item->layout() != NULL ) // Suppression récursive
-            deleteLayout( item->layout() );
-        else { // le widget est d'abord caché avant d'être supprimé
-            item->widget()->hide();
-            delete item;
+    //qDebug() << "Fils " << layout->count();
+    if( layout != NULL ) {
+        //qDebug() << tab + "Layout entrée";
+        while( (item = layout->takeAt(0)) != 0 ) {
+            if( item->layout() != 0 ) {// Suppression récursive si c'est un layout
+                deleteLayout( item->layout(), tab+"     " );
+            }
+            else if( item->widget() != 0 ) { // le widget est d'abord caché avant d'être supprimé
+                //qDebug() << tab + "     " + "Widget";
+                item->widget()->hide();
+                delete item->widget();
+            }
         }
+        //qDebug() << tab + "Layout sortie";
+        delete layout;
     }
-    delete layout;
 }
 
 void MainWindow::delReplica( QLayout* replicaLayout ) {
@@ -496,11 +545,9 @@ void MainWindow::newEmptyReplica( QLayout* replicaBefore ) {
 }
 
 void MainWindow::updateCentralArea() {
-    //QWidget* replacementWidget = dialogWidget;
     dialogWidget = new QWidget();
     dialogWidget->setLayout( dialogLayout );
     centralArea->setWidget( dialogWidget );
-    //delete replacementWidget;
 }
 
 MainWindow::~MainWindow()

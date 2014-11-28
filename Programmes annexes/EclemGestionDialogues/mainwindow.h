@@ -51,8 +51,8 @@ public:
 private:
     Ui::MainWindow *ui;
     QWidget* dialogWidget;
-    QVBoxLayout* newReplicaLayout( const QJsonValue & value = 0); // Construit le layout de la réplique donnée en argument | Champs vides si l'argument est nul
-    QHBoxLayout* newGoLayout( QString goName, bool editState = false ); /* Construit le layout d'un game object,
+    QLayout* newReplicaLayout( const QJsonValue & value = 0); // Construit le layout de la réplique donnée en argument | Champs vides si l'argument est nul
+    QLayout* newGoLayout( QString goName, bool editState = false ); /* Construit le layout d'un game object,
                                                                          * avec le nom donné en paramètre étant sélectionné par défaut dans la liste déroulante
                                                                          * editState informe de la possibilité de modidifier ou non les widgets créés
                                                                          */
@@ -63,8 +63,10 @@ private:
     QAction* saveAction;
     QAction* newReplicaAction;
     QAction* newDialogAction;
+    QAction* openDialogAction;
 
     void displayStartLayout(); // Construit et affiche l'écran de démarrage
+    void displayDialogLayout(); // instancie et rajoute tous les widgets nécessaires à l'interface d'édition des dialogues// Le paramètre est le layout qui était affiché avant et qui doit être supprimé
     void setHeight (QTextEdit* edit, int nRows);
     void displayMenuBar(); // Construit et affiche la barra des menus
     void displayToolbar(); // Construit et affiche la barre d'outils
@@ -72,14 +74,13 @@ private:
     void setNextReplicasEnable( QLayout* replicaLayout, bool state );
     void setGoEnable( QLayout* replicaLayout, bool state );
     void setTextAreaEnable( QLayout* replicaLayout, bool state );
-    void deleteLayout( QLayout* layout ); // Fonction permettant la suppression récursive des layouts
+    void deleteLayout( QLayout* layout, QString tab = 0 ); // Fonction permettant la suppression récursive des layouts
     int replicaLayoutPosition( QLayout* replicaLayout );
     QString getReplicaId( QLayout* replicaLayout );
     void updateCentralArea(); // Permet un réajustement des tailles des widgets après une insertion/suppression de dialogue
     void updateNextReplicasLists(); // Met à jour la liste des id dans les listes déroulantes des répliques suivantes
 
 public slots:
-    void displayDialogLayout(); // instancie et rajoute tous les widgets nécessaires à l'interface d'édition des dialogues
     void delReplica( QLayout* replicaLayout ); // Supprime la réplique donnée en paramètre de l'interface et du document Json
     QJsonObject getReplicaFromGUI( QLayout* replicaLayout ); // Récupère les informations des champs d'une replicaLayout pour créer un QJsonObject
     void saveDialogFile(); // Enregistre le document Json sur le fichier du dialogue
@@ -89,6 +90,8 @@ public slots:
     void newEmptyReplica( QLayout* replicaBefore = 0 ); // Insère une réplique vide juste après la réplique donnée en paramètre
     void displayFileBrowserToOpenDialog(); // Navigateur de fichiers pour ouvrir un fichier dialogue
     void displayFileBrowserToCreateDialog(); // Navigateur de fichiers pour créer un fichier dialogue
+    void initializeDialog( QString dialogFilename );
+    void askForSavingChanges();
 };
 
 #endif // MAINWINDOW_H
