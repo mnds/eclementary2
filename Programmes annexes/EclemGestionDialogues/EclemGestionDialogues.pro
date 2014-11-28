@@ -25,4 +25,4 @@ HEADERS  += mainwindow.h \
     addreplicacombo.h \
     customdelegate.h
 
-FORMS    += mainwindow.ui
+FORMS    +=

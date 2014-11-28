@@ -42,7 +42,7 @@ public class MazeManager : MonoBehaviour {
 
 	//Crée un labyrinthe, place les personnages, les objets, configure les PNJ et les zones de controle (pour ne pas sortir du labyrinthe)
 	void Start () {
-		fpc = GameObject.Find ("Joueur");
+		fpc = ControlCenter.GetJoueurPrincipal ();
 		matriceDeplacementsPossibles = new List<List<List<int>>> ();
 		GenererLabyrinthe (); //Crée et positionne les murs du labyrinthe
 		PlacerPersonnages (); //place les personnages aléatoirement dans le labyrinthe
