@@ -96,7 +96,7 @@ public class ControllerJoueur : MonoBehaviour {
 		else //On ne veut pas utiliser l'oculus
 		{
 			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
+				cameraOculus.gameObject.SetActive(false);
 			if(cameraNonOculus==null) {
 				Debug.Log("Pas de main camera dans la scène");
 			}
