@@ -7,18 +7,16 @@ DialogManager::DialogManager( QString filename ):
     validDialog = false;
     if( dialogFile.open( QIODevice::ReadWrite | QIODevice::Text ) ) {
         QByteArray fileContent = dialogFile.readAll();
-        if( fileContent.isEmpty() ) {
+        if( fileContent.isEmpty() )
             validDialog = true; // Un fichier vide est considéré comme valide
-            qDebug() << "ValidDialog" << validDialog;
-        }
         else {
             QJsonDocument jsonContent = QJsonDocument::fromJson( fileContent ); // Conversion du contenu du fichier en objet json
             if( !jsonContent.isNull() ) {
-              QJsonObject jsonObject = jsonContent.object();
-              if( jsonObject["repliques"].isArray() ) {
-                  validDialog = true;
-                  jsonReplicas = jsonObject["repliques"].toArray(); // Un fichier avec la structure Json attendue est considéré comme valide
-              }
+                QJsonObject jsonObject = jsonContent.object();
+                if( jsonObject["repliques"].isArray() ) {
+                    validDialog = true;  // Un fichier avec la structure Json attendue est considéré comme valide
+                    jsonReplicas = jsonObject["repliques"].toArray();
+                }
             }
         }
         dialogFile.close();
