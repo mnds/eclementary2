@@ -169,8 +169,9 @@ public class FPCClassicAnim : ControllerJoueur {
 	void OnGUI () {
 		if(bypass) return;
 		//Affichage de la barre d'endurance
+		Debug.Log ("jauge :" + jauge / jaugeMax);
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
-		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Mathf.Ceil (jauge/jaugeMax * barLength), barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
+		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
 	
 
