@@ -10,7 +10,7 @@
  */
 
 /*
- * Utilisé dans Attaquer , Health
+ * Utilisé dans Attaquer , Health , ControllerJoueur
  */
 
 using UnityEngine;
@@ -25,15 +25,42 @@ public enum Condition {
 
 public class Caracteristiques : MonoBehaviour {
 	public bool estVivant; //Etat du joueur
-	public float pointsDeVie; //Augmente les points de vie du personnage
-	public float pointsEndurance; //Augmente le temps pendant lequel le personnage peut courir
-	public float attaque;
-	public float defense;
-	public float saut;
-	public float vitesseCourse;
-	public float vitesseMarche;
-	public float vitesseLancer;
+	public float pointsDeVie = 50f; //Augmente les points de vie du personnage
+	public float pointsEndurance = 10f; //Augmente le temps pendant lequel le personnage peut courir
+	public float attaque = 1f;
+	public float defense = 1f;
+	public float saut = 3f;
+	public float vitesseCourse = 9f;
+	public float vitesseMarche = 5f;
+	public float vitesseLancer = 1f;
 	public List<Condition> conditionsActuelles;
+
+	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
+	private Health h; //Lié à Health pour en modifier les statistiques
+
+
+	void Start () {
+		conditionsActuelles = new List<Condition> ();
+		cj = gameObject.GetComponent<ControllerJoueur> ();
+		Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
+		h = gameObject.GetComponent<Health> ();
+		Debug.Log ("Health de " + this + " est défini : " + (h == true));
+	}
+
+
+	public void Actualiser () {
+		if(cj) {
+			cj.SetJaugeMax (pointsEndurance);
+			cj.SetVitesseCourse (vitesseCourse);
+			cj.SetVitesseMarche (vitesseMarche);
+			cj.SetVitesseSaut (saut);
+		}
+		if (h) {
+			h.SetPointsDeVieMax (pointsDeVie);
+		}
+		Debug.Log ("Actualisation des statistiques effectuée");
+	}
+
 
 
 	//Set/Get
@@ -115,6 +142,22 @@ public class Caracteristiques : MonoBehaviour {
 	
 	public List<Condition> GetConditionsActuelles () {
 		return conditionsActuelles;
+	}
+
+	public void SetCj (ControllerJoueur cj_) {
+		cj = cj_;
+	}
+	
+	public ControllerJoueur GetCj () {
+		return cj;
+	}
+	
+	public void SetH (Health h_) {
+		h = h_;
+	}
+	
+	public Health GetH () {
+		return h;
 	}
 
 }
