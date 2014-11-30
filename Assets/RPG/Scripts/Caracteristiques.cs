@@ -9,6 +9,9 @@
  * 			  ainsi que son état (empoisonné, brulé...) qui peuvent affecter l'expérience de jeu.
  */
 
+/*
+ * Utilisé dans Attaquer , Health
+ */
 
 using UnityEngine;
 using System.Collections;
@@ -21,16 +24,16 @@ public enum Condition {
 }
 
 public class Caracteristiques : MonoBehaviour {
-	private bool estVivant; //Etat du joueur
-	private float pointsDeVie; //Augmente les points de vie du personnage
-	private float pointsEndurance; //Augmente le temps pendant lequel le personnage peut courir
-	private float attaque;
-	private float defense;
-	private float saut;
-	private float vitesseCourse;
-	private float vitesseMarche;
-	private float vitesseLancer;
-	private List<Condition> conditionsActuelles;
+	public bool estVivant; //Etat du joueur
+	public float pointsDeVie; //Augmente les points de vie du personnage
+	public float pointsEndurance; //Augmente le temps pendant lequel le personnage peut courir
+	public float attaque;
+	public float defense;
+	public float saut;
+	public float vitesseCourse;
+	public float vitesseMarche;
+	public float vitesseLancer;
+	public List<Condition> conditionsActuelles;
 
 
 	//Set/Get

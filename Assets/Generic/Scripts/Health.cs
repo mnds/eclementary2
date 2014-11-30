@@ -2,7 +2,7 @@
  * \file      Health.cs
  * \author    
  * \version   1.0
- * \date      9 novembre 2014
+ * \date      29 novembre 2014
  * \brief     Contient les points de vie de l'objet. A sa mort, on appelle DeclencherMort.
  */
 
@@ -30,8 +30,18 @@ public class Health : MonoBehaviour {
 	}
 
 	public void SubirDegats(float degats) {
+		Caracteristiques carac = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
+
+		//Application de la formule de degats
+		float degatsSubis = degats; //Avant application des caractéristiques
+		if (carac) { //Si l'objet a des caractéristiques
+			degatsSubis=Mathf.Max(0,degatsSubis-carac.GetDefense()); //Formule de degats
+		}
+
+		Debug.Log ("Degats subis apres application de la statistique Defense : " + degatsSubis);
+
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
-		pointsDeVieActuels -= degats;
+		pointsDeVieActuels -= degatsSubis;
 		if (pointsDeVieActuels <= 0) {
 			DeclencherMort ();
 		}

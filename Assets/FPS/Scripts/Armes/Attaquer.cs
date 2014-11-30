@@ -41,6 +41,7 @@ public class Attaquer : MonoBehaviour {
 	public float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	public bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
 	bool infligerDegats; //true si on peut infliger des degats
+	bool affecteParCaracteristiques = true; //true si les degats de l'arme sont influencés par la caractéristique Attaque du joueur
 	List<Health> objetsTouchesLorsDeCetteAttaque; //Pour éviter de taper plusieurs fois les memes objets
 
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
@@ -159,7 +160,18 @@ public class Attaquer : MonoBehaviour {
 					}
 				}
 				Debug.Log ("Touché");
-				health.SubirDegats (degatsParCoup);
+
+				//On récupère le script Caracteristiques du joueur principal pour appliquer les modifications aux dégats
+				Caracteristiques carac = ControlCenter.GetJoueurPrincipal().GetComponent<Caracteristiques>();
+				float degatsInfliges=degatsParCoup; //Initialement égal à la valeur "de base"
+				if(carac && affecteParCaracteristiques) { //Formule de degats
+					degatsInfliges = degatsParCoup*carac.GetAttaque()/100;
+				}
+
+
+				Debug.Log ("Degats infligés après application de l'attaque du joueur : "+degatsInfliges);
+
+				health.SubirDegats (degatsInfliges);
 				objetsTouchesLorsDeCetteAttaque.Add(health);
 			}
 		}
