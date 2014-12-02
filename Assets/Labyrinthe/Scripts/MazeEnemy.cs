@@ -25,6 +25,8 @@ public class MazeEnemy : MonoBehaviour {
 	public float tempsChuteInduit = 0.3f;
 	public float tempsReveilInduit = 1.5f;
 
+	private float hauteurMurs;
+
 	// Use this for initialization
 	void Start () {
 		cameraScreamer = GameObject.Find ("Camera Screamer");
@@ -37,12 +39,12 @@ public class MazeEnemy : MonoBehaviour {
 		positionCible.y = transform.position.y; // use this object's y value
 		//face the target
 		transform.LookAt(positionCible);
-		transform.Rotate (0, transform.rotation.y-90, 0, Space.World); //Le -90 est du bricolage ici. Prendre garde à ce que les objets soient bien orientés avec la tete face à z.
+		transform.Rotate (0, transform.rotation.y, 0, Space.World); //Le -90 est du bricolage ici. Prendre garde à ce que les objets soient bien orientés avec la tete face à z.
 		//see if the player is close enough
 		RaycastHit hit; //Information sur ce qui a été touché
 		Vector3 direction = positionCible - transform.position;
-		if (Physics.Raycast(transform.position,direction,out hit,3.0f)) { // check for a hit within 30 meters
-			Debug.DrawLine(transform.position, hit.point);
+		if (Physics.Raycast(transform.position+new Vector3(0,1f,0),direction,out hit,3f)) { // check for a hit within 3 meters
+			Debug.DrawLine(transform.position+new Vector3(0,1f,0), hit.point);
 			if(hit.collider==cible.collider)
 			{
 				Debug.Log ("Attrapé !");
@@ -59,6 +61,10 @@ public class MazeEnemy : MonoBehaviour {
 
 	public void SetCible (GameObject cible_) {
 		cible = cible_;
+	}
+
+	public void SetHauteurMurs (float hm) {
+		hauteurMurs = hm;
 	}
 
 	public void SetLabyrintheEnCoursDeRegeneration (bool labyrintheEnCoursDeRegeneration_) {

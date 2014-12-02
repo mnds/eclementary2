@@ -164,7 +164,7 @@ public class MazeTravel : MonoBehaviour {
 			//La direction du déplacement est la position souhaitée moins la position initiale, le tout normalisé
 			directionDeplacementCourant = new Vector3 (nexti-i, 0, nextj-j).normalized;
 			positionProchainDeplacement = positionMaze //d'après la formule des positions des cubes
-				+ new Vector3 (longueurMurs*nexti, longueurMurs/2, longueurMurs*nextj+(float)longueurMurs/2+1/2);
+				+ new Vector3 (longueurMurs*nexti, .8f, longueurMurs*nextj+(float)longueurMurs/2+1/2);
 			return true ; //C'est bon, on peut bouger
 		}
 		else //Le vecteur était corrompu, il faut relancer l'algorithme
