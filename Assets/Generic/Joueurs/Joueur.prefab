@@ -414,7 +414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100050
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100060
 GameObject:
   m_ObjectHideFlags: 1
@@ -899,8 +899,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
-  m_LocalRotation: {x: 0, y: .99984771, z: 0, w: .0174524356}
-  m_LocalPosition: {x: 999.423462, y: 200.944138, z: 999.593689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.50656128, y: .863739014, z: .0314941406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400058}
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 034806f00bbba6f45bd43dcf97e6356d, type: 3}
   m_Name: 
@@ -1911,13 +1911,9 @@ MonoBehaviour:
   jaugeMax: 10
   enduranceBarTexture: {fileID: 0}
   vitesseRotation: 10
-  vitesseSaut: 7
+  vitesseSaut: 3
   angleVerticalMax: 60
   nombreSautsMax: 1
-  characterControllerYCenterDebout: .839999974
-  characterControllerHeightDebout: 2
-  characterControllerYCenterAccroupi: .660000026
-  characterControllerHeightAccroupi: 1.20000005
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1

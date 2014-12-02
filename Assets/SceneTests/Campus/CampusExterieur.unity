@@ -7262,6 +7262,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -1.42131388
       objectReference: {fileID: 0}
+    - target: {fileID: 11400034, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
+      propertyPath: vitesseSaut
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
   m_RootGameObject: {fileID: 1762174165}
@@ -27959,13 +27963,9 @@ MonoBehaviour:
   jaugeMax: 10
   enduranceBarTexture: {fileID: 0}
   vitesseRotation: 10
-  vitesseSaut: 7
+  vitesseSaut: 5
   angleVerticalMax: 60
   nombreSautsMax: 1
-  characterControllerYCenterDebout: .839999974
-  characterControllerHeightDebout: 2
-  characterControllerYCenterAccroupi: .660000026
-  characterControllerHeightAccroupi: 1.20000005
 --- !u!143 &1762174175
 CharacterController:
   m_ObjectHideFlags: 0

@@ -76,6 +76,10 @@ static public class ControlCenter {
 		return joueurPrincipal;
 	}
 
+	static public void SetUtiliserOculus (bool utiliserOculus_) {
+		utiliserOculus = utiliserOculus_;
+	}
+
 	static public bool GetUtiliserOculus () {
 		return utiliserOculus;
 	}
