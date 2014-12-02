@@ -52,6 +52,7 @@
      <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRPrefabs.cs" />
      <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRShimLoader.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
+     <None Include="Assets\AnimationZombie\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\TransparentTerrain.shader" />
@@ -86,8 +87,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
       <Project>{683A35AE-D232-B1D3-C572-B5C037E31D1E}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>

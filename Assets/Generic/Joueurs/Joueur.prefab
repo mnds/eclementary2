@@ -899,8 +899,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.50656128, y: .863739014, z: .0314941406}
+  m_LocalRotation: {x: 0, y: .99984771, z: 0, w: .0174524356}
+  m_LocalPosition: {x: 999.423462, y: 200.944138, z: 999.593689}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400058}
@@ -1597,6 +1597,8 @@ MonoBehaviour:
   vignette: {fileID: 0}
   tempsInitialVersFinal: .400000006
   tempsFinalVersInitial: .5
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1669,6 +1671,8 @@ MonoBehaviour:
   vignette: {fileID: 0}
   tempsInitialVersFinal: .5
   tempsFinalVersInitial: 1
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1689,6 +1693,8 @@ MonoBehaviour:
   vignette: {fileID: 0}
   tempsInitialVersFinal: .100000001
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1828,6 +1834,8 @@ MonoBehaviour:
   vignette: {fileID: 0}
   tempsInitialVersFinal: .100000001
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1848,6 +1856,8 @@ MonoBehaviour:
   vignette: {fileID: 0}
   tempsInitialVersFinal: .5
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1862,6 +1872,7 @@ MonoBehaviour:
   pointsDeVieMax: 50
   pointsDeVieActuels: 5
   joueurPrincipal: 0
+  healthBarTexture: {fileID: 0}
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1898,6 +1909,7 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseCourse: 9
   jaugeMax: 10
+  enduranceBarTexture: {fileID: 0}
   vitesseRotation: 10
   vitesseSaut: 7
   angleVerticalMax: 60

@@ -6,11 +6,17 @@
  * \brief     Interface dont héritent toutes les classes qui servent au controle du joueur.
  */
 
+/*
+ * Utilisé dans Caracteristiques
+ */
+
+
 using UnityEngine;
 using System.Collections;
 
 public class ControllerJoueur : MonoBehaviour {
 	protected CharacterController cc;
+	protected Caracteristiques carac; //Pour changer les valeurs selon les caractéristiques du personnage
 
 	public Camera cameraOculus;
 	public Camera cameraNonOculus;
@@ -40,10 +46,10 @@ public class ControllerJoueur : MonoBehaviour {
 	public int nombreSautsMax = 1; //Nombre de sauts maximum que le joueur peut faire. 1 pour saut, 2 pour double saut, 0 si interdit de sauter
 	protected float bounce = 0f; //Pour le rebond sur des objets
 	//S'accroupir
-	public float characterControllerYCenterDebout = 0.84f;
-	public float characterControllerHeightDebout = 1.72f;
-	public float characterControllerYCenterAccroupi = 0.66f;
-	public float characterControllerHeightAccroupi = 1.43f;
+	protected float characterControllerYCenterDebout = 0.84f;
+	protected float characterControllerHeightDebout = 1.72f;
+	protected float characterControllerYCenterAccroupi = 0.66f;
+	protected float characterControllerHeightAccroupi = 1.43f;
 	
 	//Bypass
 	protected bool sprintPossible = true; //true si appuyer sur Sprint fait quelque chose, false sinon
@@ -52,8 +58,14 @@ public class ControllerJoueur : MonoBehaviour {
 	protected bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
 	protected bool bypass = false; //Tout bloquer. Est à true si le joueur n'est pas celui controllé par l'utilisation.
 
-	// Use this for initialization
 	void Start () {
+		Initialiser ();
+	}
+
+	/**
+	 * @brief Initialise les variables. Appelé dans Start.
+	 */
+	protected void Initialiser () {
 		//Desactiver les cameras si bypass
 		bypass = ControlCenter.GetJoueurPrincipal () != gameObject;
 		if (bypass) {
@@ -90,7 +102,7 @@ public class ControllerJoueur : MonoBehaviour {
 		else //On ne veut pas utiliser l'oculus
 		{
 			if(cameraOculus!=null) //S'il y a une caméra pour l'oculus on la désactive
-				cameraOculus.gameObject.GetComponent<Camera>().enabled=false;
+				cameraOculus.gameObject.SetActive(false);
 			if(cameraNonOculus==null) {
 				Debug.Log("Pas de main camera dans la scène");
 			}
@@ -103,7 +115,7 @@ public class ControllerJoueur : MonoBehaviour {
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
@@ -162,4 +174,53 @@ public class ControllerJoueur : MonoBehaviour {
 	public float GetVitesseMouvement () {
 		return vitesseMouvement;
 	}
+
+	public void SetVitesseMarche (float vitesseMarche_) {
+		vitesseMarche = vitesseMarche_;
+	}
+	
+	public float GetVitesseMarche () {
+		return vitesseMarche;
+	}
+	
+	public void SetVitesseCourse (float vitesseCourse_) {
+		vitesseCourse = vitesseCourse_;
+	}
+	
+	public float GetVitesseCourse () {
+		return vitesseCourse;
+	}
+	
+	public void SetJaugeMax (float jaugeMax_) {
+		jaugeMax = jaugeMax_;
+	}
+	
+	public float GetJaugeMax () {
+		return jaugeMax;
+	}
+	
+	public void SetVitesseSaut (float vitesseSaut_) {
+		vitesseSaut = vitesseSaut_;
+	}
+	
+	public float GetVitesseSaut () {
+		return vitesseSaut;
+	}
+	
+	public void SetNombreSautsMax (int nombreSautsMax_) {
+		nombreSautsMax = nombreSautsMax_;
+	}
+	
+	public int GetNombreSautsMax () {
+		return nombreSautsMax;
+	}
+	
+	public void SetAngleVerticalMax (float angleVerticalMax_) {
+		angleVerticalMax = angleVerticalMax_;
+	}
+	
+	public float GetAngleVerticalMax () {
+		return angleVerticalMax;
+	}
+
 }

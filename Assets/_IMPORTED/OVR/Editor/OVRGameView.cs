@@ -71,8 +71,8 @@ public class OVRGameView
 			if (pos != cachedPosition)
 			{
 				cachedPosition = pos;
-
-				OVRManager.display.SetViewport((int)pos.x, (int)pos.y, (int)pos.width, (int)pos.height);
+				if(ControlCenter.GetUtiliserOculus())
+					OVRManager.display.SetViewport((int)pos.x, (int)pos.y, (int)pos.width, (int)pos.height);
 			}
 		}
 	}

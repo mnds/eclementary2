@@ -231,19 +231,6 @@ public class Inventaire : MonoBehaviour {
 						if(nomObjet==listeObjetsRecoltables[i].name+"(Clone)" //Pour l'instantiation
 						   ||nomObjet==listeObjetsRecoltables[i].name) {
 							ChangerMunitions(listeObjetsRecoltables[i],quantiteObjets[i]+1);
-							//recuperation de lancer
-							GameObject lancerGameObject = listeObjetsRecoltables[i]; //On va parcourir les parents de gameObject pour trouver les scripts
-							Lancer lancerDeObjet = lancerGameObject.GetComponent<Lancer>();
-							//Tant que lancer est null, on vérifie si ce n'est pas le parent qui a le script
-							while(lancerDeObjet == null && lancerGameObject.transform.parent){
-								lancerGameObject=lancerGameObject.transform.parent.gameObject;
-								lancerDeObjet = lancerGameObject.GetComponent<Lancer>();
-							}
-							//Sinon, on est à la racine, donc on cherche dans les enfants.
-							if(lancerDeObjet==null)
-								lancerDeObjet=objet.GetComponentInChildren<Lancer>();
-							//On rajoute ce qu'il faut à Lancer
-							lancerDeObjet.SetMunitionsSimple(quantiteObjets[i]);
 							break;
 						}	
 					}

@@ -93,6 +93,8 @@ public class OVRCameraRig : MonoBehaviour
 
 	private void UpdateAnchors()
 	{
+		if (!ControlCenter.GetUtiliserOculus ())
+						return;
 		OVRPose leftEye = OVRManager.display.GetEyePose(OVREye.Left);
 		OVRPose rightEye = OVRManager.display.GetEyePose(OVREye.Right);
 
@@ -117,7 +119,8 @@ public class OVRCameraRig : MonoBehaviour
 #if OVR_USE_PROJ_MATRIX
 			OVRManager.display.ForceSymmetricProj(false);
 #else
-			OVRManager.display.ForceSymmetricProj(true);
+			if(ControlCenter.GetUtiliserOculus())
+				OVRManager.display.ForceSymmetricProj(true);
 #endif
 
 			needsCameraConfigure = false;
@@ -180,13 +183,14 @@ public class OVRCameraRig : MonoBehaviour
 		Transform anchor = (eye == OVREye.Left) ? leftEyeAnchor : rightEyeAnchor;
 		Camera cam = anchor.GetComponent<Camera>();
 
-		OVRDisplay.EyeRenderDesc eyeDesc = OVRManager.display.GetEyeRenderDesc(eye);
+		if (ControlCenter.GetUtiliserOculus ()) {
+			OVRDisplay.EyeRenderDesc eyeDesc = OVRManager.display.GetEyeRenderDesc(eye);
 
-		cam.fieldOfView = eyeDesc.fov.y;
-		cam.aspect = eyeDesc.resolution.x / eyeDesc.resolution.y;
-		cam.rect = new Rect(0f, 0f, OVRManager.instance.virtualTextureScale, OVRManager.instance.virtualTextureScale);
-		cam.targetTexture = OVRManager.display.GetEyeTexture(eye);
-
+			cam.fieldOfView = eyeDesc.fov.y;
+			cam.aspect = eyeDesc.resolution.x / eyeDesc.resolution.y;
+			cam.rect = new Rect(0f, 0f, OVRManager.instance.virtualTextureScale, OVRManager.instance.virtualTextureScale);
+			cam.targetTexture = OVRManager.display.GetEyeTexture(eye);
+		}
 		// AA is documented to have no effect in deferred, but it causes black screens.
 		if (cam.actualRenderingPath == RenderingPath.DeferredLighting)
 			QualitySettings.antiAliasing = 0;
