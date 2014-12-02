@@ -25,7 +25,8 @@ public class MazeManager : MonoBehaviour {
 	public List<GameObject> lesPNJ;
 	public List<GameObject> lesObjets; //Liste d'objets sans importance pour le déroulement du jeu. Servent à égayer la partie
 	private GameObject fpc;
-	private int longueurMurs = 5; //la longueur est égale à la hauteur ici.
+	private int longueurMurs = 5;
+	private float hauteurMurs = 5f;
 	public int nombreMursParCote = 10;
 	public Transform mazeWall; //prefab du mur
 	public Transform mazeTrigger; //prefab des cubes qui tapissent le labyrinthe
@@ -53,6 +54,8 @@ public class MazeManager : MonoBehaviour {
 				.SetLongueurNombrePosition(longueurMurs,nombreMursParCote,transform.position);
 			lesPNJ[i].GetComponent<MazeEnemy>()
 				.SetMazeManager(this);
+			lesPNJ[i].GetComponent<MazeEnemy>()
+				.SetHauteurMurs(hauteurMurs);
 			lesPNJ[i].GetComponent<MazeEnemy>()
 				.SetCible(fpc);
 		}
@@ -294,7 +297,7 @@ public class MazeManager : MonoBehaviour {
 			int iPNJ=Random.Range(3,nombreMursParCote-1); //Le PNJ ne doit au départ par etre trop près
 			int jPNJ=Random.Range(0,nombreMursParCote-1);
 			lesPNJ[i].transform.position = transform.position //d'après la formule des positions des cubes
-				+ new Vector3 (longueurMurs*iPNJ, longueurMurs/2, longueurMurs*jPNJ+(float)longueurMurs/2+1/2);
+				+ new Vector3 (longueurMurs*iPNJ, -longueurMurs/2, longueurMurs*jPNJ+(float)longueurMurs/2+1/2);
 			MazeTravel mw=lesPNJ[i].GetComponent<MazeTravel>();
 			mw.Restart();
 			mw.SetCoordinates(iPNJ,jPNJ);
