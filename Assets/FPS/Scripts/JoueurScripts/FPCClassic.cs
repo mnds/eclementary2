@@ -201,7 +201,8 @@ public class FPCClassic : ControllerJoueur {
 	void OnGUI () {
 		//Affichage de la barre d'endurance
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
-		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, Mathf.Ceil (jauge/jaugeMax * barLength), barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
+		if(! (jauge/jaugeMax < 0.1) )  // La barre n'est affichée qu'au delà d'un certain seuil	
+			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
 	
 	//Set/Get

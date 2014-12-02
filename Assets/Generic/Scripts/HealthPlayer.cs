@@ -24,7 +24,8 @@ public class HealthPlayer : Health {
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
-		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
+		if(! (pointsDeVieActuels/pointsDeVieMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
+			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
 	}
 
 	public override void DeclencherMort () {

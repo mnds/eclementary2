@@ -86,6 +86,8 @@ public class Dialogue : MonoBehaviour, Interactif {
 					GameObject go = GameObject.Find ( nomGoAssocie );
 					if( go )
 						replique.SetGoAssocie( go );
+					else
+						Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
 				}
 			}
 			repliques.Add( replique ); // Ajout à la liste des répliques gérées par le dialogue
