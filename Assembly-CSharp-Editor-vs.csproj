@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,18 +39,18 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\Generic\MoveCameraEditor.cs" />
-     <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRBuild.cs" />
-     <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRGameView.cs" />
-     <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRPrefabs.cs" />
-     <Compile Include="Assets\_IMPORTED\OVR\Editor\OVRShimLoader.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRGameView.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRPrefabs.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRShimLoader.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\AnimationZombie\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\Plugins\donotdelete.txt" />
@@ -65,7 +65,7 @@
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 6.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\DoubleSided.shader" />
-     <None Include="Assets\_IMPORTED\OVR\Shaders\TextShader3D.shader" />
+     <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
@@ -76,18 +76,22 @@
      <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\AddSmooth_Layer.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 8.shader" />
      <None Include="Assets\Generic\Dialogue\Readme.txt" />
-     <None Include="Assets\_IMPORTED\OVR\Shaders\OVRGUIShader.shader" />
+     <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 2.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\Vertex color unlit 7.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Particles\Shaders\Add_Layer.shader" />
      <None Include="Assets\_IMPORTED\Tuscany\Models\Materials\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/mnds/eclementary2/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>D:/Centrale Lyon/Année 2/PA - Jeu vidéo/eclementary2/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

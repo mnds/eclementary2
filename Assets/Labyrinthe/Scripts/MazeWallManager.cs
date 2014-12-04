@@ -79,8 +79,8 @@ public class MazeWallManager : MonoBehaviour {
 	void OnTriggerEnter (Collider collider) {
 		if(collider.gameObject==fpc) //Si le fpc rentre
 		{
-			if(estMurEntree) {Application.LoadLevel("Labyrinthe");}
-			if(estMurSortie) {Application.LoadLevel("Labyrinthe");}
+			if(estMurEntree) {Application.LoadLevel("Lancement");}
+			if(estMurSortie) {Application.LoadLevel("CampusExterieur");}
 		}
 	}
 

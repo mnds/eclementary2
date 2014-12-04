@@ -11,6 +11,11 @@ public class Lancement : MonoBehaviour {
 	private bool oculus = false;
 	private bool utiliserBiopack=false;
 
+	void Awake () {
+		Debug.Log ("Ok");
+		GetComponent<AudioSource> ().Play ();
+	}
+
 	void OnGUI () {
 		GUIStyle skin = GUI.skin.label;
 		skin.alignment = TextAnchor.MiddleCenter;
@@ -54,7 +59,6 @@ public class Lancement : MonoBehaviour {
 		for (int i=0; i<nombreDeScenes; i++) {
 			float positionx=(int)(i%5)*Screen.width*0.2f;
 			float positiony=(int)(i/5)*Screen.height*0.2f;
-			Debug.Log ("x : "+positionx+" ; y : "+positiony);
 			if(nomsDesScenes[i]!="") {
 				if (GUI.Button (new Rect (positionx, positiony, Screen.width * 0.2f, Screen.height * 0.2f), nomsDesScenes[i])) {
 					nomDeLaScene=nomsDesScenes[i];

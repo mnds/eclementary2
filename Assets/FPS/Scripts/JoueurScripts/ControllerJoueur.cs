@@ -17,7 +17,7 @@ using System.Collections;
 public class ControllerJoueur : MonoBehaviour {
 	protected CharacterController cc;
 	protected Caracteristiques carac; //Pour changer les valeurs selon les caractéristiques du personnage
-
+	
 	public Camera cameraOculus;
 	public Camera cameraNonOculus;
 	protected Camera camera;
@@ -27,11 +27,11 @@ public class ControllerJoueur : MonoBehaviour {
 	public float jaugeMax = 10.0f;
 	protected float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
 	protected float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
-
+	
 	// Progress bar
 	public Texture2D enduranceBarTexture;
 	protected int barLength = Screen.width / 6, barHeight = Screen.height / 10;
-
+	
 	protected float vitesseMouvement; //Vitesse actuelle max de mouvement selon qu'on marche ou qu'on court
 	protected float vitesseNonVerticaleActuelle = 0f; //Vitesse actuelle de déplacement
 	//Sensibilités pour la vitesse
@@ -57,11 +57,11 @@ public class ControllerJoueur : MonoBehaviour {
 	protected bool bloquerTete = false; //La camera ne bouge plus
 	protected bool freeze = false; //Tout bloquer. Attention, le FPC tombe pendant ce temps.
 	protected bool bypass = false; //Tout bloquer. Est à true si le joueur n'est pas celui controllé par l'utilisation.
-
+	
 	void Start () {
 		Initialiser ();
 	}
-
+	
 	/**
 	 * @brief Initialise les variables. Appelé dans Start.
 	 */
@@ -86,11 +86,14 @@ public class ControllerJoueur : MonoBehaviour {
 		Debug.Log (cameraOculus);
 		
 		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
+			Debug.Log ("Utilisation oculus");
 			if(cameraOculus==null) { //Mais on ne peut pas
 				camera=cameraNonOculus;
 				Debug.Log ("Pas de camera pour l'Oculus détectée.");
 			}
 			else {
+				Debug.Log ("Activation Oculus");
+				cameraOculus.gameObject.SetActive(true);
 				if(cameraNonOculus!=null) {
 					Debug.Log ("Désactivation camera principale");
 					//Pour éviter d'avoir plusieurs listeners, on doit désactiver tout le gameObject.
@@ -115,7 +118,7 @@ public class ControllerJoueur : MonoBehaviour {
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
@@ -126,9 +129,9 @@ public class ControllerJoueur : MonoBehaviour {
 			MouvementCorps(); //Motion du joueur
 		}
 	}
-
+	
 	protected virtual void Sprint() {
-
+		
 	}
 	protected virtual void BougerTete() {
 		
@@ -139,9 +142,9 @@ public class ControllerJoueur : MonoBehaviour {
 	protected virtual void MouvementCorps() {
 		
 	}
-
-
-
+	
+	
+	
 	//Set/Get
 	public void SetRendreImmobile (bool rendreImmobile_) {
 		rendreImmobile = rendreImmobile_;
@@ -174,7 +177,7 @@ public class ControllerJoueur : MonoBehaviour {
 	public float GetVitesseMouvement () {
 		return vitesseMouvement;
 	}
-
+	
 	public void SetVitesseMarche (float vitesseMarche_) {
 		vitesseMarche = vitesseMarche_;
 	}
@@ -222,5 +225,5 @@ public class ControllerJoueur : MonoBehaviour {
 	public float GetAngleVerticalMax () {
 		return angleVerticalMax;
 	}
-
+	
 }
