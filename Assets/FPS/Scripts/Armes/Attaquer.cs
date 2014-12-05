@@ -23,7 +23,7 @@ public class Attaquer : MonoBehaviour {
 	
 	public float degatsParCoup = 10.0f; //Degats initiaux, changés pour chaque obje
 	public bool infligeDesDegatsAPlusieursEnnemis = true; //Si l'arme "traverse" les ennemis
-
+	
 	public bool enTrainDAttaquer = false; //false pendant un coup
 	public Transform placementInitial; //GameObject placé à l'endroit où commence l'objet
 	Vector3 positionInitiale;
@@ -31,19 +31,19 @@ public class Attaquer : MonoBehaviour {
 	public Transform placementFinal;
 	Vector3 positionFinale;
 	Quaternion rotationFinale;
-
+	
 	public Texture2D vignette; // utilisée pour la représentation de l'objet sur l'écran d'inventaire
-
+	
 	public float tempsInitialVersFinal = 1f; //Temps initial->final
 	public float tempsFinalVersInitial = 1f; //Temps final->initial
 	float tFVISiCollision; //Si retour anticipé
-
+	
 	public float avancementAnim = 0; //variable pour savoir où on en est dans une animation
 	public bool enCoursDeRetour = false; //false si on doit aller de initial->final, true si final->initial
 	bool infligerDegats; //true si on peut infliger des degats
 	bool affecteParCaracteristiques = true; //true si les degats de l'arme sont influencés par la caractéristique Attaque du joueur
 	List<Health> objetsTouchesLorsDeCetteAttaque; //Pour éviter de taper plusieurs fois les memes objets
-
+	
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
 	
 	void Start() {
@@ -66,7 +66,7 @@ public class Attaquer : MonoBehaviour {
 	void Update () {
 		if(bypass) return;
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
-
+		
 		//Si on demande d'attaquer, qu'on n'est pas déjà en train d'attaquer, et qu'on n'est pas en train de lancer
 		if(Input.GetButtonDown("Fire1") && !enTrainDAttaquer &&
 		   (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
@@ -125,10 +125,10 @@ public class Attaquer : MonoBehaviour {
 		if(enCoursDeRetour) return;
 		if(bypass) return;
 		//Debug.Log ("Pas de bypass");
-
+		
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
-
+		
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
 		if (enTrainDAttaquer && !enCoursDeRetour && infligerDegats) {
 			Debug.Log ("Recevoir des degats");
@@ -160,23 +160,23 @@ public class Attaquer : MonoBehaviour {
 					}
 				}
 				Debug.Log ("Touché");
-
+				
 				//On récupère le script Caracteristiques du joueur principal pour appliquer les modifications aux dégats
 				Caracteristiques carac = ControlCenter.GetJoueurPrincipal().GetComponent<Caracteristiques>();
 				float degatsInfliges=degatsParCoup; //Initialement égal à la valeur "de base"
 				if(carac && affecteParCaracteristiques) { //Formule de degats
 					degatsInfliges = degatsParCoup*carac.GetAttaque()/100;
 				}
-
-
+				
+				
 				Debug.Log ("Degats infligés après application de l'attaque du joueur : "+degatsInfliges);
-
+				
 				health.SubirDegats (degatsInfliges);
 				objetsTouchesLorsDeCetteAttaque.Add(health);
 			}
 		}
 	}
-
+	
 	public bool GetEnTrainDAttaquer () {
 		return enTrainDAttaquer;
 	}
