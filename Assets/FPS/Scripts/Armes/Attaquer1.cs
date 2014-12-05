@@ -18,15 +18,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 //Note : lorsqu'on attaque, il est possible de jeter l'objet pendant l'animation de l'attaque.
-public class Attaquer : MonoBehaviour {
+public class Attaquer1 : MonoBehaviour {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 	
 	public float degatsParCoup = 10.0f; //Degats initiaux, changés pour chaque obje
 	public bool infligeDesDegatsAPlusieursEnnemis = true; //Si l'arme "traverse" les ennemis
 	
 	public bool enTrainDAttaquer = false; //false pendant un coup
+	public Transform placementInitial; //GameObject placé à l'endroit où commence l'objet
 	Vector3 positionInitiale;
 	Quaternion rotationInitiale;
+	public Transform placementFinal;
 	Vector3 positionFinale;
 	Quaternion rotationFinale;
 	
@@ -58,21 +60,13 @@ public class Attaquer : MonoBehaviour {
 		//Sinon, on est à la racine, donc on cherche dans les enfants.
 		if(lancerGameObject==null)
 			lancerGameObject=objet.GetComponentInChildren<Lancer>();
-
-		positionInitiale = new Vector3 (0.5f, 0, 0.6f);
-		rotationInitiale = new Quaternion (0, 0, .5f, .9f);
-		positionFinale = new Vector3 (-0.9f, -1f, .9f);
-		rotationFinale = new Quaternion (.4f, -.8f, .4f, .2f);
-		transform.localPosition = positionInitiale;
-		transform.localRotation = rotationInitiale;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
-		//Debug.Log ("Rotation : " + transform.localRotation + " Position : " + transform.localPosition);
-
+		
 		//Si on demande d'attaquer, qu'on n'est pas déjà en train d'attaquer, et qu'on n'est pas en train de lancer
 		if(Input.GetButtonDown("Fire1") && !enTrainDAttaquer &&
 		   (lancerGameObject==null || !lancerGameObject.GetEstEnTrainDeLancer()))
@@ -84,17 +78,23 @@ public class Attaquer : MonoBehaviour {
 		//Si on est en train d'attaquer, on continue
 		if(enTrainDAttaquer)
 		{
+			//A réactualiser à chaque fois
+			positionInitiale = placementInitial.position;
+			rotationInitiale = placementInitial.rotation;
+			positionFinale = placementFinal.position;
+			rotationFinale = placementFinal.rotation;
+			
 			if (avancementAnim < 1f) {
 				if(!enCoursDeRetour) //On fait l'attaque
 				{
-					transform.localPosition = Vector3.Lerp(positionInitiale, positionFinale, avancementAnim);
-					transform.localRotation = Quaternion.Lerp(rotationInitiale,rotationFinale,avancementAnim);
+					transform.position = Vector3.Lerp(positionInitiale, positionFinale, avancementAnim);
+					transform.rotation = Quaternion.Lerp(rotationInitiale,rotationFinale,avancementAnim);
 					avancementAnim = Mathf.Min (1f,avancementAnim + Time.deltaTime/tempsInitialVersFinal);
 				}
 				else //On revient au début
 				{
-					transform.localPosition = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
-					transform.localRotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
+					transform.position = Vector3.Lerp(positionFinale, positionInitiale, avancementAnim);
+					transform.rotation = Quaternion.Lerp(rotationFinale,rotationInitiale,avancementAnim);
 					avancementAnim = Mathf.Min (1f,avancementAnim + Time.deltaTime/tFVISiCollision);
 				}
 			}
@@ -104,14 +104,14 @@ public class Attaquer : MonoBehaviour {
 				if(!enCoursDeRetour) //On a fini l'animation de coup, on signifie qu'on veut retourner au début
 				{
 					//On remet bien au bout de l'animation
-					transform.localPosition=positionFinale;
-					transform.localRotation=rotationFinale;
+					transform.position=positionFinale;
+					transform.rotation=rotationFinale;
 					enCoursDeRetour = true;
 				}
 				else //On est revenu au départ, on dit qu'on n'attaque plus.
 				{
-					transform.localPosition=positionInitiale;
-					transform.localRotation=rotationInitiale;
+					transform.position=positionInitiale;
+					transform.rotation=rotationInitiale;
 					enCoursDeRetour = false;
 					enTrainDAttaquer=false;
 					objetsTouchesLorsDeCetteAttaque=new List<Health>(){}; //On remet à 0 les objets touchés.
@@ -121,10 +121,10 @@ public class Attaquer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider objet) {
-		Debug.Log ("OnTriggerEnter");
+		//Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
-		Debug.Log ("Pas de bypass");
+		//Debug.Log ("Pas de bypass");
 		
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
@@ -149,6 +149,7 @@ public class Attaquer : MonoBehaviour {
 					return;
 				}
 			}
+			Debug.Log ("A");
 			if (health != null) {
 				Debug.Log ("Health non nul");
 				//On vérifie qu'on ne l'a pas déjà touche
