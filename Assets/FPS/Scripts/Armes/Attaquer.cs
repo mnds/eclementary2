@@ -59,12 +59,14 @@ public class Attaquer : MonoBehaviour {
 		if(lancerGameObject==null)
 			lancerGameObject=objet.GetComponentInChildren<Lancer>();
 
-		positionInitiale = new Vector3 (0.5f, 0, 0.6f);
-		rotationInitiale = new Quaternion (0, 0, .5f, .9f);
-		positionFinale = new Vector3 (-0.9f, -1f, .9f);
-		rotationFinale = new Quaternion (.4f, -.8f, .4f, .2f);
-		transform.localPosition = positionInitiale;
-		transform.localRotation = rotationInitiale;
+		if(!bypass) {
+			positionInitiale = new Vector3 (0.5f, 0, 0.6f);
+			rotationInitiale = new Quaternion (0, 0, .5f, .9f);
+			positionFinale = new Vector3 (-0.9f, -1f, .9f);
+			rotationFinale = new Quaternion (.4f, -.8f, .4f, .2f);
+			transform.localPosition = positionInitiale;
+			transform.localRotation = rotationInitiale;
+		}
 	}
 	
 	// Update is called once per frame
@@ -179,7 +181,12 @@ public class Attaquer : MonoBehaviour {
 	public bool GetEnTrainDAttaquer () {
 		return enTrainDAttaquer;
 	}
-	
+	public void SetEnTrainDAttaquer (bool a) {
+		enTrainDAttaquer=a;
+	}
+	public void SetEnCoursDeRetour (bool a) {
+		enCoursDeRetour=a;
+	}
 	public void SetBypass(bool bypass_) {
 		bypass=bypass_;
 	}

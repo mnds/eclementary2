@@ -23,8 +23,7 @@ public class Lancer : MonoBehaviour {
 
 	bool estEnTrainDeLancer = false; //true quand on lance. Dicté par tempsAvantProchainTir
 	public GameObject objetReel; //L'objet qui sera lancé, celui qui agira sur les méchants
-	public Transform departObjetReel; //D'où l'objet réel sera lancé
-	public float vitesseDeLance; //La force appliquée sur l'objet réel
+	public float vitesseDeLance = 5f; //La force appliquée sur l'objet réel
 
 	Attaquer attaquerGameObject; //Script s'il existe de l'attaque pour empecher d'avoir attaque et lancé en meme temps
 
@@ -64,8 +63,12 @@ public class Lancer : MonoBehaviour {
 			else
 			{ //On veut le tirer
 				//TIRER
-				objet = (GameObject)Instantiate(objetReel,departObjetReel.position,departObjetReel.rotation); //On oriente selon la position initiale
-
+				Vector3 positionLance = inventaire.GetCamera().transform.position+Camera.main.transform.forward; //On tire devant soi
+				Debug.Log (positionLance);
+				Quaternion rotationLance = inventaire.GetCamera().transform.rotation;
+				objet = (GameObject)Instantiate(objetReel,positionLance,rotationLance); //On oriente selon la position initiale
+				objet.transform.position=positionLance;
+				objet.transform.rotation=rotationLance;
 				//Actions à faire pour bien faire fonctionner le nouvel objet
 				objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
 				objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
