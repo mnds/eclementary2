@@ -202,7 +202,7 @@ public class Inventaire : MonoBehaviour {
 				pickableGameObject=copieObjet.GetComponentInChildren<Pickable>();
 
 			GlowSimple gs;
-			gs = objet.GetComponent<GlowSimple>();
+			gs = objet.GetComponentInChildren<GlowSimple>(); //GlowSimple est sur Graphique, qui n'a pas le collider
 			if(gs) { //Si le composent a un GlowSimple
 				if(gsAncien && gs!=gsAncien) //Si on a changé de GlowSimple, il faut désactiver l'ancien
 					gsAncien.DesactivateGlow();

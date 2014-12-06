@@ -34,6 +34,11 @@ public class Pickable : MonoBehaviour {
 		isPickable = isPickable_;
 	}
 
+	public void SetPickableDebut(bool isPickableDebut_)
+	{
+		isPickableDebut = isPickableDebut_;
+	}
+
 	public bool GetPickable()
 	{
 		return isPickable;
