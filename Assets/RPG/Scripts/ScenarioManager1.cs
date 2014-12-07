@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file      ScenarioManager.cs
  * \author    
  * \version   1.0
@@ -9,8 +9,14 @@
 using UnityEngine;
 using System.Collections;
 
-static public class ScenarioManager {
+static public class ScenarioManager1 {
 	static private int idScenePrecedente;
+	static public ScenarioManagerPrefab scenarioManagerPrefab;
+
+	static public void SetScenarioManagerPrefab (ScenarioManagerPrefab smp) {
+		scenarioManagerPrefab = smp;
+	}
+
 	/**
 	 * @brief Active un événement grace à un id.
 	 * @param id Numéro lié à l'événement à enclencher.
