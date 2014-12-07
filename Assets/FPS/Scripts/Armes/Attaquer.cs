@@ -166,7 +166,7 @@ public class Attaquer : MonoBehaviour {
 				Caracteristiques carac = ControlCenter.GetJoueurPrincipal().GetComponent<Caracteristiques>();
 				float degatsInfliges=degatsParCoup; //Initialement égal à la valeur "de base"
 				if(carac && affecteParCaracteristiques) { //Formule de degats
-					degatsInfliges = degatsParCoup*carac.GetAttaque()/100;
+					degatsInfliges = degatsParCoup+carac.GetAttaque(); ///FORMULE DE DEGATS
 				}
 				
 				
