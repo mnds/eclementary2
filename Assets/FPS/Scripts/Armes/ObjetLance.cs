@@ -35,7 +35,12 @@ public class ObjetLance : MonoBehaviour {
 	public bool doitDisparaitreAprèsAvoirToucheQuelqueChose = false ;
 	public GameObject disparitionPrefab; //Si un prefab est généré lors de la disparition
 
+	// Use this for initialization
+	void Start () {
 
+	}
+	
+	// Update is called once per frame
 	void Update () {
 		if (bypass) return;
 

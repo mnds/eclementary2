@@ -35,6 +35,6 @@ public class HealthPlayer : Health {
 	}
 
 	public override void DeclencherMort () {
-//		ScenarioManager.ActiverEvenement (0); //Ecran de mort
+		//ScenarioManager.ActiverEvenement (0); //Ecran de mort
 	}
 }
