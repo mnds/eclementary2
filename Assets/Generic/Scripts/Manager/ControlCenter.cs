@@ -27,6 +27,9 @@ static public class ControlCenter {
 
 	static GameObject joueurPrincipal;
 
+	//Garde en mémoire les scènes
+	static int idScenePrecedente;
+
 	static public bool GetAfficherBarreDeVieJoueur () {
 		return afficherBarreDeVieJoueur;
 	}

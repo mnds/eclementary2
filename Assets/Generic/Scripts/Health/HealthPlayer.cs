@@ -20,6 +20,12 @@ public class HealthPlayer : Health {
 			joueurPrincipal=true;
 	}
 
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.Backspace)) {
+			DeclencherMort();		
+		}
+	}
+
 	void OnGUI () {
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
@@ -29,6 +35,6 @@ public class HealthPlayer : Health {
 	}
 
 	public override void DeclencherMort () {
-
+		ScenarioManager.ActiverEvenement (0); //Ecran de mort
 	}
 }

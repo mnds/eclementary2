@@ -55,6 +55,7 @@ public class ObjetLance : MonoBehaviour {
 	void OnCollisionEnter (Collision collision) {
 
 		if (bypass) return;
+		if (collision.gameObject == ControlCenter.GetJoueurPrincipal ()) return; //On ne peut pas se toucher
 		Debug.Log("Touché " + collision.gameObject.name + " à " + Vector3.Distance(collision.transform.position,new Vector3(-4.9f,0f,-33f)));
 		//Debug.Log (collision.gameObject.name);
 		//Si dégats de zone/spéciaux, on les traite.
