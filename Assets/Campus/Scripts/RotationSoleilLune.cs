@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/**
+ * \file      RotationSoleilLune.cs
+ * \author    
+ * \version   1.0
+ * \date      20 Octobre 2014
+ * \brief     Permet la rotation du Soleil et la Lune.
+ *
+ * \details   L'heure est obtenue à partir d'un GameObject nommé Horloge, qui contient le ScriptHorloge de la scène.
+ * 			  
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class RotationSoleilLune : MonoBehaviour {
