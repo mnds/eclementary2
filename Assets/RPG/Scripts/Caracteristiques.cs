@@ -23,22 +23,25 @@ public enum Condition {
 	//.........
 }
 
+
+
 public class Caracteristiques : MonoBehaviour {
 	public bool estVivant; //Etat du joueur
 	public float pointsDeVie = 50f; //Augmente les points de vie du personnage
 	public float pointsEndurance = 10f; //Augmente le temps pendant lequel le personnage peut courir
-	public float attaque = 1f;
-	public float defense = 1f;
-	public float saut = 3f;
 	public float vitesseCourse = 9f;
 	public float vitesseMarche = 5f;
 	public float vitesseLancer = 1f;
+	public float saut = 3f;
+
+	public float attaque = 1f;
+	public float defense = 1f;
+
 	public List<Condition> conditionsActuelles;
 
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	private Health h; //Lié à Health pour en modifier les statistiques
-
-
+	
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
 		cj = gameObject.GetComponent<ControllerJoueur> ();

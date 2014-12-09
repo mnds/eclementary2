@@ -25,10 +25,11 @@ static public class ControlCenter {
 	static private bool utiliserOculus = false; //Dans FPCClassic
 	static private bool pause = false;
 
-	static GameObject joueurPrincipal;
+	static public int idSceneActuelle; //id de la scene actuelle
+	static public int idScenePrecedente; //id de la scene precedente
+	static public string nomSceneMort = "Ecran Mort"; //cf le nom du truc
 
-	//Garde en mémoire les scènes
-	static int idScenePrecedente;
+	static GameObject joueurPrincipal;
 
 	static public bool GetAfficherBarreDeVieJoueur () {
 		return afficherBarreDeVieJoueur;

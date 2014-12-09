@@ -184,7 +184,8 @@ public class Inventaire : MonoBehaviour {
 		Pickable pickableGameObject;
 		GameObject objet;
 
-		if(Physics.Raycast(camera.transform.position, camera.transform.forward,out hitInfo, 10f))				
+		//Attention, faire en sorte que le raycast commence en dehors du collider du joueur
+		if(Physics.Raycast(camera.transform.position+camera.transform.forward, camera.transform.forward,out hitInfo, 10f))				
 		{
 			objet = hitInfo.collider.gameObject;
 			GameObject copieObjet = objet;
