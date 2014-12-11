@@ -61,6 +61,7 @@ public class Inventaire : MonoBehaviour {
 		//Choix de l'objet actuel parmi ceux qui effectivement sont dans l'inventaire
 		if (positionScroll < listeObjetsUtilisables.Count) //Si on est dans une position acceptable
 			ChangerObjetActuel(listeObjetsUtilisables [positionScroll]);
+
 	}
 	
 	// Update is called once per frame
@@ -137,13 +138,12 @@ public class Inventaire : MonoBehaviour {
 
 		if(inventaireOuvert && Input.GetButtonDown("Inventaire"))
 		{
-			inventaire.SetActive(false);
+			inventaire.SetActive(false);//Si on appuie sur la touche et qu'il est ouvert, on ferme
 		}
 		else if(!inventaireOuvert && Input.GetButtonDown("Inventaire"))
 		{
-			inventaire.SetActive(true);
+			inventaire.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
 		}
-
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
 		if(attaquerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
