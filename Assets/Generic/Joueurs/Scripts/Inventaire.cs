@@ -25,6 +25,8 @@ public class Inventaire : MonoBehaviour {
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
 
+	public GameObject inventaire;//Stock la fenetre d'inventaire
+
 	//Objet actuel
 	GameObject objetActuel;
 	Attaquer attaquerObjetActuel;
@@ -130,6 +132,17 @@ public class Inventaire : MonoBehaviour {
 	{
 		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
+
+		bool inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
+
+		if(inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(false);
+		}
+		else if(!inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(true);
+		}
 
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
