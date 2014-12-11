@@ -167,6 +167,12 @@ public class Inventaire : MonoBehaviour {
 
 		// Current weapon is also changed when tab or Shift+Tab pressed
 		int direction = 0;
+		// Si on tourne la molette de la souris vers le haut
+		if (Input.GetAxis("Mouse ScrollWheel") < 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = -1;
+		// Si on tourne la molette de la souris vers le bas
+		else if (Input.GetAxis("Mouse ScrollWheel") > 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = 1;
 		// Combo Shift+Tab si on n'attaque ni ne lance
 		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab)
 		    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
