@@ -9,21 +9,20 @@
 using UnityEngine;
 
 public class EtatDepart : Etat {
-
-	HealthPlayer healthPlayer = new HealthPlayer();
-
+	
 	public EtatDepart( StateManager manager ) : base( manager ) {
 		sceneCorrespondante = "CampusExterieurLie";
+		etatJouable = true;
 		ChargerSceneCorrespondante ();
 	}
 
 	// Redéfinition des méthodes de la classe abstraite Etat
 
 	public override void UpdateEtat() {
-
+	
 	}
 
 	public override void AfficherRendu() {
-
+	
 	}
 }

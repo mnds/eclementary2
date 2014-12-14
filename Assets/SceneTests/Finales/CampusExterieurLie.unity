@@ -7213,7 +7213,8 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400030, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
   m_RootGameObject: {fileID: 1762174165}
   m_IsPrefabParent: 0
@@ -27773,18 +27774,17 @@ MonoBehaviour:
 --- !u!114 &1762174172
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400030, guid: 8d68a50a4878c7440af2d59c7e8512da,
-    type: 2}
-  m_PrefabInternal: {fileID: 485201981}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1762174165}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b79e6622cccb232458859b3e77cc3501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsDeVieMax: 50
+  pointsDeVieMax: 10
   pointsDeVieActuels: 5
-  joueurPrincipal: 1
+  joueurPrincipal: 0
   healthBarTexture: {fileID: 0}
 --- !u!114 &1762174173
 MonoBehaviour:
@@ -30765,6 +30765,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1919756429}
   - 114: {fileID: 1919756430}
+  - 114: {fileID: 1919756431}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -30794,6 +30795,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ea54df20d3a94566aee7fc72348ff9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataRef: {fileID: 0}
+--- !u!114 &1919756431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919756428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ffd8d345a96647d0855063ed514ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1923252523

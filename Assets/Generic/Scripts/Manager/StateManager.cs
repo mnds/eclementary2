@@ -15,6 +15,9 @@ public class StateManager : MonoBehaviour {
 	private static StateManager instanceActive; // Instance de StateManager qui est active, utilisée pour implémenter un singleton
 	public static string sceneDebut; // Scène par laquelle le jeu commence
 
+	[HideInInspector]
+	public GameData dataRef;
+
 	void Awake() {
 		// Création d'une nouvelle instance ssi une autre n'a pas déjà été créée
 		if (instanceActive == null) {
@@ -29,6 +32,7 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sceneDebut = "CampusExterieurLie";
+		dataRef = GetComponent<GameData> ();
 		etatActif = new EtatDepart ( this );
 	}
 	
@@ -41,6 +45,10 @@ public class StateManager : MonoBehaviour {
 	void OnGUI() {
 		if (etatActif != null)
 			etatActif.AfficherRendu ();
+	}
+
+	public static StateManager getInstance() {
+		return instanceActive;
 	}
 
 	// Permet le changement de l'état actif à l'état donné en paramètre

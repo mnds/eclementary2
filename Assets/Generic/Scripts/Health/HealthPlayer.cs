@@ -20,13 +20,13 @@ public class HealthPlayer : Health {
 			joueurPrincipal=true;
 	}
 
-	void Update () {
+	public void Update () {
 		if (Input.GetKeyDown (KeyCode.Backspace)) {
 			DeclencherMort();		
 		}
 	}
 
-	void OnGUI () {
+	public void OnGUI () {
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
@@ -36,5 +36,7 @@ public class HealthPlayer : Health {
 
 	public override void DeclencherMort () {
 		//ScenarioManager.ActiverEvenement (0); //Ecran de mort
+		Evenement mourir = new Mourir ();
+		mourir.DeclencherEvenement ();
 	}
 }
