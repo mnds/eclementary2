@@ -28,6 +28,7 @@ public class StateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		sceneDebut = "CampusExterieurLie";
 		etatActif = new EtatDepart ( this );
 	}
 	

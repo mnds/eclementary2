@@ -10,11 +10,14 @@ using UnityEngine;
 
 public abstract class Etat {
 	protected StateManager stateManager; // Référence à l'instance de StateManager
-	public static string sceneCorrespondante; // Nom de la scène correspondant à l'état
+	protected static string sceneCorrespondante; // Nom de la scène correspondant à l'état
 
 	public Etat( StateManager manager ) {
 		stateManager = manager;
-		if (Application.loadedLevelName != sceneCorrespondante)
+	}
+
+	public virtual void ChargerSceneCorrespondante() {
+		if (Application.loadedLevelName != sceneCorrespondante) 
 			Application.LoadLevel ( sceneCorrespondante );
 	}
 
