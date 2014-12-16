@@ -19,7 +19,7 @@ public class EtatDepart : Etat {
 	// Redéfinition des méthodes de la classe abstraite Etat
 
 	public override void UpdateEtat() {
-	
+		ChargerSceneCorrespondante ();
 	}
 
 	public override void AfficherRendu() {

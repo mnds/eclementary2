@@ -16,7 +16,7 @@ public class SpawnJoueur : MonoBehaviour {
 	public GameObject joueur;
 	// Use this for initialization
 	void Awake () {
-		Instantiate (joueur, pointDeDepartJoueur.transform.position, pointDeDepartJoueur.transform.rotation);
+		GameObject.Find ("Joueur").transform.position=transform.position;
 	}
 	
 	// Update is called once per frame

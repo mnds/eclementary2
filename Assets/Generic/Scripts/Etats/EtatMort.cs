@@ -15,10 +15,9 @@ public class EtatMort : Etat
 		ChargerSceneCorrespondante ();
 	}
 
-	// Redéfinition des méthodes de la classe abstraite Etat
-	
+	// Redéfinition des méthodes de la classe abstraite Etat	
 	public override void UpdateEtat() {
-		
+		ChargerSceneCorrespondante ();
 	}
 	
 	public override void AfficherRendu() {

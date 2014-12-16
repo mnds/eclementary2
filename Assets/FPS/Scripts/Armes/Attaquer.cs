@@ -123,11 +123,9 @@ public class Attaquer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider objet) {
-		Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
-		Debug.Log ("Pas de bypass");
-		
+
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
 		

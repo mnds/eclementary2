@@ -11,7 +11,8 @@ using System.Collections;
 
 public class StateManager : MonoBehaviour {
 
-	private Etat etatActif; // Etat qui actif en l'instant
+	public Etat etatActif; // Etat qui actif en l'instant
+	public Etat ancienEtat; // Etat ayant précédé l'actuel
 	private static StateManager instanceActive; // Instance de StateManager qui est active, utilisée pour implémenter un singleton
 	public static string sceneDebut; // Scène par laquelle le jeu commence
 
@@ -53,7 +54,9 @@ public class StateManager : MonoBehaviour {
 
 	// Permet le changement de l'état actif à l'état donné en paramètre
 	public void BasculerEtat( Etat etat ) {
+		ancienEtat = etatActif;
 		etatActif = etat;
+		Debug.Log ( "Ancien état " + StateManager.getInstance().ancienEtat + " Etat actif " + StateManager.getInstance().etatActif + " Scène correspondante: " + StateManager.getInstance().etatActif.getSceneCorrespondante());
 	}
 
 	public void Restart() {
