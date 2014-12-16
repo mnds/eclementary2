@@ -20,10 +20,14 @@ using System.Collections.Generic;
 
 
 //** listeUtilisables ne sera jamais vide, il y aura tjs le coup de poing. Ou un truc qui sert à rien
+using UnityEngine.UI;
+
+
 public class Inventaire : MonoBehaviour {
 	public List<GameObject> listeObjetsRecoltables; //TOUS les objets possibles
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
+	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
 
 	public GameObject inventaire;//Stock la fenetre d'inventaire
 
@@ -306,15 +310,25 @@ public class Inventaire : MonoBehaviour {
 		}
 	}
 
-	public void MiseAJourInventaire()
+	public void MiseAJourInventaire()//Permet de mettre la visualisation de l'inventaire à jour quand on l'ouvre
 	{
 		GameObject slotCourant;//Le slot de l'inventaire que l'on va modifier
 		GameObject image;//L'image du slot que l'on va modifier
+		int dernierObjet = 0;
 
-		for(int k=1;k<listeObjetsRecoltables.Count;k++)
+		for(int k=1;k<listeObjetsUtilisables.Count+1;k++)//On parcourt la liste des objets du joueur
 		{
-			slotCourant=GameObject.Find("Slot "+ k);
-			image=slotCourant.transform.FindChild("Image").gameObject;
+			for(int i=0;i<listeObjetsRecoltables.Count;i++)//On la compare à la liste de tous les objets
+			{
+				if(listeObjetsRecoltables[i]==listeObjetsUtilisables[k-1])//Quand on trouve une correspondance
+				{
+					//On prend le slot qui sera occupé par l'objet
+					slotCourant=GameObject.Find("Slot "+ k);
+					image=slotCourant.transform.FindChild("Image").gameObject;
+					Image pict = image.GetComponent<Image>();
+					pict.sprite = listeImages[i];
+				}
+			}
 		}
 	}
 
