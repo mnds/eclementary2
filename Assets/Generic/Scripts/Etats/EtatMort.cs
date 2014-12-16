@@ -7,7 +7,7 @@
  */
 
 using UnityEngine;
-public class EtatMort : Etat
+public class EtatMort : EtatNonJouable
 { 
 	
 	public EtatMort ( StateManager manager ) : base( manager ) {
