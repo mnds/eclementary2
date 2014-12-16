@@ -20,10 +20,16 @@ using System.Collections.Generic;
 
 
 //** listeUtilisables ne sera jamais vide, il y aura tjs le coup de poing. Ou un truc qui sert à rien
+using UnityEngine.UI;
+
+
 public class Inventaire : MonoBehaviour {
 	public List<GameObject> listeObjetsRecoltables; //TOUS les objets possibles
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
+	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
+
+	public GameObject inventaire;//Stock la fenetre d'inventaire
 
 	//Objet actuel
 	GameObject objetActuel;
@@ -59,6 +65,7 @@ public class Inventaire : MonoBehaviour {
 		//Choix de l'objet actuel parmi ceux qui effectivement sont dans l'inventaire
 		if (positionScroll < listeObjetsUtilisables.Count) //Si on est dans une position acceptable
 			ChangerObjetActuel(listeObjetsUtilisables [positionScroll]);
+
 	}
 	
 	// Update is called once per frame
@@ -131,6 +138,17 @@ public class Inventaire : MonoBehaviour {
 		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
+		bool inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
+
+		if(inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(false);//Si on appuie sur la touche et qu'il est ouvert, on ferme
+		}
+		else if(!inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
+			MiseAJourInventaire();
+		}
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
 		if(attaquerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
@@ -139,7 +157,6 @@ public class Inventaire : MonoBehaviour {
 		bool objetActuelEstEnTrainDeLancer = false;
 		if(lancerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
 			objetActuelEstEnTrainDeLancer = lancerObjetActuel.GetEstEnTrainDeLancer ();
-		
 		//On ne peut pas changer d'arme si l'objet est en train d'attaquer ou d'etre lance
 		if (Input.GetButtonDown ("ScrollItemsDown") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
 			positionScroll = NewPositionScroll(-1); // searching new position in the negative sense
@@ -167,6 +184,12 @@ public class Inventaire : MonoBehaviour {
 
 		// Current weapon is also changed when tab or Shift+Tab pressed
 		int direction = 0;
+		// Si on tourne la molette de la souris vers le haut
+		if (Input.GetAxis("Mouse ScrollWheel") < 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = -1;
+		// Si on tourne la molette de la souris vers le bas
+		else if (Input.GetAxis("Mouse ScrollWheel") > 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = 1;
 		// Combo Shift+Tab si on n'attaque ni ne lance
 		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab)
 		    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
@@ -283,6 +306,28 @@ public class Inventaire : MonoBehaviour {
 				}
 
 				return;
+			}
+		}
+	}
+
+	public void MiseAJourInventaire()//Permet de mettre la visualisation de l'inventaire à jour quand on l'ouvre
+	{
+		GameObject slotCourant;//Le slot de l'inventaire que l'on va modifier
+		GameObject image;//L'image du slot que l'on va modifier
+		int dernierObjet = 0;
+
+		for(int k=1;k<listeObjetsUtilisables.Count+1;k++)//On parcourt la liste des objets du joueur
+		{
+			for(int i=0;i<listeObjetsRecoltables.Count;i++)//On la compare à la liste de tous les objets
+			{
+				if(listeObjetsRecoltables[i]==listeObjetsUtilisables[k-1])//Quand on trouve une correspondance
+				{
+					//On prend le slot qui sera occupé par l'objet
+					slotCourant=GameObject.Find("Slot "+ k);
+					image=slotCourant.transform.FindChild("Image").gameObject;
+					Image pict = image.GetComponent<Image>();
+					pict.sprite = listeImages[i];
+				}
 			}
 		}
 	}
