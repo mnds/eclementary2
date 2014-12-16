@@ -143,6 +143,7 @@ public class Inventaire : MonoBehaviour {
 		else if(!inventaireOuvert && Input.GetButtonDown("Inventaire"))
 		{
 			inventaire.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
+			MiseAJourInventaire();
 		}
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
@@ -152,7 +153,6 @@ public class Inventaire : MonoBehaviour {
 		bool objetActuelEstEnTrainDeLancer = false;
 		if(lancerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
 			objetActuelEstEnTrainDeLancer = lancerObjetActuel.GetEstEnTrainDeLancer ();
-		
 		//On ne peut pas changer d'arme si l'objet est en train d'attaquer ou d'etre lance
 		if (Input.GetButtonDown ("ScrollItemsDown") && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
 			positionScroll = NewPositionScroll(-1); // searching new position in the negative sense
@@ -303,6 +303,18 @@ public class Inventaire : MonoBehaviour {
 
 				return;
 			}
+		}
+	}
+
+	public void MiseAJourInventaire()
+	{
+		GameObject slotCourant;//Le slot de l'inventaire que l'on va modifier
+		GameObject image;//L'image du slot que l'on va modifier
+
+		for(int k=1;k<listeObjetsRecoltables.Count;k++)
+		{
+			slotCourant=GameObject.Find("Slot "+ k);
+			image=slotCourant.transform.FindChild("Image").gameObject;
 		}
 	}
 
