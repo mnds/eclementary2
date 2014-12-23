@@ -72,6 +72,7 @@ public class Attaquer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
+		if(ControlCenter.inventaireOuvert) return;
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
 		//Debug.Log ("Rotation : " + transform.localRotation + " Position : " + transform.localPosition);
 
@@ -123,9 +124,12 @@ public class Attaquer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider objet) {
+		Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
-
+		if(ControlCenter.inventaireOuvert) return;
+		Debug.Log ("Pas de bypass");
+		
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
 		

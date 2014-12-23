@@ -10,7 +10,18 @@ using UnityEngine;
 using System.Collections;
 
 public class HealthDestroy : Health {
+	public GameObject effetDeMort; //Instantié si mort
+	public GameObject objetADetruire; //A détruire 
+
 	public override void DeclencherMort () {
-		Destroy (gameObject);
+		GameObject objetDestruction;
+		if (objetADetruire)
+			objetDestruction = objetADetruire;
+		else
+			objetDestruction=gameObject;
+
+		if (effetDeMort)
+			Instantiate (effetDeMort, objetDestruction.transform.position, Quaternion.identity);
+		Destroy (objetDestruction);
 	}
 }

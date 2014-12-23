@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     dialogLayout = NULL;
     startLayout = new QVBoxLayout();
     dialogWidget = new QWidget();
-    dialogWidget->setSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding);
+    dialogWidget->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     displayMenuBar();
     displayToolbar();
@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     displayStartLayout();
     // Interface d'ajout de dialogue
 
-    centralArea->setFixedSize( 500, 600 );
+    centralArea->setFixedSize( 530, 600 );
     setCentralWidget( centralArea );
 }
 
@@ -167,7 +167,7 @@ QLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
     QJsonObject replicaObj;
     QString id, goName, text;
     QVBoxLayout* replicaLayout = NULL ;
-    QJsonArray nextReplicasIdArray;
+    QJsonArray nextReplicasIdArray, requiredFlagsArray, blockingFlagsArray, enabledFlagsArray;
     bool editState = false;
 
     if( value != 0 ) {
@@ -176,6 +176,9 @@ QLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
         goName = replicaObj["goAssocie"].toString();
         text = replicaObj["texte"].toString();
         nextReplicasIdArray = replicaObj["repSuivantes"].toArray();
+        requiredFlagsArray = replicaObj["flagsRequis"].toArray();
+        blockingFlagsArray = replicaObj["flagsBloquants"].toArray();
+        enabledFlagsArray = replicaObj["flagsActives"].toArray();
     }
     else
         editState = true; // Création d'une réplique vide, modification possible dès sa création
@@ -184,9 +187,11 @@ QLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
     QLayout* replicaIdLayout = newReplicaIdLayout( id, editState );
     QLayout* goLayout = newGoLayout( goName, editState );
     QTextEdit* textArea = new QTextEdit();
-    QGridLayout* nextReplicasLayout = newNextReplicasLayout( nextReplicasIdArray, editState );
+    QLayout* nextReplicasLayout = newNextReplicasLayout( nextReplicasIdArray, editState );
+    QGridLayout* flagsLayout = newFlagsLayout( requiredFlagsArray, blockingFlagsArray, enabledFlagsArray, editState);
 
     textArea->setText( text );
+    textArea->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     // Mise en forme des QTextEdit
     setHeight( textArea, 5 );
@@ -199,6 +204,7 @@ QLayout* MainWindow::newReplicaLayout(const QJsonValue &value ) {
     replicaLayout->addLayout( goLayout );
     replicaLayout->addWidget( textArea );
     replicaLayout->addLayout( nextReplicasLayout );
+    replicaLayout->addLayout( flagsLayout );
 
     // Boutons d'édition
     QString addPath = "icones/add.png",editPath = "icones/edit.png", delPath = "icones/del.png";
@@ -234,25 +240,33 @@ QLayout* MainWindow::newReplicaIdLayout( QString replicaId, bool editState ) {
 
     QLabel* idLabel = new QLabel("ID: ");
     QLineEdit* idLineEdit = new QLineEdit( replicaId );
-    idLineEdit->setEnabled( editState );
+
+    // Règlage de la taille des widget
+    idLabel->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+    idLineEdit->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+    idLineEdit->setEnabled( editState ); // Réglage de l'état d'activation
 
     idLayout->addWidget( idLabel );
     idLayout->addWidget( idLineEdit );
 
-    idLayout->setSizeConstraint(QLayout::SetMinimumSize);
+    idLayout->setAlignment( Qt::AlignLeft); // Alignement à gauche
+
+    //idLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
     return idLayout;
 }
 
 
-QGridLayout* MainWindow::newNextReplicasLayout( QJsonArray nextReplicasArray, bool editState ) {
-    QGridLayout* layout = new QGridLayout();
+QLayout* MainWindow::newNextReplicasLayout( QJsonArray nextReplicasArray, bool editState ) {
+    QLayout* layout = new QHBoxLayout();
     QLabel* label = new QLabel();
     QListView* listView = new QListView();
     QStringList idList = QStringList();
     QStringListModel* model = new QStringListModel();
 
-    label->setText("Répliques suivantes");
+    label->setText("Répliques<br/> suivantes");
+    label->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
     //if( nextReplicasArray  ) // si ce n'est pas une réplique vide
     foreach( const QJsonValue & nextValue, nextReplicasArray )
         idList.append( nextValue.toString() );
@@ -260,10 +274,13 @@ QGridLayout* MainWindow::newNextReplicasLayout( QJsonArray nextReplicasArray, bo
     model->setStringList( idList );
     listView->setModel( model );
     listView->setItemDelegate( new CustomDelegate(model) );
+    listView->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+    setHeight(listView, 3);
 
     AddReplicaCombo* cb = new AddReplicaCombo( model );
     cb->addItem("Lier à une réplique");
     cb->addItems( dialogManager->getIdList());
+    cb->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     // Modification des widgets possible ou non, selon la valeur de editState
     QAbstractItemView::EditTrigger editTrigger = editState ? QAbstractItemView::DoubleClicked : QAbstractItemView::NoEditTriggers;
@@ -273,17 +290,97 @@ QGridLayout* MainWindow::newNextReplicasLayout( QJsonArray nextReplicasArray, bo
     connect( listView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(enableSaveAction()) ); // Un double clic, et donc la suppression d'un id, active le bouton d'enregistrement
     connect( cb, SIGNAL(currentIndexChanged( int )), this, SLOT(enableSaveAction()) ); // Un ajout d'id entraine l'activation du bouton d'enregistrement
     connect( cb, SIGNAL( currentIndexChanged( int ) ), cb, SLOT(emitModel( int )) );
-    connect( cb, SIGNAL( currentIndexChanged( int, QStringListModel*, QComboBox* ) ), this, SLOT(addReplicaId(int, QStringListModel*, QComboBox*)) );
+    connect( cb, SIGNAL( currentIndexChanged( int, QStringListModel*, QComboBox* ) ), this, SLOT(addId(int, QStringListModel*, QComboBox*)) );
 
-    layout->addWidget( label, 0, 0 );
-    layout->addWidget( listView, 0, 1 );
-    layout->addWidget( cb, 1, 1 );
-    layout->setSizeConstraint( QLayout::SetMinimumSize);
+    layout->addWidget( label );
+    layout->addWidget( listView );
+    layout->addWidget( cb );
+    //layout->setSizeConstraint( QLayout::SetMinimumSize);
 
     return layout;
 }
 
-void MainWindow::addReplicaId( int row, QStringListModel* model, QComboBox* cb ) {
+QList<QWidget*> MainWindow::newEditFlagWidgets( QJsonArray flagsArray, QString flagType, bool editState ) {
+    QList<QWidget*> widgetsList;
+    QLabel* label = new QLabel();
+    QListView* listView = new QListView();
+    QStringList flagsList = QStringList();
+    QStringListModel* model = new QStringListModel();
+
+    QString labelText;
+    // Texte du label trouvé en fonction du type de flag
+    if( flagType == "required" )
+        labelText = "Flags <br/> requis";
+    else if( flagType == "blocking" )
+        labelText = "Flags <br/> bloquants";
+    else if( flagType == "enabled" )
+        labelText = "Flags <br/> activés";
+
+    label->setText( labelText );
+    label->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+    // Constitution de la liste des flags à afficher
+    foreach( const QJsonValue & flagJson, flagsArray ) {
+        QString flag = flagJson.toString();
+        int flagIndex = dialogManager->getIdList("flags").indexOf( flag ); // Récupération de l'index du flag
+        if( flagIndex != -1 ) // Si le flag a été trouvé
+            flagsList.append( dialogManager->getToDisplayFlagsList().at( flagIndex ) ); // Ajout de la chaine correspondante
+    }
+
+    // Paramétrage du modèle
+    model->setStringList( flagsList );
+    listView->setModel( model );
+    listView->setItemDelegate( new CustomDelegate(model) );
+    listView->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+    setHeight(listView, 3);
+
+    // Configuration de la liste déroulante des suggestions de flags (pour l'ajout)
+    AddReplicaCombo* cb = new AddReplicaCombo( model );
+    cb->addItem("Lier à un flag");
+    cb->addItems( dialogManager->getToDisplayFlagsList());
+    cb->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+    // Modification des widgets possible ou non, selon la valeur de editState
+    QAbstractItemView::EditTrigger editTrigger = editState ? QAbstractItemView::DoubleClicked : QAbstractItemView::NoEditTriggers;
+    listView->setEditTriggers( editTrigger );
+    cb->setEnabled( editState );
+
+    // Connexion des boutons
+    connect( listView, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(enableSaveAction()) ); // Un double clic, et donc la suppression d'un id, active le bouton d'enregistrement
+    connect( cb, SIGNAL(currentIndexChanged( int )), this, SLOT(enableSaveAction()) ); // Un ajout de flag entraine l'activation du bouton d'enregistrement
+    connect( cb, SIGNAL( currentIndexChanged( int ) ), cb, SLOT(emitModel( int )) );
+    connect( cb, SIGNAL( currentIndexChanged( int, QStringListModel*, QComboBox* ) ), this, SLOT(addFlag(int, QStringListModel*, QComboBox*)) );
+
+    widgetsList.append( label );
+    widgetsList.append( listView );
+    widgetsList.append( cb );
+
+    return widgetsList;
+}
+
+QGridLayout* MainWindow::newFlagsLayout( QJsonArray requiredFlagsArray, QJsonArray blockingFlagsArray, QJsonArray enabledFlagsArray, bool editState ) {
+    QGridLayout* layout = new QGridLayout();
+    QList<QWidget*> requiredFlagsList = newEditFlagWidgets( requiredFlagsArray, "required", editState );
+    QList<QWidget*> blockingFlagsList = newEditFlagWidgets( blockingFlagsArray, "blocking", editState );
+    QList<QWidget*> enabledFlagsList = newEditFlagWidgets( enabledFlagsArray, "enabled", editState );
+
+    layout->addWidget( requiredFlagsList.at(0), 0, 0 ); // label
+    layout->addWidget( requiredFlagsList.at(1), 0, 1 ); // listView
+    layout->addWidget( requiredFlagsList.at(2), 0, 2 ); // liste déroulante
+
+    layout->addWidget( blockingFlagsList.at(0), 1, 0 ); // label
+    layout->addWidget( blockingFlagsList.at(1), 1, 1 ); // listView
+    layout->addWidget( blockingFlagsList.at(2), 1, 2 ); // liste déroulante
+
+    layout->addWidget( enabledFlagsList.at(0), 2, 0 ); // label
+    layout->addWidget( enabledFlagsList.at(1), 2, 1 ); // listView
+    layout->addWidget( enabledFlagsList.at(2), 2, 2 ); // liste déroulante
+
+    return layout;
+}
+
+
+void MainWindow::addId( int row, QStringListModel* model, QComboBox* cb ) {
     if( row > 0 ) { // La ligne 0 correspond au texte de description de la combobox (Lier à une réplique)
         QString idToBeInserted = dialogManager->getIdList()[row-1];
         if( !model->stringList().contains( idToBeInserted ) ) { // L'id ne doit pas non plus etre présent auparavant dans la liste des répliques suivantes de la réplique considérée
@@ -295,6 +392,18 @@ void MainWindow::addReplicaId( int row, QStringListModel* model, QComboBox* cb )
     }
 }
 
+void MainWindow::addFlag(int row, QStringListModel* model, QComboBox* transmitterCb) {
+    if( row > 0 ) { // La ligne 0 correspond au texte de description de la combobox
+        QString lineToBeInserted = dialogManager->getToDisplayFlagsList()[row-1]; // Récupération de la ligne à insérer
+        if( !model->stringList().contains( lineToBeInserted ) ) { // La ligne à insérer ne doit pas etre présente auparavant dans le modèle
+            model->insertRow(model->rowCount()); // Ajout d'une nouvelle ligne
+            QModelIndex index = model->index(model->rowCount()-1); // récupération de l'index de la ligne nouvellement créée (en queue)
+            model->setData(index, lineToBeInserted); // Remplissage de la nouvelle ligne avec la valeur sélectionnée dans la liste déroulante
+        }
+        transmitterCb->setCurrentIndex(0); // Le texte de la liste déroulante est remis à sa valeur par défaut (texte de description de la liste déroulante)
+    }
+}
+
 QLayout* MainWindow::newGoLayout(QString goName, bool editState) {
     QHBoxLayout* layout = new QHBoxLayout();
     QLabel* label = new QLabel();
@@ -302,11 +411,13 @@ QLayout* MainWindow::newGoLayout(QString goName, bool editState) {
 
     label->setText( "Game Object associé:" );
     lineEdit->setText( goName );
+    label->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
+    lineEdit->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
     lineEdit->setEnabled( editState );
 
     layout->addWidget( label );
     layout->addWidget( lineEdit );
-    layout->setSizeConstraint( QLayout::SetMinimumSize);
+    layout->setAlignment( Qt::AlignLeft);
 
     connect( lineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(enableSaveAction()));
 
@@ -317,6 +428,9 @@ QJsonObject MainWindow::getReplicaFromGUI( QLayout* replicaLayout ) {
     QJsonObject replica;
     QString id, text, goText;
     QStringList nextReplicasId = QStringList();
+    QStringList requiredFlags = QStringList();
+    QStringList blockingFlags = QStringList();
+    QStringList enabledFlags = QStringList();
 
     if( replicaLayout != NULL) { // Recherche des widget contenant les informations à modifier
         id = getReplicaId( replicaLayout );
@@ -332,13 +446,28 @@ QJsonObject MainWindow::getReplicaFromGUI( QLayout* replicaLayout ) {
         if( textEdit != NULL )
             text = textEdit->toPlainText();
 
-        QGridLayout* nextReplicasIdLayout = getNextReplicasIdLayout( replicaLayout );
+        QLayout* nextReplicasIdLayout = getNextReplicasIdLayout( replicaLayout );
         if( nextReplicasIdLayout != NULL ) {
-            QListView* listView = dynamic_cast<QListView*>(nextReplicasIdLayout->itemAtPosition( 0, 1 )->widget()); // Label des répliques suivantes
+            QListView* listView = dynamic_cast<QListView*>(nextReplicasIdLayout->itemAt( 1 )->widget()); // Label des répliques suivantes
             if( listView != NULL)
                 nextReplicasId = static_cast<QStringListModel*>(listView->model())->stringList();
         }
-        replica = DialogManager::createReplica( id, goText, text, nextReplicasId );
+
+        QGridLayout* flagsLayout = getFlagsLayout( replicaLayout );
+        if( flagsLayout != NULL ) {
+            QListView* requiredFlagsListView = dynamic_cast<QListView*>(flagsLayout->itemAtPosition(0, 1)->widget());
+            QListView* blockingFlagsListView = dynamic_cast<QListView*>(flagsLayout->itemAtPosition(1, 1)->widget());
+            QListView* enabledFlagsListView = dynamic_cast<QListView*>(flagsLayout->itemAtPosition(2, 1)->widget());
+
+            if( requiredFlagsListView != NULL )
+                requiredFlags = static_cast<QStringListModel*>(requiredFlagsListView->model())->stringList();
+            if( blockingFlagsListView != NULL )
+                blockingFlags = static_cast<QStringListModel*>(blockingFlagsListView->model())->stringList();
+            if( enabledFlagsListView != NULL )
+                enabledFlags = static_cast<QStringListModel*>(enabledFlagsListView->model())->stringList();
+        }
+
+        replica = DialogManager::createReplica( id, goText, text, nextReplicasId, requiredFlags, blockingFlags, enabledFlags );
     }
 
     return replica;
@@ -359,7 +488,6 @@ QString MainWindow::getReplicaId( QLayout* replicaLayout ) {
     return id;
 }
 
-
 QLayout* MainWindow::getGoLayout( QLayout* replicaLayout ) {
     QLayout* goLayout = NULL ;
     
@@ -369,13 +497,44 @@ QLayout* MainWindow::getGoLayout( QLayout* replicaLayout ) {
     return goLayout;
 }
 
-QGridLayout* MainWindow::getNextReplicasIdLayout( QLayout* replicaLayout ) {
-    QGridLayout* nextReplicasIdLayout = NULL;
+QLayout* MainWindow::getNextReplicasIdLayout( QLayout* replicaLayout ) {
+    QLayout* nextReplicasIdLayout = NULL;
     
     if( replicaLayout != NULL )
-            nextReplicasIdLayout = dynamic_cast<QGridLayout*>(replicaLayout->itemAt( 3 )->layout());
+        nextReplicasIdLayout = replicaLayout->itemAt( 3 )->layout();
 
     return nextReplicasIdLayout;
+}
+
+QGridLayout* MainWindow::getFlagsLayout( QLayout* replicaLayout ) {
+    QGridLayout* flagsLayout = NULL;
+
+    if( replicaLayout != NULL )
+        flagsLayout = dynamic_cast<QGridLayout*>(replicaLayout->itemAt( 4 )->layout());
+
+    return flagsLayout;
+}
+
+void MainWindow::setReplicaEditState( QLayout* replicaLayout, bool editState, ActionButton* editButton) {
+    setIdEnable( replicaLayout, !editState );
+    setGoEnable( replicaLayout, !editState );
+    setTextAreaEnable( replicaLayout, !editState );
+    setNextReplicasEnable( replicaLayout, !editState);
+    setFlagsEnable( replicaLayout, !editState );
+
+    editButton->setEditState( !editState );
+}
+
+void MainWindow::setIdEnable( QLayout* replicaLayout, bool state ) {
+    QLineEdit* idLineEdit;
+
+    if( replicaLayout != NULL ) {
+        QLayout* idLayout = replicaLayout->itemAt( 0 )->layout(); // Layout de l'id de la réplique
+        if( idLayout != NULL ) {
+            idLineEdit = dynamic_cast<QLineEdit*>(idLayout->itemAt(1)->widget());
+            idLineEdit->setEnabled( state );
+        }
+    }
 }
 
 void MainWindow::setGoEnable(QLayout* replicaLayout, bool state) {
@@ -389,11 +548,27 @@ void MainWindow::setGoEnable(QLayout* replicaLayout, bool state) {
 }
 
 void MainWindow::setNextReplicasEnable(QLayout* replicaLayout, bool state) {
-    QGridLayout* nextReplicasLayout = getNextReplicasIdLayout( replicaLayout );
+    QLayout* nextReplicasLayout = getNextReplicasIdLayout( replicaLayout );
 
     if( nextReplicasLayout != NULL ) {
-        QListView* listView = dynamic_cast<QListView*>(nextReplicasLayout->itemAtPosition(0, 1)->widget());
-        AddReplicaCombo* cb = dynamic_cast<AddReplicaCombo*>(nextReplicasLayout->itemAtPosition(1, 1)->widget());
+        QListView* listView = dynamic_cast<QListView*>(nextReplicasLayout->itemAt(1)->widget());
+        AddReplicaCombo* cb = dynamic_cast<AddReplicaCombo*>(nextReplicasLayout->itemAt(2)->widget());
+        if( listView != NULL ) {
+            QAbstractItemView::EditTrigger editTriggers = state == true ? QAbstractItemView::DoubleClicked : QAbstractItemView::NoEditTriggers;
+            listView->setEditTriggers( editTriggers );
+        }
+        if( cb != NULL)
+            cb->setEnabled( state );
+    }
+}
+
+void MainWindow::setFlagsEnable(QLayout* replicaLayout, bool state) {
+    QGridLayout* flagsLayout = getFlagsLayout( replicaLayout );
+
+    for( int i = 0; i < 3; i++ ) {
+        QListView* listView = dynamic_cast<QListView*>( flagsLayout->itemAtPosition( i, 1)->widget() );
+        AddReplicaCombo* cb = dynamic_cast<AddReplicaCombo*>( flagsLayout->itemAtPosition( i, 2)->widget() );
+
         if( listView != NULL ) {
             QAbstractItemView::EditTrigger editTriggers = state == true ? QAbstractItemView::DoubleClicked : QAbstractItemView::NoEditTriggers;
             listView->setEditTriggers( editTriggers );
@@ -413,7 +588,7 @@ void MainWindow::setTextAreaEnable(QLayout* replicaLayout, bool state) {
     }
 }
 
-void MainWindow::setHeight (QTextEdit* edit, int nRows)
+void MainWindow::setHeight (QWidget* edit, int nRows)
 {
     QFontMetrics m (edit -> font()) ;
     int RowHeight = m.lineSpacing() ;
@@ -476,8 +651,8 @@ void MainWindow::saveDialogFile() {
 
 void MainWindow::updateNextReplicasLists() {
     for( int i = 0; i < dialogLayout->count(); i++ ) {
-        QGridLayout* layout = getNextReplicasIdLayout( dialogLayout->itemAt(i)->layout());
-        AddReplicaCombo* cb = dynamic_cast<AddReplicaCombo*>(layout->itemAtPosition(1,1)->widget());
+        QLayout* layout = getNextReplicasIdLayout( dialogLayout->itemAt(i)->layout());
+        AddReplicaCombo* cb = dynamic_cast<AddReplicaCombo*>(layout->itemAt(2)->widget());
         QStringList comboText = QStringList() << "Lier une réplique" << dialogManager->getIdList();
         cb->updateNextReplicasId( comboText );
     }
@@ -488,14 +663,6 @@ void MainWindow::enableSaveAction() {
         saveAction->setEnabled(true);
         changesSaved = false;
     }
-}
-
-void MainWindow::setReplicaEditState( QLayout* replicaLayout, bool editState, ActionButton* editButton) {
-    setGoEnable( replicaLayout, !editState );
-    setTextAreaEnable( replicaLayout, !editState );
-    setNextReplicasEnable( replicaLayout, !editState);
-
-    editButton->setEditState( !editState );
 }
 
 void MainWindow::deleteLayout(QLayout *layout, QString tab) {
@@ -527,7 +694,7 @@ void MainWindow::delReplica( QLayout* replicaLayout ) {
 
 void MainWindow::newEmptyReplica( QLayout* replicaBefore ) {
     QLayout* newLayout = newReplicaLayout(); // Layout de réplique vide
-    QJsonObject emptyReplica = dialogManager->createReplica("", "", "", QStringList()); // réplique vide
+    QJsonObject emptyReplica = dialogManager->createReplica("", "", "", QStringList(), QStringList(), QStringList(), QStringList()); // réplique vide
     int position; // position à laquelle sera insérée la réplique dans le document Json
 
     if( replicaBefore != 0 ) { // Insertion si une position est spécifiée

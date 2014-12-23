@@ -14,7 +14,7 @@ public enum NomItem { Key, Sound};
 
 public abstract class Item {
 
-	private NomItem nom;
+	protected NomItem nom;
 
 	public Item( NomItem nom ) {
 		this.nom = nom;

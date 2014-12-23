@@ -57,9 +57,14 @@ private:
                                                                          * editState informe de la possibilité de modidifier ou non les widgets créés
                                                                          */
     QLayout* getGoLayout( QLayout* replicaLayout );
-    QGridLayout* getNextReplicasIdLayout( QLayout* replicaLayout );
-    QGridLayout* newNextReplicasLayout( QJsonArray nextReplicasArray, bool editState = false );
+    QLayout* getNextReplicasIdLayout( QLayout* replicaLayout );
+    QGridLayout* getFlagsLayout( QLayout* replicaLayout );
+    QLayout* newNextReplicasLayout( QJsonArray nextReplicasArray, bool editState = false );
     QLayout* newReplicaIdLayout( QString replicaId, bool editState = false);
+    QList<QWidget*> newEditFlagWidgets( QJsonArray flagsArray, QString flagType, bool editState = false ); /* Crée une liste de widget pour les flags de la réplique
+                                                  * flagType peut avoir les valeurs "required", "blocking", "enabled"
+                                                  */
+    QGridLayout* newFlagsLayout( QJsonArray requiredFlagsArray, QJsonArray blockingFlagsArray, QJsonArray enabledFlagsArray, bool editState = false );
     QAction* saveAction;
     QAction* newReplicaAction;
     QAction* newDialogAction;
@@ -67,13 +72,15 @@ private:
 
     void displayStartLayout(); // Construit et affiche l'écran de démarrage
     void displayDialogLayout(); // instancie et rajoute tous les widgets nécessaires à l'interface d'édition des dialogues// Le paramètre est le layout qui était affiché avant et qui doit être supprimé
-    void setHeight (QTextEdit* edit, int nRows);
+    void setHeight (QWidget* edit, int nRows);
     void displayMenuBar(); // Construit et affiche la barra des menus
     void displayToolbar(); // Construit et affiche la barre d'outils
     bool saveReplica( QLayout* replicaLayout );
     void setNextReplicasEnable( QLayout* replicaLayout, bool state );
+    void setIdEnable( QLayout* replicaLayout, bool state );
     void setGoEnable( QLayout* replicaLayout, bool state );
     void setTextAreaEnable( QLayout* replicaLayout, bool state );
+    void setFlagsEnable(QLayout* replicaLayout, bool state);
     void deleteLayout( QLayout* layout, QString tab = 0 ); // Fonction permettant la suppression récursive des layouts
     int replicaLayoutPosition( QLayout* replicaLayout );
     QString getReplicaId( QLayout* replicaLayout );
@@ -85,7 +92,8 @@ public slots:
     QJsonObject getReplicaFromGUI( QLayout* replicaLayout ); // Récupère les informations des champs d'une replicaLayout pour créer un QJsonObject
     void saveDialogFile(); // Enregistre le document Json sur le fichier du dialogue
     void enableSaveAction(); // Active le bouton d'enregistrement des répliques sur le fichier
-    void addReplicaId( int row, QStringListModel* model, QComboBox* ); // Ajoute l'id donné en paramètre à la liste des répliques suivantes de la réplique dont le "model" a été donné en paramètre
+    void addId( int row, QStringListModel* model, QComboBox* ); // Ajoute l'id donné en paramètre au modèle "model"
+    void addFlag(int row, QStringListModel* model, QComboBox* transmitterCb);
     void setReplicaEditState( QLayout* replicaLayout, bool editState, ActionButton* editButton); // Permet d'activer ou désactiver la modification sur la réplique donnée en paramètre
     void newEmptyReplica( QLayout* replicaBefore = 0 ); // Insère une réplique vide juste après la réplique donnée en paramètre
     void displayFileBrowserToOpenDialog(); // Navigateur de fichiers pour ouvrir un fichier dialogue

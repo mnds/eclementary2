@@ -114,7 +114,8 @@ public class ControllerJoueur : MonoBehaviour {
 				camera=cameraNonOculus;
 			}
 		}
-		
+
+		ControlCenter.SetCameraPrincipale (camera);
 		jauge = jaugeMax;
 		cc = GetComponent<CharacterController> ();
 	}

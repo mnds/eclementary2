@@ -3,24 +3,36 @@
 DialogManager::DialogManager( QString filename ):
     filename( filename )
 {
+    jsonReplicas = loadJson( filename, "repliques" ); // Le tableau de répliques dans un fichier de dialogue doit etre nommé "repliques"
+    jsonFlags = loadJson( WORKING_DIRECTORY + QString("flags"), "flags"); // les flags sont renseignés dans le fichier flags et le tableau de flags dans le fichier de flags doit etre nommé "flags"
+}
+
+QJsonArray DialogManager::loadJson(QString filename, QString arrayName) {
+    QJsonArray arrayData;
     QFile dialogFile( filename );
-    validDialog = false;
-    if( dialogFile.open( QIODevice::ReadWrite | QIODevice::Text ) ) {
-        QByteArray fileContent = dialogFile.readAll();
-        if( fileContent.isEmpty() )
+
+    if( dialogFile.open( QIODevice::ReadWrite | QIODevice::Text ) ) { // ouverture du fichier en mode lecture écriture
+        QByteArray fileContent = dialogFile.readAll(); // lecture du contenu du fichier
+        if( fileContent.isEmpty() ) // vérification du contenu du fichier
             validDialog = true; // Un fichier vide est considéré comme valide
         else {
             QJsonDocument jsonContent = QJsonDocument::fromJson( fileContent ); // Conversion du contenu du fichier en objet json
             if( !jsonContent.isNull() ) {
-                QJsonObject jsonObject = jsonContent.object();
-                if( jsonObject["repliques"].isArray() ) {
+                QJsonObject jsonObject = jsonContent.object(); // Récupération de l'objet englobant
+                if( jsonObject[arrayName].isArray() ) { // Vérification de l'existence du tableau dont le nom a été donné en paramètre
                     validDialog = true;  // Un fichier avec la structure Json attendue est considéré comme valide
-                    jsonReplicas = jsonObject["repliques"].toArray();
+                    arrayData = jsonObject[arrayName].toArray(); // Récupération du tableau de données
                 }
+                else
+                    validDialog = false;
             }
+            else
+                validDialog = false;
         }
-        dialogFile.close();
+        dialogFile.close(); // Fermeture du fichier
     }
+
+    return arrayData;
 }
 
 bool DialogManager::isValidDialog() {
@@ -31,12 +43,19 @@ QJsonArray DialogManager::getReplicas() {
     return jsonReplicas;
 }
 
-QStringList DialogManager::getIdList() {
+QStringList DialogManager::getIdList( QString arrayName ) {
+    QJsonArray jsonArray;
     QStringList idList = QStringList();
-    foreach( const QJsonValue & value, jsonReplicas ) {
-        QJsonObject replicaObj = value.toObject();
-        if( replicaObj["id"].toString() != "0")
-            idList.append( replicaObj["id"].toString() );
+
+    if( arrayName == "repliques" )
+        jsonArray = jsonReplicas; // Les id des répliques sont récupérés
+    else if( arrayName == "flags" )
+        jsonArray = jsonFlags; // Sinon les id des flags sont récupérés
+
+    foreach( const QJsonValue & value, jsonArray ) {
+        QJsonObject object = value.toObject();
+        if( object["id"].toString() != "0") // Par convention, l'id 0 n'est jamais renvoyé
+            idList.append( object["id"].toString() );
     }
 
     return idList;
@@ -52,21 +71,43 @@ QStringList DialogManager::getGoList() {
                 goList.append( goName );
         }
     }
+
     return goList;
 }
 
-QJsonObject DialogManager::createReplica(QString id, QString go, QString text, QStringList nextReplicasId) {
-    QJsonObject replica = QJsonObject();
-    QJsonArray nextId = QJsonArray();
+QStringList DialogManager::getToDisplayFlagsList( QString separator ) {
+    if( flagsList.isEmpty() ) {
+        flagsList = QStringList();
+        foreach( const QJsonValue & value, jsonFlags ) {
+            QJsonObject jsonObject = value.toObject();
+            QString line = jsonObject["id"].toString() + separator + jsonObject["description"].toString(); // Ligne du tableau
+            flagsList.append( line );
+        }
+    }
 
+    return flagsList;
+}
+
+QJsonObject DialogManager::createReplica( QString id, QString go, QString text, QStringList nextReplicasId, QStringList requiredFlags, QStringList blockingFlags, QStringList enabledFlags ) {
+    QJsonObject replica = QJsonObject();
+    QJsonArray nextId = QJsonArray(), rFlagsArray = QJsonArray(), bFlagsArray = QJsonArray(), eFlagsArray = QJsonArray();
     // Conversion des QString en QJsonValue
     foreach( QString id, nextReplicasId )
         nextId.append( QJsonValue( id ) );
+    foreach( QString flag, requiredFlags )
+        rFlagsArray.append( QJsonValue(flag) );
+    foreach( QString flag, blockingFlags )
+        bFlagsArray.append( QJsonValue(flag) );
+    foreach( QString flag, enabledFlags )
+        eFlagsArray.append( QJsonValue(flag) );
 
     replica.insert( "id", QJsonValue( id ) );
     replica.insert( "goAssocie", go );
     replica.insert( "texte", QJsonValue( text ) );
     replica.insert( "repSuivantes", QJsonValue(nextId) );
+    replica.insert( "flagsRequis", QJsonValue(rFlagsArray) );
+    replica.insert( "flagsBloquants", QJsonValue(bFlagsArray) );
+    replica.insert( "flagsActives", QJsonValue(eFlagsArray) );
 
     return replica;
 }
