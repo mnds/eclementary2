@@ -90,11 +90,6 @@ public class Dialogue : MonoBehaviour, Interactif {
 						Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
 				}
 			}
-
-			replique.SetFlagsRequis( json["repliques"][i]["flagsRequis"] );
-			replique.SetFlagsBloquants( json["repliques"][i]["flagsBloquants"] );
-			replique.SetFlagsActives( json["repliques"][i]["flagsActives"] );
-
 			repliques.Add( replique ); // Ajout à la liste des répliques gérées par le dialogue
 		}
 	}

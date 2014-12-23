@@ -42,7 +42,7 @@ public class FPCClassicAnim : ControllerJoueur {
 	 * 	        La jauge d'endurance descend. Si elle est trop basse, sprintPossible passe à false et la course est impossible pendant un temps court.
 	 * 			Quand le bouton Sprint n'est pas appuyé, cette jauge augmente jusqu'à retrouver son maximum.
 	 */
-	protected override void Sprint () {
+	void Sprint () {
 		//Sprint
 		if (Input.GetButton("Sprint") && sprintPossible && vitesseNonVerticaleActuelle>0)
 		{
@@ -69,7 +69,7 @@ public class FPCClassicAnim : ControllerJoueur {
 	 * @brief Gère la caméra.
 	 * @details Vérifie la position de la souris pour tourner la caméra dans un champ réduit.
 	 */
-	protected override void BougerTete () {
+	void BougerTete () {
 		if(bloquerTete) return; //Si on ne peut pas bouger la camera
 		
 		//Rotation latérale
@@ -86,7 +86,7 @@ public class FPCClassicAnim : ControllerJoueur {
 	 * @brief Permet de se baisser.
 	 * @details Quand la touche Crouch est appuyé, on s'accroupit. Rappuyé redonne la hauteur de caméra initiale.
 	 */
-	protected override void Crouch () {
+	void Crouch () {
 		//S'accroupir
 		if (Input.GetButtonDown("Crouch"))
 		{
@@ -109,7 +109,7 @@ public class FPCClassicAnim : ControllerJoueur {
 	 * @brief Gère le mouvement du character controller.
 	 * @details S'il est possible de bouger, on repère l'appui des touches de mouvements, ainsi que les demandes de saut.
 	 */
-	protected override void MouvementCorps () {
+	void MouvementCorps () {
 		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 		
 		//Mouvement

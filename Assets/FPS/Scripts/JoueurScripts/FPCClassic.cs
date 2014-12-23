@@ -158,5 +158,37 @@ public class FPCClassic : ControllerJoueur {
 		if(! (jauge/jaugeMax < 0.1) )  // La barre n'est affichée qu'au delà d'un certain seuil	
 			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
-
+	
+	//Set/Get
+	public void SetRendreImmobile (bool rendreImmobile_) {
+		rendreImmobile = rendreImmobile_;
+	}
+	
+	public bool GetRendreImmobile () {
+		return rendreImmobile;
+	}
+	
+	public void SetBloquerTete (bool bloquerTete_) {
+		bloquerTete = bloquerTete_;
+	}
+	
+	public bool GetBloquerTete () {
+		return bloquerTete;
+	}
+	
+	public void SetFreeze (bool freeze_) {
+		freeze = freeze_;
+	}
+	
+	public bool GetFreeze () {
+		return freeze;
+	}
+	
+	public float GetVitesseNonVerticaleActuelle () {
+		return vitesseNonVerticaleActuelle;
+	}
+	
+	public float GetVitesseMouvement () {
+		return vitesseMouvement;
+	}
 }

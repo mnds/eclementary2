@@ -24,7 +24,6 @@ static public class ControlCenter {
 	static private bool abejAncien;
 	static private bool utiliserOculus = false; //Dans FPCClassic
 	static private bool pause = false;
-	static public bool inventaireOuvert = false;
 
 	static GameObject joueurPrincipal;
 	static Camera cameraPrincipale;
@@ -38,7 +37,7 @@ static public class ControlCenter {
 	static public void SetTexte (GUIText texte) {
 		texteInteraction = texte;
 	}
-	
+
 	static public GUIText GetTexte () {
 		return texteInteraction;
 	}
@@ -46,15 +45,15 @@ static public class ControlCenter {
 	static public bool GetAfficherBarreDeVieJoueur () {
 		return afficherBarreDeVieJoueur;
 	}
-	
+
 	static public bool GetAfficherBarreEnduranceJoueur () {
 		return afficherBarreEnduranceJoueur;
 	}
-	
+
 	static public bool GetCinematiqueEnCours () {
 		return cinematiqueEnCours;
 	}
-	
+
 	static public void SetCinematiqueEnCours (bool cec) {
 		Debug.Log ("Control Center : cinematique "+cec);
 		cinematiqueEnCours = cec;
@@ -70,24 +69,24 @@ static public class ControlCenter {
 			afficherBarreDeVieJoueur = abdvjAncien;
 			afficherBarreEnduranceJoueur = abejAncien;
 		}
-		
-		
+
+
 	}
-	
+
 	static public void SetAfficherBarreDeVieJoueur (bool abdvj) {
 		Debug.Log ("Control Center : affichage vie joueur "+abdvj);
 		afficherBarreDeVieJoueur = abdvj;
 	}
-	
+
 	static public void SetAfficherBarreEnduranceJoueur (bool abdej) {
 		Debug.Log ("Control Center : affichage stamina joueur "+abdej);
 		afficherBarreEnduranceJoueur = abdej;
 	}
-	
+
 	static public void SetJoueurPrincipal (GameObject go) {
 		joueurPrincipal = go;
 	}
-	
+
 	static public GameObject GetJoueurPrincipal () {
 		return joueurPrincipal;
 	}
@@ -103,11 +102,11 @@ static public class ControlCenter {
 	static public void SetUtiliserOculus (bool utiliserOculus_) {
 		utiliserOculus = utiliserOculus_;
 	}
-	
+
 	static public bool GetUtiliserOculus () {
 		return utiliserOculus;
 	}
-	
+
 	static public void SetPause (bool pause_) {
 		pause=pause_;
 		if(pause) //Le control center se charge d'arreter le temps
@@ -115,7 +114,7 @@ static public class ControlCenter {
 		else
 			Time.timeScale=1f;
 	}
-	
+
 	static public bool GetPause () {
 		return pause;
 	}

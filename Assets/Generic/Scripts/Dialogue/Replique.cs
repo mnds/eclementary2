@@ -10,7 +10,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using SimpleJSON;
 
 public class Replique {
 
@@ -21,7 +20,6 @@ public class Replique {
 	int id;
 	string texte; // Texte affiché à l'écran lorsque la réplique est sélectionnée
 	List<Replique> repliquesSuivantes = new List<Replique>();
-	List<int> flagsRequis, flagsBloquants, flagsActives;
 	GameObject goAssocie; // GameObject qui prononcera la réplique
 
 	// Permet de chainer une réplique suivante à la réplique courante
@@ -42,18 +40,6 @@ public class Replique {
 		return texte;
 	}
 
-	public List<int> GetFlagsRequis() {
-		return flagsRequis;
-	}
-
-	public List<int> GetFlagsBloquants() {
-		return flagsBloquants;
-	}
-
-	public List<int> GetFlagsActives() {
-		return flagsActives;
-	}
-
 	public void SetText( string _texte ) {
 		texte = _texte;
 	}
@@ -68,26 +54,5 @@ public class Replique {
 
 	public List<Replique> GetRepliquesSuivantes() {
 		return repliquesSuivantes;
-	}
-
-	public void SetFlagsRequis( JSONNode rFlags ) {
-		flagsRequis = new List<int>();
-		for (int i = 0; i < rFlags.Count; i++) {
-			flagsRequis.Add( int.Parse(rFlags[i].Value) );
-		}
-	}
-
-	public void SetFlagsBloquants( JSONNode bFlags ) {
-		flagsBloquants = new List<int>();
-		for (int i = 0; i < bFlags.Count; i++) {
-			flagsBloquants.Add( int.Parse(bFlags[i].Value) );
-		}	
-	}
-
-	public void SetFlagsActives( JSONNode eFlags ) {
-		flagsActives = new List<int>();
-		for (int i = 0; i < eFlags.Count; i++) {
-			flagsActives.Add( int.Parse(eFlags[i].Value) );
-		}	
 	}
 }

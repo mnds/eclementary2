@@ -17,6 +17,8 @@ public class Pickable : MonoBehaviour {
 	public bool bypass; //Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 	public bool isPickableDebut = false; //Si false, on ne peut pas le prendre, true sinon
 	public float pickableDistanceDebut = 3.0f;
+
+	public int nombreMunitions = 1; //Nombre de munitions que donne l'objet
 	bool isPickable ;
 	float pickableDistance;
 

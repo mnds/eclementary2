@@ -41,7 +41,6 @@ public class Soigner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(bypass) return;
-		if(ControlCenter.inventaireOuvert) return;
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
 		if(Time.time<tempsAvantProchainTir) return;
 

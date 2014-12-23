@@ -7,7 +7,7 @@
  */
 
 using UnityEngine;
-public class EtatMort : EtatNonJouable
+public class EtatMort : Etat
 { 
 	
 	public EtatMort ( StateManager manager ) : base( manager ) {
@@ -15,9 +15,10 @@ public class EtatMort : EtatNonJouable
 		ChargerSceneCorrespondante ();
 	}
 
-	// Redéfinition des méthodes de la classe abstraite Etat	
+	// Redéfinition des méthodes de la classe abstraite Etat
+	
 	public override void UpdateEtat() {
-		ChargerSceneCorrespondante ();
+		
 	}
 	
 	public override void AfficherRendu() {

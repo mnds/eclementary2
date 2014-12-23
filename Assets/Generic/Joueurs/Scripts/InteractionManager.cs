@@ -37,7 +37,6 @@ public class InteractionManager : MonoBehaviour {
 			if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hitInfo, 300f)) //On regarde très loin pour trouver l'objet en face du joueur
 			{
 				objet = hitInfo.collider.gameObject; //On récupère l'objet touché
-
 				GameObject copieObjet = objet; //On le copie pour le manipuler
 
 				interaction = (Interactif)copieObjet.GetComponent(typeof(Interactif)); //On vérifie si l'objet peut faire une intéraction
@@ -55,10 +54,9 @@ public class InteractionManager : MonoBehaviour {
 				if(interaction!=null
 				   && interaction.GetDistanceMinimaleInteraction()>Vector3.Distance(hitInfo.point,Camera.main.transform.position))
 				{
-					interaction.DemarrerInteraction();
 					Debug.Log ("Démarrage d'une interaction");
+					interaction.DemarrerInteraction();
 				}
-
 			}
 		}
 	}
