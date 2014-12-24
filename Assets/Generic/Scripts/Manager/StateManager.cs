@@ -11,9 +11,11 @@ using System.Collections;
 
 public class StateManager : MonoBehaviour {
 
-	private Etat etatActif; // Etat qui actif en l'instant
+	public Etat etatActif; // Etat qui actif en l'instant
+	public Etat ancienEtat; // Etat ayant précédé l'actuel
 	private static StateManager instanceActive; // Instance de StateManager qui est active, utilisée pour implémenter un singleton
 	public static string sceneDebut; // Scène par laquelle le jeu commence
+	private GameObject joueur;
 
 	[HideInInspector]
 	public GameData dataRef;
@@ -31,6 +33,7 @@ public class StateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
 		sceneDebut = "CampusExterieurLie";
 		dataRef = GetComponent<GameData> ();
 		etatActif = new EtatDepart ( this );
@@ -51,8 +54,14 @@ public class StateManager : MonoBehaviour {
 		return instanceActive;
 	}
 
+	public GameObject GetJoueur() {
+		return joueur;
+	}
+
 	// Permet le changement de l'état actif à l'état donné en paramètre
 	public void BasculerEtat( Etat etat ) {
+		ancienEtat = etatActif;
+		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
 		etatActif = etat;
 	}
 

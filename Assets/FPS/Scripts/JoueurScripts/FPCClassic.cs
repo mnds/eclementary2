@@ -17,7 +17,10 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassic : ControllerJoueur {
+public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
+
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
+	
 	// Use this for initialization
 	void Start () {
 		Initialiser ();
@@ -25,6 +28,8 @@ public class FPCClassic : ControllerJoueur {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!enabled)
+			return;
 		if(bypass) return;
 		if (!freeze) { //Si on peut bouger
 			Sprint (); //On regarde la vitesse à donner au joueur
@@ -153,42 +158,21 @@ public class FPCClassic : ControllerJoueur {
 	}
 	
 	void OnGUI () {
+		if (!enabled)
+			return;
 		//Affichage de la barre d'endurance
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
 		if(! (jauge/jaugeMax < 0.1) )  // La barre n'est affichée qu'au delà d'un certain seuil	
 			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
 	}
-	
-	//Set/Get
-	public void SetRendreImmobile (bool rendreImmobile_) {
-		rendreImmobile = rendreImmobile_;
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
 	}
 	
-	public bool GetRendreImmobile () {
-		return rendreImmobile;
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
-	
-	public void SetBloquerTete (bool bloquerTete_) {
-		bloquerTete = bloquerTete_;
-	}
-	
-	public bool GetBloquerTete () {
-		return bloquerTete;
-	}
-	
-	public void SetFreeze (bool freeze_) {
-		freeze = freeze_;
-	}
-	
-	public bool GetFreeze () {
-		return freeze;
-	}
-	
-	public float GetVitesseNonVerticaleActuelle () {
-		return vitesseNonVerticaleActuelle;
-	}
-	
-	public float GetVitesseMouvement () {
-		return vitesseMouvement;
-	}
+
 }

@@ -10,10 +10,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class HealthPlayer : Health {
+public class HealthPlayer : Health, IScriptEtatJouable {
 	public bool joueurPrincipal; //pour le multijoueur, pour savoir qui afficher
 	public Texture2D healthBarTexture;
 	int barLength = Screen.width / 6, barHeight = Screen.height / 10;
+
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 
 	void Start () {
 		if(gameObject==ControlCenter.GetJoueurPrincipal())
@@ -21,12 +23,16 @@ public class HealthPlayer : Health {
 	}
 
 	public void Update () {
+		if (!enabled)
+			return;
 		if (Input.GetKeyDown (KeyCode.Backspace)) {
 			DeclencherMort();		
 		}
 	}
 
 	public void OnGUI () {
+		if (!enabled)
+			return;
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
 		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
@@ -38,5 +44,14 @@ public class HealthPlayer : Health {
 		//ScenarioManager.ActiverEvenement (0); //Ecran de mort
 		Evenement mourir = new Mourir ();
 		mourir.DeclencherEvenement ();
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }

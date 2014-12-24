@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 
 //** listeUtilisables ne sera jamais vide, il y aura tjs le coup de poing. Ou un truc qui sert à rien
-public class Inventaire : MonoBehaviour {
+public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public List<GameObject> listeObjetsRecoltables; //TOUS les objets possibles
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
@@ -36,6 +36,8 @@ public class Inventaire : MonoBehaviour {
 
 	//Handles glow
 	GlowSimple gsAncien;
+
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 
 	// Use this for initialization
 	void Start () {
@@ -70,10 +72,14 @@ public class Inventaire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!enabled)
+			return;
 		VerifierTouches ();
 	}
 	
 	void OnGUI() {
+		if (!enabled)
+			return;
 		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		// The current weapon is always displayed
 		if(attaquerObjetActuel)
@@ -301,5 +307,14 @@ public class Inventaire : MonoBehaviour {
 
 	public Camera GetCamera () {
 		return camera;
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }
