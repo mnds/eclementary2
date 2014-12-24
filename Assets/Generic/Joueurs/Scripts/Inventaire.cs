@@ -20,10 +20,17 @@ using System.Collections.Generic;
 
 
 //** listeUtilisables ne sera jamais vide, il y aura tjs le coup de poing. Ou un truc qui sert à rien
+
+using UnityEngine.UI;
+
 public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public List<GameObject> listeObjetsRecoltables; //TOUS les objets possibles
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
+	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
+	
+	public GameObject inventaire;//Stock la fenetre d'inventaire
+	public Sprite imageVide;
 
 	//Objet actuel
 	GameObject objetActuel;
@@ -144,6 +151,23 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
+
+		bool inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
+		ControlCenter.inventaireOuvert = inventaireOuvert;
+		
+		if(inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(false);//Si on appuie sur la touche et qu'il est ouvert, on ferme
+		}
+		else if(!inventaireOuvert && Input.GetButtonDown("Inventaire"))
+		{
+			inventaire.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
+			MiseAJourInventaire();
+		}
+		
+		if(ControlCenter.inventaireOuvert) return;
+
+
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé
 		bool objetActuelEnTrainDAttaquer = false;
 		if(attaquerObjetActuel!=null) //Si l'objet a un Attaquer, on regarde si l'objet attaque
@@ -180,6 +204,12 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 
 		// Current weapon is also changed when tab or Shift+Tab pressed
 		int direction = 0;
+		// Si on tourne la molette de la souris vers le haut
+		if (Input.GetAxis("Mouse ScrollWheel") < 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = -1;
+		// Si on tourne la molette de la souris vers le bas
+		else if (Input.GetAxis("Mouse ScrollWheel") > 0.0f && !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
+			direction = 1;
 		// Combo Shift+Tab si on n'attaque ni ne lance
 		if ((Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) && Input.GetKeyUp (KeyCode.Tab)
 		    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer)
@@ -303,6 +333,47 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 				return;
 			}
 		}
+	}
+
+	public void MiseAJourInventaire()//Permet de mettre la visualisation de l'inventaire à jour quand on l'ouvre
+	{
+		GameObject slotCourant;//Le slot de l'inventaire que l'on va modifier
+		GameObject image;//L'image du slot que l'on va modifier
+		GameObject texte;//Le nom de l'objet
+		int positionSlot = 1;
+		
+		
+		for(int i=0;i<listeObjetsRecoltables.Count;i++)//On parcourt la liste des objets
+		{
+			for(int k=1;k<listeObjetsUtilisables.Count+1;k++)//On la compare à la liste de tous les objets du joueur
+			{
+				if(listeObjetsRecoltables[i]==listeObjetsUtilisables[k-1] && listeObjetsRecoltables[i].name!="ArmeNull")//Quand on trouve une correspondance, autre que l'arme nulle
+				{
+					//On prend le slot qui sera occupé par l'objet
+					slotCourant=GameObject.Find("Slot "+ positionSlot);
+					image=slotCourant.transform.FindChild("Image").gameObject;
+					texte=slotCourant.transform.FindChild("Text").gameObject;
+					//On remplace l'image par celle de l'objet
+					image.GetComponent<Image>().sprite = listeImages[i];
+					//On remplace le texte par le nom de l'objet
+					texte.GetComponent<Text>().text = listeObjetsRecoltables[i].name;
+					//On passe au slot suivant
+					positionSlot++;
+				}
+			}
+		}
+		//On remplace maintenant tous les slots inutilisés par "vide"
+		for (int i=positionSlot; i<26; i++) 
+		{
+			//On prend le slot qui sera occupé par l'image vide
+			slotCourant=GameObject.Find("Slot "+ i);
+			//On remplace l'image par l'image vide
+			slotCourant.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=imageVide;
+			//On remplace le texte par rien
+			slotCourant.transform.FindChild("Text").gameObject.GetComponent<Text>().text="";
+			
+		}
+		
 	}
 
 	public Camera GetCamera () {
