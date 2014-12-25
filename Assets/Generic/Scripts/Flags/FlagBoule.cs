@@ -15,7 +15,7 @@ public class FlagBoule : ActiverFlagInteractif {
 	public float vitesseRotation = 2.0f; //Vitesse à laquelle la tourelle tourne. 0.5f est amplement suffisant pour garantir le suivi d'un perso qui marche.
 	public float distanceMini = 30.0f;
 
-	public bool estActiveeInitial = true;
+	public bool estActiveeInitial = false;
 	public bool estActivee;
 
 	void Start () {

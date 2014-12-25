@@ -3230,12 +3230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 3
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &125136571
 Renderer:
   m_ObjectHideFlags: 0
@@ -9416,12 +9416,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fff85adb0d9346b0f363c93ef0f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 14
   flagActive: 4
   activable: 1
   detruireApresActivation: 0
   texteSiActivable: La terre tremble !
   texteSiNonActivable: C'est la boule de Centrale.
+  distanceMinimaleInteraction: 14
   vitesseRotation: .5
   distanceMini: 30
   estActiveeInitial: 0
@@ -10990,12 +10990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 1
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &487246652
 Renderer:
   m_ObjectHideFlags: 0
@@ -26789,12 +26789,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 2
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &1155735562
 Renderer:
   m_ObjectHideFlags: 0
@@ -34216,6 +34216,10 @@ Prefab:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: 340185e43240cfe41bc82ddaeef665bc, type: 2}
+    - target: {fileID: 11444322, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
+      propertyPath: detruireApresActivation
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11419190, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
     - {fileID: 11419204, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
