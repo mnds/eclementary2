@@ -14,6 +14,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 static public class FlagManager {
+#define li = new List<int>(){}
 
 	[System.Serializable]
 	public class Flag {
@@ -21,14 +22,23 @@ static public class FlagManager {
 		public bool actif;
 		public string description;
 		public List<int> predecesseurs; //Pour vérifier si un flag est bien activable
-		//public List<Evenement> evenementsDeclenches;
+		public List<Evenement> evenementsDeclenches;
 
-		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_/*,List<Evenement> evenements_*/) {
+		//Le flag actifDebut dit si le flag est déjà actif au début. Si celui-ci est à true, les événements liés au flag ne seront pas déclenchés au démarrage du logiciel.
+		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_,List<Evenement> evenements_) {
 			id=id_;
 			actif=actifDebut;
 			description=description_;
 			predecesseurs=predecesseurs_;
-			//evenementsDeclenches=evenements_;
+			evenementsDeclenches=evenements_;
+		}
+
+		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_) {
+			id=id_;
+			actif=actifDebut;
+			description=description_;
+			predecesseurs=predecesseurs_;
+			evenementsDeclenches=new List<Evenement>(){};
 		}
 	}
 	
@@ -36,18 +46,26 @@ static public class FlagManager {
 	static private List<Flag> flags = new List<Flag>{};
 
 	static FlagManager () {
+		//if(ControlCenter.DebutDuJeu)
+		RemplirDefaut();
+	}
+
+	/**
+	 * @brief Remplissage par défaut des flags. Seul le flag 0, d'initialisation, est actif.
+	 */
+	static private void RemplirDefaut () {
 		//Redaction des differents flags
 		/* Version de test pour l'édition décembre 2014.
 		 * On commence sans rien, on va chercher le numérisator sur le campus
 		 * On va appuyer sur un bouton près de la boule pour l'enclencher et il faut la tuer.
 		 * Une fois la boule tuée, elle donne un objet qui déclenche la fin du jeu.
 		 */
-		flags.Add (new Flag (0, true, "DebutDuJeu", null));
+		/*flags.Add (new Flag (0, true, "DebutDuJeu", null));
 		flags.Add (new Flag (1, false, "PremierBouton", new List<int> (){0}));
 		flags.Add (new Flag (2, false, "DeuxiemeBouton", new List<int> (){0}));
 		flags.Add (new Flag (3, false, "TroisiemeBouton", new List<int> (){0}));
 		flags.Add (new Flag(4,false,"Activation de la BOULE", new List<int> () {1,2,3}));
-		flags.Add (new Flag(5,false,"Mort de la boule",new List<int>() {4}));
+		flags.Add (new Flag(5,false,"Mort de la boule",new List<int>() {4}));*/
 	}
 
 	static private Flag ChercherFlagParId(int id) {
@@ -84,8 +102,13 @@ static public class FlagManager {
 			}
 		}
 		Debug.Log ("Activation du flag id : "+f.id+" => "+f.description);
-		//Le flag est activable
+
+		//Le flag est activable : on l'active et on effectue les événements liés
 		f.actif = true;
+		foreach(Evenement e in f.evenementsDeclenches) {
+			e.DeclencherEvenement();
+		}
+
 		return f.actif; //Renvoie si le flag est actif.
 	}
 }
