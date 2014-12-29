@@ -66,6 +66,10 @@ public class Dialogue : MonoBehaviour, Interactif {
 	void SelectionnerReplique( Replique repliqueSelectionnee ) {
 		repliqueChoisie = repliqueSelectionnee;
 		repliquesSuivantes = repliqueSelectionnee.GetRepliquesSuivantes ();
+		//Activation des flags
+		foreach(int idFlag in repliqueChoisie.GetFlagsActives ()) {
+			FlagManager.ActiverFlag (idFlag);
+		}
 	}
 
 	/* Renseigne les champs des objets Repliques
