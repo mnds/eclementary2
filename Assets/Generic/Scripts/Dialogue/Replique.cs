@@ -66,8 +66,34 @@ public class Replique {
 		goAssocie = go;
 	}
 
-	public List<Replique> GetRepliquesSuivantes() {
-		return repliquesSuivantes;
+	public List<Replique> GetRepliquesSuivantes(bool prendreEnCompteLesFlags=true) {
+		if(prendreEnCompteLesFlags) {
+			List<Replique> reponse = new List<Replique>(){};
+			foreach(Replique r in repliquesSuivantes) { //On regarde toutes les répliques suivantes et on vérifie si elles sont accessibles au niveau de leurs flags
+				bool estRepliqueSuivante=true;
+				foreach(int flag in r.flagsRequis) { //On vérifie les flags requis
+					if(!estRepliqueSuivante)
+						break;
+					if (!FlagManager.ChercherFlagParId (flag).actif) {
+						estRepliqueSuivante=false;
+					}
+				}
+				if(!estRepliqueSuivante)
+					break;
+				foreach(int flag in r.flagsBloquants) { //On vérifie les flags bloquants
+					if(!estRepliqueSuivante)
+						break;
+					if (FlagManager.ChercherFlagParId (flag).actif) {
+						estRepliqueSuivante=false;
+					}
+				}
+				if(estRepliqueSuivante) //On ajoute si les flags sont bons
+					reponse.Add (r);
+			}
+			return reponse;
+		}
+		else
+			return repliquesSuivantes;
 	}
 
 	public void SetFlagsRequis( JSONNode rFlags ) {

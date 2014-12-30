@@ -113,7 +113,7 @@ static public class FlagManager {
 		flags.Add (new Flag(45,false,"Fin du jeu",new List<int>(){44},new List<Evenement>(){}));
 	}
 
-	static private Flag ChercherFlagParId(int id) {
+	static public Flag ChercherFlagParId(int id) {
 		foreach (Flag f in flags) {
 			if(id==f.id)
 				return f;
