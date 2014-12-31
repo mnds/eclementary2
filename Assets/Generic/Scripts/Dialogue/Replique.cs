@@ -70,20 +70,17 @@ public class Replique {
 		if(prendreEnCompteLesFlags) {
 			List<Replique> reponse = new List<Replique>(){};
 			foreach(Replique r in repliquesSuivantes) { //On regarde toutes les répliques suivantes et on vérifie si elles sont accessibles au niveau de leurs flags
+				Debug.Log("Analyse de la replique "+r.GetTexte ());
 				bool estRepliqueSuivante=true;
 				foreach(int flag in r.flagsRequis) { //On vérifie les flags requis
-					if(!estRepliqueSuivante)
-						break;
 					if (!FlagManager.ChercherFlagParId (flag).actif) {
+						Debug.Log ("La replique "+r.GetId()+" n'est pas activable à cause du flag "+flag+" qui doit etre activé");
 						estRepliqueSuivante=false;
 					}
 				}
-				if(!estRepliqueSuivante)
-					break;
 				foreach(int flag in r.flagsBloquants) { //On vérifie les flags bloquants
-					if(!estRepliqueSuivante)
-						break;
 					if (FlagManager.ChercherFlagParId (flag).actif) {
+						Debug.Log ("La replique "+r.GetId()+" n'est pas activable à cause du flag "+flag+" qui doit etre desactive");
 						estRepliqueSuivante=false;
 					}
 				}

@@ -44,6 +44,8 @@ public class Dialogue : MonoBehaviour, Interactif {
 	void OnGUI() {
 		if( interactionDeclenchee ) {
 			if (repliquesSuivantes == null || repliquesSuivantes.Count == 0) { // Arrêt de l'interaction si l'interaction choisie n'a pas de répliques suivantes
+				if(repliquesSuivantes==null) Debug.Log ("Repliques suivantes nulles");
+				else Debug.Log ("Pas de repliques suivantes");
 				ArreterInteraction ();
 			}
 			else{ // Affichage des répliques si l'intéraction a été déclenché
@@ -68,7 +70,10 @@ public class Dialogue : MonoBehaviour, Interactif {
 		repliquesSuivantes = repliqueSelectionnee.GetRepliquesSuivantes ();
 		//Activation des flags
 		foreach(int idFlag in repliqueChoisie.GetFlagsActives ()) {
-			FlagManager.ActiverFlag (idFlag);
+			if(FlagManager.ActiverFlag (idFlag))
+				Debug.Log ("Activation du flag "+idFlag);
+			else
+				Debug.Log ("Impossible d'activer le flag "+idFlag);
 		}
 	}
 
@@ -143,7 +148,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	string ContenuFichierRepliques() {
 		StreamReader sr = new StreamReader (Application.dataPath + "/" +nomFichierRepliques); // Flux du fichier
 		string contenu = sr.ReadToEnd (); // Lecture du fichier jusqu'à sa fin
-
+		Debug.Log (contenu);
 		return contenu;
 	}
 
@@ -157,7 +162,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 			Debug.Log ("Mouvements du joueur non accessibles");
 		repliqueChoisie = repliques[0]; // Pointage de repliquesActuelles à la tête de repliques (qui est une replique sans contenu)
 		repliquesSuivantes = repliqueChoisie.GetRepliquesSuivantes ();
-		
+		Debug.Log (repliqueChoisie.GetTexte());
 		interactionDeclenchee = true;
 	}
 	

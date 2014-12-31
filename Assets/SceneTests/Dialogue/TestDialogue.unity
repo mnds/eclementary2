@@ -594,11 +594,11 @@ MonoBehaviour:
   degatsParCoup: 10
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
-  placementInitial: {fileID: 1667278346}
-  placementFinal: {fileID: 436490010}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .5
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!23 &284760740
 Renderer:
   m_ObjectHideFlags: 0
@@ -856,11 +856,11 @@ MonoBehaviour:
   degatsParCoup: 10
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
-  placementInitial: {fileID: 1679128091}
-  placementFinal: {fileID: 1757689848}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .100000001
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!54 &343226023
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1007,11 +1007,11 @@ MonoBehaviour:
   degatsParCoup: 20
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
-  placementInitial: {fileID: 1209036548}
-  placementFinal: {fileID: 1861936198}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .400000006
   tempsFinalVersInitial: .5
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!95 &430860502
 Animator:
   serializedVersion: 3
@@ -1994,11 +1994,11 @@ MonoBehaviour:
   degatsParCoup: 45
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
-  placementInitial: {fileID: 276921970}
-  placementFinal: {fileID: 1954739950}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .5
   tempsFinalVersInitial: 1
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!23 &849195101
 Renderer:
   m_ObjectHideFlags: 0
@@ -2083,6 +2083,10 @@ Prefab:
       propertyPath: enduranceBarTexture
       value: 
       objectReference: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
+    - target: {fileID: 100172, guid: 18a1bca707da0de4395c13b827326000, type: 2}
+      propertyPath: m_Name
+      value: JoueurDialogue
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18a1bca707da0de4395c13b827326000, type: 2}
   m_RootGameObject: {fileID: 1489908321}
@@ -3284,7 +3288,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 853004446}
   m_GameObject: {fileID: 1352533970}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &1357941629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,7 +3417,7 @@ GameObject:
   - 23: {fileID: 1446629065}
   - 114: {fileID: 1446629068}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: pnjDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3618,7 +3622,7 @@ GameObject:
   - 95: {fileID: 1489908324}
   - 114: {fileID: 1489908323}
   m_Layer: 0
-  m_Name: JoueurPrincipal
+  m_Name: JoueurDialogue
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3689,10 +3693,6 @@ MonoBehaviour:
   vitesseSaut: 5
   angleVerticalMax: 60
   nombreSautsMax: 1
-  characterControllerYCenterDebout: .839999974
-  characterControllerHeightDebout: 1.72000003
-  characterControllerYCenterAccroupi: .660000026
-  characterControllerHeightAccroupi: 1.42999995
 --- !u!82 &1489908326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3809,8 +3809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79e6622cccb232458859b3e77cc3501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bypass: 0
   pointsDeVieMax: 50
   pointsDeVieActuels: 5
+  flagAssocie: -1
   joueurPrincipal: 0
   healthBarTexture: {fileID: 2800000, guid: 691577c2c68a740b6a907dfa942c52e0, type: 3}
 --- !u!114 &1489908331
@@ -3833,6 +3835,9 @@ MonoBehaviour:
   - {fileID: 317941270}
   - {fileID: 2115443206}
   quantiteObjets: 010000000100000004000000020000000100000001000000
+  listeImages: []
+  inventaire: {fileID: 0}
+  imageVide: {fileID: 0}
   camera: {fileID: 1124920423}
 --- !u!143 &1489908332
 CharacterController:
@@ -4009,7 +4014,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400230, guid: 18a1bca707da0de4395c13b827326000, type: 2}
   m_PrefabInternal: {fileID: 853004446}
   m_GameObject: {fileID: 1563169451}
-  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
+  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4173,6 +4178,7 @@ MonoBehaviour:
   bypass: 1
   isPickableDebut: 0
   pickableDistanceDebut: 3
+  nombreMunitions: 1
   texture: {fileID: 0}
 --- !u!114 &1595595443
 MonoBehaviour:
@@ -4190,7 +4196,6 @@ MonoBehaviour:
   delaiEntreDeuxTirs: .5
   munitions: 4
   objetReel: {fileID: 1595595437}
-  departObjetReel: {fileID: 319624049}
   vitesseDeLance: 10
 --- !u!1 &1600122247
 GameObject:
@@ -4595,7 +4600,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400158, guid: 18a1bca707da0de4395c13b827326000, type: 2}
   m_PrefabInternal: {fileID: 853004446}
   m_GameObject: {fileID: 1731886704}
-  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
+  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5143,6 +5148,7 @@ MonoBehaviour:
   bypass: 1
   isPickableDebut: 1
   pickableDistanceDebut: 10
+  nombreMunitions: 1
   texture: {fileID: 0}
 --- !u!114 &2041259566
 MonoBehaviour:
@@ -5160,7 +5166,6 @@ MonoBehaviour:
   delaiEntreDeuxTirs: .5
   munitions: 4
   objetReel: {fileID: 2041259561}
-  departObjetReel: {fileID: 894609057}
   vitesseDeLance: 10
 --- !u!1 &2065229465
 GameObject:
@@ -5209,11 +5214,11 @@ MonoBehaviour:
   degatsParCoup: 10
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
-  placementInitial: {fileID: 712751147}
-  placementFinal: {fileID: 1715108851}
   vignette: {fileID: 0}
   tempsInitialVersFinal: .100000001
   tempsFinalVersInitial: .100000001
+  avancementAnim: 0
+  enCoursDeRetour: 0
 --- !u!23 &2065229468
 Renderer:
   m_ObjectHideFlags: 0
@@ -5361,6 +5366,7 @@ MonoBehaviour:
   bypass: 0
   isPickableDebut: 0
   pickableDistanceDebut: 3
+  nombreMunitions: 1
   texture: {fileID: 0}
 --- !u!114 &2115443209
 MonoBehaviour:
@@ -5415,7 +5421,6 @@ MonoBehaviour:
   delaiEntreDeuxTirs: .5
   munitions: 0
   objetReel: {fileID: 100006, guid: 271746ca164b4044da76e6c78422a4cb, type: 2}
-  departObjetReel: {fileID: 1357941630}
   vitesseDeLance: 7
 --- !u!1 &2132292450
 GameObject:
