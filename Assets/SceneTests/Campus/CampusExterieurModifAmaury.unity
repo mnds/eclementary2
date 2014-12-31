@@ -76,7 +76,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-  m_NavMesh: {fileID: 0}
+  m_NavMesh: {fileID: 19400000, guid: fda1a4216ac75e4458ece04fbcb4d96f, type: 2}
 --- !u!1001 &4550868
 Prefab:
   m_ObjectHideFlags: 0
@@ -3001,12 +3001,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 3
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &125136571
 Renderer:
   m_ObjectHideFlags: 0
@@ -8821,6 +8821,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1001344028}
   m_GameObject: {fileID: 417447114}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &418264528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 418264530}
+  - 114: {fileID: 418264529}
+  m_Layer: 0
+  m_Name: PointCreationDeZombie1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &418264529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 418264528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad536a57051568041bd18c81a6f01a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieListe:
+  - {fileID: 100152, guid: 7f3f73938a9021e439901ee703dfa598, type: 2}
+  - {fileID: 100182, guid: 29c04fdf0357f0b4f84b22f15c319eb0, type: 2}
+  m_periodeZombie: 3
+  m: 0
+--- !u!4 &418264530
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 418264528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1152.5, y: 201.110001, z: 1105.41003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &420270039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9049,12 +9093,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fff85adb0d9346b0f363c93ef0f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 14
   flagActive: 4
   activable: 1
   detruireApresActivation: 0
   texteSiActivable: La terre tremble !
   texteSiNonActivable: C'est la boule de Centrale.
+  distanceMinimaleInteraction: 14
   vitesseRotation: .5
   distanceMini: 30
   estActiveeInitial: 0
@@ -10332,15 +10376,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 968.700012
+      value: 1170.72998
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.699997
+      value: 201.399994
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 850.5
+      value: 1105.27002
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10348,7 +10392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.0107841128
+      value: .63967663
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalRotation.z
@@ -10356,11 +10400,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.999941885
+      value: -.768644154
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
       propertyPath: m_LocalPosition.x
@@ -10589,12 +10633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 1
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &487246652
 Renderer:
   m_ObjectHideFlags: 0
@@ -12412,7 +12456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &579542780
 GameObject:
   m_ObjectHideFlags: 0
@@ -19108,6 +19152,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1953260645}
   m_GameObject: {fileID: 855635181}
   m_Mesh: {fileID: 4300002, guid: aee939b77a642de478b0de0de303e259, type: 3}
+--- !u!1 &857455627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 857455629}
+  - 114: {fileID: 857455628}
+  m_Layer: 0
+  m_Name: PointCreationDeZombie3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &857455628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857455627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad536a57051568041bd18c81a6f01a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieListe:
+  - {fileID: 100152, guid: 7f3f73938a9021e439901ee703dfa598, type: 2}
+  - {fileID: 100182, guid: 29c04fdf0357f0b4f84b22f15c319eb0, type: 2}
+  m_periodeZombie: 3
+  m: 0
+--- !u!4 &857455629
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857455627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1174.90002, y: 196.789993, z: 1105.40002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1001 &858655445
 Prefab:
   m_ObjectHideFlags: 0
@@ -22842,7 +22930,7 @@ Transform:
   - {fileID: 460774697}
   - {fileID: 78577044}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!95 &1032803936
 Animator:
   serializedVersion: 3
@@ -25889,12 +25977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
   flagActive: 2
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!23 &1155735562
 Renderer:
   m_ObjectHideFlags: 0
@@ -30105,7 +30193,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400026, guid: 935b28f54fa1fc94eaad79aca494b478, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Center.x
@@ -33150,7 +33238,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419170, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11419226, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
       propertyPath: etincellesTir
@@ -36406,6 +36494,50 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1205863674}
   m_GameObject: {fileID: 1652962063}
+--- !u!1 &1657194880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1657194882}
+  - 114: {fileID: 1657194881}
+  m_Layer: 0
+  m_Name: PointCreationDeZombie2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1657194881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657194880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad536a57051568041bd18c81a6f01a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieListe:
+  - {fileID: 100152, guid: 7f3f73938a9021e439901ee703dfa598, type: 2}
+  - {fileID: 100182, guid: 29c04fdf0357f0b4f84b22f15c319eb0, type: 2}
+  m_periodeZombie: 3
+  m: 0
+--- !u!4 &1657194882
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657194880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1228.41003, y: 193.529999, z: 1104.84998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
 --- !u!1 &1663960668
 GameObject:
   m_ObjectHideFlags: 0
@@ -37910,6 +38042,7 @@ GameObject:
   - 82: {fileID: 1762174168}
   - 114: {fileID: 1762174167}
   - 114: {fileID: 1762174176}
+  - 114: {fileID: 1762174177}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Player
@@ -37923,8 +38056,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400052, guid: 8d68a50a4878c7440af2d59c7e8512da, type: 2}
   m_PrefabInternal: {fileID: 485201981}
   m_GameObject: {fileID: 1762174165}
-  m_LocalRotation: {x: 0, y: -.0107841128, z: 0, w: -.999941885}
-  m_LocalPosition: {x: 968.700012, y: 206.699997, z: 850.5}
+  m_LocalRotation: {x: 0, y: .63967663, z: 0, w: -.768644154}
+  m_LocalPosition: {x: 1170.72998, y: 201.399994, z: 1105.27002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1899787874}
@@ -37932,7 +38065,7 @@ Transform:
   - {fileID: 1581997071}
   - {fileID: 570141477}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &1762174167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38151,6 +38284,18 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
+--- !u!114 &1762174177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762174165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37006c3946d5da449bdb4e0a2080c463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1765470313
 GameObject:
   m_ObjectHideFlags: 0
@@ -43254,7 +43399,7 @@ Transform:
   - {fileID: 174435987}
   - {fileID: 1494347364}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &2062676630
 GameObject:
   m_ObjectHideFlags: 0
