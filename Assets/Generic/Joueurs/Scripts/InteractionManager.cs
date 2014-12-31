@@ -54,7 +54,7 @@ public class InteractionManager : MonoBehaviour {
 				if(interaction!=null
 				   && interaction.GetDistanceMinimaleInteraction()>Vector3.Distance(hitInfo.point,Camera.main.transform.position))
 				{
-					Debug.Log ("Démarrage d'une interaction");
+					Debug.Log ("Démarrage d'une interaction avec"+copieObjet.name);
 					interaction.DemarrerInteraction();
 				}
 			}

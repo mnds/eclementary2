@@ -81,9 +81,9 @@ public class ControllerJoueur : MonoBehaviour {
 		if(cameraNonOculus==null) //La caméra par défaut est la main si aucune n'est sélectionnée
 			cameraNonOculus=Camera.main;
 		
-		Debug.Log (ControlCenter.GetUtiliserOculus ());
-		Debug.Log (cameraNonOculus);
-		Debug.Log (cameraOculus);
+		//Debug.Log (ControlCenter.GetUtiliserOculus ());
+		//Debug.Log (cameraNonOculus);
+		//Debug.Log (cameraOculus);
 		
 		if (ControlCenter.GetUtiliserOculus ()) { //On veut utiliser l'oculus
 			Debug.Log ("Utilisation oculus");

@@ -21,7 +21,7 @@
             "texte": "Bonjour !",
             "flagsRequis": ["1","2"],
             "flagsBloquants": ["3"],
-            "flagsActives": ["4"]
+            "flagsActives": ["3"]
         },
         {
             "goAssocie": "pnjDialogue",
@@ -31,9 +31,9 @@
                 "56"
             ],
             "texte": "Bonjour ! Comment allez-vous ?",
-            "flagsRequis": ["1","2"],
+            "flagsRequis": [],
             "flagsBloquants": ["3"],
-            "flagsActives": ["4"]
+            "flagsActives": ["2"]
         },
         {
             "goAssocie": "JoueurDialogue",
@@ -42,9 +42,9 @@
                 "212"
             ],
             "texte": "Non je vais pas bien.",
-            "flagsRequis": ["1","2"],
+            "flagsRequis": [],
             "flagsBloquants": ["3"],
-            "flagsActives": ["4"]
+            "flagsActives": []
         },
         {
             "goAssocie": "JoueurDialogue",
@@ -86,9 +86,9 @@
                 "2"
             ],
             "texte": "Salut",
-            "flagsRequis": ["1","2"],
-            "flagsBloquants": ["3"],
-            "flagsActives": ["4"]
+            "flagsRequis": [],
+            "flagsBloquants": [],
+            "flagsActives": ["1"]
         },
         {
             "goAssocie": "JoueurDialogue",
@@ -101,7 +101,7 @@
             "flagsActives": ["4"]
         },
         {
-            "goAssocie": "jfklds",
+            "goAssocie": "pnjDialogue",
             "id": "30",
             "repSuivantes": [
                 "21"
