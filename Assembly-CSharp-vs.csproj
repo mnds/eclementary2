@@ -68,6 +68,7 @@
      <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionManager.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\Inventaire.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\OnClickRessusciter.cs" />
+     <Compile Include="Assets\Generic\Joueurs\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Replique.cs" />
      <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\Lancement.cs" />
@@ -147,6 +148,11 @@
      <Compile Include="Assets\Prefabs\ContactPrefabScript.cs" />
      <Compile Include="Assets\Prefabs\ObjetEnSceneScript.cs" />
      <Compile Include="Assets\RPG\Scripts\Caracteristiques.cs" />
+     <Compile Include="Assets\Zombie\ZombieScripts\Creation_Zombie.cs" />
+     <Compile Include="Assets\Zombie\ZombieScripts\ZombieCaracteristiques.cs" />
+     <Compile Include="Assets\Zombie\ZombieScripts\ZombieHealth.cs" />
+     <Compile Include="Assets\Zombie\ZombieScripts\ZombieSousAttaque.cs" />
+     <Compile Include="Assets\Zombie\ZombieScripts\Zombie_Comportement.cs" />
      <Compile Include="Assets\_IMPORTED\Gem Shader\Example\GemSpawner.cs" />
      <Compile Include="Assets\_IMPORTED\SimpleJSON\SimpleJSON.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />

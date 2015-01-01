@@ -68,6 +68,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	void SelectionnerReplique( Replique repliqueSelectionnee ) {
 		repliqueChoisie = repliqueSelectionnee;
 		repliquesSuivantes = repliqueSelectionnee.GetRepliquesSuivantes ();
+		if(repliquesSuivantes.Count==0) Debug.Log ("Pas de réplique suivante");
 		//Activation des flags
 		foreach(int idFlag in repliqueChoisie.GetFlagsActives ()) {
 			if(FlagManager.ActiverFlag (idFlag))
@@ -89,15 +90,11 @@ public class Dialogue : MonoBehaviour, Interactif {
 			// Association avec le gameObject qui prononcera la réplique
 			string nomGoAssocie = json["repliques"][i]["goAssocie"].Value;
 			if( nomGoAssocie.CompareTo("") != 0 ){
-				if( nomGoAssocie.CompareTo("pnjDialogue") == 0 ) // On associe la réplique du gameObject parent si le nom est pnjDialogue
-					replique.SetGoAssocie( gameObject );
-				else { // Sinon on recherche le gameObject correspondant avant de l'associer
-					GameObject go = GameObject.Find ( nomGoAssocie );
-					if( go )
-						replique.SetGoAssocie( go );
-					else
-						Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
-				}
+				GameObject go = GameObject.Find ( nomGoAssocie );
+				if( go )
+					replique.SetGoAssocie( go );
+				else
+					Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
 			}
 
 			replique.SetFlagsRequis( json["repliques"][i]["flagsRequis"] );
@@ -162,7 +159,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 			Debug.Log ("Mouvements du joueur non accessibles");
 		repliqueChoisie = repliques[0]; // Pointage de repliquesActuelles à la tête de repliques (qui est une replique sans contenu)
 		repliquesSuivantes = repliqueChoisie.GetRepliquesSuivantes ();
-		Debug.Log (repliqueChoisie.GetTexte());
+		Debug.Log ("Replique choisie : "+repliqueChoisie.GetTexte());
 		interactionDeclenchee = true;
 	}
 	

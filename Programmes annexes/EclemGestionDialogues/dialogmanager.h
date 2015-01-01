@@ -35,6 +35,7 @@ public:
     QStringList getIdList( QString data = "repliques" ); // Liste des tous les id de la structure dont le nom a été donné en paramètre (par défaut les répliques, mais peut aussi servir pour les flags)
     QStringList getGoList(); // Liste des game object
     QStringList getToDisplayFlagsList( QString separator = "-"); // Liste qui sera affichée à l'utilisateur, avec l'id du flag et la description de celui-ci séparés par "separator"
+    static QStringList toFlagIdList( QStringList displayedFlagList ); // Transforme la liste des flags affichés (id+description) en simple liste d'id
     bool updateReplica( QJsonObject newReplica, int position ); // Met à jour la réplique située à l'index position de la liste des répliques
     bool updateDialogFile();
     void deleteReplicaFromJson( QString id );

@@ -91,7 +91,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 9965f9b7dc6dc6e4a9e47f795e3d7b11, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 133, y: 8, z: 0}
+  m_Position: {x: 132, y: 12, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -155,28 +155,16 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110246287}
-      second:
-      - {fileID: 110156539}
+      first: {fileID: 0}
+      second: []
     data:
       first: {fileID: 110200000}
       second:
       - {fileID: 110100000}
     data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
+      first: {fileID: 110246287}
+      second:
+      - {fileID: 110156539}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -108, y: 24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

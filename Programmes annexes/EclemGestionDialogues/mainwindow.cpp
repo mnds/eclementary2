@@ -460,11 +460,11 @@ QJsonObject MainWindow::getReplicaFromGUI( QLayout* replicaLayout ) {
             QListView* enabledFlagsListView = dynamic_cast<QListView*>(flagsLayout->itemAtPosition(2, 1)->widget());
 
             if( requiredFlagsListView != NULL )
-                requiredFlags = static_cast<QStringListModel*>(requiredFlagsListView->model())->stringList();
+                requiredFlags = DialogManager::toFlagIdList( static_cast<QStringListModel*>(requiredFlagsListView->model())->stringList() );
             if( blockingFlagsListView != NULL )
-                blockingFlags = static_cast<QStringListModel*>(blockingFlagsListView->model())->stringList();
+                blockingFlags = DialogManager::toFlagIdList( static_cast<QStringListModel*>(blockingFlagsListView->model())->stringList() );
             if( enabledFlagsListView != NULL )
-                enabledFlags = static_cast<QStringListModel*>(enabledFlagsListView->model())->stringList();
+                enabledFlags = DialogManager::toFlagIdList( static_cast<QStringListModel*>(enabledFlagsListView->model())->stringList() );
         }
 
         replica = DialogManager::createReplica( id, goText, text, nextReplicasId, requiredFlags, blockingFlags, enabledFlags );
