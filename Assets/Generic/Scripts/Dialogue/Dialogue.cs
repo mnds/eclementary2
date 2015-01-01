@@ -89,15 +89,11 @@ public class Dialogue : MonoBehaviour, Interactif {
 			// Association avec le gameObject qui prononcera la réplique
 			string nomGoAssocie = json["repliques"][i]["goAssocie"].Value;
 			if( nomGoAssocie.CompareTo("") != 0 ){
-				if( nomGoAssocie.CompareTo("pnjDialogue") == 0 ) // On associe la réplique du gameObject parent si le nom est pnjDialogue
-					replique.SetGoAssocie( gameObject );
-				else { // Sinon on recherche le gameObject correspondant avant de l'associer
-					GameObject go = GameObject.Find ( nomGoAssocie );
-					if( go )
-						replique.SetGoAssocie( go );
-					else
-						Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
-				}
+				GameObject go = GameObject.Find ( nomGoAssocie );
+				if( go )
+					replique.SetGoAssocie( go );
+				else
+					Debug.Log ("Le gameObject " + nomGoAssocie + "n'a pu être trouvé");
 			}
 
 			replique.SetFlagsRequis( json["repliques"][i]["flagsRequis"] );
