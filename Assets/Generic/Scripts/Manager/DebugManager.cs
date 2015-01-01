@@ -23,8 +23,13 @@ public class DebugManager : MonoBehaviour {
 	string commandeNormal = "/normal";
 	string commandeActuelle = "";
 
+	public ModesJeu modeDepart;
 	static public ModesJeu mode = ModesJeu.Normal;
-	
+
+	void Start () {
+		mode=modeDepart;
+	}
+
 	void Update () {
 		//On récupère les touches entrées.
 		foreach (char c in Input.inputString) {

@@ -11,7 +11,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ActivationFlag : MonoBehaviour {
+public class ActivationFlag : AffichageTexteEcran {
 	public int flagActive = 0;
 	public bool activable = true; //Si à true, on essaiera d'activer le flag associé. Si le flag passe à true, on déclenche les événements. Cette variable passe à false après l'activation du flag pour éviter de l'activer plein de fois. En pratique, on laisse à true au départ.
 	public bool detruireApresActivation = true; //Le script s'autodétruit une fois le flag activé.
@@ -31,7 +31,7 @@ public class ActivationFlag : MonoBehaviour {
 			//Si le flag est activé, plus besoin de pouvoir l'activer. On désactive le script.
 			activable = !FlagManager.ActiverFlag(flagActive);
 			if(!activable) {
-				StartCoroutine(AfficherTexte (texteSiActivable));
+				StartCoroutine(AfficherTextePrioritaire (texteSiActivable));
 				FaireActionsConnexes(); //Tout ce qui concerne uniquement cette interaction (appel à des événements...)
 				animationActivation=GetComponent<Animation>();
 				if(animationActivation) {
@@ -40,10 +40,10 @@ public class ActivationFlag : MonoBehaviour {
 				}
 			}
 			else
-				StartCoroutine(AfficherTexte (texteSiNonActivable)); //Il manque un flag.
+				StartCoroutine(AfficherTextePrioritaire (texteSiNonActivable)); //Il manque un flag.
 		}
 		else
-			StartCoroutine(AfficherTexte (texteSiNonActivable)); //Il manque une condition extérieure.
+			StartCoroutine(AfficherTextePrioritaire (texteSiNonActivable)); //Il manque une condition extérieure.
 	}
 
 	//Destinée à etre override
@@ -60,14 +60,7 @@ public class ActivationFlag : MonoBehaviour {
 
 	}
 
-	public IEnumerator AfficherTexte(string texte) {
-
-		ControlCenter.GetTexte ().text = texte;
-		yield return new WaitForSeconds(ControlCenter.tempsAffichageTexteInteraction);
-		Debug.Log ("Fin texte");
-		if(ControlCenter.GetTexte ().text==texte) //Si le texte n'a pas changé, on met un texte vide. Sinon on ne fait rien, le texte a changé !
-			ControlCenter.GetTexte ().text="";
-
+	public override void ActionsApresAffichage() {
 		//On détruit maintenant qu'on a mis les textes comme il faut
 		if(!activable)
 			if(detruireApresActivation)

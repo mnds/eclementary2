@@ -29,13 +29,14 @@ static public class ControlCenter {
 	static GameObject joueurPrincipal;
 	static Camera cameraPrincipale;
 
-	static GUIText texteInteraction;
+	static GUIText texteInteraction; //Texte affiché à l'écran
+	static bool texteEstPrioritaire; //Le texte vient d'une interaction ou d'un raycast ? Si raycast, le supprimer si rien en raycast, sinon attendre le cooldown.
 	static public float tempsAffichageTexteInteraction = 1f;
 
 	//Garde en mémoire les scènes
 	static int idScenePrecedente;
 
-	static public void SetTexte (GUIText texte) {
+	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
 		texteInteraction = texte;
 	}
 
@@ -118,5 +119,13 @@ static public class ControlCenter {
 
 	static public bool GetPause () {
 		return pause;
+	}
+
+	static public void SetTexteEstPrioritaire (bool texteEstPrioritaire_) {
+		texteEstPrioritaire=texteEstPrioritaire_;
+	}
+	
+	static public bool GetTexteEstPrioritaire () {
+		return texteEstPrioritaire;
 	}
 }

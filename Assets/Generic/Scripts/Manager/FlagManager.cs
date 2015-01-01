@@ -67,7 +67,7 @@ static public class FlagManager {
 
 		//Flags du scénario
 		flags.Add (new Flag(1,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){}));
-		flags.Add (new Flag(2,false,"Thermobus affich‚",new List<int>(){1},new List<Evenement>(){}));
+		flags.Add (new Flag(2,false,"Thermobus affiche",new List<int>(){1},new List<Evenement>(){}));
 		flags.Add (new Flag(3,false,"Bus choisi",new List<int>(){2},new List<Evenement>(){}));
 		flags.Add (new Flag(4,false,"Retour du WEI",new List<int>(){3},new List<Evenement>(){}));
 		flags.Add (new Flag(5,false,"Papier du cadavre obtenu",new List<int>(){4},new List<Evenement>(){}));
@@ -125,7 +125,7 @@ static public class FlagManager {
 	 * @brief Active un flag si possible, et renvoie true s'il est activé.
 	 * @param id Numéro du flag à activer.
 	 *
-	 * @return Renvoie true si le flag est actif, sans tenir compte de son état avant l'appel à cette fonction.
+	 * @return Renvoie true si le flag est actif, sans tenir compte de son état avant l'appel à cette fonction. Renvoie false pour un flag inexistant.
 	 */
 	static public bool ActiverFlag(int id) {
 		return ActiverFlag (ChercherFlagParId (id));
@@ -135,9 +135,10 @@ static public class FlagManager {
 	 * @brief Active un flag si possible, et renvoie true s'il est activé.
 	 * @param f Référence du flag à activer.
 	 *
-	 * @return Renvoie true si le flag est actif, sans tenir compte de son état avant l'appel à cette fonction.
+	 * @return Renvoie true si le flag est actif, sans tenir compte de son état avant l'appel à cette fonction. Renvoie false pour un flag inexistant.
 	 */
 	static public bool ActiverFlag(Flag f) {
+		if(f==null) return false;
 		//On vérifie si le flag est activable
 		foreach(int id in f.predecesseurs) {//Si l'un est inactif on ne peut pas activer ce Flag
 			if(!ChercherFlagParId (id).actif) {
