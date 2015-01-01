@@ -112,6 +112,16 @@ QJsonObject DialogManager::createReplica( QString id, QString go, QString text, 
     return replica;
 }
 
+QStringList DialogManager::toFlagIdList( QStringList displayedFlagList ) {
+    QStringList idList;
+
+    foreach( QString line, displayedFlagList ) {
+        idList.append(line.split("-")[0]); // Récupération de l'id du flag et ajout à la liste
+    }
+
+    return idList;
+}
+
 bool DialogManager::updateReplica( QJsonObject newReplica, int position) {
     bool done = false;
 

@@ -1,0 +1,121 @@
+{
+    "repliques": [
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "",
+            "id": "0",
+            "repSuivantes": [
+                "1",
+                "4",
+                "5"
+            ],
+            "texte": ""
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "2"
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "1",
+            "repSuivantes": [
+                "2",
+                "3"
+            ],
+            "texte": "Bonjour 0A ! Pret pour le WEI ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "2",
+            "repSuivantes": [
+                "21"
+            ],
+            "texte": "C'est quoi le WEI ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "1"
+            ],
+            "goAssocie": "Weiman",
+            "id": "21",
+            "repSuivantes": [
+                "-31"
+            ],
+            "texte": "C'est le week-end d'integration a Centrale, qui clôt la semaine d'integration que tu viens d'avoir."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "3",
+            "repSuivantes": [
+                "-31"
+            ],
+            "texte": "Je suis pret !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Weiman",
+            "id": "-31",
+            "repSuivantes": [
+            ],
+            "texte": "Tu dois choisir ton bus maintenant. Je te redonne le thermobus pour que tu puisses faire ton choix. Rappelle-toi, plus un bus est chaud, plus tu vas t'eclater !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "3"
+            ],
+            "flagsRequis": [
+                "2"
+            ],
+            "goAssocie": "Weiman",
+            "id": "4",
+            "repSuivantes": [
+            ],
+            "texte": "Alors, tu as choisi ton bus ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "3"
+            ],
+            "goAssocie": "Weiman",
+            "id": "5",
+            "repSuivantes": [
+            ],
+            "texte": "Rappelle-toi 0A, si tu veux pas, tu bois pas !"
+        }
+    ]
+}
