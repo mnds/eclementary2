@@ -1,0 +1,213 @@
+{
+    "repliques": [
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "",
+            "id": "0",
+            "repSuivantes": [
+                "1",
+                "5",
+                "3",
+                "4",
+                "6"
+            ],
+            "texte": ""
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "110"
+            ],
+            "flagsRequis": [
+                "100"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "1",
+            "repSuivantes": [
+                "2"
+            ],
+            "texte": "Bienvenue au LIRIS !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "10"
+            ],
+            "goAssocie": "Joueur",
+            "id": "2",
+            "repSuivantes": [
+                "21"
+            ],
+            "texte": "Il y a des zombies dehors ! Qu'est-ce que vous faites ici ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "21",
+            "repSuivantes": [
+                "22"
+            ],
+            "texte": "Nous nous sommes enfermés ici pour nous protéger. Nous cherchons une solution."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "22",
+            "repSuivantes": [
+                "23"
+            ],
+            "texte": "Tu pourrais nous aider. Il nous manque quelques composants."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "23",
+            "repSuivantes": [
+                "24"
+            ],
+            "texte": "Tu devrais pouvoir les trouver à la décharge. C'est à gauche en sortant d'ici."
+        },
+        {
+            "flagsActives": [
+                "110"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "24",
+            "repSuivantes": [
+            ],
+            "texte": "Je ne vais pas sortir, j'ai du travail. Bonne chance !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "115"
+            ],
+            "flagsRequis": [
+                "110"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "3",
+            "repSuivantes": [
+            ],
+            "texte": "Il manque encore des composants. Bonne chance !"
+        },
+        {
+            "flagsActives": [
+                "120"
+            ],
+            "flagsBloquants": [
+                "120"
+            ],
+            "flagsRequis": [
+                "115"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "4",
+            "repSuivantes": [
+                "41"
+            ],
+            "texte": "Parfait ! Merci d'avoir tout rapporté."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "41",
+            "repSuivantes": [
+                "42"
+            ],
+            "texte": "Avec ça, je vais pouvoir étudier le comportement de ces zombies."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "42",
+            "repSuivantes": [
+                "43"
+            ],
+            "texte": "Pour te remercier, je te donne ce gros sac à dos. C'est un prototype. Il devrait te permettre de transporter plus de choses qu'un simple sac."
+        },
+        {
+            "flagsActives": [
+                "130"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "43",
+            "repSuivantes": [
+            ],
+            "texte": "Bonne continuation !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "140"
+            ],
+            "flagsRequis": [
+                "120"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "5",
+            "repSuivantes": [
+            ],
+            "texte": "Tu devrais retourner au foyer, tu risques d'être blessé."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "280"
+            ],
+            "flagsRequis": [
+                "140"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "6",
+            "repSuivantes": [
+            ],
+            "texte": "Je travaille. Retourne te cacher !"
+        }
+    ]
+}

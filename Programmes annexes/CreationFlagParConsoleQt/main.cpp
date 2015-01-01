@@ -158,6 +158,25 @@ int main(int argc, char *argv[])
                 }
             }
 
+            //Bloquants
+            cout<<endl;
+            string bloquants="";
+            string bloquantActuel="1";
+            while(is_number(bloquantActuel)) {
+
+                cout<<"Entrez les numeros des bloquants. Entrez une série de lettres pour arreter.";
+                cin>>bloquantActuel;
+                if(is_number(bloquantActuel)) {
+                    if(bloquants=="") {
+                        bloquants=bloquantActuel;
+                    }
+                    else //On ajoute la virgule
+                    {
+                        bloquants+=","+bloquantActuel;
+                    }
+                }
+            }
+
             //Evenements
             cout<<endl;
             string evenements="";
@@ -181,7 +200,9 @@ int main(int argc, char *argv[])
             //Affichage a l'ecran du flag
             string ecritureFlag;
             ecritureFlag="new Flag("+numeroFlag+","+isFlagTrue+",\""+description+"\","
-                    +"new List<int>(){"+predecesseurs+"}"+",new List<Evenement>(){"+evenements+"})";
+                    +"new List<int>(){"+predecesseurs+"}"
+                    +",new List<int>(){"+bloquants+"}"
+                    +",new List<Evenement>(){"+evenements+"})";
             cout<<"Le flag est : "+ecritureFlag<<endl;
 
             //Nouvelle tournee

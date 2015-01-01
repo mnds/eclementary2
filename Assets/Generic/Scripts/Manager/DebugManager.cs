@@ -24,10 +24,9 @@ public class DebugManager : MonoBehaviour {
 	string commandeActuelle = "";
 
 	public ModesJeu modeDepart;
-	static public ModesJeu mode = ModesJeu.Normal;
 
 	void Start () {
-		mode=modeDepart;
+		ControlCenter.mode=modeDepart;
 	}
 
 	void Update () {
@@ -50,16 +49,16 @@ public class DebugManager : MonoBehaviour {
 
 	void VerifierCombinaison() { //La combinaison entrée fait-elle quelque chose ?
 		//On vérifie si la combinaison actuelle correspond à quelque chose
-		switch (mode) {
+		switch (ControlCenter.mode) {
 		case ModesJeu.Normal:
 			if(commandeActuelle==commandeDebug) { //Si on demande à passer en debug
-				mode=ModesJeu.Debug;
+				ControlCenter.mode=ModesJeu.Debug;
 				Debug.Log ("Mode Debug activé");
 			}
 			break;
 		case ModesJeu.Debug:
 			if(commandeActuelle==commandeNormal) { //Si on demande à passer en debug
-				mode=ModesJeu.Normal;
+				ControlCenter.mode=ModesJeu.Normal;
 				Debug.Log ("Mode Debug désactivé");
 			}
 			if(commandeActuelle.Length>6 && commandeActuelle.Substring(0,6)=="/load ") {
@@ -70,7 +69,7 @@ public class DebugManager : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		if(mode==ModesJeu.Debug) {
+		if(ControlCenter.mode==ModesJeu.Debug) {
 			GUI.Label (new Rect (0, 0, 100, 35), "DebugMode"); //On écrit qu'on est en mode debug
 		}
 	}
