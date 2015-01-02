@@ -72,7 +72,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 		//Activation des flags
 		foreach(int idFlag in repliqueChoisie.GetFlagsActives ()) {
 			if(FlagManager.ActiverFlag (idFlag))
-				Debug.Log ("Activation du flag "+idFlag);
+				Debug.Log ("Activation du flag "+idFlag+" : "+FlagManager.ChercherFlagParId (idFlag).description);
 			else
 				Debug.Log ("Impossible d'activer le flag "+idFlag);
 		}

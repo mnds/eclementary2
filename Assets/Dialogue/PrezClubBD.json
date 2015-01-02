@@ -1,0 +1,257 @@
+{
+    "repliques": [
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "",
+            "id": "0",
+            "repSuivantes": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "texte": ""
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "160"
+            ],
+            "flagsRequis": [
+                "150"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "1",
+            "repSuivantes": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "texte": "Bienvenue au club BD ! Tu seras en sécurité ici. Je suis le président du club."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "11",
+            "repSuivantes": [
+                "111"
+            ],
+            "texte": "Comment êtes-vous entrés ? Le foyer est barricadé."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "12",
+            "repSuivantes": [
+                "121"
+            ],
+            "texte": "Qu'est-ce que vous faites là ?"
+        },
+        {
+            "flagsActives": [
+                "10"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "13",
+            "repSuivantes": [
+                "131"
+            ],
+            "texte": "C'est quoi ces choses dehors ?"
+        },
+        {
+            "flagsActives": [
+                "151"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "111",
+            "repSuivantes": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "texte": "C'est nous qui avons sécurisé le périmètre. Après le WEI, on s'est retrouvés ici."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "152"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "121",
+            "repSuivantes": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "texte": "On se repose. On s'amuse ! Ca ne sert à rien de rester dehors à ne rien faire."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "153"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "131",
+            "repSuivantes": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "texte": "Des zombies ? Des morts-vivants ? Des monstres ? Tu choisis."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "160"
+            ],
+            "flagsRequis": [
+                "151",
+                "152",
+                "153"
+            ],
+            "goAssocie": "Joueur",
+            "id": "14",
+            "repSuivantes": [
+                "141"
+            ],
+            "texte": "Où est-ce que je peux manger ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "141",
+            "repSuivantes": [
+                "142"
+            ],
+            "texte": "Tu peux acheter de la nourriture et de la boisson ici. Il te faudra ta codebar par contre."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "142",
+            "repSuivantes": [
+                "143"
+            ],
+            "texte": "C'est quoi la codebar ?"
+        },
+        {
+            "flagsActives": [
+                "160"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "143",
+            "repSuivantes": [
+            ],
+            "texte": "C'est une carte qui te permet de payer pour tout ici à Centrale. Si tu ne l'as pas sur toi, tu l'as peut-être perdue en revenant du WEI ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "170"
+            ],
+            "flagsRequis": [
+                "160"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "2",
+            "repSuivantes": [
+            ],
+            "texte": "Va chercher ta codebar. Elle doit se trouver près de l'endroit où tu es revenu après le WEI. Bonne chance !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "175"
+            ],
+            "flagsRequis": [
+                "170"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "3",
+            "repSuivantes": [
+                "31"
+            ],
+            "texte": "Tu as récupéré ta codebar ? Tu es plus têtu que je ne l'aurais pensé."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "31",
+            "repSuivantes": [
+                "4"
+            ],
+            "texte": "Tu vas pouvoir consommer de la Kroka Cola ! Tu en a probablement déjà bu un peu au WEI."
+        },
+        {
+            "flagsActives": [
+                "175"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "170"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "4",
+            "repSuivantes": [
+            ],
+            "texte": "Tu devrais aller voir les gens au fond du club. Ils devraient t'apprendre un peu plus de choses sur ce qui se passe."
+        }
+    ]
+}

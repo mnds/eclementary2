@@ -42,11 +42,21 @@ static public class FlagManager {
 			evenementsDeclenches=evenements_;
 		}
 
+		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_, List<int> bloquants_) {
+			id=id_;
+			actif=actifDebut;
+			description=description_;
+			predecesseurs=predecesseurs_;
+			bloquants=bloquants_;
+			evenementsDeclenches=new List<Evenement>(){};
+		}
+
 		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_) {
 			id=id_;
 			actif=actifDebut;
 			description=description_;
 			predecesseurs=predecesseurs_;
+			bloquants=new List<int>(){};
 			evenementsDeclenches=new List<Evenement>(){};
 		}
 	}
@@ -87,14 +97,18 @@ static public class FlagManager {
 		flags.Add (new Flag(80,false,"Recuperation du plan de Centrale",new List<int>(){60},new List<Evenement>(){}));
 		flags.Add (new Flag(90,false,"Recuperation du message du personnage du foyer dans sa chambre",new List<int>(){60},new List<Evenement>(){}));
 		flags.Add (new Flag(100,false,"Entree au LIRIS",new List<int>(){90},new List<Evenement>(){}));
-		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<Evenement>(){}));
+		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){}));
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){}));
 		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){}));
-		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<Evenement>(){}));
-		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<Evenement>(){}));
+		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){120},new List<Evenement>(){}));
+		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
 		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){}));
-		flags.Add (new Flag(160,false,"Debut quete recuperation codebar",new List<int>(){150},new List<Evenement>(){}));
+		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150},new List<int>(){151}));
+		flags.Add (new Flag(152,false,"PrezBD explique pourquoi ils sont la",new List<int>(){150},new List<int>(){152}));
+		flags.Add (new Flag(153,false,"PrezBD explique ce que sont les monstres",new List<int>(){150},new List<int>(){153}));
+		flags.Add (new Flag(160,false,"Debut quete recuperation codebar",new List<int>(){150},new List<int>(){160,210},new List<Evenement>(){}));
 		flags.Add (new Flag(170,false,"Codebar recuperee",new List<int>(){160},new List<Evenement>(){}));
+		flags.Add (new Flag(175,false,"Indication du prez club BD sur le club Serial Gamers donnée",new List<int>(){170},new List<int>(){180}));
 		flags.Add (new Flag(180,false,"Acquisition part pizza du prez du club BD",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(190,false,"Systeme d'evolution du personnage acquis",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(200,false,"Recuperation montre",new List<int>(){170},new List<Evenement>(){}));
@@ -110,11 +124,11 @@ static public class FlagManager {
 		flags.Add (new Flag(300,false,"Debut quete DSI",new List<int>(){290},new List<Evenement>(){}));
 		flags.Add (new Flag(310,false,"Ramassage cle DSI",new List<int>(){300},new List<Evenement>(){}));
 		flags.Add (new Flag(320,false,"Fin quete DSI",new List<int>(){310},new List<Evenement>(){}));
-		flags.Add (new Flag(330,false,"Debut quete foret",new List<int>(){320},new List<Evenement>(){}));
+		flags.Add (new Flag(330,false,"Debut quete foret",new List<int>(){320},new List<int>(){350},new List<Evenement>(){}));
 		flags.Add (new Flag(340,false,"Recuperation cle gymnase",new List<int>(){330},new List<Evenement>(){}));
 		flags.Add (new Flag(350,false,"Fin quete foret",new List<int>(){340},new List<Evenement>(){}));
 		flags.Add (new Flag(360,false,"Ouverture gymnase",new List<int>(){340,350},new List<Evenement>(){}));
-		flags.Add (new Flag(370,false,"Debut combat gymnase",new List<int>(){360},new List<Evenement>(){}));
+		flags.Add (new Flag(370,false,"Debut combat gymnase",new List<int>(){360},new List<int>(){380},new List<Evenement>(){}));
 		flags.Add (new Flag(380,false,"Fin combat gymnase",new List<int>(){370},new List<Evenement>(){}));
 		flags.Add (new Flag(390,false,"Debut quete scolarite",new List<int>(){380},new List<Evenement>(){}));
 		flags.Add (new Flag(400,false,"Fin quete scolarite",new List<int>(){390},new List<Evenement>(){}));
@@ -150,6 +164,7 @@ static public class FlagManager {
 	 * @return Renvoie true si le flag est actif, sans tenir compte de son etat avant l'appel à cette fonction. Renvoie false pour un flag inexistant.
 	 */
 	static public bool ActiverFlag(Flag f) {
+		Debug.Log ("Tentative d'activation du flag d'id : "+f.id);
 		if(f==null) return false;
 		//On verifie si le flag est activable
 		foreach(int id in f.predecesseurs) {//Si l'un est inactif on ne peut pas activer ce Flag
