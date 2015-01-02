@@ -10,9 +10,12 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ActivationFlag : AffichageTexteEcran {
 	public int flagActive = 0;
+	public List<int> flagRequisPourDestruction = new List<int>(){}; //Liste des flags qui doivent etre activés pour que ça marche. Indépendant de FlagManager.
+	public List<int> flagBloquantsPourDestruction = new List<int>(){}; //Liste des flags qui ne doivent etre activés pour que ça marche. Indépendant de FlagManager.
 	public bool activable = true; //Si à true, on essaiera d'activer le flag associé. Si le flag passe à true, on déclenche les événements. Cette variable passe à false après l'activation du flag pour éviter de l'activer plein de fois. En pratique, on laisse à true au départ.
 	public bool detruireApresActivation = true; //Le script s'autodétruit une fois le flag activé.
 	private Animation animationActivation; //Si on veut lancer une animation
@@ -62,8 +65,25 @@ public class ActivationFlag : AffichageTexteEcran {
 
 	public override void ActionsApresAffichage() {
 		//On détruit maintenant qu'on a mis les textes comme il faut
-		if(!activable)
-			if(detruireApresActivation)
+		if(!activable) {
+			if(detruireApresActivation) {
+				foreach(int id in flagRequisPourDestruction) {//Si l'un est inactif on ne peut pas activer ce Flag
+					Debug.Log ("Etude pour la suppression de l'activationFlag du flag "+flagActive+" du predecesseur d'id "+id);
+					if(!FlagManager.ChercherFlagParId (id).actif) {
+						Debug.Log("Flag id : "+id+" pas activable");
+						return;
+					}
+				}
+				
+				foreach(int id in flagBloquantsPourDestruction) {//Si l'un est inactif on ne peut pas activer ce Flag
+					Debug.Log ("Etude pour la suppression de l'activationFlag du flag "+flagActive+" du bloquant d'id "+id);
+					if(FlagManager.ChercherFlagParId (id).actif) {
+						Debug.Log("Flag id : "+id+" pas activable");
+						return;
+					}
+				}
 				Destroy (this);
+			}
+		}
 	}
 }

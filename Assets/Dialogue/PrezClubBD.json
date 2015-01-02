@@ -13,7 +13,10 @@
                 "1",
                 "2",
                 "3",
-                "4"
+                "4",
+                "5",
+                "6",
+                "7"
             ],
             "texte": ""
         },
@@ -34,12 +37,13 @@
                 "13",
                 "14"
             ],
-            "texte": "Bienvenue au club BD ! Tu seras en sÃ©curitÃ© ici. Je suis le prÃ©sident du club."
+            "texte": "Bienvenue au club BD ! Tu seras en sécurité ici. Je suis le président du club."
         },
         {
             "flagsActives": [
             ],
             "flagsBloquants": [
+                "151"
             ],
             "flagsRequis": [
             ],
@@ -48,12 +52,13 @@
             "repSuivantes": [
                 "111"
             ],
-            "texte": "Comment Ãªtes-vous entrÃ©s ? Le foyer est barricadÃ©."
+            "texte": "Comment êtes-vous entrés ? Le foyer est barricadé."
         },
         {
             "flagsActives": [
             ],
             "flagsBloquants": [
+                "152"
             ],
             "flagsRequis": [
             ],
@@ -62,13 +67,13 @@
             "repSuivantes": [
                 "121"
             ],
-            "texte": "Qu'est-ce que vous faites lÃ  ?"
+            "texte": "Qu'est-ce que vous faites là ?"
         },
         {
             "flagsActives": [
-                "10"
             ],
             "flagsBloquants": [
+                "153"
             ],
             "flagsRequis": [
             ],
@@ -95,15 +100,15 @@
                 "13",
                 "14"
             ],
-            "texte": "C'est nous qui avons sÃ©curisÃ© le pÃ©rimÃ¨tre. AprÃ¨s le WEI, on s'est retrouvÃ©s ici."
+            "texte": "C'est nous qui avons sécurisé le périmètre. Après le WEI, on s'est retrouvés ici."
         },
         {
             "flagsActives": [
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
                 "152"
+			],
+            "flagsBloquants": [
+			],
+            "flagsRequis": [
             ],
             "goAssocie": "PrezClubBD",
             "id": "121",
@@ -113,15 +118,15 @@
                 "13",
                 "14"
             ],
-            "texte": "On se repose. On s'amuse ! Ca ne sert Ã  rien de rester dehors Ã  ne rien faire."
+            "texte": "On se repose. On s'amuse ! Ca ne sert à rien de rester dehors à ne rien faire."
         },
         {
             "flagsActives": [
+                "153"
             ],
             "flagsBloquants": [
             ],
             "flagsRequis": [
-                "153"
             ],
             "goAssocie": "PrezClubBD",
             "id": "131",
@@ -149,7 +154,7 @@
             "repSuivantes": [
                 "141"
             ],
-            "texte": "OÃ¹ est-ce que je peux manger ?"
+            "texte": "Où est-ce que je peux manger ?"
         },
         {
             "flagsActives": [
@@ -191,7 +196,7 @@
             "id": "143",
             "repSuivantes": [
             ],
-            "texte": "C'est une carte qui te permet de payer pour tout ici Ã  Centrale. Si tu ne l'as pas sur toi, tu l'as peut-Ãªtre perdue en revenant du WEI ?"
+            "texte": "C'est une carte qui te permet de payer pour tout ici à Centrale. Si tu ne l'as pas sur toi, tu l'as peut-être perdue en revenant du WEI ?"
         },
         {
             "flagsActives": [
@@ -206,7 +211,7 @@
             "id": "2",
             "repSuivantes": [
             ],
-            "texte": "Va chercher ta codebar. Elle doit se trouver prÃ¨s de l'endroit oÃ¹ tu es revenu aprÃ¨s le WEI. Bonne chance !"
+            "texte": "Va chercher ta codebar. Elle doit se trouver près de l'endroit où tu es revenu après le WEI. Bonne chance !"
         },
         {
             "flagsActives": [
@@ -222,10 +227,11 @@
             "repSuivantes": [
                 "31"
             ],
-            "texte": "Tu as rÃ©cupÃ©rÃ© ta codebar ? Tu es plus tÃªtu que je ne l'aurais pensÃ©."
+            "texte": "Tu as récupéré ta codebar ? Tu es plus têtu que je ne l'aurais pensé."
         },
         {
             "flagsActives": [
+				"171"
             ],
             "flagsBloquants": [
             ],
@@ -236,22 +242,83 @@
             "repSuivantes": [
                 "4"
             ],
-            "texte": "Tu vas pouvoir consommer de la Kroka Cola ! Tu en a probablement dÃ©jÃ  bu un peu au WEI."
+            "texte": "Tu vas pouvoir consommer de la Kroka Cola ! Tu en a probablement déjà bu un peu au WEI."
         },
         {
             "flagsActives": [
                 "175"
             ],
             "flagsBloquants": [
+                "180"
             ],
             "flagsRequis": [
-                "170"
+                "171"
             ],
             "goAssocie": "PrezClubBD",
             "id": "4",
             "repSuivantes": [
             ],
             "texte": "Tu devrais aller voir les gens au fond du club. Ils devraient t'apprendre un peu plus de choses sur ce qui se passe."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "230"
+            ],
+            "flagsRequis": [
+                "180"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "5",
+            "repSuivantes": [
+            ],
+            "texte": "Tu devrais rentrer chez toi te reposer. Reviens nous voir demain."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "250"
+            ],
+            "flagsRequis": [
+                "230"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "6",
+            "repSuivantes": [
+                "61"
+            ],
+            "texte": "Salut ! Je ne pensais pas que tu tiendrais la nuit mais bon."
+        },
+        {
+            "flagsActives": [
+                "250"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "61",
+            "repSuivantes": [
+            ],
+            "texte": "On a vu les profs d'économie tourner sur le campus. Tu devrais aller à leur rencontre, il devraient pouvoir t'aider. Reviens ici si tu as besoin d'être à l'abri."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "270"
+            ],
+            "flagsRequis": [
+                "250"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "7",
+            "repSuivantes": [
+            ],
+            "texte": "Va chercher les profs d'éco ! N'aies pas peur d'eux, ils sont inoffensifs. Enfin, c'est ce qu'on dit."
         }
     ]
 }

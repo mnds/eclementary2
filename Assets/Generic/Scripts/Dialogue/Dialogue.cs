@@ -67,8 +67,6 @@ public class Dialogue : MonoBehaviour, Interactif {
 	// Effectue le changement de la réplique actuelle
 	void SelectionnerReplique( Replique repliqueSelectionnee ) {
 		repliqueChoisie = repliqueSelectionnee;
-		repliquesSuivantes = repliqueSelectionnee.GetRepliquesSuivantes ();
-		if(repliquesSuivantes.Count==0) Debug.Log ("Pas de réplique suivante");
 		//Activation des flags
 		foreach(int idFlag in repliqueChoisie.GetFlagsActives ()) {
 			if(FlagManager.ActiverFlag (idFlag))
@@ -76,6 +74,10 @@ public class Dialogue : MonoBehaviour, Interactif {
 			else
 				Debug.Log ("Impossible d'activer le flag "+idFlag);
 		}
+		//On récupère les répliques suivantes APRES avoir activé les flags
+		repliquesSuivantes = repliqueSelectionnee.GetRepliquesSuivantes ();
+		if(repliquesSuivantes.Count==0) Debug.Log ("Pas de réplique suivante");
+
 	}
 
 	/* Renseigne les champs des objets Repliques

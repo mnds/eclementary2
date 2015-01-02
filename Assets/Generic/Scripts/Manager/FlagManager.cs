@@ -100,25 +100,26 @@ static public class FlagManager {
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){}));
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){}));
 		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){}));
-		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){120},new List<Evenement>(){}));
+		flags.Add (new Flag(130,true,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){}));
 		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
-		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){}));
-		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150},new List<int>(){151}));
-		flags.Add (new Flag(152,false,"PrezBD explique pourquoi ils sont la",new List<int>(){150},new List<int>(){152}));
-		flags.Add (new Flag(153,false,"PrezBD explique ce que sont les monstres",new List<int>(){150},new List<int>(){153}));
+		flags.Add (new Flag(150,true,"Entree club BD",new List<int>(){130},new List<Evenement>(){}));
+		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150}));
+		flags.Add (new Flag(152,false,"PrezBD explique pourquoi ils sont la",new List<int>(){150}));
+		flags.Add (new Flag(153,false,"PrezBD explique ce que sont les monstres",new List<int>(){150}));
 		flags.Add (new Flag(160,false,"Debut quete recuperation codebar",new List<int>(){150},new List<int>(){160,210},new List<Evenement>(){}));
 		flags.Add (new Flag(170,false,"Codebar recuperee",new List<int>(){160},new List<Evenement>(){}));
+		flags.Add (new Flag(171,false,"Remarque prez club BD - intermediaire dialogue",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(175,false,"Indication du prez club BD sur le club Serial Gamers donnée",new List<int>(){170},new List<int>(){180}));
-		flags.Add (new Flag(180,false,"Acquisition part pizza du prez du club BD",new List<int>(){170},new List<Evenement>(){}));
+		flags.Add (new Flag(180,false,"Acquisition part pizza du prez Serial Gamers",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(190,false,"Systeme d'evolution du personnage acquis",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(200,false,"Recuperation montre",new List<int>(){170},new List<Evenement>(){}));
 		flags.Add (new Flag(210,false,"Fin quete recuperation codebar",new List<int>(){190,200},new List<Evenement>(){}));
 		flags.Add (new Flag(220,false,"Retour dans la chambre apres recuperation codebar",new List<int>(){210},new List<Evenement>(){}));
 		flags.Add (new Flag(230,false,"Dormir dans le lit apres recuperation codebar",new List<int>(){220},new List<Evenement>(){}));
 		flags.Add (new Flag(240,false,"Message chambre apres sommeil",new List<int>(){230},new List<Evenement>(){}));
-		flags.Add (new Flag(250,false,"Debut quete prof eco",new List<int>(){240},new List<Evenement>(){}));
+		flags.Add (new Flag(250,false,"Debut quete prof eco",new List<int>(){230},new List<Evenement>(){}));
 		flags.Add (new Flag(260,false,"Apparition objets a vendre sur le campus",new List<int>(){250},new List<Evenement>(){}));
-		flags.Add (new Flag(270,false,"Fin quete prof eco",new List<int>(){240},new List<Evenement>(){}));
+		flags.Add (new Flag(270,false,"Fin quete prof eco",new List<int>(){250},new List<Evenement>(){}));
 		flags.Add (new Flag(280,false,"Debut quete choix laboratoire",new List<int>(){270},new List<Evenement>(){}));
 		flags.Add (new Flag(290,false,"Fin quete choix laboratoire",new List<int>(){280},new List<Evenement>(){}));
 		flags.Add (new Flag(300,false,"Debut quete DSI",new List<int>(){290},new List<Evenement>(){}));
@@ -161,11 +162,13 @@ static public class FlagManager {
 	 * @brief Active un flag si possible, et renvoie true s'il est active.
 	 * @param f Reference du flag à activer.
 	 *
-	 * @return Renvoie true si le flag est actif, sans tenir compte de son etat avant l'appel à cette fonction. Renvoie false pour un flag inexistant.
+	 * @return Renvoie true si le flag est à true avant ou après avoir essayé de l'activer. Renvoie false pour un flag inexistant.
 	 */
 	static public bool ActiverFlag(Flag f) {
 		Debug.Log ("Tentative d'activation du flag d'id : "+f.id);
 		if(f==null) return false;
+		if(f.actif) return true; //Flag déjà actif.
+
 		//On verifie si le flag est activable
 		foreach(int id in f.predecesseurs) {//Si l'un est inactif on ne peut pas activer ce Flag
 			Debug.Log ("Etude du predecesseur d'id "+id);
