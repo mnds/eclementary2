@@ -3050,6 +3050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagActive: 3
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
@@ -5629,6 +5631,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &256022919
@@ -7534,6 +7538,47 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1783485629}
   m_GameObject: {fileID: 357811357}
+--- !u!1 &358947982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 173894, guid: 40102444f1ab1c5499c77fc7f4be030c, type: 2}
+  m_PrefabInternal: {fileID: 1783485629}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 358947983}
+  - 114: {fileID: 358947984}
+  m_Layer: 0
+  m_Name: DebugControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &358947983
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 473894, guid: 40102444f1ab1c5499c77fc7f4be030c, type: 2}
+  m_PrefabInternal: {fileID: 1783485629}
+  m_GameObject: {fileID: 358947982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.99212301, y: 12.0035076, z: -1.53720903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1549596744}
+  m_RootOrder: 3
+--- !u!114 &358947984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11473890, guid: 40102444f1ab1c5499c77fc7f4be030c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783485629}
+  m_GameObject: {fileID: 358947982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e81c808b0362b4aa7ebfe600aa12d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeDepart: 0
 --- !u!1 &362088400
 GameObject:
   m_ObjectHideFlags: 0
@@ -8250,6 +8295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 391935157}
   - 132: {fileID: 391935156}
+  - 114: {fileID: 391935158}
   - 114: {fileID: 391935155}
   m_Layer: 0
   m_Name: Texte
@@ -8261,7 +8307,7 @@ GameObject:
 --- !u!114 &391935155
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11459492, guid: 40102444f1ab1c5499c77fc7f4be030c,
+  m_PrefabParentObject: {fileID: 11473894, guid: 40102444f1ab1c5499c77fc7f4be030c,
     type: 2}
   m_PrefabInternal: {fileID: 1783485629}
   m_GameObject: {fileID: 391935154}
@@ -8270,6 +8316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462f7105a3f105e41b964cdfffcc47d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraPrincipale: {fileID: 0}
+  distanceAffichageTexte: 8
 --- !u!132 &391935156
 GUIText:
   m_ObjectHideFlags: 0
@@ -8306,6 +8354,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 656308473}
   m_RootOrder: 1
+--- !u!114 &391935158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11473892, guid: 40102444f1ab1c5499c77fc7f4be030c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783485629}
+  m_GameObject: {fileID: 391935154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texteAffiche: 
 --- !u!1 &394038266
 GameObject:
   m_ObjectHideFlags: 0
@@ -8492,6 +8553,8 @@ MonoBehaviour:
   pointsDeVieMax: 100
   pointsDeVieActuels: 100
   flagAssocie: 5
+  flagsRequis: 04000000
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: a3684e56a910ea54baab3efeb1c9f1fd, type: 2}
   objetADetruire: {fileID: 424087396}
 --- !u!135 &395935180
@@ -9163,6 +9226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagActive: 4
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 0
   texteSiActivable: La terre tremble !
@@ -10562,6 +10627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagActive: 1
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
@@ -13184,6 +13251,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &600152243
@@ -14178,6 +14247,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &632794773
@@ -18189,6 +18260,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &819446001
@@ -20125,6 +20198,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &885395792
@@ -22400,6 +22475,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1016585173
@@ -24375,6 +24452,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1092714979
@@ -26101,6 +26180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagActive: 2
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
@@ -27293,6 +27374,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1210148098
@@ -29141,6 +29224,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1288519161
@@ -29680,6 +29765,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1316543442
@@ -33374,6 +33461,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11419184, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
+      propertyPath: flagsRequis.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11119176, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
       propertyPath: m_Animations.Array.size
       value: 1
@@ -33557,6 +33648,10 @@ Prefab:
     - target: {fileID: 119170, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419184, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
+      propertyPath: flagsRequis.Array.data[0]
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11419190, guid: 9bde972d839165d42a0c26d3cb58ca6a, type: 2}
@@ -34350,6 +34445,7 @@ Transform:
   - {fileID: 1532460708}
   - {fileID: 1208698242}
   - {fileID: 656308473}
+  - {fileID: 358947983}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1553326745
@@ -35555,6 +35651,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1605689652
@@ -38075,6 +38173,8 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!82 &1758456705
@@ -38371,6 +38471,8 @@ MonoBehaviour:
   pointsDeVieMax: 75
   pointsDeVieActuels: 75
   flagAssocie: -1
+  flagsRequis: 
+  flagsBloquants: 
   joueurPrincipal: 1
   healthBarTexture: {fileID: 0}
 --- !u!114 &1762174173

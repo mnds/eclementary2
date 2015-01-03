@@ -14,7 +14,9 @@
                 "5",
                 "3",
                 "4",
-                "6"
+                "6",
+                "7",
+				"8"
             ],
             "texte": ""
         },
@@ -61,7 +63,7 @@
             "repSuivantes": [
                 "22"
             ],
-            "texte": "Nous nous sommes enfermÃ©s ici pour nous protÃ©ger. Nous cherchons une solution."
+            "texte": "Nous nous sommes enfermés ici pour nous protéger. Nous cherchons une solution."
         },
         {
             "flagsActives": [
@@ -89,7 +91,7 @@
             "repSuivantes": [
                 "24"
             ],
-            "texte": "Tu devrais pouvoir les trouver Ã  la dÃ©charge. C'est Ã  gauche en sortant d'ici."
+            "texte": "Tu devrais pouvoir les trouver à la décharge. C'est à gauche en sortant d'ici."
         },
         {
             "flagsActives": [
@@ -135,7 +137,7 @@
             "repSuivantes": [
                 "41"
             ],
-            "texte": "Parfait ! Merci d'avoir tout rapportÃ©."
+            "texte": "Parfait ! Merci d'avoir tout rapporté."
         },
         {
             "flagsActives": [
@@ -149,7 +151,7 @@
             "repSuivantes": [
                 "42"
             ],
-            "texte": "Avec Ã§a, je vais pouvoir Ã©tudier le comportement de ces zombies."
+            "texte": "Avec ça, je vais pouvoir étudier le comportement de ces zombies."
         },
         {
             "flagsActives": [
@@ -163,7 +165,7 @@
             "repSuivantes": [
                 "43"
             ],
-            "texte": "Pour te remercier, je te donne ce gros sac Ã  dos. C'est un prototype. Il devrait te permettre de transporter plus de choses qu'un simple sac."
+            "texte": "Pour te remercier, je te donne ce gros sac à dos. C'est un prototype. Il devrait te permettre de transporter plus de choses qu'un simple sac."
         },
         {
             "flagsActives": [
@@ -192,7 +194,7 @@
             "id": "5",
             "repSuivantes": [
             ],
-            "texte": "Tu devrais retourner au foyer, tu risques d'Ãªtre blessÃ©."
+            "texte": "Tu devrais retourner au foyer, tu risques d'être blessé."
         },
         {
             "flagsActives": [
@@ -208,6 +210,78 @@
             "repSuivantes": [
             ],
             "texte": "Je travaille. Retourne te cacher !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "290"
+            ],
+            "flagsRequis": [
+                "280"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "7",
+            "repSuivantes": [
+                "71",
+                "72"
+            ],
+            "texte": "Bonjour. Tu viens nous aider ? En nous rejoignant, nous t'aiderons à utiliser l'informatique pour mieux vaincre tes ennemis."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "71",
+            "repSuivantes": [
+            ],
+            "texte": "Laissez-moi réfléchir."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "72",
+            "repSuivantes": [
+                "721"
+            ],
+            "texte": "Je viens avec vous."
+        },
+        {
+            "flagsActives": [
+                "290"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "721",
+            "repSuivantes": [
+            ],
+            "texte": "Bon choix !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "290"
+            ],
+            "goAssocie": "ProfLiris",
+            "id": "8",
+            "repSuivantes": [
+            ],
+            "texte": "Je travaille."
         }
     ]
 }

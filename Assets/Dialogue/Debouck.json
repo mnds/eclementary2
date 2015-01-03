@@ -2,183 +2,151 @@
     "repliques": [
         {
             "flagsActives": [
-                "3"
             ],
             "flagsBloquants": [
-                "2"
             ],
             "flagsRequis": [
-                "4"
             ],
             "goAssocie": "",
             "id": "0",
             "repSuivantes": [
                 "1",
-                "3"
+                "2"
             ],
             "texte": ""
         },
         {
             "flagsActives": [
-                "4"
             ],
             "flagsBloquants": [
-                "3"
+				"425"
             ],
             "flagsRequis": [
-                "1",
-                "2"
+				"420"
             ],
-            "goAssocie": "JoueurDialogue",
+            "goAssocie": "Debouck",
             "id": "1",
             "repSuivantes": [
-                "2"
+                "11",
+                "12"
             ],
-            "texte": "Bonjour !"
+            "texte": "Que fais-tu là ? Va-t-en ! Tu vas te blesser !"
         },
         {
             "flagsActives": [
-                "4"
             ],
             "flagsBloquants": [
-                "3"
+				"425"
             ],
             "flagsRequis": [
-                "1",
-                "2"
+				"420"
             ],
-            "goAssocie": "pnjDialogue",
+            "goAssocie": "Joueur",
+            "id": "11",
+            "repSuivantes": [
+                "111"
+            ],
+            "texte": "C'est vous le directeur ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "12",
+            "repSuivantes": [
+                "121"
+            ],
+            "texte": "Qu'est-ce qui se passe ici ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Debouck",
+            "id": "111",
+            "repSuivantes": [
+                "12"
+            ],
+            "texte": "Lui-même."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Debouck",
+            "id": "121",
+            "repSuivantes": [
+                "1211"
+            ],
+            "texte": "C'est... Hourcade et Vilquin. Ils ont trouvé quelque chose près de la DSI pendant le WEI... Et ils se sont... Transformés."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "1211",
+            "repSuivantes": [
+                "12111"
+            ],
+            "texte": "Hourcade ? Vilquin ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Debouck",
+            "id": "12111",
+            "repSuivantes": [
+                "121111"
+            ],
+            "texte": "Ils sont professeurs à Centrale. Ils doivent être en amphi 2 en ce moment. Surtout ne t'en approche pas."
+        },
+        {
+            "flagsActives": [
+                "425"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "10"
+            ],
+            "goAssocie": "Debouck",
+            "id": "121111",
+            "repSuivantes": [
+            ],
+            "texte": "Mais si jamais tu voulais être acteur de ta formation... Voilà la clé."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+                "440"
+            ],
+            "flagsRequis": [
+                "425"
+            ],
+            "goAssocie": "Debouck",
             "id": "2",
             "repSuivantes": [
-                "21",
-                "56"
             ],
-            "texte": "Bonjour ! Comment allez-vous ?"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "JoueurDialogue",
-            "id": "56",
-            "repSuivantes": [
-                "212"
-            ],
-            "texte": "Non je vais pas bien."
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "JoueurDialogue",
-            "id": "21",
-            "repSuivantes": [
-                "212"
-            ],
-            "texte": "Bien et vous ?"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "pnjDialogue",
-            "id": "212",
-            "repSuivantes": [
-                "-1"
-            ],
-            "texte": "Moi aussi je vais bien !"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "pnjDialogue",
-            "id": "222",
-            "repSuivantes": [
-                "-1"
-            ],
-            "texte": "Comment, vous aussi ?!"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "JoueurDialogue",
-            "id": "3",
-            "repSuivantes": [
-                "2"
-            ],
-            "texte": "Salut"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "JoueurDialogue",
-            "id": "-1",
-            "repSuivantes": [
-            ],
-            "texte": "Au revoir !"
-        },
-        {
-            "flagsActives": [
-                "4"
-            ],
-            "flagsBloquants": [
-                "3"
-            ],
-            "flagsRequis": [
-                "1",
-                "2"
-            ],
-            "goAssocie": "jfklds",
-            "id": "30",
-            "repSuivantes": [
-                "21"
-            ],
-            "texte": "waw nitt mooy dioum !"
+            "texte": "Ils sont en amphi 2. Va les détruire !"
         }
     ]
 }

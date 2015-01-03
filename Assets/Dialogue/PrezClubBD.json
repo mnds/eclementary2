@@ -16,7 +16,10 @@
                 "4",
                 "5",
                 "6",
-                "7"
+                "7",
+				"8",
+				"9",
+				"10"
             ],
             "texte": ""
         },
@@ -319,6 +322,50 @@
             "repSuivantes": [
             ],
             "texte": "Va chercher les profs d'éco ! N'aies pas peur d'eux, ils sont inoffensifs. Enfin, c'est ce qu'on dit."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+				"310"
+            ],
+            "flagsRequis": [
+                "270"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "8",
+            "repSuivantes": [
+            ],
+            "texte": "Ne prend pas de risques inutiles."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+				"320"
+            ],
+            "flagsRequis": [
+                "310"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "9",
+            "repSuivantes": [
+            ],
+            "texte": "Tu n'as pas une boite où la clé pourrait aller ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "320"
+            ],
+            "goAssocie": "PrezClubBD",
+            "id": "10",
+            "repSuivantes": [
+            ],
+            "texte": "La nuit, le campus est dangereux, fais attention."
         }
     ]
 }

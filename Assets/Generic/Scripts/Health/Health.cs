@@ -8,12 +8,15 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Health : MonoBehaviour {
 	public bool bypass = false; //A true quand on ne peut pas se prendre de dégats / etre régénéré
 	public float pointsDeVieMax = 5f;
 	public float pointsDeVieActuels = 5f;
 	public int flagAssocie = -1; //-1 si pas de flag à la mort. Sinon, le changer pour activer un flag à la mort
+	public List<int> flagsRequis = new List<int>(){};
+	public List<int> flagsBloquants = new List<int>(){};
 
 	void Start () {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax);
@@ -27,13 +30,20 @@ public class Health : MonoBehaviour {
 	 */
 	public bool Soigner(float soin) {
 		if(bypass) return false;
+		if(!TesterFlags()) return false;
 		float pdvaAvantSoin = pointsDeVieActuels;
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels + soin, pointsDeVieMax);
 		return (pdvaAvantSoin != pointsDeVieActuels);
 	}
 
+	/**
+	 * @brief Permet de faire subir des degats à l'objet.
+	 * @param degats De combien diminuer les points de vie.
+	 */
 	public void SubirDegats(float degats) {
 		if(bypass) return;
+		if(!TesterFlags ()) return;
+		TesterFlags();
 		Caracteristiques carac = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
 
 		//Application de la formule de degats
@@ -54,6 +64,16 @@ public class Health : MonoBehaviour {
 				FlagManager.ActiverFlag(flagAssocie);
 			DeclencherMort ();
 		}
+	}
+
+	private bool TesterFlags() {
+		foreach(int id in flagsRequis) //Verification flags requis
+			if(!FlagManager.ChercherFlagParId(id).actif)
+				return false;
+		foreach(int id in flagsBloquants) //Verification flags bloquants
+			if(FlagManager.ChercherFlagParId(id).actif)
+				return false;
+		return true;
 	}
 
 	virtual public void DeclencherMort () {

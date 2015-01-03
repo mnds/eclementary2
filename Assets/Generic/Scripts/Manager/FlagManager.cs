@@ -100,9 +100,9 @@ static public class FlagManager {
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){}));
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){}));
 		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){}));
-		flags.Add (new Flag(130,true,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){}));
+		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){}));
 		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
-		flags.Add (new Flag(150,true,"Entree club BD",new List<int>(){130},new List<Evenement>(){}));
+		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){}));
 		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150}));
 		flags.Add (new Flag(152,false,"PrezBD explique pourquoi ils sont la",new List<int>(){150}));
 		flags.Add (new Flag(153,false,"PrezBD explique ce que sont les monstres",new List<int>(){150}));
@@ -135,8 +135,11 @@ static public class FlagManager {
 		flags.Add (new Flag(400,false,"Fin quete scolarite",new List<int>(){390},new List<Evenement>(){}));
 		flags.Add (new Flag(410,false,"Entree labyrinthe",new List<int>(){400},new List<Evenement>(){}));
 		flags.Add (new Flag(420,false,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){}));
-		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){420},new List<Evenement>(){}));
-		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){430},new List<Evenement>(){}));
+		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){}));
+		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){}));
+		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){}));
+		flags.Add (new Flag(435,false,"Mort boss final",new List<int>(){431},new List<Evenement>(){}));
+		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){435},new List<Evenement>(){}));
 		flags.Add (new Flag(450,false,"Fin du jeu",new List<int>(){440},new List<Evenement>(){}));
 	}
 

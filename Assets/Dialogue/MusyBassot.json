@@ -12,192 +12,197 @@
             "repSuivantes": [
                 "1",
                 "2",
-                "3",
-                "4",
-                "5",
-                "6"
+                "3"
             ],
             "texte": ""
         },
         {
             "flagsActives": [
-                "180"
             ],
             "flagsBloquants": [
-                "180"
+                "400"
             ],
             "flagsRequis": [
-                "170"
+                "390"
             ],
-            "goAssocie": "PrezSerialGamers",
+            "goAssocie": "Joueur",
             "id": "1",
             "repSuivantes": [
                 "11"
             ],
-            "texte": "Bonjour ! Je suis le président de Serial Gamers. Tu as faim ? Tiens, voilà une part de pizza."
+            "texte": "Qui êtes-vous ?"
         },
         {
             "flagsActives": [
+                "10"
             ],
             "flagsBloquants": [
+                "400"
             ],
             "flagsRequis": [
+                "390"
             ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "11",
-            "repSuivantes": [
-                "12"
-            ],
-            "texte": "J'ai appris que tu avais réussi à venir jusqu'ici sans mourir ! C'est bien. Je vois que tu as aussi récupéré un inventaire."
-        },
-        {
-            "flagsActives": [
-                "190"
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "12",
-            "repSuivantes": [
-                "13"
-            ],
-            "texte": "Mais tu aimerais bien pouvoir t'améliorer non ? Combattre des méchants c'est bien mais si ça ne t'apporte rien..."
-        },
-        {
-            "flagsActives": [
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "13",
-            "repSuivantes": [
-                "14"
-            ],
-            "texte": "Donc, en tant que vénéré président de Serial Gamers, je t'octroye la puissance de la barre d'expérience !"
-        },
-        {
-            "flagsActives": [
-                "200"
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "14",
-            "repSuivantes": [
-                "15"
-            ],
-            "texte": "C'est beau non ? Mais ce n'est pas tout ! Pour ne jamais te perdre, voici une montre."
-        },
-        {
-            "flagsActives": [
-                "210"
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "15",
-            "repSuivantes": [
-            ],
-            "texte": "Mais fais attention. Une fois la nuit tombée, les choses dehors deviennent plus dangereuses. Ne va pas trop loin de ta chambre ou du foyer quand il se fait tard."
-        },
-        {
-            "flagsActives": [
-            ],
-            "flagsBloquants": [
-				"270"
-            ],
-            "flagsRequis": [
-                "210"
-            ],
-            "goAssocie": "PrezSerialGamers",
+            "goAssocie": "Joueur",
             "id": "2",
             "repSuivantes": [
+				"21"
             ],
-            "texte": "Fais attention à toi."
+            "texte": "Qu'est-ce qui se passe ici ?"
         },
         {
             "flagsActives": [
             ],
             "flagsBloquants": [
-                "280"
             ],
             "flagsRequis": [
-                "270"
             ],
-            "goAssocie": "PrezSerialGamers",
+            "goAssocie": "MusyBassot",
+            "id": "11",
+            "repSuivantes": [
+                "111",
+                "112"
+            ],
+            "texte": "Je suis Mme Musy-Bassot. Je m'occupe de la scolarité de l'école."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "111",
+            "repSuivantes": [
+                "1111"
+            ],
+            "texte": "La scolarité ? C'est vous qui êtes derrière tout ça !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "112",
+            "repSuivantes": [
+                "1121"
+            ],
+            "texte": "Qu'est-ce que vous savez sur les zombies ?"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "MusyBassot",
+            "id": "1111",
+            "repSuivantes": [
+                "11111"
+            ],
+            "texte": "Et puis quoi encore. C'est le directeur !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "11111",
+            "repSuivantes": [
+                "111111"
+            ],
+            "texte": "Le directeur ? Ce n'est pas possible. Où est-il ?"
+        },
+        {
+            "flagsActives": [
+                "400"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "MusyBassot",
+            "id": "111111",
+            "repSuivantes": [
+            ],
+            "texte": "Il est dans la cabane dans le bois. Faites attention. Je vais vous libérer le passage."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "MusyBassot",
+            "id": "1121",
+            "repSuivantes": [
+                "11211"
+            ],
+            "texte": "Je ne sais pas ce que sont ces monstres. Ils sont apparus après que le directeur..."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Joueur",
+            "id": "11211",
+            "repSuivantes": [
+                "112111"
+            ],
+            "texte": "Le directeur ? Qu'est-ce qu'il a fait ?"
+        },
+        {
+            "flagsActives": [
+                "400"
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "MusyBassot",
+            "id": "112111",
+            "repSuivantes": [
+            ],
+            "texte": "C'est lui qui les a invoqués. Il était allé se cacher dans sa maison de fonction dans la foret. Je vous ouvre le chemin qui mène à lui. Faites attention."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "MusyBassot",
+            "id": "21",
+            "repSuivantes": [
+                "1"
+            ],
+            "texte": "Les zombies ont envahi le campus pendant que le WEI. Ils se sont bien intégré à Centrale on dirait."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+				"400"
+            ],
+            "goAssocie": "MusyBassot",
             "id": "3",
             "repSuivantes": [
-                "31"
             ],
-            "texte": "Tu as vu les profs d'éco ? Bien. Ils n'ont pas été d'une grande aide je suppose ?"
-        },
-        {
-            "flagsActives": [
-                "280"
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "31",
-            "repSuivantes": [
-                "4"
-            ],
-            "texte": "Tu pourrais essayer d'aller voir les laboratoires. Les doctorants et professeurs qui y sont devraient pouvoir t'aider."
-        },
-        {
-            "flagsActives": [
-            ],
-            "flagsBloquants": [
-                "290"
-            ],
-            "flagsRequis": [
-                "280"
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "4",
-            "repSuivantes": [
-            ],
-            "texte": "Va voir les laboratoires !"
-        },
-        {
-            "flagsActives": [
-                "300"
-            ],
-            "flagsBloquants": [
-                "300"
-            ],
-            "flagsRequis": [
-                "290"
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "5",
-            "repSuivantes": [
-            ],
-            "texte": "C'est bon, tu as prêté allégeance à un laboratoire ? Parfait. Nous avons vu de l'agitation près du batiment de la DSI. Tu devrais y aller."
-        },
-        {
-            "flagsActives": [
-            ],
-            "flagsBloquants": [
-            ],
-            "flagsRequis": [
-                "300"
-            ],
-            "goAssocie": "PrezSerialGamers",
-            "id": "6",
-            "repSuivantes": [
-            ],
-            "texte": "Bonne chance."
+            "texte": "Soyez prudent. Je ne sais pas comment le directeur va réagir."
         }
     ]
 }
