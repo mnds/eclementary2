@@ -49,7 +49,7 @@ public class Health : MonoBehaviour {
 		//Application de la formule de degats
 		float degatsSubis = degats; //Avant application des caractéristiques
 		if (carac) { //Si l'objet a des caractéristiques
-			degatsSubis=Mathf.Max(0,degatsSubis-carac.GetDefense()); //Formule de degats
+			degatsSubis=Mathf.Max(0,degatsSubis*(1f-carac.GetDefense()/100f)); //Formule de degats
 			//Debug.Log ("Caractéristique Défense : "+carac.GetDefense());
 		}
 

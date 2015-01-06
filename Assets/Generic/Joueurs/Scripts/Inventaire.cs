@@ -132,6 +132,22 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		lancerObjetActuel = objetActuel.GetComponent<Lancer> ();
 		if (lancerObjetActuel==null)
 			lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
+
+		//On change l'image et le texte du médaillon de rappel de l'arme équipée
+		GameObject armeCourante;
+		armeCourante=GameObject.Find("Arme Active");
+		//On remplace l'image par l'image de l'objet en question
+		armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionScroll];
+		//Si c'est l'arme nulle, on remplace le texte par rien, sinon on met le nom de l'arme
+		if(listeObjetsRecoltables[positionScroll].name=="ArmeNull")
+		{
+			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text="";
+		}
+		else
+		{
+			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text=listeObjetsRecoltables[positionScroll].name;
+		}
+		/*PROBLEME : QUAND ON LANCE UN OBJET, IL NE CHANGE PAS LE MEDAILLON*/
 	}
 
 
@@ -202,19 +218,6 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			positionScroll = NewPositionScroll(+1); // // searching new position in the positive sense
 			ChangerObjetActuel(listeObjetsUtilisables[positionScroll]);
 			return;
-		}
-
-		// Cette méthode ne marche pas sur tous les claviers, les azerty sur mac notamment
-		KeyCode nombre = KeyCode.Alpha1;
-		for(int i=0;i<9;i++) {
-			if(Input.GetKey(nombre+i)) {
-				positionScroll=i;
-				if (positionScroll >= 0 && positionScroll < listeObjetsUtilisables.Count 
-				    	&& !objetActuelEnTrainDAttaquer && !objetActuelEstEnTrainDeLancer) {
-					ChangerObjetActuel (listeObjetsUtilisables [positionScroll]);
-					return;
-				}
-			}
 		}
 
 		// Current weapon is also changed when tab or Shift+Tab pressed
@@ -327,8 +330,10 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 					listeObjetsUtilisables.Add (objet);
 				if(quantiteObjets[k]>0 && munitions==0) {//S'il y en avait et que maintenant il n'y en a plus, on enlève de lOU, en changeant au cas où le rang de l'objetActuel
 					listeObjetsUtilisables.Remove(objet);
-					if (objetActuel==objet) //On met par défaut l'objet 0. En notant h le rang dans lOU de l'objet actuel, on peut faire quelque chose de plus beau en prenant le rang Mathf.Max(0,h-1) mais ça fait une boucle en plus, d'où plus de complexité
+					if (objetActuel==objet) { //On met par défaut l'objet 0. En notant h le rang dans lOU de l'objet actuel, on peut faire quelque chose de plus beau en prenant le rang Mathf.Max(0,h-1) mais ça fait une boucle en plus, d'où plus de complexité
+						positionScroll=0;
 						ChangerObjetActuel(listeObjetsUtilisables[0]);
+					}
 				}
 				quantiteObjets[k]=munitions; //On change les munitions
 
