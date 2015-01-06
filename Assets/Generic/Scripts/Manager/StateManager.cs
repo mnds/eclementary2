@@ -34,7 +34,7 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
-		sceneDebut = "CampusExterieurLie";
+		sceneDebut = "CampusExterieur";
 		dataRef = GetComponent<GameData> ();
 		etatActif = new EtatDepart ( this );
 	}

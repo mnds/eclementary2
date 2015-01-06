@@ -14,6 +14,9 @@ public class SetJoueurPrincipal : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		ControlCenter.SetJoueurPrincipal (gameObject);
-		Destroy (this);
+	}
+
+	void OnLevelWasLoaded() {
+		ControlCenter.SetJoueurPrincipal (gameObject);
 	}
 }

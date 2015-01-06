@@ -29,7 +29,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
 	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
 	
-	public GameObject inventaire;//Stock la fenetre d'inventaire
+	private GameObject inventaire;//Stock la fenetre d'inventaire
 	public Sprite imageVide;
 
 	//Objet actuel
@@ -46,8 +46,23 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 
 	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 
+	void OnLevelWasLoaded () {
+		//On déclare l'inventaire, qui doit etre activé au départ.
+		inventaire=GameObject.Find ("FenetreInventaire");
+		inventaire.SetActive(false);
+		if(!inventaire)
+			Debug.Log("Activez l'objet de nom FenetreInventaire");
+	}
+
 	// Use this for initialization
 	void Start () {
+		//On déclare l'inventaire, qui doit etre activé au départ.
+		inventaire=GameObject.Find ("FenetreInventaire");
+		inventaire.SetActive(false);
+
+		if(!inventaire)
+			Debug.Log("Activez l'objet de nom FenetreInventaire");
+
 		for(int k=0;k<listeObjetsRecoltables.Count;k++) //On récupère les objets de quantité non nulle
 		{
 			if(quantiteObjets[k]>0) //Si l'objet est en quantité non nulle

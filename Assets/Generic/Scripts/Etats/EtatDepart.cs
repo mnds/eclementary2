@@ -11,7 +11,7 @@ using UnityEngine;
 public class EtatDepart : EtatJouable {
 	
 	public EtatDepart( StateManager manager ) : base( manager ) {
-		sceneCorrespondante = "CampusExterieurLie";
+		sceneCorrespondante = "CampusExterieur";
 		etatJouable = true;
 		ChargerSceneCorrespondante ();
 	}

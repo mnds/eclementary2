@@ -21,10 +21,13 @@ public class SetTexte : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		Debug.Log ("Awake SetTexte");
 		ControlCenter.SetTexte (gameObject.GetComponent<GUIText>());
 	}
 
 	void Start () {
+		Debug.Log ("Start SetTexte");
+		ControlCenter.SetTexte (gameObject.GetComponent<GUIText>());
 		if(cameraPrincipale==null)
 			cameraPrincipale=Camera.main;
 		if(distanceAffichageTexte<=0) //Remise à une valeur normale
@@ -51,5 +54,9 @@ public class SetTexte : MonoBehaviour {
 		}
 		else
 			atrpropre.ChangerTexte ();
+	}
+
+	void OnLevelWasLoaded() {
+		ControlCenter.SetTexte (gameObject.GetComponent<GUIText>());
 	}
 }

@@ -36,7 +36,12 @@ static public class ControlCenter {
 	//Garde en mémoire les scènes
 	static int idScenePrecedente;
 	static public ModesJeu mode = ModesJeu.Normal; //Mode Debug ou Normal. Utilisé dans DebugManager.
-	
+
+	static ControlCenter () {
+		joueurPrincipal = GameObject.Find ("Joueur");
+		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>();
+	}
+
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
 		texteInteraction = texte;
 	}

@@ -33,6 +33,8 @@ public class AffichageTexteEcran : MonoBehaviour {
 	public void RemplacerTexteNonPrioritaire (string texte) {
 		if(ControlCenter.GetTexteEstPrioritaire ()) return; //Texte prioritaire.
 		ControlCenter.GetTexte ().text = texte;
+		if(!ControlCenter.GetTexte ())
+			Debug.LogWarning ("PROBLEME");
 		ControlCenter.SetTexteEstPrioritaire (false); //On reprécise au cas où
 	}
 
