@@ -17,6 +17,7 @@ public class Health : MonoBehaviour {
 	public int flagAssocie = -1; //-1 si pas de flag à la mort. Sinon, le changer pour activer un flag à la mort
 	public List<int> flagsRequis = new List<int>(){};
 	public List<int> flagsBloquants = new List<int>(){};
+	protected bool mort = false;
 
 	void Start () {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax);
@@ -59,9 +60,10 @@ public class Health : MonoBehaviour {
 		//Debug.Log ("Points de vie avant le coup : " + pointsDeVieActuels);
 		pointsDeVieActuels -= degatsSubis;
 		Debug.Log ("Points de vie après le coup : " + pointsDeVieActuels);
-		if (pointsDeVieActuels <= 0) {
+		if (pointsDeVieActuels <= 0 && !mort ) {
 			if(flagAssocie!=-1)
 				FlagManager.ActiverFlag(flagAssocie);
+			mort = true;
 			DeclencherMort ();
 		}
 	}
@@ -95,5 +97,9 @@ public class Health : MonoBehaviour {
 
 	public bool GetBypass () {
 		return bypass;
+	}
+
+	public bool IsMort() {
+		return mort;
 	}
 }

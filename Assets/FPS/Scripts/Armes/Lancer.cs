@@ -12,7 +12,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Lancer : MonoBehaviour {
+public class Lancer : MonoBehaviour, IScriptEtatJouable {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 
 	public float delaiEntreDeuxTirs = 0.5f;
@@ -26,6 +26,8 @@ public class Lancer : MonoBehaviour {
 	public float vitesseDeLance = 5f; //La force appliquée sur l'objet réel
 
 	Attaquer attaquerGameObject; //Script s'il existe de l'attaque pour empecher d'avoir attaque et lancé en meme temps
+
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 
 	void Start () {
 		//Initialisation de attaquer
@@ -43,6 +45,8 @@ public class Lancer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!enabled)
+			return;
 		if (bypass) return;
 		if (ControlCenter.inventaireOuvert) return;
 		if (ControlCenter.GetCinematiqueEnCours()) return; //Rien pendant une cinématique
@@ -161,5 +165,14 @@ public class Lancer : MonoBehaviour {
 
 	public void SetInventaire (Inventaire inventaire_) {
 		inventaire = inventaire_;
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }

@@ -18,7 +18,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 //Note : lorsqu'on attaque, il est possible de jeter l'objet pendant l'animation de l'attaque.
-public class Attaquer : MonoBehaviour {
+public class Attaquer : MonoBehaviour, IScriptEtatJouable {
 	public bool bypass;//Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 	
 	public float degatsParCoup = 10.0f; //Degats initiaux, changés pour chaque obje
@@ -43,7 +43,9 @@ public class Attaquer : MonoBehaviour {
 	List<Health> objetsTouchesLorsDeCetteAttaque; //Pour éviter de taper plusieurs fois les memes objets
 	
 	Lancer lancerGameObject; //Script de lancé pour empecher d'attaquer et lancer en meme temps
-	
+
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
+
 	void Start() {
 		objetsTouchesLorsDeCetteAttaque = new List<Health> (){}; //Initialisation
 		tFVISiCollision = tempsFinalVersInitial;
@@ -71,6 +73,8 @@ public class Attaquer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!enabled)
+			return;
 		if(bypass) return;
 		if (ControlCenter.inventaireOuvert) return;
 
@@ -125,6 +129,8 @@ public class Attaquer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider objet) {
+		if (!enabled)
+			return;
 		Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
@@ -192,5 +198,14 @@ public class Attaquer : MonoBehaviour {
 	}
 	public void SetBypass(bool bypass_) {
 		bypass=bypass_;
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }

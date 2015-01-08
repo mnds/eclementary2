@@ -34,7 +34,7 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
-		sceneDebut = "CampusExterieur";
+		sceneDebut = "CampusExterieurScenario";
 		dataRef = GetComponent<GameData> ();
 		etatActif = new EtatDepart ( this );
 	}
@@ -61,8 +61,8 @@ public class StateManager : MonoBehaviour {
 	// Permet le changement de l'état actif à l'état donné en paramètre
 	public void BasculerEtat( Etat etat ) {
 		ancienEtat = etatActif;
-		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
 		etatActif = etat;
+		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
 	}
 
 	public void Restart() {

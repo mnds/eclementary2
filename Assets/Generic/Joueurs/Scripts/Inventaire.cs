@@ -47,6 +47,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 
 	void OnLevelWasLoaded () {
+		if (!enabled)
+			return;
 		//On déclare l'inventaire, qui doit etre activé au départ.
 		inventaire=GameObject.Find ("FenetreInventaire");
 		inventaire.SetActive(false);
