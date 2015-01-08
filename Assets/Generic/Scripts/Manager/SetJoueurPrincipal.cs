@@ -16,7 +16,5 @@ public class SetJoueurPrincipal : MonoBehaviour {
 		ControlCenter.SetJoueurPrincipal (gameObject);
 	}
 
-	void OnLevelWasLoaded() {
-		ControlCenter.SetJoueurPrincipal (gameObject);
-	}
+
 }

@@ -193,7 +193,6 @@ GameObject:
   - 23: {fileID: 2319178}
   - 111: {fileID: 11119172}
   - 114: {fileID: 11444322}
-  - 114: {fileID: 11419190}
   m_Layer: 0
   m_Name: Bouton2
   m_TagString: Untagged
@@ -293,7 +292,6 @@ GameObject:
   - 23: {fileID: 2319186}
   - 111: {fileID: 11119174}
   - 114: {fileID: 11444324}
-  - 114: {fileID: 11419204}
   m_Layer: 0
   m_Name: Bouton3
   m_TagString: Untagged
@@ -422,7 +420,6 @@ GameObject:
   - 23: {fileID: 2319194}
   - 111: {fileID: 11119176}
   - 114: {fileID: 11444320}
-  - 114: {fileID: 11419218}
   m_Layer: 0
   m_Name: Bouton1
   m_TagString: Untagged
@@ -478,8 +475,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 957.77002, y: 211.559998, z: 851.659973}
+  m_LocalRotation: {x: 0, y: -.359505713, z: 0, w: .9331429}
+  m_LocalPosition: {x: 1011.73743, y: 212, z: 923.572083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419214}
@@ -882,7 +879,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -962,7 +959,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1042,7 +1039,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1971,9 +1968,9 @@ Animation:
   m_GameObject: {fileID: 119190}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c51eb630c558c4c4c86eafd7d1bf83d1, type: 2}
+  m_Animation: {fileID: 7400000, guid: 8e9c5318ea7c1b84eaf1b5665188dbf8, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: c51eb630c558c4c4c86eafd7d1bf83d1, type: 2}
+  - {fileID: 7400000, guid: 8e9c5318ea7c1b84eaf1b5665188dbf8, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1986,9 +1983,9 @@ Animation:
   m_GameObject: {fileID: 119200}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ec17ca61a75fc6641a14715332f1436c, type: 2}
+  m_Animation: {fileID: 7400000, guid: 340185e43240cfe41bc82ddaeef665bc, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: ec17ca61a75fc6641a14715332f1436c, type: 2}
+  - {fileID: 7400000, guid: 340185e43240cfe41bc82ddaeef665bc, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2001,9 +1998,9 @@ Animation:
   m_GameObject: {fileID: 119214}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 4311e5cf08c199247a8188e71acf181b, type: 2}
+  m_Animation: {fileID: 7400000, guid: 89fc47583d74c334faa8d6bb62d41d80, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 4311e5cf08c199247a8188e71acf181b, type: 2}
+  - {fileID: 7400000, guid: 89fc47583d74c334faa8d6bb62d41d80, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2019,12 +2016,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fff85adb0d9346b0f363c93ef0f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 14
-  flagActive: 4
+  flagActive: 450
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 0
   texteSiActivable: La terre tremble !
   texteSiNonActivable: C'est la boule de Centrale.
+  distanceMinimaleInteraction: 14
   vitesseRotation: .5
   distanceMini: 30
   estActiveeInitial: 0
@@ -2044,7 +2043,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419174
 MonoBehaviour:
@@ -2063,7 +2064,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2079,7 +2080,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419178
 MonoBehaviour:
@@ -2098,7 +2101,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2114,7 +2117,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419182
 MonoBehaviour:
@@ -2133,7 +2138,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2149,7 +2154,9 @@ MonoBehaviour:
   pointsDeVieMax: 100
   pointsDeVieActuels: 100
   flagAssocie: 5
-  effetDeMort: {fileID: 0}
+  flagsRequis: 04000000
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: a3684e56a910ea54baab3efeb1c9f1fd, type: 2}
   objetADetruire: {fileID: 119172}
 --- !u!114 &11419186
 MonoBehaviour:
@@ -2166,7 +2173,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419188
 MonoBehaviour:
@@ -2185,20 +2194,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
---- !u!114 &11419190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1902c7ae0c53be45afb442e835f319f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 2
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2214,7 +2210,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419194
 MonoBehaviour:
@@ -2233,7 +2231,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2249,7 +2247,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419198
 MonoBehaviour:
@@ -2268,7 +2268,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2284,7 +2284,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419202
 MonoBehaviour:
@@ -2303,20 +2305,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
---- !u!114 &11419204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1902c7ae0c53be45afb442e835f319f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 3
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2332,7 +2321,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419208
 MonoBehaviour:
@@ -2351,7 +2342,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2367,7 +2358,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419212
 MonoBehaviour:
@@ -2386,7 +2379,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2402,7 +2395,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419216
 MonoBehaviour:
@@ -2421,20 +2416,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
---- !u!114 &11419218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1902c7ae0c53be45afb442e835f319f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 1
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2450,7 +2432,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419222
 MonoBehaviour:
@@ -2469,7 +2453,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11419224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2485,7 +2469,9 @@ MonoBehaviour:
   pointsDeVieMax: 20
   pointsDeVieActuels: 20
   flagAssocie: -1
-  effetDeMort: {fileID: 0}
+  flagsRequis: 
+  flagsBloquants: 
+  effetDeMort: {fileID: 100004, guid: f8aee8a8ffc78364abb4c2db69e099f6, type: 2}
   objetADetruire: {fileID: 0}
 --- !u!114 &11419226
 MonoBehaviour:
@@ -2504,7 +2490,7 @@ MonoBehaviour:
   degatsParBalle: .5
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
-  etincellesTir: {fileID: 0}
+  etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
 --- !u!114 &11444320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2516,12 +2502,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 1
+  flagActive: 150
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!114 &11444322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2533,12 +2521,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 2
+  flagActive: 300
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!114 &11444324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2550,12 +2540,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimaleInteraction: 4
-  flagActive: 3
+  flagActive: 400
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
   texteSiActivable: Le socle s'enfonce dans le sol.
   texteSiNonActivable: "Quel socle \xE9trange."
+  distanceMinimaleInteraction: 4
 --- !u!135 &13519170
 SphereCollider:
   m_ObjectHideFlags: 1
