@@ -19,8 +19,10 @@ public abstract class Etat {
 	}
 
 	public virtual void ChargerSceneCorrespondante() {
-		if (Application.loadedLevelName != sceneCorrespondante) 
-			Application.LoadLevel ( sceneCorrespondante );
+		if (Application.loadedLevelName != sceneCorrespondante) {
+			Debug.Log ("Chargement de la scène " + sceneCorrespondante );
+			Application.LoadLevel (sceneCorrespondante);
+		}
 	}
 
 	public string getSceneCorrespondante() {

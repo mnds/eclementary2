@@ -17,7 +17,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ObjetLance : MonoBehaviour {
+public class ObjetLance : MonoBehaviour, IScriptEtatJouable {
 	public bool bypass; //Si bI, rien ne se passe. Toutes les fonctions sont ignorées.
 	GameObject lanceurDeLObjet; //Pour pouvoir ignorer les collisions avec lui
 
@@ -35,6 +35,8 @@ public class ObjetLance : MonoBehaviour {
 	public bool doitDisparaitreAprèsAvoirToucheQuelqueChose = false ;
 	public GameObject disparitionPrefab; //Si un prefab est généré lors de la disparition
 
+	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
+
 	// Use this for initialization
 	void Start () {
 
@@ -42,6 +44,8 @@ public class ObjetLance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!enabled)
+			return;
 		if (bypass) return;
 
 		if(aUneDureeDeVie) { //Si l'objet ne reste qu'un certain temps, on vérifie s'il doit etre détruit
@@ -182,5 +186,14 @@ public class ObjetLance : MonoBehaviour {
 
 	public void SetBypass(bool bypass_) {
 		bypass = bypass_;
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }
