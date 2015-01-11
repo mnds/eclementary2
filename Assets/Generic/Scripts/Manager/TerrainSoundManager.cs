@@ -42,10 +42,17 @@ public class TerrainSoundManager : MonoBehaviour {
 	void Update () {
 		positionJoueur = joueurTransform.position; //On actualise la position
 		Texture floorTexture = getTerrainTextureAt( positionJoueur ); //On récupère la texture au sol
+
+		bool floorTextureDansTextures = false; //Savoir si la texture actuelle doit émettre un son
 		for (int i=0; i<textures.Count; i++) { //On la cherche
-						if (textures [i] == floorTexture) //Si on la trouve
-								clipActuel = audioClips [i]; //On change le clip audio
+			if (textures [i] == floorTexture) { //Si on la trouve 
+				clipActuel = audioClips [i]; //On change le clip audio
+				floorTextureDansTextures=true;
+				break;
+			}
 		}
+		if(!floorTextureDansTextures) //La texture actuelle ne demande pas d'émettre un son
+			clipActuel=null;
 
 		//Son
 		if(clipActuel!=null && !sonEnclenche) {

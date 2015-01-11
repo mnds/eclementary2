@@ -17,7 +17,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent (typeof(CharacterController))]
-public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
+public class FPCClassic : ControllerJoueur {
 
 	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
 	
@@ -28,14 +28,25 @@ public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!enabled)
+		if (!enabled) {
+			Debug.Log ("Not enabled");
+			SetVitesseNonVerticaleActuelle (0f);
+			MouvementCorps(); //Motion du joueur
 			return;
-		if(bypass) return;
+		}
+		if(bypass) {
+			return;
+			Debug.Log ("Bypass");
+		}
 		if (!freeze) { //Si on peut bouger
 			Sprint (); //On regarde la vitesse à donner au joueur
 			BougerTete(); //On change la caméra
 			Crouch (); //Hauteur des yeux
 			MouvementCorps(); //Motion du joueur
+		}
+		else
+		{
+			vitesseNonVerticaleActuelle=0;
 		}
 	}
 	
@@ -107,8 +118,6 @@ public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
 	 * @details S'il est possible de bouger, on repère l'appui des touches de mouvements, ainsi que les demandes de saut.
 	 */
 	protected override void MouvementCorps () {
-		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
-		
 		//Mouvement
 		float vitesseVerticale = Input.GetAxis ("Vertical") * vitesseMouvement;
 		float vitesseHorizontale = Input.GetAxis ("Horizontal") * vitesseMouvement;
@@ -145,6 +154,7 @@ public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
 		vitesse = transform.rotation * vitesse;
 		vitesseNonVerticaleActuelle = Mathf.Sqrt(vitesseHorizontale*vitesseHorizontale + vitesseVerticale*vitesseVerticale);
 		
+		if (rendreImmobile) return; //Si on ne veut pas pouvoir bouger
 		cc.Move (vitesse*Time.deltaTime); //On multiplie la vitesse par la temps écoulé depuis le dernier appel à Update
 	}
 	
@@ -164,15 +174,6 @@ public class FPCClassic : ControllerJoueur, IScriptEtatJouable {
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
 		if(! (jauge/jaugeMax < 0.1) )  // La barre n'est affichée qu'au delà d'un certain seuil	
 			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
-	}
-
-	// Implémentation de IScriptEtatJouable
-	public bool isEnabled() {
-		return enabled;
-	}
-	
-	public void setEnabled( bool ok ) {
-		enabled = ok;
 	}
 
 }

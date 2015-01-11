@@ -14,7 +14,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ControllerJoueur : MonoBehaviour {
+public class ControllerJoueur : MonoBehaviour, IScriptEtatJouable {
 	protected CharacterController cc;
 	protected Caracteristiques carac; //Pour changer les valeurs selon les caractéristiques du personnage
 	
@@ -174,7 +174,11 @@ public class ControllerJoueur : MonoBehaviour {
 	public float GetVitesseNonVerticaleActuelle () {
 		return vitesseNonVerticaleActuelle;
 	}
-	
+
+	public void SetVitesseNonVerticaleActuelle (float vnva) {
+		vitesseNonVerticaleActuelle=vnva;
+	}
+
 	public float GetVitesseMouvement () {
 		return vitesseMouvement;
 	}
@@ -226,5 +230,16 @@ public class ControllerJoueur : MonoBehaviour {
 	public float GetAngleVerticalMax () {
 		return angleVerticalMax;
 	}
+
+
 	
+	
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled( bool ok ) {
+		enabled = ok;
+	}
 }
