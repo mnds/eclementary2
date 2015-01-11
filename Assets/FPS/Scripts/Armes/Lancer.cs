@@ -61,14 +61,14 @@ public class Lancer : MonoBehaviour, IScriptEtatJouable {
 
 			//POSER
 			if(Input.GetButton ("SecondaryButton")) {//On demande à le poser
-				objet = (GameObject)Instantiate(objetReel,inventaire.GetCamera().transform.position+inventaire.GetCamera().transform.forward,Quaternion.identity); //On oriente selon la position initiale
+				objet = (GameObject)Instantiate(objetReel,inventaire.GetCamera().transform.position,Quaternion.identity); //On oriente selon la position initiale
 				objet.rigidbody.isKinematic=false; //L'objet se déplacera par une force
 				objet.GetComponentInChildren<Collider>().isTrigger=false; //L'objet doit taper les autres objets
 			}
 			else
 			{ //On veut le tirer
 				//TIRER
-				Vector3 positionLance = inventaire.GetCamera().transform.position+Camera.main.transform.forward; //On tire devant soi
+				Vector3 positionLance = inventaire.GetCamera().transform.position; //On tire devant soi
 				Debug.Log (positionLance);
 				Quaternion rotationLance = inventaire.GetCamera().transform.rotation;
 				objet = (GameObject)Instantiate(objetReel,positionLance,rotationLance); //On oriente selon la position initiale
