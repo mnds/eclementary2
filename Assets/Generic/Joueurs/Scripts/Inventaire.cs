@@ -136,18 +136,29 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
 
 		//On change l'image et le texte du médaillon de rappel de l'arme équipée
-		GameObject armeCourante;
+		GameObject armeCourante;//Le médaillon qui s'affiche en jeu
 		armeCourante=GameObject.Find("Arme Active");
+
+		int positionObjet = 0;//Analogue à positionScroll mais dans la listeObjetsUtilisables
+
+		//On cherche quel objet est l'objet actuel
+		for (int i=0;i<listeObjetsRecoltables.Count;i++)
+		{
+			if(listeObjetsRecoltables[i]==listeObjetsUtilisables[positionScroll])
+			{
+				positionObjet=i;
+			}
+		}
 		//On remplace l'image par l'image de l'objet en question
-		armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionScroll];
+		armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionObjet];
 		//Si c'est l'arme nulle, on remplace le texte par rien, sinon on met le nom de l'arme
-		if(listeObjetsRecoltables[positionScroll].name=="ArmeNull")
+		if(listeObjetsRecoltables[positionObjet].name=="ArmeNull")
 		{
 			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text="";
 		}
 		else
 		{
-			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text=listeObjetsRecoltables[positionScroll].name;
+			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text=listeObjetsRecoltables[positionObjet].name;
 		}
 		/*PROBLEME : QUAND ON LANCE UN OBJET, IL NE CHANGE PAS LE MEDAILLON*/
 	}
