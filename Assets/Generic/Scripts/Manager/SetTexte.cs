@@ -21,12 +21,12 @@ public class SetTexte : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		Debug.Log ("Awake SetTexte");
+//		Debug.Log ("Awake SetTexte");
 		ControlCenter.SetTexte (gameObject.GetComponent<GUIText>());
 	}
 
 	void Start () {
-		Debug.Log ("Start SetTexte");
+//		Debug.Log ("Start SetTexte");
 		ControlCenter.SetTexte (gameObject.GetComponent<GUIText>());
 		if(cameraPrincipale==null)
 			cameraPrincipale=Camera.main;

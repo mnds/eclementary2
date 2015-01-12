@@ -45,7 +45,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	GlowSimple gsAncien;
 
 	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
-
+	
+	/*
 	void OnLevelWasLoaded () {
 		if (!enabled)
 			return;
@@ -55,6 +56,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		if(!inventaire)
 			Debug.Log("Activez l'objet de nom FenetreInventaire");
 	}
+	*/
 
 	// Use this for initialization
 	void Start () {

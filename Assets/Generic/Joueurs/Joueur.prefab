@@ -125,6 +125,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400048}
   - 114: {fileID: 11438036}
+  - 114: {fileID: 11490382}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Player
@@ -381,7 +382,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_LocalRotation: {x: 0, y: -.0107841128, z: 0, w: -.999941885}
-  m_LocalPosition: {x: -93.2861938, y: -20.5665131, z: -18.6885986}
+  m_LocalPosition: {x: 93.0599976, y: -24.6399994, z: 234.699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400058}
@@ -1086,7 +1087,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e2b7c48da2579f44eb462058a68984fb, type: 3}
   - {fileID: 21300000, guid: 2a106c3170e485948a41ec6e8e022da1, type: 3}
   - {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
-  - {fileID: 21300000, guid: e2b7c48da2579f44eb462058a68984fb, type: 3}
+  - {fileID: 21300000, guid: bc080808e23ca004a9209036d75eed25, type: 3}
   imageVide: {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
   camera: {fileID: 2000000}
 --- !u!114 &11400034
@@ -1251,6 +1252,18 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
+--- !u!114 &11490382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37006c3946d5da449bdb4e0a2080c463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1265,11 +1278,11 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: .5
+  m_Height: 1.70000005
+  m_Radius: .560000002
   m_SlopeLimit: 45
   m_StepOffset: .300000012
-  m_SkinWidth: .0799999982
+  m_SkinWidth: .140000001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.10000002, z: 0}
 --- !u!1001 &100100000
