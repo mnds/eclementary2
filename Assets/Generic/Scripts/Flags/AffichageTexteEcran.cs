@@ -35,7 +35,7 @@ public class AffichageTexteEcran : MonoBehaviour {
 			//Debug.Log ("Texte prioritaire");
 			return; //Texte prioritaire.
 		}
-		Debug.Log ("Texte : "+texte);
+		//Debug.Log ("Texte : "+texte);
 		ControlCenter.GetTexte ().text = texte;
 		if(!ControlCenter.GetTexte ())
 			Debug.LogWarning ("PROBLEME");
