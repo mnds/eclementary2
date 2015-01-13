@@ -83,7 +83,7 @@ public class Lancement : MonoBehaviour {
 		else {
 			yield return new WaitForSeconds(0.1f);
 		}
-
+		FlagManager.ActiverFlag(10); //Début du jeu !
 		Application.LoadLevel(nomDeLaScene);
 	}
 }

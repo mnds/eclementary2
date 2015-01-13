@@ -42,9 +42,9 @@ public class Caracteristiques : MonoBehaviour {
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
 		cj = gameObject.GetComponent<ControllerJoueur> ();
-		Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
+		//Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
 		h = gameObject.GetComponent<Health> ();
-		Debug.Log ("Health de " + this + " est défini : " + (h == true));
+		//Debug.Log ("Health de " + this + " est défini : " + (h == true));
 	}
 
 
@@ -58,7 +58,7 @@ public class Caracteristiques : MonoBehaviour {
 		if (h) {
 			h.SetPointsDeVieMax (pointsDeVie);
 		}
-		Debug.Log ("Actualisation des statistiques effectuée");
+		//Debug.Log ("Actualisation des statistiques effectuée");
 	}
 
 

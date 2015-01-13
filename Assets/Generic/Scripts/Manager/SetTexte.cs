@@ -44,9 +44,11 @@ public class SetTexte : MonoBehaviour {
 		if(Physics.Raycast(cameraPrincipale.transform.position, cameraPrincipale.transform.forward,out hitInfo, distanceAffichageTexte))				
 		{
 			objet = hitInfo.collider.gameObject;
+			Debug.Log ("Objet"+objet.name);
 			//On récupère le texte de l'objet
 			AffichageTexteRaycast atr = objet.GetComponent<AffichageTexteRaycast>();
 			if(atr) { //S'il y en a un, comme un Raycast est toujours temporaire
+				Debug.Log ("ATR");
 				atr.ChangerTexte();
 			}
 			else
