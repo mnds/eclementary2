@@ -22,6 +22,21 @@ public class ChangerSpawnPoint : Evenement {
 		if(spawnPoint.GetNom()!=NomItem.SpawnPoint) //Si ce n'est pas un spawnPoint on laisse tomber
 			return; 
 
+		//On prend le spawn Point précédent et on le désactive
+		string nomSpawnPointPrecedent = ControlCenter.GetNomSpawnPointActuel ();
+		GameObject spawnPointPrecedent;
+		SpawnPoint spPrecedent;
+		if(nomSpawnPointPrecedent!=null) {
+			spawnPointPrecedent = GameObject.Find (ControlCenter.GetNomSpawnPointActuel());
+			if(spawnPointPrecedent) {//Si le spawnPoint existe
+				spPrecedent = spawnPointPrecedent.GetComponent<SpawnPoint>();
+				if(spPrecedent!=null) //S'il a bien un script SpawnPoint
+					spPrecedent.SetEstActif (false); //On le désactive
+			}
+		}
+
+
+		// On change de spawnPoint
 		ControlCenter.SetNomSpawnPointActuel(spawnPoint.GetNomItem());
 
 		if(spawnPoint.GetTeleportationImmediate()) { //Ajouter ici une condition sur la scène

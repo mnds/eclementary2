@@ -14,9 +14,13 @@ public class SpawnPoint : MonoBehaviour {
 	public bool estActif = true;
 
 	void Awake () {
-		if(estActif) {
+		//Si le controlcenter dit que c'est le point de spawn actuel
+		if(ControlCenter.GetNomSpawnPointActuel()==gameObject.name)
 			Teleportation();
-		}
+		/*if(estActif) {
+			ChangerSpawnPoint csp = new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,gameObject.name,Application.loadedLevelName,true));
+			Teleportation();
+		}*/
 	}
 
 	public void Teleportation () {

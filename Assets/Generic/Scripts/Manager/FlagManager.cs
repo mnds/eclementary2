@@ -87,7 +87,7 @@ static public class FlagManager {
 		flags.Add (new Flag(5,false,"Mort de la boule",new List<int>() {4}));*/
 
 		//Flags du scenario
-		flags.Add (new Flag(10,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){}));
+		flags.Add (new Flag(10,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointPresWeiman","CampusExterieurScenario100115",false))}));
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){}));
 		flags.Add (new Flag(30,false,"Bus choisi",new List<int>(){20},new List<Evenement>(){}));
 		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointMilieuTerrain","CampusExterieurScenario100115",true))}));
