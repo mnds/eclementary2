@@ -11,7 +11,7 @@ public class EtatMort : EtatNonJouable
 { 
 	
 	public EtatMort ( StateManager manager ) : base( manager ) {
-		sceneCorrespondante = "Ecran Mort";
+		sceneCorrespondante = ControlCenter.nomDeLaSceneDeMort;
 		ChargerSceneCorrespondante ();
 	}
 
