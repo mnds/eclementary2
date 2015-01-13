@@ -45,7 +45,7 @@ static public class ControlCenter {
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur");
-		//texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>();
+		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>();
 	}
 
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
