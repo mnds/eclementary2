@@ -36,6 +36,7 @@ static public class ControlCenter {
 	//Garde en mémoire les scènes
 	static int idScenePrecedente;
 	static public ModesJeu mode = ModesJeu.Normal; //Mode Debug ou Normal. Utilisé dans DebugManager.
+	static public string nomSpawnPointActuel;
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur");
@@ -133,5 +134,13 @@ static public class ControlCenter {
 	
 	static public bool GetTexteEstPrioritaire () {
 		return texteEstPrioritaire;
+	}
+
+	static public void SetNomSpawnPointActuel (string nomSpawnPointActuel_) {
+		nomSpawnPointActuel=nomSpawnPointActuel_;
+	}
+	
+	static public string GetNomSpawnPointActuel () {
+		return nomSpawnPointActuel;
 	}
 }

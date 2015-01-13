@@ -15,10 +15,13 @@ public class SpawnPoint : MonoBehaviour {
 
 	void Awake () {
 		if(estActif) {
-			Debug.Log ("JP : "+ControlCenter.GetJoueurPrincipal());
-			ControlCenter.GetJoueurPrincipal ().transform.position=gameObject.transform.position;
-			ControlCenter.GetJoueurPrincipal ().transform.rotation=gameObject.transform.rotation;
+			Teleportation();
 		}
+	}
+
+	public void Teleportation () {
+		ControlCenter.GetJoueurPrincipal ().transform.position=gameObject.transform.position;
+		ControlCenter.GetJoueurPrincipal ().transform.rotation=gameObject.transform.rotation;
 	}
 
 	public bool GetEstActif () {

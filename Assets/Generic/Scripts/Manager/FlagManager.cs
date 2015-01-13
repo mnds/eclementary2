@@ -90,7 +90,7 @@ static public class FlagManager {
 		flags.Add (new Flag(10,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){}));
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){}));
 		flags.Add (new Flag(30,false,"Bus choisi",new List<int>(){20},new List<Evenement>(){}));
-		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){}));
+		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointMilieuTerrain","CampusExterieurScenario100115",true))}));
 		flags.Add (new Flag(50,false,"Papier du cadavre obtenu",new List<int>(){40},new List<int>(){50},new List<Evenement>(){}));
 		flags.Add (new Flag(60,false,"Discussion avec le personnage devant le foyer",new List<int>(){40},new List<Evenement>(){}));
 		flags.Add (new Flag(70,false,"Recuperation de la belle boite",new List<int>(){60},new List<Evenement>(){}));
@@ -196,6 +196,7 @@ static public class FlagManager {
 		//Le flag est activable : on l'active et on effectue les evenements lies
 		f.actif = true;
 		foreach(Evenement e in f.evenementsDeclenches) {
+			Debug.Log ("Activation evenement");
 			e.DeclencherEvenement();
 		}
 
