@@ -131,18 +131,18 @@ public class Attaquer : MonoBehaviour, IScriptEtatJouable {
 	void OnTriggerEnter (Collider objet) {
 		if (!enabled)
 			return;
-		Debug.Log ("OnTriggerEnter");
+//		Debug.Log ("OnTriggerEnter");
 		if(enCoursDeRetour) return;
 		if(bypass) return;
 		if (ControlCenter.inventaireOuvert) return;
-		Debug.Log ("Pas de bypass");
+//		Debug.Log ("Pas de bypass");
 		
 		GameObject go = objet.gameObject;
 		Transform objetAvecVie = go.transform;
 		
 		// La cible ne reçoit des dégâts que si le joueur l'attaque (la toucher ne suffit pas)
 		if (enTrainDAttaquer && !enCoursDeRetour && infligerDegats) {
-			Debug.Log ("Recevoir des degats");
+			//Debug.Log ("Recevoir des degats");
 			if(!infligeDesDegatsAPlusieursEnnemis)
 				infligerDegats = false; //Plus de dégats
 			//On cherche si l'objet ou un de ses parents a de la vie

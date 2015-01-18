@@ -25,8 +25,7 @@ public class ActivationFlag : AffichageTexteEcran {
 	/**
 	 * @brief Méthode appelée pour activer le flag.
 	 * 
-	 * @details Commence par vérifier si l'activation du flag est lié à des paramètres extérieurs (inventaire...), puis regarde
-	 * 			au niveau du
+	 * @details Commence par vérifier si l'activation du flag est lié à des paramètres extérieurs (inventaire...)
 	 */
 	public void ActivationFlagActive () {
 		TestsActivation(); //Tests concernant l'inventaire / les caractéristiques du joueur... qui peuvent changer l'état de activable et le mettre à false.
@@ -35,12 +34,12 @@ public class ActivationFlag : AffichageTexteEcran {
 			activable = !FlagManager.ActiverFlag(flagActive);
 			if(!activable) {
 				StartCoroutine(AfficherTextePrioritaire (texteSiActivable));
-				FaireActionsConnexes(); //Tout ce qui concerne uniquement cette interaction (appel à des événements...)
 				animationActivation=GetComponent<Animation>();
 				if(animationActivation) {
 					animationActivation.Play();
 					Debug.Log ("ANIMATION");
 				}
+				FaireActionsConnexes(); //Tout ce qui concerne uniquement cette interaction (appel à des événements...)
 			}
 			else
 				StartCoroutine(AfficherTextePrioritaire (texteSiNonActivable)); //Il manque un flag.
