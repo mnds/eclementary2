@@ -91,8 +91,8 @@ static public class FlagManager {
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){}));
 		flags.Add (new Flag(30,false,"Bus choisi",new List<int>(){20},new List<Evenement>(){}));
 		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointMilieuTerrain",ControlCenter.nomDeLaSceneDuCampus,true))}));
-		flags.Add (new Flag(42,false,"Choix du batiment",new List<int>(){40},new List<int>(){40}));
-		flags.Add (new Flag(44,false,"Lit apres le WEI",new List<int>(){42},new List<int>(){42}));
+		flags.Add (new Flag(42,false,"Choix du batiment",new List<int>(){40},new List<int>(){42}));
+		flags.Add (new Flag(44,false,"Lit apres le WEI",new List<int>(){42},new List<int>(){44}));
 		flags.Add (new Flag(50,false,"Papier du cadavre obtenu",new List<int>(){44},new List<int>(){50},new List<Evenement>(){}));
 		flags.Add (new Flag(60,false,"Discussion avec le personnage devant le foyer",new List<int>(){44},new List<Evenement>(){}));
 		flags.Add (new Flag(70,false,"Recuperation de la belle boite",new List<int>(){60},new List<Evenement>(){}));

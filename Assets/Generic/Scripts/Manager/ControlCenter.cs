@@ -142,6 +142,7 @@ static public class ControlCenter {
 	}
 
 	static public void SetNomSpawnPointActuel (string nomSpawnPointActuel_) {
+		Debug.Log ("Nouveau point de spawn : "+nomSpawnPointActuel_);
 		nomSpawnPointActuel=nomSpawnPointActuel_;
 	}
 	
