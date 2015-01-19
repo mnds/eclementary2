@@ -166,6 +166,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	}
 	
 	public void ArreterInteraction() {
+		Debug.Log ("Fin interaction");
 		repliqueChoisie = null;
 		repliquesSuivantes = null;
 		
@@ -174,6 +175,12 @@ public class Dialogue : MonoBehaviour, Interactif {
 		if (mouvementJoueur != null) {// Déblocage des mouvements du joueur
 			mouvementJoueur.SetFreeze( false ); // Déblocage des mouvements du joueur
 		}
+	}
+
+	//Si le dialogue est désactivé alors qu'on a une interaction enclenché, ça va etre tres problématique.
+	public void OnDisable () {
+		if(interactionDeclenchee)
+			ArreterInteraction();
 	}
 
 	public void SetDistanceMinimaleInteraction (float distanceMinimaleInteraction_) {

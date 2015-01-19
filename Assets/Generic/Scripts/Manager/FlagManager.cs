@@ -168,6 +168,7 @@ static public class FlagManager {
 	 * @param f Reference du flag à activer.
 	 *
 	 * @return Renvoie true si le flag est à true avant ou après avoir essayé de l'activer. Renvoie false pour un flag inexistant.
+	 * @details Si on a un changement de flag on vérifie quels objets sont à activer désactiver
 	 */
 	static public bool ActiverFlag(Flag f) {
 		Debug.Log ("Tentative d'activation du flag d'id : "+f.id);
@@ -180,6 +181,7 @@ static public class FlagManager {
 			if(!ChercherFlagParId (id).actif) {
 				Debug.Log("Flag id : "+f.id+" pas activable");
 				f.actif=false; //Au cas où il y ait eu des mauvais positifs
+				ControlCenter.VerifierLesOASFs();
 				return false;
 			}
 		}
@@ -189,6 +191,7 @@ static public class FlagManager {
 			if(ChercherFlagParId (id).actif) {
 				Debug.Log("Flag id : "+f.id+" pas activable");
 				f.actif=false; //Au cas où il y ait eu des mauvais positifs
+				ControlCenter.VerifierLesOASFs();
 				return false;
 			}
 		}
@@ -201,7 +204,7 @@ static public class FlagManager {
 			Debug.Log ("Activation evenement");
 			e.DeclencherEvenement();
 		}
-
+		ControlCenter.VerifierLesOASFs();
 		return f.actif; //Renvoie si le flag est actif.
 	}
 }

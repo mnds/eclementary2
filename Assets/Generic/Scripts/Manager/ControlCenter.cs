@@ -14,9 +14,18 @@
 
 using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 
 static public class ControlCenter {
+	public class ObjetActivableSelonFlags {
+		public ActivationSelonFlags asf;
+		public string nomScene;
+		public ObjetActivableSelonFlags(ActivationSelonFlags asf_, string ns) {
+			asf=asf_;
+			nomScene=ns;
+		}
+	}
+
 	//Variables globales permettant de définir les noms de certains éléments du jeu amenés à changer
 	static public string nomDuJoueurPrincipal = "Joueur";
 	static public string nomDeLaSceneDuCampus = "CampusScenario";
@@ -43,9 +52,12 @@ static public class ControlCenter {
 	static public ModesJeu mode = ModesJeu.Normal; //Mode Debug ou Normal. Utilisé dans DebugManager.
 	static public string nomSpawnPointActuel;
 
+	//Recupération de tous les objets qui peuvent s'activer / se désactiver en fonction des flags
+	static public List<ObjetActivableSelonFlags> lesOASFs = new List<ObjetActivableSelonFlags>(){};
+
 	static ControlCenter () {
-		joueurPrincipal = GameObject.Find ("Joueur");
-		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>();
+		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
+		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
 	}
 
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
@@ -148,5 +160,35 @@ static public class ControlCenter {
 	
 	static public string GetNomSpawnPointActuel () {
 		return nomSpawnPointActuel;
+	}
+
+
+  ///Méthodes liées à l'activation d'objets dans le décor selon l'état des flags
+
+	/**
+	 * @brief Ajout d'un objet dont l'activation dépend des flags.
+	 * @param asf Le script qui détermine si l'objet doit etre active ou nom
+	 * @param nomScene_ Le nom de la scene dans laquelle se trouve l'objet
+	 **/
+	static public void AddObjetActivableSelonFlags(ActivationSelonFlags asf, string nomScene_) {
+		lesOASFs.Add(new ObjetActivableSelonFlags(asf,nomScene_));
+	}
+
+	/**
+	 * @brief Enlève tous les oasf qui ne sont pas dans la bonne scène donc qu'on ne doit pas étudier, et on vérifie si les objets correspondants doivent se désactiver ou pas.
+	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
+	 **/
+	static public void VerifierLesOASFs () {
+		string nomSceneActuelle = Application.loadedLevelName;
+		List<ObjetActivableSelonFlags> resultat = new List<ObjetActivableSelonFlags>(){};
+		//On vérifie quels oasf ne sont pas dans la scène considérée
+		foreach(ObjetActivableSelonFlags oasf in lesOASFs) {
+			if(oasf.nomScene==nomSceneActuelle) { //Si la bonne scène
+				resultat.Add (oasf);
+				oasf.asf.Verifier(); //On vérifie ce asf
+			}
+		}
+		//On remplace la liste par la nouvelle
+		lesOASFs=resultat;
 	}
 }
