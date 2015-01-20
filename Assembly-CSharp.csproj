@@ -76,8 +76,12 @@
      <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\MoveCamera.cs" />
      <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\SpawnPoint.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\Etat.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatCampus.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatChambre.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatChambreGarsFoyer.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatDepart.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatJouable.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatLaboLIRIS.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatMort.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatNonJouable.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverAnimation.cs" />
@@ -86,6 +90,7 @@
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCycleJourNuit.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverInventaire.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverSon.cs" />
+     <Compile Include="Assets\Generic\Scripts\Evenements\ChangerDifficulte.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ChangerSpawnPoint.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCle.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCycleJourNuit.cs" />
@@ -104,6 +109,7 @@
      <Compile Include="Assets\Generic\Scripts\Flags\AffichageTexteRaycast.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlag.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagInteractif.cs" />
+     <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagOnTrigger.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
      <Compile Include="Assets\Generic\Scripts\Health\Health.cs" />
      <Compile Include="Assets\Generic\Scripts\Health\HealthDestroy.cs" />

@@ -65,6 +65,33 @@ public class StateManager : MonoBehaviour {
 		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
 	}
 
+	/**
+	 * @brief Permet d'automatiser le changement d'état lors des chargements de scènes.
+	 */
+	public void ChargerEtatSelonScene (string nomScene) {
+		if(nomScene==ControlCenter.nomDeLaSceneDeMort) {
+			instanceActive.BasculerEtat(new EtatMort(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="Chambre") {
+			instanceActive.BasculerEtat(new EtatChambre(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="ChambreGarsFoyer") {
+			instanceActive.BasculerEtat(new EtatChambreGarsFoyer(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="LaboLIRIS") {
+			instanceActive.BasculerEtat(new EtatLaboLIRIS(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene==ControlCenter.nomDeLaSceneDuCampus) {
+			instanceActive.BasculerEtat(new EtatCampus(StateManager.getInstance()));
+			return;
+		}
+		return;
+	}
+
 	public void Restart() {
 		Destroy (gameObject); // Destruction du gameObject parent
 		Application.LoadLevel ( sceneDebut ); // Chargement de la scène de début

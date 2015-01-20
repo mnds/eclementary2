@@ -64,6 +64,10 @@ public class DebugManager : MonoBehaviour {
 			if(commandeActuelle.Length>6 && commandeActuelle.Substring(0,6)=="/load ") {
 				Application.LoadLevel(commandeActuelle.Substring(6));
 			}
+			int number;
+			if(int.TryParse(commandeActuelle, out number)) {
+				Debug.Log ("Le flag "+number+" est "+FlagManager.ChercherFlagParId(number).actif);
+			}
 			break;
 		}
 	}

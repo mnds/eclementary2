@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 
 // Liste des noms que peut prendre un item
-public enum NomItem { Key, Sound, SpawnPoint};
+public enum NomItem { Key, Sound, SpawnPoint, NomDifficulte};
 
 
 public class Item {
@@ -19,9 +19,16 @@ public class Item {
 	private string nomItem; //Nom de cet item
 	private string nomScene; //Nom de la scène
  	private bool teleportationImmediate; //Si true, téléportation immédiate
+	private ControlCenter.Difficulte nomDifficulte;
 
 	public Item( NomItem nom_ ) {
 		this.nom = nom_;
+	}
+
+	//Notamment pour les difficultés
+	public Item (NomItem nom_ , ControlCenter.Difficulte nomDifficulte_) {
+		this.nom = nom_;
+		this.nomDifficulte = nomDifficulte_;
 	}
 
 	//Pour les spawnPoints
@@ -46,5 +53,9 @@ public class Item {
 
 	public bool GetTeleportationImmediate () {
 		return teleportationImmediate;
+	}
+
+	public ControlCenter.Difficulte GetNomDifficulte () {
+		return nomDifficulte;
 	}
 }
