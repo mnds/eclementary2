@@ -34,9 +34,9 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
-		sceneDebut = "Lancement";
+		sceneDebut = "Ecran titre";
 		dataRef = GetComponent<GameData> ();
-		etatActif = new EtatDepart ( this );
+		etatActif = new EtatLancement ( this );
 	}
 	
 	// Update is called once per frame
