@@ -17,6 +17,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 static public class ControlCenter {
+	public enum Difficulte {
+		Facile,
+		Normale,
+		Difficile,
+		TresDifficile
+	}
+
+	[System.Serializable]
 	public class ObjetActivableSelonFlags {
 		public ActivationSelonFlags asf;
 		public string nomScene;
@@ -54,6 +62,9 @@ static public class ControlCenter {
 
 	//Recupération de tous les objets qui peuvent s'activer / se désactiver en fonction des flags
 	static public List<ObjetActivableSelonFlags> lesOASFs = new List<ObjetActivableSelonFlags>(){};
+	
+	//Parametres
+	static public Difficulte difficulteActuelle = Difficulte.Normale;
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
@@ -179,6 +190,7 @@ static public class ControlCenter {
 	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
 	 **/
 	static public void VerifierLesOASFs () {
+		Debug.Log ("Vérification des OASF");
 		string nomSceneActuelle = Application.loadedLevelName;
 		List<ObjetActivableSelonFlags> resultat = new List<ObjetActivableSelonFlags>(){};
 		//On vérifie quels oasf ne sont pas dans la scène considérée

@@ -12,6 +12,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(AffichageTexteRaycast))] //Pour si l'objet devant n'en a pas, qu'on en active un quand meme
 public class SetTexte : MonoBehaviour {
@@ -45,14 +46,13 @@ public class SetTexte : MonoBehaviour {
 		{
 			objet = hitInfo.collider.gameObject;
 //			Debug.Log ("Objet"+objet.name);
-			//On récupère le texte de l'objet
-			AffichageTexteRaycast atr = objet.GetComponent<AffichageTexteRaycast>();
-			if(atr) { //S'il y en a un, comme un Raycast est toujours temporaire
-				//Debug.Log ("ATR");
+			//On récupère les textes de l'objet
+			AffichageTexteRaycast[] atrs = objet.GetComponents<AffichageTexteRaycast>();
+			//On les affiche tous, sachant que ceux-ci seront affichés ou pas selon les flags activés
+			foreach(AffichageTexteRaycast atr in atrs)
 				atr.ChangerTexte();
-			}
-			else
-				atrpropre.ChangerTexte ();
+			if(atrs.Length==0) //Pas eu de truc à afficher
+				atrpropre.ChangerTexte(); //Affichage texte défaut
 		}
 		else
 			atrpropre.ChangerTexte ();

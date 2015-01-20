@@ -50,20 +50,10 @@ public class ChangementSceneFlag : MonoBehaviour {
 
 		//Changement de scène
 		foreach(FlagsRequisInterditsChangementSceneFlag fricsf in nomsDesScenesAccessibles) {
-			bool changerDeScene = true; //Peut changer pendant les tests
-			foreach (int fnpt in fricsf.flagsNecessairesPourTransition) {
-				if (!FlagManager.ChercherFlagParId (fnpt).actif) {
-					changerDeScene=false;
-				}
-			}
-			foreach (int fipt in fricsf.flagsInterditsPourTransition) {
-				if (FlagManager.ChercherFlagParId (fipt).actif) {
-					changerDeScene=false;
-				}
-			}
+			bool changerDeScene = FlagManager.VerifierFlags(fricsf.flagsNecessairesPourTransition,fricsf.flagsInterditsPourTransition); //Peut changer pendant les tests
 			if(changerDeScene) { //Tous les flags sont bons, on change de scène.
 				ControlCenter.SetNomSpawnPointActuel(fricsf.nomDuSpawnPoint);
-				Application.LoadLevel(fricsf.nomScene);
+				ChargerNiveau(fricsf.nomScene);
 			}
 		}
 	}
@@ -76,5 +66,10 @@ public class ChangementSceneFlag : MonoBehaviour {
 	//Destinée à etre override, actions à faire selon l'id. On met un switch dans la méthode pour savoir qui fait quoi
 	public virtual void FaireActionsConnexes(int idFlag_) {
 		
+	}
+
+	private void ChargerNiveau(string nomScene_) {
+		Debug.Log ("Chargement d'un niveau : "+nomScene_);
+		StateManager.getInstance().ChargerEtatSelonScene(nomScene_);
 	}
 }

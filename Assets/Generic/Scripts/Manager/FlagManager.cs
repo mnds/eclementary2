@@ -33,6 +33,24 @@ static public class FlagManager {
 			evenementsDeclenches=evenements_;
 		}
 
+		public Flag(int id_,bool actifDebut, string description_) {
+			id=id_;
+			actif=actifDebut;
+			description=description_;
+			predecesseurs=new List<int>(){};
+			bloquants=new List<int>(){};
+			evenementsDeclenches=new List<Evenement>(){};
+		}
+
+		public Flag(int id_,bool actifDebut, string description_, List<Evenement> evenements_) {
+			id=id_;
+			actif=actifDebut;
+			description=description_;
+			predecesseurs=new List<int>(){};
+			bloquants=new List<int>(){};
+			evenementsDeclenches=evenements_;
+		}
+
 		public Flag(int id_,bool actifDebut, string description_, List<int> predecesseurs_,List<Evenement> evenements_) {
 			id=id_;
 			actif=actifDebut;
@@ -86,6 +104,11 @@ static public class FlagManager {
 		flags.Add (new Flag(4,false,"Activation de la BOULE", new List<int> () {1,2,3}));
 		flags.Add (new Flag(5,false,"Mort de la boule",new List<int>() {4}));*/
 
+		//Flags de difficulté du jeu
+		flags.Add (new Flag(1,false,"Difficulté facile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Facile))}));
+		flags.Add (new Flag(2,false,"Difficulté normale",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Normale))}));
+		flags.Add (new Flag(3,false,"Difficulté difficile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Difficile))}));
+		flags.Add (new Flag(4,false,"Difficulté très difficile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.TresDifficile))}));
 		//Flags du scenario
 		flags.Add (new Flag(10,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointPresWeiman",ControlCenter.nomDeLaSceneDuCampus,false))}));
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){}));
@@ -206,5 +229,22 @@ static public class FlagManager {
 		}
 		ControlCenter.VerifierLesOASFs();
 		return f.actif; //Renvoie si le flag est actif.
+	}
+
+	/**
+	 * @brief Renvoie true ou false selon si les listes données en arguments contiennent des flags dans les états souhaités.
+	 */
+	static public bool VerifierFlags(List<int> flagsDevantEtreActives, List<int> flagsDevantEtreDesactives) {
+		foreach (int i in flagsDevantEtreActives) {
+			if (!ChercherFlagParId (i).actif) {
+				return false;
+			}
+		}
+		foreach (int j in flagsDevantEtreDesactives) {
+			if (ChercherFlagParId (j).actif) {
+				return false;
+			}
+		}
+		return true;
 	}
 }

@@ -7,7 +7,7 @@ public class Mourir : Evenement {
 		ControlCenter.GetJoueurPrincipal ().GetComponent<ControllerJoueur>().SetVitesseNonVerticaleActuelle (0f);
 		ControlCenter.GetJoueurPrincipal ().GetComponent<ControllerJoueur>().setEnabled (false);
 		StateManager.getInstance().BasculerEtat( new EtatMort( StateManager.getInstance() ) );
-		StateManager stateManager = StateManager.getInstance ();
-		Debug.Log ( "Mort: Scène de l'ancien état " + stateManager.ancienEtat.getSceneCorrespondante());
+		//StateManager stateManager = StateManager.getInstance ();
+		//Debug.Log ( "Mort: Scène de l'ancien état " + stateManager.ancienEtat.getSceneCorrespondante());
 	}
 }
