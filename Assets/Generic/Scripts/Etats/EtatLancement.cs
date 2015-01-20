@@ -24,6 +24,7 @@ public class EtatLancement : EtatNonJouable
 	public override void AfficherRendu() {
 		if (GUI.Button (new Rect (Screen.width / 2, Screen.height / 2, 200, 50), "Lancer le jeu")) {
 			StateManager.getInstance().BasculerEtat( new EtatDepart( StateManager.getInstance() ) );
+			FlagManager.ActiverFlag(10); // Activation du flag 10, correspondant au début du jeu
 		}
 	}
 }
