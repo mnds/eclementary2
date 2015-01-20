@@ -28,6 +28,10 @@ public class FPCClassic : ControllerJoueur {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.M)&&ControlCenter.mode==ModesJeu.Debug) {
+			Debug.Log ("Recharge endurance");
+			jauge=jaugeMax;
+		}
 		if (!enabled) {
 			Debug.Log ("Not enabled");
 			SetVitesseNonVerticaleActuelle (0f);

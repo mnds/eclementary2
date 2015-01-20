@@ -28,7 +28,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
 	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
-	
+	public Sprite imageTransparente; // Image transparente, utilisée dans les états non jouables
+
 	private GameObject inventaire;//Stock la fenetre d'inventaire
 	public Sprite imageVide;
 
@@ -162,7 +163,6 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		{
 			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text=listeObjetsRecoltables[positionObjet].name;
 		}
-		/*PROBLEME : QUAND ON LANCE UN OBJET, IL NE CHANGE PAS LE MEDAILLON*/
 	}
 
 
@@ -421,6 +421,25 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	}
 	
 	public void setEnabled( bool ok ) {
-		enabled = ok;
+		GameObject armeCourante = GameObject.Find ("Arme Active");
+		if (!ok) { // La vignette de l'arme courante est remplacée par une image transparente dans un état non jouable
+			//On remplace l'image par l'image de l'objet en question
+			armeCourante.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = imageTransparente;
+			armeCourante.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = "";
+		} 
+		else {
+			int positionObjet = 0;
+			for (int i=0;i<listeObjetsRecoltables.Count;i++)
+			{
+				if(listeObjetsRecoltables[i]==listeObjetsUtilisables[positionScroll])
+				{
+					positionObjet=i;
+				}
+			}
+			//On remplace l'image par l'image de l'objet en question
+			armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionObjet];	
+		}
+
+		enabled = ok; // Mise à jour de l'état
 	}
 }

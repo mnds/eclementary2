@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	ControllerJoueur mouvementJoueur ; // Référence vers le script de déplacement du joueur
 
 	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet
-
+	
 	// Use this for initialization
 	void Start () {
 		string contenu = ContenuFichierRepliques ();
@@ -52,10 +52,20 @@ public class Dialogue : MonoBehaviour, Interactif {
 				int y = 10;
 				for (int i = 0; i < repliquesSuivantes.Count; i++) {
 					if (repliquesSuivantes [i] != null) { // Test de l'existence en mémoire de la réplique, au cas où il y aurait une erreur dans le fichier des répliques
-						if (GUI.Button (new Rect (50, y, 200, 50), repliquesSuivantes [i].GetTexte ())) {
+						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*6 : repliquesSuivantes [i].GetTexte ().Length*7;
+						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
+						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
+
+						// Affichage de l'avatar du joueur
+						Personnage perso = (Personnage)repliquesSuivantes [i].GetGoAssocie().GetComponent<Personnage>();
+						if( perso != null )
+							GUI.Label( new Rect(0, 10, 80, 80), perso.avatar );
+						GUI.Label ( new Rect(0, 90, 80, 20), repliquesSuivantes [i].GetGoAssocie().name, guiStyle); // Affichage du nom du joueur
+
+						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
 						}
-						y += 50; // Incrémentation de y pour afficher la réplique soeur un cran en dessous
+						y += 55; // Incrémentation de y pour afficher la réplique soeur un cran en dessous
 					} 
 					else
 						Debug.Log ("La réplique indiquée n'existe pas. Veuillez vérifier le contenu du fichier");

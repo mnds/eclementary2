@@ -34,9 +34,9 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
-		sceneDebut = "Lancement";
+		sceneDebut = "Ecran titre";
 		dataRef = GetComponent<GameData> ();
-		etatActif = new EtatDepart ( this );
+		etatActif = new EtatLancement ( this );
 	}
 	
 	// Update is called once per frame
@@ -63,6 +63,33 @@ public class StateManager : MonoBehaviour {
 		ancienEtat = etatActif;
 		etatActif = etat;
 		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
+	}
+
+	/**
+	 * @brief Permet d'automatiser le changement d'état lors des chargements de scènes.
+	 */
+	public void ChargerEtatSelonScene (string nomScene) {
+		if(nomScene==ControlCenter.nomDeLaSceneDeMort) {
+			instanceActive.BasculerEtat(new EtatMort(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="Chambre") {
+			instanceActive.BasculerEtat(new EtatChambre(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="ChambreGarsFoyer") {
+			instanceActive.BasculerEtat(new EtatChambreGarsFoyer(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene=="LaboLIRIS") {
+			instanceActive.BasculerEtat(new EtatLaboLIRIS(StateManager.getInstance()));
+			return;
+		}
+		if(nomScene==ControlCenter.nomDeLaSceneDuCampus) {
+			instanceActive.BasculerEtat(new EtatCampus(StateManager.getInstance()));
+			return;
+		}
+		return;
 	}
 
 	public void Restart() {
