@@ -72,11 +72,11 @@ NavMeshSettings:
     agentClimb: .400000006
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    accuratePlacement: 0
+    accuratePlacement: 1
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-  m_NavMesh: {fileID: 19400000, guid: de3caa683c712794e8bf128b232c28ae, type: 2}
+  m_NavMesh: {fileID: 19400000, guid: 552eb19f7d1c74f4d9a80eec1e2b20be, type: 2}
 --- !u!1 &110195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &46789314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,6 +2181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Retour du WEI
 --- !u!114 &46789315
 MonoBehaviour:
@@ -2194,6 +2196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 40
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -2393,7 +2397,7 @@ Transform:
   m_PrefabParentObject: {fileID: 465468, guid: 385f9f3e94f7cf84485942d835e1afa3, type: 2}
   m_PrefabInternal: {fileID: 1913022954}
   m_GameObject: {fileID: 52317583}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2528,6 +2532,46 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56443520}
+--- !u!1 &56639104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 150948, guid: 933b7331b798d4a409e81a9025ad7f7e, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 56639105}
+  - 114: {fileID: 56639106}
+  m_Layer: 0
+  m_Name: SpawnPointBatimentX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56639105
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 450948, guid: 933b7331b798d4a409e81a9025ad7f7e, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56639104}
+  m_LocalRotation: {x: 0, y: -.619778991, z: 0, w: .78477639}
+  m_LocalPosition: {x: 1225, y: 194, z: 1069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 630954912}
+  m_RootOrder: 6
+--- !u!114 &56639106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56639104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f42df4987ccfc42a50d095739a9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estActif: 0
 --- !u!1 &57193330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,7 +4719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411212, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
@@ -5134,6 +5178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 400
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -5894,7 +5940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 36
+  m_RootOrder: 34
 --- !u!114 &148817074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5907,6 +5953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Fin du jeu
 --- !u!114 &148817075
 MonoBehaviour:
@@ -5920,6 +5968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 450
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -6131,6 +6181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Debut du jeu
 --- !u!114 &151754846
 MonoBehaviour:
@@ -6144,6 +6196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 10
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -6589,7 +6643,7 @@ GameObject:
   - 114: {fileID: 166194376}
   m_Layer: 0
   m_Name: PrezClubBD
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6607,7 +6661,7 @@ Transform:
   - {fileID: 1225363626}
   - {fileID: 235790284}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 15
+  m_RootOrder: 13
 --- !u!114 &166194376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6620,6 +6674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prez Club BD
 --- !u!114 &166194377
 MonoBehaviour:
@@ -7042,7 +7098,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 19
+  m_RootOrder: 17
 --- !u!114 &170834917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7055,6 +7111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Lit
 --- !u!114 &170834918
 MonoBehaviour:
@@ -7068,6 +7126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 230
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -7652,113 +7712,6 @@ Prefab:
   m_RootGameObject: {fileID: 1034004765}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &182456623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 182456624}
-  - 33: {fileID: 182456629}
-  - 65: {fileID: 182456628}
-  - 23: {fileID: 182456627}
-  - 114: {fileID: 182456626}
-  - 114: {fileID: 182456625}
-  m_Layer: 0
-  m_Name: Recuperation message chambre
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &182456624
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1269, y: 194, z: 977}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1267960060}
-  m_RootOrder: 9
---- !u!114 &182456625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404396, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texteAffiche: Recuperation message chambre
---- !u!114 &182456626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404398, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagActive: 90
-  flagRequisPourDestruction: 
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 90
-  texteSiNonActivable: 
-  distanceMinimaleInteraction: 4
---- !u!23 &182456627
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &182456628
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &182456629
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182456623}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &182722728
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,7 +9312,7 @@ Transform:
   m_PrefabParentObject: {fileID: 404538, guid: ca89a776690ddeb42a4c6a9e6a496ae3, type: 2}
   m_PrefabInternal: {fileID: 2094374354}
   m_GameObject: {fileID: 235454290}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10923,7 +10876,7 @@ GameObject:
   - 114: {fileID: 262502674}
   m_Layer: 0
   m_Name: ProfLiris
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10941,7 +10894,7 @@ Transform:
   - {fileID: 893450525}
   - {fileID: 1372220932}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 11
+  m_RootOrder: 9
 --- !u!114 &262502674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10954,6 +10907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prof Liris
 --- !u!114 &262502675
 MonoBehaviour:
@@ -11274,7 +11229,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496436, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
@@ -11385,6 +11340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 28000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &274199009
 BoxCollider:
@@ -11543,6 +11500,115 @@ MeshFilter:
   m_PrefabInternal: {fileID: 495061750}
   m_GameObject: {fileID: 278424129}
   m_Mesh: {fileID: 4300006, guid: aee939b77a642de478b0de0de303e259, type: 3}
+--- !u!1 &279210168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 196538, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 279210169}
+  - 33: {fileID: 279210173}
+  - 65: {fileID: 279210172}
+  - 114: {fileID: 279210171}
+  - 114: {fileID: 279210170}
+  - 114: {fileID: 279210174}
+  m_Layer: 0
+  m_Name: BusTresDifficile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279210169
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 496538, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_LocalRotation: {x: 0, y: -.667319775, z: 0, w: .744771302}
+  m_LocalPosition: {x: 1103.59998, y: 206.699997, z: 715}
+  m_LocalScale: {x: 8.69000149, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1267960060}
+  m_RootOrder: 5
+--- !u!114 &279210170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 4
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 0
+  texteSiActivable: Activation flag 4
+  texteSiNonActivable: 
+  distanceMinimaleInteraction: 4
+--- !u!114 &279210171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11496534, guid: 3b734f8c4b9522246aa48e6d2ace6102,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 30
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 1
+  texteSiActivable: Activation flag 30
+  texteSiNonActivable: 
+  distanceMinimaleInteraction: 4
+--- !u!65 &279210172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6596538, guid: 3b734f8c4b9522246aa48e6d2ace6102,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &279210173
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3396538, guid: 3b734f8c4b9522246aa48e6d2ace6102,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &279210174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 0a000000
+  flagsDevantEtreDesactives: 28000000
 --- !u!1 &284038325
 GameObject:
   m_ObjectHideFlags: 0
@@ -12841,7 +12907,7 @@ Transform:
   m_PrefabParentObject: {fileID: 446012, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
   m_PrefabInternal: {fileID: 1077011361}
   m_GameObject: {fileID: 333750681}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14481,6 +14547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: 
 --- !u!132 &383657602
 GUIText:
@@ -14920,7 +14988,7 @@ Transform:
   m_LocalScale: {x: .680000007, y: 2, z: 11.6599998}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 14
+  m_RootOrder: 12
 --- !u!114 &392110768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14933,6 +15001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 150
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -14952,6 +15022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Entree Club BD
 --- !u!23 &392110770
 Renderer:
@@ -15552,7 +15624,7 @@ Transform:
   m_PrefabParentObject: {fileID: 424464, guid: 9a90f22cacd4e47479837024b624a667, type: 2}
   m_PrefabInternal: {fileID: 610536011}
   m_GameObject: {fileID: 408168038}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16020,6 +16092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fff85adb0d9346b0f363c93ef0f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 450
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -18596,6 +18670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 150
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -22364,7 +22440,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425938, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
@@ -23666,7 +23742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424468, guid: 9a90f22cacd4e47479837024b624a667, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a90f22cacd4e47479837024b624a667, type: 2}
@@ -23738,7 +23814,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 422918, guid: 30c58d7e7e77005419953cdcb31dc7c9, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c58d7e7e77005419953cdcb31dc7c9, type: 2}
@@ -24525,6 +24601,8 @@ Transform:
   - {fileID: 1487528497}
   - {fileID: 1562901023}
   - {fileID: 1598212315}
+  - {fileID: 56639105}
+  - {fileID: 995549046}
   m_Father: {fileID: 1839405050}
   m_RootOrder: 0
 --- !u!1 &632794771
@@ -25096,7 +25174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 22
+  m_RootOrder: 20
 --- !u!114 &638046027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25109,6 +25187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Fin quete DSI
 --- !u!114 &638046028
 MonoBehaviour:
@@ -25122,6 +25202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 320
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -26090,6 +26172,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 663584695}
   - 114: {fileID: 663584694}
+  - 114: {fileID: 663584696}
   m_Layer: 0
   m_Name: PointCreationDeZombie
   m_TagString: Untagged
@@ -26126,6 +26209,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1280497243}
   m_RootOrder: 11
+--- !u!114 &663584696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663584693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 2c000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &664131381
 GameObject:
   m_ObjectHideFlags: 0
@@ -27045,9 +27141,10 @@ GameObject:
   - 114: {fileID: 688089992}
   - 114: {fileID: 688089989}
   - 114: {fileID: 688089993}
+  - 114: {fileID: 688089994}
   m_Layer: 0
   m_Name: Weiman
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27078,6 +27175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Weiman
 --- !u!136 &688089990
 CapsuleCollider:
@@ -27136,6 +27235,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 0a000000
   flagsDevantEtreDesactives: 28000000
+--- !u!114 &688089994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688089987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ed2c2aa38a746d9bb19c53f433e909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 2800000, guid: b79ff5a7bdfc046d2a1887c937fa8442, type: 3}
 --- !u!1 &689106447
 GameObject:
   m_ObjectHideFlags: 0
@@ -27261,7 +27372,7 @@ Transform:
   m_GameObject: {fileID: 690491411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.27999997, y: -.460000008, z: -.449999988}
-  m_LocalScale: {x: .0199999996, y: .300000012, z: .379999995}
+  m_LocalScale: {x: .0799999982, y: .300000012, z: .379999995}
   m_Children: []
   m_Father: {fileID: 1059556422}
   m_RootOrder: 4
@@ -27276,11 +27387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
+  listeDesFlagsPouvantEtreActives: 
+  activationPossibleDesFlags: 
   nomsDesScenesAccessibles:
-  - nomScene: Chambre
-    flagsNecessairesPourTransition: 28000000
+  - nomScene: ChambreGarsFoyer
+    flagsNecessairesPourTransition: 3c000000
     flagsInterditsPourTransition: 
     nomDuSpawnPoint: SpawnPoint
   distanceMinimaleInteraction: 4
@@ -27295,6 +27406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &690491415
 BoxCollider:
@@ -27576,7 +27689,7 @@ Transform:
   m_PrefabParentObject: {fileID: 428840, guid: ad9726e10d4bb51458d89ea225664ea8, type: 2}
   m_PrefabInternal: {fileID: 898691137}
   m_GameObject: {fileID: 695596687}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29789,7 +29902,7 @@ Transform:
   m_PrefabParentObject: {fileID: 428788, guid: ad9726e10d4bb51458d89ea225664ea8, type: 2}
   m_PrefabInternal: {fileID: 898691137}
   m_GameObject: {fileID: 750304510}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30659,11 +30772,11 @@ Transform:
   m_PrefabParentObject: {fileID: 450940, guid: 933b7331b798d4a409e81a9025ad7f7e, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776413892}
-  m_LocalRotation: {x: 0, y: .994913995, z: 0, w: .100728355}
+  m_LocalRotation: {x: 0, y: -.140416607, z: 0, w: .990092576}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1487528497}
+  m_Father: {fileID: 995549046}
   m_RootOrder: 0
 --- !u!81 &776413894
 AudioListener:
@@ -30918,6 +31031,8 @@ GameObject:
   - 23: {fileID: 781357518}
   - 114: {fileID: 781357517}
   - 114: {fileID: 781357516}
+  - 114: {fileID: 781357521}
+  - 114: {fileID: 781357522}
   m_Layer: 0
   m_Name: BusFacile
   m_TagString: Untagged
@@ -30949,6 +31064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Choix Du bus
 --- !u!114 &781357517
 MonoBehaviour:
@@ -30962,12 +31079,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 30
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 1
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 30
+  detruireApresActivation: 0
+  texteSiActivable: Activation flag 1
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!23 &781357518
@@ -31012,6 +31131,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781357514}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &781357521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781357514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 30
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 1
+  texteSiActivable: Activation flag 30
+  texteSiNonActivable: 
+  distanceMinimaleInteraction: 4
+--- !u!114 &781357522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781357514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 0a000000
+  flagsDevantEtreDesactives: 28000000
 --- !u!1 &782359569
 GameObject:
   m_ObjectHideFlags: 0
@@ -31241,7 +31394,7 @@ Transform:
   m_PrefabParentObject: {fileID: 422862, guid: 30c58d7e7e77005419953cdcb31dc7c9, type: 2}
   m_PrefabInternal: {fileID: 611161481}
   m_GameObject: {fileID: 789785680}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -32261,7 +32414,7 @@ Transform:
   m_PrefabParentObject: {fileID: 417192, guid: 99879bdabc3fe6a41974ef40f5120af3, type: 2}
   m_PrefabInternal: {fileID: 878480924}
   m_GameObject: {fileID: 809440094}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33738,7 +33891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423994, guid: 2af5967144ad15644bd0bd21d50e7976, type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af5967144ad15644bd0bd21d50e7976, type: 2}
@@ -34847,6 +35000,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
   - {fileID: 21300000, guid: bc080808e23ca004a9209036d75eed25, type: 3}
   - {fileID: 21300000, guid: e2b7c48da2579f44eb462058a68984fb, type: 3}
+  imageTransparente: {fileID: 0}
   imageVide: {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
   camera: {fileID: 1231395768}
 --- !u!114 &860675552
@@ -35094,113 +35248,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1675332914}
   m_GameObject: {fileID: 870586246}
   m_Mesh: {fileID: 4300000, guid: aa7b09af6b4164d4ab7377f403fa4b5e, type: 3}
---- !u!1 &870614251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 870614252}
-  - 33: {fileID: 870614257}
-  - 65: {fileID: 870614256}
-  - 23: {fileID: 870614255}
-  - 114: {fileID: 870614254}
-  - 114: {fileID: 870614253}
-  m_Layer: 0
-  m_Name: Recuperation plan
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &870614252
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1267.52002, y: 195.050003, z: 977}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1267960060}
-  m_RootOrder: 8
---- !u!114 &870614253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404396, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texteAffiche: Recuperation plan
---- !u!114 &870614254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404398, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagActive: 80
-  flagRequisPourDestruction: 
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 80
-  texteSiNonActivable: 
-  distanceMinimaleInteraction: 4
---- !u!23 &870614255
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &870614256
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &870614257
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870614251}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &870651458
 GameObject:
   m_ObjectHideFlags: 0
@@ -35708,7 +35755,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417248, guid: 99879bdabc3fe6a41974ef40f5120af3, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99879bdabc3fe6a41974ef40f5120af3, type: 2}
@@ -35891,7 +35938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 25
+  m_RootOrder: 23
 --- !u!114 &882929965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35904,6 +35951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Fin quete foret
 --- !u!114 &882929966
 MonoBehaviour:
@@ -35917,6 +35966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 350
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -36116,7 +36167,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 16
+  m_RootOrder: 14
 --- !u!114 &884850597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36129,6 +36180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Recuperation code bar
 --- !u!114 &884850598
 MonoBehaviour:
@@ -36142,6 +36195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 170
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -36464,7 +36519,7 @@ Transform:
   m_PrefabParentObject: {fileID: 424412, guid: 9a90f22cacd4e47479837024b624a667, type: 2}
   m_PrefabInternal: {fileID: 610536011}
   m_GameObject: {fileID: 887617636}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36632,7 +36687,7 @@ Transform:
   m_LocalScale: {x: .680000007, y: 19.5, z: 11.9300003}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 30
+  m_RootOrder: 28
 --- !u!114 &890974704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36645,6 +36700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 410
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -36664,6 +36721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Entree Laby
 --- !u!23 &890974706
 Renderer:
@@ -36967,7 +37026,7 @@ Transform:
   - {fileID: 1443857430}
   - {fileID: 1420508403}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 32
+  m_RootOrder: 30
 --- !u!114 &896080399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36980,6 +37039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Debouck
 --- !u!114 &896080400
 MonoBehaviour:
@@ -37076,7 +37137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428784, guid: ad9726e10d4bb51458d89ea225664ea8, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad9726e10d4bb51458d89ea225664ea8, type: 2}
@@ -38991,6 +39052,8 @@ GameObject:
   - 23: {fileID: 944484163}
   - 114: {fileID: 944484162}
   - 114: {fileID: 944484161}
+  - 114: {fileID: 944484166}
+  - 114: {fileID: 944484167}
   m_Layer: 0
   m_Name: BusDifficile
   m_TagString: Untagged
@@ -39022,6 +39085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Choix Du bus
 --- !u!114 &944484162
 MonoBehaviour:
@@ -39035,6 +39100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 30
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -39085,6 +39152,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 944484159}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &944484166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 944484159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 3
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 0
+  texteSiActivable: Activation flag 3
+  texteSiNonActivable: 
+  distanceMinimaleInteraction: 4
+--- !u!114 &944484167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 944484159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 0a000000
+  flagsDevantEtreDesactives: 28000000
 --- !u!1 &948990604
 GameObject:
   m_ObjectHideFlags: 0
@@ -40519,6 +40620,47 @@ Transform:
   - {fileID: 2096649887}
   m_Father: {fileID: 1718412956}
   m_RootOrder: 0
+--- !u!1 &995549045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 150950, guid: 933b7331b798d4a409e81a9025ad7f7e, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 995549046}
+  - 114: {fileID: 995549047}
+  m_Layer: 0
+  m_Name: SpawnPointPortailLiris
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995549046
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 450950, guid: 933b7331b798d4a409e81a9025ad7f7e, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995549045}
+  m_LocalRotation: {x: 0, y: .999200821, z: 0, w: -.039972052}
+  m_LocalPosition: {x: 986.700012, y: 208.399994, z: 903.599976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 776413893}
+  m_Father: {fileID: 630954912}
+  m_RootOrder: 7
+--- !u!114 &995549047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995549045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f42df4987ccfc42a50d095739a9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estActif: 0
 --- !u!1 &996394675
 GameObject:
   m_ObjectHideFlags: 0
@@ -42503,7 +42645,7 @@ GameObject:
   - 114: {fileID: 1055575906}
   m_Layer: 0
   m_Name: TrezClubBD
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42521,7 +42663,7 @@ Transform:
   - {fileID: 1150377313}
   - {fileID: 733630152}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 13
+  m_RootOrder: 11
 --- !u!114 &1055575906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42534,6 +42676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Trez Club BD
 --- !u!114 &1055575907
 MonoBehaviour:
@@ -43260,7 +43404,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446008, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
@@ -43437,6 +43581,8 @@ GameObject:
   - 23: {fileID: 1083022713}
   - 114: {fileID: 1083022712}
   - 114: {fileID: 1083022711}
+  - 114: {fileID: 1083022717}
+  - 114: {fileID: 1083022716}
   m_Layer: 0
   m_Name: QueteRecuperationComposants
   m_TagString: Untagged
@@ -43451,11 +43597,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1083022709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1129, y: 200.699997, z: 1162}
+  m_LocalPosition: {x: 995, y: 201, z: 1178}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 12
+  m_RootOrder: 10
 --- !u!114 &1083022711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43468,7 +43614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texteAffiche: QueteRecuperationComposants
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  texteAffiche: Composant informatique
 --- !u!114 &1083022712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43481,6 +43629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 115
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -43531,6 +43681,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1083022709}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1083022716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083022709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 6e000000
+  flagsDevantEtreDesactives: 73000000
+--- !u!114 &1083022717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083022709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1083271840
 GameObject:
   m_ObjectHideFlags: 0
@@ -43656,7 +43830,7 @@ Transform:
   m_PrefabParentObject: {fileID: 424050, guid: 2af5967144ad15644bd0bd21d50e7976, type: 2}
   m_PrefabInternal: {fileID: 847992020}
   m_GameObject: {fileID: 1085497298}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -45006,112 +45180,6 @@ Transform:
   - {fileID: 685820412}
   m_Father: {fileID: 8506458}
   m_RootOrder: 0
---- !u!1 &1114310524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104368, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1114310525}
-  - 33: {fileID: 1114310530}
-  - 65: {fileID: 1114310529}
-  - 23: {fileID: 1114310528}
-  - 114: {fileID: 1114310527}
-  - 114: {fileID: 1114310526}
-  m_Layer: 0
-  m_Name: EntreeLiris
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1114310525
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404368, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 950, y: 206.509995, z: 891}
-  m_LocalScale: {x: .680000007, y: 2, z: 11.6599998}
-  m_Children: []
-  m_Father: {fileID: 1267960060}
-  m_RootOrder: 10
---- !u!114 &1114310526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404414, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagActive: 100
-  flagRequisPourDestruction: 
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 100
-  texteSiNonActivable: 
---- !u!114 &1114310527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404412, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texteAffiche: Entree Liris
---- !u!23 &1114310528
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304368, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1114310529
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504368, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1114310530
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304368, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114310524}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1115629681
 GameObject:
   m_ObjectHideFlags: 0
@@ -45790,7 +45858,7 @@ Transform:
   m_PrefabParentObject: {fileID: 411216, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
   m_PrefabInternal: {fileID: 113657760}
   m_GameObject: {fileID: 1127798977}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -47222,6 +47290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 300
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -47501,7 +47571,7 @@ Transform:
   m_PrefabParentObject: {fileID: 417244, guid: 99879bdabc3fe6a41974ef40f5120af3, type: 2}
   m_PrefabInternal: {fileID: 878480924}
   m_GameObject: {fileID: 1166858262}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -48038,7 +48108,7 @@ GameObject:
   - 114: {fileID: 1182530382}
   m_Layer: 0
   m_Name: ProfEco
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48056,7 +48126,7 @@ Transform:
   - {fileID: 932738515}
   - {fileID: 1123157059}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 20
+  m_RootOrder: 18
 --- !u!114 &1182530382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48069,6 +48139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prof Eco
 --- !u!114 &1182530383
 MonoBehaviour:
@@ -49686,6 +49758,8 @@ GameObject:
   - 23: {fileID: 1221210415}
   - 114: {fileID: 1221210414}
   - 114: {fileID: 1221210413}
+  - 114: {fileID: 1221210418}
+  - 114: {fileID: 1221210419}
   m_Layer: 0
   m_Name: BusMoyen
   m_TagString: Untagged
@@ -49717,6 +49791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Choix Du bus
 --- !u!114 &1221210414
 MonoBehaviour:
@@ -49730,12 +49806,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 30
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 2
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 30
+  detruireApresActivation: 0
+  texteSiActivable: Activation flag 2
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!23 &1221210415
@@ -49780,6 +49858,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221210411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1221210418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221210411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 30
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 1
+  texteSiActivable: Activation flag 30
+  texteSiNonActivable: 
+  distanceMinimaleInteraction: 4
+--- !u!114 &1221210419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221210411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 0a000000
+  flagsDevantEtreDesactives: 28000000
 --- !u!1 &1224337300
 GameObject:
   m_ObjectHideFlags: 0
@@ -50941,7 +51053,7 @@ GameObject:
   - 114: {fileID: 1248461672}
   m_Layer: 0
   m_Name: PrezBDS
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50959,7 +51071,7 @@ Transform:
   - {fileID: 980334493}
   - {fileID: 1531599754}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 24
+  m_RootOrder: 22
 --- !u!114 &1248461672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50972,6 +51084,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prez BDS
 --- !u!114 &1248461673
 MonoBehaviour:
@@ -51611,12 +51725,10 @@ Transform:
   - {fileID: 781357515}
   - {fileID: 1221210412}
   - {fileID: 944484160}
+  - {fileID: 279210169}
   - {fileID: 46789313}
   - {fileID: 1976167627}
-  - {fileID: 1572432765}
-  - {fileID: 870614252}
-  - {fileID: 182456624}
-  - {fileID: 1114310525}
+  - {fileID: 1517517265}
   - {fileID: 262502673}
   - {fileID: 1083022710}
   - {fileID: 1055575905}
@@ -52463,8 +52575,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286647019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.22300005, y: -.460000008, z: -.453000009}
-  m_LocalScale: {x: .0199999996, y: .300000012, z: .379999995}
+  m_LocalPosition: {x: 3.27999997, y: -.460000008, z: -.449999988}
+  m_LocalScale: {x: .0799999982, y: .300000012, z: .379999995}
   m_Children: []
   m_Father: {fileID: 173673072}
   m_RootOrder: 4
@@ -52479,11 +52591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
+  listeDesFlagsPouvantEtreActives: 
+  activationPossibleDesFlags: 
   nomsDesScenesAccessibles:
-  - nomScene: Chambre
-    flagsNecessairesPourTransition: 28000000
+  - nomScene: ChambreGarsFoyer
+    flagsNecessairesPourTransition: 3c000000
     flagsInterditsPourTransition: 
     nomDuSpawnPoint: SpawnPoint
   distanceMinimaleInteraction: 4
@@ -52510,6 +52622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!1 &1288519158
 GameObject:
@@ -57446,7 +57560,7 @@ GameObject:
   - 114: {fileID: 1411975211}
   m_Layer: 0
   m_Name: BossFinal
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57464,7 +57578,7 @@ Transform:
   - {fileID: 1182923166}
   - {fileID: 465201544}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 34
+  m_RootOrder: 32
 --- !u!114 &1411975211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57511,6 +57625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: BossFinal
 --- !u!136 &1411975214
 CapsuleCollider:
@@ -58161,7 +58277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 21
+  m_RootOrder: 19
 --- !u!114 &1430199315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58174,6 +58290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: "Cl\xE9 DSI"
 --- !u!114 &1430199316
 MonoBehaviour:
@@ -58187,6 +58305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 310
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -59721,7 +59841,7 @@ Transform:
   m_PrefabParentObject: {fileID: 496380, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
   m_PrefabInternal: {fileID: 270675427}
   m_GameObject: {fileID: 1481053931}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -59973,7 +60093,7 @@ Transform:
   m_LocalScale: {x: .680000007, y: 5.80000019, z: 54.0999985}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 33
+  m_RootOrder: 31
 --- !u!114 &1487337685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59986,6 +60106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 430
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -60005,6 +60127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Entree Amphi 2
 --- !u!23 &1487337687
 Renderer:
@@ -60073,8 +60197,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1110, y: 199.779999, z: 991}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 776413893}
+  m_Children: []
   m_Father: {fileID: 630954912}
   m_RootOrder: 3
 --- !u!114 &1487528498
@@ -60148,7 +60271,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 23
+  m_RootOrder: 21
 --- !u!114 &1491218693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60161,6 +60284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Ouverture Boite
 --- !u!114 &1491218694
 MonoBehaviour:
@@ -60174,6 +60299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 330
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -61414,6 +61541,145 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!1 &1517517264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1517517265}
+  - 33: {fileID: 1517517272}
+  - 136: {fileID: 1517517271}
+  - 23: {fileID: 1517517270}
+  - 114: {fileID: 1517517269}
+  - 114: {fileID: 1517517268}
+  - 114: {fileID: 1517517267}
+  - 114: {fileID: 1517517266}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1517517265
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 987.799988, y: 211.800003, z: 891}
+  m_LocalScale: {x: 6.25, y: .200000003, z: 12.5}
+  m_Children: []
+  m_Father: {fileID: 1267960060}
+  m_RootOrder: 8
+--- !u!114 &1517517266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e48069206d95a843b4cef7c33e2734d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listeDesFlagsPouvantEtreActives: 64000000
+  activationPossibleDesFlags: 01
+  nomsDesScenesAccessibles:
+  - nomScene: LaboLIRIS
+    flagsNecessairesPourTransition: 5a000000
+    flagsInterditsPourTransition: 
+    nomDuSpawnPoint: EntreeLabo
+--- !u!114 &1517517267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 5a000000
+  flagsDevantEtreDesactives: 
+--- !u!114 &1517517268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 100
+  flagRequisPourDestruction: 
+  flagBloquantsPourDestruction: 
+  activable: 1
+  detruireApresActivation: 1
+  texteSiActivable: Activation flag 100
+  texteSiNonActivable: 
+--- !u!114 &1517517269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  texteAffiche: Entree Liris
+--- !u!23 &1517517270
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7d082c8d953fa9142b22e070f1e5b797, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1517517271
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1517517272
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517517264}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1518015586
 GameObject:
   m_ObjectHideFlags: 0
@@ -61563,7 +61829,7 @@ Transform:
   m_PrefabParentObject: {fileID: 404590, guid: ca89a776690ddeb42a4c6a9e6a496ae3, type: 2}
   m_PrefabInternal: {fileID: 2094374354}
   m_GameObject: {fileID: 1519722337}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -62278,7 +62544,7 @@ Transform:
   m_PrefabParentObject: {fileID: 431662, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
   m_PrefabInternal: {fileID: 2020075207}
   m_GameObject: {fileID: 1545059607}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -63099,113 +63365,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 128623488}
   m_GameObject: {fileID: 1570815099}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1572432764
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1572432765}
-  - 33: {fileID: 1572432770}
-  - 65: {fileID: 1572432769}
-  - 23: {fileID: 1572432768}
-  - 114: {fileID: 1572432767}
-  - 114: {fileID: 1572432766}
-  m_Layer: 0
-  m_Name: Recuperation boite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1572432765
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404360, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1270.80005, y: 194.490005, z: 977}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1267960060}
-  m_RootOrder: 7
---- !u!114 &1572432766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404396, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texteAffiche: Recuperation boite
---- !u!114 &1572432767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404398, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagActive: 70
-  flagRequisPourDestruction: 
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 70
-  texteSiNonActivable: 
-  distanceMinimaleInteraction: 4
---- !u!23 &1572432768
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1572432769
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1572432770
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304360, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572432764}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1573116265
 GameObject:
   m_ObjectHideFlags: 0
@@ -63959,6 +64118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 28000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &1589288766
 BoxCollider:
@@ -64373,7 +64534,7 @@ Transform:
   m_PrefabParentObject: {fileID: 407404, guid: 10f427fd3329bda4e88cb45814529e7f, type: 2}
   m_PrefabInternal: {fileID: 1913718618}
   m_GameObject: {fileID: 1599996485}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -64904,7 +65065,7 @@ Transform:
   m_PrefabParentObject: {fileID: 425994, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
   m_PrefabInternal: {fileID: 585978229}
   m_GameObject: {fileID: 1617105614}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -64926,7 +65087,7 @@ GameObject:
   - 114: {fileID: 1617239027}
   m_Layer: 0
   m_Name: Cotinaud
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64944,7 +65105,7 @@ Transform:
   - {fileID: 1780461915}
   - {fileID: 1399724287}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 27
+  m_RootOrder: 25
 --- !u!114 &1617239027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64977,6 +65138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Cotinaud
 --- !u!114 &1617239029
 MonoBehaviour:
@@ -64990,6 +65153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 370
   flagRequisPourDestruction: 7c010000
   flagBloquantsPourDestruction: 
@@ -67689,7 +67854,7 @@ GameObject:
   - 114: {fileID: 1688425759}
   m_Layer: 0
   m_Name: PrezSerialGamers
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67707,7 +67872,7 @@ Transform:
   - {fileID: 8598952}
   - {fileID: 921978467}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 17
+  m_RootOrder: 15
 --- !u!114 &1688425759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67720,6 +67885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prez Serial Gamers
 --- !u!114 &1688425760
 MonoBehaviour:
@@ -67861,7 +68028,7 @@ GameObject:
   - 114: {fileID: 1691958587}
   m_Layer: 0
   m_Name: MusyBassot
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67879,7 +68046,7 @@ Transform:
   - {fileID: 683582567}
   - {fileID: 934807165}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 29
+  m_RootOrder: 27
 --- !u!114 &1691958587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67892,6 +68059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: MusyBassot
 --- !u!114 &1691958588
 MonoBehaviour:
@@ -68498,7 +68667,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711450201}
   m_LocalRotation: {x: 0, y: -.601814985, z: 0, w: .798635542}
-  m_LocalPosition: {x: 971.299988, y: 208.399994, z: 849.830017}
+  m_LocalPosition: {x: 1020.79999, y: 208.399994, z: 911.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 630954912}
@@ -70106,7 +70275,7 @@ GameObject:
   - 114: {fileID: 1761579357}
   m_Layer: 0
   m_Name: ProfSport
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70124,7 +70293,7 @@ Transform:
   - {fileID: 1298146055}
   - {fileID: 1805494647}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 28
+  m_RootOrder: 26
 --- !u!114 &1761579357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70137,6 +70306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Prof Sport
 --- !u!114 &1761579358
 MonoBehaviour:
@@ -70203,7 +70374,7 @@ Transform:
   m_PrefabParentObject: {fileID: 423998, guid: 2af5967144ad15644bd0bd21d50e7976, type: 2}
   m_PrefabInternal: {fileID: 847992020}
   m_GameObject: {fileID: 1764665355}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -70930,7 +71101,7 @@ Transform:
   m_PrefabParentObject: {fileID: 496432, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
   m_PrefabInternal: {fileID: 270675427}
   m_GameObject: {fileID: 1791878983}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -71196,7 +71367,7 @@ Transform:
   m_PrefabParentObject: {fileID: 411268, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
   m_PrefabInternal: {fileID: 113657760}
   m_GameObject: {fileID: 1798300907}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -71977,7 +72148,7 @@ Transform:
   m_LocalScale: {x: 15.3800001, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 26
+  m_RootOrder: 24
 --- !u!114 &1838330686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71990,6 +72161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Ouverture gymnase
 --- !u!114 &1838330687
 MonoBehaviour:
@@ -72003,6 +72176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 360
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -72190,6 +72365,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1841347736}
   - 114: {fileID: 1841347735}
+  - 114: {fileID: 1841347737}
   m_Layer: 0
   m_Name: PointCreationDeZombie
   m_TagString: Untagged
@@ -72226,6 +72402,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1280497243}
   m_RootOrder: 10
+--- !u!114 &1841347737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841347734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 2c000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &1844304912
 GameObject:
   m_ObjectHideFlags: 0
@@ -72247,7 +72436,7 @@ Transform:
   m_PrefabParentObject: {fileID: 465416, guid: 385f9f3e94f7cf84485942d835e1afa3, type: 2}
   m_PrefabInternal: {fileID: 1913022954}
   m_GameObject: {fileID: 1844304912}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -72838,7 +73027,7 @@ Transform:
   m_PrefabParentObject: {fileID: 407456, guid: 10f427fd3329bda4e88cb45814529e7f, type: 2}
   m_PrefabInternal: {fileID: 1913718618}
   m_GameObject: {fileID: 1863177185}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -74755,7 +74944,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465412, guid: 385f9f3e94f7cf84485942d835e1afa3, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 385f9f3e94f7cf84485942d835e1afa3, type: 2}
@@ -75891,7 +76080,7 @@ Transform:
   m_LocalScale: {x: .680000007, y: 19.6700001, z: 11.6599998}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 31
+  m_RootOrder: 29
 --- !u!114 &1938828841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75904,6 +76093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 420
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -75923,6 +76114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Sortie Laby
 --- !u!23 &1938828843
 Renderer:
@@ -76107,9 +76300,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1940765167}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.55882025, y: -.441817999, z: 1.78936517}
-  m_LocalScale: {x: .0200000014, y: .300000012, z: .380000263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.27999997, y: -.460000008, z: -.449999988}
+  m_LocalScale: {x: .0799999982, y: .300000012, z: .379999995}
   m_Children: []
   m_Father: {fileID: 1867353263}
   m_RootOrder: 4
@@ -76124,11 +76317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
+  listeDesFlagsPouvantEtreActives: 
+  activationPossibleDesFlags: 
   nomsDesScenesAccessibles:
-  - nomScene: Chambre
-    flagsNecessairesPourTransition: 28000000
+  - nomScene: ChambreGarsFoyer
+    flagsNecessairesPourTransition: 3c000000
     flagsInterditsPourTransition: 
     nomDuSpawnPoint: SpawnPoint
   distanceMinimaleInteraction: 4
@@ -76143,6 +76336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &1940765171
 BoxCollider:
@@ -76718,7 +76913,7 @@ Transform:
   m_PrefabParentObject: {fileID: 431714, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
   m_PrefabInternal: {fileID: 2020075207}
   m_GameObject: {fileID: 1957806378}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -76811,7 +77006,7 @@ GameObject:
   - 114: {fileID: 1976167632}
   m_Layer: 0
   m_Name: GarsFoyer
-  m_TagString: Untagged
+  m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76829,7 +77024,7 @@ Transform:
   - {fileID: 1172451856}
   - {fileID: 1927216953}
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &1976167628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76856,6 +77051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Gars du foyer
 --- !u!136 &1976167630
 CapsuleCollider:
@@ -76898,8 +77095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 28000000
-  flagsDevantEtreDesactives: 
+  flagsDevantEtreActives: 2c000000
+  flagsDevantEtreDesactives: 3c000000
 --- !u!1 &1976812499
 GameObject:
   m_ObjectHideFlags: 0
@@ -77969,6 +78166,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2014992376}
   - 114: {fileID: 2014992375}
+  - 114: {fileID: 2014992377}
   m_Layer: 0
   m_Name: PointCreationDeZombie
   m_TagString: Untagged
@@ -78005,6 +78203,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1280497243}
   m_RootOrder: 12
+--- !u!114 &2014992377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014992374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 2c000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &2015574561
 GameObject:
   m_ObjectHideFlags: 0
@@ -78127,7 +78338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431718, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
@@ -78893,7 +79104,7 @@ Transform:
   m_LocalScale: {x: .680000007, y: 5.80000019, z: 54}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 35
+  m_RootOrder: 33
 --- !u!114 &2038320604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78906,6 +79117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fe3407b6eae8745b1017cc8f38de32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 440
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -78925,6 +79138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Sortie Amphi 2
 --- !u!23 &2038320606
 Renderer:
@@ -79356,7 +79571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1267960060}
-  m_RootOrder: 18
+  m_RootOrder: 16
 --- !u!114 &2045216566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79369,6 +79584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Entree chambre
 --- !u!114 &2045216567
 MonoBehaviour:
@@ -79382,6 +79599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 220
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -80022,7 +80241,7 @@ Transform:
   m_PrefabParentObject: {fileID: 425942, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
   m_PrefabInternal: {fileID: 585978229}
   m_GameObject: {fileID: 2056987140}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -81186,7 +81405,7 @@ Transform:
   m_PrefabParentObject: {fileID: 422914, guid: 30c58d7e7e77005419953cdcb31dc7c9, type: 2}
   m_PrefabInternal: {fileID: 611161481}
   m_GameObject: {fileID: 2084669067}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: .253428251, y: .00601135287, z: -.0167045239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -81774,7 +81993,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 404534, guid: ca89a776690ddeb42a4c6a9e6a496ae3, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca89a776690ddeb42a4c6a9e6a496ae3, type: 2}
@@ -81834,8 +82053,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2097117870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.22300005, y: -.460000008, z: -.453000009}
-  m_LocalScale: {x: .0199999996, y: .300000012, z: .379999995}
+  m_LocalPosition: {x: 3.27999997, y: -.460000008, z: -.449999988}
+  m_LocalScale: {x: .0799999982, y: .300000012, z: .379999995}
   m_Children: []
   m_Father: {fileID: 1821073575}
   m_RootOrder: 4
@@ -81850,11 +82069,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
+  listeDesFlagsPouvantEtreActives: 
+  activationPossibleDesFlags: 
   nomsDesScenesAccessibles:
-  - nomScene: Chambre
-    flagsNecessairesPourTransition: 28000000
+  - nomScene: ChambreGarsFoyer
+    flagsNecessairesPourTransition: 3c000000
     flagsInterditsPourTransition: 
     nomDuSpawnPoint: SpawnPoint
   distanceMinimaleInteraction: 4
@@ -81869,6 +82088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &2097117874
 BoxCollider:
@@ -82184,6 +82405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 28000000
+  flagsDevantEtreDesactives: 
   texteAffiche: E pour entrer
 --- !u!65 &2111297977
 BoxCollider:
@@ -83655,7 +83878,7 @@ Transform:
   m_PrefabParentObject: {fileID: 446064, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
   m_PrefabInternal: {fileID: 1077011361}
   m_GameObject: {fileID: 2143058062}
-  m_LocalRotation: {x: -.000616519421, y: .022078624, z: -.0160702411, w: .999626875}
+  m_LocalRotation: {x: -.000616519479, y: .0220786259, z: -.016070243, w: .999626935}
   m_LocalPosition: {x: -.254049301, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

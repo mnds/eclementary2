@@ -163,7 +163,6 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		{
 			armeCourante.transform.FindChild("Text").gameObject.GetComponent<Text>().text=listeObjetsRecoltables[positionObjet].name;
 		}
-		/*PROBLEME : QUAND ON LANCE UN OBJET, IL NE CHANGE PAS LE MEDAILLON*/
 	}
 
 

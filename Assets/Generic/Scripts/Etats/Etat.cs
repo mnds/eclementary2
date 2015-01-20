@@ -22,6 +22,7 @@ public abstract class Etat {
 		if (Application.loadedLevelName != sceneCorrespondante) {
 			Debug.Log ("Chargement de la scène " + sceneCorrespondante );
 			Application.LoadLevel (sceneCorrespondante);
+			ControlCenter.VerifierLesOASFs();
 		}
 	}
 

@@ -55,7 +55,14 @@ public class Dialogue : MonoBehaviour, Interactif {
 						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*6 : repliquesSuivantes [i].GetTexte ().Length*7;
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
-						if (GUI.Button (new Rect (50, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
+
+						// Affichage de l'avatar du joueur
+						Personnage perso = (Personnage)repliquesSuivantes [i].GetGoAssocie().GetComponent<Personnage>();
+						if( perso != null )
+							GUI.Label( new Rect(0, 10, 80, 80), perso.avatar );
+						GUI.Label ( new Rect(0, 90, 80, 20), repliquesSuivantes [i].GetGoAssocie().name, guiStyle); // Affichage du nom du joueur
+
+						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
 						}
 						y += 55; // Incrémentation de y pour afficher la réplique soeur un cran en dessous
