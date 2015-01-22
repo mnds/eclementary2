@@ -11,7 +11,7 @@ using UnityEngine;
 public class EtatChambre : EtatJouable {
 	
 	public EtatChambre( StateManager manager ) : base( manager ) {
-		sceneCorrespondante = "Chambre";
+		sceneCorrespondante = ControlCenter.nomDeLaSceneDeLaChambre;
 		etatJouable = true;
 		ChargerSceneCorrespondante ();
 	}

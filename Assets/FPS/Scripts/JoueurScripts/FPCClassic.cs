@@ -30,6 +30,8 @@ public class FPCClassic : ControllerJoueur {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.M)&&ControlCenter.mode==ModesJeu.Debug) {
 			Debug.Log ("Recharge endurance");
+			vitesseCourse = 100f;
+			vitesseSaut = 10f;
 			jauge=jaugeMax;
 		}
 		if (!enabled) {

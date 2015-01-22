@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 230
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -125,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   flagActive: 44
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
@@ -144,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Lit
 --- !u!23 &18695304
 Renderer:
@@ -537,6 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Porte
 --- !u!114 &1178678679
 MonoBehaviour:
@@ -552,7 +560,7 @@ MonoBehaviour:
   listeDesFlagsPouvantEtreActives: 
   activationPossibleDesFlags: 
   nomsDesScenesAccessibles:
-  - nomScene: CampusScenario
+  - nomScene: 2
     flagsNecessairesPourTransition: 2c000000
     flagsInterditsPourTransition: 
     nomDuSpawnPoint: SpawnPointBatimentC

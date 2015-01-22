@@ -10,7 +10,9 @@
             "goAssocie": "",
             "id": "0",
             "repSuivantes": [
-                "1"
+                "1",
+                "2",
+                "3"
             ],
             "texte": ""
         },
@@ -35,6 +37,7 @@
             "flagsActives": [
             ],
             "flagsBloquants": [
+            	"330"
             ],
             "flagsRequis": [
                 "150"
@@ -44,6 +47,35 @@
             "repSuivantes": [
             ],
             "texte": "Je te souhaite la bienvenue au club BD !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            	"350"
+            ],
+            "flagsRequis": [
+                "330"
+            ],
+            "goAssocie": "TrezClubBD",
+            "id": "3",
+            "repSuivantes": [
+            ],
+            "texte": "Je me demande bien ce qu'il peut y avoir dans la foret près des résidences..."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+                "350"
+            ],
+            "goAssocie": "TrezClubBD",
+            "id": "3",
+            "repSuivantes": [
+            ],
+            "texte": "N'oublie pas de te soigner avec de la Kroca Cola !"
         }
     ]
 }

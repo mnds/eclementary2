@@ -2,10 +2,11 @@
  * \file      ControlCenter.cs
  * \author    
  * \version   1.0
- * \date      9 novembre 2014
+ * \date      21 janvier 2015
  * \brief     Contient des variables globales liées au bon déroulement du jeu.
  *
  * \details   Quand une cinématique est lancée, cinematiqueEnCours passe à true. Les appels à getCEC renvoient true et permettent d'empecher des actions de se produire.
+ * 			  ControlCenter contient toutes les valeurs qui peuvent etre amenées à changer dans les vues Hierarchy (nom du Joueur, des scènes...)
  */
 
 /*
@@ -24,10 +25,27 @@ static public class ControlCenter {
 		TresDifficile
 	}
 
+	public enum Scenes {
+		Titre,
+		Mort,
+		Campus,
+		LIRIS,
+		Chambre,
+		ChambreGarsFoyer,
+		ClubBD,
+		Gymnase,
+		Scolarite,
+		BureauDebouck,
+		Labyrinthe,
+		Amphi2,
+		Fin
+	}
+
 	[System.Serializable]
 	public class ObjetActivableSelonFlags {
 		public ActivationSelonFlags asf;
 		public string nomScene;
+		Scenes machin;
 		public ObjetActivableSelonFlags(ActivationSelonFlags asf_, string ns) {
 			asf=asf_;
 			nomScene=ns;
@@ -36,8 +54,18 @@ static public class ControlCenter {
 
 	//Variables globales permettant de définir les noms de certains éléments du jeu amenés à changer
 	static public string nomDuJoueurPrincipal = "Joueur";
-	static public string nomDeLaSceneDuCampus = "CampusScenario";
+	static public string nomDeLaSceneDuCampus = "Campus";
 	static public string nomDeLaSceneDeMort = "Ecran Mort";
+	static public string nomDeLaSceneLIRIS = "LaboLIRIS";
+	static public string nomDeLaSceneDeLaChambre = "Chambre";
+	static public string nomDeLaSceneDeLaChambreGarsFoyer = "ChambreGarsFoyer";
+	static public string nomDeLaSceneDuClubBD = "ClubBD";
+	static public string nomDeLaSceneDuGymnase = "Gymnase";
+	static public string nomDeLaSceneScolarite = "Scolarite";
+	static public string nomDeLaSceneDebouck = "BureauDebouck";
+	static public string nomDeLaSceneLabyrinthe = "Labyrinthe";
+	static public string nomDeLaSceneAmphi2 = "Amphi2";
+
 
 	static bool cinematiqueEnCours = false; //Les interactions doivent s'arreter si on est en cinématique
 	static bool afficherBarreDeVieJoueur = true;
@@ -190,7 +218,7 @@ static public class ControlCenter {
 	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
 	 **/
 	static public void VerifierLesOASFs () {
-		Debug.Log ("Vérification des OASF");
+		//Debug.Log ("Vérification des OASF");
 		string nomSceneActuelle = Application.loadedLevelName;
 		List<ObjetActivableSelonFlags> resultat = new List<ObjetActivableSelonFlags>(){};
 		//On vérifie quels oasf ne sont pas dans la scène considérée

@@ -32,7 +32,7 @@ public class Creation_Zombie : MonoBehaviour {
 	
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		periodeZombie = m_periodeZombie;
 		k = ZombieListe.Count;
 		m_transform = this.transform;

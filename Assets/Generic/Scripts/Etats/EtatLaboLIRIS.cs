@@ -11,7 +11,7 @@ using UnityEngine;
 public class EtatLaboLIRIS : EtatJouable {
 	
 	public EtatLaboLIRIS( StateManager manager ) : base( manager ) {
-		sceneCorrespondante = "LaboLIRIS";
+		sceneCorrespondante = ControlCenter.nomDeLaSceneLIRIS;
 		etatJouable = true;
 		ChargerSceneCorrespondante ();
 	}
