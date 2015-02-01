@@ -31,7 +31,7 @@ public class ObjetEnSceneScript : MonoBehaviour {
 		r.useGravity = true;
 
 		//Colliders
-		Vector3 centreCollider = new Vector3 (.18f, -.45f, .6f);
+		/*Vector3 centreCollider = new Vector3 (.18f, -.45f, .6f);
 		BoxCollider bc = GetComponent<BoxCollider> ();
 		if(bc)
 			bc.center =centreCollider;
@@ -40,7 +40,7 @@ public class ObjetEnSceneScript : MonoBehaviour {
 			cc.center=centreCollider;
 		SphereCollider sc = GetComponent<SphereCollider> ();
 		if(sc)
-			sc.center=centreCollider;
+			sc.center=centreCollider;*/
 
 		//Autres scripts
 		Attaquer a = GetComponent<Attaquer> ();
