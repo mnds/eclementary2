@@ -54,6 +54,7 @@ static public class ControlCenter {
 
 	//Variables globales permettant de définir les noms de certains éléments du jeu amenés à changer
 	static public string nomDuJoueurPrincipal = "Joueur";
+	static public string nomDeLaSceneDepart = "Ecran titre";
 	static public string nomDeLaSceneDuCampus = "Campus";
 	static public string nomDeLaSceneDeMort = "Ecran Mort";
 	static public string nomDeLaSceneLIRIS = "LaboLIRIS";
