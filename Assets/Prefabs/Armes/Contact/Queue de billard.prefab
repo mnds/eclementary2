@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,9 +42,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: .48564297, w: .87415731}
-  m_LocalPosition: {x: .5, y: 0, z: .600000024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 1.13269165e-10, y: -2.55168442e-10, z: .48564297, w: .87415731}
+  m_LocalPosition: {x: .499994069, y: 0, z: .599973202}
+  m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   bypass: 0
   delaiEntreDeuxTirs: .5
   munitions: 0
-  objetReel: {fileID: 0}
+  objetReel: {fileID: 100000, guid: 98769c0e70442084aae78a49974a911a, type: 2}
   vitesseDeLance: 5
 --- !u!114 &11450882
 MonoBehaviour:

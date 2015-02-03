@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 114: {fileID: 11456670}
+  - 114: {fileID: 11407146}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Untagged
@@ -86,6 +87,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156670}
   m_Mesh: {fileID: 4300004, guid: 3f729f3cfc5cff946809aa8de398669d, type: 3}
+--- !u!114 &11407146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd94e7cd008ef3941ae363d559d3d8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bypass: 0
+  delaiEntreDeuxTirs: .300000012
+  munitions: 0
+  objetReel: {fileID: 100002, guid: d189f9c3f180c454db361138365c810e, type: 2}
+  vitesseDeLance: 5
 --- !u!114 &11456670
 MonoBehaviour:
   m_ObjectHideFlags: 1
