@@ -121,7 +121,8 @@ Prefab:
       propertyPath: pointsDeVieActuels
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11411266, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a2da3b2d22204f04f9b4a9e56f568e4f, type: 2}
   m_RootGameObject: {fileID: 1863333655}
   m_IsPrefabParent: 0
@@ -968,6 +969,46 @@ Transform:
   - {fileID: 46053730}
   m_Father: {fileID: 1376894861}
   m_RootOrder: 0
+--- !u!1 &666753130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 666753132}
+  - 114: {fileID: 666753131}
+  m_Layer: 0
+  m_Name: SpawnPointPresWeiman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &666753131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 666753130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f42df4987ccfc42a50d095739a9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estActif: 1
+--- !u!4 &666753132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 666753130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1173.90002, y: 208.039993, z: 1155.80005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &680185428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,12 +1881,12 @@ MonoBehaviour:
   activationPossibleDesFlags: 01
   nomsDesScenesAccessibles:
   - nomScene: 2
-    flagsNecessairesPourTransition: 
-    flagsInterditsPourTransition: af010000
-    nomDuSpawnPoint: SpawnPointAmphi2
-  - nomScene: 2
     flagsNecessairesPourTransition: b3010000
     flagsInterditsPourTransition: 
+    nomDuSpawnPoint: SpawnPointAmphi2
+  - nomScene: 2
+    flagsNecessairesPourTransition: 
+    flagsInterditsPourTransition: af010000
     nomDuSpawnPoint: SpawnPointAmphi2
   distanceMinimaleInteraction: 4
 --- !u!23 &1178678680
@@ -2997,9 +3038,9 @@ GameObject:
   - 95: {fileID: 1863333661}
   - 136: {fileID: 1863333660}
   - 114: {fileID: 1863333659}
-  - 114: {fileID: 1863333658}
   - 114: {fileID: 1863333657}
   - 114: {fileID: 1863333662}
+  - 114: {fileID: 1863333658}
   m_Layer: 0
   m_Name: BossFinal
   m_TagString: Ennemi
@@ -3038,13 +3079,12 @@ MonoBehaviour:
 --- !u!114 &1863333658
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11411266, guid: a2da3b2d22204f04f9b4a9e56f568e4f,
-    type: 2}
-  m_PrefabInternal: {fileID: 42827070}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863333655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb79c334e4df454c9a385a5e5d2d50f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb646994e0b5bfa4b8b57b5895b0e5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0

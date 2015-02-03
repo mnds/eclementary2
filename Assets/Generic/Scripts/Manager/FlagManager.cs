@@ -159,9 +159,9 @@ static public class FlagManager {
 		flags.Add (new Flag(390,false,"Debut quete scolarite",new List<int>(){380},new List<Evenement>(){})); //Activé par dialogue ProfSport
 		flags.Add (new Flag(400,false,"Fin quete scolarite",new List<int>(){390},new List<Evenement>(){})); //Activé par MusyBassot
 		flags.Add (new Flag(410,false,"Entree labyrinthe",new List<int>(){400},new List<Evenement>(){})); //Activé en traversant le portail
-		flags.Add (new Flag(420,false,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){})); //Activé en passant le mur de fin du labyrinthe
-		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){})); //Dialogue Debouck
-		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
+		flags.Add (new Flag(420,true,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){})); //Activé en passant le mur de fin du labyrinthe
+		flags.Add (new Flag(425,true,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){})); //Dialogue Debouck
+		flags.Add (new Flag(430,true,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
 		flags.Add (new Flag(435,false,"Mort boss final",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
 		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){435},new List<Evenement>(){})); //Sortir par la porte après avoir tué le boss final

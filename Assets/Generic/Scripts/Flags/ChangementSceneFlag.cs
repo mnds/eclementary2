@@ -50,6 +50,7 @@ public class ChangementSceneFlag : MonoBehaviour {
 				activationPossible=activationPossibleDesFlags[i];
 
 			if(activationPossible) {//Si on a le droit de l'activer. 
+				Debug.Log ("Activation possible");
 				//Si le flag est activé, plus besoin de pouvoir l'activer. On désactive le script.
 				activationPossible = !FlagManager.ActiverFlag(idFlag);
 				if(!activationPossible) {
@@ -57,14 +58,12 @@ public class ChangementSceneFlag : MonoBehaviour {
 				}
 			}
 		}
-		foreach(int idFlag in listeDesFlagsPouvantEtreActives) { //On fait tous les flags
-
-		}
 
 		//Changement de scène
 		foreach(FlagsRequisInterditsChangementSceneFlag fricsf in nomsDesScenesAccessibles) {
 			bool changerDeScene = FlagManager.VerifierFlags(fricsf.flagsNecessairesPourTransition,fricsf.flagsInterditsPourTransition); //Peut changer pendant les tests
 			if(changerDeScene) { //Tous les flags sont bons, on change de scène.
+				Debug.Log("Nouveau point de spawn : "+fricsf.nomDuSpawnPoint);
 				ControlCenter.SetNomSpawnPointActuel(fricsf.nomDuSpawnPoint);
 				ChargerNiveau(fricsf.nomScene);
 			}
