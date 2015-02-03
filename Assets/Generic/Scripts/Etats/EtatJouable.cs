@@ -11,7 +11,7 @@ using UnityEngine;
 public abstract class EtatJouable : Etat {
 
 	public EtatJouable( StateManager manager ) : base( manager ) {
-
+		etatJouable = true;
 	}
 
 	public override void ConfigurerScripts ()

@@ -66,6 +66,7 @@ static public class ControlCenter {
 	static public string nomDeLaSceneDebouck = "BureauDebouck";
 	static public string nomDeLaSceneLabyrinthe = "Labyrinthe";
 	static public string nomDeLaSceneAmphi2 = "Amphi2";
+	static public string nomDeLaSceneDeFin = "Ecran Fin";
 
 
 	static bool cinematiqueEnCours = false; //Les interactions doivent s'arreter si on est en cinématique

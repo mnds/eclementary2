@@ -165,7 +165,7 @@ static public class FlagManager {
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
 		flags.Add (new Flag(435,false,"Mort boss final",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
 		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){435},new List<Evenement>(){})); //Sortir par la porte après avoir tué le boss final
-		flags.Add (new Flag(450,false,"Fin du jeu",new List<int>(){440},new List<Evenement>(){})); //Au centre du terrain
+		flags.Add (new Flag(450,false,"Fin du jeu",new List<int>(){440},new List<Evenement>(){ new ActiverEcranFin() })); //Au centre du terrain
 
 		//Quetes secondaires
 		//Quete de la boule

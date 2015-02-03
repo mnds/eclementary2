@@ -11,7 +11,7 @@ using UnityEngine;
 public abstract class EtatNonJouable : Etat {
 	
 	public EtatNonJouable( StateManager manager ) : base( manager ) {
-
+		etatJouable = false;
 	}
 	
 	public override void ConfigurerScripts() {
