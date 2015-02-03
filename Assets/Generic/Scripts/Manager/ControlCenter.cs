@@ -233,4 +233,20 @@ static public class ControlCenter {
 		//On remplace la liste par la nouvelle
 		lesOASFs=resultat;
 	}
+
+	/**
+	 * @brief Formule de dégat
+	 * @param degatsDeBase Degats initiaux à infliger
+	 * @param caracAttaquant Script Caracteristiques de l'attaquant, par défaut à null
+	 * @param caracDefenseur Script Caracteristiques de l'attaquant, par défaut à null
+	 * @return Degats subis
+	 **/
+	static public float FormuleDeDegats(float degatsDeBase, Caracteristiques caracAttaquant=null, Caracteristiques caracDefenseur=null) {
+		float caracAttaque = 0; 
+		if(caracAttaquant)
+			caracAttaque = caracAttaquant.GetAttaque();
+		float caracDefense = 0;
+		caracDefense = caracDefenseur.GetDefense ();
+		return Mathf.Max(0,(degatsDeBase)*(1f-(caracDefense-caracAttaque)/100f));
+	}
 }

@@ -71,7 +71,7 @@ public class Zombie_Comportement : MonoBehaviour {
 								m_ani.SetBool ("attack", true);
 								m_ani.SetBool ("rerun", false);
 								
-								healthPlayer.SubirDegats (zombieCarac.GetAttaque () * Time.deltaTime); //Diminuer la vie du jouer.
+								healthPlayer.SubirDegats (zombieCarac.GetAttaque () * Time.deltaTime, gameObject.GetComponent<Caracteristiques>()); //Diminuer la vie du jouer.
 
 						} else {
 								m_ani.SetBool ("attack", false);

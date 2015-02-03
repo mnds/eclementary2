@@ -42,6 +42,7 @@ public class Creation_Zombie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log ("ZombieNombre : "+periodeZombie);
 		if(periodeZombie> 0) periodeZombie -= Time.deltaTime;
 		else
 		{   
@@ -56,6 +57,7 @@ public class Creation_Zombie : MonoBehaviour {
 
 
 	void Create(){
+		Debug.Log ("CREER");
 		if (ZombieNombre >= ZombieNombreMax)
 						return;
 		m_transform.LookAt (m_player.transform);

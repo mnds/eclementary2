@@ -38,24 +38,50 @@ public class Health : MonoBehaviour {
 	}
 
 	/**
-	 * @brief Permet de faire subir des degats à l'objet.
+	 * @brief Permet de faire subir des degats à l'objet, si l'attaquant n'a pas de script Caracteristiques.
 	 * @param degats De combien diminuer les points de vie.
 	 */
-	public void SubirDegats(float degats) {
+	public void SubirDegats(float degats,Caracteristiques caracAttaquant=null) {
 		if(bypass) return;
 		if(!TesterFlags ()) return;
 		TesterFlags();
-		Caracteristiques carac = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
-
+		Caracteristiques caracDefenseur = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
+		
+		
 		//Application de la formule de degats
-		float degatsSubis = degats; //Avant application des caractéristiques
-		if (carac) { //Si l'objet a des caractéristiques
-			degatsSubis=Mathf.Max(0,degatsSubis*(1f-carac.GetDefense()/100f)); //Formule de degats
-			//Debug.Log ("Caractéristique Défense : "+carac.GetDefense());
-		}
-
+		float degatsSubis = ControlCenter.FormuleDeDegats (degats,caracAttaquant,caracDefenseur); //Avant application des caractéristiques
+		
 		//Debug.Log ("Degats subis apres application de la statistique Defense : " + degatsSubis);
+		
+		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
+		//Debug.Log ("Points de vie avant le coup : " + pointsDeVieActuels);
+		pointsDeVieActuels -= degatsSubis;
+		Debug.Log ("Points de vie après le coup : " + pointsDeVieActuels);
+		if (pointsDeVieActuels <= 0 && !mort ) {
+			if(flagAssocie!=-1)
+				FlagManager.ActiverFlag(flagAssocie);
+			mort = true;
+			DeclencherMort ();
+		}
+	}
 
+	/**
+	 * @brief Ne pas tenir en compte des scripts caracteristiques
+	 * @param degats Degats initiaux
+	 * @param nePasTenirEnCompteDesCarac Peu importe sa valeur, n'est là que pour surcharger la fonction
+	 */
+	public void SubirDegats(float degats,bool nePasTenirEnCompteDesCarac) {
+		if(bypass) return;
+		if(!TesterFlags ()) return;
+		TesterFlags();
+		Caracteristiques caracDefenseur = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
+		
+		
+		//Application de la formule de degats
+		float degatsSubis = degats;
+		
+		//Debug.Log ("Degats subis apres application de la statistique Defense : " + degatsSubis);
+		
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
 		//Debug.Log ("Points de vie avant le coup : " + pointsDeVieActuels);
 		pointsDeVieActuels -= degatsSubis;

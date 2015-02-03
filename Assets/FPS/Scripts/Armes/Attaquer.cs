@@ -173,15 +173,7 @@ public class Attaquer : MonoBehaviour, IScriptEtatJouable {
 				
 				//On récupère le script Caracteristiques du joueur principal pour appliquer les modifications aux dégats
 				Caracteristiques carac = ControlCenter.GetJoueurPrincipal().GetComponent<Caracteristiques>();
-				float degatsInfliges=degatsParCoup; //Initialement égal à la valeur "de base"
-				if(carac && affecteParCaracteristiques) { //Formule de degats
-					degatsInfliges = degatsParCoup+carac.GetAttaque(); ///FORMULE DE DEGATS
-				}
-				
-				
-				Debug.Log ("Degats infligés après application de l'attaque du joueur : "+degatsInfliges);
-				
-				health.SubirDegats (degatsInfliges);
+				health.SubirDegats (degatsParCoup,carac); //Inflige les dégats
 				objetsTouchesLorsDeCetteAttaque.Add(health);
 			}
 		}
