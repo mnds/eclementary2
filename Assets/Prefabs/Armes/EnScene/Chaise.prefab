@@ -99,7 +99,7 @@ Rigidbody:
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   bypass: 0
   isPickableDebut: 1
   pickableDistanceDebut: 3
+  nombreMunitions: 1
   texture: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:

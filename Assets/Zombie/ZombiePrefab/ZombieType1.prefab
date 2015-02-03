@@ -2446,17 +2446,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab7c66eef93e11439eb5170ff526336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estVivant: 0
+  estVivant: 1
   pointsDeVie: 50
   pointsEndurance: 10
-  attaque: 1
-  defense: 1
+  attaque: 20
+  defense: 5
   saut: 3
   vitesseCourse: 9
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
-  scoreZombie: 10
+  scoreZombie: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2498,8 +2498,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dis: 0
   periodeChangementDesti: 3
-  vitesseMarche: 2
-  vitesseCourse: 5
+  vitesseMarche: 5
+  vitesseCourse: 10
   isdead: 0
 --- !u!136 &13600000
 CapsuleCollider:
