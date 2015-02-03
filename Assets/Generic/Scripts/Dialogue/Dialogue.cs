@@ -56,7 +56,8 @@ public class Dialogue : MonoBehaviour, Interactif {
 				int y = 10;
 				for (int i = 0; i < repliquesSuivantes.Count; i++) {
 					if (repliquesSuivantes [i] != null) { // Test de l'existence en mémoire de la réplique, au cas où il y aurait une erreur dans le fichier des répliques
-						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*6 : repliquesSuivantes [i].GetTexte ().Length*7;
+						// Calcul de la longueur du texte pour ajustement à l'affichage
+						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*7 : repliquesSuivantes [i].GetTexte ().Length*8;
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
 

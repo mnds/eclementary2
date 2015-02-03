@@ -46,7 +46,7 @@ public class Zombie_Comportement : MonoBehaviour {
 
 		healthPlayer = m_player.GetComponent<HealthPlayer>(); 
 		zombieCarac = this.GetComponent<ZombieCaracteristiques>();
-		scoreDuJoueur = m_player.GetComponent<ScoreManager>();
+	//	scoreDuJoueur = m_player.GetComponent<ScoreManager>();
 		}
 		
 		// Update is called once per frame
@@ -59,7 +59,7 @@ public class Zombie_Comportement : MonoBehaviour {
 			//Si l'animation "death" est fini et qu'on n'est pas dans le processus de transition, on detruit le zombie
 			{
 				Destroy(gameObject);
-				scoreDuJoueur.AjouteScore(zombieCarac.GetScoreZombie());   //On ajoute le score dans scoreDuJoueur
+	//			scoreDuJoueur.AjouteScore(zombieCarac.GetScoreZombie());   //On ajoute le score dans scoreDuJoueur
 				Creation_Zombie.ZombieNombre--;
 			}
 		} 

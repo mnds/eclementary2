@@ -29,6 +29,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
 	public List<Sprite> listeImages;//Liste des images de TOUS les objets récoltables
 	public Sprite imageTransparente; // Image transparente, utilisée dans les états non jouables
+	public Sprite imageRadar;
+	public Sprite imageBalayageRadar;
 
 	private GameObject inventaire;//Stock la fenetre d'inventaire
 	public Sprite imageVide;
@@ -423,9 +425,12 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public void setEnabled( bool ok ) {
 		GameObject armeCourante = GameObject.Find ("Arme Active");
 		if (!ok) { // La vignette de l'arme courante est remplacée par une image transparente dans un état non jouable
-			//On remplace l'image par l'image de l'objet en question
+			// Désactivation de l'aperçu de l'arme utilisée
 			armeCourante.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = imageTransparente;
 			armeCourante.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = "";
+			// Désactivation du radar
+			GameObject.Find ("Radar").transform.GetComponent<Image>().sprite = imageTransparente;
+			GameObject.Find ("Radar_balayage").transform.GetComponent<Image>().sprite = imageTransparente;
 		} 
 		else {
 			int positionObjet = 0;
@@ -436,8 +441,11 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 					positionObjet=i;
 				}
 			}
-			//On remplace l'image par l'image de l'objet en question
-			armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionObjet];	
+			// Activation de l'aperçu de l'arme utilisée
+			armeCourante.transform.FindChild("Image").gameObject.GetComponent<Image>().sprite=listeImages[positionObjet];
+			// Activation du radar
+			GameObject.Find ("Radar").transform.GetComponent<Image>().sprite = imageRadar;
+			GameObject.Find ("Radar_balayage").transform.GetComponent<Image>().sprite = imageBalayageRadar;
 		}
 
 		enabled = ok; // Mise à jour de l'état
