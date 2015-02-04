@@ -22,7 +22,7 @@ public class ChangementSceneFlag : MonoBehaviour {
 		public List<int> flagsInterditsPourTransition;
 		public string nomDuSpawnPoint; //Nom du spawnPoint sur lequel on doit se téléporter
 		public FlagsRequisInterditsChangementSceneFlag (ControlCenter.Scenes nomScene_, string nomDuSpawnPoint_) {
-			nomScene=nomScene_;
+			nomScene=nomScene_; //cf ControlCenter
 			nomDuSpawnPoint=nomDuSpawnPoint_;
 			flagsNecessairesPourTransition=new List<int>(){};
 			flagsInterditsPourTransition=new List<int>(){};

@@ -25,7 +25,7 @@ static public class ControlCenter {
 		TresDifficile
 	}
 
-	public enum Scenes {
+	public enum Scenes { //En donner le nom explicite plus bas. Dans StateManager, ajouter dans ChargerEtatSelonScene l'etat correspondant.
 		Titre,
 		Mort,
 		Campus,
