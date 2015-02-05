@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 923b22c9a8017e44083708f5a7c16d42
+guid: dbb46236a7da04b4f9979e49db8f0842
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -270,6 +270,14 @@ ModelImporter:
         modified: 0
     - boneName: neck
       humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head
+      humanName: Head
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -597,7 +605,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: momar(Clone)
+    - name: momar2(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
