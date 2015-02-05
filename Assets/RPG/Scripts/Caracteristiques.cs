@@ -37,7 +37,7 @@ public class Caracteristiques : MonoBehaviour {
 
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	private Health h; //Lié à Health pour en modifier les statistiques
-
+	private int experience = 0; //L'expérience acquise par le joueur
 
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
@@ -45,6 +45,7 @@ public class Caracteristiques : MonoBehaviour {
 		//Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
 		h = gameObject.GetComponent<Health> ();
 		//Debug.Log ("Health de " + this + " est défini : " + (h == true));
+		Actualiser ();
 	}
 
 
@@ -159,5 +160,4 @@ public class Caracteristiques : MonoBehaviour {
 	public Health GetH () {
 		return h;
 	}
-
 }

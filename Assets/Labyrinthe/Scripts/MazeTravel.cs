@@ -107,6 +107,7 @@ public class MazeTravel : MonoBehaviour {
 			if((transform.position-positionProchainDeplacement).magnitude<vitesse*Time.deltaTime)
 			{
 				if(!algoEnCours){mouvementsAFaire.RemoveRange(0,2);} //On retire la position à laquelle on vient d'arriver
+				//MoveTo(iFpc,jFpc);
 				isMoving=false; //On ne bouge plus
 			}
 			else //Si on est encore relativement loin on peut faire un pas de plus
@@ -211,7 +212,7 @@ public class MazeTravel : MonoBehaviour {
 	 * @return bool True si l'étape de l'algorithme a abouti, false sinon. Si true, la liste est bien remplie, sinon il faut en enlever les derniers éléments.
 	 * @details La méthode implémente un algorithme à essais successifs pour trouver la position de la cible.
 	 */
-	private bool AES (int iFpc, int jFpc)
+	private bool AES (int iFpc_, int jFpc_)
 	{
 		int tailleMouvementsAFaire = mouvementsAFaire.Count;
 //		if (tailleMouvementsAFaire > 100)
@@ -230,7 +231,7 @@ public class MazeTravel : MonoBehaviour {
 			jActuel=j;
 		}
 		//Test de la fin de l'algorithme
-		if(iActuel==iFpc&&jActuel==jFpc)
+		if(iActuel==iFpc_&&jActuel==jFpc_)
 		{
 			return true;
 		}
@@ -239,16 +240,16 @@ public class MazeTravel : MonoBehaviour {
 			List<int> positionsAccessibles_=matriceDeplacementsPossibles[iActuel][jActuel];
 			//On va trier positionAccessibles_ pour prendre en compte les mouvements les plus proches du FPC
 			List<int> positionsAccessibles=new List<int>();
-			List<int> sousListe1=new List<int>(); //éléments dans une direction du Fpc
+			List<int> sousListe1=new List<int>(); //éléments dans une direction du Fpc_
 			List<int> sousListe2=new List<int>(); //éléments dans aucune bonne direction
 			//On récupère les directions selon i et j de la cible
 			int directionSelonI;
-			int diffI=iFpc-iActuel;
+			int diffI=iFpc_-iActuel;
 			if(diffI==0) directionSelonI=0;
 			else if(diffI<0) directionSelonI=-1;
 			else directionSelonI=1;
 			int directionSelonJ;
-			int diffJ=jFpc-jActuel;
+			int diffJ=jFpc_-jActuel;
 			if(diffJ==0) directionSelonJ=0;
 			else if(diffJ<0) directionSelonJ=-1;
 			else directionSelonJ=1;
@@ -280,7 +281,7 @@ public class MazeTravel : MonoBehaviour {
 					mouvementsAFaire.Add(jK);
 					//Maintenant qu'on sait où on va, on dit que la case suivante est parcourue pour permettre de revenir sur la case qu'on vient de traverser si elle permet d'accéder rapidement au fpc
 					casesParcourues [iK] [jK] = true;
-					if(AES(iFpc,jFpc))
+					if(AES(iFpc_,jFpc_))
 					{
 						return true;
 					}

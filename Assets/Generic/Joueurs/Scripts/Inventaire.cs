@@ -200,7 +200,9 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
 
-		bool inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
+		bool inventaireOuvert=false;
+		if(inventaire)
+			inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
 		ControlCenter.inventaireOuvert = inventaireOuvert;
 		
 		if(inventaireOuvert && Input.GetButtonDown("Inventaire"))

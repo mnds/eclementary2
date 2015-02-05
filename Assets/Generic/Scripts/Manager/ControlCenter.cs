@@ -98,7 +98,8 @@ static public class ControlCenter {
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
-		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
+		if(GameObject.Find ("Texte"))
+			texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
 	}
 
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface

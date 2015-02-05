@@ -1628,6 +1628,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 445090173}
   - 114: {fileID: 445090174}
+  - 114: {fileID: 445090175}
   m_Layer: 0
   m_Name: Horloge
   m_TagString: Untagged
@@ -1661,6 +1662,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dureeDuJour: 300
   heure: 0
+--- !u!114 &445090175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445090172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: c8000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &510023679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,6 +5217,7 @@ GameObject:
   - 222: {fileID: 1387653523}
   - 114: {fileID: 1387653522}
   - 114: {fileID: 1387653521}
+  - 114: {fileID: 1387653524}
   m_Layer: 5
   m_Name: Radar
   m_TagString: Untagged
@@ -5273,6 +5288,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1387653519}
+--- !u!114 &1387653524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387653519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: c8000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &1426405002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,7 +5611,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470734520}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37006c3946d5da449bdb4e0a2080c463, type: 3}
   m_Name: 
@@ -5603,7 +5631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estVivant: 1
   pointsDeVie: 150
-  pointsEndurance: 10
+  pointsEndurance: 100
   attaque: 1
   defense: 1
   saut: 3
@@ -5772,7 +5800,7 @@ MonoBehaviour:
   - {fileID: 1089602293}
   - {fileID: 723036877}
   - {fileID: 2116469423}
-  quantiteObjets: 010000000100000001000000000000000a00000001000000010000000100000001000000010000000100000001000000
+  quantiteObjets: 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   listeImages:
   - {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
   - {fileID: 21300000, guid: e2b7c48da2579f44eb462058a68984fb, type: 3}
@@ -6933,6 +6961,7 @@ GameObject:
   - 224: {fileID: 1790409667}
   - 222: {fileID: 1790409669}
   - 114: {fileID: 1790409668}
+  - 114: {fileID: 1790409670}
   m_Layer: 5
   m_Name: FenetreInventaire
   m_TagString: Untagged
@@ -7012,6 +7041,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1790409666}
+--- !u!114 &1790409670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1790409666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 82000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &1807302006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7647,6 +7689,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1992857179}
   - 222: {fileID: 1992857180}
+  - 114: {fileID: 1992857181}
   m_Layer: 0
   m_Name: Arme Active
   m_TagString: Untagged
@@ -7681,6 +7724,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1992857178}
+--- !u!114 &1992857181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992857178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 82000000
+  flagsDevantEtreDesactives: 
 --- !u!1 &1994057071
 GameObject:
   m_ObjectHideFlags: 0

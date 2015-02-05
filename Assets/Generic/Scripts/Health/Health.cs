@@ -110,7 +110,7 @@ public class Health : MonoBehaviour {
 
 	public void SetPointsDeVieMax (float pdvm_) {
 		pointsDeVieMax = pdvm_;
-		pointsDeVieActuels = Mathf.Max (pointsDeVieMax, pointsDeVieActuels);
+		pointsDeVieActuels = Mathf.Min (pointsDeVieMax, pointsDeVieActuels);
 	}
 	
 	public float GetPointsDeVieMax () {
