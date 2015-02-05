@@ -34,6 +34,7 @@ public class Creation_Zombie : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		periodeZombie = m_periodeZombie;
+		ZombieNombre=0;
 		k = ZombieListe.Count;
 		m_transform = this.transform;
 		m_player = GameObject.FindGameObjectWithTag("Player"); 
@@ -42,7 +43,7 @@ public class Creation_Zombie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("ZombieNombre : "+periodeZombie);
+//		Debug.Log ("ZombieNombre : "+periodeZombie);
 		if(periodeZombie> 0) periodeZombie -= Time.deltaTime;
 		else
 		{   
@@ -57,22 +58,36 @@ public class Creation_Zombie : MonoBehaviour {
 
 
 	void Create(){
-		Debug.Log ("CREER");
-		if (ZombieNombre >= ZombieNombreMax)
-						return;
+		if (ZombieNombre >= ZombieNombreMax) {
+			/*Debug.Log ("ZombieNombre : "+ZombieNombre);
+			Debug.Log ("ZombieNombreMax : "+ZombieNombreMax);
+			Debug.Log ("Trop de zombies");	*/		
+			return;
+		}
 		m_transform.LookAt (m_player.transform);
 		Vector3 lookatPoint = -m_transform.TransformDirection (Vector3.forward);
 		Vector3 cameraForward =  m_camTransform.TransformDirection (Vector3.forward);
 		float cos = Vector3.Dot (lookatPoint, cameraForward);  //On calcule le cosinus de l'angle entre le vecteur forward du joueur et le vecteur unitaire qui pointe du joueur a l'objet 
-		
+
          if (cos < 0.5f) {						
-			 m = (int)(Random.value * (float)k);
+			//Debug.Log ("Le joueur ne regarde pas");
+			m = (int)(Random.value * (float)k);
 			if(m<k)  {
-				Instantiate (ZombieListe[m], this.transform.position, Quaternion.identity); 
-				ZombieNombre++;
+				//Debug.Log ("Instantiate");
+				GameObject nouveauZombie = Instantiate (ZombieListe[m], this.transform.position, Quaternion.identity) as GameObject; 
+				if(nouveauZombie) { //Si l'instantiation a marché
+					ZombieNombre++;
+				}
+				else {
+					Debug.LogError("Instantiate raté");
+				}
 				periodeZombie = m_periodeZombie;
 			}
-		}	
+			//else
+				//Debug.Log ("m>=k");
+		}
+		//else
+			//Debug.Log ("Le joueur regarde");
 	}
 }
 

@@ -16,6 +16,9 @@ public abstract class EtatNonJouable : Etat {
 	
 	public override void ConfigurerScripts() {
 		// Récupération de tous les scripts de l'état jouable
+		/*Debug.LogWarning ("Instance state : "+StateManager.getInstance());
+		Debug.LogWarning ("Joueur : "+StateManager.getInstance ().GetJoueur());
+		Debug.LogWarning ("Components : "+StateManager.getInstance().GetJoueur().GetComponents (typeof(IScriptEtatJouable)));*/
 		Component[] listeScriptsEtatJouable = StateManager.getInstance().GetJoueur().GetComponents (typeof(IScriptEtatJouable));
 		// Désactivation des scripts récupérés
 		for (int i = 0; i < listeScriptsEtatJouable.Length; i++) {

@@ -27,6 +27,7 @@ public class StateManager : MonoBehaviour {
 			DontDestroyOnLoad( gameObject ); // Le gameObject parent, et le script avec, sont conservés lors des changements de scène
 		} 
 		else {
+			Debug.LogError("Destruction d'un manager");
 			DestroyImmediate( gameObject ); // Si une instance du script existait déjà, alors l'instance nouvellement créée est supprimée sur le champ
 		}
 	}
@@ -41,6 +42,7 @@ public class StateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+//		Debug.Log ("Instance : "+instanceActive==null);
 		if (etatActif != null)
 			etatActif.UpdateEtat ();
 	}
@@ -55,11 +57,14 @@ public class StateManager : MonoBehaviour {
 	}
 
 	public GameObject GetJoueur() {
+		if(joueur==null)
+			joueur=GameObject.Find("Joueur");
 		return joueur;
 	}
 
 	// Permet le changement de l'état actif à l'état donné en paramètre
 	public void BasculerEtat( Etat etat ) {
+		//Debug.LogWarning("Changement vers l'état "+etat);
 		ancienEtat = etatActif;
 		etatActif = etat;
 		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état

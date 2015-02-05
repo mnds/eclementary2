@@ -71,7 +71,7 @@ public class DetectionPersonnes : MonoBehaviour {
 					}
 
 					GameObject go = (GameObject)Instantiate(pointJaune);//On instancie le point jaune
-					go.transform.parent=this.transform;//On lui met le bon parent
+					go.transform.SetParent(this.transform);//On lui met le bon parent
 
 					go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,vecteurCible.magnitude)/distanceRadar*100f;// On le positionne à la bonne distance, en face du joueur
 					go.transform.RotateAround(this.transform.position,Vector3.forward,angle-180f);//On le fait tourner autour du centre du radar de "angle" degrés

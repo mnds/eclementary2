@@ -323,7 +323,7 @@ CanvasRenderer:
 --- !u!1 &82371736
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 177306, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+  m_PrefabParentObject: {fileID: 127892, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -340,19 +340,19 @@ GameObject:
 --- !u!4 &82371737
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 477306, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+  m_PrefabParentObject: {fileID: 427892, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82371736}
   m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
   m_LocalPosition: {x: -.00999999978, y: .00999999978, z: .00999999978}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalScale: {x: .100000001, y: .0700000003, z: .100000001}
   m_Children: []
   m_Father: {fileID: 723036878}
   m_RootOrder: 0
 --- !u!23 &82371738
 Renderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2377310, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 2327892, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82371736}
@@ -374,7 +374,7 @@ Renderer:
 --- !u!33 &82371739
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3377310, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 3327892, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82371736}
@@ -2378,7 +2378,7 @@ MonoBehaviour:
 --- !u!1 &723036877
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 177292, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+  m_PrefabParentObject: {fileID: 127890, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -2397,7 +2397,7 @@ GameObject:
 --- !u!4 &723036878
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 477292, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+  m_PrefabParentObject: {fileID: 427890, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723036877}
   m_LocalRotation: {x: 1.13269165e-10, y: -2.55168442e-10, z: .48564297, w: .87415731}
@@ -2410,7 +2410,7 @@ Transform:
 --- !u!114 &723036879
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11477278, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 11427892, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723036877}
@@ -2427,7 +2427,7 @@ MonoBehaviour:
 --- !u!54 &723036880
 Rigidbody:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5477304, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 5427892, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723036877}
@@ -2443,7 +2443,7 @@ Rigidbody:
 --- !u!114 &723036881
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11477276, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 11427890, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723036877}
@@ -2464,7 +2464,7 @@ MonoBehaviour:
 --- !u!65 &723036882
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6577308, guid: 5586823bd0b0f454c820b67fdcc4589c,
+  m_PrefabParentObject: {fileID: 6527892, guid: 5586823bd0b0f454c820b67fdcc4589c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723036877}
@@ -2472,8 +2472,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.20000005, y: .0599999987, z: .0599999987}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: .810000002, y: .00999999978, z: .00999999978}
+  m_Center: {x: 0, y: .00999999978, z: .00999999978}
 --- !u!1 &743406029
 GameObject:
   m_ObjectHideFlags: 0
