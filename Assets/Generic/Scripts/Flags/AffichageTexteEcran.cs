@@ -22,21 +22,18 @@ public class AffichageTexteEcran : MonoBehaviour {
 	 * @param texte Texte à mettre.
 	 */
 	public IEnumerator AfficherTextePrioritaire(string texte) {
-		if(!FlagManager.VerifierFlags(flagsDevantEtreActives,flagsDevantEtreDesactives)) //Pas les bons flags, on ne fait rien
+		if(!FlagManager.VerifierFlags(flagsDevantEtreActives,flagsDevantEtreDesactives)) { //Pas les bons flags, on ne fait rien {
+			Debug.Log ("Flags non vérifiés");
 			yield return new WaitForSeconds(0.1f);
-		else
-			{
-				//Texte prioritaire, on change peu importe ce qui se passe.
-				ControlCenter.GetTexte ().text = texte;
-				ControlCenter.SetTexteEstPrioritaire (false); //Pas le droit de le changer par un texte non prioritaire !
-				yield return new WaitForSeconds(ControlCenter.tempsAffichageTexteInteraction);
-				Debug.Log ("Fin affichage texte");
-				if(ControlCenter.GetTexte ().text==texte) {//Si le texte n'a pas changé, on met un texte vide. Sinon on ne fait rien, le texte a changé !
-					ControlCenter.GetTexte ().text="";
-					ControlCenter.SetTexteEstPrioritaire (true); //Donc on peut le changer
-				}
-				ActionsApresAffichage(); //Si le yield
-			}
+		}
+		else //On modifie le texte
+		{
+			ControlCenter.GetTexte ().text = texte;
+			ControlCenter.SetTexteEstPrioritaire (true); //Texte prioritaire
+			ControlCenter.GetTexte().GetComponent<SetTexte>().tempsFinAffichage=Time.time+ControlCenter.tempsAffichageTexteInteraction; //Temps final
+			yield return new WaitForSeconds(ControlCenter.tempsAffichageTexteInteraction);
+			ActionsApresAffichage(); //Si le yield
+		}
 	}
 
 	public void RemplacerTexteNonPrioritaire (string texte) {
@@ -46,6 +43,7 @@ public class AffichageTexteEcran : MonoBehaviour {
 			return; //Texte prioritaire.
 		}
 		ControlCenter.GetTexte ().text = texte;
+//		Debug.Log ("Nouveau texte : "+texte);
 		if(!ControlCenter.GetTexte ())
 			Debug.LogWarning ("PROBLEME");
 		ControlCenter.SetTexteEstPrioritaire (false); //On reprécise au cas où
@@ -53,5 +51,9 @@ public class AffichageTexteEcran : MonoBehaviour {
 
 	public virtual void ActionsApresAffichage() {
 	
+	}
+
+	void OnDisable () {
+		
 	}
 }

@@ -79,8 +79,21 @@ public class MazeWallManager : MonoBehaviour {
 	void OnTriggerEnter (Collider collider) {
 		if(collider.gameObject==fpc) //Si le fpc rentre
 		{
-			if(estMurEntree) {Application.LoadLevel("Lancement");}
-			if(estMurSortie) {Application.LoadLevel("CampusExterieur");}
+			if(estMurEntree) { //On revient à la scène du campus
+				//Application.LoadLevel("Lancement");
+				gameObject.AddComponent<ChangementSceneFlagOnTrigger>();
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().listeDesFlagsPouvantEtreActives=new List<int>(){};
+				ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag fricsf = new ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag(ControlCenter.Scenes.Scolarite,"EntreeLaby");
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().nomsDesScenesAccessibles=new List<ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag>(){fricsf};
+			}
+			if(estMurSortie) {
+				//Application.LoadLevel("CampusExterieur");
+				gameObject.AddComponent<ChangementSceneFlagOnTrigger>();
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().listeDesFlagsPouvantEtreActives=new List<int>(){420}; //On peut activer le 420
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().activationPossibleDesFlags=new List<bool>(){true};
+				ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag fricsf = new ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag(ControlCenter.Scenes.BureauDebouck,"EntreeBureauDebouck");
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().nomsDesScenesAccessibles=new List<ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag>(){fricsf};
+			}
 		}
 	}
 

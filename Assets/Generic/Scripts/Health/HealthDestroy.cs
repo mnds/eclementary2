@@ -11,7 +11,7 @@ using System.Collections;
 
 public class HealthDestroy : Health {
 	public GameObject effetDeMort; //Instantié si mort
-	public GameObject objetADetruire; //A détruire 
+	public GameObject objetADetruire; //Autre objet que le gameObject qui pourrait etre amené à disparaitre
 
 	public override void DeclencherMort () {
 		GameObject objetDestruction;

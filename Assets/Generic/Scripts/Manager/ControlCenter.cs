@@ -2,10 +2,11 @@
  * \file      ControlCenter.cs
  * \author    
  * \version   1.0
- * \date      9 novembre 2014
+ * \date      21 janvier 2015
  * \brief     Contient des variables globales liées au bon déroulement du jeu.
  *
  * \details   Quand une cinématique est lancée, cinematiqueEnCours passe à true. Les appels à getCEC renvoient true et permettent d'empecher des actions de se produire.
+ * 			  ControlCenter contient toutes les valeurs qui peuvent etre amenées à changer dans les vues Hierarchy (nom du Joueur, des scènes...)
  */
 
 /*
@@ -24,10 +25,27 @@ static public class ControlCenter {
 		TresDifficile
 	}
 
+	public enum Scenes { //En donner le nom explicite plus bas. Dans StateManager, ajouter dans ChargerEtatSelonScene l'etat correspondant.
+		Titre,
+		Mort,
+		Campus,
+		LIRIS,
+		Chambre,
+		ChambreGarsFoyer,
+		ClubBD,
+		Gymnase,
+		Scolarite,
+		BureauDebouck,
+		Labyrinthe,
+		Amphi2,
+		Fin
+	}
+
 	[System.Serializable]
 	public class ObjetActivableSelonFlags {
 		public ActivationSelonFlags asf;
 		public string nomScene;
+		Scenes machin;
 		public ObjetActivableSelonFlags(ActivationSelonFlags asf_, string ns) {
 			asf=asf_;
 			nomScene=ns;
@@ -36,8 +54,20 @@ static public class ControlCenter {
 
 	//Variables globales permettant de définir les noms de certains éléments du jeu amenés à changer
 	static public string nomDuJoueurPrincipal = "Joueur";
-	static public string nomDeLaSceneDuCampus = "CampusScenario";
+	static public string nomDeLaSceneDepart = "Ecran titre";
+	static public string nomDeLaSceneDuCampus = "Campus";
 	static public string nomDeLaSceneDeMort = "Ecran Mort";
+	static public string nomDeLaSceneLIRIS = "LaboLIRIS";
+	static public string nomDeLaSceneDeLaChambre = "Chambre";
+	static public string nomDeLaSceneDeLaChambreGarsFoyer = "ChambreGarsFoyer";
+	static public string nomDeLaSceneDuClubBD = "ClubBD";
+	static public string nomDeLaSceneDuGymnase = "Gymnase";
+	static public string nomDeLaSceneScolarite = "Scolarite";
+	static public string nomDeLaSceneDebouck = "BureauDebouck";
+	static public string nomDeLaSceneLabyrinthe = "Labyrinthe";
+	static public string nomDeLaSceneAmphi2 = "Amphi2";
+	static public string nomDeLaSceneDeFin = "Ecran Fin";
+
 
 	static bool cinematiqueEnCours = false; //Les interactions doivent s'arreter si on est en cinématique
 	static bool afficherBarreDeVieJoueur = true;
@@ -68,7 +98,8 @@ static public class ControlCenter {
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
-		texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
+		if(GameObject.Find ("Texte"))
+			texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
 	}
 
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
@@ -190,7 +221,7 @@ static public class ControlCenter {
 	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
 	 **/
 	static public void VerifierLesOASFs () {
-		Debug.Log ("Vérification des OASF");
+		//Debug.Log ("Vérification des OASF");
 		string nomSceneActuelle = Application.loadedLevelName;
 		List<ObjetActivableSelonFlags> resultat = new List<ObjetActivableSelonFlags>(){};
 		//On vérifie quels oasf ne sont pas dans la scène considérée
@@ -202,5 +233,21 @@ static public class ControlCenter {
 		}
 		//On remplace la liste par la nouvelle
 		lesOASFs=resultat;
+	}
+
+	/**
+	 * @brief Formule de dégat
+	 * @param degatsDeBase Degats initiaux à infliger
+	 * @param caracAttaquant Script Caracteristiques de l'attaquant, par défaut à null
+	 * @param caracDefenseur Script Caracteristiques de l'attaquant, par défaut à null
+	 * @return Degats subis
+	 **/
+	static public float FormuleDeDegats(float degatsDeBase, Caracteristiques caracAttaquant=null, Caracteristiques caracDefenseur=null) {
+		float caracAttaque = 0; 
+		if(caracAttaquant)
+			caracAttaque = caracAttaquant.GetAttaque();
+		float caracDefense = 0;
+		caracDefense = caracDefenseur.GetDefense ();
+		return Mathf.Max(0,(degatsDeBase)*(1f-(caracDefense-caracAttaque)/100f));
 	}
 }

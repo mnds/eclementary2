@@ -9,14 +9,16 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11448650}
+  - 65: {fileID: 6583162}
+  - 114: {fileID: 11483160}
+  - 114: {fileID: 11483158}
   m_Layer: 0
   m_Name: Numerisator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,6 +29,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3348650}
   - 23: {fileID: 2348650}
+  - 114: {fileID: 11483162}
   m_Layer: 0
   m_Name: Graphique
   m_TagString: Untagged
@@ -41,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .585581779, y: .39635089, z: .39635089, w: -.585581779}
-  m_LocalPosition: {x: 1077.70325, y: 206.836517, z: 730.171143}
+  m_LocalPosition: {x: 1021.09998, y: 207, z: 901.200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -99,11 +102,23 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11448650
+--- !u!65 &6583162
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.03000021, y: 1, z: 1.19000006}
+  m_Center: {x: 1.41999996, y: 0, z: -.189999998}
+--- !u!114 &11483158
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,17 +126,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882d1d94a016af5448e4ec629e207018, type: 3}
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: bc010000
+  flagsDevantEtreDesactives: 
+--- !u!114 &11483160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814b7bfe5acef924bb23b4aa9f623a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  munitionsIllimitees: 1
-  degatsParBalle: 1
-  cooldown: .100000001
-  munitions: 0
-  affecteParCaracteristiques: 1
-  range: 50
-  clipTir: {fileID: 0}
+  isPickableDebut: 1
+  pickableDistanceDebut: 3
+  nombreMunitions: 1
+  texture: {fileID: 0}
+--- !u!114 &11483162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

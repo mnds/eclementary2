@@ -19,6 +19,7 @@ public class SetTexte : MonoBehaviour {
 	public Camera cameraPrincipale=null;
 	public float distanceAffichageTexte=8f;
 	private AffichageTexteRaycast atrpropre;
+	public float tempsFinAffichage; //Pour l'affichage des textes prioritaires
 
 	// Use this for initialization
 	void Awake () {
@@ -41,7 +42,11 @@ public class SetTexte : MonoBehaviour {
 		RaycastHit hitInfo;
 		Pickable pickableGameObject;
 		GameObject objet;
-		
+
+		if(Time.time>tempsFinAffichage) { //On redit au CC de passer en mode temporaire
+			GetComponent<GUIText>().text="";
+			ControlCenter.SetTexteEstPrioritaire (false); //On peut de nouveau changer
+		}
 		if(Physics.Raycast(cameraPrincipale.transform.position, cameraPrincipale.transform.forward,out hitInfo, distanceAffichageTexte))				
 		{
 			objet = hitInfo.collider.gameObject;

@@ -45,6 +45,14 @@ public class InteractionManager : MonoBehaviour {
 					interactifs.Add ((Interactif)c);
 				}
 
+				//Sinon, on est à la racine, donc on cherche dans les enfants.
+				if(interactifs==null) {
+					interaction=copieObjet.GetComponentsInChildren(typeof(Interactif));
+					foreach(Component c in interaction) {
+						interactifs.Add ((Interactif)c);
+					}
+				}
+				
 				//On cherche dans les parents de l'objet
 				while(interactifs == null && objet.transform.parent)
 				{
@@ -54,13 +62,7 @@ public class InteractionManager : MonoBehaviour {
 						interactifs.Add ((Interactif)c);
 					}
 				}
-				//Sinon, on est à la racine, donc on cherche dans les enfants.
-				if(interactifs==null) {
-					interaction=copieObjet.GetComponentsInChildren(typeof(Interactif));
-					foreach(Component c in interaction) {
-						interactifs.Add ((Interactif)c);
-					}
-				}
+				
 				
 				//On vérifie qu'on a trouvé un script d'interaction et qu'on est assez près
 				if(interactifs.Count>0)

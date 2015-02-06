@@ -14,7 +14,7 @@ public class OnClickRessusciter : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		if (GUI.Button (new Rect (new Rect (Screen.width / 2, Screen.height * 9 / 10, 200, 50)), "Réssusciter")) {
+		if (GUI.Button (new Rect (new Rect (Screen.width / 2, Screen.height * 9 / 10, 200, 50)), "Ressusciter")) {
 			Evenement ressusciter = new Ressusciter();
 			ressusciter.DeclencherEvenement();
 		}

@@ -39,10 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 70e6752187419f81238b8269e355c94bdf92574d
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -77,19 +84,27 @@
      <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\MoveCamera.cs" />
      <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\SpawnPoint.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\Etat.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatAmphi2.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatBureauDebouck.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatCampus.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatChambre.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatChambreGarsFoyer.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatClubBD.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatDepart.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatFin.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatGymnase.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatJouable.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatLaboLIRIS.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatLabyrinthe.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatLancement.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatMort.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatNonJouable.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatScolarite.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverAnimation.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverBruitage.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCle.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCycleJourNuit.cs" />
+     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverEcranFin.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverInventaire.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ActiverSon.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\ChangerDifficulte.cs" />
@@ -115,6 +130,7 @@
      <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
      <Compile Include="Assets\Generic\Scripts\Health\Health.cs" />
      <Compile Include="Assets\Generic\Scripts\Health\HealthDestroy.cs" />
+     <Compile Include="Assets\Generic\Scripts\Health\HealthHide.cs" />
      <Compile Include="Assets\Generic\Scripts\Health\HealthPlayer.cs" />
      <Compile Include="Assets\Generic\Scripts\Interfaces\IActivable.cs" />
      <Compile Include="Assets\Generic\Scripts\Interfaces\IScriptEtatJouable.cs" />
@@ -192,7 +208,11 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
+<<<<<<< HEAD
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+=======
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+>>>>>>> 70e6752187419f81238b8269e355c94bdf92574d
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

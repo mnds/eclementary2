@@ -36,7 +36,7 @@ public class ContactArmeScript : MonoBehaviour {
 		l.SetBypass (false); //On veut pouvoir lancer
 
 		//Colliders
-		Vector3 centreCollider = new Vector3 (.18f, -.45f, .6f);
+		/*Vector3 centreCollider = new Vector3 (.18f, -.45f, .6f);
 		BoxCollider bc = GetComponent<BoxCollider> ();
 		if (bc) {
 			bc.center = centreCollider; //On met le centre au bon endroit pour que l'animation se fasse bien
@@ -51,7 +51,7 @@ public class ContactArmeScript : MonoBehaviour {
 		if(sc) {
 			sc.center=centreCollider;
 			sc.isTrigger=true;
-		}
+		}*/
 
 		//Autres scripts
 		ObjetLance ol = GetComponent<ObjetLance> ();

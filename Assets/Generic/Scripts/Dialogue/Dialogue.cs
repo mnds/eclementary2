@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	ControllerJoueur mouvementJoueur ; // Référence vers le script de déplacement du joueur
 
 	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet
-	
+
 	// Use this for initialization
 	void Start () {
 		string contenu = ContenuFichierRepliques ();
@@ -39,8 +39,9 @@ public class Dialogue : MonoBehaviour, Interactif {
 		GameObject joueur = ControlCenter.GetJoueurPrincipal(); // Récupération du joueur principal
 		if (joueur != null)
 			mouvementJoueur = joueur.GetComponent<ControllerJoueur> ();
-	}
 
+	}
+	
 	void OnGUI() {
 		if( interactionDeclenchee ) {
 			if (repliquesSuivantes == null || repliquesSuivantes.Count == 0) { // Arrêt de l'interaction si l'interaction choisie n'a pas de répliques suivantes
@@ -49,18 +50,16 @@ public class Dialogue : MonoBehaviour, Interactif {
 				ArreterInteraction ();
 			}
 			else{ // Affichage des répliques si l'intéraction a été déclenché
+				if( (repliquesSuivantes.Count > 0) && (repliquesSuivantes[0] != null) )
+					AfficherInfosPersonnage( repliquesSuivantes[0] ); // Affichage de l'avatar et du nom du personnage parlant
+
 				int y = 10;
 				for (int i = 0; i < repliquesSuivantes.Count; i++) {
 					if (repliquesSuivantes [i] != null) { // Test de l'existence en mémoire de la réplique, au cas où il y aurait une erreur dans le fichier des répliques
-						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*6 : repliquesSuivantes [i].GetTexte ().Length*7;
+						// Calcul de la longueur du texte pour ajustement à l'affichage
+						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*7 : repliquesSuivantes [i].GetTexte ().Length*8;
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
-
-						// Affichage de l'avatar du joueur
-						Personnage perso = (Personnage)repliquesSuivantes [i].GetGoAssocie().GetComponent<Personnage>();
-						if( perso != null )
-							GUI.Label( new Rect(0, 10, 80, 80), perso.avatar );
-						GUI.Label ( new Rect(0, 90, 80, 20), repliquesSuivantes [i].GetGoAssocie().name, guiStyle); // Affichage du nom du joueur
 
 						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
@@ -72,6 +71,19 @@ public class Dialogue : MonoBehaviour, Interactif {
 				}	
 			}
 		}
+	}
+
+	// Permet l'affichage d'infos sur le personnage prononçant la réplique (avatar, nom...)
+	void AfficherInfosPersonnage( Replique replique ) {
+		GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
+		guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
+		
+		// Affichage de l'avatar du joueur
+		Personnage perso = (Personnage)replique.GetGoAssocie().GetComponent<Personnage>();
+		if( perso != null )
+			GUI.Label( new Rect(0, 10, 80, 80), perso.avatar );
+		// Affichage du nom du joueur
+		GUI.Label ( new Rect(0, 90, 80, 20), replique.GetGoAssocie().name, guiStyle); 
 	}
 
 	// Effectue le changement de la réplique actuelle

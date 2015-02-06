@@ -11,7 +11,7 @@ using UnityEngine;
 public abstract class Etat {
 	protected StateManager stateManager; // Référence à l'instance de StateManager
 	protected string sceneCorrespondante; // Nom de la scène correspondant à l'état
-	protected static bool etatJouable; // Renseigne si oui ou non le joueur peut vraiment jouer lorsqu'il est dans ce état
+	protected static bool etatJouable; // Renseigne si oui ou non le joueur peut jouer lorsqu'il est dans ce état
 
 	public Etat( StateManager manager ) {
 		stateManager = manager;

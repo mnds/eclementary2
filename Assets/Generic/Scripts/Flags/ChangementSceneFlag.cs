@@ -16,10 +16,17 @@ using System.Collections.Generic;
 public class ChangementSceneFlag : MonoBehaviour {
 	[System.Serializable]
 	public class FlagsRequisInterditsChangementSceneFlag { //Pour les déclarations publiques. Uniquement pour empecher l'inspecteur de Unity de faire n'importe quoi.
-		public string nomScene; //Nom de la scène à laquelle accéder
+		public ControlCenter.Scenes nomScene;
+		//public string nomScene; //Nom de la scène à laquelle accéder
 		public List<int> flagsNecessairesPourTransition;
 		public List<int> flagsInterditsPourTransition;
 		public string nomDuSpawnPoint; //Nom du spawnPoint sur lequel on doit se téléporter
+		public FlagsRequisInterditsChangementSceneFlag (ControlCenter.Scenes nomScene_, string nomDuSpawnPoint_) {
+			nomScene=nomScene_; //cf ControlCenter
+			nomDuSpawnPoint=nomDuSpawnPoint_;
+			flagsNecessairesPourTransition=new List<int>(){};
+			flagsInterditsPourTransition=new List<int>(){};
+		}
 	}
 	
 	public List<int> listeDesFlagsPouvantEtreActives; //Liste de tous les flags qu'on doit tenter d'activer avant de changer de scène
@@ -36,22 +43,27 @@ public class ChangementSceneFlag : MonoBehaviour {
 		for(int i=0;i<listeDesFlagsPouvantEtreActives.Count;i++) {
 			int idFlag = listeDesFlagsPouvantEtreActives[i];
 			TestsActivation(idFlag); //Tests concernant l'inventaire / les caractéristiques du joueur... qui peuvent changer l'état de activationPossibleDesFlags[idFlag] et le mettre à false.
-			if(activationPossibleDesFlags[i]) {//Si on a le droit de l'activer
+			bool activationPossible;
+			if(activationPossibleDesFlags.Count<i+1) //Si la liste n'a pas été remplie dans l'inspecteur, on assume que c'est un true, et que c'est une erreur humaine.
+				activationPossible=true;
+			else
+				activationPossible=activationPossibleDesFlags[i];
+
+			if(activationPossible) {//Si on a le droit de l'activer. 
+				Debug.Log ("Activation possible");
 				//Si le flag est activé, plus besoin de pouvoir l'activer. On désactive le script.
-				activationPossibleDesFlags[i] = !FlagManager.ActiverFlag(idFlag);
-				if(!activationPossibleDesFlags[i]) {
+				activationPossible = !FlagManager.ActiverFlag(idFlag);
+				if(!activationPossible) {
 					FaireActionsConnexes(idFlag); //Tout ce qui concerne uniquement cette interaction (appel à des événements...)
 				}
 			}
-		}
-		foreach(int idFlag in listeDesFlagsPouvantEtreActives) { //On fait tous les flags
-
 		}
 
 		//Changement de scène
 		foreach(FlagsRequisInterditsChangementSceneFlag fricsf in nomsDesScenesAccessibles) {
 			bool changerDeScene = FlagManager.VerifierFlags(fricsf.flagsNecessairesPourTransition,fricsf.flagsInterditsPourTransition); //Peut changer pendant les tests
 			if(changerDeScene) { //Tous les flags sont bons, on change de scène.
+				Debug.Log("Nouveau point de spawn : "+fricsf.nomDuSpawnPoint);
 				ControlCenter.SetNomSpawnPointActuel(fricsf.nomDuSpawnPoint);
 				ChargerNiveau(fricsf.nomScene);
 			}
@@ -68,7 +80,7 @@ public class ChangementSceneFlag : MonoBehaviour {
 		
 	}
 
-	private void ChargerNiveau(string nomScene_) {
+	private void ChargerNiveau(ControlCenter.Scenes nomScene_) {
 		Debug.Log ("Chargement d'un niveau : "+nomScene_);
 		StateManager.getInstance().ChargerEtatSelonScene(nomScene_);
 	}

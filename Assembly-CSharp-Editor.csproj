@@ -39,17 +39,24 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 70e6752187419f81238b8269e355c94bdf92574d
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Dialogue\Editor\Generic\ContactArmeScriptEditor.cs" />
-     <Compile Include="Assets\Dialogue\Editor\Generic\ContactPrefabScriptEditor.cs" />
-     <Compile Include="Assets\Dialogue\Editor\Generic\MoveCameraEditor.cs" />
-     <Compile Include="Assets\Dialogue\Editor\Generic\ObjetEnSceneScriptEditor.cs" />
+     <Compile Include="Assets\Editor\Generic\ContactArmeScriptEditor.cs" />
+     <Compile Include="Assets\Editor\Generic\ContactPrefabScriptEditor.cs" />
+     <Compile Include="Assets\Editor\Generic\MoveCameraEditor.cs" />
+     <Compile Include="Assets\Editor\Generic\ObjetEnSceneScriptEditor.cs" />
      <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
      <Compile Include="Assets\OVR\Editor\OVRGameView.cs" />
      <Compile Include="Assets\OVR\Editor\OVRPrefabs.cs" />
@@ -69,6 +76,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
+<<<<<<< HEAD
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
@@ -76,6 +84,15 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/Program Files (x86)/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+=======
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+>>>>>>> 70e6752187419f81238b8269e355c94bdf92574d
  </Reference>
   </ItemGroup>
   <ItemGroup>

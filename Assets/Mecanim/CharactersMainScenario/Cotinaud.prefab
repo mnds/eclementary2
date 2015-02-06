@@ -432,9 +432,9 @@ GameObject:
   - 4: {fileID: 422918}
   - 95: {fileID: 9522862}
   - 136: {fileID: 13622862}
-  - 114: {fileID: 11422866}
   - 114: {fileID: 11422864}
   - 114: {fileID: 11422862}
+  - 114: {fileID: 11417932}
   m_Layer: 0
   m_Name: Cotinaud
   m_TagString: Ennemi
@@ -1638,7 +1638,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1083.90002, y: 200.039993, z: 1117.59998}
+  m_LocalPosition: {x: 1173.26001, y: 206.059998, z: 1152.44995}
   m_LocalScale: {x: 1, y: 1.29999995, z: 1}
   m_Children:
   - {fileID: 422952}
@@ -2433,6 +2433,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11417932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e8cea669d38497eb5983452d302603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomFichierRepliques: Dialogue/Cotinaud.json
+  distanceMinimaleInteraction: 4
 --- !u!114 &11422862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2463,26 +2476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
   texteAffiche: Cotinaud
---- !u!114 &11422866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagActive: 370
-  flagRequisPourDestruction: 7c010000
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 370
-  texteSiNonActivable: 
-  distanceMinimaleInteraction: 4
 --- !u!136 &13622862
 CapsuleCollider:
   m_ObjectHideFlags: 1
