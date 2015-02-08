@@ -20,6 +20,8 @@ public class BasketJoueur : MonoBehaviour {
 	float t = 0;
 	public float relativePos;
 
+	private bool enabled = false; // Permet l'activation/désactivation du script
+
 	// Use this for initialization
 	void Start () {
 		arrow = GameObject.Find ("Arrow");
@@ -32,31 +34,32 @@ public class BasketJoueur : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
-		if (t > -1)  t -= Time.deltaTime;
-		relativePos = posArrow.position.x - posInitialeArrow.x;
-
-		float amplForceY = maxForceDeLance.y - minForceDeLance.y;
-		float amplForceZ = maxForceDeLance.z - minForceDeLance.z;
-
-		forceDeLancer = (minForceDeLance + maxForceDeLance)/2.0f;
-		forceDeLancer.y += relativePos / 50f * (amplForceY / 2f);
-		forceDeLancer.z += relativePos / 50f * (amplForceZ / 2f);
-
-		BougeArraw (relativePos);
-
-		if (t<=0 && Input.GetMouseButtonDown(0)) {
-			t = 1.0f;
-			GameObject basketBall =Instantiate(ballonBasket,ballPosition.transform.position,mainCamera.transform.rotation) as GameObject; 
-			if(basketBall !=null)  basketBall.rigidbody.AddRelativeForce(forceDeLancer, ForceMode.Impulse)	;
-			float xx = posArrow.position.x;
-			float yy = arrow2.transform.position.y;
-			float zz = arrow2.transform.position.z;
-			arrow2.transform.position = new Vector3(xx, yy, zz);
-			Destroy(basketBall,5);
-	 	}
-
+		if (!enabled) {
+			if (t > -1)  t -= Time.deltaTime;
+			relativePos = posArrow.position.x - posInitialeArrow.x;
+			
+			float amplForceY = maxForceDeLance.y - minForceDeLance.y;
+			float amplForceZ = maxForceDeLance.z - minForceDeLance.z;
+			
+			forceDeLancer = (minForceDeLance + maxForceDeLance)/2.0f;
+			forceDeLancer.y += relativePos / 50f * (amplForceY / 2f);
+			forceDeLancer.z += relativePos / 50f * (amplForceZ / 2f);
+			
+			BougeArraw (relativePos);
+			
+			if (t<=0 && Input.GetMouseButtonDown(0)) {
+				t = 1.0f;
+				GameObject basketBall =Instantiate(ballonBasket,ballPosition.transform.position,mainCamera.transform.rotation) as GameObject; 
+				if(basketBall !=null)  basketBall.rigidbody.AddRelativeForce(forceDeLancer, ForceMode.Impulse)	;
+				float xx = posArrow.position.x;
+				float yy = arrow2.transform.position.y;
+				float zz = arrow2.transform.position.z;
+				arrow2.transform.position = new Vector3(xx, yy, zz);
+				Destroy(basketBall,5);
+			}
+		}
 	}
+
 	void BougeArraw (float relativePos)
 	{
 		if ( relativePos <  50f && right) {
@@ -74,5 +77,14 @@ public class BasketJoueur : MonoBehaviour {
 			right = true;
 		}
 
+	}
+
+	// Implémentation de IScriptEtatJouable
+	public bool isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled( bool ok ) {
+		enabled = ok;
 	}
 }
