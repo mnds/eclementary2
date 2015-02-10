@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 65: {fileID: 6594970}
   - 54: {fileID: 5494970}
   - 114: {fileID: 11494970}
+  - 65: {fileID: 6542348}
   m_Layer: 0
   m_Name: Tube en fonte
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: .48564297, w: .87415731}
-  m_LocalPosition: {x: .5, y: 0, z: .600000024}
+  m_LocalPosition: {x: 1176.64001, y: 208.259995, z: 1146.07996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -103,18 +103,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6594970
+--- !u!65 &6542348
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: .180000007, y: -.449999988, z: .600000024}
+  m_Size: {x: 2.06999993, y: .170000002, z: .170000002}
+  m_Center: {x: .330000013, y: -1.16999996, z: 1.20000005}
 --- !u!114 &11494968
 MonoBehaviour:
   m_ObjectHideFlags: 1

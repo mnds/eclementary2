@@ -34,11 +34,14 @@ public class Caracteristiques : MonoBehaviour {
 	public float vitesseMarche = 5f;
 	public float vitesseLancer = 1f;
 	public List<Condition> conditionsActuelles;
-
+	
+	private int pointsExperience = 0;
+	private int niveau = 0; //Niveau du gameObject associé
+	
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	private Health h; //Lié à Health pour en modifier les statistiques
 	private int experience = 0; //L'expérience acquise par le joueur
-
+	
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
 		cj = gameObject.GetComponent<ControllerJoueur> ();
@@ -47,8 +50,8 @@ public class Caracteristiques : MonoBehaviour {
 		//Debug.Log ("Health de " + this + " est défini : " + (h == true));
 		Actualiser ();
 	}
-
-
+	
+	
 	public void Actualiser () {
 		if(cj) {
 			cj.SetJaugeMax (pointsEndurance);
@@ -61,9 +64,16 @@ public class Caracteristiques : MonoBehaviour {
 		}
 		//Debug.Log ("Actualisation des statistiques effectuée");
 	}
-
-
-
+	
+	public void AjouterExperience (int experienceAjoutee)  {
+		experience+=experienceAjoutee;
+		TesterNiveau();
+	}
+	
+	private void TesterNiveau () {
+		//A compléter
+	}
+	
 	//Set/Get
 	public void SetEstVivant (bool estVivant_) {
 		estVivant = estVivant_;
@@ -144,7 +154,7 @@ public class Caracteristiques : MonoBehaviour {
 	public List<Condition> GetConditionsActuelles () {
 		return conditionsActuelles;
 	}
-
+	
 	public void SetCj (ControllerJoueur cj_) {
 		cj = cj_;
 	}
