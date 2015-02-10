@@ -5645,6 +5645,7 @@ GameObject:
   - 114: {fileID: 1470734523}
   - 114: {fileID: 1470734522}
   - 114: {fileID: 1470734533}
+  - 114: {fileID: 1470734534}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Player
@@ -5940,6 +5941,18 @@ MonoBehaviour:
   posInitialeArrow: {x: 0, y: 0, z: 0}
   posArrow: {fileID: 0}
   relativePos: 0
+--- !u!114 &1470734534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470734520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ed2c2aa38a746d9bb19c53f433e909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 2800000, guid: 5e7573de96040614aaf3e2994ab7a3ce, type: 3}
 --- !u!1 &1473693632
 GameObject:
   m_ObjectHideFlags: 0
