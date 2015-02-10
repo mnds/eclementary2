@@ -19,7 +19,7 @@ public class ScriptHorloge : MonoBehaviour {
 
 	void Start () 
 	{
-		heure = dureeDuJour/24f*13.5f;//on commence le jeu à 13h30
+		ChangerHeure(13.5f);
 	}
 
 	void Update () {
@@ -30,5 +30,19 @@ public class ScriptHorloge : MonoBehaviour {
 			//Si on dépasse la durée du jour, on remet heure à 0
 			heure -= dureeDuJour;
 		}
+	}
+
+	void OnLevelWasLoaded (int level) { //Changer selon la scène
+		if(Application.loadedLevelName==ControlCenter.nomDeLaSceneDuCampus) { //Numero de la scène du campus
+			ChangerHeure(13.5f);
+		}
+	}
+
+	/**
+	 * @brief Change l'heure de l'horloge
+	 * @param heureDeLaJournee 13.5f correspond à 13h30
+	 */
+	void ChangerHeure (float heureDeLaJournee) {
+		heure = dureeDuJour/24f*heureDeLaJournee;
 	}
 }

@@ -41,7 +41,7 @@ public class Caracteristiques : MonoBehaviour {
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	private Health h; //Lié à Health pour en modifier les statistiques
 	private int experience = 0; //L'expérience acquise par le joueur
-	
+
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
 		cj = gameObject.GetComponent<ControllerJoueur> ();
