@@ -37,6 +37,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 
 	//Objet actuel
 	GameObject objetActuel;
+	int positionObjetPrecedent; //Utilisé pour stocker l'objet actuel en cas de désactivation de l'inventaire
 	//On ne peut pas attaquer et lancer en meme temps ; inventaire se charge de ça
 	Attaquer attaquerObjetActuel;
 	Lancer lancerObjetActuel;
@@ -111,9 +112,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			return;
 		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
 		// The current weapon is always displayed
-		if(attaquerObjetActuel)
-			if(attaquerObjetActuel.vignette)
-				GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
+		if(attaquerObjetActuel && attaquerObjetActuel.vignette)
+			GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
 	}
 
 	/**
@@ -127,18 +127,21 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		if(objetActuel!=null)
 			objetActuel.active = false;
 		//On change l'objet
+		positionObjetPrecedent = positionScroll;
 		objetActuel = objet_;
 		//On active ce nouvel objet
 		if(objetActuel!=null)
 			objetActuel.active = true;
 		//On change les attaquer/lancer en mémoire
-		attaquerObjetActuel = objetActuel.GetComponent<Attaquer> ();
-		if(attaquerObjetActuel==null)
-			attaquerObjetActuel = objetActuel.GetComponentInChildren<Attaquer>();
-
-		lancerObjetActuel = objetActuel.GetComponent<Lancer> ();
-		if (lancerObjetActuel==null)
-			lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
+		if (objetActuel != null) {
+			attaquerObjetActuel = objetActuel.GetComponent<Attaquer> ();
+			if(attaquerObjetActuel==null)
+				attaquerObjetActuel = objetActuel.GetComponentInChildren<Attaquer>();
+			
+			lancerObjetActuel = objetActuel.GetComponent<Lancer> ();
+			if (lancerObjetActuel==null)
+				lancerObjetActuel=objetActuel.GetComponentInChildren<Lancer>();
+		}
 
 		//On change l'image et le texte du médaillon de rappel de l'arme équipée
 		GameObject armeCourante;//Le médaillon qui s'affiche en jeu
@@ -427,6 +430,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public void setEnabled( bool ok ) {
 		GameObject armeCourante = GameObject.Find ("Arme Active");
 		if (!ok) { // La vignette de l'arme courante est remplacée par une image transparente dans un état non jouable
+			//Désactivation de l'arme actuellement utilisée
+			ChangerObjetActuel(listeObjetsUtilisables[0]);
 			// Désactivation de l'aperçu de l'arme utilisée
 			armeCourante.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = imageTransparente;
 			armeCourante.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = "";
@@ -435,6 +440,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			GameObject.Find ("Radar_balayage").transform.GetComponent<Image>().sprite = imageTransparente;
 		} 
 		else {
+			ChangerObjetActuel( listeObjetsUtilisables[positionScroll] );
 			int positionObjet = 0;
 			for (int i=0;i<listeObjetsRecoltables.Count;i++)
 			{
