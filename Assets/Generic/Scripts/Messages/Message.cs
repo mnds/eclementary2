@@ -15,12 +15,16 @@ public class Message
 	private string expediteur; // Auteur du message
 	private float dureeAffichage; // Durée d'affichage du texte à l'écran
 
+	public Message() {
+
+	}
+
 	public Message ( string idMessage, string text, string sender,float displayTime = 5 )
 	{
 		SetId (idMessage);
 		SetTexte (text);
 		SetExpediteur(sender);
-		SetDureeAffichage (dureeAffichage);
+		SetDureeAffichage (displayTime);
 	}
 
 	public string GetId() {

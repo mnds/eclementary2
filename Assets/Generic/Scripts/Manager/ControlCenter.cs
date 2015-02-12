@@ -80,6 +80,7 @@ static public class ControlCenter {
 
 	static GameObject joueurPrincipal;
 	static Camera cameraPrincipale;
+	private static Messager messager;
 
 	static GUIText texteInteraction; //Texte affiché à l'écran
 	static bool texteEstPrioritaire; //Le texte vient d'une interaction ou d'un raycast ? Si raycast, le supprimer si rien en raycast, sinon attendre le cooldown.
@@ -98,8 +99,11 @@ static public class ControlCenter {
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
+		GameObject texteMessages = GameObject.Find ("TexteMessages");
 		if(GameObject.Find ("Texte"))
 			texteInteraction = GameObject.Find ("Texte").GetComponent<GUIText>(); //au cas où aucun gO n'ait déclaré au CC qu'il est le texte sur lequel afficher les messages
+		if ( texteMessages )
+			messager = texteMessages.GetComponent<Messager> ();
 	}
 
 	static public void SetTexte (GUIText texte) { //Appelé dans SetTexte, présent dans le prefab Texte de Interface
@@ -193,6 +197,10 @@ static public class ControlCenter {
 	
 	static public bool GetTexteEstPrioritaire () {
 		return texteEstPrioritaire;
+	}
+
+	static public Messager GetMessager() {
+		return messager;
 	}
 
 	static public void SetNomSpawnPointActuel (string nomSpawnPointActuel_) {

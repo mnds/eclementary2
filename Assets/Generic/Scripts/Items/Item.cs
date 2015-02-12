@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 
 // Liste des noms que peut prendre un item
-public enum NomItem { Key, Sound, SpawnPoint, NomDifficulte};
+public enum NomItem { Message, Key, Sound, SpawnPoint, NomDifficulte};
 
 
 public class Item {
@@ -23,6 +23,11 @@ public class Item {
 
 	public Item( NomItem nom_ ) {
 		this.nom = nom_;
+	}
+
+	public Item( NomItem nom_, string nomItem_ ) {
+		this.nom = nom_;
+		this.nomItem = nomItem_;
 	}
 
 	//Notamment pour les difficultés

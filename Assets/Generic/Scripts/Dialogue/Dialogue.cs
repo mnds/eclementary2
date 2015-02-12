@@ -169,7 +169,6 @@ public class Dialogue : MonoBehaviour, Interactif {
 	string ContenuFichierRepliques() {
 		StreamReader sr = new StreamReader (Application.dataPath + "/" +nomFichierRepliques); // Flux du fichier
 		string contenu = sr.ReadToEnd (); // Lecture du fichier jusqu'à sa fin
-		Debug.Log (contenu);
 		return contenu;
 	}
 
