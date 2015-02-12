@@ -128,4 +128,8 @@ public class Health : MonoBehaviour {
 	public bool IsMort() {
 		return mort;
 	}
+
+	public void SetMort( bool etat ) {
+		mort = etat;
+	}
 }

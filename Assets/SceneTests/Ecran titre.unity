@@ -6008,6 +6008,10 @@ Prefab:
       propertyPath: arrowVitesse.x
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11459102, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: pointsDeVie
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_RootGameObject: {fileID: 1481442075}
@@ -6298,7 +6302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estVivant: 1
-  pointsDeVie: 150
+  pointsDeVie: 20
   pointsEndurance: 100
   attaque: 1
   defense: 1

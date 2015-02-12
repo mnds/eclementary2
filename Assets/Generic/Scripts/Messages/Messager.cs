@@ -38,7 +38,7 @@ public class Messager:MonoBehaviour
 	void OnGUI() {
 		if (fileMessages.Count != 0) { // s'il y a au moins un message dans la file
 			GUI.Label( new Rect( Screen.width/2, Screen.height/10, 50, 50 ), iconeEnveloppe ); // Notification de l'arrivée d'un message au joueur
-			if( !isReading() && Input.GetKeyDown("l") ) { // Si le bouton de lecture est appuyé
+			if( !isReading() && Input.GetButtonDown("read") ) { // Si le bouton de lecture est appuyé
 				Debug.Log("Lecture d'un message");
 				reading = true;
 				StartCoroutine("LireMessageSuivant");// Lecture du message
