@@ -2555,6 +2555,7 @@ Transform:
   m_Children:
   - {fileID: 1497568689}
   - {fileID: 314214700}
+  - {fileID: 1614532737}
   m_Father: {fileID: 1279844900}
   m_RootOrder: 1
 --- !u!1 &543149497
@@ -5545,7 +5546,7 @@ Transform:
   - {fileID: 658825444}
   - {fileID: 243982428}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &1294445093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6270,7 +6271,7 @@ Transform:
   - {fileID: 1381944058}
   - {fileID: 684292580}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1470734522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6629,8 +6630,8 @@ Transform:
   m_LocalPosition: {x: 1061.98621, y: 227.26651, z: 869.188599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1470734521}
   - {fileID: 1279844900}
+  - {fileID: 1470734521}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1481442077
@@ -7338,6 +7339,70 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1375478073}
   m_GameObject: {fileID: 1614157010}
+--- !u!1 &1614532736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1614532737}
+  - 132: {fileID: 1614532739}
+  - 114: {fileID: 1614532738}
+  m_Layer: 0
+  m_Name: TexteMessages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1614532737
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614532736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .800000012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 525797386}
+  m_RootOrder: 2
+--- !u!114 &1614532738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614532736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4793ce5c2f66243d6a0a03b899fcb656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconeEnveloppe: {fileID: 2800000, guid: 1d107b21a20924fc998aab109c5b5d1b, type: 3}
+--- !u!132 &1614532739
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614532736}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1622494905
 GameObject:
   m_ObjectHideFlags: 0
