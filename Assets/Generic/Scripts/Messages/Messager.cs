@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using SimpleJSON;
 using System.IO;
 
-public class Messager:MonoBehaviour
+public class Messager : MonoBehaviour
 {
 	public Texture2D iconeEnveloppe; // icone de l'enveloppe
 	public string nomFichierMessages; // Nom du fichier dans lequel sont enregistrés les messages
@@ -24,8 +24,9 @@ public class Messager:MonoBehaviour
 	private GUIText ecran;
 	private bool reading = false; // vérifie si un message est en cours de lecture
 
-	void Start()
+	void Start ()
 	{
+		Debug.Log ("START");
 		fileMessages = new Queue<Message> ();
 		tousLesMessages = new List<Message> ();
 		string contenu = ContenuFichierMessages ();
