@@ -5546,7 +5546,7 @@ Transform:
   - {fileID: 658825444}
   - {fileID: 243982428}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1294445093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,7 +6275,7 @@ Transform:
   - {fileID: 1381944058}
   - {fileID: 684292580}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &1470734522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6634,8 +6634,8 @@ Transform:
   m_LocalPosition: {x: 1061.98621, y: 227.26651, z: 869.188599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1279844900}
   - {fileID: 1470734521}
+  - {fileID: 1279844900}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1481442077
@@ -7384,7 +7384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconeEnveloppe: {fileID: 2800000, guid: 1d107b21a20924fc998aab109c5b5d1b, type: 3}
-  nomFichierMessages: Generic/Scripts/Messages/listeMessages.json
+  nomFichierMessages: Dialogue/listeMessages.json
 --- !u!132 &1614532739
 GUIText:
   m_ObjectHideFlags: 0

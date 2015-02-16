@@ -101,6 +101,7 @@ public class Messager : MonoBehaviour
 
 	private string ContenuFichierMessages() {
 		StreamReader sr = new StreamReader ( Application.dataPath + '/' + nomFichierMessages); // Flux du fichier
+		Debug.Log (Application.dataPath + '/' + nomFichierMessages);
 		string contenu = sr.ReadToEnd (); // Lecture du fichier jusqu'à sa fin
 		return contenu;
 	}

@@ -16,7 +16,11 @@ public class EnvoyerMessage : Evenement
 		message=message_;
 		Debug.Log ("Message : "+message);
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> master
 	public override void DeclencherEvenement (params Item[] items)
 	{
 		Messager messager = ControlCenter.GetMessager ();
@@ -34,7 +38,7 @@ public class EnvoyerMessage : Evenement
 				messager.EnvoyerMessage( items[i].GetNomItem() ); // nomItem est à un item ce que l'id est à un message
 		}
 	}
-
+	
 }
 
 
