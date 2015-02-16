@@ -16,11 +16,7 @@ public class EnvoyerMessage : Evenement
 		message=message_;
 		Debug.Log ("Message : "+message);
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> master
 	public override void DeclencherEvenement (params Item[] items)
 	{
 		Messager messager = ControlCenter.GetMessager ();

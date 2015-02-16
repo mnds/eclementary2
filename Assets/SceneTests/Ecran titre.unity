@@ -1419,7 +1419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &274126093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5546,7 +5546,7 @@ Transform:
   - {fileID: 658825444}
   - {fileID: 243982428}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &1294445093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +6012,14 @@ Prefab:
       propertyPath: pointsDeVie
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 143628, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418144, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: avatar
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_RootGameObject: {fileID: 1481442075}
@@ -6275,7 +6283,7 @@ Transform:
   - {fileID: 1381944058}
   - {fileID: 684292580}
   m_Father: {fileID: 1481442076}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1470734522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6563,7 +6571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ed2c2aa38a746d9bb19c53f433e909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatar: {fileID: 2800000, guid: 5e7573de96040614aaf3e2994ab7a3ce, type: 3}
+  avatar: {fileID: 0}
 --- !u!1 &1480503728
 GameObject:
   m_ObjectHideFlags: 0
@@ -6634,8 +6642,8 @@ Transform:
   m_LocalPosition: {x: 1061.98621, y: 227.26651, z: 869.188599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1470734521}
   - {fileID: 1279844900}
+  - {fileID: 1470734521}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1481442077
