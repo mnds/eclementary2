@@ -38,11 +38,15 @@ public class Messager : MonoBehaviour
 
 	void OnGUI() {
 		if (fileMessages.Count != 0) { // s'il y a au moins un message dans la file
-			GUI.Label( new Rect( Screen.width/2, Screen.height/10, 50, 50 ), iconeEnveloppe ); // Notification de l'arrivée d'un message au joueur
-			if( !isReading() && Input.GetButtonDown("read") ) { // Si le bouton de lecture est appuyé
-				Debug.Log("Lecture d'un message");
-				reading = true;
-				StartCoroutine("LireMessageSuivant");// Lecture du message
+			if( fileMessages.Peek().GetExpediteur().ToLower().Equals("moi") ) // Si le message est une pensée du joueur
+				StartCoroutine("LireMessageSuivant"); // Lecture du message sans notification
+			else { // si c'est un message reçu de la part d'un autre PNJ
+				GUI.Label( new Rect( Screen.width/2, Screen.height/10, 50, 50 ), iconeEnveloppe ); // Notification de l'arrivée d'un message au joueur
+				if( !isReading() && Input.GetButtonDown("read") ) { // Si un message n'est pas en train d'êre lu et le bouton de lecture est appuyé
+					Debug.Log("Lecture d'un message");
+					reading = true;
+					StartCoroutine("LireMessageSuivant");// Lecture du message
+				}
 			}
 		}
 
@@ -71,8 +75,13 @@ public class Messager : MonoBehaviour
 	// Gère l'affichage des messages à l'écran
 	private IEnumerator LireMessageSuivant() {
 		Message message = fileMessages.Dequeue (); // Récupération du message en début de file
-		string texteAAfficher = "Exp\u00e9diteur: " + message.GetExpediteur() + "\n" +
-						"Texte: " + message.GetTexte();
+		string texteAAfficher;
+
+		if (message.GetExpediteur ().ToLower ().Equals ("moi"))
+			texteAAfficher = message.GetTexte (); // Seul le message est affiché si celui-ci est en réalité une pensée
+		else // Sinon l'expéditeur est aussi affiché
+			texteAAfficher = "Exp\u00e9diteur: " + message.GetExpediteur() + "\n" +
+				"Texte: " + message.GetTexte();
 		ecran.text = texteAAfficher;
 		yield return new WaitForSeconds (message.GetDureeAffichage());
 
