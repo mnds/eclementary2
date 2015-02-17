@@ -255,7 +255,8 @@ static public class ControlCenter {
 		if(caracAttaquant)
 			caracAttaque = caracAttaquant.GetAttaque();
 		float caracDefense = 0;
-		caracDefense = caracDefenseur.GetDefense ();
+		if(caracDefenseur)
+			caracDefense = caracDefenseur.GetDefense ();
 		return Mathf.Max(0,(degatsDeBase)*(1f-(caracDefense-caracAttaque)/100f));
 	}
 }
