@@ -83,6 +83,7 @@ public class MazeWallManager : MonoBehaviour {
 				//Application.LoadLevel("Lancement");
 				gameObject.AddComponent<ChangementSceneFlagOnTrigger>();
 				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().listeDesFlagsPouvantEtreActives=new List<int>(){};
+				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().activationPossibleDesFlags=new List<bool>(){true};
 				ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag fricsf = new ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag(ControlCenter.Scenes.Scolarite,"EntreeLaby");
 				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().nomsDesScenesAccessibles=new List<ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag>(){fricsf};
 			}
