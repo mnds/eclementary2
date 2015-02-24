@@ -93,7 +93,10 @@ static public class ControlCenter {
 
 	//Recupération de tous les objets qui peuvent s'activer / se désactiver en fonction des flags
 	static public List<ObjetActivableSelonFlags> lesOASFs = new List<ObjetActivableSelonFlags>(){};
-	
+
+	//Pour les musiques d'ambiance
+	static public LireMusiques lm;
+
 	//Parametres
 	static public Difficulte difficulteActuelle = Difficulte.Normale;
 
@@ -194,7 +197,15 @@ static public class ControlCenter {
 	static public void SetTexteEstPrioritaire (bool texteEstPrioritaire_) {
 		texteEstPrioritaire=texteEstPrioritaire_;
 	}
-	
+
+	static public void SetLireMusiques (LireMusiques lm_) {
+		lm=lm_;
+	}
+
+	static public LireMusiques GetLireMusiques () {
+		return lm;
+	}
+
 	static public bool GetTexteEstPrioritaire () {
 		return texteEstPrioritaire;
 	}
