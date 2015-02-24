@@ -24,6 +24,7 @@ public enum Condition {
 }
 
 public class Caracteristiques : MonoBehaviour {
+	//Caractéristiques maximales du personnage
 	public bool estVivant; //Etat du joueur
 	public float pointsDeVie = 50f; //Augmente les points de vie du personnage
 	public float pointsEndurance = 10f; //Augmente le temps pendant lequel le personnage peut courir
