@@ -32,7 +32,7 @@
                 "2",
                 "3"
             ],
-            "texte": "Bonjour 0A ! Pret pour le WEI ?"
+            "texte": "Bonjour 0A ! Pr\u00EAt pour le WEI ?"
         },
         {
             "flagsActives": [
@@ -58,9 +58,9 @@
             "goAssocie": "Weiman",
             "id": "21",
             "repSuivantes": [
-                "-31"
+                "31"
             ],
-            "texte": "C'est le week-end d'integration a Centrale, qui cl\u00F4t la semaine d'integration que tu viens d'avoir."
+            "texte": "C'est le week-end d'int\u00E9gration \u00E0 Centrale, qui cl\u00F4t la semaine d'int\u00E9gration que tu viens d'avoir."
         },
         {
             "flagsActives": [
@@ -72,9 +72,65 @@
             "goAssocie": "Joueur",
             "id": "3",
             "repSuivantes": [
-                "-31"
+                "31"
             ],
             "texte": "Je suis pret !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Weiman",
+            "id": "31",
+            "repSuivantes": [
+            	"32"
+            ],
+            "texte": "Tu dois choisir ton bus maintenant. Je te redonne le thermobus pour que tu puisses faire ton choix. Rappelle-toi, plus un bus est chaud, plus tu vas t'\u00E9clater !"
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Weiman",
+            "id": "32",
+            "repSuivantes": [
+            	"33"
+            ],
+            "texte": "Le bus \u00E0 gauche est le Carton, pour ceux qui veulent etre tranquilles pendant le voyage."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Weiman",
+            "id": "33",
+            "repSuivantes": [
+            	"34"
+            ],
+            "texte": "Le bus derri\u00E8re moi est le Carbonara. Il te donnera un bon \u00E9quilibre entre tranquillit\u00E9 et challenge."
+        },
+        {
+            "flagsActives": [
+            ],
+            "flagsBloquants": [
+            ],
+            "flagsRequis": [
+            ],
+            "goAssocie": "Weiman",
+            "id": "34",
+            "repSuivantes": [
+            	"35"
+            ],
+            "texte": "Celui \u00E0 droite est le Carambolage. Son nom te dit ce qui t'y attendra."
         },
         {
             "flagsActives": [
@@ -85,10 +141,10 @@
             "flagsRequis": [
             ],
             "goAssocie": "Weiman",
-            "id": "-31",
+            "id": "35",
             "repSuivantes": [
             ],
-            "texte": "Tu dois choisir ton bus maintenant. Je te redonne le thermobus pour que tu puisses faire ton choix. Rappelle-toi, plus un bus est chaud, plus tu vas t'eclater !"
+            "texte": "Les l\u00E9gendes racontent qu'il existe un car appel\u00E9 l'Ecarrisseur r\u00E9serv\u00E9 aux \u00E9lites."
         },
         {
             "flagsActives": [
@@ -103,8 +159,8 @@
             "id": "4",
             "repSuivantes": [
             ],
-            "texte": "Alors, tu as choisi ton bus ?"
-        },
+            "texte": "Alors, tu as choisi ton bus ? Celui \u00E0 ma gauche est le plus calme, celui \u00E0 ma droite est le plus d\u00E9chain\u00E9 !"
+        }
         {
             "flagsActives": [
             	"40"
