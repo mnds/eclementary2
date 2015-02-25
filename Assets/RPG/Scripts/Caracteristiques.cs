@@ -24,6 +24,7 @@ public enum Condition {
 }
 
 public class Caracteristiques : MonoBehaviour {
+	//Caractéristiques maximales du personnage
 	public bool estVivant; //Etat du joueur
 	public float pointsDeVie = 50f; //Augmente les points de vie du personnage
 	public float pointsEndurance = 10f; //Augmente le temps pendant lequel le personnage peut courir
@@ -34,13 +35,16 @@ public class Caracteristiques : MonoBehaviour {
 	public float vitesseMarche = 5f;
 	public float vitesseLancer = 1f;
 	public List<Condition> conditionsActuelles;
-	
+
 	public int pointsExperience = 0;
+
+	private int experience = 0; //L'expérience acquise par le joueur
+	private int experience_avant_niveau_suivant = 0;
 	private int niveau = 0; //Niveau du gameObject associé
 	
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	private Health h; //Lié à Health pour en modifier les statistiques
-	private int experience = 0; //L'expérience acquise par le joueur
+
 
 	void Start () {
 		conditionsActuelles = new List<Condition> ();
@@ -169,5 +173,20 @@ public class Caracteristiques : MonoBehaviour {
 	
 	public Health GetH () {
 		return h;
+	}
+
+	public int GetNiveau ()
+	{
+		return niveau;
+	}
+
+	public float GetXp ()
+	{
+		return experience;
+	}
+
+	public float GetXpAvantNiveauSuivant ()
+	{
+		return experience_avant_niveau_suivant;
 	}
 }

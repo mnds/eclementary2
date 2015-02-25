@@ -24,8 +24,8 @@ public class ControllerJoueur : MonoBehaviour, IScriptEtatJouable {
 	//Sprint
 	public float vitesseMarche = 5.0f; //Vitesse maximale de marche
 	public float vitesseCourse = 9.0f; //Vitesse de course
-	public float jaugeMax = 10.0f;
-	protected float jauge = 10.0f; //Temps maximum pendant lequel on peut courir
+	public float jaugeMax = 10.0f; //Temps maximum pendant lequel on peut courir
+	protected float jauge = 10.0f;
 	protected float limiteBasseJauge = 2.0f; //Si la jauge se vide, il n'est plus possible de courir avant ce laps de temps
 	
 	// Progress bar
@@ -229,6 +229,11 @@ public class ControllerJoueur : MonoBehaviour, IScriptEtatJouable {
 	
 	public float GetAngleVerticalMax () {
 		return angleVerticalMax;
+	}
+
+	public float GetJauge ()
+	{
+		return jauge;
 	}
 
 

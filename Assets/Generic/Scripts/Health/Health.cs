@@ -138,6 +138,7 @@ public class Health : MonoBehaviour {
 	}
 
 	public float GetPointsDeVieActuels() {
+
 		return pointsDeVieActuels;
 	}
 }
