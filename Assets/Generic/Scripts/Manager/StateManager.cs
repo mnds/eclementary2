@@ -12,7 +12,7 @@ using System.Collections;
 public class StateManager : MonoBehaviour {
 
 	public Etat etatActif; // Etat qui actif en l'instant
-	public Etat ancienEtat; // Etat ayant précédé l'actuel
+	public EtatJouable ancienEtat; // Etat JOUABLE précédant l'actuel, utilisé pour la résurection
 	private static StateManager instanceActive; // Instance de StateManager qui est active, utilisée pour implémenter un singleton
 	public static string sceneDebut; // Scène par laquelle le jeu commence
 	private GameObject joueur;
@@ -65,7 +65,10 @@ public class StateManager : MonoBehaviour {
 	// Permet le changement de l'état actif à l'état donné en paramètre
 	public void BasculerEtat( Etat etat ) {
 		//Debug.LogWarning("Changement vers l'état "+etat);
-		ancienEtat = etatActif;
+		if (etatActif is EtatJouable) { // ancienEtat ne fait référence qu'à des états jouables
+			ancienEtat = (EtatJouable)etatActif;
+			Debug.Log ("Mise à jour de l'ancien état jouable");
+		}
 		etatActif = etat;
 		etat.ConfigurerScripts (); // Activation/Désactivation des scripts liés/non liés à cet état
 	}
