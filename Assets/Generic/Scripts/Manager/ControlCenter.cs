@@ -87,7 +87,7 @@ static public class ControlCenter {
 	static public float tempsAffichageTexteInteraction = 1f;
 
 	//Garde en mémoire les scènes
-	static int idScenePrecedente;
+	static public int idScenePrecedente;
 	static public ModesJeu mode = ModesJeu.Normal; //Mode Debug ou Normal. Utilisé dans DebugManager.
 	static public string nomSpawnPointActuel;
 
@@ -96,6 +96,9 @@ static public class ControlCenter {
 	
 	//Parametres
 	static public Difficulte difficulteActuelle = Difficulte.Normale;
+
+	// Fichier de sauvegarde
+	public static string nomFichierSauvegarde = Application.dataPath + "/sauvegarde.bin";
 
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal

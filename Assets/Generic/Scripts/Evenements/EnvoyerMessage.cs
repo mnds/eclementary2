@@ -14,7 +14,7 @@ public class EnvoyerMessage : Evenement
 	
 	public EnvoyerMessage(Item message_) {
 		message=message_;
-		Debug.Log ("Message : "+message);
+		//Debug.Log ("Message : "+message);
 	}
 
 	public override void DeclencherEvenement (params Item[] items)

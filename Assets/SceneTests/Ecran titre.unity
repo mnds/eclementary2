@@ -2417,7 +2417,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11459150, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_RootGameObject: {fileID: 1481442075}
   m_IsPrefabParent: 0
@@ -6178,6 +6179,7 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
+  pointsExperience: 0
 --- !u!114 &1470734524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6483,7 +6485,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1481442076}
   - 114: {fileID: 1481442078}
-  - 114: {fileID: 1481442077}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6505,18 +6506,6 @@ Transform:
   - {fileID: 1470734521}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1481442077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11459150, guid: 5586823bd0b0f454c820b67fdcc4589c,
-    type: 2}
-  m_PrefabInternal: {fileID: 452719698}
-  m_GameObject: {fileID: 1481442075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffd8d345a96647d0855063ed514ca34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1481442078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6529,7 +6518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea54df20d3a94566aee7fc72348ff9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataRef: {fileID: 0}
 --- !u!1 &1487336603
 GameObject:
   m_ObjectHideFlags: 0

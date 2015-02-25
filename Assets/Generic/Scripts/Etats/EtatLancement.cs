@@ -7,6 +7,7 @@
  */
 
 using UnityEngine;
+using System.IO;
 
 public class EtatLancement : EtatNonJouable
 {
@@ -25,6 +26,10 @@ public class EtatLancement : EtatNonJouable
 		if (GUI.Button (new Rect (Screen.width / 2, Screen.height / 2, 500, 100), "Entrez dans le campus")) {
 			StateManager.getInstance().BasculerEtat( new EtatDepart( StateManager.getInstance() ) );
 			FlagManager.ActiverFlag(10); // Activation du flag 10, correspondant au début du jeu
+		}
+		// Proposition de chargement d'une partie précédemment sauvegardée
+		if ( File.Exists( ControlCenter.nomFichierSauvegarde ) && GUI.Button (new Rect (Screen.width / 2, Screen.height / 2 + 110, 500, 100), "Charger partie")) {
+			StateManager.getInstance().gameData.ChargerSauvegarde ();
 		}
 	}
 }

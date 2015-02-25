@@ -77,6 +77,16 @@ static public class FlagManager {
 			bloquants=new List<int>(){};
 			evenementsDeclenches=new List<Evenement>(){};
 		}
+
+		// Convertit une liste de flags normaux en liste de flags réduits 
+		public static List<FlagReduit> toFlagsReduits( List<Flag> flags ) {
+			List<FlagReduit> flagsReduits = new List<FlagReduit>();
+
+			foreach( Flag flag in flags )
+				flagsReduits.Add( new FlagReduit( flag.id, flag.actif ) );
+
+			return flagsReduits;
+		}
 	}
 	
 
@@ -257,5 +267,13 @@ static public class FlagManager {
 			}
 		}
 		return true;
+	}
+
+	public static List<Flag> GetFlags() {
+		return flags;
+	}
+
+	public static void SetFlags( List<Flag> flags_ ) {
+		flags = flags_;
 	}
 }

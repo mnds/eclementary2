@@ -18,7 +18,7 @@ public class StateManager : MonoBehaviour {
 	private GameObject joueur;
 
 	[HideInInspector]
-	public GameData dataRef;
+	public GameData gameData;
 
 	void Awake() {
 		// Création d'une nouvelle instance ssi une autre n'a pas déjà été créée
@@ -36,7 +36,7 @@ public class StateManager : MonoBehaviour {
 	void Start () {
 		joueur = GameObject.Find ("Joueur"); // Récupération du joueur
 		sceneDebut = ControlCenter.nomDeLaSceneDepart;
-		dataRef = GetComponent<GameData> ();
+		gameData = new GameData ();
 		etatActif = new EtatLancement ( this );
 	}
 	

@@ -6,7 +6,7 @@ public class Ressusciter : Evenement {
 		StateManager stateManager = StateManager.getInstance ();
 		Health healthPlayer = stateManager.GetJoueur ().GetComponent<HealthPlayer> ();
 		if (healthPlayer != null) {
-			healthPlayer.Soigner( healthPlayer.GetPointsDeVieMax() );
+			healthPlayer.SetPointsDeVie( healthPlayer.GetPointsDeVieMax() );
 			healthPlayer.SetMort( false );
 			Debug.Log ("Points de vie: " + healthPlayer.pointsDeVieActuels);
 		}

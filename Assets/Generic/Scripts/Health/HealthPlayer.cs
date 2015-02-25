@@ -54,4 +54,5 @@ public class HealthPlayer : Health, IScriptEtatJouable {
 	public void setEnabled( bool ok ) {
 		enabled = ok;
 	}
+	
 }

@@ -35,7 +35,7 @@ public class Caracteristiques : MonoBehaviour {
 	public float vitesseLancer = 1f;
 	public List<Condition> conditionsActuelles;
 	
-	private int pointsExperience = 0;
+	public int pointsExperience = 0;
 	private int niveau = 0; //Niveau du gameObject associé
 	
 	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
