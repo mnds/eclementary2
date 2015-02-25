@@ -132,4 +132,9 @@ public class Health : MonoBehaviour {
 	public void SetMort( bool etat ) {
 		mort = etat;
 	}
+
+	public float GetPointDeVieActuel ()
+	{
+		return pointsDeVieActuels;
+	}
 }
