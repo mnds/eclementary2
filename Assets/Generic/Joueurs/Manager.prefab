@@ -1880,7 +1880,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 459224}
   - 114: {fileID: 11459148}
-  - 114: {fileID: 11459150}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -5798,6 +5797,7 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
+  pointsExperience: 0
 --- !u!114 &11459104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5958,18 +5958,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ea54df20d3a94566aee7fc72348ff9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataRef: {fileID: 0}
---- !u!114 &11459150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffd8d345a96647d0855063ed514ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11459184

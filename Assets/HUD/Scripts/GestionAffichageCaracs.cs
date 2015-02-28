@@ -60,11 +60,24 @@ public class GestionAffichageCaracs : MonoBehaviour {
 		attaque_magique.text = carac.GetAttaque ().ToString ();
 
 		//On met à jour les différentes barres
-		//Mana n'xiste pas encore ...
-		experience.fillAmount = carac.GetXp () / carac.GetXp ();
-		vie.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
-		endurance.fillAmount = carac_endu.GetJauge () / carac_endu.GetJaugeMax ();
-		mana.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
 
+		//XP
+		experience.fillAmount = carac.GetXp ()+5f / carac.GetXp ();
+		experience.color = new Color (0.5f,0.20f,0.83f);
+
+		//Vie
+		vie.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
+		vie.color = Color.red;
+
+		//Endurance
+		float rapport_endurance;
+		rapport_endurance = carac_endu.GetJauge () / carac_endu.GetJaugeMax ();
+		endurance.fillAmount = rapport_endurance;
+		endurance.color = Color.Lerp (Color.black, Color.green, rapport_endurance);
+
+
+		//Mana (Mana n'xiste pas encore ...)
+		mana.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
+		mana.color = Color.blue;
 	}
 }
