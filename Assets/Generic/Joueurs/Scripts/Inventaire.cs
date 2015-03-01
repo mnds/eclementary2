@@ -429,9 +429,10 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	
 	public void setEnabled( bool ok ) {
 		GameObject armeCourante = GameObject.Find ("Arme Active");
-		if (!ok) { // La vignette de l'arme courante est remplacée par une image transparente dans un état non jouable
+		if (!ok) { // Activation de l'inventaire
+			// La vignette de l'arme courante est remplacée par une image transparente dans un état non jouable
 			//Désactivation de l'arme actuellement utilisée
-			ChangerObjetActuel(listeObjetsUtilisables[0]);
+			ChangerObjetActuel(listeObjetsUtilisables[0]); // L'objet actuel est remplacé par "Arme Null"
 			// Désactivation de l'aperçu de l'arme utilisée
 			armeCourante.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = imageTransparente;
 			armeCourante.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = "";
@@ -439,8 +440,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			GameObject.Find ("Radar").transform.GetComponent<Image>().sprite = imageTransparente;
 			GameObject.Find ("Radar_balayage").transform.GetComponent<Image>().sprite = imageTransparente;
 		} 
-		else {
-			ChangerObjetActuel( listeObjetsUtilisables[positionScroll] );
+		else { // Activation de l'inventaire
+			ChangerObjetActuel( listeObjetsUtilisables[positionScroll] ); // On utilise de nouveau l'objet en main avant désactivation
 			int positionObjet = 0;
 			for (int i=0;i<listeObjetsRecoltables.Count;i++)
 			{

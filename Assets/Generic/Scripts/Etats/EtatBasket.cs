@@ -19,16 +19,15 @@ public class EtatBasket: Etat
 	}
 
 	public override void ConfigurerScripts() {
-		Component[] listeScriptsEtatJouable = StateManager.getInstance().GetJoueur().GetComponents (typeof(IScriptEtatJouable));
+		/*Component[] listeScriptsEtatJouable = StateManager.getInstance().GetJoueur().GetComponents (typeof(IScriptEtatJouable));
 		// Désactivation des scripts récupérés (on n'aura pas besoin des scripts Inventaire, Attaquer, Lancer... )
-		/*for (int i = 0; i < listeScriptsEtatJouable.Length; i++) {
+		for (int i = 0; i < listeScriptsEtatJouable.Length; i++) {
 			IScriptEtatJouable script = (IScriptEtatJouable)listeScriptsEtatJouable [i];
 			script.setEnabled (false);
 		}*/
 		HealthPlayer healthPlayer = StateManager.getInstance ().GetJoueur ().GetComponent<HealthPlayer> ();
 		healthPlayer.setEnabled (false);
-		Inventaire inventaire = StateManager.getInstance ().GetJoueur ().GetComponent<Inventaire> ();
-		inventaire.setEnabled (false);
+		new DesactiverInventaire ().DeclencherEvenement (); // on désactive l'inventaire
 
 		// Activation du script BasketJoueur
 		BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
@@ -40,11 +39,11 @@ public class EtatBasket: Etat
 	}
 
 	public override void AfficherRendu() {
+		// Actions à faire lorsqu'on quitte le jeu
 		if (GUI.Button (new Rect (4*Screen.width / 5, 4*Screen.height / 5, 200, 100), "Quitter le minijeu ?")) {
 			HealthPlayer healthPlayer = StateManager.getInstance ().GetJoueur ().GetComponent<HealthPlayer> ();
 			healthPlayer.setEnabled (true);
-			Inventaire inventaire = StateManager.getInstance ().GetJoueur ().GetComponent<Inventaire> ();
-			inventaire.setEnabled (true);
+			new ActiverInventaire().DeclencherEvenement(); // On réactive l'inventaire
 			// Désactivation du script BasketJoueur
 			BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
 			scriptBasket.setEnabled (false);
