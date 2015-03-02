@@ -180,6 +180,8 @@ public class Dialogue : MonoBehaviour, Interactif {
 		} 
 		else
 			Debug.Log ("Mouvements du joueur non accessibles");
+		new DesactiverInventaire().DeclencherEvenement(); // Désactivation de l'inventaire
+		// Démarrage du dialogue
 		repliqueChoisie = repliques[0]; // Pointage de repliquesActuelles à la tête de repliques (qui est une replique sans contenu)
 		repliquesSuivantes = repliqueChoisie.GetRepliquesSuivantes ();
 		Debug.Log ("Replique choisie : "+repliqueChoisie.GetTexte());
@@ -187,7 +189,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 	}
 	
 	public void ArreterInteraction() {
-		Debug.Log ("Fin interaction");
+		Debug.Log ("Fin du dialogue");
 		repliqueChoisie = null;
 		repliquesSuivantes = null;
 		
@@ -196,6 +198,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 		if (mouvementJoueur != null) {// Déblocage des mouvements du joueur
 			mouvementJoueur.SetFreeze( false ); // Déblocage des mouvements du joueur
 		}
+		new ActiverInventaire ().DeclencherEvenement (); // Réactivation de l'inventaire
 	}
 
 	//Si le dialogue est désactivé alors qu'on a une interaction enclenché, ça va etre tres problématique.
