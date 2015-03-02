@@ -40,6 +40,6 @@ public class ActionSelonFlags : MonoBehaviour {
 		ActionSiBonFlag();
 	}
 
-	virtual public void ActionSiMauvaisFlag() {}
-	virtual public void ActionSiBonFlag() {}
+	virtual protected void ActionSiMauvaisFlag() {}
+	virtual protected void ActionSiBonFlag() {}
 }

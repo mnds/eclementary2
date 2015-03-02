@@ -301,4 +301,54 @@ static public class ControlCenter {
 			caracDefense = caracDefenseur.GetDefense ();
 		return Mathf.Max(0,(degatsDeBase)*(1f-(caracDefense-caracAttaque)/100f));
 	}
+
+	//Transformations
+
+	/**
+	 * @brief Renvoie le nom de la scène associé à ControlCenter.Scenes
+	 */
+	static public string SceneToString (ControlCenter.Scenes nomScene) {
+		switch(nomScene) {
+		case(ControlCenter.Scenes.Campus):
+			return nomDeLaSceneDuCampus;
+			break;
+		case(ControlCenter.Scenes.BureauDebouck):
+			return nomDeLaSceneDebouck;
+			break;
+		case(ControlCenter.Scenes.Mort):
+			return nomDeLaSceneDeMort;
+			break;
+		case(ControlCenter.Scenes.Titre):
+			return nomDeLaSceneDepart;
+			break;
+		case(ControlCenter.Scenes.Amphi2):
+			return nomDeLaSceneAmphi2;
+			break;
+		case(ControlCenter.Scenes.Chambre):
+			return nomDeLaSceneDeLaChambre;
+			break;
+		case(ControlCenter.Scenes.ChambreGarsFoyer):
+			return nomDeLaSceneDeLaChambreGarsFoyer;
+			break;
+		case(ControlCenter.Scenes.ClubBD):
+			return nomDeLaSceneDuClubBD;
+			break;
+		case(ControlCenter.Scenes.Gymnase):
+			return nomDeLaSceneDuGymnase;
+			break;
+		case(ControlCenter.Scenes.LIRIS):
+			return nomDeLaSceneLIRIS;
+			break;
+		case(ControlCenter.Scenes.Labyrinthe):
+			return nomDeLaSceneLabyrinthe;
+			break;
+		case(ControlCenter.Scenes.Scolarite):
+			return nomDeLaSceneScolarite;
+			break;
+		default:
+			Debug.LogError("Le nom de la scène "+nomScene+" n'est pas déclaré dans ControlCenter.SceneToString");
+			return null;
+			break;
+		}
+	}
 }
