@@ -225,7 +225,7 @@ static public class FlagManager {
 			if(!ChercherFlagParId (id).actif) {
 				Debug.Log("Flag id : "+f.id+" pas activable");
 				f.actif=false; //Au cas o\u00F9 il y ait eu des mauvais positifs
-				ControlCenter.VerifierLesOASFs();
+				ControlCenter.VerifierObjetsFlags();
 				return false;
 			}
 		}
@@ -235,7 +235,7 @@ static public class FlagManager {
 			if(ChercherFlagParId (id).actif) {
 				Debug.Log("Flag id : "+f.id+" pas activable");
 				f.actif=false; //Au cas o\u00F9 il y ait eu des mauvais positifs
-				ControlCenter.VerifierLesOASFs();
+				ControlCenter.VerifierObjetsFlags();
 				return false;
 			}
 		}
@@ -248,7 +248,7 @@ static public class FlagManager {
 			Debug.Log ("Activation evenement");
 			e.DeclencherEvenement();
 		}
-		ControlCenter.VerifierLesOASFs();
+		ControlCenter.VerifierObjetsFlags();
 		return f.actif; //Renvoie si le flag est actif.
 	}
 

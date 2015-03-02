@@ -93,6 +93,7 @@ static public class ControlCenter {
 
 	//Recupération de tous les objets qui peuvent s'activer / se désactiver en fonction des flags
 	static public List<ObjetActivableSelonFlags> lesOASFs = new List<ObjetActivableSelonFlags>(){};
+	static public List<ActionSelonFlags> lesASFs = new List<ActionSelonFlags>(){};
 
 	//Pour les musiques d'ambiance
 	static public LireMusiques lm;
@@ -230,8 +231,17 @@ static public class ControlCenter {
   ///Méthodes liées à l'activation d'objets dans le décor selon l'état des flags
 
 	/**
+	 * @brief Appelle les méthodes qui déterminent des actions liées au flags.
+	 * @details Enclenche les actions des objets attachés au Manager, et active/désactive des objets.
+	 */
+	static public void VerifierObjetsFlags() {
+		VerifierLesASFs();
+		VerifierLesOASFs();
+	}
+
+	/**
 	 * @brief Ajout d'un objet dont l'activation dépend des flags.
-	 * @param asf Le script qui détermine si l'objet doit etre active ou nom
+	 * @param asf Le script qui détermine si l'objet doit etre active ou non
 	 * @param nomScene_ Le nom de la scene dans laquelle se trouve l'objet
 	 **/
 	static public void AddObjetActivableSelonFlags(ActivationSelonFlags asf, string nomScene_) {
@@ -255,6 +265,24 @@ static public class ControlCenter {
 		}
 		//On remplace la liste par la nouvelle
 		lesOASFs=resultat;
+	}
+
+	/**
+	 * @brief Ajout d'un objet dont une des actions dépend des flags.
+	 * @param asf Le script qui détermine si l'action doit etre faite ou pas
+	 **/
+	static public void AddActionSelonFlags(ActionSelonFlags asf) {
+		lesASFs.Add(asf);
+	}
+	
+	/**
+	 * @brief Enlève tous les oasf qui ne sont pas dans la bonne scène donc qu'on ne doit pas étudier, et on vérifie si les objets correspondants doivent se désactiver ou pas.
+	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
+	 **/
+	static public void VerifierLesASFs () {
+		foreach(ActionSelonFlags asf in lesASFs) {
+			asf.Verifier(); //On vérifie ce asf
+		}
 	}
 
 	/**
