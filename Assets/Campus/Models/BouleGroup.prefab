@@ -469,6 +469,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &122878
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422878}
+  - 136: {fileID: 13622878}
+  - 114: {fileID: 11422878}
+  m_Layer: 0
+  m_Name: Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &419170
 Transform:
   m_ObjectHideFlags: 1
@@ -510,6 +527,7 @@ Transform:
   - {fileID: 419186}
   - {fileID: 419176}
   - {fileID: 419218}
+  - {fileID: 422878}
   m_Father: {fileID: 419170}
   m_RootOrder: 3
 --- !u!4 &419174
@@ -793,6 +811,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 419172}
   m_RootOrder: 14
+--- !u!4 &422878
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_LocalRotation: {x: 6.58814026e-09, y: -.999992192, z: -1.32039535e-08, w: -.00396019081}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .166666687, y: .166666672, z: .166666687}
+  m_Children: []
+  m_Father: {fileID: 419172}
+  m_RootOrder: 15
 --- !u!23 &2319170
 Renderer:
   m_ObjectHideFlags: 1
@@ -2016,7 +2046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fff85adb0d9346b0f363c93ef0f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 450
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  flagActive: 444
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
@@ -2153,8 +2185,8 @@ MonoBehaviour:
   bypass: 0
   pointsDeVieMax: 100
   pointsDeVieActuels: 100
-  flagAssocie: 5
-  flagsRequis: 04000000
+  flagAssocie: 445
+  flagsRequis: bc010000
   flagsBloquants: 
   effetDeMort: {fileID: 100004, guid: a3684e56a910ea54baab3efeb1c9f1fd, type: 2}
   objetADetruire: {fileID: 119172}
@@ -2491,6 +2523,19 @@ MonoBehaviour:
   cooldown: .5
   clipTir: {fileID: 8300000, guid: d8bf9266cb67a9d4abda3c9725fff186, type: 3}
   etincellesTir: {fileID: 100000, guid: 543a3cd8b03d4a341bab25f33193494c, type: 2}
+--- !u!114 &11422878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: bc010000
 --- !u!114 &11444320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2502,7 +2547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 150
+  flagsDevantEtreActives: 96000000
+  flagsDevantEtreDesactives: 
+  flagActive: 441
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
@@ -2521,7 +2568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 300
+  flagsDevantEtreActives: 2c010000
+  flagsDevantEtreDesactives: 
+  flagActive: 442
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
@@ -2540,7 +2589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagActive: 400
+  flagsDevantEtreActives: b8010000
+  flagsDevantEtreDesactives: 
+  flagActive: 443
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
@@ -2729,6 +2780,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &13622878
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 6.04467201
+  m_Height: 12.5404148
+  m_Direction: 1
+  m_Center: {x: 1.05999994, y: 0, z: 0}
 --- !u!137 &13719170
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

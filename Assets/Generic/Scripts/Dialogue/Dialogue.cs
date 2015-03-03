@@ -60,7 +60,7 @@ public class Dialogue : MonoBehaviour, Interactif {
 						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*7 : repliquesSuivantes [i].GetTexte ().Length*8;
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
-
+						//guiStyle.fontSize = 35;
 						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
 						}
