@@ -15,6 +15,7 @@ public class EtatLancement : EtatNonJouable
 	{
 		sceneCorrespondante = ControlCenter.nomDeLaSceneDepart;
 		ChargerSceneCorrespondante ();
+
 	}
 
 	// Redéfinition des méthodes de la classe abstraite Etat
@@ -23,12 +24,14 @@ public class EtatLancement : EtatNonJouable
 	}
 	
 	public override void AfficherRendu() {
-		if (GUI.Button (new Rect (Screen.width / 2, Screen.height / 2, 500, 100), "Entrez dans le campus")) {
+		GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button"));
+		guiStyle.fontSize = 20;
+		if (GUI.Button (new Rect (Screen.width / 3, Screen.height / 3, 500, 100), "Entrez dans le campus", guiStyle)) {
 			StateManager.getInstance().BasculerEtat( new EtatDepart( StateManager.getInstance() ) );
 			FlagManager.ActiverFlag(10); // Activation du flag 10, correspondant au début du jeu
 		}
 		// Proposition de chargement d'une partie précédemment sauvegardée
-		if ( File.Exists( ControlCenter.nomFichierSauvegarde ) && GUI.Button (new Rect (Screen.width / 2, Screen.height / 2 + 110, 500, 100), "Charger partie")) {
+		if ( File.Exists( ControlCenter.nomFichierSauvegarde ) && GUI.Button (new Rect (Screen.width / 3, Screen.height / 3 + 110, 500, 100), "Charger partie", guiStyle)) {
 			StateManager.getInstance().gameData.ChargerSauvegarde ();
 		}
 	}

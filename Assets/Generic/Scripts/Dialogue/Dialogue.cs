@@ -57,10 +57,13 @@ public class Dialogue : MonoBehaviour, Interactif {
 				for (int i = 0; i < repliquesSuivantes.Count; i++) {
 					if (repliquesSuivantes [i] != null) { // Test de l'existence en mémoire de la réplique, au cas où il y aurait une erreur dans le fichier des répliques
 						// Calcul de la longueur du texte pour ajustement à l'affichage
-						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*7 : repliquesSuivantes [i].GetTexte ().Length*8;
+						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*9 : repliquesSuivantes [i].GetTexte ().Length*10;
+						if( longueurZoneTexte > Screen.width/1.5f )
+							longueurZoneTexte = Mathf.FloorToInt( Screen.width/1.5f );
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
-						//guiStyle.fontSize = 35;
+						guiStyle.fontSize = 18;
+
 						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
 						}
@@ -77,13 +80,14 @@ public class Dialogue : MonoBehaviour, Interactif {
 	void AfficherInfosPersonnage( Replique replique ) {
 		GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 		guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
-		
+		guiStyle.fontSize = 18;
+
 		// Affichage de l'avatar du joueur
 		Personnage perso = (Personnage)replique.GetGoAssocie().GetComponent<Personnage>();
 		if( perso != null )
-			GUI.Label( new Rect(0, 10, 80, 80), perso.avatar );
+			GUI.Label( new Rect(0, 10, 100, 80), perso.avatar );
 		// Affichage du nom du joueur
-		GUI.Label ( new Rect(0, 90, 80, 20), replique.GetGoAssocie().name, guiStyle); 
+		GUI.Label ( new Rect(0, 90, 100, 30), replique.GetGoAssocie().name, guiStyle); 
 	}
 
 	// Effectue le changement de la réplique actuelle
