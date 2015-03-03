@@ -2456,8 +2456,13 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
-  pointsExperience: 0
+  experience: 0
+  experience_avant_niveau_suivant: 0
+  niveau: 1
+  cj: {fileID: 0}
+  h: {fileID: 0}
   scoreZombie: 50
+  listeNiveauZombie: []
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

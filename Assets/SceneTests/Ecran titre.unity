@@ -5477,7 +5477,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1324650574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b1c5ce2f9b4db4384837c34d9fbbad, type: 3}
+  m_Script: {fileID: 11500000, guid: 33de65a9148654e42b1cfd5483493798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   estVivant: 1
@@ -5490,7 +5490,12 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
-  pointsExperience: 0
+  experience: 0
+  experience_avant_niveau_suivant: 0
+  niveau: 0
+  cj: {fileID: 0}
+  h: {fileID: 0}
+  listeNiveauJoueur: []
 --- !u!114 &1324650580
 MonoBehaviour:
   m_ObjectHideFlags: 0

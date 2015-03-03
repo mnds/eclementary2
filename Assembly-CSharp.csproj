@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Zepeng LI/PA/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Zepeng LI/PA/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +64,7 @@
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\ControllerJoueur.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
      <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassicAnim.cs" />
+     <Compile Include="Assets\FPS\Scripts\JoueurScripts\JoueurCaracteristiques.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionEnvironnement.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionManager.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\Inventaire.cs" />
@@ -189,6 +190,7 @@
      <Compile Include="Assets\RPG\Scripts\BasketGagnerPoint.cs" />
      <Compile Include="Assets\RPG\Scripts\BasketJoueur.cs" />
      <Compile Include="Assets\RPG\Scripts\Caracteristiques.cs" />
+     <Compile Include="Assets\RPG\Scripts\Niveau.cs" />
      <Compile Include="Assets\Zombie\ZombieScripts\Creation_Zombie.cs" />
      <Compile Include="Assets\Zombie\ZombieScripts\ZombieCaracteristiques.cs" />
      <Compile Include="Assets\Zombie\ZombieScripts\ZombieHealth.cs" />
@@ -213,7 +215,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Zepeng LI/PA/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
