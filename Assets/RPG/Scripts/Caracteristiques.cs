@@ -36,23 +36,24 @@ public class Caracteristiques : MonoBehaviour {
 	public float vitesseLancer = 1f;
 	public List<Condition> conditionsActuelles;
 
-	public int pointsExperience = 0;
 
-	private int experience = 0; //L'expérience acquise par le joueur
-	private int experience_avant_niveau_suivant = 0;
-	private int niveau = 0; //Niveau du gameObject associé
+	public int experience = 0; //L'expérience acquise par le joueur
+	public int experience_avant_niveau_suivant = 0;
+	public int niveau = 0; //Niveau du gameObject associé
 	
-	private ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
-	private Health h; //Lié à Health pour en modifier les statistiques
+	public ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
+	public Health h; //Lié à Health pour en modifier les statistiques
 
 
 	void Start () {
-		conditionsActuelles = new List<Condition> ();
-		cj = gameObject.GetComponent<ControllerJoueur> ();
-		//Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
-		h = gameObject.GetComponent<Health> ();
-		//Debug.Log ("Health de " + this + " est défini : " + (h == true));
-		Actualiser ();
+//		conditionsActuelles = new List<Condition> ();
+//		cj = gameObject.GetComponent<ControllerJoueur> ();
+//		//Debug.Log ("ControllerJoueur de " + this + " est défini : " + (cj == true));
+//		h = gameObject.GetComponent<Health> ();
+//		//Debug.Log ("Health de " + this + " est défini : " + (h == true));
+//		Actualiser ();
+
+
 	}
 	
 	
@@ -68,15 +69,7 @@ public class Caracteristiques : MonoBehaviour {
 		}
 		//Debug.Log ("Actualisation des statistiques effectuée");
 	}
-	
-	public void AjouterExperience (int experienceAjoutee)  {
-		experience+=experienceAjoutee;
-		TesterNiveau();
-	}
-	
-	private void TesterNiveau () {
-		//A compléter
-	}
+
 	
 	//Set/Get
 	public void SetEstVivant (bool estVivant_) {
@@ -189,4 +182,11 @@ public class Caracteristiques : MonoBehaviour {
 	{
 		return experience_avant_niveau_suivant;
 	}
+	public virtual void AjouterExperience(int _expe){
+	}
+
+
 }
+
+///几个问题 ：1. 加的那些和control joueur 相关的script， 是否应该改一下？  把它们变为joueurCarac？
+/// 如果getcomponent<caracterisitiques> 的话，可以不可以get 一个joueurcarac？

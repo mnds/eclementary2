@@ -90,7 +90,7 @@ public class GameData {
 		if (healthPlayer != null)
 			this.PointsDeVieSauves = healthPlayer.GetPointsDeVieActuels ();
 		if (carac != null)
-			this.PointsExperience = carac.pointsExperience;
+			this.PointsExperience = carac.experience;
 		ChargerFlagsReduits ();
 		ChargerListeMunitions ();
 		this.Difficulte = ControlCenter.difficulteActuelle;
@@ -127,7 +127,7 @@ public class GameData {
 		if( healthPlayer != null )
 			healthPlayer.SetPointsDeVie ( gameData.PointsDeVieSauves );
 		if (carac != null)
-			carac.pointsExperience = gameData.PointsExperience;
+			carac.experience = gameData.PointsExperience;
 		if (inventaire != null)
 			inventaire.quantiteObjets = gameData.ListeMunitions;
 		ControlCenter.difficulteActuelle = gameData.Difficulte;

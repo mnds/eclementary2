@@ -30,6 +30,10 @@ public abstract class Etat {
 		return sceneCorrespondante;
 	}
 
+	public virtual void DesactiverEtat() {
+
+	}
+
 	public abstract void ConfigurerScripts(); // Ensemble de fonctions appelées lorsque l'état est chargé
 	public abstract void UpdateEtat(); // Permettra au StateManager d'activer l'état en question
 	public abstract void AfficherRendu(); // Permet d'afficher le rendu de l'état
