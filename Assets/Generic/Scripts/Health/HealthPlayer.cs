@@ -25,9 +25,6 @@ public class HealthPlayer : Health, IScriptEtatJouable {
 	public void Update () {
 		if (!enabled)
 			return;
-		if (Input.GetKeyDown (KeyCode.Backspace)) {
-			DeclencherMort();		
-		}
 	}
 
 	public void OnGUI () {
