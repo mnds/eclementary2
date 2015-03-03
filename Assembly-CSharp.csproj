@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +80,7 @@
      <Compile Include="Assets\Generic\Scripts\Etats\Etat.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatAmphi2.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatBasket.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatBureauDebouck.cs" />
+     <Compile Include="Assets\Generic\Scripts\Etats\EtatBureauDirecteur.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatCampus.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatChambre.cs" />
      <Compile Include="Assets\Generic\Scripts\Etats\EtatChambreGarsFoyer.cs" />
@@ -213,7 +213,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1752,7 +1752,7 @@ GameObject:
   - 114: {fileID: 997270809}
   - 114: {fileID: 997270808}
   m_Layer: 0
-  m_Name: MusyBassot
+  m_Name: SecretaireScolarite
   m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: MusyBassot
+  texteAffiche: Secretaire Scolarite
 --- !u!114 &997270809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e8cea669d38497eb5983452d302603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomFichierRepliques: Dialogue/MusyBassot.json
+  nomFichierRepliques: Dialogue/SecretaireScolarite.json
   distanceMinimaleInteraction: 4
 --- !u!136 &997270810
 CapsuleCollider:
@@ -2483,7 +2483,7 @@ GameObject:
   - 4: {fileID: 1382182407}
   - 114: {fileID: 1382182406}
   m_Layer: 0
-  m_Name: EntreeDebouck
+  m_Name: EntreeDirecteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3598,7 +3598,7 @@ GameObject:
   - 114: {fileID: 1999416579}
   - 64: {fileID: 1999416583}
   m_Layer: 0
-  m_Name: PortailEntreeBureauDebouck
+  m_Name: PortailEntreeBureauDirecteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3621,7 +3621,7 @@ MonoBehaviour:
   - nomScene: 9
     flagsNecessairesPourTransition: a4010000
     flagsInterditsPourTransition: 
-    nomDuSpawnPoint: EntreeBureauDebouck
+    nomDuSpawnPoint: EntreeBureauDirecteur
 --- !u!114 &1999416580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,7 +3648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Bureau Debouck
+  texteAffiche: Bureau Driecteur
 --- !u!23 &1999416582
 Renderer:
   m_ObjectHideFlags: 0
@@ -3739,6 +3739,18 @@ Prefab:
     - target: {fileID: 446008, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 146008, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
+      propertyPath: m_Name
+      value: SecretaireScolarite
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446062, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
+      propertyPath: nomFichierRepliques
+      value: Dialogue/SecretaireScolarite.json
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446064, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}
+      propertyPath: texteAffiche
+      value: Secretaire Scolarite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7e48c158613ca4ca8e0ef486ff5c6e, type: 2}

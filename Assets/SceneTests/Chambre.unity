@@ -115,7 +115,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
-  texteSiActivable: Activation flag 230
+  texteSiActivable: 
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!114 &18695302
@@ -137,7 +137,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
-  texteSiActivable: Activation flag 44
+  texteSiActivable: 
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!114 &18695303
@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f4e54e0c9ad4fb29e9755e9ee62e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gt: {fileID: 654827195}
   distanceMinimaleInteraction: 4
 --- !u!1 &156431995
 GameObject:
@@ -364,6 +365,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &654827194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 654827196}
+  - 131: {fileID: 654827195}
+  m_Layer: 0
+  m_Name: Crossfade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &654827195
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654827194}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: c98cf9e76bcddce4baad11013437e503, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2048
+    height: 2048
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &654827196
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654827194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 244.768906}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &704504850
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +939,22 @@ Prefab:
     - target: {fileID: 400002, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407694, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}
+      propertyPath: texteSiActivable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407696, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}
+      propertyPath: texteSiActivable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107696, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62959f5cd17cc14419af64e8d272d981, type: 2}

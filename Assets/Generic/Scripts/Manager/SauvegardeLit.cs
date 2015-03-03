@@ -10,18 +10,52 @@ using System.Collections;
  */
 
 public class SauvegardeLit : MonoBehaviour, Interactif {
+	public GUITexture gt; //Pour l'écran noir
+	ControllerJoueur cj; //Pour désactiver le joueur
+	float tempsEcranNoir = 2f; //Temps de l'écran
+	float tempsEcoule = 0f; //Temps déjà écoulé
+	bool ecranEnCours = false;
 
 	public float distanceMinimaleInteraction = 4.0f; //La distance à laquelle on doit etre pour pouvoir interagir avec l'objet
 
-	// Use this for initialization
 	void Start () {
-	
+		gt.color=new Color(0f,0f,0f,0f);
+		cj = ControlCenter.GetJoueurPrincipal().GetComponent<ControllerJoueur>();
+	}
+
+	// Use this for initialization
+	void Update () {
+		if(!ecranEnCours) //Rien à faire
+			return; 
+		//Ecran noir
+		tempsEcoule+=Time.deltaTime;
+		if(tempsEcoule<tempsEcranNoir/2) //Fade out
+		{
+			float alpha = Mathf.Min (2f*tempsEcoule/tempsEcranNoir,255f);
+			gt.color=new Color(0f,0f,0f,alpha);
+		}
+		else //fade in
+		{
+			float alpha = Mathf.Max (2f*(tempsEcranNoir-tempsEcoule)/tempsEcranNoir,0f);
+			gt.color=new Color(0f,0f,0f,alpha);
+		}
+		//Ensuite on teste
+		if(tempsEcoule>tempsEcranNoir) {
+			gt.color=new Color(0f,0f,0f,0f);
+			ecranEnCours=false;
+			tempsEcoule=0f;
+			cj.SetFreeze(false);
+		}
 	}
 
 	// Sauvegarde lorsque le joueur interagit avec le lit
 	public void DemarrerInteraction() {
+		if(ecranEnCours)
+			return;
+		cj.SetFreeze(true);
 		Debug.Log ("Sauvegarde du jeu...");
-		new SauverGameData ().DeclencherEvenement ();
+		ecranEnCours=true; //Lancer l'écran noir 
+		new SauverGameData ().DeclencherEvenement (); //Sauvegarder les données
 	}
 
 	public void ArreterInteraction() {
