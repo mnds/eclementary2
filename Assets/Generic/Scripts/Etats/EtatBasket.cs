@@ -38,16 +38,20 @@ public class EtatBasket: Etat
 
 	}
 
+	public override void DesactiverEtat() {
+		HealthPlayer healthPlayer = StateManager.getInstance ().GetJoueur ().GetComponent<HealthPlayer> ();
+		healthPlayer.setEnabled (true);
+		new ActiverInventaire().DeclencherEvenement(); // On réactive l'inventaire
+		// Désactivation du script BasketJoueur
+		BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
+		scriptBasket.setEnabled (false);
+		minijeu.ArreterInteraction(); // Fin du minijeu
+	}
+
 	public override void AfficherRendu() {
 		// Actions à faire lorsqu'on quitte le jeu
 		if (GUI.Button (new Rect (4*Screen.width / 5, 4*Screen.height / 5, 200, 100), "Quitter le minijeu ?")) {
-			HealthPlayer healthPlayer = StateManager.getInstance ().GetJoueur ().GetComponent<HealthPlayer> ();
-			healthPlayer.setEnabled (true);
-			new ActiverInventaire().DeclencherEvenement(); // On réactive l'inventaire
-			// Désactivation du script BasketJoueur
-			BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
-			scriptBasket.setEnabled (false);
-			minijeu.ArreterInteraction(); // Fin du minijeu
+			DesactiverEtat();
 		}
 	}
 }

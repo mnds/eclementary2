@@ -35,7 +35,7 @@ static public class ControlCenter {
 		ClubBD,
 		Gymnase,
 		Scolarite,
-		BureauDebouck,
+		BureauDirecteur,
 		Labyrinthe,
 		Amphi2,
 		Fin
@@ -63,7 +63,7 @@ static public class ControlCenter {
 	static public string nomDeLaSceneDuClubBD = "ClubBD";
 	static public string nomDeLaSceneDuGymnase = "Gymnase";
 	static public string nomDeLaSceneScolarite = "Scolarite";
-	static public string nomDeLaSceneDebouck = "BureauDebouck";
+	static public string nomDeLaSceneDirecteur = "BureauDirecteur";
 	static public string nomDeLaSceneLabyrinthe = "Labyrinthe";
 	static public string nomDeLaSceneAmphi2 = "Amphi2";
 	static public string nomDeLaSceneDeFin = "Ecran Fin";
@@ -312,8 +312,8 @@ static public class ControlCenter {
 		case(ControlCenter.Scenes.Campus):
 			return nomDeLaSceneDuCampus;
 			break;
-		case(ControlCenter.Scenes.BureauDebouck):
-			return nomDeLaSceneDebouck;
+		case(ControlCenter.Scenes.BureauDirecteur):
+			return nomDeLaSceneDirecteur;
 			break;
 		case(ControlCenter.Scenes.Mort):
 			return nomDeLaSceneDeMort;

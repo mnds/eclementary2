@@ -110,7 +110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!114 &4942296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,6 +2915,14 @@ Prefab:
     - target: {fileID: 464636, guid: d4eef952909c4d947b295fe322052613, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464638, guid: d4eef952909c4d947b295fe322052613, type: 2}
+      propertyPath: texteAffiche
+      value: Le Carambolage (difficile)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464636, guid: d4eef952909c4d947b295fe322052613, type: 2}
+      propertyPath: texteSiActivable
+      value: Vous avez choisi le Carambolage !
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4eef952909c4d947b295fe322052613, type: 2}
@@ -6011,8 +6019,8 @@ MonoBehaviour:
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 30
+  detruireApresActivation: 0
+  texteSiActivable: Vous avez choisi le Carton !
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!114 &240525757
@@ -6029,7 +6037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Choix Du bus
+  texteAffiche: Le Carton (facile)
 --- !u!114 &240525758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6441,7 +6449,7 @@ Transform:
   - {fileID: 924735877}
   - {fileID: 655267223}
   m_Father: {fileID: 263912863}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!136 &246706702
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7031,7 +7039,6 @@ Transform:
   - {fileID: 465529907}
   - {fileID: 1890829062}
   - {fileID: 1972370323}
-  - {fileID: 1745770536}
   - {fileID: 246706701}
   - {fileID: 766377429}
   - {fileID: 1466908058}
@@ -7043,8 +7050,6 @@ Transform:
   - {fileID: 443947946}
   - {fileID: 305782669}
   - {fileID: 1119372536}
-  - {fileID: 1796300249}
-  - {fileID: 1744821018}
   - {fileID: 1781388565}
   - {fileID: 654396528}
   - {fileID: 2047078523}
@@ -7697,7 +7702,7 @@ Transform:
   - {fileID: 6261695}
   - {fileID: 1240317786}
   m_Father: {fileID: 263912863}
-  m_RootOrder: 15
+  m_RootOrder: 14
 --- !u!114 &305782670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7725,7 +7730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Prof Eco
+  texteAffiche: Professeur d'Economie
 --- !u!114 &305782672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8217,7 +8222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!114 &321081604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10267,7 +10272,7 @@ Transform:
   m_LocalScale: {x: 1, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!114 &443947947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10306,7 +10311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Recuperation code bar
+  texteAffiche: C'est votre carte Codebar !
 --- !u!114 &443947950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10404,7 +10409,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!114 &447346277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10869,6 +10874,7 @@ GameObject:
   - 95: {fileID: 457674919}
   - 65: {fileID: 457674918}
   - 114: {fileID: 457674917}
+  - 114: {fileID: 457674920}
   m_Layer: 0
   m_Name: Panier Basket
   m_TagString: Untagged
@@ -10937,6 +10943,20 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &457674920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 457674915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  texteAffiche: Appuie sur E pour jouer au basket !
 --- !u!1 &461719232
 GameObject:
   m_ObjectHideFlags: 0
@@ -11058,8 +11078,8 @@ MonoBehaviour:
   flagRequisPourDestruction: 
   flagBloquantsPourDestruction: 
   activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 30
+  detruireApresActivation: 0
+  texteSiActivable: Vous avez choisi le Carbonara !
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!114 &465529910
@@ -11076,7 +11096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Choix Du bus
+  texteAffiche: Le Carbonara (normal)
 --- !u!114 &465529911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15893,7 +15913,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: .200000003, z: 12.5000076}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 20
+  m_RootOrder: 17
 --- !u!64 &654396529
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19714,7 +19734,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: .200000003, z: 12.5}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!64 &766377430
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19777,7 +19797,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
-  texteSiActivable: Activation flag 100
+  texteSiActivable: 
   texteSiNonActivable: 
 --- !u!114 &766377434
 MonoBehaviour:
@@ -19792,7 +19812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Entree Liris
+  texteAffiche: Entree du Liris
 --- !u!23 &766377435
 Renderer:
   m_ObjectHideFlags: 0
@@ -20863,6 +20883,14 @@ Prefab:
     - target: {fileID: 431718, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431664, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431662, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
+      propertyPath: texteAffiche
+      value: Professeur d'Economie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5249ffa1a41f9694097d7ca46c46042d, type: 2}
@@ -24692,6 +24720,18 @@ Prefab:
     - target: {fileID: 402618, guid: ba86c73ac6eccdc458332e25a291ace1, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402622, guid: ba86c73ac6eccdc458332e25a291ace1, type: 2}
+      propertyPath: texteAffiche
+      value: Le Carbonara (normal)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402620, guid: ba86c73ac6eccdc458332e25a291ace1, type: 2}
+      propertyPath: texteSiActivable
+      value: Vous avez choisi le Carbonara !
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402620, guid: ba86c73ac6eccdc458332e25a291ace1, type: 2}
+      propertyPath: detruireApresActivation
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba86c73ac6eccdc458332e25a291ace1, type: 2}
@@ -29690,7 +29730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!114 &1119372537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34713,7 +34753,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11426780, guid: 10f427fd3329bda4e88cb45814529e7f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 10f427fd3329bda4e88cb45814529e7f, type: 2}
   m_RootGameObject: {fileID: 2024665667}
   m_IsPrefabParent: 0
@@ -38328,7 +38369,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &1466908059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40279,7 +40320,7 @@ Transform:
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 23
+  m_RootOrder: 20
 --- !u!114 &1535851957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40327,7 +40368,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
-  texteSiActivable: Activation flag 450
+  texteSiActivable: 
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!23 &1535851960
@@ -45989,94 +46030,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1154626089}
   m_GameObject: {fileID: 1742624084}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1744821017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104364, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1744821018}
-  - 33: {fileID: 1744821022}
-  - 65: {fileID: 1744821021}
-  - 23: {fileID: 1744821020}
-  - 114: {fileID: 1744821019}
-  m_Layer: 0
-  m_Name: OuvertureBoite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1744821018
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404364, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744821017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1023, y: 203, z: 1064}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 263912863}
-  m_RootOrder: 18
---- !u!114 &1744821019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404404, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744821017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
-  texteAffiche: Ouverture Boite
---- !u!23 &1744821020
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304364, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744821017}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1744821021
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504364, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744821017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1744821022
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304364, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744821017}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1745029961
 GameObject:
   m_ObjectHideFlags: 0
@@ -46105,117 +46058,6 @@ Transform:
   - {fileID: 1777032297}
   m_Father: {fileID: 1729515525}
   m_RootOrder: 1
---- !u!1 &1745770535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104338, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1745770536}
-  - 33: {fileID: 1745770541}
-  - 65: {fileID: 1745770540}
-  - 23: {fileID: 1745770539}
-  - 114: {fileID: 1745770538}
-  - 114: {fileID: 1745770537}
-  m_Layer: 0
-  m_Name: RetourDuWei
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1745770536
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404338, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 997, y: 203, z: 1064}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 263912863}
-  m_RootOrder: 5
---- !u!114 &1745770537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404350, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
-  texteAffiche: Retour du WEI
---- !u!114 &1745770538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404352, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709c267061f21426dbe1a6bd8cbe59bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
-  flagActive: 40
-  flagRequisPourDestruction: 
-  flagBloquantsPourDestruction: 
-  activable: 1
-  detruireApresActivation: 1
-  texteSiActivable: Activation flag 40
-  texteSiNonActivable: 
-  distanceMinimaleInteraction: 4
---- !u!23 &1745770539
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304338, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1745770540
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504338, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1745770541
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304338, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1745770535}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1749151714
 GameObject:
   m_ObjectHideFlags: 0
@@ -46818,6 +46660,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11422040, guid: 63797f35726f1194fa00f8b078890362, type: 2}
+      propertyPath: texteAffiche
+      value: Le Carton (facile)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422038, guid: 63797f35726f1194fa00f8b078890362, type: 2}
+      propertyPath: texteSiActivable
+      value: Vous avez choisi le Carton !
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422038, guid: 63797f35726f1194fa00f8b078890362, type: 2}
+      propertyPath: detruireApresActivation
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63797f35726f1194fa00f8b078890362, type: 2}
   m_RootGameObject: {fileID: 240525753}
@@ -47103,7 +46957,7 @@ Transform:
   - {fileID: 1083992681}
   - {fileID: 1374041976}
   m_Father: {fileID: 263912863}
-  m_RootOrder: 19
+  m_RootOrder: 16
 --- !u!114 &1781388566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47131,7 +46985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Prez BDS
+  texteAffiche: President du BDS
 --- !u!114 &1781388568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48015,94 +47869,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 566560264}
   m_RootOrder: 0
---- !u!1 &1796300248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 104326, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1796300249}
-  - 33: {fileID: 1796300253}
-  - 65: {fileID: 1796300252}
-  - 23: {fileID: 1796300251}
-  - 114: {fileID: 1796300250}
-  m_Layer: 0
-  m_Name: Fin quete DSI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1796300249
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 404326, guid: 3b734f8c4b9522246aa48e6d2ace6102, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1796300248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1025.5, y: 198.300003, z: 946.390015}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 263912863}
-  m_RootOrder: 17
---- !u!114 &1796300250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11404326, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1796300248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
-  texteAffiche: Fin quete DSI
---- !u!23 &1796300251
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2304326, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1796300248}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1796300252
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6504326, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1796300248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1796300253
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3304326, guid: 3b734f8c4b9522246aa48e6d2ace6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1796300248}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1797118400
 Prefab:
   m_ObjectHideFlags: 0
@@ -48660,7 +48426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &1827385500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50390,7 +50156,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 0
-  texteSiActivable: Activation flag 3
+  texteSiActivable: Vous avez choisi le Carambolage !
   texteSiNonActivable: 
   distanceMinimaleInteraction: 4
 --- !u!114 &1890829065
@@ -50407,7 +50173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Choix Du bus
+  texteAffiche: Le Carambolage (difficile)
 --- !u!114 &1890829066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50932,7 +50698,7 @@ Transform:
   m_LocalScale: {x: 6.24999952, y: .200000018, z: 12.5000114}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 22
+  m_RootOrder: 19
 --- !u!64 &1914925289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51591,6 +51357,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 806e8c46ed46f3744b8a71d2001674c7, type: 2}
+    - target: {fileID: 11485636, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0fd9b256ca609548ac725960d0fae62, type: 2}
   m_RootGameObject: {fileID: 246706700}
@@ -53354,7 +53124,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: .200000003, z: 12.5000038}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!64 &2005936892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53381,7 +53151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
-  texteAffiche: Entree Club BD
+  texteAffiche: Entree du Club BD
 --- !u!114 &2005936894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53400,7 +53170,7 @@ MonoBehaviour:
   flagBloquantsPourDestruction: 
   activable: 1
   detruireApresActivation: 1
-  texteSiActivable: Activation flag 150
+  texteSiActivable: 
   texteSiNonActivable: 
 --- !u!114 &2005936895
 MonoBehaviour:
@@ -53627,9 +53397,9 @@ GameObject:
   - 95: {fileID: 2024665674}
   - 136: {fileID: 2024665673}
   - 114: {fileID: 2024665672}
-  - 114: {fileID: 2024665671}
   - 114: {fileID: 2024665670}
   - 114: {fileID: 2024665669}
+  - 114: {fileID: 2024665671}
   m_Layer: 0
   m_Name: Weiman
   m_TagString: PNJ
@@ -53681,9 +53451,8 @@ MonoBehaviour:
 --- !u!114 &2024665671
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11426780, guid: 10f427fd3329bda4e88cb45814529e7f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1333086479}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024665667}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -54248,7 +54017,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: .200000003, z: 12.5000114}
   m_Children: []
   m_Father: {fileID: 263912863}
-  m_RootOrder: 21
+  m_RootOrder: 18
 --- !u!64 &2047078524
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55260,6 +55029,10 @@ Prefab:
     - target: {fileID: 496436, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496380, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}
+      propertyPath: texteAffiche
+      value: President du BDS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0b5eaa221e3b64eb22fedf121352e0, type: 2}

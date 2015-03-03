@@ -92,7 +92,7 @@ public class MazeWallManager : MonoBehaviour {
 				gameObject.AddComponent<ChangementSceneFlagOnTrigger>();
 				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().listeDesFlagsPouvantEtreActives=new List<int>(){420}; //On peut activer le 420
 				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().activationPossibleDesFlags=new List<bool>(){true};
-				ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag fricsf = new ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag(ControlCenter.Scenes.BureauDebouck,"EntreeBureauDebouck");
+				ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag fricsf = new ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag(ControlCenter.Scenes.BureauDirecteur,"EntreeBureauDirecteur");
 				gameObject.GetComponent<ChangementSceneFlagOnTrigger>().nomsDesScenesAccessibles=new List<ChangementSceneFlagOnTrigger.FlagsRequisInterditsChangementSceneFlag>(){fricsf};
 			}
 		}

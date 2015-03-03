@@ -23,6 +23,7 @@ public class MusiqueAmbiance : ActionSelonFlags {
 		public ControlCenter.Scenes sceneDeLaMusique; //Complétée dans l'inspecteur
 		public List<int> flagsDevantEtreActives;
 		public List<int> flagsDevantEtreDesactives;
+		public string description; //Aide pour les joueurs
 
 		public bool GetMusiqueSelectionnee () {
 			return musiqueSelectionnee;
@@ -88,16 +89,27 @@ public class MusiqueAmbiance : ActionSelonFlags {
 	 * @brief Teste toutes les musiques d'ambiance pour lancer la bonne
 	 **/
 	override protected void ActionSiBonFlag() {
+		bool musiqueTrouvee = false;
 		//On cherche la musique d'ambiance à lancer
 		foreach(MusiqueAmbianceSeule mas in lesMASs) {
 			mas.Verifier(); //On vérifie
 			if(mas.GetMusiqueSelectionnee()) { //On cherche la bonne musique à jouer
-				if(acs==mas.GetAudioClips())
+				musiqueTrouvee = true; //On a une musique à lire
+				if(acs==mas.GetAudioClips()) {
 					return; //La liste est déjà en cours de lecture
+				}
 				compt++; //Changement de playlist !
 				acs=mas.GetAudioClips(); //On change la liste de lecture
 				break;
 			}//Si c'est bon, ok
+		}
+
+		//Si on ne trouve aucune musique, on arrete tout
+		if(!musiqueTrouvee)
+		{
+			acs=new List<AudioClip>(){}; //Liste vide
+			audioS.Stop (); //On arrete le clip
+			return;
 		}
 
 		//On choisit un clip au hasard
@@ -106,7 +118,6 @@ public class MusiqueAmbiance : ActionSelonFlags {
 		
 		//On le lit
 		Debug.Log ("Ac : "+ac);
-		Debug.Log ("as : "+audioS);
 		audioS.Stop();
 		audioS.PlayOneShot(ac);
 		//On attend le temps que le clip se finisse pour en envoyer un autre.

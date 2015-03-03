@@ -81,8 +81,8 @@ public class StateManager : MonoBehaviour {
 		case(ControlCenter.Scenes.Campus):
 			instanceActive.BasculerEtat(new EtatCampus(StateManager.getInstance()));
 			break;
-		case(ControlCenter.Scenes.BureauDebouck):
-			instanceActive.BasculerEtat(new EtatBureauDebouck(StateManager.getInstance()));
+		case(ControlCenter.Scenes.BureauDirecteur):
+			instanceActive.BasculerEtat(new EtatBureauDirecteur(StateManager.getInstance()));
 			break;
 		case(ControlCenter.Scenes.Amphi2):
 			instanceActive.BasculerEtat(new EtatAmphi2(StateManager.getInstance()));
