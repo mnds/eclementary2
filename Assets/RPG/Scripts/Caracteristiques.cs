@@ -27,6 +27,7 @@ public class Caracteristiques : MonoBehaviour {
 	//Caractéristiques maximales du personnage
 	public bool estVivant; //Etat du joueur
 	public float pointsDeVie = 50f; //Augmente les points de vie du personnage
+	public float pointsDeMana = 5f; //Augmente les points de mana du personnage
 	public float pointsEndurance = 10f; //Augmente le temps pendant lequel le personnage peut courir
 	public float attaque = 1f;
 	public float defense = 1f;
@@ -66,6 +67,7 @@ public class Caracteristiques : MonoBehaviour {
 		}
 		if (h) {
 			h.SetPointsDeVieMax (pointsDeVie);
+			h.SetPointsDeManaMax (pointsDeMana);
 		}
 		//Debug.Log ("Actualisation des statistiques effectuée");
 	}

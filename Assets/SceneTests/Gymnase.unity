@@ -114,6 +114,7 @@ GameObject:
   - 114: {fileID: 20660556}
   - 114: {fileID: 20660555}
   - 114: {fileID: 20660560}
+  - 114: {fileID: 20660557}
   m_Layer: 0
   m_Name: MechantProfSport
   m_TagString: Ennemi
@@ -170,6 +171,19 @@ MonoBehaviour:
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 
   texteAffiche: Prof Sport
+--- !u!114 &20660557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20660553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 7c010000
 --- !u!136 &20660558
 CapsuleCollider:
   m_ObjectHideFlags: 0

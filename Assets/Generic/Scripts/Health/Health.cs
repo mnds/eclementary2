@@ -19,8 +19,14 @@ public class Health : MonoBehaviour {
 	public List<int> flagsBloquants = new List<int>(){};
 	protected bool mort = false;
 
+	//Marche aussi pour le mana
+	public float pointsDeManaMax = 5f;
+	public float pointsDeManaActuels = 5f;
+
+
 	void Start () {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax);
+		pointsDeManaActuels = Mathf.Min (pointsDeManaActuels,pointsDeManaMax);
 	}
 
 	/**
@@ -35,6 +41,39 @@ public class Health : MonoBehaviour {
 		float pdvaAvantSoin = pointsDeVieActuels;
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels + soin, pointsDeVieMax);
 		return (pdvaAvantSoin != pointsDeVieActuels);
+	}
+	
+	/**
+	 * @brief Permet de rajouter des points de mana à l'objet.
+	 * @param mana De combien augmenter les points de mana.
+	 *
+	 * @return Renvoie true si un soin de mana a été effectué.
+	 */
+	public bool SoignerMana(float mana) {
+		if(bypass) return false;
+		if(!TesterFlags()) return false;
+		float pdmaAvantSoin = pointsDeManaActuels;
+		pointsDeManaActuels = Mathf.Min (pointsDeManaActuels + mana, pointsDeManaMax);
+		return (pdmaAvantSoin != pointsDeManaActuels);
+	}
+
+	/**
+	 * @brief Permet de faire subir des degats de mana à l'objet
+	 * @param degats De combien diminuer les points de mana.
+	 * @return true s'il y avait assez de points de mana.
+	 * 
+	 * @details Que pour le joueur en principe, donc on ne teste pas les flags ou le bypass
+	 * 
+	 */
+	public bool SubirDegatsMana(float degats) {
+		pointsDeManaActuels = Mathf.Min (pointsDeManaActuels, pointsDeManaMax); //Au cas où il y ait eu un problème
+		if(degats>pointsDeManaActuels) {//Pas assez de mana !
+			Debug.Log ("Pas assez de mana");
+			return false;
+		}
+		pointsDeManaActuels -= degats;
+		Debug.Log ("Points de Mana après le coup : " + pointsDeManaActuels);
+		return true;
 	}
 
 	/**
@@ -115,6 +154,15 @@ public class Health : MonoBehaviour {
 	
 	public float GetPointsDeVieMax () {
 		return pointsDeVieMax;
+	}
+	
+	public void SetPointsDeManaMax (float pdmm_) {
+		pointsDeManaMax = pdmm_;
+		pointsDeManaActuels = Mathf.Min (pointsDeManaMax, pointsDeManaActuels);
+	}
+	
+	public float GetPointsDeManaMax () {
+		return pointsDeManaMax;
 	}
 
 	public void SetBypass (bool bypass_) {
