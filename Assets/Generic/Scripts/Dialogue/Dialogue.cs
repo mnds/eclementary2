@@ -58,16 +58,16 @@ public class Dialogue : MonoBehaviour, Interactif {
 					if (repliquesSuivantes [i] != null) { // Test de l'existence en mémoire de la réplique, au cas où il y aurait une erreur dans le fichier des répliques
 						// Calcul de la longueur du texte pour ajustement à l'affichage
 						int longueurZoneTexte = repliquesSuivantes [i].GetTexte ().Length > 25 ? repliquesSuivantes [i].GetTexte ().Length*9 : repliquesSuivantes [i].GetTexte ().Length*10;
-						if( longueurZoneTexte > Screen.width/1.5f )
-							longueurZoneTexte = Mathf.FloorToInt( Screen.width/1.5f );
+						if( longueurZoneTexte > Screen.width/2 )
+							longueurZoneTexte = Mathf.FloorToInt( Screen.width/2 );
 						GUIStyle guiStyle = new GUIStyle(GUI.skin.GetStyle("Button")); // Style des "boutons de dialogue"
 						guiStyle.alignment = TextAnchor.UpperLeft; // Texte aligné à gauche
 						guiStyle.fontSize = 18;
 
-						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 50), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
+						if (GUI.Button (new Rect (100, y, longueurZoneTexte, 70), repliquesSuivantes [i].GetTexte (), guiStyle) ) {
 							SelectionnerReplique (repliquesSuivantes [i]); // Sélection de la prochaine réplique
 						}
-						y += 55; // Incrémentation de y pour afficher la réplique soeur un cran en dessous
+						y += 75; // Incrémentation de y pour afficher la réplique soeur un cran en dessous
 					} 
 					else
 						Debug.Log ("La réplique indiquée n'existe pas. Veuillez vérifier le contenu du fichier");

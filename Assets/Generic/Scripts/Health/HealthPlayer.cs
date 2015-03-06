@@ -25,19 +25,28 @@ public class HealthPlayer : Health, IScriptEtatJouable {
 	public void Update () {
 		if (!enabled)
 			return;
-		if (Input.GetKeyDown (KeyCode.Backspace)) {
-			DeclencherMort();		
-		}
 	}
 
 	public void OnGUI () {
 		if (!enabled)
 			return;
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
-		if (!ControlCenter.GetAfficherBarreDeVieJoueur ()) return;
-		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
-		if(! (pointsDeVieActuels/pointsDeVieMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
-			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
+
+		//Barre de vie
+		if (ControlCenter.GetAfficherBarreDeVieJoueur ()) {
+			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
+			if(! (pointsDeVieActuels/pointsDeVieMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
+				GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueurGUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, barLength, barHeight), "Vie"); // Points de vie max
+			if(! (pointsDeVieActuels/pointsDeVieMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
+				GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 1 / 10, Mathf.Ceil(pointsDeVieActuels/pointsDeVieMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
+		}
+
+		//Barre de mana
+		if(ControlCenter.GetAfficherBarreDeManaJoueur()) {
+			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 3 / 10, barLength, barHeight), "Mana"); // Points de vie max
+			if(! (pointsDeManaActuels/pointsDeManaMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
+				GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 3 / 10, Mathf.Ceil(pointsDeManaActuels/pointsDeManaMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
+		}
 	}
 
 	public override void DeclencherMort () {

@@ -71,6 +71,7 @@ static public class ControlCenter {
 
 	static bool cinematiqueEnCours = false; //Les interactions doivent s'arreter si on est en cinématique
 	static bool afficherBarreDeVieJoueur = true;
+	static bool afficherBarreDeManaJoueur = false;
 	static bool afficherBarreEnduranceJoueur = true;
 	static private bool abdvjAncien; //Pour les changements
 	static private bool abejAncien;
@@ -124,6 +125,10 @@ static public class ControlCenter {
 	static public bool GetAfficherBarreDeVieJoueur () {
 		return afficherBarreDeVieJoueur;
 	}
+	
+	static public bool GetAfficherBarreDeManaJoueur () {
+		return afficherBarreDeManaJoueur;
+	}
 
 	static public bool GetAfficherBarreEnduranceJoueur () {
 		return afficherBarreEnduranceJoueur;
@@ -160,6 +165,11 @@ static public class ControlCenter {
 	static public void SetAfficherBarreEnduranceJoueur (bool abdej) {
 		Debug.Log ("Control Center : affichage stamina joueur "+abdej);
 		afficherBarreEnduranceJoueur = abdej;
+	}
+
+	static public void SetAfficherBarreDeManaJoueur (bool abdmj) {
+		Debug.Log ("Control Center : affichage mana joueur "+abdmj);
+		afficherBarreDeManaJoueur = abdmj;
 	}
 
 	static public void SetJoueurPrincipal (GameObject go) {
@@ -276,10 +286,11 @@ static public class ControlCenter {
 	}
 	
 	/**
-	 * @brief Enlève tous les oasf qui ne sont pas dans la bonne scène donc qu'on ne doit pas étudier, et on vérifie si les objets correspondants doivent se désactiver ou pas.
+	 * @brief Enlève tous les asf qui ne sont pas dans la bonne scène donc qu'on ne doit pas étudier, et on vérifie si les objets correspondants doivent se désactiver ou pas.
 	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
 	 **/
 	static public void VerifierLesASFs () {
+		Debug.LogWarning("Nombre ASF "+lesASFs.Count);
 		foreach(ActionSelonFlags asf in lesASFs) {
 			asf.Verifier(); //On vérifie ce asf
 		}
