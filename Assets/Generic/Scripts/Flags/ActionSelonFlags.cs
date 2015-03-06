@@ -19,7 +19,12 @@ public class ActionSelonFlags : MonoBehaviour {
 		ControlCenter.AddActionSelonFlags(this);
 		Verifier();
 	}
-	
+
+	//Mis tout le temps pour les rechargements de partie
+	void OnLevelWasLoaded () {
+		Verifier ();
+	}
+
 	/**
 	 * @brief Verifie que les flags des deux listes en attribut sont bien aux bons états
      */

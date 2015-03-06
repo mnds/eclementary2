@@ -1090,6 +1090,7 @@ GameObject:
   - 223: {fileID: 243982431}
   - 114: {fileID: 243982430}
   - 114: {fileID: 243982429}
+  - 114: {fileID: 243982432}
   m_Layer: 5
   m_Name: Interface Graphique
   m_TagString: Untagged
@@ -1178,6 +1179,19 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &243982432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243982427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435cccb038bc3374a9c8e26d51dfd359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
 --- !u!1 &271154956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2892,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 3fe79e19e20ebfc4081174964a9d9a36, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4354,6 +4368,10 @@ Prefab:
       propertyPath: lesMASs.Array.data[5].audioClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 8d527513c9d5b38488ede6e21f4d5265, type: 3}
+    - target: {fileID: 8292946, guid: 26a069715b51cc848ba9020872d27e7b, type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26a069715b51cc848ba9020872d27e7b, type: 2}
   m_RootGameObject: {fileID: 807110636}
@@ -5547,6 +5565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estVivant: 1
   pointsDeVie: 20
+  pointsDeMana: 5
   pointsEndurance: 100
   attaque: 1
   defense: 1
@@ -5695,6 +5714,8 @@ MonoBehaviour:
   flagAssocie: -1
   flagsRequis: 
   flagsBloquants: 
+  pointsDeManaMax: 5
+  pointsDeManaActuels: 5
   joueurPrincipal: 1
   healthBarTexture: {fileID: 0}
 --- !u!114 &1324650586
