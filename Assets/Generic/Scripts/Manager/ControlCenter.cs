@@ -43,10 +43,10 @@ static public class ControlCenter {
 
 	[System.Serializable]
 	public class ObjetActivableSelonFlags {
-		public ActivationSelonFlags asf;
+		public ActionSelonFlagsScene asf;
 		public string nomScene;
 		Scenes machin;
-		public ObjetActivableSelonFlags(ActivationSelonFlags asf_, string ns) {
+		public ObjetActivableSelonFlags(ActionSelonFlagsScene asf_, string ns) {
 			asf=asf_;
 			nomScene=ns;
 		}
@@ -254,7 +254,7 @@ static public class ControlCenter {
 	 * @param asf Le script qui détermine si l'objet doit etre active ou non
 	 * @param nomScene_ Le nom de la scene dans laquelle se trouve l'objet
 	 **/
-	static public void AddObjetActivableSelonFlags(ActivationSelonFlags asf, string nomScene_) {
+	static public void AddObjetActivableSelonFlags(ActionSelonFlagsScene asf, string nomScene_) {
 		lesOASFs.Add(new ObjetActivableSelonFlags(asf,nomScene_));
 	}
 

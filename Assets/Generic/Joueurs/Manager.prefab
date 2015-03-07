@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &125696
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 425696}
+  - 82: {fileID: 8225696}
+  - 114: {fileID: 11425694}
+  m_Layer: 0
+  m_Name: LecteurMusique
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &127890
 GameObject:
   m_ObjectHideFlags: 1
@@ -47,6 +64,7 @@ GameObject:
   - 223: {fileID: 22343664}
   - 114: {fileID: 11443588}
   - 114: {fileID: 11443586}
+  - 114: {fileID: 11425696}
   m_Layer: 5
   m_Name: Interface Graphique
   m_TagString: Untagged
@@ -1423,7 +1441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &143630
 GameObject:
   m_ObjectHideFlags: 1
@@ -2351,25 +2369,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &199158
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 499158}
-  - 65: {fileID: 6599158}
-  - 54: {fileID: 5499158}
-  - 114: {fileID: 11499160}
-  - 114: {fileID: 11499158}
-  m_Layer: 0
-  m_Name: Baton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &199160
 GameObject:
   m_ObjectHideFlags: 1
@@ -2410,24 +2409,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &199164
-GameObject:
+--- !u!4 &425696
+Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 499164}
-  - 33: {fileID: 3399160}
-  - 23: {fileID: 2399160}
-  - 114: {fileID: 11499172}
-  m_Layer: 0
-  m_Name: Graphique
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_GameObject: {fileID: 125696}
+  m_LocalRotation: {x: 0, y: -.0107841128, z: 0, w: -.999941885}
+  m_LocalPosition: {x: 1076.88623, y: 205.76651, z: 729.388611}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 459208}
+  m_RootOrder: 4
 --- !u!4 &427890
 Transform:
   m_ObjectHideFlags: 1
@@ -2435,12 +2428,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127890}
   m_LocalRotation: {x: 1.13269165e-10, y: -2.55168442e-10, z: .48564297, w: .87415731}
-  m_LocalPosition: {x: .499994069, y: 0, z: .599973202}
+  m_LocalPosition: {x: .598999977, y: .252999991, z: .699999988}
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
   m_Children:
   - {fileID: 427892}
   m_Father: {fileID: 459232}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!4 &427892
 Transform:
   m_ObjectHideFlags: 1
@@ -2546,6 +2539,7 @@ Transform:
   - {fileID: 459234}
   - {fileID: 459240}
   - {fileID: 22443588}
+  - {fileID: 425696}
   m_Father: {fileID: 459224}
   m_RootOrder: 0
 --- !u!4 &459212
@@ -2633,7 +2627,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459220}
-  - {fileID: 499158}
   - {fileID: 499160}
   - {fileID: 477304}
   - {fileID: 477288}
@@ -2711,7 +2704,7 @@ Transform:
   m_Children:
   - {fileID: 477294}
   m_Father: {fileID: 459232}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!4 &477266
 Transform:
   m_ObjectHideFlags: 1
@@ -2748,7 +2741,7 @@ Transform:
   m_Children:
   - {fileID: 477300}
   m_Father: {fileID: 459232}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!4 &477272
 Transform:
   m_ObjectHideFlags: 1
@@ -2773,7 +2766,7 @@ Transform:
   m_Children:
   - {fileID: 477286}
   m_Father: {fileID: 459232}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &477276
 Transform:
   m_ObjectHideFlags: 1
@@ -2798,7 +2791,7 @@ Transform:
   m_Children:
   - {fileID: 477266}
   m_Father: {fileID: 459232}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!4 &477286
 Transform:
   m_ObjectHideFlags: 1
@@ -2823,7 +2816,7 @@ Transform:
   m_Children:
   - {fileID: 477298}
   m_Father: {fileID: 459232}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &477294
 Transform:
   m_ObjectHideFlags: 1
@@ -2848,7 +2841,7 @@ Transform:
   m_Children:
   - {fileID: 477272}
   m_Father: {fileID: 459232}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!4 &477298
 Transform:
   m_ObjectHideFlags: 1
@@ -2897,7 +2890,7 @@ Transform:
   m_Children:
   - {fileID: 477268}
   m_Father: {fileID: 459232}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &477308
 Transform:
   m_ObjectHideFlags: 1
@@ -2910,7 +2903,7 @@ Transform:
   m_Children:
   - {fileID: 477276}
   m_Father: {fileID: 459232}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!4 &477310
 Transform:
   m_ObjectHideFlags: 1
@@ -2923,7 +2916,7 @@ Transform:
   m_Children:
   - {fileID: 477302}
   m_Father: {fileID: 459232}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!4 &498352
 Transform:
   m_ObjectHideFlags: 1
@@ -2935,7 +2928,7 @@ Transform:
   m_LocalScale: {x: .349999994, y: .349999994, z: .349999994}
   m_Children: []
   m_Father: {fileID: 459232}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!4 &498354
 Transform:
   m_ObjectHideFlags: 1
@@ -2948,19 +2941,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 459234}
   m_RootOrder: 2
---- !u!4 &499158
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199158}
-  m_LocalRotation: {x: 0, y: 0, z: .48564297, w: .87415731}
-  m_LocalPosition: {x: .5, y: 0, z: .600000024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 499164}
-  m_Father: {fileID: 459232}
-  m_RootOrder: 1
 --- !u!4 &499160
 Transform:
   m_ObjectHideFlags: 1
@@ -2973,7 +2953,7 @@ Transform:
   m_Children:
   - {fileID: 499162}
   m_Father: {fileID: 459232}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &499162
 Transform:
   m_ObjectHideFlags: 1
@@ -2985,18 +2965,6 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.50000012}
   m_Children: []
   m_Father: {fileID: 499160}
-  m_RootOrder: 0
---- !u!4 &499164
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199164}
-  m_LocalRotation: {x: 0, y: 0, z: -5.08737159e-08, w: 1}
-  m_LocalPosition: {x: .178824276, y: -.451049089, z: .586612105}
-  m_LocalScale: {x: 2, y: .200000003, z: .200000003}
-  m_Children: []
-  m_Father: {fileID: 499158}
   m_RootOrder: 0
 --- !u!20 &2059242
 Camera:
@@ -3376,26 +3344,6 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2399160
-Renderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199164}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!33 &3327892
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3480,13 +3428,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199162}
   m_Mesh: {fileID: 4300000, guid: 2186b8522b6fd4f3a91076b0b83cfe14, type: 3}
---- !u!33 &3399160
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199164}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5427892
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -3592,21 +3533,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &5499158
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199158}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &5499160
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -3629,7 +3555,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127890}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .810000002, y: .00999999978, z: .00999999978}
@@ -3682,18 +3608,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.94999981, y: 2, z: 2}
   m_Center: {x: -2.71000004, y: .150000006, z: -1.63999999}
---- !u!65 &6599158
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199158}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: .200000003, z: .200000003}
-  m_Center: {x: .180000007, y: -.449999988, z: .600000024}
 --- !u!65 &6599160
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3720,6 +3634,64 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159160}
   m_Enabled: 1
+--- !u!82 &8225696
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125696}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 3fe79e19e20ebfc4081174964a9d9a36, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8259246
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3890,6 +3862,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatar: {fileID: 0}
+--- !u!114 &11425694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60865502b8d8ca34380c941dff419b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
+  lesMASs:
+  - audioClips:
+    - {fileID: 8300000, guid: d18ebb0b1990f674eb356761efdee2cf, type: 3}
+    sceneDeLaMusique: 0
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: "Musique de l'\xE9cran titre"
+  - audioClips:
+    - {fileID: 8300000, guid: d47b361c122a8914cad4e1dc9eff971d, type: 3}
+    sceneDeLaMusique: 1
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique de mort
+  - audioClips:
+    - {fileID: 8300000, guid: 8fa200f496bb3df4489cdd33142aa48a, type: 3}
+    sceneDeLaMusique: 2
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 28000000
+    description: Musique avant de finir le WEI
+  - audioClips:
+    - {fileID: 8300000, guid: 7ad2e9fba0f57854690dee836c102bb5, type: 3}
+    sceneDeLaMusique: 2
+    flagsDevantEtreActives: bc010000
+    flagsDevantEtreDesactives: bd010000
+    description: Musique pendant le combat contre la boule
+  - audioClips:
+    - {fileID: 8300000, guid: 2628549d7c325c8418d9a7dd10fcb8ab, type: 3}
+    sceneDeLaMusique: 3
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique du labo LIRIS
+  - audioClips:
+    - {fileID: 8300000, guid: 8d527513c9d5b38488ede6e21f4d5265, type: 3}
+    sceneDeLaMusique: 4
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique de la chambre
+  - audioClips:
+    - {fileID: 8300000, guid: 8d527513c9d5b38488ede6e21f4d5265, type: 3}
+    sceneDeLaMusique: 5
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique de la chambre du gars devant le foyer
+  - audioClips:
+    - {fileID: 8300000, guid: caab2603553ec724a94094d68060ddb6, type: 3}
+    - {fileID: 8300000, guid: c25de0da32619ee4896378302bd250d8, type: 3}
+    sceneDeLaMusique: 6
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musiques du club BD
+  - audioClips:
+    - {fileID: 8300000, guid: ade6ab1a65ab9224e9320acedda82ca3, type: 3}
+    sceneDeLaMusique: 7
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique du gymnase
+  - audioClips:
+    - {fileID: 8300000, guid: 3f8787a447ea5d3418082238d9dd2d12, type: 3}
+    sceneDeLaMusique: 8
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: "Musique de la scolarit\xE9"
+  - audioClips:
+    - {fileID: 8300000, guid: 5e8826a599bad84479ae71fcbd551536, type: 3}
+    sceneDeLaMusique: 9
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique du bureau du directeur
+  - audioClips:
+    - {fileID: 8300000, guid: 7a6a73a7d67f0744285eb00efce6b93e, type: 3}
+    - {fileID: 8300000, guid: 0c1f97a237f747841a4f0a403a941e6f, type: 3}
+    - {fileID: 8300000, guid: 36349ffa62d47f149975e57822aabeaf, type: 3}
+    - {fileID: 8300000, guid: 9942acb2fcba3d64f9b8b20d85811444, type: 3}
+    sceneDeLaMusique: 10
+    flagsDevantEtreActives: 
+    flagsDevantEtreDesactives: 
+    description: Musique dans le labyrinthe
+  - audioClips:
+    - {fileID: 8300000, guid: 2d0339ee9302b74428cf19b6c6e3f258, type: 3}
+    sceneDeLaMusique: 11
+    flagsDevantEtreActives: af010000
+    flagsDevantEtreDesactives: b3010000
+    description: Musique pendant le boss
+--- !u!114 &11425696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435cccb038bc3374a9c8e26d51dfd359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 
+  flagsDevantEtreDesactives: 
 --- !u!114 &11427890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3906,7 +3987,7 @@ MonoBehaviour:
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   vignette: {fileID: 0}
-  tempsInitialVersFinal: 1
+  tempsInitialVersFinal: .5
   tempsFinalVersInitial: 1
   avancementAnim: 0
   enCoursDeRetour: 0
@@ -5784,11 +5865,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 159060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b1c5ce2f9b4db4384837c34d9fbbad, type: 3}
+  m_Script: {fileID: 11500000, guid: 33de65a9148654e42b1cfd5483493798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   estVivant: 1
   pointsDeVie: 20
+  pointsDeMana: 5
   pointsEndurance: 100
   attaque: 1
   defense: 1
@@ -5797,7 +5879,12 @@ MonoBehaviour:
   vitesseMarche: 5
   vitesseLancer: 1
   conditionsActuelles: 
-  pointsExperience: 0
+  experience: 0
+  experience_avant_niveau_suivant: 0
+  niveau: 0
+  cj: {fileID: 0}
+  h: {fileID: 0}
+  listeNiveauJoueur: []
 --- !u!114 &11459104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5832,7 +5919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeObjetsRecoltables:
   - {fileID: 159112}
-  - {fileID: 199158}
+  - {fileID: 177270}
   - {fileID: 199160}
   - {fileID: 177304}
   - {fileID: 177288}
@@ -5843,11 +5930,10 @@ MonoBehaviour:
   - {fileID: 177280}
   - {fileID: 127890}
   - {fileID: 177264}
-  - {fileID: 177270}
-  quantiteObjets: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  quantiteObjets: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   listeImages:
   - {fileID: 21300000, guid: d7ff4bb2b7f9e6b4d8486f8f5364109a, type: 3}
-  - {fileID: 21300000, guid: e2b7c48da2579f44eb462058a68984fb, type: 3}
+  - {fileID: 21300000, guid: fb1cfbb825fd38f4daf8ef6807b0c1cf, type: 3}
   - {fileID: 21300000, guid: 2a106c3170e485948a41ec6e8e022da1, type: 3}
   - {fileID: 21300000, guid: bc080808e23ca004a9209036d75eed25, type: 3}
   - {fileID: 21300000, guid: 0a8f1707cb4987d4285ee9d4530a7fce, type: 3}
@@ -5858,7 +5944,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6e9a4fc66b376d04680f9df4258d4d14, type: 3}
   - {fileID: 21300000, guid: 7e74da41067c0c14d9ced57bc029c638, type: 3}
   - {fileID: 21300000, guid: 2c027bb927c3ae34c84e4640690b0180, type: 3}
-  - {fileID: 21300000, guid: fb1cfbb825fd38f4daf8ef6807b0c1cf, type: 3}
   imageTransparente: {fileID: 21300000, guid: 5c6737768272e415ebd3b17d3ec6e20f, type: 3}
   imageRadar: {fileID: 21300000, guid: b3d06ac7474c6cc4d9f88323c82cdfa2, type: 3}
   imageBalayageRadar: {fileID: 21300000, guid: 1245bd2b78cebd244bf9fd34ed3778e7, type: 3}
@@ -5881,6 +5966,8 @@ MonoBehaviour:
   flagAssocie: -1
   flagsRequis: 
   flagsBloquants: 
+  pointsDeManaMax: 5
+  pointsDeManaActuels: 5
   joueurPrincipal: 1
   healthBarTexture: {fileID: 0}
 --- !u!114 &11459110
@@ -6027,12 +6114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  degatsParCoup: 10
+  degatsParCoup: 2
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   vignette: {fileID: 0}
-  tempsInitialVersFinal: 1
-  tempsFinalVersInitial: 1
+  tempsInitialVersFinal: .200000003
+  tempsFinalVersInitial: .200000003
   avancementAnim: 0
   enCoursDeRetour: 0
 --- !u!114 &11477254
@@ -6083,7 +6170,7 @@ MonoBehaviour:
   enTrainDAttaquer: 0
   vignette: {fileID: 0}
   tempsInitialVersFinal: .300000012
-  tempsFinalVersInitial: .300000012
+  tempsFinalVersInitial: 1
   avancementAnim: 0
   enCoursDeRetour: 0
 --- !u!114 &11477260
@@ -6114,12 +6201,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  degatsParCoup: 10
+  degatsParCoup: 15
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   vignette: {fileID: 0}
-  tempsInitialVersFinal: 1
-  tempsFinalVersInitial: 1
+  tempsInitialVersFinal: .5
+  tempsFinalVersInitial: .5
   avancementAnim: 0
   enCoursDeRetour: 0
 --- !u!114 &11477264
@@ -6165,12 +6252,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  degatsParCoup: 10
+  degatsParCoup: 20
   infligeDesDegatsAPlusieursEnnemis: 1
   enTrainDAttaquer: 0
   vignette: {fileID: 0}
-  tempsInitialVersFinal: 1
-  tempsFinalVersInitial: 1
+  tempsInitialVersFinal: .699999988
+  tempsFinalVersInitial: .699999988
   avancementAnim: 0
   enCoursDeRetour: 0
 --- !u!114 &11477282
@@ -6202,8 +6289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bypass: 0
   munitionsIllimitees: 1
-  degatsParBalle: 1
-  cooldown: .100000001
+  degatsParBalle: 5
+  cooldown: .200000003
   munitions: 0
   affecteParCaracteristiques: 1
   range: 50
@@ -6229,7 +6316,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd94e7cd008ef3941ae363d559d3d8b3, type: 3}
   m_Name: 
@@ -6311,42 +6398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconeEnveloppe: {fileID: 2800000, guid: 1d107b21a20924fc998aab109c5b5d1b, type: 3}
   nomFichierMessages: Dialogue/listeMessages.json
---- !u!114 &11499158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd94e7cd008ef3941ae363d559d3d8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypass: 0
-  delaiEntreDeuxTirs: .5
-  munitions: 0
-  objetReel: {fileID: 100000, guid: 7ec1d3ae49a782f46a6a2473c95b49f6, type: 2}
-  vitesseDeLance: 5
---- !u!114 &11499160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba85183981588742a349028b16a4bf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypass: 0
-  degatsParCoup: 10
-  infligeDesDegatsAPlusieursEnnemis: 1
-  enTrainDAttaquer: 0
-  vignette: {fileID: 0}
-  tempsInitialVersFinal: 1
-  tempsFinalVersInitial: 1
-  avancementAnim: 0
-  enCoursDeRetour: 0
 --- !u!114 &11499162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6430,17 +6481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11499172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &12459248
 Behaviour:
   m_ObjectHideFlags: 1
@@ -6504,7 +6544,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 35
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -6527,7 +6567,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 14
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2

@@ -11,7 +11,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ActivationSelonFlags : MonoBehaviour {
+public class ActivationSelonFlags : ActionSelonFlagsScene {
 	public List<int> flagsDevantEtreActives;
 	public List<int> flagsDevantEtreDesactives;
 
@@ -23,7 +23,7 @@ public class ActivationSelonFlags : MonoBehaviour {
 	/**
 	 * @brief Verifie que les flags des deux listes en attribut sont bien aux bons états
      */
-	public void Verifier () {
+	override public void Verifier () {
 		foreach(int idFlagA in flagsDevantEtreActives) {
 			if(!FlagManager.ChercherFlagParId(idFlagA).actif) { //Pas activé, problème
 				gameObject.SetActive(false); //On désactive le gO
