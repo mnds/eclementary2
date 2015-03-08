@@ -19,15 +19,19 @@ public class DegatsEcrasementBossFinal : MonoBehaviour {
 	//Si on touche quelque chose
 	void OnTriggerEnter (Collider c) {
 		Health h = c.gameObject.GetComponent<Health>();
-		if(h!=healthBossFinal) { //Si ce n'est pas le boss
+		if(estActif && h && h!=healthBossFinal) { //Si ce n'est pas le boss
 			h.SubirDegats(degats); //Pas soumis aux caractéristiques
 		}
 	}
 
 	void OnTriggerExit (Collider c) {
 		Health h = c.gameObject.GetComponent<Health>();
-		if(h!=healthBossFinal) { //Si ce n'est pas le boss
+		if(estActif && h && h!=healthBossFinal) { //Si ce n'est pas le boss
 			h.SubirDegats(degats); //Pas soumis aux caractéristiques
 		}
+	}
+
+	public void SetEstActif (bool a) {
+		estActif=a;
 	}
 }

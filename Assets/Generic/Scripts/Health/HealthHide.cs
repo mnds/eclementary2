@@ -16,4 +16,8 @@ public class HealthHide : Health {
 	public override void DeclencherMort () {
 		gameObject.SetActive(false);
 	}
+
+	override protected void OnChangementPointsDeVie () {
+		
+	}
 }

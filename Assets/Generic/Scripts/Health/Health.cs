@@ -95,7 +95,9 @@ public class Health : MonoBehaviour {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
 		//Debug.Log ("Points de vie avant le coup : " + pointsDeVieActuels);
 		pointsDeVieActuels -= degatsSubis;
-		Debug.Log ("Points de vie après le coup : " + pointsDeVieActuels);
+		OnChangementPointsDeVie(); //On a changé les points de vie, on a peut-etre des choses à faire
+
+//		Debug.Log ("Points de vie après le coup : " + pointsDeVieActuels);
 		if (pointsDeVieActuels <= 0 && !mort ) {
 			if(flagAssocie!=-1)
 				FlagManager.ActiverFlag(flagAssocie);
@@ -114,8 +116,7 @@ public class Health : MonoBehaviour {
 		if(!TesterFlags ()) return;
 		TesterFlags();
 		Caracteristiques caracDefenseur = gameObject.GetComponent<Caracteristiques> (); //Attention : Health et Carcteristiques doivent se trouver sur le meme gameObject
-		
-		
+
 		//Application de la formule de degats
 		float degatsSubis = degats;
 		
@@ -124,6 +125,8 @@ public class Health : MonoBehaviour {
 		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels, pointsDeVieMax); //Au cas où il y ait eu un problème
 		//Debug.Log ("Points de vie avant le coup : " + pointsDeVieActuels);
 		pointsDeVieActuels -= degatsSubis;
+		OnChangementPointsDeVie(); //On a changé les points de vie, on a peut-etre des choses à faire
+
 		Debug.Log ("Points de vie après le coup : " + pointsDeVieActuels);
 		if (pointsDeVieActuels <= 0 && !mort ) {
 			if(flagAssocie!=-1)
@@ -133,6 +136,9 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * @brief Vérifie si les dégats peuvent etre infligés
+	 */
 	private bool TesterFlags() {
 		foreach(int id in flagsRequis) //Verification flags requis
 			if(!FlagManager.ChercherFlagParId(id).actif)
@@ -141,6 +147,14 @@ public class Health : MonoBehaviour {
 			if(FlagManager.ChercherFlagParId(id).actif)
 				return false;
 		return true;
+	}
+
+	/**
+	 * @brief Permet de faire des choses quand les pdv changent
+	 * @details Peut avoir son importance dans le cas d'ennemis qui changent de pattern en fonction de leurs points de vie
+	 */
+	virtual protected void OnChangementPointsDeVie () {
+		Debug.Log ("Pas hérité");
 	}
 
 	virtual public void DeclencherMort () {

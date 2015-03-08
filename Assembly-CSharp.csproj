@@ -70,7 +70,10 @@
      <Compile Include="Assets\Generic\Joueurs\Scripts\Inventaire.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\OnClickRessusciter.cs" />
      <Compile Include="Assets\Generic\Joueurs\Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Generic\Scripts\Boss\AmphiGenerator.cs" />
+     <Compile Include="Assets\Generic\Scripts\Boss\BouleDeFeuBossFinal.cs" />
      <Compile Include="Assets\Generic\Scripts\Boss\DegatsEcrasementBossFinal.cs" />
+     <Compile Include="Assets\Generic\Scripts\Boss\HealthTileAmphi.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Personnage.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Replique.cs" />
@@ -120,7 +123,6 @@
      <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlags.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlagsScene.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ActivationBarreMana.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActivationBossFinal.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ActivationFlag.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ActivationSelonFlags.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ActiverFlagInteractif.cs" />
@@ -130,6 +132,7 @@
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlag.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagInteractif.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagOnTrigger.cs" />
+     <Compile Include="Assets\Generic\Scripts\Flags\ComportementBossFinal.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\FlagReduit.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\MusiqueAmbiance.cs" />

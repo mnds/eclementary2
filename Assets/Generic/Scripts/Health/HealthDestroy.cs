@@ -24,4 +24,8 @@ public class HealthDestroy : Health {
 			Instantiate (effetDeMort, objetDestruction.transform.position, Quaternion.identity);
 		Destroy (objetDestruction);
 	}
+
+	override protected void OnChangementPointsDeVie () {
+
+	}
 }

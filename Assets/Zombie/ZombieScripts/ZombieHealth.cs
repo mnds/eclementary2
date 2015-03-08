@@ -15,5 +15,9 @@ void Start ()
 	{
 		m_zombie.isdead = true;
 	} 
+
+	override protected void OnChangementPointsDeVie () {
+		
+	}
 	
 }

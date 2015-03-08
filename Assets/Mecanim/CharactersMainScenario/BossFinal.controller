@@ -8,11 +8,11 @@ AnimatorController:
   m_Name: BossFinal
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: Phase2
+  - m_Name: Walk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
@@ -678,8 +678,8 @@ Transition:
   m_TransitionDuration: .107142858
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: Walk
     m_EventTreshold: 0
     m_ExitTime: .892857134
   m_Atomic: 1
@@ -857,7 +857,7 @@ State:
   m_Motions:
   - {fileID: 7400004, guid: ba04f60db9cbab840b7a4523e824ca1f, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 252, y: -192, z: 0}
+  m_Position: {x: 120, y: -204, z: 0}
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
@@ -882,12 +882,12 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: WalkFWD
-  m_Speed: 1
+  m_Speed: .600000024
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 6b53ddcb8b863c2479de5e529fd60302, type: 3}
+  - {fileID: 7400000, guid: e0a059140495c824d996ba4ebbab5ae4, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 368, y: -87, z: 0}
+  m_Position: {x: 120, y: -108, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -1107,8 +1107,11 @@ StateMachine:
       first: {fileID: 110200000}
       second:
       - {fileID: 110172446}
+    data:
+      first: {fileID: 110210530}
+      second: []
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: 324, y: 156, z: 0}
+  m_AnyStatePosition: {x: 168, y: 156, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
 --- !u!1107 &110727177
 StateMachine:
