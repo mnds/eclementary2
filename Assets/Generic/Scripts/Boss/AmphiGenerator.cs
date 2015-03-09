@@ -53,12 +53,6 @@ public class AmphiGenerator : MonoBehaviour {
 				             Quaternion.identity) as GameObject;
 				tileMilieu.GetComponent<HealthTileAmphi>().SetTypeTile(HealthTileAmphi.TypeTile.DeuxiemeCouche);
 				tileMilieu.transform.parent=parentTiles.transform;
-				//Créer tile du bas
-				GameObject tileBas = Instantiate(tile,coinSuperieurGauche
-				             +new Vector3(i*tailleX,-2*hauteurY,j*tailleZ),
-				             Quaternion.identity) as GameObject;
-				tileBas.GetComponent<HealthTileAmphi>().SetTypeTile(HealthTileAmphi.TypeTile.TroisiemeCouche);
-				tileBas.transform.parent=parentTiles.transform;
 			}
 		}
 

@@ -21,14 +21,14 @@ public class HealthTileAmphi : HealthDestroy {
 	public TypeTile type;
 
 
-	private float degatsParContactPremiereCouche = 10f; //Dégats subis quand on touche une case en feu
-	private float degatsParContactDeuxiemeCouche = 20f; //Dégats subis quand on touche une case en feu
-	private float degatsParContactTroisiemeCouche = 30f; //Dégats subis quand on touche une case en feu
+	private float degatsParContactPremiereCouche = 0f; //Dégats subis quand on touche une case en feu
+	private float degatsParContactDeuxiemeCouche = 0f; //Dégats subis quand on touche une case en feu
+	private float degatsParContactTroisiemeCouche = 0f; //Dégats subis quand on touche une case en feu
 	private float degatsParContactQuatriemeCouche = 1000000f; //Dégats subis quand on touche une case tout en bas
 	private float degatsParContact; //Prendra la bonne valeur dans Start
 
-	private float pointsDeViePremiereCouche = 200000f; //Points de vie de la couche du dessus
-	private float pointsDeVieDeuxiemeCouche = 1000000f; //Points de vie de la couche au milieu
+	private float pointsDeViePremiereCouche = 5000f; //Points de vie de la couche du dessus
+	private float pointsDeVieDeuxiemeCouche = 5000f; //Points de vie de la couche au milieu
 	private float pointsDeVieTroisiemeCouche = 100000f; //Points de vie de la couche du bas
 	private float pointsDeVieQuatriemeCouche = 100000000000000f; //Points de vie de la couche tout en bas. Impossible à tuer
 

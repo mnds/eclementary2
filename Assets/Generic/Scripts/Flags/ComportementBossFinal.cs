@@ -29,7 +29,7 @@ public class ComportementBossFinal : ActionSelonFlagsScene {
 	public float ratio = 3f; //De combien ça doit grossir
 
 	//Phase 2 : le boss marche sur le terrain
-	private bool phaseDeux = false;
+	private bool phaseDeux = true;
 	public DegatsEcrasementBossFinal debfGauche; //Zones d'écrasement des pieds
 	public DegatsEcrasementBossFinal debfDroite;
 	private float vitesseRotation = 2f; //Vitesse à laquelle le boss se tourne
@@ -162,7 +162,7 @@ public class ComportementBossFinal : ActionSelonFlagsScene {
 	private void FinirPhaseDeux () {
 		Debug.Log ("Fin phase3");
 		phaseDeux = false;
-		phaseTrois=true; //Passage phase 3
+		//phaseTrois=true; //Passage phase 3
 	}
 	
 
