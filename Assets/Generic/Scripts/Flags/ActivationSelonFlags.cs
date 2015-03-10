@@ -39,4 +39,9 @@ public class ActivationSelonFlags : ActionSelonFlagsScene {
 		//Tout est bon
 		gameObject.SetActive(true);
 	}
+
+	
+	void OnDestroy() {
+		ControlCenter.RemoveObjetActivableSelonFlags(this,Application.loadedLevelName);
+	}
 }
