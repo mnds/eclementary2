@@ -79,6 +79,9 @@ public class Messager : MonoBehaviour
 		Message message = fileMessages.Dequeue (); // Récupération du message en début de file
 		string texteAAfficher;
 
+		// Enregistrement du message, en cas de sauvegarde: il serait le premier message affiché au joueur lors du chargement d'une partie
+		StateManager.getInstance().gameData.IdMessageReveil = message.GetId();
+
 		if (message.GetExpediteur ().ToLower ().Equals ("moi"))
 			texteAAfficher = message.GetTexte (); // Seul le message est affiché si celui-ci est en réalité une pensée
 		else // Sinon l'expéditeur est aussi affiché

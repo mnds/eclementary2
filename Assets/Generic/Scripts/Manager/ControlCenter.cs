@@ -260,6 +260,18 @@ static public class ControlCenter {
 	}
 
 	/**
+	 * @brief Retire un objet dont l'activation dépend des flags.
+	 * @param asf Le script qui détermine si l'objet doit etre active ou non
+	 * @param nomScene_ Le nom de la scene dans laquelle se trouve l'objet
+	 **/
+	static public void RemoveObjetActivableSelonFlags(ActionSelonFlagsScene asf, string nomScene_) {
+		foreach(ObjetActivableSelonFlags oasf in lesOASFs) {
+			if(oasf.asf==asf && oasf.nomScene==nomScene_)
+				Debug.Log ("Activation réussie : "+lesOASFs.Remove(oasf));
+		}
+	}
+
+	/**
 	 * @brief Enlève tous les oasf qui ne sont pas dans la bonne scène donc qu'on ne doit pas étudier, et on vérifie si les objets correspondants doivent se désactiver ou pas.
 	 * @details Appelée notamment lorsqu'un flag est activé/désactivé.
 	 **/
