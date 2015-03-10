@@ -33,6 +33,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	public Sprite imageBalayageRadar;
 
 	private GameObject inventaire;//Stock la fenetre d'inventaire
+	private GameObject caracteristique;//Stock la fenetre des caracteristiques
 	public Sprite imageVide;
 
 	//Objet actuel
@@ -70,6 +71,13 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 
 		if(!inventaire)
 			Debug.Log("Activez l'objet de nom FenetreInventaire");
+
+		//On déclare la fenetre carac, qui doit etre activée au départ
+		caracteristique = GameObject.Find ("InterfaceCaracterstique");
+		caracteristique.SetActive (false);
+
+		if(!caracteristique)
+			Debug.Log("Activez l'objet de nom InterfaceCaracterstique");
 
 		for(int k=0;k<listeObjetsRecoltables.Count;k++) //On récupère les objets de quantité non nulle
 		{
@@ -203,7 +211,7 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 		if(ControlCenter.GetCinematiqueEnCours()) return; //Pas d'inventaire si cinématique en cours
 
 
-		bool inventaireOuvert=false;
+		bool inventaireOuvert=false;//Vérifie si l'inventaire est ouvert
 		if(inventaire)
 			inventaireOuvert = inventaire.activeSelf;//Dit si l'inventaire est déjà ouvert
 		ControlCenter.inventaireOuvert = inventaireOuvert;
@@ -217,8 +225,24 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 			inventaire.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
 			MiseAJourInventaire();
 		}
-		
+
 		if(ControlCenter.inventaireOuvert) return;
+
+		bool caracOuverte = false;//Vérifie si la fenetre de caracs est ouverte
+		if(caracteristique)
+			caracOuverte = caracteristique.activeSelf;//Dit si la fenetre d'inventaire est déjà ouvert
+		ControlCenter.caracteristiqueOuvert = caracOuverte;
+		
+		if(caracOuverte && Input.GetButtonDown("Caracteristique"))
+		{
+			caracteristique.SetActive(false);//Si on appuie sur la touche et qu'il est ouvert, on ferme
+		}
+		else if(!caracOuverte && Input.GetButtonDown("Caracteristique"))
+		{
+			caracteristique.SetActive(true);//Si on appuie et qu'il est fermé on ouvre
+		}
+
+		if(ControlCenter.caracteristiqueOuvert) return;
 
 
 		//On vérifie si l'objet est utilisé pour attaquer ou s'il est lancé

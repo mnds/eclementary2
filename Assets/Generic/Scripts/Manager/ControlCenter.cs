@@ -78,6 +78,7 @@ static public class ControlCenter {
 	static private bool utiliserOculus = false; //Dans FPCClassic
 	static private bool pause = false;
 	static public bool inventaireOuvert = false;
+	static public bool caracteristiqueOuvert = false;
 
 	static GameObject joueurPrincipal;
 	static Camera cameraPrincipale;
