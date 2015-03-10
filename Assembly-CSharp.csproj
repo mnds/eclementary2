@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +58,15 @@
      <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuAnneau.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuLanceur.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuProjectile.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\Bobine.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairCreator.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairLanceur.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRender.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRenderBobine.cs" />
+     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\LigneDegats.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Pickable.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Soigner.cs" />
      <Compile Include="Assets\FPS\Scripts\Armes\Tirer.cs" />
@@ -223,7 +232,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Logiciel/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
