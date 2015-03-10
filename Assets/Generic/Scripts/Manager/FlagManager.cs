@@ -126,8 +126,9 @@ static public class FlagManager {
 		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointMilieuTerrain",ControlCenter.nomDeLaSceneDuCampus,true)),
 																								new EnvoyerMessage(new Item(NomItem.Message,"40"))})); //Activ\u00E9 en parlant de nouveau au Weiman
 		flags.Add (new Flag(42,false,"Choix du batiment",new List<int>(){40},new List<int>(){42})); //Activ\u00E9 en rentrant \u00E0 Adoma
-		flags.Add (new Flag(44,false,"Lit apres le WEI",new List<int>(){42},new List<int>(){44},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"44"))})); //Activ\u00E9 en \u00E9tudiant le lit
-		flags.Add (new Flag(50,false,"Papier du cadavre obtenu",new List<int>(){44},new List<int>(){50},new List<Evenement>(){}));
+		flags.Add (new Flag(44,false,"Lit apres le WEI",new List<int>(){42},new List<int>(){44},new List<Evenement>(){})); //Activ\u00E9 en \u00E9tudiant le lit
+		flags.Add (new Flag(45,false,"Appui porte après lit",new List<int>(){44},new List<int>(){45},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"44"))})); //Activ\u00E9 en \u00E9tudiant le lit
+		flags.Add (new Flag(50,false,"Papier du cadavre obtenu",new List<int>(){45},new List<int>(){50},new List<Evenement>(){}));
 		flags.Add (new Flag(60,false,"Discussion avec le personnage devant le foyer",new List<int>(){44},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"60"))})); //Activ\u00E9 en parlant au GarsFoyer
 		flags.Add (new Flag(70,false,"Recuperation de la belle boite",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer (Comparat)
 		flags.Add (new Flag(80,false,"Recuperation du plan de Centrale",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer

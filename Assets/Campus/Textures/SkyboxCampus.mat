@@ -29,13 +29,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _FrontTex
         second:
           m_Texture: {fileID: 2800000, guid: 1cb33a4a5657a95489971c0f70c80eea, type: 3}
@@ -116,6 +109,13 @@ Material:
           name: _DownTex2
         second:
           m_Texture: {fileID: 2800000, guid: 7fee356777321624da4133e6bce2772a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

@@ -24,6 +24,12 @@ public class GameData {
 	private string nomEtatSauve;
 	private List<FlagReduit> flagsReduits;
 	private List<int> listeMunitions; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
+	private string idMessageReveil; // Message affiché lorsque le joueur charge la partie, pour le diriger dans sa quête
+
+	public string IdMessageReveil {
+		get { return idMessageReveil; }
+		set { idMessageReveil = value; }
+	}
 
 	public float PointsDeVieSauves {
 		get { return pointsDeVieSauves; }
@@ -134,7 +140,8 @@ public class GameData {
 		ControlCenter.SetNomSpawnPointActuel ( gameData.NomSpawnPointSauve );
 		ControlCenter.idScenePrecedente = gameData.IdScenePrecedente;
 		RemplacerFlags ( gameData );
-		ChargerEtat( gameData.nomEtatSauve ); // Chargement de l'état auquel le joueur avait fait sa sauvegarde
+		ChargerEtat( gameData.NomEtatSauve ); // Chargement de l'état auquel le joueur avait fait sa sauvegarde
+		new EnvoyerMessage (new Item (NomItem.Message, gameData.IdMessageReveil)).DeclencherEvenement (); // Affichage du dernier message affiché
 
 		/*Debug.Log ("Points de vie chargés" + gameData.PointsDeVieSauves );
 		Debug.Log ("Points xp:" + gameData.PointsExperience);
