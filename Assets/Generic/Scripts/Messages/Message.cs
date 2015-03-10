@@ -8,6 +8,7 @@
 
 using UnityEngine;
 
+[System.Serializable]
 public class Message
 {
 	private string id;
