@@ -15,7 +15,7 @@ public class EtatLancement : EtatNonJouable
 	{
 		sceneCorrespondante = ControlCenter.nomDeLaSceneDepart;
 		ChargerSceneCorrespondante ();
-
+		FlagManager.ActiverFlag (9);
 	}
 
 	// Redéfinition des méthodes de la classe abstraite Etat
