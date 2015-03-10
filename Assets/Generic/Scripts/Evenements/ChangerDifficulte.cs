@@ -11,9 +11,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ChangerDifficulte : Evenement {
+	Item d;
+	
+	public ChangerDifficulte(Item difficulte) {
+		d = difficulte;
+	}
+
+
 	public override void DeclencherEvenement( params Item[] items ) {
-		//Le premier item contient la difficulte
-		Item d = items[0];
 		ControlCenter.Difficulte diff=d.GetNomDifficulte();
 		switch(d.GetNomDifficulte()) {
 		case(ControlCenter.Difficulte.Facile):

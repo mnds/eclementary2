@@ -23,5 +23,10 @@ public abstract class EtatJouable : Etat {
 			IScriptEtatJouable script = (IScriptEtatJouable)listeScriptsEtatJouable [i];
 			script.setEnabled (true);
 		}
+
+		// Activation éventuelle de l'inventaire
+		bool inventaireActivable = FlagManager.ChercherFlagParId (130).actif;
+		if (inventaireActivable)
+			new ActiverInventaire ().DeclencherEvenement ();
 	}
 }
