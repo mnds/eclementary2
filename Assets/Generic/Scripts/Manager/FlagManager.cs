@@ -115,10 +115,11 @@ static public class FlagManager {
 		flags.Add (new Flag(5,false,"Mort de la boule",new List<int>() {4}));*/
 
 		//Flags de difficult\u00E9 du jeu
-		flags.Add (new Flag(1,false,"Difficult\u00E9 facile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Facile))}));
-		flags.Add (new Flag(2,false,"Difficult\u00E9 normale",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Normale))}));
-		flags.Add (new Flag(3,false,"Difficult\u00E9 difficile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Difficile))}));
-		flags.Add (new Flag(4,false,"Difficult\u00E9 tr\u00E8s difficile",new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.TresDifficile))}));
+		flags.Add (new Flag(9, false, "Flag écran titre", new List<Evenement>(){new DesactiverInventaire()}) );
+		flags.Add (new Flag(1,false,"Difficult\u00E9 facile",new List<Evenement>(){new ChangerDifficulte(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Facile))}));
+		flags.Add (new Flag(2,false,"Difficult\u00E9 normale",new List<Evenement>(){new ChangerDifficulte(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Normale))}));
+		flags.Add (new Flag(3,false,"Difficult\u00E9 difficile",new List<Evenement>(){new ChangerDifficulte(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.Difficile))}));
+		flags.Add (new Flag(4,false,"Difficult\u00E9 tr\u00E8s difficile",new List<Evenement>(){new ChangerDifficulte(new Item(NomItem.NomDifficulte,ControlCenter.Difficulte.TresDifficile))}));
 		//Flags du scenario
 		flags.Add (new Flag(10,false,"Debut du jeu",new List<int>(){},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointPresWeiman",ControlCenter.nomDeLaSceneDuCampus,true))}));
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){})); //Activ\u00E9 en parlant au Weiman
@@ -137,7 +138,7 @@ static public class FlagManager {
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"110"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){})); //Activ\u00E9 en ramassant un des composants \u00E9lectroniques
 		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"120"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
-		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){})); //Activ\u00E9 en parlant \u00E0 profLiris
+		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){new ActiverInventaire()})); //Activ\u00E9 en parlant \u00E0 profLiris
 		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
 		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail ClubBD
 		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150})); //Dialogue interm\u00E9diaire

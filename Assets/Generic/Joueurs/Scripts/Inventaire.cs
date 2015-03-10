@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 using UnityEngine.UI;
 
-public class Inventaire : MonoBehaviour, IScriptEtatJouable {
+public class Inventaire : MonoBehaviour {
 	public List<GameObject> listeObjetsRecoltables; //TOUS les objets possibles
 	List<GameObject> listeObjetsUtilisables = new List<GameObject>(); //Tous les objets de quantité supérieure à 1
 	public List<int> quantiteObjets; //Match listeObjetsRecoltables. On doit en garder une trace pour d'éventuels changements de scène ou autres traitements
@@ -49,8 +49,9 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 	//Handles glow
 	GlowSimple gsAncien;
 
-	private bool enabled = true; // variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
-	
+	// variable booléenne qui servira à l'implémentation des méthodes de IScriptEtatJouable
+	private bool enabled;
+
 	/*
 	void OnLevelWasLoaded () {
 		if (!enabled)
@@ -65,6 +66,8 @@ public class Inventaire : MonoBehaviour, IScriptEtatJouable {
 
 	// Use this for initialization
 	void Start () {
+		// Initialisée avec l'état du flag 130 
+		enabled = FlagManager.ChercherFlagParId(130).actif;
 		//On déclare l'inventaire, qui doit etre activé au départ.
 		inventaire=GameObject.Find ("FenetreInventaire");
 		inventaire.SetActive(false);
