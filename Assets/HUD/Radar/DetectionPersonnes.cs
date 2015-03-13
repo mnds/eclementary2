@@ -23,15 +23,23 @@ public class DetectionPersonnes : MonoBehaviour {
 	private Vector2 vecteurCamera;
 	private Vector2 vecteurCible;
 
+	// Permet d'activer/désactiver les actions effectuées par le script
+	private bool enabled;
+
 	void Start () 
 	{
 		joueur = ControlCenter.GetJoueurPrincipal ();//On récupère le joueur
 		distanceRadar = 10f;
+		// Initialisée avec l'état du flag 130 
+		enabled = FlagManager.ChercherFlagParId (ControlCenter.idFlagEtatInventaire).actif;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (!enabled)
+			return;
+
 		listePnj = GameObject.FindGameObjectsWithTag ("PNJ"); //On récupère tous les PNJs du jeu
 		listeEnnemis = GameObject.FindGameObjectsWithTag ("Ennemi"); //On récupère tous les ennemis sur le terrain
 
@@ -120,5 +128,13 @@ public class DetectionPersonnes : MonoBehaviour {
 			}
 		}
 
+	}
+
+	public bool isEnabled() {
+		return enabled;
+	}
+
+	public void SetEnabled( bool ok ) {
+		enabled = ok;
 	}
 }

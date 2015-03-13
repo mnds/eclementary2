@@ -1,240 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE5B01A6-CD41-9BAC-559E-CC68FFFF36CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
-    <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
-     <Compile Include="Assets\Campus\Scripts\IntensiteSoleil.cs" />
-     <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
-     <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
-     <Compile Include="Assets\Campus\Scripts\RotationSoleilLune.cs" />
-     <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
-     <Compile Include="Assets\Campus\Scripts\TransitionSkyboxes.cs" />
-     <Compile Include="Assets\EcranFin\Defilement.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ArmeMainScript.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuAnneau.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuLanceur.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuProjectile.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\Bobine.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairCreator.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairLanceur.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRender.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRenderBobine.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\LigneDegats.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Pickable.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Soigner.cs" />
-     <Compile Include="Assets\FPS\Scripts\Armes\Tirer.cs" />
-     <Compile Include="Assets\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
-     <Compile Include="Assets\FPS\Scripts\JoueurScripts\ControllerJoueur.cs" />
-     <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
-     <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassicAnim.cs" />
-     <Compile Include="Assets\FPS\Scripts\JoueurScripts\JoueurCaracteristiques.cs" />
-     <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionEnvironnement.cs" />
-     <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionManager.cs" />
-     <Compile Include="Assets\Generic\Joueurs\Scripts\Inventaire.cs" />
-     <Compile Include="Assets\Generic\Joueurs\Scripts\OnClickRessusciter.cs" />
-     <Compile Include="Assets\Generic\Joueurs\Scripts\ScoreManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Boss\AmphiGenerator.cs" />
-     <Compile Include="Assets\Generic\Scripts\Boss\BouleDeFeuBossFinal.cs" />
-     <Compile Include="Assets\Generic\Scripts\Boss\DegatsEcrasementBossFinal.cs" />
-     <Compile Include="Assets\Generic\Scripts\Boss\HealthTileAmphi.cs" />
-     <Compile Include="Assets\Generic\Scripts\Dialogue\Dialogue.cs" />
-     <Compile Include="Assets\Generic\Scripts\Dialogue\Personnage.cs" />
-     <Compile Include="Assets\Generic\Scripts\Dialogue\Replique.cs" />
-     <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\Lancement.cs" />
-     <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\LireMusiques.cs" />
-     <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\LoadSceneScript.cs" />
-     <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\MoveCamera.cs" />
-     <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\SpawnPoint.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\Etat.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatAmphi2.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatBasket.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatBureauDirecteur.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatCampus.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatChambre.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatChambreGarsFoyer.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatClubBD.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatDepart.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatFin.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatGymnase.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatJouable.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatLaboLIRIS.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatLabyrinthe.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatLancement.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatMort.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatNonJouable.cs" />
-     <Compile Include="Assets\Generic\Scripts\Etats\EtatScolarite.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverAnimation.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverBruitage.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCle.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCycleJourNuit.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverEcranFin.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverInventaire.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ActiverSon.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ChangerDifficulte.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\ChangerSpawnPoint.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCle.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCycleJourNuit.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverInventaire.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverSon.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\Enregistrer.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\EnvoyerMessage.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\Evenement.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\FinirJeu.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\Mourir.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\Ressusciter.cs" />
-     <Compile Include="Assets\Generic\Scripts\Evenements\SauverGameData.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlags.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlagsScene.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActivationBarreMana.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActivationFlag.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActivationSelonFlags.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActiverFlagInteractif.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ActiverFlagOnTriggerEnter.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\AffichageTexteEcran.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\AffichageTexteRaycast.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlag.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagInteractif.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagOnTrigger.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ComportementBossFinal.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\FlagReduit.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\MusiqueAmbiance.cs" />
-     <Compile Include="Assets\Generic\Scripts\Health\Health.cs" />
-     <Compile Include="Assets\Generic\Scripts\Health\HealthDestroy.cs" />
-     <Compile Include="Assets\Generic\Scripts\Health\HealthHide.cs" />
-     <Compile Include="Assets\Generic\Scripts\Health\HealthPlayer.cs" />
-     <Compile Include="Assets\Generic\Scripts\Interfaces\IActivable.cs" />
-     <Compile Include="Assets\Generic\Scripts\Interfaces\IScriptEtatJouable.cs" />
-     <Compile Include="Assets\Generic\Scripts\Interfaces\Interactif.cs" />
-     <Compile Include="Assets\Generic\Scripts\Items\Cle.cs" />
-     <Compile Include="Assets\Generic\Scripts\Items\Item.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\ControlCenter.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\ControlCenterManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\DebugManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\FlagManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\GameData.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\SauvegardeLit.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\SetJoueurPrincipal.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\SetTexte.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\StateManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Manager\TerrainSoundManager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Messages\Message.cs" />
-     <Compile Include="Assets\Generic\Scripts\Messages\Messager.cs" />
-     <Compile Include="Assets\Generic\Scripts\Minijeux\MinijeuBasket.cs" />
-     <Compile Include="Assets\Generic\Scripts\ModificationObjets\Autodestruction.cs" />
-     <Compile Include="Assets\Generic\Scripts\ModificationObjets\BlobShadowFollow.cs" />
-     <Compile Include="Assets\Generic\Scripts\ModificationObjets\GlowSimple.cs" />
-     <Compile Include="Assets\Generic\Scripts\Pathfinding\Roadfinding_Enemy.cs" />
-     <Compile Include="Assets\Generic\Scripts\Pathfinding\Tourelle.cs" />
-     <Compile Include="Assets\Generic\Scripts\Statics\Couleurs.cs" />
-     <Compile Include="Assets\HUD\Radar\DetectionPersonnes.cs" />
-     <Compile Include="Assets\HUD\Radar\RotationRadar.cs" />
-     <Compile Include="Assets\HUD\Scripts\GestionAffichageCaracs.cs" />
-     <Compile Include="Assets\HUD\Scripts\GestionBarre.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\AnimationChute.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeCameraScreamer.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeDeathZone.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeEnemy.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeManager.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeOscillerSon.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeTravel.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeTriggerManager.cs" />
-     <Compile Include="Assets\Labyrinthe\Scripts\MazeWallManager.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRManager.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRPluginEvent.cs" />
-     <Compile Include="Assets\OVR\Scripts\OVRTracker.cs" />
-     <Compile Include="Assets\OVR\Scripts\OvrCapi.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRCrosshair.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRGUI.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRGamepadController.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRGridCube.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRMainMenu.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
-     <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
-     <Compile Include="Assets\Prefabs\ContactArmeScript.cs" />
-     <Compile Include="Assets\Prefabs\ContactPrefabScript.cs" />
-     <Compile Include="Assets\Prefabs\ObjetEnSceneScript.cs" />
-     <Compile Include="Assets\RPG\Scripts\BasketGagnerPoint.cs" />
-     <Compile Include="Assets\RPG\Scripts\BasketJoueur.cs" />
-     <Compile Include="Assets\RPG\Scripts\Caracteristiques.cs" />
-     <Compile Include="Assets\RPG\Scripts\Niveau.cs" />
-     <Compile Include="Assets\Zombie\ZombieScripts\Creation_Zombie.cs" />
-     <Compile Include="Assets\Zombie\ZombieScripts\ZombieCaracteristiques.cs" />
-     <Compile Include="Assets\Zombie\ZombieScripts\ZombieHealth.cs" />
-     <Compile Include="Assets\Zombie\ZombieScripts\ZombieSousAttaque.cs" />
-     <Compile Include="Assets\Zombie\ZombieScripts\Zombie_Comportement.cs" />
-     <Compile Include="Assets\_IMPORTED\SimpleJSON\SimpleJSON.cs" />
-     <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\_IMPORTED\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
-     <Compile Include="Assets\_IMPORTED\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
-     <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
-     <None Include="Assets\Mecanim\AnimationZombie\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Plugins\donotdelete.txt" />
-     <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
-     <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
-     <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
-     <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
-     <None Include="Assets\_IMPORTED\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Generic\Scripts\Dialogue\Readme.txt" />
-     <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
-     <None Include="Assets\Plugins\x86\donotdelete.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Campus\Scripts\AllumageLampe.cs" />
+    <Compile Include="Assets\Campus\Scripts\IntensiteSoleil.cs" />
+    <Compile Include="Assets\Campus\Scripts\LumiereFlare.cs" />
+    <Compile Include="Assets\Campus\Scripts\PorteSimple.cs" />
+    <Compile Include="Assets\Campus\Scripts\RotationSoleilLune.cs" />
+    <Compile Include="Assets\Campus\Scripts\ScriptHorloge.cs" />
+    <Compile Include="Assets\Campus\Scripts\TransitionSkyboxes.cs" />
+    <Compile Include="Assets\EcranFin\Defilement.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ArmeMainScript.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\Attaquer.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\Lancer.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ObjetLance.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuAnneau.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuLanceur.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFeu\BouleDeFeuProjectile.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\Bobine.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairCreator.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairLanceur.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRender.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\EclairRenderBobine.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\ParcheminDeFoudre\LigneDegats.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\Pickable.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\Soigner.cs" />
+    <Compile Include="Assets\FPS\Scripts\Armes\Tirer.cs" />
+    <Compile Include="Assets\FPS\Scripts\ControlCenterScripts\SpawnJoueur.cs" />
+    <Compile Include="Assets\FPS\Scripts\JoueurScripts\ControllerJoueur.cs" />
+    <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassic.cs" />
+    <Compile Include="Assets\FPS\Scripts\JoueurScripts\FPCClassicAnim.cs" />
+    <Compile Include="Assets\FPS\Scripts\JoueurScripts\JoueurCaracteristiques.cs" />
+    <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionEnvironnement.cs" />
+    <Compile Include="Assets\Generic\Joueurs\Scripts\InteractionManager.cs" />
+    <Compile Include="Assets\Generic\Joueurs\Scripts\Inventaire.cs" />
+    <Compile Include="Assets\Generic\Joueurs\Scripts\OnClickRessusciter.cs" />
+    <Compile Include="Assets\Generic\Joueurs\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Boss\AmphiGenerator.cs" />
+    <Compile Include="Assets\Generic\Scripts\Boss\BouleDeFeuBossFinal.cs" />
+    <Compile Include="Assets\Generic\Scripts\Boss\DegatsEcrasementBossFinal.cs" />
+    <Compile Include="Assets\Generic\Scripts\Boss\HealthTileAmphi.cs" />
+    <Compile Include="Assets\Generic\Scripts\Dialogue\Dialogue.cs" />
+    <Compile Include="Assets\Generic\Scripts\Dialogue\Personnage.cs" />
+    <Compile Include="Assets\Generic\Scripts\Dialogue\Replique.cs" />
+    <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\Lancement.cs" />
+    <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\LireMusiques.cs" />
+    <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\LoadSceneScript.cs" />
+    <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\MoveCamera.cs" />
+    <Compile Include="Assets\Generic\Scripts\EnvironnementUtilisateur\SpawnPoint.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\Etat.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatAmphi2.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatBasket.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatBureauDirecteur.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatCampus.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatChambre.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatChambreGarsFoyer.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatClubBD.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatDepart.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatFin.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatGymnase.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatJouable.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatLaboLIRIS.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatLabyrinthe.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatLancement.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatMort.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatNonJouable.cs" />
+    <Compile Include="Assets\Generic\Scripts\Etats\EtatScolarite.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverAnimation.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverBruitage.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCle.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverCycleJourNuit.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverEcranFin.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverInventaire.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ActiverSon.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ChangerDifficulte.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\ChangerSpawnPoint.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCle.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverCycleJourNuit.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverInventaire.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\DesactiverSon.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\Enregistrer.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\EnvoyerMessage.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\Evenement.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\FinirJeu.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\Mourir.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\Ressusciter.cs" />
+    <Compile Include="Assets\Generic\Scripts\Evenements\SauverGameData.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlags.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActionSelonFlagsScene.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActivationBarreMana.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActivationFlag.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActivationSelonFlags.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActiverFlagInteractif.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ActiverFlagOnTriggerEnter.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\AffichageTexteEcran.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\AffichageTexteRaycast.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlag.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagInteractif.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagOnTrigger.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\ComportementBossFinal.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\FlagReduit.cs" />
+    <Compile Include="Assets\Generic\Scripts\Flags\MusiqueAmbiance.cs" />
+    <Compile Include="Assets\Generic\Scripts\Health\Health.cs" />
+    <Compile Include="Assets\Generic\Scripts\Health\HealthDestroy.cs" />
+    <Compile Include="Assets\Generic\Scripts\Health\HealthHide.cs" />
+    <Compile Include="Assets\Generic\Scripts\Health\HealthPlayer.cs" />
+    <Compile Include="Assets\Generic\Scripts\Interfaces\IActivable.cs" />
+    <Compile Include="Assets\Generic\Scripts\Interfaces\IScriptEtatJouable.cs" />
+    <Compile Include="Assets\Generic\Scripts\Interfaces\Interactif.cs" />
+    <Compile Include="Assets\Generic\Scripts\Items\Cle.cs" />
+    <Compile Include="Assets\Generic\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\ControlCenter.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\ControlCenterManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\DebugManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\FlagManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\GameData.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\SauvegardeLit.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\SetJoueurPrincipal.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\SetTexte.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\StateManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Manager\TerrainSoundManager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Messages\Message.cs" />
+    <Compile Include="Assets\Generic\Scripts\Messages\Messager.cs" />
+    <Compile Include="Assets\Generic\Scripts\Minijeux\MinijeuBasket.cs" />
+    <Compile Include="Assets\Generic\Scripts\ModificationObjets\Autodestruction.cs" />
+    <Compile Include="Assets\Generic\Scripts\ModificationObjets\BlobShadowFollow.cs" />
+    <Compile Include="Assets\Generic\Scripts\ModificationObjets\GlowSimple.cs" />
+    <Compile Include="Assets\Generic\Scripts\Pathfinding\Roadfinding_Enemy.cs" />
+    <Compile Include="Assets\Generic\Scripts\Pathfinding\Tourelle.cs" />
+    <Compile Include="Assets\Generic\Scripts\Statics\Couleurs.cs" />
+    <Compile Include="Assets\HUD\Radar\DetectionPersonnes.cs" />
+    <Compile Include="Assets\HUD\Radar\RotationRadar.cs" />
+    <Compile Include="Assets\HUD\Scripts\GestionAffichageCaracs.cs" />
+    <Compile Include="Assets\HUD\Scripts\GestionBarre.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\AnimationChute.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeCameraScreamer.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeDeathZone.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeEnemy.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeManager.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeOscillerSon.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeTravel.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeTriggerManager.cs" />
+    <Compile Include="Assets\Labyrinthe\Scripts\MazeWallManager.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRManager.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRPluginEvent.cs" />
+    <Compile Include="Assets\OVR\Scripts\OVRTracker.cs" />
+    <Compile Include="Assets\OVR\Scripts\OvrCapi.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRCrosshair.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRGUI.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRGamepadController.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRGridCube.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRMainMenu.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
+    <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+    <Compile Include="Assets\Prefabs\ContactArmeScript.cs" />
+    <Compile Include="Assets\Prefabs\ContactPrefabScript.cs" />
+    <Compile Include="Assets\Prefabs\ObjetEnSceneScript.cs" />
+    <Compile Include="Assets\RPG\Scripts\BasketGagnerPoint.cs" />
+    <Compile Include="Assets\RPG\Scripts\BasketJoueur.cs" />
+    <Compile Include="Assets\RPG\Scripts\Caracteristiques.cs" />
+    <Compile Include="Assets\RPG\Scripts\Niveau.cs" />
+    <Compile Include="Assets\Zombie\ZombieScripts\Creation_Zombie.cs" />
+    <Compile Include="Assets\Zombie\ZombieScripts\ZombieCaracteristiques.cs" />
+    <Compile Include="Assets\Zombie\ZombieScripts\ZombieHealth.cs" />
+    <Compile Include="Assets\Zombie\ZombieScripts\ZombieSousAttaque.cs" />
+    <Compile Include="Assets\Zombie\ZombieScripts\Zombie_Comportement.cs" />
+    <Compile Include="Assets\_IMPORTED\SimpleJSON\SimpleJSON.cs" />
+    <Compile Include="Assets\_IMPORTED\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\_IMPORTED\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+    <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Guidelines.txt" />
+    <None Include="Assets\Mecanim\AnimationZombie\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
+    <None Include="Assets\Plugins\donotdelete.txt" />
+    <None Include="Assets\Campus\Textures\SkyboxBlended.shader" />
+    <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
+    <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+    <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
+    <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\_IMPORTED\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
+    <None Include="Assets\_IMPORTED\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
+    <None Include="Assets\Generic\Scripts\Dialogue\Readme.txt" />
+    <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
+    <None Include="Assets\Plugins\x86\donotdelete.txt" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\GUISystem\4.6.1\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Compile Include="Assets\_IMPORTED\Standard Assets\Water %28Basic%29\Sources\Scripts\WaterSimple.cs" />
+    <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend %28Queue +100%29.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -244,5 +243,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
