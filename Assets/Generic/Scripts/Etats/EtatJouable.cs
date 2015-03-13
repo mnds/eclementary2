@@ -24,7 +24,7 @@ public abstract class EtatJouable : Etat {
 			script.setEnabled (true);
 		}
 
-		// Activation éventuelle de l'inventaire
+		// Activation éventuelle de l'inventaire et du radar
 		bool inventaireActivable = FlagManager.ChercherFlagParId (ControlCenter.idFlagEtatInventaire).actif;
 		if (inventaireActivable) // Activation de l'inventaire et du radar
 			new ActiverInventaire ().DeclencherEvenement ();
