@@ -322,7 +322,7 @@ Transform:
   - {fileID: 1884520955}
   - {fileID: 850815613}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!95 &37696428
 Animator:
   serializedVersion: 3
@@ -915,7 +915,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 2143458286}
   m_GameObject: {fileID: 154414453}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.44000006, y: .140000001, z: .140000001}
@@ -1530,7 +1530,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 940000008}
   m_GameObject: {fileID: 301719484}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.94999981, y: 2, z: 2}
@@ -1547,7 +1547,7 @@ Transform:
   m_Children:
   - {fileID: 370374562}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &306133593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,6 +2584,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8a91a1851aa46bf4e8f7ef2c6d328d79, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544492, guid: 8a91a1851aa46bf4e8f7ef2c6d328d79, type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5250,6 +5254,10 @@ Prefab:
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6544492, guid: 8a91a1851aa46bf4e8f7ef2c6d328d79, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a91a1851aa46bf4e8f7ef2c6d328d79, type: 2}
   m_RootGameObject: {fileID: 301719484}
@@ -6007,7 +6015,6 @@ GameObject:
   - 114: {fileID: 1053763103}
   - 114: {fileID: 1053763102}
   - 114: {fileID: 1053763101}
-  - 114: {fileID: 1053763100}
   - 114: {fileID: 1053763099}
   m_Layer: 0
   m_Name: MechantProfSport
@@ -6063,19 +6070,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 
   flagsDevantEtreDesactives: 7c010000
---- !u!114 &1053763100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053763096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e8cea669d38497eb5983452d302603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomFichierRepliques: Dialogue/MechantProfSport.json
-  distanceMinimaleInteraction: 4
 --- !u!114 &1053763101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10222,7 +10216,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 475210876}
   m_GameObject: {fileID: 1814097763}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.94999981, y: 2, z: 2}
@@ -11911,6 +11905,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8d463928c9c293479e38ff12aba4c81, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509312, guid: a8d463928c9c293479e38ff12aba4c81, type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
