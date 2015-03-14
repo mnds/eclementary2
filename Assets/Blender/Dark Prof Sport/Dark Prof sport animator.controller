@@ -66,7 +66,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: metarigAction_001 0
-  m_Speed: -1
+  m_Speed: -2
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400002, guid: 61b7545be9fafc845a7bea3de3fcc9af, type: 3}
@@ -81,7 +81,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: metarigAction_001
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400002, guid: 61b7545be9fafc845a7bea3de3fcc9af, type: 3}
@@ -105,13 +105,13 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110225082}
-      second:
-      - {fileID: 110140918}
-    data:
       first: {fileID: 110249600}
       second:
       - {fileID: 110189942}
+    data:
+      first: {fileID: 110225082}
+      second:
+      - {fileID: 110140918}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -36, y: -120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
