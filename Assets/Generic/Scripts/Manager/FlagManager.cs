@@ -137,8 +137,8 @@ static public class FlagManager {
 		flags.Add (new Flag(100,false,"Entree au LIRIS",new List<int>(){90},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail vers le LIRIS
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"110"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){})); //Activ\u00E9 en ramassant un des composants \u00E9lectroniques
-		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"120"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
-		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){new ActiverInventaire()})); //Activ\u00E9 en parlant \u00E0 profLiris
+		flags.Add (new Flag(120,false,"Acquisition inventaire",new List<int>(){115},new List<Evenement>(){})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
+		flags.Add (new Flag(130,false,"Fin quete recuperation composants electroniques",new List<int>(){120},new List<int>(){130},new List<Evenement>(){new ActiverInventaire(),new EnvoyerMessage(new Item(NomItem.Message,"130"))})); //Activ\u00E9 en parlant \u00E0 profLiris
 		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
 		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail ClubBD
 		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150})); //Dialogue interm\u00E9diaire
@@ -174,7 +174,7 @@ static public class FlagManager {
 		flags.Add (new Flag(410,false,"Entree labyrinthe",new List<int>(){400},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"410"))})); //Activ\u00E9 en traversant le portail
 		flags.Add (new Flag(420,false,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){})); //Activ\u00E9 en passant le mur de fin du labyrinthe
 		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"430"))})); //Dialogue Directeur
-		flags.Add (new Flag(430,true,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
+		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
 		flags.Add (new Flag(435,false,"Mort boss final",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
 		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){435},new List<Evenement>(){})); //Sortir par la porte apr\u00E8s avoir tu\u00E9 le boss final
@@ -182,10 +182,10 @@ static public class FlagManager {
 
 		//Quetes secondaires
 		//Quete de la boule
-		flags.Add (new Flag (441, false, "PremierBouton", new List<int> (){0}));
-		flags.Add (new Flag (442, false, "DeuxiemeBouton", new List<int> (){0}));
-		flags.Add (new Flag (443, false, "TroisiemeBouton", new List<int> (){0}));
-		flags.Add (new Flag(444,false,"Activation de la BOULE", new List<int> () {441,442,443}));
+		flags.Add (new Flag (441, true, "PremierBouton", new List<int> (){0}));
+		flags.Add (new Flag (442, true, "DeuxiemeBouton", new List<int> (){0}));
+		flags.Add (new Flag (443, true, "TroisiemeBouton", new List<int> (){0}));
+		flags.Add (new Flag(444,false,"Activation de la BOULE", new List<int> () {435,441,442,443}));
 		flags.Add (new Flag(445,false,"Mort de la boule",new List<int>() {444}));
 		//Armes
 		flags.Add (new Flag(446,false,"RecuperationNumerisator",new List<int>(){}));

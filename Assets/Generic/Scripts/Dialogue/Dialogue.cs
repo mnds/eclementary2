@@ -179,6 +179,10 @@ public class Dialogue : MonoBehaviour, Interactif {
 
 	// _______________________________REALISATION DE L'INTERFACE________________________
 	public void DemarrerInteraction() {
+
+		// Mise à jour de la variable d'état des interactions
+		new MajEtatInteraction (true).DeclencherEvenement ();
+
 		if (mouvementJoueur != null) { // Blocage des mouvements du joueur pendant le déroulement de l'interaction
 			mouvementJoueur.SetFreeze( true );
 		} 
@@ -193,6 +197,8 @@ public class Dialogue : MonoBehaviour, Interactif {
 	}
 	
 	public void ArreterInteraction() {
+		// Mise à jour de la variable d'état des interactions
+		new MajEtatInteraction (false).DeclencherEvenement ();
 		Debug.Log ("Fin du dialogue");
 		repliqueChoisie = null;
 		repliquesSuivantes = null;

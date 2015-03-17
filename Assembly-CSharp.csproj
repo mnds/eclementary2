@@ -39,10 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +134,7 @@
      <Compile Include="Assets\Generic\Scripts\Evenements\EnvoyerMessage.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\Evenement.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\FinirJeu.cs" />
+     <Compile Include="Assets\Generic\Scripts\Evenements\MajEtatInteration.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\Mourir.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\Ressusciter.cs" />
      <Compile Include="Assets\Generic\Scripts\Evenements\SauverGameData.cs" />
@@ -233,7 +241,11 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
+<<<<<<< HEAD
  <HintPath>D:/Logiciel/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+=======
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

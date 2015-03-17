@@ -67,7 +67,7 @@ public class Inventaire : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialisée avec l'état du flag 130 
-		enabled = FlagManager.ChercherFlagParId(130).actif;
+		enabled = FlagManager.ChercherFlagParId (ControlCenter.idFlagEtatInventaire).actif;
 		//On déclare l'inventaire, qui doit etre activé au départ.
 		inventaire=GameObject.Find ("FenetreInventaire");
 		inventaire.SetActive(false);

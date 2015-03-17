@@ -106,6 +106,9 @@ static public class ControlCenter {
 	// Fichier de sauvegarde
 	public static string nomFichierSauvegarde = Application.dataPath + "/sauvegarde.bin";
 
+	// Id du flag qui renseigne sur l'état de l'inventaire (activé/désactivé)
+	public static int idFlagEtatInventaire = 130;
+
 	static ControlCenter () {
 		joueurPrincipal = GameObject.Find ("Joueur"); //au cas où aucun gameObject n'ait déclaré au ControlCenter qu'il est JoueurPrincipal
 		GameObject texteMessages = GameObject.Find ("TexteMessages");

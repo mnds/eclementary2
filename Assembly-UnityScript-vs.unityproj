@@ -39,10 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -72,7 +79,11 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
+<<<<<<< HEAD
  <HintPath>D:/Logiciel/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+=======
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

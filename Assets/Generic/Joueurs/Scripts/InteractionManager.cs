@@ -16,9 +16,11 @@ using System.Collections.Generic;
 //Doit etre placé sur le meme gameObject que le controller de mouvements du joueur
 public class InteractionManager : MonoBehaviour {
 
+	private bool interactionEnCours;
+
 	// Use this for initialization
 	void Start () {
-
+		interactionEnCours = false;
 	}
 	
 	// Update is called once per frame
@@ -32,7 +34,14 @@ public class InteractionManager : MonoBehaviour {
 		List<Interactif> interactifs = new List<Interactif>(){};
 		GameObject objet; //Objet touché
 
-		if (Input.GetButtonDown ("InteractionButton")) { //Si on cherche à interagir
+		if (Input.GetButtonDown ("InteractionButton") ) { //Si on cherche à interagir
+
+			// L'interaction ne sera pas déclenchée si une interaction qui nécessite d'être exécutée seule est déjà en cours
+			if (interactionEnCours) {
+				Debug.Log ("Une autre interaction \"monopole\" est déjà en cours.");
+				return;
+			}
+
 			// On regarde ce qu'il y a devant
 			if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hitInfo, 300f)) //On regarde très loin pour trouver l'objet en face du joueur
 			{
@@ -77,5 +86,13 @@ public class InteractionManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public bool GetInteractionEnCours() {
+		return interactionEnCours;
+	}
+
+	public void SetInteractionEnCours( bool enCours ) {
+		interactionEnCours = enCours;
 	}
 }

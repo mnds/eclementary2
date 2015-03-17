@@ -39,10 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +77,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="Assembly-UnityScript">
+<<<<<<< HEAD
  <HintPath>D:/Logiciel/Git/eclementary2/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
@@ -80,6 +88,18 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/Logiciel/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+=======
+ <HintPath>D:/Centrale Lyon/Année 2/PA - Jeu vidéo/eclementary2/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+>>>>>>> 422f9d089fa16126effbe70b56d8edb54586c2d7
  </Reference>
   </ItemGroup>
   <ItemGroup>
