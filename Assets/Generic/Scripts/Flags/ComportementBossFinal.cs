@@ -21,7 +21,7 @@ public class ComportementBossFinal : ActionSelonFlagsScene {
 	private bool estActive = false; //False au début
 
 	//Phase 1 : le boss devient énorme
-	private bool phaseUn = false; //Phase un : le boss devient énorme
+	private bool phaseUn = true; //Phase un : le boss devient énorme
 	public float tempsPhaseUn = 5f; //Temps de la phase
 	private float tempsDebutPhaseUn; //Pour les calculs rapides de ratio
 	private float tempsFinPhaseUn; //Pour savoir quand finir

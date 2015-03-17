@@ -15,6 +15,6 @@ public class BasketGagnerPoint : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label(new Rect(0,Screen.height-50,100,50),"Score : " + score);
+		//GUI.Label(new Rect(0,Screen.height-50,100,50),"Score : " + score);
 	}
 }

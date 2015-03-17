@@ -77,7 +77,7 @@ public class GestionAffichageCaracs : MonoBehaviour {
 
 
 		//Mana (Mana n'xiste pas encore ...)
-		mana.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
+		mana.fillAmount = carac.GetH ().GetPointsDeManaActuels () / carac.GetH ().GetPointsDeManaMax ();
 		mana.color = Color.blue;
 	}
 }

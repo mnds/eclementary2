@@ -203,4 +203,9 @@ public class Health : MonoBehaviour {
 
 		return pointsDeVieActuels;
 	}
+
+	public float GetPointsDeManaActuels() {
+		
+		return pointsDeManaActuels;
+	}
 }

@@ -20,8 +20,16 @@ public class GestionBarre : MonoBehaviour {
 	private Image vie;
 	private Image endurance;
 	private Image mana;
+	private Text experience_texte;
+	private Text vie_texte;
+	private Text endurance_texte;
+	private Text mana_texte;
 	private Caracteristiques carac;
 	private ControllerJoueur carac_endu;
+	public Sprite imageTransparente;
+	public Sprite imageBackground;
+
+	private bool enabled;
 	
 	
 	
@@ -37,7 +45,12 @@ public class GestionBarre : MonoBehaviour {
 		vie = gameObject.transform.FindChild ("Vies").gameObject.GetComponent<Image> ();
 		endurance = gameObject.transform.FindChild ("Endurance").gameObject.GetComponent<Image> ();
 		mana = gameObject.transform.FindChild ("Mana").gameObject.GetComponent<Image> ();
-		
+
+		//On stock aussi les textes
+		experience_texte = GameObject.Find("Expérience_Texte_B").GetComponent<Text> ();
+		vie_texte = GameObject.Find ("Vies_Texte_B").GetComponent<Text> ();
+		endurance_texte = GameObject.Find ("Endurance_Texte_B").GetComponent<Text> ();
+		mana_texte = GameObject.Find ("Mana_Texte_B").GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
@@ -45,7 +58,9 @@ public class GestionBarre : MonoBehaviour {
 	{
 		
 		//On met à jour les différentes barres
-		
+		if (!enabled)
+			return;
+
 		//XP
 		experience.fillAmount = carac.GetXp ()+5f / carac.GetXp ();
 		experience.color = new Color (0.5f,0.20f,0.83f);
@@ -62,8 +77,39 @@ public class GestionBarre : MonoBehaviour {
 		
 		
 		//Mana (Mana n'xiste pas encore ...)
-		mana.fillAmount = carac.GetH ().GetPointsDeVieActuels () / carac.GetH ().GetPointsDeVieMax ();
+		mana.fillAmount = carac.GetH ().GetPointsDeManaActuels () / carac.GetH ().GetPointsDeManaMax ();
 		mana.color = Color.blue;
+	}
+
+	public void setEnabled(bool ok)
+	{
+		//Si elles sont desactivées et qu'on veut les activer
+		if(ok)
+		{
+			experience.sprite = imageBackground;
+			vie.sprite = imageBackground;
+			mana.sprite = imageBackground;
+			endurance.sprite = imageBackground;
+			experience_texte.text = "Expérience";
+			vie_texte.text = "Vies";
+			mana_texte.text = "Mana";
+			endurance_texte.text = "Endurance";
+		}
+		//Si elles sont activées et qu'on veut les désactiver
+		else
+		{
+			Debug.Log(vie_texte);
+			experience.sprite = imageTransparente;
+			vie.sprite = imageTransparente;
+			mana.sprite = imageTransparente;
+			endurance.sprite = imageTransparente;
+			experience_texte.text = "";
+			vie_texte.text = "";
+			mana_texte.text = "";
+			endurance_texte.text = "";
+		}
+
+		enabled = ok;
 	}
 }
 
