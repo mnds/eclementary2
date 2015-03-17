@@ -3882,6 +3882,32 @@ MonoBehaviour:
     flagsDevantEtreActives: af010000
     flagsDevantEtreDesactives: b3010000
     description: Musique pendant le boss
+  - audioClips:
+    - {fileID: 8300000, guid: e2941cba4bf804247a26447109917036, type: 3}
+    - {fileID: 8300000, guid: 4e9ef6524b5332440811f58e784c7244, type: 3}
+    - {fileID: 8300000, guid: d4f56aa8aadcf21458d7476a2c7bf9ec, type: 3}
+    - {fileID: 8300000, guid: 9512b7d6f28425a45b07acda9938f205, type: 3}
+    - {fileID: 8300000, guid: 5b968004e909cbf4a9d8bffc12053284, type: 3}
+    - {fileID: 8300000, guid: c1b4fbee5fa9aca41ab68fac71b198bd, type: 3}
+    - {fileID: 8300000, guid: a90d7697bdd9d444e9194d9f0a708c70, type: 3}
+    - {fileID: 8300000, guid: 99d2dd5732f83704eaefee1c81e585a4, type: 3}
+    sceneDeLaMusique: 2
+    flagsDevantEtreActives: 28000000
+    flagsDevantEtreDesactives: bc010000
+    description: Musique entre weiman et le boss
+  - audioClips:
+    - {fileID: 8300000, guid: e2941cba4bf804247a26447109917036, type: 3}
+    - {fileID: 8300000, guid: 4e9ef6524b5332440811f58e784c7244, type: 3}
+    - {fileID: 8300000, guid: d4f56aa8aadcf21458d7476a2c7bf9ec, type: 3}
+    - {fileID: 8300000, guid: 9512b7d6f28425a45b07acda9938f205, type: 3}
+    - {fileID: 8300000, guid: 5b968004e909cbf4a9d8bffc12053284, type: 3}
+    - {fileID: 8300000, guid: c1b4fbee5fa9aca41ab68fac71b198bd, type: 3}
+    - {fileID: 8300000, guid: a90d7697bdd9d444e9194d9f0a708c70, type: 3}
+    - {fileID: 8300000, guid: 99d2dd5732f83704eaefee1c81e585a4, type: 3}
+    sceneDeLaMusique: 2
+    flagsDevantEtreActives: bd010000
+    flagsDevantEtreDesactives: 
+    description: "Musique apr\xE8s le boss"
 --- !u!1 &818432206
 GameObject:
   m_ObjectHideFlags: 0
@@ -10471,6 +10497,34 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].flagsDevantEtreActives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].flagsDevantEtreActives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].flagsDevantEtreDesactives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].flagsDevantEtreDesactives.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 459224, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1061.98621
@@ -10502,6 +10556,102 @@ Prefab:
     - target: {fileID: 459224, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e2941cba4bf804247a26447109917036, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].sceneDeLaMusique
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].flagsDevantEtreActives.Array.data[0]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].flagsDevantEtreDesactives.Array.data[0]
+      value: 444
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].description
+      value: Musique entre weiman et le boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e9ef6524b5332440811f58e784c7244, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4f56aa8aadcf21458d7476a2c7bf9ec, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9512b7d6f28425a45b07acda9938f205, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b968004e909cbf4a9d8bffc12053284, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: c1b4fbee5fa9aca41ab68fac71b198bd, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: a90d7697bdd9d444e9194d9f0a708c70, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[13].audioClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 99d2dd5732f83704eaefee1c81e585a4, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e2941cba4bf804247a26447109917036, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e9ef6524b5332440811f58e784c7244, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4f56aa8aadcf21458d7476a2c7bf9ec, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9512b7d6f28425a45b07acda9938f205, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b968004e909cbf4a9d8bffc12053284, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: c1b4fbee5fa9aca41ab68fac71b198bd, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: a90d7697bdd9d444e9194d9f0a708c70, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].audioClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 99d2dd5732f83704eaefee1c81e585a4, type: 3}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].sceneDeLaMusique
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].flagsDevantEtreActives.Array.data[0]
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].flagsDevantEtreDesactives.Array.data[0]
+      value: 444
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478756, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: lesMASs.Array.data[14].description
+      value: "Musique apr\xE8s le boss"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
