@@ -1,5 +1,12 @@
+COMPILATION - Si vous avez le code source
+
+Après avoir fait Build dans Unity3D, copier le dossier Dialogue (et son contenu) 
+dans le dossier Data créé à la compilation. Sous Mac, le copier dans le dossier "Contents"
+dans ce dossier Data.
+
+
 **********************************************************************************
-**********************Eclementary Version 2 mars 2015*****************************
+**********************Eclementary Version 17 mars 2015*****************************
 **********************************************************************************
 
 Extraire le .zip et lancer le .exe.
