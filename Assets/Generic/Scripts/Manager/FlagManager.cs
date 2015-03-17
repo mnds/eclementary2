@@ -137,8 +137,8 @@ static public class FlagManager {
 		flags.Add (new Flag(100,false,"Entree au LIRIS",new List<int>(){90},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail vers le LIRIS
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"110"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
 		flags.Add (new Flag(115,false,"Tous les composants recuperes",new List<int>(){110},new List<Evenement>(){})); //Activ\u00E9 en ramassant un des composants \u00E9lectroniques
-		flags.Add (new Flag(120,false,"Fin quete recuperation composants electroniques",new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"120"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
-		flags.Add (new Flag(130,false,"Acquisition inventaire",new List<int>(){120},new List<int>(){130},new List<Evenement>(){new ActiverInventaire()})); //Activ\u00E9 en parlant \u00E0 profLiris
+		flags.Add (new Flag(120,false,"Acquisition inventaire",new List<int>(){115},new List<Evenement>(){})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
+		flags.Add (new Flag(130,false,"Fin quete recuperation composants electroniques",new List<int>(){120},new List<int>(){130},new List<Evenement>(){new ActiverInventaire(),new EnvoyerMessage(new Item(NomItem.Message,"130"))})); //Activ\u00E9 en parlant \u00E0 profLiris
 		flags.Add (new Flag(140,false,"Debut discours trez club BD pres du foyer",new List<int>(){130},new List<int>(){150},new List<Evenement>(){}));
 		flags.Add (new Flag(150,false,"Entree club BD",new List<int>(){130},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail ClubBD
 		flags.Add (new Flag(151,false,"PrezBD explique pourquoi foyer barricade",new List<int>(){150})); //Dialogue interm\u00E9diaire
