@@ -1,12 +1,11 @@
 ﻿/**
- * \file      Scoremananger.cs
+ * \file      ScoreManager.cs
  * \author    Zepeng LI
  * \version   1.0
  * \date      24 decembre 2014
- * \brief     Contient les statistiques du zombie sur lequel ce script est attaché.
+ * \brief     Essai pour calculer le score
  *
- * \details   Herite de Caracteristiques, Contient les caractéristiques naturelles du zombie (bonus de vie, endurance, attaque, défense...)
- * 			  ainsi que son état (empoisonné, brulé...) qui peuvent affecter l'expérience de jeu.
+ * \details   
  */
 
 /*
@@ -33,8 +32,9 @@ public class ScoreManager : MonoBehaviour {
 		score += _score;
 	}
 
+	/*
 	void OnGUI()
 	{
-		GUI.Label (new Rect (0, Screen.height - 50, 100, 50), "Score : " + score);
-	}
+		GUI.Label (new Rect (0, Screen.height - 50, 100, 50), ");
+	}*/
 }

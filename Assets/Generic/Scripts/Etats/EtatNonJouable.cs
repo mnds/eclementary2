@@ -26,6 +26,7 @@ public abstract class EtatNonJouable : Etat {
 			script.setEnabled (false);
 		}
 		// Désactivation de l'inventaire et du radar
-			new DesactiverInventaire ().DeclencherEvenement ();
+		new DesactiverInventaire ().DeclencherEvenement ();
+		new DesactiverBarresCaracs ().DeclencherEvenement ();
 	}
 }

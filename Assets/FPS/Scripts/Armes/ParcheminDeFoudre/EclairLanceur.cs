@@ -1,6 +1,6 @@
 ﻿/**
  * \file      EclairLanceur.cs
- * \author    
+ * \author    Thomas Martin
  * \version   1.0
  * \date      27 février 2015
  * \brief     Indique qu'un objet peut être utilisé pour lancer des éclairs avec Tir 1 et des "bobines Tesla" avec Tir 2.
@@ -62,8 +62,6 @@ public class EclairLanceur : MonoBehaviour {
 		//Si on demande d'attaquer, et que le cooldown est terminé, on tire un éclair
 		if(Input.GetButton("Fire1") && Time.time>tempsDuDernierTir+cooldown)
 		{
-			if(!ControlCenter.GetJoueurPrincipal().GetComponent<Health>().SubirDegatsMana(manaEclair))
-				return; //on enlève le mana nécessaire au sort
 
 			tempsDuDernierTir=Time.time;
 			//On vérifie par Raycast qu'on a touché quelque chose, en partant
@@ -71,6 +69,9 @@ public class EclairLanceur : MonoBehaviour {
 			RaycastHit hitInfo;
 			
 			if(Physics.Raycast(ray,out hitInfo, rangeEclair)){
+				if(!ControlCenter.GetJoueurPrincipal().GetComponent<Health>().SubirDegatsMana(manaEclair))
+					return; //on enlève le mana nécessaire au sort
+
 				target = hitInfo.collider.gameObject;
 				if(target!=ControlCenter.GetJoueurPrincipal()){ //Si l'objet touché n'est pas le tireur
 					Vector3 hitPoint = hitInfo.point; //L'endroit qu'on touche

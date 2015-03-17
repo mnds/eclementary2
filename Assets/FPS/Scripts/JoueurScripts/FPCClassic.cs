@@ -172,14 +172,15 @@ public class FPCClassic : ControllerJoueur {
 		bounce = Mathf.Abs ( velociteVerticale * bounciness );
 		//		Debug.Log ("Bounce : " + bounce);
 	}
-	
-	void OnGUI () {
+
+	//Affichange de l'ancienne barre d'endurance
+	/*void OnGUI () {
 		if (!enabled)
 			return;
 		//Affichage de la barre d'endurance
 		GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, barLength, barHeight), "Endurance"); // Endurance max
 		if(! (jauge/jaugeMax < 0.1) )  // La barre n'est affichée qu'au delà d'un certain seuil	
 			GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 2 / 10, jauge/jaugeMax * barLength, barHeight), enduranceBarTexture); // Etat de l'endurance du joueur
-	}
+	}*/
 
 }

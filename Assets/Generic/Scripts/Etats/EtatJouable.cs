@@ -28,5 +28,6 @@ public abstract class EtatJouable : Etat {
 		bool inventaireActivable = FlagManager.ChercherFlagParId (ControlCenter.idFlagEtatInventaire).actif;
 		if (inventaireActivable) // Activation de l'inventaire et du radar
 			new ActiverInventaire ().DeclencherEvenement ();
+		new ActiverBarresCaracs ().DeclencherEvenement ();
 	}
 }

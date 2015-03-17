@@ -29,7 +29,7 @@ public class JoueurCaracteristiques : Caracteristiques {
 		SetNiveau ();
 	}
 	
-
+	//Au cas où ...
 	public void EnleverExperience (int experienceEnlevee){
 		experience -= experienceEnlevee;
 			TesterNiveau();

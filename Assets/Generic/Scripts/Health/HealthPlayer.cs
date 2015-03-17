@@ -27,7 +27,8 @@ public class HealthPlayer : Health, IScriptEtatJouable {
 			return;
 	}
 
-	public void OnGUI () {
+	//Ancienne version des barres de vies
+/*	public void OnGUI () {
 		if (!enabled)
 			return;
 		if(!joueurPrincipal) return; //N'afficher que la barre du joueur controllé par l'utilisateur
@@ -47,7 +48,7 @@ public class HealthPlayer : Health, IScriptEtatJouable {
 			if(! (pointsDeManaActuels/pointsDeManaMax < 0.1) ) // La barre n'est affichée qu'au delà d'un certain seuil
 				GUI.Box (new Rect (Screen.width * 5 / 6, Screen.height * 3 / 10, Mathf.Ceil(pointsDeManaActuels/pointsDeManaMax * barLength), barHeight), healthBarTexture); // Points de vie du joueur
 		}
-	}
+	}*/
 
 	public override void DeclencherMort () {
 		//ScenarioManager.ActiverEvenement (0); //Ecran de mort
