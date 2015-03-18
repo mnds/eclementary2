@@ -224,6 +224,9 @@ GameObject:
   - 114: {fileID: 11467128}
   - 114: {fileID: 11467126}
   - 65: {fileID: 6567128}
+  - 114: {fileID: 11435136}
+  - 114: {fileID: 11435140}
+  - 114: {fileID: 11435138}
   m_Layer: 0
   m_Name: porte
   m_TagString: Untagged
@@ -289,7 +292,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25200009, y: .720000029, z: -4.70599985}
+  m_LocalPosition: {x: 3.25, y: 1.20000005, z: -4.71000004}
   m_LocalScale: {x: .833333313, y: .833333313, z: .833333313}
   m_Children: []
   m_Father: {fileID: 467132}
@@ -301,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167120}
   m_LocalRotation: {x: -.5, y: -.5, z: -.5, w: .5}
-  m_LocalPosition: {x: 3.42895508, y: .670000672, z: -4.67000294}
+  m_LocalPosition: {x: 3.43000007, y: 1.14999998, z: -4.67000008}
   m_LocalScale: {x: .180952489, y: .180952489, z: .180952489}
   m_Children: []
   m_Father: {fileID: 467132}
@@ -1044,6 +1047,48 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11435136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 2d000000
+  flagsDevantEtreDesactives: dc000000
+  texteAffiche: Aller sur le campus
+--- !u!114 &11435138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: e6000000
+  flagsDevantEtreDesactives: 
+  texteAffiche: Sortir
+--- !u!114 &11435140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: dc000000
+  flagsDevantEtreDesactives: e6000000
+  texteAffiche: Je devrais dormir.
 --- !u!114 &11467118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,9 +1188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
-  texteAffiche: Porte
+  flagsDevantEtreActives: 2c000000
+  flagsDevantEtreDesactives: 2d000000
+  texteAffiche: Je devrais me coucher...
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

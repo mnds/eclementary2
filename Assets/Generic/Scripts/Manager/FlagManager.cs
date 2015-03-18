@@ -131,8 +131,8 @@ static public class FlagManager {
 		flags.Add (new Flag(45,false,"Appui porte après lit",new List<int>(){44},new List<int>(){45},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"44"))})); //Activ\u00E9 en \u00E9tudiant le lit
 		flags.Add (new Flag(50,false,"Papier du cadavre obtenu",new List<int>(){45},new List<int>(){50},new List<Evenement>(){}));
 		flags.Add (new Flag(60,false,"Discussion avec le personnage devant le foyer",new List<int>(){44},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"60"))})); //Activ\u00E9 en parlant au GarsFoyer
-		flags.Add (new Flag(70,false,"Recuperation de la belle boite",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer (Comparat)
-		flags.Add (new Flag(80,false,"Recuperation du plan de Centrale",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer
+		flags.Add (new Flag(70,true,"Recuperation de la belle boite",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer (Comparat)
+		flags.Add (new Flag(80,true,"Recuperation du plan de Centrale",new List<int>(){60},new List<Evenement>(){})); //Activ\u00E9 en allant dans la chambreFoyer
 		flags.Add (new Flag(90,false,"Recuperation du message du personnage du foyer dans sa chambre",new List<int>(){60},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"90"))})); //Activ\u00E9 en allant dans la chambreFoyer
 		flags.Add (new Flag(100,false,"Entree au LIRIS",new List<int>(){90},new List<Evenement>(){})); //Activ\u00E9 en traversant le portail vers le LIRIS
 		flags.Add (new Flag(110,false,"Debut quete recuperation composants electroniques",new List<int>(){100},new List<int>(){115},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"110"))})); //Activ\u00E9 en parlant \u00E0 ProfLIRIS
