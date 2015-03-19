@@ -62,15 +62,16 @@ public class Zombie_Comportement : MonoBehaviour {
 				caracJoueur.AjouterExperience(zombieCarac.GetScoreZombie());   //On ajoute le score dans scoreDuJoueur
 				Creation_Zombie.ZombieNombre--;
 			}
+			return;
 		} 
 		
 		if (isFollowingPlayer) {
 			m_agent.SetDestination (m_player.transform.position); //Definir la destination de la recherche de chemin,cad la position du joueur
-			Rotateto (); //Faire tourner la zombie vers le joueur
+
 			if (Vector3.Distance (m_player.transform.position, m_transform.position) < 2.0f) { //On rentre dans la mode d'attaque
+				Rotateto (); //Faire tourner la zombie vers le joueur
 				m_ani.SetBool ("attack", true);
 				m_ani.SetBool ("rerun", false);
-				
 				healthPlayer.SubirDegats (zombieCarac.GetAttaque () * Time.deltaTime, gameObject.GetComponent<Caracteristiques>()); //Diminuer la vie du jouer.
 				
 			} else {
