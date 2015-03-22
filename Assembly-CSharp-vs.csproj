@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +82,8 @@
      <Compile Include="Assets\Generic\Joueurs\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Generic\Scripts\Boss\AmphiGenerator.cs" />
      <Compile Include="Assets\Generic\Scripts\Boss\BouleDeFeuBossFinal.cs" />
+     <Compile Include="Assets\Generic\Scripts\Boss\ComportementBossFinal.cs" />
+     <Compile Include="Assets\Generic\Scripts\Boss\ComportementBossFinal2.cs" />
      <Compile Include="Assets\Generic\Scripts\Boss\DegatsEcrasementBossFinal.cs" />
      <Compile Include="Assets\Generic\Scripts\Boss\HealthTileAmphi.cs" />
      <Compile Include="Assets\Generic\Scripts\Dialogue\Dialogue.cs" />
@@ -145,7 +147,6 @@
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlag.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagInteractif.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\ChangementSceneFlagOnTrigger.cs" />
-     <Compile Include="Assets\Generic\Scripts\Flags\ComportementBossFinal.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\FlagBoule.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\FlagReduit.cs" />
      <Compile Include="Assets\Generic\Scripts\Flags\MusiqueAmbiance.cs" />
@@ -236,7 +237,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

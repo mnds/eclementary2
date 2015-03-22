@@ -13,20 +13,21 @@ using System.Collections;
 
 public class DegatsEcrasementBossFinal : MonoBehaviour {
 	private bool estActif = false; //Ne s'active que par le script ActivationBossFinal
-	public Health healthBossFinal; //Savoir qui est le script Health du boss final pour ne pas qu'il s'inflige des dégats.
+	public Health healthBossFinal1; //Savoir qui est le script Health du boss final pour ne pas qu'il s'inflige des dégats.
+	public Health healthBossFinal2; //Savoir qui est le script Health du boss final pour ne pas qu'il s'inflige des dégats.
 	public float degats = 10000f; //ca tue
 
 	//Si on touche quelque chose
 	void OnTriggerEnter (Collider c) {
 		Health h = c.gameObject.GetComponent<Health>();
-		if(estActif && h && h!=healthBossFinal) { //Si ce n'est pas le boss
+		if(estActif && h && h!=healthBossFinal1 && h!=healthBossFinal2) { //Si ce n'est pas le boss
 			h.SubirDegats(degats); //Pas soumis aux caractéristiques
 		}
 	}
 
 	void OnTriggerExit (Collider c) {
 		Health h = c.gameObject.GetComponent<Health>();
-		if(estActif && h && h!=healthBossFinal) { //Si ce n'est pas le boss
+		if(estActif && h && h!=healthBossFinal1 && h!=healthBossFinal2) { //Si ce n'est pas le boss
 			h.SubirDegats(degats); //Pas soumis aux caractéristiques
 		}
 	}
