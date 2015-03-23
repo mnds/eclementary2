@@ -134,8 +134,10 @@ public class GameData {
 			healthPlayer.SetPointsDeVie ( gameData.PointsDeVieSauves );
 		if (carac != null)
 			carac.experience = gameData.PointsExperience;
-		if (inventaire != null)
+		if (inventaire != null) {
 			inventaire.quantiteObjets = gameData.ListeMunitions;
+			inventaire.InitialiserObjets();
+		}
 		ControlCenter.difficulteActuelle = gameData.Difficulte;
 		ControlCenter.SetNomSpawnPointActuel ( gameData.NomSpawnPointSauve );
 		ControlCenter.idScenePrecedente = gameData.IdScenePrecedente;
