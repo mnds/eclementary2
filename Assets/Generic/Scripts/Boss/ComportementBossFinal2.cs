@@ -47,6 +47,7 @@ public class ComportementBossFinal2 : ActionSelonFlagsScene {
 
 		//On fait se tourner vers le joueur le boss
 		Vector3 directionVoulue = cible.transform.position - transform.position;
+		float distanceAvecCible = Vector3.Distance(cible.transform.position,transform.position);
 		//La boule est mal orientée, son forward est selon x.
 
 		float angleEntreDirections = Vector3.Angle (cible.transform.position, transform.position);
@@ -103,7 +104,7 @@ public class ComportementBossFinal2 : ActionSelonFlagsScene {
 			boule.transform.position=positionDepartBoule.transform.position;
 			boule.transform.rotation=positionDepartBoule.transform.rotation;
 			//On ajoute une force
-			boule.rigidbody.AddForce(directionVoulue*20f);
+			boule.rigidbody.AddForce(directionVoulue*distanceAvecCible*5f);
 		}
 	}
 
