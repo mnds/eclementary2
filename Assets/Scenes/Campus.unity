@@ -1020,98 +1020,6 @@ Transform:
   - {fileID: 1729515525}
   m_Father: {fileID: 250788491}
   m_RootOrder: 0
---- !u!1 &54965528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 54965533}
-  - 54: {fileID: 54965532}
-  - 65: {fileID: 54965531}
-  - 114: {fileID: 54965530}
-  - 114: {fileID: 54965529}
-  m_Layer: 0
-  m_Name: Numerisator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &54965529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483158, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 54965528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73b7be91823de9488d86c71035e1930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 
-  flagsDevantEtreDesactives: 
---- !u!114 &54965530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483160, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 54965528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814b7bfe5acef924bb23b4aa9f623a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypass: 0
-  isPickableDebut: 1
-  pickableDistanceDebut: 3
-  nombreMunitions: 1
-  texture: {fileID: 0}
---- !u!65 &54965531
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6583162, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 54965528}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.03000021, y: 1, z: 1.19000006}
-  m_Center: {x: 1.41999996, y: 0, z: -.189999998}
---- !u!54 &54965532
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 54965528}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!4 &54965533
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 54965528}
-  m_LocalRotation: {x: .585581779, y: .39635089, z: .39635089, w: -.585581779}
-  m_LocalPosition: {x: 1021.09998, y: 207, z: 901.200012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1662465490}
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
 --- !u!1 &57759428
 GameObject:
   m_ObjectHideFlags: 0
@@ -16983,7 +16891,6 @@ GameObject:
   - 4: {fileID: 631086729}
   - 65: {fileID: 631086732}
   - 114: {fileID: 631086731}
-  - 114: {fileID: 631086730}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -17003,25 +16910,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1027793341}
   m_RootOrder: 4
---- !u!114 &631086730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 631086728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 
-  activationPossibleDesFlags: 
-  nomsDesScenesAccessibles:
-  - nomScene: 5
-    flagsNecessairesPourTransition: 3c000000
-    flagsInterditsPourTransition: 
-    nomDuSpawnPoint: SpawnPoint
-  distanceMinimaleInteraction: 4
 --- !u!114 &631086731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17033,9 +16921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreActives: 28000000
   flagsDevantEtreDesactives: 
-  texteAffiche: E pour entrer
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!65 &631086732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21213,7 +21101,6 @@ GameObject:
   - 4: {fileID: 740442018}
   - 65: {fileID: 740442021}
   - 114: {fileID: 740442020}
-  - 114: {fileID: 740442019}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -21233,25 +21120,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1354022089}
   m_RootOrder: 9
---- !u!114 &740442019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740442017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
-  nomsDesScenesAccessibles:
-  - nomScene: 4
-    flagsNecessairesPourTransition: 28000000
-    flagsInterditsPourTransition: 
-    nomDuSpawnPoint: SpawnPoint
-  distanceMinimaleInteraction: 4
 --- !u!114 &740442020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21265,7 +21133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 28000000
   flagsDevantEtreDesactives: 
-  texteAffiche: E pour entrer
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!65 &740442021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29790,6 +29658,7 @@ GameObject:
   - 65: {fileID: 1011411529}
   - 114: {fileID: 1011411528}
   - 114: {fileID: 1011411527}
+  - 114: {fileID: 1011411530}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -29854,6 +29723,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1011411530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011411525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagsDevantEtreActives: 28000000
+  flagsDevantEtreDesactives: 3c000000
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!1 &1012738286
 GameObject:
   m_ObjectHideFlags: 0
@@ -33637,50 +33520,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1166123382}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1166279707
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1021.09998
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 207
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 901.200012
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .585581779
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .39635089
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .39635089
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.585581779
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-  m_RootGameObject: {fileID: 54965528}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &1167859588
 Prefab:
   m_ObjectHideFlags: 0
@@ -33995,7 +33834,6 @@ GameObject:
   - 4: {fileID: 1179274889}
   - 65: {fileID: 1179274892}
   - 114: {fileID: 1179274891}
-  - 114: {fileID: 1179274890}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -34015,25 +33853,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 881239568}
   m_RootOrder: 9
---- !u!114 &1179274890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179274888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 2a000000dc000000
-  activationPossibleDesFlags: 0101
-  nomsDesScenesAccessibles:
-  - nomScene: 4
-    flagsNecessairesPourTransition: 28000000
-    flagsInterditsPourTransition: 
-    nomDuSpawnPoint: SpawnPoint
-  distanceMinimaleInteraction: 4
 --- !u!114 &1179274891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34047,7 +33866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagsDevantEtreActives: 28000000
   flagsDevantEtreDesactives: 
-  texteAffiche: E pour entrer
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!65 &1179274892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35200,7 +35019,7 @@ Transform:
   m_Children:
   - {fileID: 317841147}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
 --- !u!114 &1212986816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38552,7 +38371,6 @@ GameObject:
   - 4: {fileID: 1336570252}
   - 65: {fileID: 1336570255}
   - 114: {fileID: 1336570254}
-  - 114: {fileID: 1336570253}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -38572,25 +38390,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 81689413}
   m_RootOrder: 4
---- !u!114 &1336570253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1336570251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 
-  activationPossibleDesFlags: 
-  nomsDesScenesAccessibles:
-  - nomScene: 5
-    flagsNecessairesPourTransition: 3c000000
-    flagsInterditsPourTransition: 
-    nomDuSpawnPoint: SpawnPoint
-  distanceMinimaleInteraction: 4
 --- !u!114 &1336570254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38602,9 +38401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreActives: 28000000
   flagsDevantEtreDesactives: 
-  texteAffiche: E pour entrer
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!65 &1336570255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44224,7 +44023,7 @@ Transform:
   m_Children:
   - {fileID: 1949397684}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
 --- !u!54 &1529437607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48729,79 +48528,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1797118400}
   m_GameObject: {fileID: 1661165571}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1662465489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1662465490}
-  - 33: {fileID: 1662465493}
-  - 23: {fileID: 1662465492}
-  - 114: {fileID: 1662465491}
-  m_Layer: 0
-  m_Name: Graphique
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1662465490
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 526b7389a22679e40a0457f22292f7e2, type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 1662465489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 54965533}
-  m_RootOrder: 0
---- !u!114 &1662465491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483162, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 1662465489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!23 &1662465492
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2348650, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 1662465489}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 072f5892e8f8c6f459865c17ef450d4d, type: 2}
-  - {fileID: 2100000, guid: 5288ab1f4d2f23c4d9146effaafacc92, type: 2}
-  - {fileID: 2100000, guid: f727d24c5e5255e45be88de6ee24fe9a, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1662465493
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3348650, guid: 526b7389a22679e40a0457f22292f7e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1166279707}
-  m_GameObject: {fileID: 1662465489}
-  m_Mesh: {fileID: 4300000, guid: 86ec0131596268b429a030aa7daeafe9, type: 3}
 --- !u!1 &1663215250
 GameObject:
   m_ObjectHideFlags: 0
@@ -51036,7 +50762,6 @@ GameObject:
   - 4: {fileID: 1753108016}
   - 65: {fileID: 1753108019}
   - 114: {fileID: 1753108018}
-  - 114: {fileID: 1753108017}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -51056,25 +50781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 659024284}
   m_RootOrder: 4
---- !u!114 &1753108017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1753108015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c3dc9f836b56f4296391a5ecf6836a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeDesFlagsPouvantEtreActives: 
-  activationPossibleDesFlags: 
-  nomsDesScenesAccessibles:
-  - nomScene: 5
-    flagsNecessairesPourTransition: 3c000000
-    flagsInterditsPourTransition: 
-    nomDuSpawnPoint: SpawnPoint
-  distanceMinimaleInteraction: 4
 --- !u!114 &1753108018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51086,9 +50792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c246d89ea9e1fa4ca84fb12b5f0092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagsDevantEtreActives: 3c000000
+  flagsDevantEtreActives: 28000000
   flagsDevantEtreDesactives: 
-  texteAffiche: E pour entrer
+  texteAffiche: "C'est ferm\xE9..."
 --- !u!65 &1753108019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57950,7 +57656,7 @@ Transform:
   m_Children:
   - {fileID: 1352612181}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
 --- !u!54 &1987016209
 Rigidbody:
   m_ObjectHideFlags: 0

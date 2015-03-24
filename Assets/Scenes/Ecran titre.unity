@@ -1833,7 +1833,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282137660
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &348704616
@@ -3180,7 +3180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vies
+  m_Text: Vie
 --- !u!222 &582057218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8908,18 +8908,18 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: 
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
-  m_FontStyle: 1
+  m_FontSize: 25
+  m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283124555
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1622494905
@@ -9847,7 +9847,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vies
+  m_Text: Vie
 --- !u!222 &1783839625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10758,6 +10758,42 @@ Prefab:
       propertyPath: quantiteObjets.Array.data[13]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11443624, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Text
+      value: Vie
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445370, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Text
+      value: Vie
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4283124555
+      objectReference: {fileID: 0}
+    - target: {fileID: 13259248, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4282137660
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Anchor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents:
     - {fileID: 11459100, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
