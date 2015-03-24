@@ -48,11 +48,11 @@ public class AmphiGenerator : MonoBehaviour {
 				tileHaut.GetComponent<HealthTileAmphi>().SetTypeTile(HealthTileAmphi.TypeTile.PremiereCouche);
 				tileHaut.transform.parent=parentTiles.transform;
 				//Créer tile du milieu
-				GameObject tileMilieu = Instantiate(tile,coinSuperieurGauche
+				/*GameObject tileMilieu = Instantiate(tile,coinSuperieurGauche
 				             +new Vector3(i*tailleX,-hauteurY,j*tailleZ),
 				             Quaternion.identity) as GameObject;
 				tileMilieu.GetComponent<HealthTileAmphi>().SetTypeTile(HealthTileAmphi.TypeTile.DeuxiemeCouche);
-				tileMilieu.transform.parent=parentTiles.transform;
+				tileMilieu.transform.parent=parentTiles.transform;*/
 			}
 		}
 

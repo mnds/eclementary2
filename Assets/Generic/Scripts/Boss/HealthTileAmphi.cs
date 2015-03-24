@@ -27,7 +27,7 @@ public class HealthTileAmphi : HealthDestroy {
 	private float degatsParContactQuatriemeCouche = 1000000f; //Dégats subis quand on touche une case tout en bas
 	private float degatsParContact; //Prendra la bonne valeur dans Start
 
-	private float pointsDeViePremiereCouche = 500000f; //Points de vie de la couche du dessus
+	private float pointsDeViePremiereCouche = 750000f; //Points de vie de la couche du dessus
 	private float pointsDeVieDeuxiemeCouche = 250000f; //Points de vie de la couche au milieu
 	private float pointsDeVieTroisiemeCouche = 100000f; //Points de vie de la couche du bas
 	private float pointsDeVieQuatriemeCouche = 100000000000000f; //Points de vie de la couche tout en bas. Impossible à tuer

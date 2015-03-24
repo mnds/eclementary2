@@ -55,7 +55,7 @@ public class ComportementBossFinal2 : ActionSelonFlagsScene {
 		transform.rotation=Quaternion.Lerp(transform.rotation,rotationVoulue,Time.deltaTime*vitesseRotation/angleEntreDirections);
 
 		//Mouvement aléatoire
-		Vector3 directionAleatoire = new Vector3(Random.Range(-1f,1f),Random.Range(-1f,1f),Random.Range(-1f,1f));
+		Vector3 directionAleatoire = new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),Random.Range(-1f,1f));
 		gameObject.transform.position += 10*directionAleatoire*Time.fixedDeltaTime;
 		//on vérifie que le boss est bien dans une zone accessible
 		if(gameObject.transform.position.x<1040f) {
