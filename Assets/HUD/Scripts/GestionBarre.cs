@@ -91,7 +91,7 @@ public class GestionBarre : MonoBehaviour {
 			mana.sprite = imageBackground;
 			endurance.sprite = imageBackground;
 			experience_texte.text = "Expérience";
-			vie_texte.text = "Vies";
+			vie_texte.text = "Vie";
 			mana_texte.text = "Mana";
 			endurance_texte.text = "Endurance";
 		}
