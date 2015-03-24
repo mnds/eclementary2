@@ -1833,7 +1833,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4282137660
+    rgba: 4293568327
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &348704616
@@ -8879,7 +8879,7 @@ Transform:
   m_PrefabInternal: {fileID: 1986479899}
   m_GameObject: {fileID: 1614532736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .300000012, y: .100000001, z: 0}
+  m_LocalPosition: {x: .5, y: .100000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 525797386}
@@ -8919,7 +8919,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4283124555
+    rgba: 4293568327
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1622494905
@@ -10768,11 +10768,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
       propertyPath: m_Color.rgba
-      value: 4283124555
+      value: 4293568327
       objectReference: {fileID: 0}
     - target: {fileID: 13259248, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
       propertyPath: m_Color.rgba
-      value: 4282137660
+      value: 4293568327
       objectReference: {fileID: 0}
     - target: {fileID: 13298354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
       propertyPath: m_FontStyle
@@ -10794,6 +10794,10 @@ Prefab:
       propertyPath: m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 498354, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11459100, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
