@@ -174,7 +174,7 @@ static public class FlagManager {
 		flags.Add (new Flag(410,false,"Entree labyrinthe",new List<int>(){400},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"410"))})); //Activ\u00E9 en traversant le portail
 		flags.Add (new Flag(420,false,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){})); //Activ\u00E9 en passant le mur de fin du labyrinthe
 		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"430"))})); //Dialogue Directeur
-		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
+		flags.Add (new Flag(430,true,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
 		flags.Add (new Flag(435,false,"Mort boss final1",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
 		flags.Add (new Flag(436,false,"Mort boss final2",new List<int>(){431},new List<Evenement>(){})); //Mort du boss

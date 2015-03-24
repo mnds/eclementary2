@@ -17,9 +17,9 @@ using System.Collections.Generic;
 
 public class BouleDeFeuBossFinal : MonoBehaviour {
 	
-	float rayonExplosion = 5f; //zone d'effet de l'explosion
-	float forceExplosion = 500f; //force de l'explosion
-	float degatsExplosion = 100f; //dégâts de l'explosion
+	float rayonExplosion = 2f; //zone d'effet de l'explosion
+	float forceExplosion = 100f; //force de l'explosion
+	float degatsExplosion = 10f; //dégâts de l'explosion
 	public GameObject lensFlare; //pour faire joli
 	public GameObject particules; //là aussi
 

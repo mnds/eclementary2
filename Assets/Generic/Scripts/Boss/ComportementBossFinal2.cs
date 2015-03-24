@@ -104,7 +104,9 @@ public class ComportementBossFinal2 : ActionSelonFlagsScene {
 			boule.transform.position=positionDepartBoule.transform.position;
 			boule.transform.rotation=positionDepartBoule.transform.rotation;
 			//On ajoute une force
-			boule.rigidbody.AddForce(directionVoulue*distanceAvecCible*5f);
+			boule.rigidbody.AddForce((directionVoulue+
+			                          new Vector3(Random.Range(-0.5f,0.5f),Random.Range(-0.5f,0.5f),Random.Range(-0.5f,0.5f))
+			            			)*distanceAvecCible*5f);
 		}
 	}
 
