@@ -82,6 +82,26 @@ public class Inventaire : MonoBehaviour {
 		if(!caracteristique)
 			Debug.Log("Activez l'objet de nom InterfaceCaracterstique");
 
+		InitialiserObjets ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (!enabled)
+			return;
+		VerifierTouches ();
+	}
+	
+	void OnGUI() {
+		if (!enabled)
+			return;
+		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
+		// The current weapon is always displayed
+		if(attaquerObjetActuel && attaquerObjetActuel.vignette)
+			GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
+	}
+
+	public void InitialiserObjets() {
 		for(int k=0;k<listeObjetsRecoltables.Count;k++) //On récupère les objets de quantité non nulle
 		{
 			if(quantiteObjets[k]>0) //Si l'objet est en quantité non nulle
@@ -109,22 +129,6 @@ public class Inventaire : MonoBehaviour {
 		//Choix de l'objet actuel parmi ceux qui effectivement sont dans l'inventaire
 		if (positionScroll < listeObjetsUtilisables.Count) //Si on est dans une position acceptable
 			ChangerObjetActuel(listeObjetsUtilisables [positionScroll]);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (!enabled)
-			return;
-		VerifierTouches ();
-	}
-	
-	void OnGUI() {
-		if (!enabled)
-			return;
-		if (ControlCenter.GetJoueurPrincipal () != gameObject) return; //Si pas le joueur principal
-		// The current weapon is always displayed
-		if(attaquerObjetActuel && attaquerObjetActuel.vignette)
-			GUI.Label( new Rect( 0, 0, 50, 50), attaquerObjetActuel.vignette);
 	}
 
 	/**
