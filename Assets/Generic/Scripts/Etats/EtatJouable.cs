@@ -29,5 +29,8 @@ public abstract class EtatJouable : Etat {
 		if (inventaireActivable) // Activation de l'inventaire et du radar
 			new ActiverInventaire ().DeclencherEvenement ();
 		new ActiverBarresCaracs ().DeclencherEvenement ();
+		// Désactivation du script BasketJoueur
+		BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
+		scriptBasket.setEnabled (false);
 	}
 }

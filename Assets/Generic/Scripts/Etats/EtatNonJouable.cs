@@ -28,5 +28,8 @@ public abstract class EtatNonJouable : Etat {
 		// Désactivation de l'inventaire et du radar
 		new DesactiverInventaire ().DeclencherEvenement ();
 		new DesactiverBarresCaracs ().DeclencherEvenement ();
+		// Désactivation du script BasketJoueur
+		BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
+		scriptBasket.setEnabled (false);
 	}
 }
