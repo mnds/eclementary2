@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file      Item.cs
  * \author    
  * \version   1.0
@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 
 // Liste des noms que peut prendre un item
-public enum NomItem { Message, Key, Sound, SpawnPoint, NomDifficulte};
+public enum NomItem { Flag, Message, Key, Sound, SpawnPoint, NomDifficulte};
 
 
 public class Item {

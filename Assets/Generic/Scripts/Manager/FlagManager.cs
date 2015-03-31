@@ -176,8 +176,9 @@ static public class FlagManager {
 		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"430"))})); //Dialogue Directeur
 		flags.Add (new Flag(430,true,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
-		flags.Add (new Flag(435,false,"Mort boss final1",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
-		flags.Add (new Flag(436,false,"Mort boss final2",new List<int>(){431},new List<Evenement>(){})); //Mort du boss
+		flags.Add (new Flag(435,false,"Mort boss final1",new List<int>(){431},new List<Evenement>(){new EvenementActiverFlag(new Item(NomItem.Flag,"437"))})); //Mort du boss
+		flags.Add (new Flag(436,false,"Mort boss final2",new List<int>(){431},new List<Evenement>(){new EvenementActiverFlag(new Item(NomItem.Flag,"437"))})); //Mort du boss
+		flags.Add (new Flag(437,false,"Mort boss final",new List<int>(){435,436},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"437"))})); //Mort des boss
 		flags.Add (new Flag(440,false,"Fin amphi 2",new List<int>(){435,436},new List<Evenement>(){})); //Sortir par la porte apr\u00E8s avoir tu\u00E9 le boss final
 		flags.Add (new Flag(450,false,"Fin du jeu",new List<int>(){440},new List<Evenement>(){ new ActiverEcranFin() })); //Au centre du terrain
 

@@ -56,7 +56,7 @@ public class AmphiGenerator : MonoBehaviour {
 			}
 		}
 
-		//Créer les dernières tiles
+		/*//Créer les dernières tiles
 		int offset = 20; //Décalage pour l'inertie
 		for(int i=-offset/2;i<nombreTilesX+offset/2;i++) { //décalage pour l'inertie
 			for(int j=-offset/2;j<nombreTilesZ+offset/2;j++) {
@@ -67,6 +67,6 @@ public class AmphiGenerator : MonoBehaviour {
 				tileFinale.GetComponent<HealthTileAmphi>().SetTypeTile(HealthTileAmphi.TypeTile.QuatriemeCouche);
 				tileFinale.transform.parent=parentTiles.transform;
 			}
-		}
+		}*/
 	}
 }

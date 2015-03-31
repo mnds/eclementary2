@@ -54,41 +54,6 @@ public class ComportementBossFinal2 : ActionSelonFlagsScene {
 		Quaternion rotationVoulue = Quaternion.LookRotation(new Vector3(directionVoulue.x,0,directionVoulue.z));
 		transform.rotation=Quaternion.Lerp(transform.rotation,rotationVoulue,Time.deltaTime*vitesseRotation/angleEntreDirections);
 
-		//Mouvement aléatoire
-		Vector3 directionAleatoire = new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),Random.Range(-1f,1f));
-		gameObject.transform.position += 10*directionAleatoire*Time.fixedDeltaTime;
-		//on vérifie que le boss est bien dans une zone accessible
-		if(gameObject.transform.position.x<1040f) {
-			gameObject.transform.position=new Vector3(1040f,
-													  gameObject.transform.position.y,
-			                                          gameObject.transform.position.z);
-		}
-		if(gameObject.transform.position.x>1180f) {
-			gameObject.transform.position=new Vector3(1180f,
-			                                          gameObject.transform.position.y,
-			                                          gameObject.transform.position.z);
-		}
-		if(gameObject.transform.position.y<209f) {
-			gameObject.transform.position=new Vector3(gameObject.transform.position.x,
-			                                          209f,
-			                                          gameObject.transform.position.z);
-		}
-		if(gameObject.transform.position.y>220f) {
-			gameObject.transform.position=new Vector3(gameObject.transform.position.x,
-			                                          220f,
-			                                          gameObject.transform.position.z);
-		}
-		if(gameObject.transform.position.z<1130f) {
-			gameObject.transform.position=new Vector3(gameObject.transform.position.x,
-			                                          gameObject.transform.position.y,
-			                                          1130f);
-		}
-		if(gameObject.transform.position.z>1200f) {
-			gameObject.transform.position=new Vector3(gameObject.transform.position.x,
-			                                          gameObject.transform.position.y,
-			                                          1200f);
-		}
-
 		//On envoie une boule de feu sur le joueur
 		if(Time.time>tempsDerniereBoule+cooldown) {
 			tempsDerniereBoule=Time.time;
