@@ -32,4 +32,12 @@ public abstract class EtatNonJouable : Etat {
 		BasketJoueur scriptBasket = StateManager.getInstance().GetJoueur().GetComponent<BasketJoueur>();
 		scriptBasket.setEnabled (false);
 	}
+	public override void UpdateEtat ()
+	{		
+		if (Input.GetButtonDown ("Pause")) {
+			Time.timeScale = 0;
+			StateManager manager = StateManager.getInstance();
+			manager.BasculerEtat(new EtatPause(manager, manager.etatActif.getSceneCorrespondante()));
+			}
+	}
 }

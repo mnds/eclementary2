@@ -8,7 +8,7 @@
 
 using UnityEngine;
 
-public class EtatBasket: Etat
+public class EtatBasket: EtatJouable
 {
 	private MinijeuBasket minijeu;
 
@@ -35,6 +35,7 @@ public class EtatBasket: Etat
 	}
 
 	public override void UpdateEtat() {
+		base.UpdateEtat ();
 
 	}
 

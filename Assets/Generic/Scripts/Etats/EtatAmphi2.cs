@@ -19,6 +19,7 @@ public class EtatAmphi2: EtatJouable {
 	// Redéfinition des méthodes de la classe abstraite Etat
 
 	public override void UpdateEtat() {
+		base.UpdateEtat ();
 		ChargerSceneCorrespondante ();
 	}
 
