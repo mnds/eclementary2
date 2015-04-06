@@ -2448,6 +2448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estVivant: 1
   pointsDeVie: 5
+  pointsDeMana: 5
   pointsEndurance: 10
   attaque: 2
   defense: 5
@@ -2480,6 +2481,8 @@ MonoBehaviour:
   flagAssocie: -1
   flagsRequis: 
   flagsBloquants: 
+  pointsDeManaMax: 5
+  pointsDeManaActuels: 5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2503,10 +2506,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dis: 0
-  periodeChangementDesti: 3
-  vitesseMarche: 5
-  vitesseCourse: 10
+  tempsResteChangeDesti: 0
+  periodeChangementDesti: 10
   isdead: 0
+  tempsAttentePathFinding: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2731,7 +2734,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100152}
   m_Enabled: 1
-  m_Radius: .200000003
+  m_Radius: .400000006
   m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50

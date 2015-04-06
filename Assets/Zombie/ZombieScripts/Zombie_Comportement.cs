@@ -16,7 +16,6 @@ using System.Collections;
 
 public class Zombie_Comportement : MonoBehaviour {
 	
-	
 	//Component pour trouver le chemin
 	public float dis;
 	NavMeshAgent m_agent;
@@ -26,15 +25,15 @@ public class Zombie_Comportement : MonoBehaviour {
 	HealthPlayer healthPlayer;
 	ZombieCaracteristiques zombieCarac;
 	Caracteristiques caracJoueur;
-	float tempsResteChangeDesti;
+	public float tempsResteChangeDesti;
 	
-	public float periodeChangementDesti=3.0f;
-	public float vitesseMarche = 2.0f;
-	public float vitesseCourse = 5.0f;
+	public float periodeChangementDesti=10.0f;
+	float vitesseMarche = 1.0f;
+	float vitesseCourse = 5.0f;
 	public bool isdead = false;  // Variable boolenne qu'on fera changer dans le script "HealthZombie"
 	
 	bool isFollowingPlayer=false;  //Paramètre qui designe si le pathfinding est declenché. 
-	
+	public float tempsAttentePathFinding;
 	// Use this for initialization
 	void Start () {
 		
@@ -97,11 +96,21 @@ public class Zombie_Comportement : MonoBehaviour {
 	void SetDestinationAleatoire(){
 		if (tempsResteChangeDesti <= 0) {
 			tempsResteChangeDesti = periodeChangementDesti; 
-			Vector3 positionRadom = new Vector3 (Random.value * 2000, 1, Random.value * 2000); //On dirige le zombie vers un endroit quelconque
+			Vector3 positionRadom = new Vector3 (930+Random.value * 300, 200, 830 + Random.value * 350); //On dirige le zombie vers un endroit quelconque
 			m_agent.SetDestination (positionRadom);
+			tempsAttentePathFinding = 0;
 			m_agent.speed = vitesseMarche;
 		} else {
-			tempsResteChangeDesti -= Time.deltaTime; }
+			tempsAttentePathFinding += Time.deltaTime;
+			tempsResteChangeDesti -= Time.deltaTime; 
+			if(tempsAttentePathFinding >= 2 && !m_agent.hasPath){  //Si au bout dee 2 secondes les zombies trouvent toujours pas de chemin, alors on change!
+				Vector3 positionRadom = new Vector3 (930+Random.value * 300, 200, 830 + Random.value * 350); //On dirige le zombie vers un endroit quelconque
+				m_agent.SetDestination (positionRadom);
+			    tempsAttentePathFinding = 0 ;
+				tempsResteChangeDesti = periodeChangementDesti;
+			}
+		}
+
 		
 	}
 	void Rotateto()
