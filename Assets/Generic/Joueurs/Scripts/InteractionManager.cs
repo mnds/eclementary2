@@ -82,6 +82,7 @@ public class InteractionManager : MonoBehaviour {
 					   && i.GetDistanceMinimaleInteraction()>Vector3.Distance(hitInfo.point,Camera.main.transform.position))
 					{
 						i.DemarrerInteraction();
+						interactionEnCours = true;
 					}
 				}
 			}
