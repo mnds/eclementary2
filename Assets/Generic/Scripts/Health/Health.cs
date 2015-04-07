@@ -56,7 +56,24 @@ public class Health : MonoBehaviour {
 		pointsDeManaActuels = Mathf.Min (pointsDeManaActuels + mana, pointsDeManaMax);
 		return (pdmaAvantSoin != pointsDeManaActuels);
 	}
-
+	
+	/**
+	 * @brief Permet de rajouter des points de mana à l'objet.
+	 * @param vie De combien augmenter les points de vie.
+	 * @param mana De combien augmenter les points de mana.
+	 *
+	 * @return Renvoie true si un soin de mana ou de vie a été effectué.
+	 */
+	public bool SoignerVieMana(float vie,float mana) {
+		if(bypass) return false;
+		if(!TesterFlags()) return false;
+		float pdvaAvantSoin = pointsDeVieActuels; //Soin de vie
+		pointsDeVieActuels = Mathf.Min (pointsDeVieActuels + vie, pointsDeVieMax);
+		float pdmaAvantSoin = pointsDeManaActuels; //Soin de mana
+		pointsDeManaActuels = Mathf.Min (pointsDeManaActuels + mana, pointsDeManaMax);
+		return (pdvaAvantSoin != pointsDeVieActuels || pdmaAvantSoin != pointsDeManaActuels);
+	}	
+	
 	/**
 	 * @brief Permet de faire subir des degats de mana à l'objet
 	 * @param degats De combien diminuer les points de mana.
