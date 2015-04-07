@@ -31,7 +31,7 @@ public override void UpdateEtat () {
 				ControlCenter.GetJoueurPrincipal().GetComponent<ControllerJoueur> ().SetFreeze(false);
 				StateManager.getInstance().BasculerEtat(StateManager.getInstance().ancienEtat);
 						}
-			if (GUI.Button (new Rect (Screen.width / 3, Screen.height / 3 + 110, 500, 100), "Charger partie", guiStyle)) {
+			if (GUI.Button (new Rect (Screen.width / 3, Screen.height / 3 + 110, 500, 100), "Quitter le jeu", guiStyle)) {
 				Application.Quit();
 						}
 				}
