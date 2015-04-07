@@ -21,6 +21,7 @@ public class Soigner : MonoBehaviour {
 	Inventaire inventaire ; //Il est nécessaire de dire à un inventaire que les munitions changent
 
 	public float pointsDeVieSoignes = 5.0f;
+	public float pointsDeManaSoignes = 0.0f;
 
 	Lancer lancerGameObject; //Script de lancé pour empecher de soigner et lancer en meme temps
 
@@ -57,7 +58,7 @@ public class Soigner : MonoBehaviour {
 
 			//On regarde si le script existe, et si le soin a fonctionné
 			if(health) {
-				if(health.Soigner(pointsDeVieSoignes)) { //Si oui on fait ce qu'il faut
+				if(health.SoignerVieMana(pointsDeVieSoignes,pointsDeManaSoignes)) { //Si oui on fait ce qu'il faut
 					tempsAvantProchainTir = Time.time+delaiEntreDeuxSoins;
 					//Traitements d'inventaire
 					if(inventaire!=null)
