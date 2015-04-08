@@ -82,6 +82,8 @@ public class InteractionManager : MonoBehaviour {
 					   && i.GetDistanceMinimaleInteraction()>Vector3.Distance(hitInfo.point,Camera.main.transform.position))
 					{
 						i.DemarrerInteraction();
+						if( i.GetType() == typeof(Dialogue) ) // interactionEnCours mis à true que pour les dialogues
+							interactionEnCours = true;
 					}
 				}
 			}

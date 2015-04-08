@@ -43,13 +43,13 @@ public class Dialogue : MonoBehaviour, Interactif {
 	}
 	
 	void OnGUI() {
-		if( interactionDeclenchee ) {
+		if( interactionDeclenchee && Time.timeScale > 0 ) { //Le dialogue ne s'affiche pas l'etat pause est activé (Time.timeScale = 0 )
 			if (repliquesSuivantes == null || repliquesSuivantes.Count == 0) { // Arrêt de l'interaction si l'interaction choisie n'a pas de répliques suivantes
 				if(repliquesSuivantes==null) Debug.Log ("Repliques suivantes nulles");
 				else Debug.Log ("Pas de repliques suivantes");
 				ArreterInteraction ();
 			}
-			else{ // Affichage des répliques si l'intéraction a été déclenché
+			else{ // Affichage des répliques si l'intéraction a été déclenchée
 				if( (repliquesSuivantes.Count > 0) && (repliquesSuivantes[0] != null) )
 					AfficherInfosPersonnage( repliquesSuivantes[0] ); // Affichage de l'avatar et du nom du personnage parlant
 
