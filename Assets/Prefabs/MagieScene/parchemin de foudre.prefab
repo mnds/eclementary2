@@ -13,15 +13,15 @@ GameObject:
   - 95: {fileID: 9593570}
   - 54: {fileID: 5493570}
   - 65: {fileID: 6593570}
-  - 114: {fileID: 11463612}
-  - 82: {fileID: 8254636}
+  - 114: {fileID: 11417224}
+  - 114: {fileID: 11447714}
   m_Layer: 0
   m_Name: parchemin de foudre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &493570
 Transform:
   m_ObjectHideFlags: 1
@@ -71,8 +71,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -88,64 +88,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.43992996, y: 7.31500101, z: 2.43380332}
   m_Center: {x: .200195312, y: -.0427247062, z: .26260379}
---- !u!82 &8254636
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193570}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 7d875f2a2f567574f9cd327bed734c89, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .149000004
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!95 &9593570
 Animator:
   serializedVersion: 3
@@ -161,7 +103,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11463612
+--- !u!114 &11417224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -169,18 +111,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 193570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1077fe799fd93c44aad63055e5aae32, type: 3}
+  m_Script: {fileID: 11500000, guid: 814b7bfe5acef924bb23b4aa9f623a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  cooldown: 1
-  degatsEclair: 25
-  eclairPrefab: {fileID: 11405184, guid: 00f1f87368d1c4d4dbc73199c5940696, type: 2}
-  lensFlare: {fileID: 159652, guid: 3348ccb7b9865fd4584803156f908c8f, type: 2}
-  bobineTesla: {fileID: 102612, guid: 459c57c2199631d408ef8d48c804e5d5, type: 2}
-  manaEclair: 1
-  manaBobine: 1
-  clipTir: {fileID: 8300000, guid: 7d875f2a2f567574f9cd327bed734c89, type: 3}
+  isPickableDebut: 1
+  pickableDistanceDebut: 3
+  nombreMunitions: 1
+  texture: {fileID: 0}
+--- !u!114 &11447714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

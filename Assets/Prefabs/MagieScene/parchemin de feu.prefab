@@ -13,15 +13,15 @@ GameObject:
   - 95: {fileID: 9549070}
   - 54: {fileID: 5449070}
   - 65: {fileID: 6549070}
-  - 114: {fileID: 11431250}
-  - 82: {fileID: 8201600}
+  - 114: {fileID: 11453250}
+  - 114: {fileID: 11493398}
   m_Layer: 0
   m_Name: parchemin de feu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &452476
 Transform:
   m_ObjectHideFlags: 1
@@ -71,8 +71,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -88,64 +88,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.43992996, y: 7.31500101, z: 2.43380332}
   m_Center: {x: .200195312, y: -.0427247062, z: .26260379}
---- !u!82 &8201600
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152476}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ad2fd54307307e242bfc014e27020785, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .213
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!95 &9549070
 Animator:
   serializedVersion: 3
@@ -161,7 +103,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11431250
+--- !u!114 &11453250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -169,19 +111,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 152476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea365fe537ec3c84f94a0fc01d6b278c, type: 3}
+  m_Script: {fileID: 11500000, guid: 814b7bfe5acef924bb23b4aa9f623a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bypass: 0
-  cooldown: 1
-  orbeDeFeu: {fileID: 147604, guid: 6b078031f426e3a4584ec0274aa6e03f, type: 2}
-  manaBouleDeFeu: 2
-  manaAnneau: 3
-  cooldownRing: 20
-  anneauDeFeu: {fileID: 160312, guid: 176fb46a1149268409e82ea911e8aaee, type: 2}
-  anneauRender: {fileID: 192250, guid: c8e1927d97998a248915aeb733a90b72, type: 2}
-  affecteParCaracteristiques: 1
-  clipTir: {fileID: 8300000, guid: ad2fd54307307e242bfc014e27020785, type: 3}
+  isPickableDebut: 1
+  pickableDistanceDebut: 3
+  nombreMunitions: 1
+  texture: {fileID: 0}
+--- !u!114 &11493398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d65b9466634074f9817da22a57b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

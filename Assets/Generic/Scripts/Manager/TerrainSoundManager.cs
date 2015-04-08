@@ -18,6 +18,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TerrainSoundManager : MonoBehaviour {
+	[System.Serializable]
+	public class TextureClips {
+		public Texture texture; //Une texture
+		public List<AudioClip> audioClips; //Les audioclips lancés de manière aléatoire
+
+		public Texture GetTexture() {return texture;}
+		public List<AudioClip> GetAudioClips() {return audioClips;}
+	}
+
 	public GameObject joueur; //Joueur
 	Transform joueurTransform; //Pour la position
 	ControllerJoueur joueurScript; //Pour relever la vitesse
@@ -27,8 +36,7 @@ public class TerrainSoundManager : MonoBehaviour {
 	AudioClip clipActuel;
 	public AudioSource sourceDuSon;
 
-	public List<Texture> textures; //La liste des textures qui auront des sons associés
-	public List<AudioClip> audioClips; //Liste des clips audio associés
+	public List<TextureClips> texturesClips = new List<TextureClips>(){}; //La liste des textures qui auront des sons associés
 	bool sonEnclenche = false; //Pour éviter d'envoyer plein de fois un son
 
 	// Use this for initialization
@@ -44,9 +52,11 @@ public class TerrainSoundManager : MonoBehaviour {
 		Texture floorTexture = getTerrainTextureAt( positionJoueur ); //On récupère la texture au sol
 
 		bool floorTextureDansTextures = false; //Savoir si la texture actuelle doit émettre un son
-		for (int i=0; i<textures.Count; i++) { //On la cherche
-			if (textures [i] == floorTexture) { //Si on la trouve 
-				clipActuel = audioClips [i]; //On change le clip audio
+		for (int i=0; i<texturesClips.Count; i++) { //On la cherche
+			TextureClips tc=texturesClips[i];
+			if (tc.GetTexture() == floorTexture) { //Si on la trouve 
+				List<AudioClip> lac = tc.GetAudioClips(); //On récupère les audioclip
+				clipActuel = lac[Random.Range (0,lac.Count)]; //On récupère un clip random
 				floorTextureDansTextures=true;
 				break;
 			}
