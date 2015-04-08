@@ -8,7 +8,7 @@ public class EtatPause : EtatNonJouable {
 	}
 
 	// Update is called once per frame
-public override void UpdateEtat () {
+	public override void UpdateEtat () {
 		ChargerSceneCorrespondante ();  // Juste pour tester si la scène 
 		if (Input.GetButtonDown ("Pause")) {
 			if (Time.timeScale > 0) {  //  Au cas où, normalement le Timescale doit forcément etre 0 s il rentre dans cet état...
