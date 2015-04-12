@@ -79,7 +79,7 @@ public class FPCClassic : ControllerJoueur {
 			if(jauge>limiteBasseJauge) sprintPossible=true;
 			if(jauge<jaugeMax) jauge = Mathf.Min (jauge+Time.deltaTime/3,jaugeMax);
 		}
-		//Debug.Log (jauge);
+		Debug.Log (jauge);
 	}
 	
 	/**

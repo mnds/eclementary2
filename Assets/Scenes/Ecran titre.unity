@@ -2244,8 +2244,8 @@ Transform:
   m_PrefabInternal: {fileID: 738534839}
   m_GameObject: {fileID: 396222713}
   m_LocalRotation: {x: .672074318, y: .710437119, z: .163947567, w: -.129291996}
-  m_LocalPosition: {x: .219999999, y: 0, z: .439999998}
-  m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000007}
+  m_LocalPosition: {x: .101999998, y: -.125, z: .349000007}
+  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 1205929644}
   m_RootOrder: 14
@@ -2671,7 +2671,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: .784313738, a: 1}
   m_Intensity: 3.29999995
   m_Range: 10
   m_SpotAngle: 30
@@ -3891,6 +3891,74 @@ Prefab:
       propertyPath: texturesClips.Array.data[0].audioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 0d3092b168476054c9cd7ae06affb310, type: 3}
+    - target: {fileID: 145382, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 143464, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .101999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 445366, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .349000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 145368, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .101999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .349000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 445364, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459104, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: jaugeMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459102, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: pointsEndurance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_RootGameObject: {fileID: 1481442075}
@@ -7264,7 +7332,7 @@ MonoBehaviour:
   estVivant: 1
   pointsDeVie: 20
   pointsDeMana: 5
-  pointsEndurance: 100
+  pointsEndurance: 10
   attaque: 1
   defense: 1
   saut: 3
@@ -7480,7 +7548,7 @@ MonoBehaviour:
   cameraNonOculus: {fileID: 1205929648}
   vitesseMarche: 5
   vitesseCourse: 9
-  jaugeMax: 10
+  jaugeMax: 5
   enduranceBarTexture: {fileID: 0}
   vitesseRotation: 10
   vitesseSaut: 3
@@ -12247,8 +12315,8 @@ Transform:
   m_PrefabInternal: {fileID: 738534839}
   m_GameObject: {fileID: 2146032079}
   m_LocalRotation: {x: .672074318, y: .710437119, z: .163947567, w: -.129291996}
-  m_LocalPosition: {x: .219999999, y: 0, z: .439999998}
-  m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000007}
+  m_LocalPosition: {x: .101999998, y: -.125, z: .349000007}
+  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 1205929644}
   m_RootOrder: 13
