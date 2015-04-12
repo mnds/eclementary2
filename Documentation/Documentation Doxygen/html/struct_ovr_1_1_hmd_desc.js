@@ -1,0 +1,27 @@
+var struct_ovr_1_1_hmd_desc =
+[
+    [ "HmdDesc", "struct_ovr_1_1_hmd_desc.html#ad7d2be533174ef9f9228f12ae23dfe21", null ],
+    [ "CameraFrustumFarZInMeters", "struct_ovr_1_1_hmd_desc.html#a9741d6cb02498246388724ef91eb856c", null ],
+    [ "CameraFrustumHFovInRadians", "struct_ovr_1_1_hmd_desc.html#a5e881c20964655c85be374404b3fb527", null ],
+    [ "CameraFrustumNearZInMeters", "struct_ovr_1_1_hmd_desc.html#a3d6c8fab9211f17aec0f9bcc138f7456", null ],
+    [ "CameraFrustumVFovInRadians", "struct_ovr_1_1_hmd_desc.html#aa46ae5cff015ae6b5cadec79f6060db2", null ],
+    [ "DefaultEyeFov", "struct_ovr_1_1_hmd_desc.html#a95dfa2906a74f013eae54ea5029382c8", null ],
+    [ "DisplayDeviceName", "struct_ovr_1_1_hmd_desc.html#a299df42d0bb76f21bf96874b133b2e98", null ],
+    [ "DisplayId", "struct_ovr_1_1_hmd_desc.html#a8b85595b62b897430c9e654ee6ea3a6a", null ],
+    [ "DistortionCaps", "struct_ovr_1_1_hmd_desc.html#a68259a1cab98a7db6fd2123b3b36e48c", null ],
+    [ "EyeRenderOrder", "struct_ovr_1_1_hmd_desc.html#a23abbaa64f04210068553c45a5a513f8", null ],
+    [ "FirmwareMajor", "struct_ovr_1_1_hmd_desc.html#a4d02a94e958db717a431efc35a78e509", null ],
+    [ "FirmwareMinor", "struct_ovr_1_1_hmd_desc.html#a4330c938c9ae2589895095aa55bd8fd2", null ],
+    [ "Handle", "struct_ovr_1_1_hmd_desc.html#af16b0b18411214aa363c1dab3e8b2de2", null ],
+    [ "HmdCaps", "struct_ovr_1_1_hmd_desc.html#affc139d203987f1258d25eaf2e00eab1", null ],
+    [ "Manufacturer", "struct_ovr_1_1_hmd_desc.html#af5b04de6197fb1cefc3e4d21034f7c3b", null ],
+    [ "MaxEyeFov", "struct_ovr_1_1_hmd_desc.html#acf839d4411e0f9c5779f030af5cabe2e", null ],
+    [ "ProductId", "struct_ovr_1_1_hmd_desc.html#adf9d8cffb4b36997f2bbc4f98961bd08", null ],
+    [ "ProductName", "struct_ovr_1_1_hmd_desc.html#a336302cd78a6146884ee726272474305", null ],
+    [ "Resolution", "struct_ovr_1_1_hmd_desc.html#a50cbe083c0596ffe652f26308a3737f5", null ],
+    [ "SerialNumber", "struct_ovr_1_1_hmd_desc.html#a554b8276d1502b88ef22e81123b3e327", null ],
+    [ "TrackingCaps", "struct_ovr_1_1_hmd_desc.html#ac6fcf0ed436e6d44d3cbafa2e1b43dd8", null ],
+    [ "Type", "struct_ovr_1_1_hmd_desc.html#aac0e0205651ebe24ce9740fbe17dcea7", null ],
+    [ "VendorId", "struct_ovr_1_1_hmd_desc.html#a4c0dbffa245e903424940417ff0ea8ba", null ],
+    [ "WindowsPos", "struct_ovr_1_1_hmd_desc.html#ab8048ca822a0d020bdeb35b108c4bbfa", null ]
+];

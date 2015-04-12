@@ -1,0 +1,27 @@
+var class_game_data =
+[
+    [ "ChargerEtat", "class_game_data.html#a3230e5c540f4a7ead0a939e1ed7bea5d", null ],
+    [ "ChargerFlagsReduits", "class_game_data.html#a2ec04a9ca2ad79d660149607bfd38e1d", null ],
+    [ "ChargerListeMunitions", "class_game_data.html#a1378e678137cead321c961fdcf8d1044", null ],
+    [ "ChargerSauvegarde", "class_game_data.html#a692d423e77444d8dd74212ad9bc7697f", null ],
+    [ "RemplacerFlags", "class_game_data.html#a67b54ed0efc280eb783d4cc3f6fa3fa2", null ],
+    [ "SauvegarderGameData", "class_game_data.html#a33f63b1311471072ce8951f56c22ada4", null ],
+    [ "difficulte", "class_game_data.html#a49908e4f92d19c3ab5acfb5da96d6355", null ],
+    [ "flagsReduits", "class_game_data.html#ab5250ea42d6e42f4bec4ba033733194a", null ],
+    [ "idMessageReveil", "class_game_data.html#aa2fe856851f4202560205d3e80a357af", null ],
+    [ "idScenePrecedente", "class_game_data.html#aeeb946bd56a0c473c0f95f926cf54684", null ],
+    [ "listeMunitions", "class_game_data.html#aeb157dc0fdae933f1ad2a6eb2a4949a3", null ],
+    [ "nomEtatSauve", "class_game_data.html#af40e580930b1b61719704e89fa42fa77", null ],
+    [ "nomSpawnPointSauve", "class_game_data.html#a76fdb6159616502aefa6f45174d0dd5c", null ],
+    [ "pointsDeVieSauves", "class_game_data.html#a22d858fe456799c7d42119b1ce794a13", null ],
+    [ "pointsExperience", "class_game_data.html#a4840db40835c52c8d48b4dd980a6969c", null ],
+    [ "Difficulte", "class_game_data.html#ae9db54f17b9fe82cec870a08f1229993", null ],
+    [ "FlagsReduits", "class_game_data.html#a4e3e41fa62550b705ca88ef9f7461675", null ],
+    [ "IdMessageReveil", "class_game_data.html#aeba985c9420b4eab5e48b5312e55d092", null ],
+    [ "IdScenePrecedente", "class_game_data.html#a6dc788e2a552179aef5855cd11c9ad91", null ],
+    [ "ListeMunitions", "class_game_data.html#a73b9e02c95955c1d63381f4779dd326c", null ],
+    [ "NomEtatSauve", "class_game_data.html#a180471c56df8c900becdba9408bde8a1", null ],
+    [ "NomSpawnPointSauve", "class_game_data.html#a13218b2a4a60b23cdcbc8f72a63da8d9", null ],
+    [ "PointsDeVieSauves", "class_game_data.html#a59c37b2d788e506e49e1b4e4d127318b", null ],
+    [ "PointsExperience", "class_game_data.html#ad0d0e738539d1d72bb55a5f6b88c0489", null ]
+];
