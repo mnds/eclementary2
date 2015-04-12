@@ -12,5 +12,3 @@ Installation :
 - Cliquer sur Build.
 - Copier le dossier "Assets/Dialogue" (pas son contenu) dans le dossier Data se trouvant dans le dossier de l'exécutable sous Windows, ou dans Contents pour Mac.
 - Lancer le programme.
-ou
-- Dans la branche Release, chercher la version correspondant à votre plateforme et télécharger le dossier associé.
