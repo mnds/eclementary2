@@ -62,7 +62,7 @@ public class GestionBarre : MonoBehaviour {
 			return;
 
 		//XP
-		experience.fillAmount = (carac.experience_entre_deux_niveaux - carac.experience_avant_niveau_suivant) / carac.experience_entre_deux_niveaux;
+		experience.fillAmount = (float)(carac.experience_entre_deux_niveaux - carac.experience_avant_niveau_suivant) / carac.experience_entre_deux_niveaux;
 		experience.color = new Color (0.5f,0.20f,0.83f);
 		
 		//Vie

@@ -25,7 +25,7 @@ public class GestionAffichageCaracs : MonoBehaviour {
 	private Image vie;
 	private Image endurance;
 	private Image mana;
-	private Caracteristiques carac;
+	private JoueurCaracteristiques carac;
 	private ControllerJoueur carac_endu;
 
 
@@ -34,7 +34,7 @@ public class GestionAffichageCaracs : MonoBehaviour {
 	void Start () 
 	{
 		//On récupère les deux scripts portant les infos qu'on veut
-		carac = ControlCenter.GetJoueurPrincipal ().GetComponent<Caracteristiques> ();
+		carac = ControlCenter.GetJoueurPrincipal ().GetComponent<JoueurCaracteristiques> ();
 		carac_endu = ControlCenter.GetJoueurPrincipal ().GetComponent<ControllerJoueur> ();
 
 		//On stock les objets que l'on va modifier
@@ -62,7 +62,7 @@ public class GestionAffichageCaracs : MonoBehaviour {
 		//On met à jour les différentes barres
 
 		//XP
-		experience.fillAmount = carac.GetXp ()+5f / carac.GetXp ();
+		experience.fillAmount = (float)(carac.experience_entre_deux_niveaux - carac.experience_avant_niveau_suivant) / carac.experience_entre_deux_niveaux;
 		experience.color = new Color (0.5f,0.20f,0.83f);
 
 		//Vie
