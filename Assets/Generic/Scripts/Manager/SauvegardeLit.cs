@@ -54,6 +54,12 @@ public class SauvegardeLit : MonoBehaviour, Interactif {
 			return;
 		cj.SetFreeze(true);
 		Debug.Log ("Sauvegarde du jeu...");
+		//On fait en sorte de restaurer la vie, l'endurance, et le mana
+		cj.RemplirJaugeEndurance();
+		Health h = ControlCenter.GetJoueurPrincipal().GetComponent<Health>();
+		h.Soigner(h.GetPointsDeVieMax());
+		h.SoignerMana(h.GetPointsDeManaMax());
+
 		ecranEnCours=true; //Lancer l'écran noir 
 		new SauverGameData ().DeclencherEvenement (); //Sauvegarder les données
 	}

@@ -17,16 +17,16 @@ public class JoueurCaracteristiques : Caracteristiques {
 		Actualiser ();
 
 		
-		listeNiveauJoueur.Add(new Niveau(1,0,10f,10f,1f,0f));
-		listeNiveauJoueur.Add(new Niveau(2,50,15f,11f,2f,0f));
-		listeNiveauJoueur.Add(new Niveau(3,150,20f,12f,3f,0f));
-		listeNiveauJoueur.Add(new Niveau(4,300,25f,13f,4f,0f));
-		listeNiveauJoueur.Add(new Niveau(5,500,30f,15f,5f,1f));
-		listeNiveauJoueur.Add(new Niveau(6,800,40f,17f,6f,1f));
-		listeNiveauJoueur.Add(new Niveau(7,1200,45f,18f,7f,1f));
-		listeNiveauJoueur.Add(new Niveau(8,1700,55f,20f,8f,2f));
-		listeNiveauJoueur.Add(new Niveau(9,2300,75f,22f,9f,3f));
-		listeNiveauJoueur.Add(new Niveau(10,3000,100f,30f,12f,4f)); 
+		listeNiveauJoueur.Add(new Niveau(1,0,10f,10f,1f,10f));
+		listeNiveauJoueur.Add(new Niveau(2,50,15f,11f,2f,10f));
+		listeNiveauJoueur.Add(new Niveau(3,150,20f,12f,5f,10f));
+		listeNiveauJoueur.Add(new Niveau(4,300,25f,13f,10f,10f));
+		listeNiveauJoueur.Add(new Niveau(5,500,30f,15f,15f,20f));
+		listeNiveauJoueur.Add(new Niveau(6,800,40f,17f,20f,20f));
+		listeNiveauJoueur.Add(new Niveau(7,1200,45f,18f,25f,20f));
+		listeNiveauJoueur.Add(new Niveau(8,1700,55f,20f,30f,30f));
+		listeNiveauJoueur.Add(new Niveau(9,2300,75f,22f,35f,40f));
+		listeNiveauJoueur.Add(new Niveau(10,3000,100f,30f,50f,50f)); 
 		SetNiveau ();
 	}
 	
