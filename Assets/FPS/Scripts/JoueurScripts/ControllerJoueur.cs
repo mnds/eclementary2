@@ -236,7 +236,10 @@ public class ControllerJoueur : MonoBehaviour, IScriptEtatJouable {
 		return jauge;
 	}
 
-
+	public void RemplirJaugeEndurance ()
+	{
+		jauge=jaugeMax;
+	}
 	
 	
 	// Implémentation de IScriptEtatJouable

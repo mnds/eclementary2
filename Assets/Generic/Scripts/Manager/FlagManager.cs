@@ -125,7 +125,8 @@ static public class FlagManager {
 		flags.Add (new Flag(20,false,"Thermobus affiche",new List<int>(){10},new List<Evenement>(){})); //Activ\u00E9 en parlant au Weiman
 		flags.Add (new Flag(30,false,"Bus choisi",new List<int>(){20},new List<Evenement>(){})); //Activ\u00E9 en choisissant un bus
 		flags.Add (new Flag(40,false,"Retour du WEI",new List<int>(){30},new List<Evenement>(){new ChangerSpawnPoint(new Item(NomItem.SpawnPoint,"SpawnPointMilieuTerrain",ControlCenter.nomDeLaSceneDuCampus,true)),
-																								new EnvoyerMessage(new Item(NomItem.Message,"40"))})); //Activ\u00E9 en parlant de nouveau au Weiman
+																								new EnvoyerMessage(new Item(NomItem.Message,"40")),
+																								new RemplirEndurance()})); //Activ\u00E9 en parlant de nouveau au Weiman
 		flags.Add (new Flag(42,false,"Choix du batiment",new List<int>(){40},new List<int>(){42})); //Activ\u00E9 en rentrant \u00E0 Adoma
 		flags.Add (new Flag(44,false,"Lit apres le WEI",new List<int>(){42},new List<int>(){44},new List<Evenement>(){})); //Activ\u00E9 en \u00E9tudiant le lit
 		flags.Add (new Flag(45,false,"Appui porte après lit",new List<int>(){44},new List<int>(){45},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"44"))})); //Activ\u00E9 en \u00E9tudiant le lit
@@ -174,7 +175,7 @@ static public class FlagManager {
 		flags.Add (new Flag(410,false,"Entree labyrinthe",new List<int>(){400},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"410"))})); //Activ\u00E9 en traversant le portail
 		flags.Add (new Flag(420,false,"Sortie labyrinthe",new List<int>(){410},new List<Evenement>(){})); //Activ\u00E9 en passant le mur de fin du labyrinthe
 		flags.Add (new Flag(425,false,"Fin discours directeur",new List<int>(){420},new List<Evenement>(){new EnvoyerMessage(new Item(NomItem.Message,"430"))})); //Dialogue Directeur
-		flags.Add (new Flag(430,true,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
+		flags.Add (new Flag(430,false,"Entree amphi 2",new List<int>(){425},new List<Evenement>(){})); //Portail amphi2
 		flags.Add (new Flag(431,false,"Debut boss final",new List<int>(){430},new List<Evenement>(){})); //Dialogue boss final
 		flags.Add (new Flag(435,false,"Mort boss final1",new List<int>(){431},new List<Evenement>(){new EvenementActiverFlag(new Item(NomItem.Flag,"437"))})); //Mort du boss
 		flags.Add (new Flag(436,false,"Mort boss final2",new List<int>(){431},new List<Evenement>(){new EvenementActiverFlag(new Item(NomItem.Flag,"437"))})); //Mort du boss

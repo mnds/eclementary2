@@ -24,7 +24,7 @@ public class GestionBarre : MonoBehaviour {
 	private Text vie_texte;
 	private Text endurance_texte;
 	private Text mana_texte;
-	private Caracteristiques carac;
+	private JoueurCaracteristiques carac;
 	private ControllerJoueur carac_endu;
 	public Sprite imageTransparente;
 	public Sprite imageBackground;
@@ -37,7 +37,7 @@ public class GestionBarre : MonoBehaviour {
 	void Start () 
 	{
 		//On récupère les deux scripts portant les infos qu'on veut
-		carac = ControlCenter.GetJoueurPrincipal ().GetComponent<Caracteristiques> ();
+		carac = ControlCenter.GetJoueurPrincipal ().GetComponent<JoueurCaracteristiques> ();
 		carac_endu = ControlCenter.GetJoueurPrincipal ().GetComponent<ControllerJoueur> ();
 		
 		//On stock les objets que l'on va modifier
@@ -62,7 +62,7 @@ public class GestionBarre : MonoBehaviour {
 			return;
 
 		//XP
-		experience.fillAmount = carac.GetXp ()+5f / carac.GetXp ();
+		experience.fillAmount = (carac.experience_entre_deux_niveaux - carac.experience_avant_niveau_suivant) / carac.experience_entre_deux_niveaux;
 		experience.color = new Color (0.5f,0.20f,0.83f);
 		
 		//Vie

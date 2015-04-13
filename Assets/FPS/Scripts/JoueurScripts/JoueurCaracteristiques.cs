@@ -2,16 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class JoueurCaracteristiques : Caracteristiques {
-	/// <summary>
-	/// Ajoute par Zep, a tester
-	/// </summary>
-	/// 
-
+public class JoueurCaracteristiques : Caracteristiques { 
 	//C'est le niveau du joueur qui va reperer tous les propiété (endurence, attaque, défense, etc)
 	public List<Niveau> listeNiveauJoueur = new List<Niveau> ();
-	/// Fin d ajout de Zep
-	/// 
+	public int experience_entre_deux_niveaux; //Expérience pour passer d'un niveau à l'autre
 
     void Start()
 
@@ -71,12 +65,13 @@ public class JoueurCaracteristiques : Caracteristiques {
 			if( experience < listeNiveauJoueur[i].experience)  break;  		
 		}
 		niveau = i;
-		if (niveau >= listeNiveauJoueur.Count)
-						experience_avant_niveau_suivant = listeNiveauJoueur [niveau].experience - experience;
-				else
-						experience_avant_niveau_suivant = 0;
+		if (niveau < listeNiveauJoueur.Count) {
+			experience_avant_niveau_suivant = listeNiveauJoueur [niveau].experience - experience;
+			experience_entre_deux_niveaux = listeNiveauJoueur [niveau].experience - listeNiveauJoueur [niveau-1].experience;
+		}
+		else
+			experience_avant_niveau_suivant = 0;
 
-		Debug.Log ("Niveau du joueur est : " + niveau);
 	}
 	
 	///FIn d ajout de Zepeng
