@@ -48,7 +48,7 @@ public class JoueurCaracteristiques : Caracteristiques {
 		SetAttaque (_niveau.attaque);
 		SetPointsDeVie (_niveau.pointDeVie);
 		SetPointsEndurance (_niveau.endurance);
-		SetDefense (_niveau.endurance);
+		SetDefense (_niveau.defense);
 	
 
 				}
