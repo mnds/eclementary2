@@ -45,7 +45,7 @@ public class Caracteristiques : MonoBehaviour {
 	public ControllerJoueur cj; //Lié au ControllerJoueur pour en modifier les statistiques
 	public Health h; //Lié à Health pour en modifier les statistiques
 
-
+	public List<Niveau> listeNiveau = new List<Niveau> ();
 	void Start () {
 //		conditionsActuelles = new List<Condition> ();
 //		cj = gameObject.GetComponent<ControllerJoueur> ();
@@ -57,7 +57,19 @@ public class Caracteristiques : MonoBehaviour {
 
 	}
 	
-	
+	public void SetCaracteristiques (int _niveau)
+	{   int i = listeNiveau.Count;
+		
+		if (_niveau <= 0)    _niveau = 1; // Si on rentre un niveau qui n est pas compris dans la listeNieau, on fait l'adaptation
+		if (_niveau > i)     _niveau = i;
+		
+		Niveau niveauZombie = listeNiveau [_niveau - 1];
+		SetPointsDeVie (niveauZombie.pointDeVie);
+		SetPointsEndurance (niveauZombie.endurance);
+		SetAttaque (niveauZombie.attaque);
+		SetDefense (niveauZombie.defense);
+	}
+
 	public void Actualiser () {
 		if(cj) {
 			cj.SetJaugeMax (pointsEndurance);

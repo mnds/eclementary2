@@ -141,6 +141,8 @@ public class GameData {
 		if (carac != null) {
 			carac.experience = gameData.PointsExperience;
 			carac.niveau = gameData.Niveau;
+			carac.SetCaracteristiques(gameData.Niveau); // Mise à jour des caractéristiques en fonction du niveau du joueur
+			carac.Actualiser();
 		}
 		if (inventaire != null) {
 			inventaire.quantiteObjets = gameData.ListeMunitions;
