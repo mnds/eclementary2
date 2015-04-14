@@ -6,5 +6,5 @@ var class_joueur_caracteristiques =
     [ "SetPointExperience", "class_joueur_caracteristiques.html#a606e465eb2a938b25a5217e18d62b700", null ],
     [ "Start", "class_joueur_caracteristiques.html#abc62b19a3af4efb3eff7f05d7f1f9cd7", null ],
     [ "TesterNiveau", "class_joueur_caracteristiques.html#a7ee3ec006c810bd85d4ca695b68867ae", null ],
-    [ "listeNiveauJoueur", "class_joueur_caracteristiques.html#a94d65750491cf12bab154d4a545fc960", null ]
+    [ "experience_entre_deux_niveaux", "class_joueur_caracteristiques.html#acb2b115a3de798c33a36f70cf051c87a", null ]
 ];

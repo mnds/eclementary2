@@ -4,7 +4,7 @@ var class_gestion_affichage_caracs =
     [ "Update", "class_gestion_affichage_caracs.html#ac1360d64c3dad93fe417752368e0d7d1", null ],
     [ "attaque", "class_gestion_affichage_caracs.html#acc369a5082e75c15862fdf66c9ad8284", null ],
     [ "attaque_magique", "class_gestion_affichage_caracs.html#aed2f5444d94bf8263c8a67b66c686e05", null ],
-    [ "carac", "class_gestion_affichage_caracs.html#a2f1338cbab685558de0cc6a067c9180d", null ],
+    [ "carac", "class_gestion_affichage_caracs.html#abf3bbcca7252bc428ba4a91b709f7e6b", null ],
     [ "carac_endu", "class_gestion_affichage_caracs.html#ae3cbf85b58306af681a8eb051971eedf", null ],
     [ "defense", "class_gestion_affichage_caracs.html#a21e941d68368a2ec0239eda71ce41544", null ],
     [ "endurance", "class_gestion_affichage_caracs.html#a5f9719340e8f98e465f892c64802890a", null ],

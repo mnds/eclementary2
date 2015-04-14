@@ -29,7 +29,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
+        [ "Variables", "globals_vars.html", "globals_vars" ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
@@ -40,20 +40,26 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_action_selon_flags_8cs.html",
-"_o_v_r_common_8cs.html#ac62190465519376ee3a96d3603f7a485",
-"class_action_button.html#a245ef715cfd4ae93dc0110fe46f6098e",
-"class_boule_de_feu_lanceur.html#a6c839830f206e10850dccf6e142e2fa2",
-"class_control_center.html#a9aeb39047d21944141b4f3552f14cdc0aa1e85cd8c7cfb99f268088aa5e36911b",
-"class_dialogue.html#aa7e19c6e08a4264d0e920d19a893217a",
-"class_gestion_affichage_caracs.html#aed2f5444d94bf8263c8a67b66c686e05",
-"class_main_window.html#a26c3d4feb538694599a53f16bb1c5962",
-"class_move_camera_editor.html",
-"class_o_v_r_main_menu.html#a262cc5fcaaa08a9fdd1ef72b44444078",
-"class_ovr_1_1_android_g_l_e_s_config.html#a1b6afef573dfc81603cf518c399d6c91",
-"class_roadfinding___enemy.html#adfc2a1975e9087b03e85a4d718007fdc",
-"class_tourelle.html#aab8b264de1c200d304652e46bfe157ae",
-"interface_i_activable.html"
+"__arme__main__script__8cs_8js.html",
+"_maze_enemy_8cs.html",
+"_third_person_controller_8js.html#ab46f44d27ed154a90ff2a62180d67318",
+"class__detection__personnes_8js.html",
+"class__sauver__game__data_8js.html",
+"class_basket_joueur.html#abaafd4d00f93958bdaed8133e0607053",
+"class_contact_arme_script.html#a62f1aefed832f6e9e60efe6979eedaee",
+"class_desactiver_cle.html#acb592d88b86262cf5bfb25249f9a8976",
+"class_flag_manager.html#af15459ff468678e2386b065b5398e527",
+"class_lancement.html#abc932716f9b05d964d9592fa82fa9403",
+"class_message.html#af04f06e6630f68caed381302aa298f78",
+"class_o_v_r_gamepad_controller.html#a55bc6afc038565e037e2d8bdebf36d3e",
+"class_o_v_r_vision_guide.html#a1ba49a9469ea1e654fb00d10bfd2fbb3",
+"class_pickable.html#a745e9c360504ef95d7dcb1cd7c253259",
+"class_state_manager.html#a28e1e5d8b6dac4005241d3d2cb40d4a7",
+"dir__47a9748b6a823e9a621627c5891ffb60_8js.html#a7ec68ffb644700dd534d32c816f74bce",
+"files__8_8js.html#ad01a7523f103d6242ef9b0451861231e",
+"jquery_8js.html#a2335e57f79b6acfb6de59c235dc8a83e",
+"struct__ovr__1__1__texture__header_8js.html#a83e550abf62fabe0d9b34762ac4484b5",
+"variables__18_8js.html#ad01a7523f103d6242ef9b0451861231e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

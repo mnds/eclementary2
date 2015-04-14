@@ -61,6 +61,7 @@ var hierarchy =
       [ "FinirJeu", "class_finir_jeu.html", null ],
       [ "MajEtatInteraction", "class_maj_etat_interaction.html", null ],
       [ "Mourir", "class_mourir.html", null ],
+      [ "RemplirEndurance", "class_remplir_endurance.html", null ],
       [ "Ressusciter", "class_ressusciter.html", null ],
       [ "SauverGameData", "class_sauver_game_data.html", null ]
     ] ],

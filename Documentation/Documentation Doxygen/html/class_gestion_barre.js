@@ -3,7 +3,7 @@ var class_gestion_barre =
     [ "setEnabled", "class_gestion_barre.html#a8ff11ef9932c98018d6cb5adee213a13", null ],
     [ "Start", "class_gestion_barre.html#aa229f8d10442a9efd98a909669c862d3", null ],
     [ "Update", "class_gestion_barre.html#a256c2b0a7771e61f18752721d7ee4288", null ],
-    [ "carac", "class_gestion_barre.html#a45a2d14c5370f4c69258eba85f97e110", null ],
+    [ "carac", "class_gestion_barre.html#ae7b83cf80b9fdb0d6ce15efc0068503b", null ],
     [ "carac_endu", "class_gestion_barre.html#a7d63ead93c0904b5bbdd92a39d6b7ad4", null ],
     [ "enabled", "class_gestion_barre.html#aa4e72c36a599d6a59d82a89fd261f4c6", null ],
     [ "endurance", "class_gestion_barre.html#ac957d6046e162676213eb6ceaefa1dfe", null ],

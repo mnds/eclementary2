@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['l',['L',['../jquery_8js.html#a38ee4c0b5f4fe2a18d0c783af540d253',1,'jquery.js']]],
   ['labyrintheencoursderegeneration',['labyrintheEnCoursDeRegeneration',['../class_maze_enemy.html#ab0f45a207e7963e72f271586b8057727',1,'MazeEnemy']]],
   ['labyrinthelampe',['labyrintheLampe',['../class_maze_trigger_manager.html#a0f90ee94f0f620be636220a0d8c69b75',1,'MazeTriggerManager']]],
   ['lancergameobject',['lancerGameObject',['../class_attaquer.html#a297e61cd22b2359266739fb958785aa4',1,'Attaquer.lancerGameObject()'],['../class_soigner.html#ab09204c9624cf45ee425fed1f18f5139',1,'Soigner.lancerGameObject()']]],
@@ -45,8 +46,7 @@ var searchData=
   ['listeennemis',['listeEnnemis',['../class_detection_personnes.html#ab7521d18d05216bb9e8e0ef4fbcab80a',1,'DetectionPersonnes']]],
   ['listeimages',['listeImages',['../class_inventaire.html#aa52dbe347bb1ce0e6f0fc63ad6e5c8e3',1,'Inventaire']]],
   ['listemunitions',['listeMunitions',['../class_game_data.html#aeb157dc0fdae933f1ad2a6eb2a4949a3',1,'GameData']]],
-  ['listeniveaujoueur',['listeNiveauJoueur',['../class_joueur_caracteristiques.html#a94d65750491cf12bab154d4a545fc960',1,'JoueurCaracteristiques']]],
-  ['listeniveauzombie',['listeNiveauZombie',['../class_zombie_caracteristiques.html#afce9aa7596e6594b81a782a222110b0e',1,'ZombieCaracteristiques']]],
+  ['listeniveau',['listeNiveau',['../class_caracteristiques.html#adef8a10d8e211cdfdb52c8c5e40d14d3',1,'Caracteristiques']]],
   ['listeobjetsrecoltables',['listeObjetsRecoltables',['../class_inventaire.html#a68ec272d69fb6cd1f4d7901cc7a6a921',1,'Inventaire']]],
   ['listeobjetsutilisables',['listeObjetsUtilisables',['../class_inventaire.html#a073fdef7263ec7dc73667ada71446968',1,'Inventaire']]],
   ['listepnj',['listePnj',['../class_detection_personnes.html#a732d2a63984249ee077a536aaae3af7c',1,'DetectionPersonnes']]],

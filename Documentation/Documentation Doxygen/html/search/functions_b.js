@@ -10,5 +10,6 @@ var searchData=
   ['loadfromcompressedstream',['LoadFromCompressedStream',['../class_simple_j_s_o_n_1_1_j_s_o_n_node.html#a446c6f9eda1a568172a20265c6f1c9c9',1,'SimpleJSON::JSONNode']]],
   ['loadfromfile',['LoadFromFile',['../class_simple_j_s_o_n_1_1_j_s_o_n_node.html#a143a92c7dcc963ca5f2f5805a5e1622f',1,'SimpleJSON::JSONNode']]],
   ['loadfromstream',['LoadFromStream',['../class_simple_j_s_o_n_1_1_j_s_o_n_node.html#a7aaf001db004000de1743c4efc80cb9e',1,'SimpleJSON::JSONNode']]],
-  ['loadjson',['loadJson',['../class_dialog_manager.html#abe4eae181f7287e5a9f2c5f7bcbec2c6',1,'DialogManager']]]
+  ['loadjson',['loadJson',['../class_dialog_manager.html#abe4eae181f7287e5a9f2c5f7bcbec2c6',1,'DialogManager']]],
+  ['localstoragesupported',['localStorageSupported',['../navtree_8js.html#ac49af616f532f2364be9f58280469d33',1,'navtree.js']]]
 ];

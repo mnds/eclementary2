@@ -30,6 +30,7 @@ var searchData=
   ['updateselectcurrentlevel',['UpdateSelectCurrentLevel',['../class_o_v_r_main_menu.html#abb9123c956adf46849fec47b1a47bb22',1,'OVRMainMenu']]],
   ['updatesmoothedmovementdirection',['UpdateSmoothedMovementDirection',['../_third_person_controller_8js.html#af8dc4387c020e36f0e5d5ebd0e604b32',1,'ThirdPersonController.js']]],
   ['updatespeedandrotationscalemultiplier',['UpdateSpeedAndRotationScaleMultiplier',['../class_o_v_r_main_menu.html#a5f784cc785d9ca3d638f933e3333ecf2',1,'OVRMainMenu']]],
+  ['updatestripes',['updateStripes',['../dynsections_8js.html#a8f7493ad859d4fbf2523917511ee7177',1,'dynsections.js']]],
   ['updatetextures',['UpdateTextures',['../class_o_v_r_display.html#a372e8b478251bb9bcf5473fab4f30f1c',1,'OVRDisplay']]],
   ['updateviewport',['UpdateViewport',['../class_o_v_r_display.html#aa2d502e1ab31e3f19d311f0fd7795e39',1,'OVRDisplay']]],
   ['updatevisionmode',['UpdateVisionMode',['../class_o_v_r_main_menu.html#a78dccf79977dcae924076185e771cee6',1,'OVRMainMenu']]],
@@ -40,5 +41,5 @@ var searchData=
   ['useprofileheight',['useProfileHeight',['../class_o_v_r_player_controller.html#a0f97cb7c7a8c42230fdf0fa3c23360ab',1,'OVRPlayerController']]],
   ['usingpositiontracking',['usingPositionTracking',['../class_o_v_r_manager.html#a0621c06787012730d12b4f4cdd1e44eb',1,'OVRManager']]],
   ['utiliserbiopack',['utiliserBiopack',['../class_lancement.html#a412c0f370878ce4b1ac5309c9df83b1d',1,'Lancement']]],
-  ['utiliseroculus',['UtiliserOculus',['../class_lancement.html#ac15ed585bd4d4218ee7f0e383b25f424',1,'Lancement.UtiliserOculus()'],['../class_control_center.html#a9f6d208c29362b16be24efbb006b3aef',1,'ControlCenter.utiliserOculus()']]]
+  ['utiliseroculus',['utiliserOculus',['../class_control_center.html#a9f6d208c29362b16be24efbb006b3aef',1,'ControlCenter.utiliserOculus()'],['../class_lancement.html#ac15ed585bd4d4218ee7f0e383b25f424',1,'Lancement.UtiliserOculus()']]]
 ];

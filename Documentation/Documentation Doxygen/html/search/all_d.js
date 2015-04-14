@@ -54,7 +54,7 @@ var searchData=
   ['matrix4f',['Matrix4f',['../struct_ovr_1_1_matrix4f.html#a7bf8d47d43afb2aafb1de8161c9a3ee4',1,'Ovr::Matrix4f']]],
   ['matrix4f',['Matrix4f',['../struct_ovr_1_1_matrix4f.html',1,'Ovr']]],
   ['matrix4f_5fraw',['Matrix4f_Raw',['../struct_ovr_1_1_matrix4f___raw.html',1,'Ovr']]],
-  ['max',['Max',['../class_o_v_r_gamepad_controller.html#aee8bfe97747017b12a75bf3e8565a58aa6a061313d22e51e0f25b7cd4dc065233',1,'OVRGamepadController.Max()'],['../class_o_v_r_gamepad_controller.html#a1252d20be2920f107b93cec6fd5761e2a6a061313d22e51e0f25b7cd4dc065233',1,'OVRGamepadController.Max()']]],
+  ['max',['Max',['../class_o_v_r_gamepad_controller.html#aee8bfe97747017b12a75bf3e8565a58aa6a061313d22e51e0f25b7cd4dc065233',1,'OVRGamepadController.Max()'],['../class_o_v_r_gamepad_controller.html#a1252d20be2920f107b93cec6fd5761e2a6a061313d22e51e0f25b7cd4dc065233',1,'OVRGamepadController.Max()'],['../jquery_8js.html#aa311b14a617c7d99a07b814cbaf880ef',1,'max():&#160;jquery.js']]],
   ['maxairacceleration',['maxAirAcceleration',['../class_character_motor_movement.html#af1542ad78e232d268d0b0f656fd32e3a',1,'CharacterMotorMovement::maxAirAcceleration()'],['../_character_motor_8js.html#afcd53ffe89c062bb36d360e9cb14de46',1,'maxAirAcceleration():&#160;CharacterMotor.js']]],
   ['maxbackwardsspeed',['maxBackwardsSpeed',['../class_character_motor_movement.html#ad5671d9c2cabaa9261e54511c3d8b1e4',1,'CharacterMotorMovement']]],
   ['maxeyefov',['MaxEyeFov',['../struct_ovr_1_1_hmd_desc.html#acf839d4411e0f9c5779f030af5cabe2e',1,'Ovr::HmdDesc']]],

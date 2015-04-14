@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Eclementary2
    &#160;<span id="projectnumber">1.0</span>
@@ -140,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a606e465eb2a938b25a5217e18d62b700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur_caracteristiques.html#a606e465eb2a938b25a5217e18d62b700">SetPointExperience</a> (int _expe)</td></tr>
 <tr class="separator:a606e465eb2a938b25a5217e18d62b700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_caracteristiques"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_caracteristiques')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_caracteristiques.html">Caracteristiques</a></td></tr>
+<tr class="memitem:aed4b7df70bc1935b22f4cb9ad653387e inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#aed4b7df70bc1935b22f4cb9ad653387e">SetCaracteristiques</a> (int _niveau)</td></tr>
+<tr class="separator:aed4b7df70bc1935b22f4cb9ad653387e inherit pub_methods_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51d302ac7f26e767ab927aec6fd924c4 inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4">Actualiser</a> ()</td></tr>
 <tr class="separator:a51d302ac7f26e767ab927aec6fd924c4 inherit pub_methods_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d9c21d7edf1ad190f687a35aa08735 inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a46d9c21d7edf1ad190f687a35aa08735">SetEstVivant</a> (bool estVivant_)</td></tr>
@@ -199,9 +202,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a94d65750491cf12bab154d4a545fc960"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_niveau.html">Niveau</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur_caracteristiques.html#a94d65750491cf12bab154d4a545fc960">listeNiveauJoueur</a> = new List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; ()</td></tr>
-<tr class="memdesc:a94d65750491cf12bab154d4a545fc960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute par Zep, a tester  <a href="#a94d65750491cf12bab154d4a545fc960">More...</a><br/></td></tr>
-<tr class="separator:a94d65750491cf12bab154d4a545fc960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2b115a3de798c33a36f70cf051c87a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_joueur_caracteristiques.html#acb2b115a3de798c33a36f70cf051c87a">experience_entre_deux_niveaux</a></td></tr>
+<tr class="separator:acb2b115a3de798c33a36f70cf051c87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_caracteristiques"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_caracteristiques')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_caracteristiques.html">Caracteristiques</a></td></tr>
 <tr class="memitem:a870b7f40607736c9250f041efe873c9b inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a870b7f40607736c9250f041efe873c9b">estVivant</a></td></tr>
 <tr class="separator:a870b7f40607736c9250f041efe873c9b inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,6 +237,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a976ab66e71fffcf31b643de5290f5f66 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39f9ca36b473c7e7b9f296cc58b839c3 inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_health.html">Health</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a39f9ca36b473c7e7b9f296cc58b839c3">h</a></td></tr>
 <tr class="separator:a39f9ca36b473c7e7b9f296cc58b839c3 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef8a10d8e211cdfdb52c8c5e40d14d3 inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_niveau.html">Niveau</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#adef8a10d8e211cdfdb52c8c5e40d14d3">listeNiveau</a> = new List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; ()</td></tr>
+<tr class="separator:adef8a10d8e211cdfdb52c8c5e40d14d3 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -284,7 +288,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_joueur_caracteristiques_aa79b653a13b322443dc43adf3180fce8_cgraph.png" border="0" usemap="#class_joueur_caracteristiques_aa79b653a13b322443dc43adf3180fce8_cgraph" alt=""/></div>
 <map name="class_joueur_caracteristiques_aa79b653a13b322443dc43adf3180fce8_cgraph" id="class_joueur_caracteristiques_aa79b653a13b322443dc43adf3180fce8_cgraph">
-<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="253,5,432,46"/></map>
+<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="253,61,432,102"/><area shape="rect" id="node3" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4" title="Caracteristiques.Actualiser" alt="" coords="488,39,667,65"/><area shape="rect" id="node4" href="class_joueur_caracteristiques.html#a7ee3ec006c810bd85d4ca695b68867ae" title="JoueurCaracteristiques.Tester\lNiveau" alt="" coords="480,90,675,131"/><area shape="rect" id="node5" href="class_caracteristiques.html#a6364fdbbae7047e850505ce34f25c361" title="Caracteristiques.SetAttaque" alt="" coords="723,5,909,32"/><area shape="rect" id="node6" href="class_caracteristiques.html#a704905bb5c6a1e9bcab4bc8c6550742a" title="Caracteristiques.SetPoints\lDeVie" alt="" coords="727,57,905,98"/><area shape="rect" id="node7" href="class_caracteristiques.html#a7793005d5410ee2c721c8df6b5ead32b" title="Caracteristiques.SetPoints\lEndurance" alt="" coords="727,122,905,163"/><area shape="rect" id="node8" href="class_caracteristiques.html#aae36072d6276d2b925565145c978599b" title="Caracteristiques.SetDefense" alt="" coords="723,188,909,215"/></map>
 </div>
 </p>
 
@@ -345,6 +349,15 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_cgraph.png" border="0" usemap="#class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_cgraph" alt=""/></div>
+<map name="class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_cgraph" id="class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_cgraph">
+<area shape="rect" id="node2" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4" title="Caracteristiques.Actualiser" alt="" coords="240,39,419,65"/><area shape="rect" id="node3" href="class_joueur_caracteristiques.html#a7ee3ec006c810bd85d4ca695b68867ae" title="JoueurCaracteristiques.Tester\lNiveau" alt="" coords="232,90,427,131"/><area shape="rect" id="node4" href="class_caracteristiques.html#a6364fdbbae7047e850505ce34f25c361" title="Caracteristiques.SetAttaque" alt="" coords="475,5,661,32"/><area shape="rect" id="node5" href="class_caracteristiques.html#a704905bb5c6a1e9bcab4bc8c6550742a" title="Caracteristiques.SetPoints\lDeVie" alt="" coords="479,57,657,98"/><area shape="rect" id="node6" href="class_caracteristiques.html#a7793005d5410ee2c721c8df6b5ead32b" title="Caracteristiques.SetPoints\lEndurance" alt="" coords="479,122,657,163"/><area shape="rect" id="node7" href="class_caracteristiques.html#aae36072d6276d2b925565145c978599b" title="Caracteristiques.SetDefense" alt="" coords="475,188,661,215"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_icgraph.png" border="0" usemap="#class_joueur_caracteristiques_af21740ac7c9144c298dad0981d8b38e1_icgraph" alt=""/></div>
@@ -382,7 +395,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_joueur_caracteristiques_a606e465eb2a938b25a5217e18d62b700_cgraph.png" border="0" usemap="#class_joueur_caracteristiques_a606e465eb2a938b25a5217e18d62b700_cgraph" alt=""/></div>
 <map name="class_joueur_caracteristiques_a606e465eb2a938b25a5217e18d62b700_cgraph" id="class_joueur_caracteristiques_a606e465eb2a938b25a5217e18d62b700_cgraph">
-<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="232,5,411,46"/></map>
+<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="232,61,411,102"/><area shape="rect" id="node3" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4" title="Caracteristiques.Actualiser" alt="" coords="467,39,645,65"/><area shape="rect" id="node4" href="class_joueur_caracteristiques.html#a7ee3ec006c810bd85d4ca695b68867ae" title="JoueurCaracteristiques.Tester\lNiveau" alt="" coords="459,90,653,131"/><area shape="rect" id="node5" href="class_caracteristiques.html#a6364fdbbae7047e850505ce34f25c361" title="Caracteristiques.SetAttaque" alt="" coords="702,5,887,32"/><area shape="rect" id="node6" href="class_caracteristiques.html#a704905bb5c6a1e9bcab4bc8c6550742a" title="Caracteristiques.SetPoints\lDeVie" alt="" coords="706,57,883,98"/><area shape="rect" id="node7" href="class_caracteristiques.html#a7793005d5410ee2c721c8df6b5ead32b" title="Caracteristiques.SetPoints\lEndurance" alt="" coords="706,122,883,163"/><area shape="rect" id="node8" href="class_caracteristiques.html#aae36072d6276d2b925565145c978599b" title="Caracteristiques.SetDefense" alt="" coords="701,188,888,215"/></map>
 </div>
 </p>
 
@@ -408,14 +421,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Fin d ajout de Zep </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_joueur_caracteristiques_abc62b19a3af4efb3eff7f05d7f1f9cd7_cgraph.png" border="0" usemap="#class_joueur_caracteristiques_abc62b19a3af4efb3eff7f05d7f1f9cd7_cgraph" alt=""/></div>
 <map name="class_joueur_caracteristiques_abc62b19a3af4efb3eff7f05d7f1f9cd7_cgraph" id="class_joueur_caracteristiques_abc62b19a3af4efb3eff7f05d7f1f9cd7_cgraph">
-<area shape="rect" id="node2" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4" title="Caracteristiques.Actualiser" alt="" coords="240,5,419,32"/><area shape="rect" id="node3" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="240,57,419,98"/></map>
+<area shape="rect" id="node2" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4" title="Caracteristiques.Actualiser" alt="" coords="475,39,653,65"/><area shape="rect" id="node3" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="240,90,419,131"/><area shape="rect" id="node4" href="class_joueur_caracteristiques.html#a7ee3ec006c810bd85d4ca695b68867ae" title="JoueurCaracteristiques.Tester\lNiveau" alt="" coords="467,90,661,131"/><area shape="rect" id="node5" href="class_caracteristiques.html#a6364fdbbae7047e850505ce34f25c361" title="Caracteristiques.SetAttaque" alt="" coords="710,5,895,32"/><area shape="rect" id="node6" href="class_caracteristiques.html#a704905bb5c6a1e9bcab4bc8c6550742a" title="Caracteristiques.SetPoints\lDeVie" alt="" coords="714,57,891,98"/><area shape="rect" id="node7" href="class_caracteristiques.html#a7793005d5410ee2c721c8df6b5ead32b" title="Caracteristiques.SetPoints\lEndurance" alt="" coords="714,122,891,163"/><area shape="rect" id="node8" href="class_caracteristiques.html#aae36072d6276d2b925565145c978599b" title="Caracteristiques.SetDefense" alt="" coords="709,188,896,215"/></map>
 </div>
 </p>
 
@@ -456,24 +468,22 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_joueur_caracteristiques_a7ee3ec006c810bd85d4ca695b68867ae_icgraph.png" border="0" usemap="#class_joueur_caracteristiques_a7ee3ec006c810bd85d4ca695b68867ae_icgraph" alt=""/></div>
 <map name="class_joueur_caracteristiques_a7ee3ec006c810bd85d4ca695b68867ae_icgraph" id="class_joueur_caracteristiques_a7ee3ec006c810bd85d4ca695b68867ae_icgraph">
-<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#a2336dd0f7c41b20bf6189af7932abe38" title="JoueurCaracteristiques.Enlever\lExperience" alt="" coords="248,5,448,46"/></map>
+<area shape="rect" id="node2" href="class_joueur_caracteristiques.html#a2336dd0f7c41b20bf6189af7932abe38" title="JoueurCaracteristiques.Enlever\lExperience" alt="" coords="248,5,448,46"/><area shape="rect" id="node3" href="class_joueur_caracteristiques.html#af21740ac7c9144c298dad0981d8b38e1" title="JoueurCaracteristiques.Set\lNiveau" alt="" coords="259,70,437,111"/><area shape="rect" id="node4" href="class_joueur_caracteristiques.html#abc62b19a3af4efb3eff7f05d7f1f9cd7" title="JoueurCaracteristiques.Start" alt="" coords="503,19,689,45"/><area shape="rect" id="node5" href="class_joueur_caracteristiques.html#aa79b653a13b322443dc43adf3180fce8" title="Ajoute par Zep _expe." alt="" coords="497,70,695,111"/><area shape="rect" id="node6" href="class_joueur_caracteristiques.html#a606e465eb2a938b25a5217e18d62b700" title="JoueurCaracteristiques.Set\lPointExperience" alt="" coords="507,135,685,177"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a94d65750491cf12bab154d4a545fc960"></a>
+<a class="anchor" id="acb2b115a3de798c33a36f70cf051c87a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; JoueurCaracteristiques.listeNiveauJoueur = new List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; ()</td>
+          <td class="memname">int JoueurCaracteristiques.experience_entre_deux_niveaux</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Ajoute par Zep, a tester </p>
 
 </div>
 </div>
@@ -486,7 +496,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_joueur_caracteristiques.html">JoueurCaracteristiques</a></li>
-    <li class="footer">Generated on Sun Apr 12 2015 17:38:38 for Eclementary2 by
+    <li class="footer">Generated on Tue Apr 14 2015 15:33:43 for Eclementary2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

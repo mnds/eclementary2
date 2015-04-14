@@ -42,6 +42,7 @@ var searchData=
   ['manufacturer',['Manufacturer',['../struct_ovr_1_1_hmd_desc.html#af5b04de6197fb1cefc3e4d21034f7c3b',1,'Ovr.HmdDesc.Manufacturer()'],['../struct_ovr_1_1_hmd_desc___raw.html#a7ea4c464c4b4c397dbd232eb2487851d',1,'Ovr.HmdDesc_Raw.Manufacturer()']]],
   ['mat',['mat',['../class_glow_simple.html#a40c1714a0409af9b3243a728e15da94a',1,'GlowSimple']]],
   ['matricedeplacementspossibles',['matriceDeplacementsPossibles',['../class_maze_manager.html#a737574c980b31246455a5de8b2f5b7ee',1,'MazeManager.matriceDeplacementsPossibles()'],['../class_maze_travel.html#a75c8d4984ef2b15a31ba8407eb7f73bd',1,'MazeTravel.matriceDeplacementsPossibles()']]],
+  ['max',['max',['../jquery_8js.html#aa311b14a617c7d99a07b814cbaf880ef',1,'jquery.js']]],
   ['maxairacceleration',['maxAirAcceleration',['../class_character_motor_movement.html#af1542ad78e232d268d0b0f656fd32e3a',1,'CharacterMotorMovement::maxAirAcceleration()'],['../_character_motor_8js.html#afcd53ffe89c062bb36d360e9cb14de46',1,'maxAirAcceleration():&#160;CharacterMotor.js']]],
   ['maxbackwardsspeed',['maxBackwardsSpeed',['../class_character_motor_movement.html#ad5671d9c2cabaa9261e54511c3d8b1e4',1,'CharacterMotorMovement']]],
   ['maxeyefov',['MaxEyeFov',['../struct_ovr_1_1_hmd_desc.html#acf839d4411e0f9c5779f030af5cabe2e',1,'Ovr::HmdDesc']]],

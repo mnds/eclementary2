@@ -66,6 +66,9 @@ var dir_172110f7bbc451552b8022db133d46fa =
     [ "Mourir.cs", "_mourir_8cs.html", [
       [ "Mourir", "class_mourir.html", "class_mourir" ]
     ] ],
+    [ "RemplirEndurance.cs", "_remplir_endurance_8cs.html", [
+      [ "RemplirEndurance", "class_remplir_endurance.html", "class_remplir_endurance" ]
+    ] ],
     [ "Ressusciter.cs", "_ressusciter_8cs.html", [
       [ "Ressusciter", "class_ressusciter.html", "class_ressusciter" ]
     ] ],

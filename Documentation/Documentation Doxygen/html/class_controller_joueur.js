@@ -17,6 +17,7 @@ var class_controller_joueur =
     [ "Initialiser", "class_controller_joueur.html#a8fa0c8795f03ee5baaf61458a9f1d67f", null ],
     [ "isEnabled", "class_controller_joueur.html#aaee5e9f15e48f657ba95bdbd6d067faf", null ],
     [ "MouvementCorps", "class_controller_joueur.html#aeace596e31bd31786f31d4c5bd193d8b", null ],
+    [ "RemplirJaugeEndurance", "class_controller_joueur.html#a4ea0cf9cded8c3eb40af3fe2ab7b3bdc", null ],
     [ "SetAngleVerticalMax", "class_controller_joueur.html#adb3cbfdfc3f6db44e75c88b06d312750", null ],
     [ "SetBloquerTete", "class_controller_joueur.html#abf257479584570f9f56966f591e9b886", null ],
     [ "setEnabled", "class_controller_joueur.html#a9d22aa4e5aa1c3d9926d7b2ac5e4f651", null ],

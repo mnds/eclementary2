@@ -177,6 +177,7 @@ var annotated =
     [ "Personnage", "class_personnage.html", "class_personnage" ],
     [ "Pickable", "class_pickable.html", "class_pickable" ],
     [ "PorteSimple", "class_porte_simple.html", "class_porte_simple" ],
+    [ "RemplirEndurance", "class_remplir_endurance.html", "class_remplir_endurance" ],
     [ "Replique", "class_replique.html", "class_replique" ],
     [ "Ressusciter", "class_ressusciter.html", "class_ressusciter" ],
     [ "Roadfinding_Enemy", "class_roadfinding___enemy.html", "class_roadfinding___enemy" ],

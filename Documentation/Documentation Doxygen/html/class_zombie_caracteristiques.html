@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Eclementary2
    &#160;<span id="projectnumber">1.0</span>
@@ -130,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a7312dc31f7231e42745854c81a9616"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zombie_caracteristiques.html#a7a7312dc31f7231e42745854c81a9616">GetScoreZombie</a> ()</td></tr>
 <tr class="separator:a7a7312dc31f7231e42745854c81a9616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_caracteristiques"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_caracteristiques')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_caracteristiques.html">Caracteristiques</a></td></tr>
+<tr class="memitem:aed4b7df70bc1935b22f4cb9ad653387e inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#aed4b7df70bc1935b22f4cb9ad653387e">SetCaracteristiques</a> (int _niveau)</td></tr>
+<tr class="separator:aed4b7df70bc1935b22f4cb9ad653387e inherit pub_methods_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51d302ac7f26e767ab927aec6fd924c4 inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a51d302ac7f26e767ab927aec6fd924c4">Actualiser</a> ()</td></tr>
 <tr class="separator:a51d302ac7f26e767ab927aec6fd924c4 inherit pub_methods_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d9c21d7edf1ad190f687a35aa08735 inherit pub_methods_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a46d9c21d7edf1ad190f687a35aa08735">SetEstVivant</a> (bool estVivant_)</td></tr>
@@ -193,8 +196,6 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6d774e13eadb5411544992e418e9a2d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zombie_caracteristiques.html#a6d774e13eadb5411544992e418e9a2d9">scoreZombie</a> = 10</td></tr>
 <tr class="separator:a6d774e13eadb5411544992e418e9a2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce9aa7596e6594b81a782a222110b0e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_niveau.html">Niveau</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zombie_caracteristiques.html#afce9aa7596e6594b81a782a222110b0e">listeNiveauZombie</a></td></tr>
-<tr class="separator:afce9aa7596e6594b81a782a222110b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_caracteristiques"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_caracteristiques')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_caracteristiques.html">Caracteristiques</a></td></tr>
 <tr class="memitem:a870b7f40607736c9250f041efe873c9b inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a870b7f40607736c9250f041efe873c9b">estVivant</a></td></tr>
 <tr class="separator:a870b7f40607736c9250f041efe873c9b inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,6 +229,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a976ab66e71fffcf31b643de5290f5f66 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39f9ca36b473c7e7b9f296cc58b839c3 inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_health.html">Health</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#a39f9ca36b473c7e7b9f296cc58b839c3">h</a></td></tr>
 <tr class="separator:a39f9ca36b473c7e7b9f296cc58b839c3 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef8a10d8e211cdfdb52c8c5e40d14d3 inherit pub_attribs_class_caracteristiques"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_niveau.html">Niveau</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_caracteristiques.html#adef8a10d8e211cdfdb52c8c5e40d14d3">listeNiveau</a> = new List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; ()</td></tr>
+<tr class="separator:adef8a10d8e211cdfdb52c8c5e40d14d3 inherit pub_attribs_class_caracteristiques"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -368,18 +371,6 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="afce9aa7596e6594b81a782a222110b0e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="class_niveau.html">Niveau</a>&gt; ZombieCaracteristiques.listeNiveauZombie</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a6d774e13eadb5411544992e418e9a2d9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -401,7 +392,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_zombie_caracteristiques.html">ZombieCaracteristiques</a></li>
-    <li class="footer">Generated on Sun Apr 12 2015 17:38:44 for Eclementary2 by
+    <li class="footer">Generated on Tue Apr 14 2015 15:33:47 for Eclementary2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
