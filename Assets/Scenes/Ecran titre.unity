@@ -3959,6 +3959,20 @@ Prefab:
       propertyPath: pointsEndurance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11477284, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: clipTir
+      value: 
+      objectReference: {fileID: 8300000, guid: 846a6a71960a69447abc977fbffeb2cf, type: 3}
+    - target: {fileID: 11459106, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: listeImages.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: a52635dbd25d53d4c8f27964bd664daf,
+        type: 3}
+    - target: {fileID: 11459106, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
+      propertyPath: listeImages.Array.data[13]
+      value: 
+      objectReference: {fileID: 21300000, guid: ebd5f5be0b8294c46ad6697e70fb687f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5586823bd0b0f454c820b67fdcc4589c, type: 2}
   m_RootGameObject: {fileID: 1481442075}
@@ -5664,6 +5678,7 @@ GameObject:
   - 54: {fileID: 996683465}
   - 114: {fileID: 996683464}
   - 114: {fileID: 996683463}
+  - 82: {fileID: 996683466}
   m_Layer: 0
   m_Name: Numerisator
   m_TagString: Untagged
@@ -5720,7 +5735,7 @@ MonoBehaviour:
   munitions: 0
   affecteParCaracteristiques: 1
   range: 50
-  clipTir: {fileID: 0}
+  clipTir: {fileID: 8300000, guid: 846a6a71960a69447abc977fbffeb2cf, type: 3}
 --- !u!54 &996683465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5737,6 +5752,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &996683466
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 996683461}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 846a6a71960a69447abc977fbffeb2cf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1001477730
 GameObject:
   m_ObjectHideFlags: 0
@@ -7346,6 +7419,7 @@ MonoBehaviour:
   cj: {fileID: 0}
   h: {fileID: 0}
   listeNiveauJoueur: []
+  experience_entre_deux_niveaux: 0
 --- !u!114 &1324650580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7525,8 +7599,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6e9a4fc66b376d04680f9df4258d4d14, type: 3}
   - {fileID: 21300000, guid: 7e74da41067c0c14d9ced57bc029c638, type: 3}
   - {fileID: 21300000, guid: 2c027bb927c3ae34c84e4640690b0180, type: 3}
-  - {fileID: 21300000, guid: bc080808e23ca004a9209036d75eed25, type: 3}
-  - {fileID: 21300000, guid: bc080808e23ca004a9209036d75eed25, type: 3}
+  - {fileID: 21300000, guid: a52635dbd25d53d4c8f27964bd664daf, type: 3}
+  - {fileID: 21300000, guid: ebd5f5be0b8294c46ad6697e70fb687f, type: 3}
   imageTransparente: {fileID: 21300000, guid: 5c6737768272e415ebd3b17d3ec6e20f, type: 3}
   imageRadar: {fileID: 21300000, guid: b3d06ac7474c6cc4d9f88323c82cdfa2, type: 3}
   imageBalayageRadar: {fileID: 21300000, guid: 1245bd2b78cebd244bf9fd34ed3778e7, type: 3}
