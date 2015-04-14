@@ -19,6 +19,7 @@ public class GameData {
 	private float pointsDeVieSauves;
 	private int pointsExperience;
 	private ControlCenter.Difficulte difficulte;
+	private int niveau;
 	private string nomSpawnPointSauve;
 	private int idScenePrecedente;
 	private string nomEtatSauve;
@@ -71,6 +72,10 @@ public class GameData {
 		set { listeMunitions = value; }
 	}
 
+	public int Niveau {
+		get { return niveau; }
+		set { niveau = value;}
+	}
 
 	private void ChargerFlagsReduits() {
 		List<FlagManager.Flag> flags = FlagManager.GetFlags();
@@ -103,6 +108,7 @@ public class GameData {
 		this.NomSpawnPointSauve = ControlCenter.GetNomSpawnPointActuel ();
 		this.IdScenePrecedente = ControlCenter.idScenePrecedente;
 		this.NomEtatSauve = StateManager.getInstance ().etatActif.GetType ().Name;
+		this.Niveau = carac.niveau;
 		
 		FileStream stream = File.Create( ControlCenter.nomFichierSauvegarde );
 		BinaryFormatter formatter = new BinaryFormatter();
@@ -132,8 +138,10 @@ public class GameData {
 		// Remplacement des caractéristiques
 		if( healthPlayer != null )
 			healthPlayer.SetPointsDeVie ( gameData.PointsDeVieSauves );
-		if (carac != null)
+		if (carac != null) {
 			carac.experience = gameData.PointsExperience;
+			carac.niveau = gameData.Niveau;
+		}
 		if (inventaire != null) {
 			inventaire.quantiteObjets = gameData.ListeMunitions;
 			inventaire.InitialiserObjets();
